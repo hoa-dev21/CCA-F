@@ -1,5 +1,7 @@
 # Claude Architecture — Ôn tập và gia sư local
 
+Hai lựa chọn trên web: **Học từ đầu** và **Ôn nhanh**. Xem [lộ trình học](LO_TRINH_HOC.md). Dùng lộ trình trên web để học tuần tự; danh mục file dùng để tra cứu.
+
 Web học tiếng Việt với 142 bài, 426 câu luyện tập, theo dõi tiến độ và gia sư theo ngữ cảnh bài học.
 
 ## Chạy trên máy

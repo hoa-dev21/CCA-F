@@ -62,6 +62,7 @@ function parseLesson(file) {
 const files = fs.readdirSync(path.join(ROOT, 'lessons')).filter(f => /^(API|EXAM|CODE|MCP|FLUENCY|CLAUDE101|BEDROCK|VERTEX)-.*\.md$/.test(f));
 const lessons = new Map(files.map(f => [f, parseLesson(f)]));
 const recommended = ['EXAM-14-loop-decomposition.md','EXAM-01-multi-agent.md','EXAM-02-escalation.md','EXAM-11-errors-tool-scope.md','EXAM-09-mcp-scope-tools.md','EXAM-15-tool-contract-scenarios.md','EXAM-10-rules-skills-scope.md','EXAM-13-review-feedback-ci.md','EXAM-16-code-config-iteration.md','EXAM-05-structured-output.md','EXAM-06-validation-retry.md','EXAM-07-batches.md','EXAM-08-multi-pass-review.md','EXAM-17-quality-examples-batch.md','EXAM-12-session-context.md','EXAM-03-errors-provenance.md','EXAM-04-confidence.md','EXAM-18-context-source-review.md'];
+const learningPaths = require('./learning-paths.cjs').buildLearningPaths(files,recommended);
 const ordered = [...recommended, ...files.filter(f => !recommended.includes(f)).sort()];
 const library = ordered.map(id => {const l = lessons.get(id); return {id,group:l.group,title:l.title,shortTitle:l.shortTitle,questions:l.questions.length,readingMinutes:l.readingMinutes};});
 function chatContext(lessonId, questionId) {
@@ -70,4 +71,4 @@ function chatContext(lessonId, questionId) {
   const q = l.questions.find(q => q.id === questionId);
   return `Bài đang học: ${l.title}\n\n${l.summary}\n\n${q ? `Câu đang hỏi: ${q.number}. ${q.prompt}\n${q.options.map(o=>o.key+'. '+o.text).join('\n')}\nĐáp án tham chiếu cho gia sư: ${q.correct.join(', ')}. ${q.explanation}` : l.questions.map(q=>`Câu ${q.number}: ${q.prompt}\n${q.options.map(o=>o.key+'. '+o.text).join('\n')}\nĐáp án tham chiếu cho gia sư: ${q.correct.join(', ')}. ${q.explanation}`).join('\n\n')}`;
 }
-module.exports = { ROOT, GROUPS, lessons, library, recommended, render, escape, chatContext };
+module.exports = { ROOT, GROUPS, lessons, library, recommended, learningPaths, render, escape, chatContext };

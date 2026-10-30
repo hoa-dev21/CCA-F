@@ -1,5 +1,7 @@
 # Ôn Claude Certified Architect – Foundations
 
+Hai lựa chọn trên web: **Học từ đầu** và **Ôn nhanh**. Xem [lộ trình học](LO_TRINH_HOC.md). Dùng lộ trình trên web để học tuần tự; danh mục file dùng để tra cứu.
+
 Đã xác nhận đúng chứng chỉ **Architect** với người học. Bộ [bài học và câu hỏi](lessons/README.md) có **142 bài, 426 câu**, bao phủ 282 mục nội dung trong 7 khóa chuẩn bị sau khi dùng chung các phần trùng; có dẫn nguồn từng bài. [Bảng đối chiếu Exam Guide](BLUEPRINT_AUDIT.md) ghi bằng chứng cho 30 mục tiêu/240 ý, không phải chứng nhận sẵn sàng thi.
 
 Nguồn: [trang chứng chỉ chính thức](https://anthropic-partners.skilljar.com/claude-certified-architect-foundations-certification), đọc trực tiếp qua Playwright ngày 30/10/2026. Bản chụp văn bản: sources/architect-exam-page.json.

@@ -1,5 +1,7 @@
 # Ôn Claude Certified Architect – Foundations
 
+Hai lựa chọn trên web: **Học từ đầu** và **Ôn nhanh**. Xem [lộ trình học](../LO_TRINH_HOC.md). Dùng lộ trình trên web để học tuần tự; danh mục file dùng để tra cứu.
+
 Hiện có **142 bài, 426 câu hỏi tự biên soạn có đáp án và giải thích**: 124 bài từ nội dung khóa học và 18 bài bổ trợ theo Exam Guide. Đã đối chiếu nội dung tóm tắt với 30/30 mục tiêu thi. Đã có bài tóm tắt/câu hỏi cho cả 282 mục nội dung trong 7 khóa; các nội dung trùng được dùng chung bài để tránh học lặp. Đối chiếu này không chứng nhận mức sẵn sàng thi.
 
 Để ôn nhanh, bắt đầu các bài EXAM bên dưới; đọc phần API về tool loop, prompting và MCP cùng phần Claude Code để củng cố. AI Fluency là nền tảng đọc nhanh. Đây là thứ tự học đề xuất, không phải cam kết đủ để thi đỗ.

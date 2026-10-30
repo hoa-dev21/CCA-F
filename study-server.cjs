@@ -3,14 +3,14 @@ const fs=require('node:fs');
 const path=require('node:path');
 const crypto=require('node:crypto');
 const {spawn}=require('node:child_process');
-const {ROOT,GROUPS,lessons,library,recommended,chatContext}=require('./study-web/library.cjs');
+const {ROOT,GROUPS,lessons,library,recommended,learningPaths,chatContext}=require('./study-web/library.cjs');
 const {createBridge}=require('./study-web/codex-bridge.cjs');
 const PORT=Number(process.env.STUDY_PORT||43130),HOST='127.0.0.1';
 const token=crypto.randomBytes(24).toString('hex');
 const bridge=createBridge(ROOT),sessions=new Map();
 const allowedHosts=new Set([`${HOST}:${PORT}`,`localhost:${PORT}`]);
 const allowedOrigins=new Set([`http://${HOST}:${PORT}`,`http://localhost:${PORT}`]);
-const assets={'/':'index.html','/app.js':'app.js','/styles.css':'styles.css','/favicon.svg':'favicon.svg','/fonts/NotoSerif-Variable.ttf':'fonts/NotoSerif-Variable.ttf','/fonts/NotoSans-Variable.ttf':'fonts/NotoSans-Variable.ttf'};
+const assets={'/':'index.html','/app.js':'app.js','/marked.js':'../node_modules/marked/lib/marked.umd.js','/styles.css':'styles.css','/favicon.svg':'favicon.svg','/fonts/NotoSerif-Variable.ttf':'fonts/NotoSerif-Variable.ttf','/fonts/NotoSans-Variable.ttf':'fonts/NotoSans-Variable.ttf'};
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.ttf':'font/ttf'};
 function json(res,status,data){res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(data));}
 async function body(req){let text='';for await(const chunk of req){text+=chunk;if(Buffer.byteLength(text)>65000)throw Object.assign(new Error('Câu hỏi quá dài.'),{status:413});}try{return JSON.parse(text);}catch{throw Object.assign(new Error('Dữ liệu không hợp lệ.'),{status:400});}}
@@ -22,7 +22,7 @@ const server=http.createServer(async(req,res)=>{
   const url=new URL(req.url,`http://${HOST}:${PORT}`);
   try{
     if(req.method==='GET'&&assets[url.pathname]){const file=assets[url.pathname];res.writeHead(200,{'Content-Type':mime[path.extname(file)],'Cache-Control':'no-cache'});return res.end(fs.readFileSync(path.join(ROOT,'study-web',file)));}
-    if(req.method==='GET'&&url.pathname==='/api/library')return json(res,200,{lessons:library,groups:GROUPS,recommended,totalQuestions:[...lessons.values()].reduce((n,l)=>n+l.questions.length,0),token});
+    if(req.method==='GET'&&url.pathname==='/api/library')return json(res,200,{lessons:library,groups:GROUPS,recommended,learningPaths,totalQuestions:[...lessons.values()].reduce((n,l)=>n+l.questions.length,0),token});
     if(req.method==='GET'&&url.pathname==='/api/lesson'){const l=lessons.get(url.searchParams.get('id'));if(!l)return json(res,404,{error:'Không tìm thấy bài học.'});const {raw,...visible}=l;return json(res,200,visible);}
     if(req.method==='GET'&&url.pathname==='/api/chat/status')return json(res,200,await bridge.status());
     if(req.method==='POST'){

@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="vi">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173e36"><title>Architect — Góc học của bạn</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173e36"><title>Architect — Góc học của bạn</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><script src="/marked.js" defer></script><script src="/app.js" defer></script></head>
 <body>
   <aside class="sidebar" id="sidebar">
     <a class="brand" href="#"><span class="brand-mark">a<span>·</span></span><span>architect<small>GÓC HỌC CỦA BẠN</small></span></a>
+    <div class="path-picker"><label for="learning-path">Lộ trình học</label><select id="learning-path"><option value="beginner">Học từ đầu</option><option value="quick">Ôn nhanh</option></select><p id="path-description"></p></div>
     <div class="sidebar-progress"><div><span>Hành trình của bạn</span><b id="progress-label">0 / 142</b></div><div class="track"><i id="progress-bar"></i></div></div>
     <label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Tìm bài học…" autocomplete="off" aria-label="Tìm bài học"><kbd>/</kbd></label>
     <div class="catalog-heading"><span>THƯ VIỆN BÀI HỌC</span><span id="lesson-count">142</span></div>
