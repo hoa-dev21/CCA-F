@@ -1,0 +1,227 @@
+[
+  {
+    "title": "Introduction to AI Fluency",
+    "url": "https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291863",
+    "source": "captured",
+    "lesson": "FLUENCY-01-introduction.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/fluency-lessons/291863.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Why do we need AI Fluency?",
+    "url": "https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291870",
+    "source": "captured",
+    "lesson": "FLUENCY-02-collaboration.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/fluency-lessons/291870.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "The 4D Framework",
+    "url": "https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291876",
+    "source": "captured",
+    "lesson": "FLUENCY-03-four-d.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/fluency-lessons/291876.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Generative AI fundamentals",
+    "url": "https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291879",
+    "source": "captured",
+    "lesson": "FLUENCY-04-generative-ai.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/fluency-lessons/291879.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Capabilities & limitations",
+    "url": "https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291880",
+    "source": "captured",
+    "lesson": "FLUENCY-05-limits.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/fluency-lessons/291880.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "A closer look at Delegation",
+    "url": "https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291883",
+    "source": "captured",
+    "lesson": "FLUENCY-06-delegation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/fluency-lessons/291883.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Project planning and Delegation",
+    "url": "https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291886",
+    "source": "captured",
+    "lesson": "FLUENCY-07-planning.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/fluency-lessons/291886.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "A closer look at Description",
+    "url": "https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291891",
+    "source": "captured",
+    "lesson": "FLUENCY-08-description.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/fluency-lessons/291891.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Effective prompting techniques",
+    "url": "https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291895",
+    "source": "captured",
+    "lesson": "FLUENCY-09-prompting.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/fluency-lessons/291895.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "A closer look at Discernment",
+    "url": "https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291898",
+    "source": "captured",
+    "lesson": "FLUENCY-10-discernment.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/fluency-lessons/291898.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "The Description-Discernment loop",
+    "url": "https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291901",
+    "source": "captured",
+    "lesson": "FLUENCY-11-feedback-loop.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/fluency-lessons/291901.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "A closer look at Diligence",
+    "url": "https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291904",
+    "source": "captured",
+    "lesson": "FLUENCY-12-diligence.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/fluency-lessons/291904.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Conclusion",
+    "url": "https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291908",
+    "source": "captured",
+    "lesson": "FLUENCY-13-conclusion.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/fluency-lessons/291908.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Certificate of completion",
+    "url": "https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/309598",
+    "source": "captured",
+    "lesson": null,
+    "assessment": false,
+    "administrative": true,
+    "evidence": {
+      "pageText": "sources/fluency-lessons/309598.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Additional activities",
+    "url": "https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/314863",
+    "source": "captured",
+    "lesson": "FLUENCY-14-activities.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/fluency-lessons/314863.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  }
+]

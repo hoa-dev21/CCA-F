@@ -1,0 +1,79 @@
+[
+  {
+    "id": "276798",
+    "lesson": "API-21-intro-mcp.md",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276798",
+    "review": "full_collected_text_read_concepts_compared",
+    "note": "Cùng lớp tích hợp client/server và tái sử dụng công cụ. MCP không đồng nghĩa toàn bộ tool loop tự vận hành."
+  },
+  {
+    "id": "276793",
+    "lesson": "API-22-mcp-clients.md",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276793",
+    "review": "full_collected_text_read_concepts_compared",
+    "note": "Cùng list/call flow. Danh sách transport trong khóa là mô tả lúc giảng, không xác nhận mọi transport đó là chuẩn được hỗ trợ hiện hành."
+  },
+  {
+    "id": "276792",
+    "lesson": "API-65-mcp-project-setup.md",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276792",
+    "review": "full_collected_text_read_concepts_compared",
+    "note": "Dự án thêm mention @document và command /name, storage trong memory; không cần viết cả client/server nếu phía còn lại đã có. Chưa mở ZIP nên không tuyên bố hoàn thành bài thực hành."
+  },
+  {
+    "id": "276800",
+    "lesson": "API-23-define-mcp-tools.md",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276800",
+    "review": "full_collected_text_read_concepts_compared",
+    "note": "Cùng decorator, type hints và Field tạo schema đọc/sửa tài liệu. Python replace trong ví dụ là thao tác đơn giản, không chứng minh uniqueness hay hợp đồng production."
+  },
+  {
+    "id": "276796",
+    "lesson": "API-24-mcp-inspector.md",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276796",
+    "review": "full_collected_text_read_concepts_compared",
+    "note": "Cùng thử tool độc lập rồi đọc lại để xác minh sửa. Cổng/UI inspector có thể khác theo phiên bản; không học thuộc cổng thay phương pháp kiểm tra."
+  },
+  {
+    "id": "276802",
+    "lesson": "API-25-mcp-client-implementation.md",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276802",
+    "review": "full_collected_text_read_concepts_compared",
+    "note": "Bản Bedrock nêu rõ MCP tool schema không trùng định dạng Converse. Helper to_bedrock_tools trong core/bedrock.py chuyển schema; cần kiểm tra adapter thay vì gửi schema MCP nguyên dạng rồi coi kết nối là đã đủ. Session vẫn cần cleanup."
+  },
+  {
+    "id": "276799",
+    "lesson": "API-26-resources.md",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276799",
+    "review": "full_collected_text_read_concepts_compared",
+    "note": "Cùng resource URI cố định/template, MIME và serialization. URI cố định không đồng nghĩa dữ liệu bất biến."
+  },
+  {
+    "id": "276797",
+    "lesson": "API-27-access-resources.md",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276797",
+    "review": "full_collected_text_read_concepts_compared",
+    "note": "Cùng read_resource và parse theo MIME, ứng dụng đưa dữ liệu vào context. Giảm một vòng model tool call không có nghĩa không còn request client/server để đọc resource."
+  },
+  {
+    "id": "276801",
+    "lesson": "API-28-define-prompts.md",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276801",
+    "review": "full_collected_text_read_concepts_compared",
+    "note": "Cùng prompt trả messages và interpolation; import path SDK trong bài cần kiểm tra theo bản đang dùng. Template tạo đúng không chứng minh thao tác sửa tài liệu đã chạy."
+  },
+  {
+    "id": "276795",
+    "lesson": "API-29-client-prompts.md",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276795",
+    "review": "full_collected_text_read_concepts_compared",
+    "note": "Cùng list_prompts/get_prompt và đối số doc_id. Giữ ranh giới giữa danh sách mẫu, messages sau điền tham số và kết quả thực thi."
+  },
+  {
+    "id": "276794",
+    "lesson": "MCP-01-control-patterns.md",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276794",
+    "review": "full_collected_text_read_concepts_compared",
+    "note": "Cùng tools/model, resources/application, prompts/user. Model-controlled là chọn lời gọi trong pattern, không phải vượt qua quyền ứng dụng hoặc backend."
+  }
+]

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173e36"><title>Architect — Góc học của bạn</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script></head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#"><span class="brand-mark">a<span>·</span></span><span>architect<small>GÓC HỌC CỦA BẠN</small></span></a>
+    <div class="sidebar-progress"><div><span>Hành trình của bạn</span><b id="progress-label">0 / 142</b></div><div class="track"><i id="progress-bar"></i></div></div>
+    <label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Tìm bài học…" autocomplete="off" aria-label="Tìm bài học"><kbd>/</kbd></label>
+    <div class="catalog-heading"><span>THƯ VIỆN BÀI HỌC</span><span id="lesson-count">142</span></div>
+    <nav id="lesson-list" aria-label="Danh sách bài học"></nav>
+    <div class="sidebar-footer"><span class="local-dot"></span> Học trên máy của bạn <span class="version">01.0</span></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><div class="topbar-left"><button class="icon-button mobile-only" id="menu-toggle" aria-label="Mở danh sách bài">☰</button><span class="topbar-label">CLAUDE CERTIFIED ARCHITECT</span><span class="pill">Foundations</span></div><div class="topbar-actions"><button id="review-wrong" class="text-button">Ôn câu sai <span id="wrong-count">0</span></button><button id="practice-start" class="button small">Luyện 10 câu <span>↗</span></button></div></header>
+    <div class="content-grid">
+      <main id="main-content">
+        <div class="breadcrumb"><span id="course-name">Trọng tâm bài thi</span><span>/</span><span id="lesson-code">EXAM 14</span><div class="lesson-nav"><button class="icon-button" id="prev-lesson" aria-label="Bài trước">←</button><button class="icon-button" id="next-lesson" aria-label="Bài tiếp theo">→</button></div></div>
+        <section class="lesson-hero"><div class="eyebrow"><span class="tiny-mark">✦</span><span id="lesson-eyebrow">ÔN ƯU TIÊN</span></div><h1 id="lesson-title">Đang mở góc học…</h1><p class="lesson-subtitle" id="lesson-subtitle">Một bài nhỏ mỗi ngày. Hiểu nguyên tắc, tự tin ra quyết định.</p><div class="lesson-meta"><span id="reading-time">◷ 5 phút đọc</span><span class="meta-divider"></span><span id="question-count">3 câu tự kiểm tra</span><span class="meta-divider"></span><span>Tiếng Việt</span></div></section>
+        <div class="lesson-tabs" role="tablist" aria-label="Nội dung bài"><button id="tab-read" role="tab" aria-controls="reading-panel" aria-selected="true" class="active">Bài giảng <span>01</span></button><button id="tab-quiz" role="tab" aria-controls="quiz-panel" aria-selected="false">Tự kiểm tra <span>02</span></button></div>
+        <section id="reading-panel" role="tabpanel" aria-labelledby="tab-read"><div class="reading-card"><div class="article-kicker">ĐỌC ĐỂ HIỂU, KHÔNG CHỈ ĐỂ NHỚ <span>↙</span></div><article id="lesson-article" class="markdown"></article><details class="source-notes" id="notes-details"><summary>Nguồn đối chiếu & ghi chú bổ sung <span>+</span></summary><div id="lesson-notes" class="markdown"></div></details></div><div class="reading-bottom"><div><b>Một bước nhỏ, thêm một phần vững.</b><p>Thử giải thích lại bằng lời của bạn trước khi làm câu hỏi.</p></div><button id="mark-read" class="button">Đã hiểu, làm bài tập <span>→</span></button></div><div class="next-card" id="next-card"></div></section>
+        <section id="quiz-panel" role="tabpanel" aria-labelledby="tab-quiz" hidden><div class="quiz-intro"><div><span class="eyebrow">NHỚ BẰNG CÁCH TỰ TRẢ LỜI</span><h2 id="quiz-title">Kiểm tra điều bạn vừa học.</h2></div><button id="quiz-reset" class="text-button">Làm lại ↻</button></div><div id="quiz-list"></div><div id="quiz-summary" class="quiz-summary" hidden></div></section>
+        <footer class="main-footer"><span>Học từ nguồn chính thức. Câu hỏi được biên soạn để luyện tập.</span><span>Không phải đề thi thật.</span></footer>
+      </main>
+      <aside class="tutor" id="tutor"><div class="tutor-top"><div class="tutor-avatar">✳</div><div><b>Cùng hiểu sâu hơn</b><span>Gia sư theo bài đang học</span></div><button id="new-chat" class="icon-button" aria-label="Bắt đầu hội thoại mới" title="Hội thoại mới">↻</button></div><div class="tutor-context"><span class="context-dot"></span><span id="chat-context-label">Đang đọc cùng bạn</span></div>
+        <div id="chat-log" class="chat-log" aria-live="polite"></div>
+        <div class="chat-chips" id="chat-chips"><button data-prompt="Giải thích ý chính của bài này bằng một ví dụ đời thường.">Cho tôi một ví dụ ↗</button><button data-prompt="Hãy hỏi tôi một câu ngắn để kiểm tra xem tôi đã hiểu bài này chưa. Chưa đưa đáp án.">Hỏi tôi một câu ↗</button></div>
+        <div class="chat-compose"><form id="chat-form"><label class="sr-only" for="chat-input">Câu hỏi cho gia sư</label><textarea id="chat-input" rows="3" maxlength="6000" placeholder="Điều gì bạn còn băn khoăn?"></textarea><div class="compose-bottom"><span id="chat-hint">Kèm ngữ cảnh bài học</span><button id="chat-send" type="submit" class="send-button" aria-label="Gửi câu hỏi">↑</button><button id="chat-stop" type="button" class="send-button" aria-label="Dừng trả lời" hidden>■</button></div></form></div>
+        <div class="connection"><span id="connection-dot" class="connection-dot"></span><span id="connection-label">Chưa kết nối gia sư</span><button id="reconnect" title="Kiểm tra kết nối">↻</button></div>
+        <details class="chat-help"><summary>Dùng tài khoản hiện có như thế nào?</summary><p>Chat dùng Codex CLI đăng nhập bằng ChatGPT; không cần API key riêng. Cần Internet và tuân theo giới hạn tài khoản. Đây là phiên riêng, không tự nối vào cuộc trò chuyện đã tạo tài liệu.</p><p>Mở PowerShell, chạy <code>codex login</code>, chọn đăng nhập ChatGPT, rồi bấm kết nối lại.</p><p>Bạn cũng có thể hỏi ngay trong cuộc trò chuyện hiện tại bằng nút bên dưới.</p></details>
+        <button id="copy-question" class="copy-question">⧉ <span>Sao chép để hỏi trong cuộc trò chuyện này</span></button>
+      </aside>
+    </div>
+  </div>
+  <button id="mobile-tutor" class="mobile-tutor" aria-label="Mở gia sư">✳ Hỏi gia sư</button>
+  <div id="toast" role="status" class="toast" hidden></div>
+</body></html>

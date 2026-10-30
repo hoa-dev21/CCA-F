@@ -1,0 +1,152 @@
+[
+  {
+    "title": "Steering Long Sessions",
+    "url": "https://anthropic-partners.skilljar.com/claude-code-in-action/486901",
+    "source": "captured",
+    "lesson": "CODE-01-steering.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/code-lessons/486901.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "A CLAUDE.md That Follows",
+    "url": "https://anthropic-partners.skilljar.com/claude-code-in-action/486929",
+    "source": "captured",
+    "lesson": "CODE-02-claude-md.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/code-lessons/486929.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Verification Skills",
+    "url": "https://anthropic-partners.skilljar.com/claude-code-in-action/486930",
+    "source": "captured",
+    "lesson": "CODE-03-verification-skills.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/code-lessons/486930.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Permission Modes",
+    "url": "https://anthropic-partners.skilljar.com/claude-code-in-action/486932",
+    "source": "captured",
+    "lesson": "CODE-04-permissions.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/code-lessons/486932.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Hooks",
+    "url": "https://anthropic-partners.skilljar.com/claude-code-in-action/486933",
+    "source": "captured",
+    "lesson": "CODE-05-hooks.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/code-lessons/486933.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Routines and Headless",
+    "url": "https://anthropic-partners.skilljar.com/claude-code-in-action/486935",
+    "source": "captured",
+    "lesson": "CODE-06-headless.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/code-lessons/486935.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "GitHub Actions and Code Review",
+    "url": "https://anthropic-partners.skilljar.com/claude-code-in-action/486936",
+    "source": "captured",
+    "lesson": "CODE-07-ci-review.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/code-lessons/486936.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Trust It: Verifying Unsupervised Runs",
+    "url": "https://anthropic-partners.skilljar.com/claude-code-in-action/486938",
+    "source": "captured",
+    "lesson": "CODE-08-unsupervised.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/code-lessons/486938.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Plugins",
+    "url": "https://anthropic-partners.skilljar.com/claude-code-in-action/486939",
+    "source": "captured",
+    "lesson": "CODE-09-plugins.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/code-lessons/486939.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Course Quiz",
+    "url": "https://anthropic-partners.skilljar.com/claude-code-in-action/487234",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/code-lessons/487234.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  }
+]

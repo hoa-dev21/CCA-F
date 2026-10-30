@@ -1,0 +1,38 @@
+[
+  {
+    "id": "276731",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276731",
+    "lesson": "API-04-prompt-evaluation.md",
+    "review": "full_collected_text_read_and_concepts_compared"
+  },
+  {
+    "id": "276732",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276732",
+    "lesson": "API-05-eval-workflow.md",
+    "review": "full_collected_text_read_and_concepts_compared"
+  },
+  {
+    "id": "276733",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276733",
+    "lesson": "API-06-test-datasets.md",
+    "review": "full_collected_text_read_and_concepts_compared"
+  },
+  {
+    "id": "276736",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276736",
+    "lesson": "API-07-running-eval.md",
+    "review": "full_collected_text_read_and_concepts_compared"
+  },
+  {
+    "id": "276738",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276738",
+    "lesson": "API-08-model-grading.md",
+    "review": "full_collected_text_read_and_concepts_compared"
+  },
+  {
+    "id": "276735",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276735",
+    "lesson": "API-09-code-grading.md",
+    "review": "full_collected_text_read_and_concepts_compared"
+  }
+]

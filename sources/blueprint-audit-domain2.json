@@ -1,0 +1,311 @@
+[
+  {
+    "id": "2.1",
+    "page": 9,
+    "title": "Design effective tool interfaces with clear descriptions and boundaries",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-11-errors-tool-scope.md",
+      "API-15-tool-schemas.md",
+      "EXAM-15-tool-contract-scenarios.md"
+    ],
+    "questions": [
+      "EXAM-11 Q3",
+      "API-15 Q1–2"
+    ],
+    "knowledge": [
+      {
+        "item": "Tool descriptions as the primary mechanism LLMs use for tool selection; minimal descriptions lead to unreliable selection among similar tools",
+        "evidence": "EXAM11/API15: description là tín hiệu chọn tool, mô tả mơ hồ gây misroute.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The importance of including input formats, example queries, edge cases, and boundary explanations in tool descriptions",
+        "evidence": "EXAM11: formats, query examples, edge cases và ranh giới.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "How ambiguous or overlapping tool descriptions cause misrouting (e.g., analyze_content vs analyze_document with near-identical descriptions)",
+        "evidence": "EXAM11: analyze_content/analyze_document có phạm vi trùng.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The impact of system prompt wording on tool selection: keyword-sensitive instructions can create unintended tool associations",
+        "evidence": "EXAM11: quy tắc system prompt gắn keyword với tool có thể lấn description.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Writing tool descriptions that clearly differentiate each tool's purpose, expected inputs, outputs, and when to use it versus similar alternatives",
+        "evidence": "API15/EXAM11: nêu purpose/inputs/outputs và khi dùng so với tool khác.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Renaming tools and updating descriptions to eliminate functional overlap (e.g., renaming analyze_content to extract_web_results with a web-speci fi c description)",
+        "evidence": "EXAM11: rename extract_web_results và mô tả web-specific.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Splitting generic tools into purpose-speci fi c tools with de fi ned input/output contracts (e.g., splitting a generic analyze_document into extract_data_points, summarize_content, and verify_claim_against_source)",
+        "evidence": "EXAM11: tách extract_data_points/summarize_content/verify_claim_against_source.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Reviewing system prompts for keyword-sensitive instructions that might override well-written tool descriptions",
+        "evidence": "EXAM11: rà cả system instruction có quy tắc keyword sai.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "2.2",
+    "page": 9,
+    "title": "Implement structured error responses for MCP tools",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-11-errors-tool-scope.md",
+      "EXAM-15-tool-contract-scenarios.md",
+      "API-19-implement-loop.md"
+    ],
+    "questions": [
+      "EXAM-11 Q1",
+      "EXAM-15 Q2",
+      "API-19 Q1"
+    ],
+    "knowledge": [
+      {
+        "item": "The MCP isError fl ag pattern for communicating tool failures back to the agent",
+        "evidence": "EXAM11: MCP isError khác API is_error.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The distinction between transient errors (timeouts, service unavailability), validation errors (invalid input), business errors (policy violations), and permission errors",
+        "evidence": "EXAM11: transient/validation/business/permission và cách phục hồi khác nhau.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Why uniform error responses (generic \"Operation failed\") prevent the agent from making appropriate recovery decisions",
+        "evidence": "EXAM11/15: Operation failed chung làm mất tín hiệu.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The difference between retryable and non-retryable errors, and how returning structured metadata prevents wasted retry attempts",
+        "evidence": "EXAM11: retryability metadata tránh retry vô ích.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Returning structured error metadata including errorCategory (transient/validation/permission), isRetryable boolean, and human-readable descriptions",
+        "evidence": "EXAM11: payload errorCategory/isRetryable/description theo contract ứng dụng.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Including retriable: false fl ags and customer-friendly explanations for business rule violations so the agent can communicate appropriately",
+        "evidence": "EXAM11/Q1: business retriable=false, lý do dễ hiểu và đường xử lý phù hợp.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Implementing local error recovery within subagents for transient failures, propagating to the coordinator only errors that cannot be resolved locally along with partial results and what was attempted",
+        "evidence": "EXAM11: subagent phục hồi cục bộ giới hạn rồi gửi lỗi còn lại/partial results/attempts.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Distinguishing between access failures (needing retry decisions) and valid empty results (representing successful queries with no matches)",
+        "evidence": "EXAM11/15: successful empty khác access failure.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "2.3",
+    "page": 10,
+    "title": "Distribute tools appropriately across agents and con fi gure tool choice",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-11-errors-tool-scope.md",
+      "EXAM-05-structured-output.md",
+      "EXAM-15-tool-contract-scenarios.md"
+    ],
+    "questions": [
+      "EXAM-11 Q2",
+      "EXAM-05 Q1",
+      "EXAM-15 Q1"
+    ],
+    "knowledge": [
+      {
+        "item": "The principle that giving an agent access to too many tools (e.g., 18 instead of 4-5) degrades tool selection reliability by increasing decision complexity",
+        "evidence": "EXAM11: tool nhiều ngoài vai trò tăng decision complexity, số18/4–5 là ví dụ.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Why agents with tools outside their specialization tend to misuse them (e.g., a synthesis agent attempting web searches)",
+        "evidence": "EXAM11: synthesis không nên nhận toàn bộ search/edit tools.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Scoped tool access: giving agents only the tools needed for their role, with limited cross-role tools for speci fi c high-frequency needs",
+        "evidence": "EXAM11/Q2: scope theo vai trò, verify_fact hẹp cho nhu cầu thường xuyên.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "tool_choice con fi guration options: \"auto\", \"any\", and forced tool selection ({\"type\": \"tool\", \"name\": \"...\"})",
+        "evidence": "EXAM11/05: auto/any/forced-name khác nhau.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Restricting each subagent's tool set to those relevant to its role, preventing cross-specialization misuse",
+        "evidence": "EXAM11: giới hạn tools theo specialization.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Replacing generic tools with constrained alternatives (e.g., replacing fetch_url with load_document that validates document URLs)",
+        "evidence": "EXAM11: thay fetch_url bằng load_document có URL validation thật.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Providing scoped cross-role tools for high-frequency needs (e.g., a verify_fact tool for the synthesis agent) while routing complex cases through the coordinator",
+        "evidence": "EXAM11/Q2: verify_fact hẹp, việc phức tạp qua coordinator.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Using tool_choice forced selection to ensure a speci fi c tool is called fi rst (e.g., forcing extract_metadata before enrichment tools), then processing subsequent steps in follow-up turns",
+        "evidence": "EXAM11/15Q1: force metadata rồi thực thi/validate/result, follow-up mở enrichment.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Setting tool_choice: \"any\" to guarantee the model calls a tool rather than returning conversational text",
+        "evidence": "EXAM05/11: any buộc tool trong tập, không buộc tên.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "2.4",
+    "page": 11,
+    "title": "Integrate MCP servers into Claude Code and agent work fl ows",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-09-mcp-scope-tools.md",
+      "API-26-resources.md"
+    ],
+    "questions": [
+      "EXAM-09 Q1"
+    ],
+    "knowledge": [
+      {
+        "item": "MCP server scoping: project-level (.mcp.json) for shared team tooling vs user-level (~/.claude.json) for personal/experimental servers",
+        "evidence": "EXAM09: project .mcp.json và user ~/.claude.json.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Environment variable expansion in .mcp.json (e.g., ${GITHUB_TOKEN}) for credential management without committing secrets",
+        "evidence": "EXAM09: ${GITHUB_TOKEN}, không commit literal secret.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "That tools from all con fi gured MCP servers are discovered at connection time and available simultaneously to the agent",
+        "evidence": "EXAM09: discovery khi kết nối, nhiều server đồng thời không tự loại trừ.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "MCP resources as a mechanism for exposing content catalogs (e.g., issue summaries, documentation hierarchies, database schemas) to reduce exploratory tool calls",
+        "evidence": "EXAM09: issue summaries/docs hierarchy/database schemas như catalogs.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Con fi guring shared MCP servers in project-scoped .mcp.json with environment variable expansion for authentication tokens",
+        "evidence": "EXAM09/Q1: project shared config, mỗi thành viên cấp env/auth riêng.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Con fi guring personal/experimental MCP servers in user-scoped ~/.claude.json",
+        "evidence": "EXAM09: personal experimental server ở user scope.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Enhancing MCP tool descriptions to explain capabilities and outputs in detail, preventing the agent from preferring built-in tools (like Grep) over more capable MCP tools",
+        "evidence": "EXAM09: mô tả năng lực/output MCP rõ khi mạnh hơn Grep.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Choosing existing community MCP servers over custom implementations for standard integrations (e.g., Jira), reserving custom servers for team-speci fi c work fl ows",
+        "evidence": "EXAM09: đánh giá server Jira/community cho tích hợp chuẩn, custom cho việc riêng.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Exposing content catalogs as MCP resources to give agents visibility into available data without requiring exploratory tool calls",
+        "evidence": "EXAM09/API26: resource catalog hỗ trợ visibility không thử hàng loạt tool queries.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "2.5",
+    "page": 11,
+    "title": "Select and apply built-in tools (Read, Write, Edit, Bash, Grep, Glob) effectively",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-09-mcp-scope-tools.md",
+      "EXAM-15-tool-contract-scenarios.md"
+    ],
+    "questions": [
+      "EXAM-09 Q2–3",
+      "EXAM-15 Q3"
+    ],
+    "knowledge": [
+      {
+        "item": "Grep for content search (searching fi le contents for patterns like function names, error messages, or import statements)",
+        "evidence": "EXAM09: Grep tìm nội dung function/error/import.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Glob for fi le path pattern matching ( fi nding fi les by name or extension patterns)",
+        "evidence": "EXAM09: Glob tìm path theo pattern.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Read/Write for full fi le operations; Edit for targeted modi fi cations using unique text matching",
+        "evidence": "EXAM09: Read/Write full-file, Edit targeted anchor duy nhất.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "When Edit fails due to non-unique text matches, using Read + Write as a fallback for reliable fi le modi fi cations",
+        "evidence": "EXAM09/Q3: fallback Read/Write kiểm soát khi anchor không duy nhất.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Selecting Grep for searching code content across a codebase (e.g., fi nding all callers of a function, locating error messages)",
+        "evidence": "EXAM09/Q2: Grep tìm function callers/nội dung.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Selecting Glob for fi nding fi les matching naming patterns (e.g., **/*.test.tsx)",
+        "evidence": "EXAM09/Q2: Glob **/*.test.tsx.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Using Read to load full fi le contents followed by Write when Edit cannot fi nd unique anchor text",
+        "evidence": "EXAM09/Q3: đọc đầy đủ rồi Write và kiểm tra diff.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Building codebase understanding incrementally: starting with Grep to fi nd entry points, then using Read to follow imports and trace fl ows, rather than reading all fi les upfront",
+        "evidence": "EXAM09: Grep entrypoints, Read imports/theo flow, không nạp tất cả trước.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Tracing function usage across wrapper modules by fi rst identifying all exported names, then searching for each name across the codebase",
+        "evidence": "EXAM09/15Q3: xác định exports/aliases wrapper, tìm từng tên.",
+        "status": "covered_in_summary"
+      }
+    ]
+  }
+]

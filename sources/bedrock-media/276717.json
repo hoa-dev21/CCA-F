@@ -1,0 +1,386 @@
+{
+  "lesson": "System prompt exercise",
+  "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276717",
+  "collectedAt": "2026-10-29T18:40:36.900Z",
+  "sourceType": "English captions linked by official lesson player",
+  "media": {
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276717",
+    "players": [
+      {
+        "id": "botr_02clfR48_Akyo8gQO_div",
+        "playlist": [
+          {
+            "sources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/02clfR48.m3u8?exp=1793310240&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              }
+            ],
+            "tracks": [
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/LzzHmA5i.srt",
+                "label": "English",
+                "sideloaded": true,
+                "data": [],
+                "name": "English",
+                "_id": "https://cdn.jwplayer.com/tracks/LzzHmA5i.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/cgouGJm8.srt",
+                "label": "French",
+                "sideloaded": true,
+                "data": [],
+                "name": "French",
+                "_id": "https://cdn.jwplayer.com/tracks/cgouGJm8.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/PVZ6TLNc.srt",
+                "label": "German",
+                "sideloaded": true,
+                "data": [],
+                "name": "German",
+                "_id": "https://cdn.jwplayer.com/tracks/PVZ6TLNc.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/kRLbkuDA.srt",
+                "label": "Hindi",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Hindi",
+                "_id": "https://cdn.jwplayer.com/tracks/kRLbkuDA.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/dHKuD2YL.srt",
+                "label": "Japanese",
+                "sideloaded": true,
+                "data": [],
+                "name": "Japanese",
+                "_id": "https://cdn.jwplayer.com/tracks/dHKuD2YL.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/QYKFQVOY.srt",
+                "label": "Korean",
+                "sideloaded": true,
+                "data": [],
+                "name": "Korean",
+                "_id": "https://cdn.jwplayer.com/tracks/QYKFQVOY.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/HiyiuMSt.srt",
+                "label": "Portuguese",
+                "sideloaded": true,
+                "data": [],
+                "name": "Portuguese",
+                "_id": "https://cdn.jwplayer.com/tracks/HiyiuMSt.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/ymoGEcSf.srt",
+                "label": "Spanish",
+                "sideloaded": true,
+                "data": [],
+                "name": "Spanish",
+                "_id": "https://cdn.jwplayer.com/tracks/ymoGEcSf.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "thumbnails",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/strips/02clfR48-120.vtt"
+              }
+            ],
+            "minDvrWindow": 120,
+            "image": "https://cdn.jwplayer.com/v2/media/02clfR48/poster.jpg?width=720",
+            "images": [
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/02clfR48/poster.jpg?width=320",
+                "width": 320,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/02clfR48/poster.jpg?width=480",
+                "width": 480,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/02clfR48/poster.jpg?width=640",
+                "width": 640,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/02clfR48/poster.jpg?width=720",
+                "width": 720,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/02clfR48/poster.jpg?width=1280",
+                "width": 1280,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/02clfR48/poster.jpg?width=1920",
+                "width": 1920,
+                "type": "image/jpeg"
+              }
+            ],
+            "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=02clfR48&token=REDACTED",
+            "title": "05 - 006 - System Prompt Exercise.mp4",
+            "mediaid": "02clfR48",
+            "link": null,
+            "duration": 167.134,
+            "pubdate": 1745955750,
+            "description": null,
+            "tags": "",
+            "preload": "auto",
+            "allSources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/02clfR48.m3u8?exp=1793310240&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/02clfR48-B9NwIVRu.mp4?exp=1793310240&sig=REDACTED",
+                "width": 320,
+                "height": 180,
+                "label": "180p",
+                "bitrate": 151867,
+                "framerate": 30,
+                "filesize": 3170243,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/02clfR48-muagBOKI.mp4?exp=1793310240&sig=REDACTED",
+                "width": 480,
+                "height": 270,
+                "label": "270p",
+                "bitrate": 181396,
+                "framerate": 30,
+                "filesize": 3786646,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/02clfR48-4Xe8IV8X.mp4?exp=1793310240&sig=REDACTED",
+                "width": 720,
+                "height": 406,
+                "label": "406p",
+                "bitrate": 211051,
+                "framerate": 30,
+                "filesize": 4405701,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/02clfR48-m7ew0xq8.mp4?exp=1793310240&sig=REDACTED",
+                "width": 1280,
+                "height": 720,
+                "label": "720p",
+                "bitrate": 310814,
+                "framerate": 30,
+                "filesize": 6488259,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/02clfR48-eNgUZBQ2.m4a?exp=1793310240&sig=REDACTED",
+                "label": "Audio",
+                "bitrate": 113536,
+                "filesize": 2370084,
+                "mimeType": "audio/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/02clfR48-hFUVmOoC.mp4?exp=1793310240&sig=REDACTED",
+                "width": 1920,
+                "height": 1080,
+                "label": "1080p",
+                "bitrate": 445474,
+                "framerate": 30,
+                "filesize": 9299287,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              }
+            ],
+            "file": "https://cdn.jwplayer.com/manifests/02clfR48.m3u8?exp=1793310240&sig=REDACTED",
+            "feedData": {},
+            "chapters": {
+              "defaultLanguage": "en-US",
+              "timestamps": []
+            },
+            "label": "https://cdn.jwplayer.com/manifests/02clfR48.m3u8?exp=1793310240&sig=REDACTED",
+            "progressTracker": {
+              "10": false,
+              "25": false,
+              "50": false,
+              "75": false
+            }
+          }
+        ],
+        "captions": [
+          {
+            "id": "off",
+            "label": "Off"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/LzzHmA5i.srt",
+            "label": "English"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/cgouGJm8.srt",
+            "label": "French"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/PVZ6TLNc.srt",
+            "label": "German"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/kRLbkuDA.srt",
+            "label": "Hindi"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/dHKuD2YL.srt",
+            "label": "Japanese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/QYKFQVOY.srt",
+            "label": "Korean"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/HiyiuMSt.srt",
+            "label": "Portuguese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/ymoGEcSf.srt",
+            "label": "Spanish"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "blob:https://anthropic-partners.skilljar.com/53922e56-2cf6-496c-9845-251b4108d3e0",
+        "tracks": [],
+        "sources": []
+      }
+    ],
+    "iframes": []
+  },
+  "captionUrl": "https://cdn.jwplayer.com/tracks/LzzHmA5i.srt",
+  "rawCaptions": "1\n00:00:00,000 --> 00:00:02,670\nLet's try going through an exercise around system prompts very\n\n2\n00:00:02,670 --> 00:00:03,160\nquickly.\n\n3\n00:00:03,160 --> 00:00:06,240\nSo in this exercise, I'd like you to write out some code like what\n\n4\n00:00:06,240 --> 00:00:07,280\nyou see right here.\n\n5\n00:00:07,280 --> 00:00:11,220\nI've created a list of messages and I added in a user message of\n\n6\n00:00:11,220 --> 00:00:12,000\nright a function\n\n7\n00:00:12,000 --> 00:00:14,440\nthat checks a string for duplicate characters.\n\n8\n00:00:14,440 --> 00:00:17,560\nI then get some text out of that and then print the text out.\n\n9\n00:00:17,560 --> 00:00:21,450\nNow, with this starting prompt, I end up getting a lot of output back.\n\n10\n00:00:21,450 --> 00:00:21,680\n.\n\n11\n00:00:21,680 --> 00:00:24,320\nSo here's the result that I personally got.\n\n12\n00:00:24,320 --> 00:00:26,920\nYou can see that there is a little bit of preamble up here.\n\n13\n00:00:27,120 --> 00:00:30,840\nI kind of explained the solution and there's a ton of comments inside\n\n14\n00:00:30,840 --> 00:00:31,400\nthe code.\n\n15\n00:00:31,400 --> 00:00:36,000\nAnd then finally, some closing statements around the code that was\n\n16\n00:00:36,000 --> 00:00:36,000\nwritten.\n\n17\n00:00:36,000 --> 00:00:40,000\nNow, this is a lot of response here for a rather simple function.\n\n18\n00:00:40,000 --> 00:00:43,920\nSo I want to somehow get a much more concise answer.\n\n19\n00:00:43,920 --> 00:00:47,310\nOne way that we can get a more concise answer will be to adjust the\n\n20\n00:00:47,310 --> 00:00:47,520\nuser\n\n21\n00:00:47,520 --> 00:00:50,320\nmessage and add in a ton of different requirements.\n\n22\n00:00:50,320 --> 00:00:53,800\nSo for example, in the user message, we could say, do not add in any\n\n23\n00:00:53,800 --> 00:00:54,480\ncomments or\n\n24\n00:00:54,680 --> 00:00:57,760\nanything like that, respond just with some code, et cetera.\n\n25\n00:00:57,760 --> 00:01:02,010\nOr alternatively, a better way we could get a more concise answer\n\n26\n00:01:02,010 --> 00:01:02,560\nwould be to add\n\n27\n00:01:02,560 --> 00:01:08,040\nin a very short system prompt that assigns a role to Claude.\n\n28\n00:01:08,040 --> 00:01:12,310\nSo in this exercise, I would like you to take the code you see right\n\n29\n00:01:12,310 --> 00:01:13,120\nhere and then\n\n30\n00:01:13,120 --> 00:01:16,920\njust add in a system prompt to the chat function and see if you can\n\n31\n00:01:16,920 --> 00:01:17,520\nget a result\n\n32\n00:01:17,520 --> 00:01:21,820\nback that has none of the header text or the footer, no comments or\n\n33\n00:01:21,820 --> 00:01:22,480\nanything like\n\n34\n00:01:22,680 --> 00:01:25,880\nthat, besides maybe a general function comment, like the one right\n\n35\n00:01:25,880 --> 00:01:26,320\nhere, that's\n\n36\n00:01:26,320 --> 00:01:29,560\ntotally fine. But other than that, I want really just the code and\n\n37\n00:01:29,560 --> 00:01:30,720\nnothing else.\n\n38\n00:01:30,720 --> 00:01:33,800\nSo I would encourage you to pause this video right now and go ahead\n\n39\n00:01:33,800 --> 00:01:34,080\nand give\n\n40\n00:01:34,080 --> 00:01:35,720\nthis exercise a shot.\n\n41\n00:01:35,720 --> 00:01:38,340\nOtherwise, if you want to stick around, I'm going to go through a\n\n42\n00:01:38,340 --> 00:01:39,360\nsolution right\n\n43\n00:01:39,360 --> 00:01:42,720\naway. So here's how you would solve this problem.\n\n44\n00:01:42,720 --> 00:01:46,720\nNow I'm going to add in a system prompt to our chat function call.\n\n45\n00:01:46,720 --> 00:01:49,970\nAnd in this case, I'm going to put in a system prompt, something\n\n46\n00:01:49,970 --> 00:01:50,680\nreally simple,\n\n47\n00:01:50,880 --> 00:01:54,450\na role that kind of implies to Claude that it should write some very\n\n48\n00:01:54,450 --> 00:01:55,360\nconcise code.\n\n49\n00:01:55,360 --> 00:02:00,330\nSo I'm going to put in a system prompt of you are a Python engineer\n\n50\n00:02:00,330 --> 00:02:01,320\nwho writes\n\n51\n00:02:01,320 --> 00:02:03,440\nvery concise code.\n\n52\n00:02:03,440 --> 00:02:06,360\nAnd that's probably going to be enough to get all those extra\n\n53\n00:02:06,360 --> 00:02:07,560\ncomments removed.\n\n54\n00:02:07,560 --> 00:02:11,760\nSo I'm going to go ahead and run this and we'll see what we get here.\n\n55\n00:02:11,760 --> 00:02:16,380\nAnd yeah, I'd say that's probably very much what we're going for here.\n\n56\n00:02:16,380 --> 00:02:16,520\n.\n\n57\n00:02:16,520 --> 00:02:18,720\nSo it's going to check and see if we have any duplicate characters\n\n58\n00:02:18,720 --> 00:02:19,440\ninside the string.\n\n59\n00:02:19,640 --> 00:02:21,240\nThat nice function comment right there.\n\n60\n00:02:21,240 --> 00:02:24,520\nBut besides that, we don't get any preamble header or footer\n\n61\n00:02:24,520 --> 00:02:25,120\nexplaining what's\n\n62\n00:02:25,120 --> 00:02:27,280\ngoing on and no additional comments.\n\n63\n00:02:27,280 --> 00:02:31,160\nSo I would say that adding in the system prompt was a lot easier than\n\n64\n00:02:31,160 --> 00:02:31,640\ntrying to\n\n65\n00:02:31,640 --> 00:02:35,880\nadjust our prompt a ton or specifically the user message and add in a\n\n66\n00:02:35,880 --> 00:02:36,640\nton of all\n\n67\n00:02:36,640 --> 00:02:37,880\nthose additional requirements.\n\n68\n00:02:37,880 --> 00:02:40,480\nSo let's say this is a pretty good solution.\n\n69\n00:02:40,480 --> 00:02:43,540\nNow, once again, if you had any trouble with this exercise, do not\n\n70\n00:02:43,540 --> 00:02:44,040\nsweat it.\n\n71\n00:02:44,040 --> 00:02:47,110\nWe're going to continue to have a lot of exercises throughout this\n\n72\n00:02:47,110 --> 00:02:48,040\ncourse.",
+  "transcriptText": "Let's try going through an exercise around system prompts very\n\nquickly.\n\nSo in this exercise, I'd like you to write out some code like what\n\nyou see right here.\n\nI've created a list of messages and I added in a user message of\n\nright a function\n\nthat checks a string for duplicate characters.\n\nI then get some text out of that and then print the text out.\n\nNow, with this starting prompt, I end up getting a lot of output back.\n\n.\n\nSo here's the result that I personally got.\n\nYou can see that there is a little bit of preamble up here.\n\nI kind of explained the solution and there's a ton of comments inside\n\nthe code.\n\nAnd then finally, some closing statements around the code that was\n\nwritten.\n\nNow, this is a lot of response here for a rather simple function.\n\nSo I want to somehow get a much more concise answer.\n\nOne way that we can get a more concise answer will be to adjust the\n\nuser\n\nmessage and add in a ton of different requirements.\n\nSo for example, in the user message, we could say, do not add in any\n\ncomments or\n\nanything like that, respond just with some code, et cetera.\n\nOr alternatively, a better way we could get a more concise answer\n\nwould be to add\n\nin a very short system prompt that assigns a role to Claude.\n\nSo in this exercise, I would like you to take the code you see right\n\nhere and then\n\njust add in a system prompt to the chat function and see if you can\n\nget a result\n\nback that has none of the header text or the footer, no comments or\n\nanything like\n\nthat, besides maybe a general function comment, like the one right\n\nhere, that's\n\ntotally fine. But other than that, I want really just the code and\n\nnothing else.\n\nSo I would encourage you to pause this video right now and go ahead\n\nand give\n\nthis exercise a shot.\n\nOtherwise, if you want to stick around, I'm going to go through a\n\nsolution right\n\naway. So here's how you would solve this problem.\n\nNow I'm going to add in a system prompt to our chat function call.\n\nAnd in this case, I'm going to put in a system prompt, something\n\nreally simple,\n\na role that kind of implies to Claude that it should write some very\n\nconcise code.\n\nSo I'm going to put in a system prompt of you are a Python engineer\n\nwho writes\n\nvery concise code.\n\nAnd that's probably going to be enough to get all those extra\n\ncomments removed.\n\nSo I'm going to go ahead and run this and we'll see what we get here.\n\nAnd yeah, I'd say that's probably very much what we're going for here.\n\n.\n\nSo it's going to check and see if we have any duplicate characters\n\ninside the string.\n\nThat nice function comment right there.\n\nBut besides that, we don't get any preamble header or footer\n\nexplaining what's\n\ngoing on and no additional comments.\n\nSo I would say that adding in the system prompt was a lot easier than\n\ntrying to\n\nadjust our prompt a ton or specifically the user message and add in a\n\nton of all\n\nthose additional requirements.\n\nSo let's say this is a pretty good solution.\n\nNow, once again, if you had any trouble with this exercise, do not\n\nsweat it.\n\nWe're going to continue to have a lot of exercises throughout this\n\ncourse.",
+  "downloads": []
+}

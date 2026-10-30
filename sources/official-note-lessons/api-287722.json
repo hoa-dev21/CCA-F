@@ -1,0 +1,13 @@
+{
+  "course": "api",
+  "id": "287722",
+  "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287722",
+  "title": "Overview of Claude Models",
+  "source": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api",
+  "sourceType": "official public course assistant notes; not video transcript",
+  "key": "1p",
+  "collectedAt": "2026-10-29T18:35:29.698Z",
+  "text": "Claude has three model families optimized for different priorities:\n\nOpus = highest intelligence model for complex, multi-step tasks requiring deep reasoning and planning. Trade-off: higher cost and latency.\n\nSonnet = balanced model with good intelligence, speed, and cost efficiency. Strong coding abilities and precise code editing. Best for most practical use cases.\n\nHaiku = fastest model optimized for speed and cost efficiency. No reasoning capabilities like Opus/Sonnet. Best for real-time user interactions and high-volume processing.\n\nSelection framework: Intelligence priority → Opus. Speed priority → Haiku. Balanced requirements → Sonnet.\n\nCommon approach = use multiple models in same application based on specific task requirements rather than single model selection.\n\nAll models share core capabilities: text generation, coding, image analysis. Main difference is optimization focus.",
+  "reviewNote": "Ghi chú giới thiệu Opus/Sonnet/Haiku theo đánh đổi intelligence/speed/cost và phân model theo bước. Các câu về thinking hoặc làm việc nhiều giờ là mô tả theo thời điểm, không là giới hạn/bảo đảm hiện hành; giữ nguyên tắc chọn qua eval.",
+  "lesson": "BEDROCK-02-model-tradeoffs.md"
+}

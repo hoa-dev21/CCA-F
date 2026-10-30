@@ -1,0 +1,11 @@
+const fs=require('fs');
+const rows=[
+ ['289201','API-21-intro-mcp.md','MCP chuẩn hóa kết nối và capability discovery, không đồng nghĩa tool use hoặc bảo đảm server đáng tin. Host có MCP client kết nối server bên ngoài, vẫn chịu trách nhiệm quyền, chọn tools và xử lý results.'],
+ ['289204','API-22-mcp-clients.md','Mạch list_tools -> model tool_use -> call_tool -> result -> model. Stdio và HTTP là các lựa chọn cần theo specification/implementation; WebSocket trong lời kể không được mặc định là transport tiêu chuẩn có sẵn ở mọi client.'],
+ ['289199','API-65-mcp-project-setup.md','Bài Vertex chuyển sang dự án CLI dùng .env ANTHROPIC_API_KEY và tài liệu in-memory. Đây là cấu hình dự án mẫu trực tiếp, không chứng minh Vertex dùng key Anthropic. Thay backend phải chỉnh client/xác thực tương ứng; filename PDF/xlsx không chứng minh parser file nhị phân thực.'],
+ ['289235','API-23-define-mcp-tools.md','FastMCP decorator và typed arguments sinh schema; vẫn cần domain validation/authorization. edit_document dùng str.replace có thể thay mọi lần khớp, không báo khi old_str vắng; thêm guard nếu contract đòi một lần khớp duy nhất. Mẫu add_ints thiếu kiểu tham số không nên coi là schema đầy đủ đã kiểm thử.'],
+ ['289207','API-24-mcp-inspector.md','Inspector kiểm tra discovery, arguments, execution và đọc lại sau edit. Giao diện/port thay đổi; test trực tiếp không chứng minh model chọn đúng tool, cần end-to-end cả lỗi/đầu vào không hợp lệ.'],
+ ['289206','API-25-mcp-client-implementation.md','Wrapper quản lý ClientSession/cleanup, list_tools và call_tool; host nối model với MCP. Có thể làm cả client/server khi kiến trúc cần, bài nói thường làm một bên chỉ là bối cảnh giảng dạy. Cần chuyển schema/results đúng contract model thay vì trộn inputSchema/input_schema.']
+];
+for(const [id,file,note]of rows){const r=JSON.parse(fs.readFileSync('sources/vertex-lessons/'+id+'.json','utf8')),p='lessons/'+file,t=fs.readFileSync(p,'utf8');if(!t.includes(r.url))fs.writeFileSync(p,t+'\n## Đối chiếu Vertex\n\nĐã đọc ['+r.lesson+']('+r.url+'), sources/vertex-lessons/'+id+'.json. '+note+' Dùng chung câu hỏi khái niệm.\n');}
+fs.writeFileSync('sources/vertex-mcp-start-mappings.json',JSON.stringify(rows.map(([id,lesson,note])=>({id,lesson,note,review:'full_collected_text_read'})),null,2));console.log('Mapped '+rows.length);

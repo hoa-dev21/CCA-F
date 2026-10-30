@@ -1,0 +1,56 @@
+[
+  {
+    "id": "296689",
+    "source": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296689",
+    "lesson": "API-21-intro-mcp.md",
+    "status": "concepts_reviewed_shared_summary"
+  },
+  {
+    "id": "296690",
+    "source": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296690",
+    "lesson": "API-22-mcp-clients.md",
+    "status": "concepts_reviewed_shared_summary"
+  },
+  {
+    "id": "296697",
+    "source": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296697",
+    "lesson": "API-23-define-mcp-tools.md",
+    "status": "concepts_reviewed_shared_summary"
+  },
+  {
+    "id": "296693",
+    "source": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296693",
+    "lesson": "API-24-mcp-inspector.md",
+    "status": "concepts_reviewed_shared_summary"
+  },
+  {
+    "id": "296696",
+    "source": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296696",
+    "lesson": "API-25-mcp-client-implementation.md",
+    "status": "concepts_reviewed_shared_summary"
+  },
+  {
+    "id": "296699",
+    "source": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296699",
+    "lesson": "API-26-resources.md",
+    "status": "concepts_reviewed_shared_summary"
+  },
+  {
+    "id": "296695",
+    "source": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296695",
+    "lesson": "API-27-access-resources.md",
+    "status": "concepts_reviewed_shared_summary"
+  },
+  {
+    "id": "296698",
+    "source": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296698",
+    "lesson": "API-28-define-prompts.md",
+    "status": "concepts_reviewed_shared_summary"
+  },
+  {
+    "id": "296692",
+    "source": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296692",
+    "lesson": "API-29-client-prompts.md",
+    "status": "concepts_reviewed_shared_summary"
+  }
+]

@@ -1,0 +1,14 @@
+const fs=require('fs');
+const rows=[
+ ['289172','API-01-tool-use.md','Tool cung cấp dữ liệu ngoài qua vòng request/executor/result. Dữ liệu thời gian thực vẫn có thể cũ hoặc sai; model không tự thực thi Python chỉ nhờ khai báo tool.'],
+ ['289175','API-41-reminder-project.md','Dự án chia lấy thời gian, cộng thời lượng và tạo reminder. Phải xét timezone/độ mơ hồ; lời giới thiệu nói scheduled notification nhưng implementation ở289185 chỉ là placeholder print. Không khẳng định đã hẹn nhắc thật.'],
+ ['289176','API-42-tool-functions.md','Tên/arguments rõ, validate đầu vào, lỗi có thể sửa. datetime.now() trong mẫu dùng giờ môi trường và chưa gắn timezone; tự động thực thi là trách nhiệm host, không của model. Không lộ lỗi/secrets nhạy cảm nguyên văn.'],
+ ['289174','API-15-tool-schemas.md','Mẫu Messages dùng name/description/input_schema, khác Converse toolSpec/inputSchema. ToolParam hỗ trợ kiểm tra kiểu khi phát triển, không thay validation runtime. Schema sinh bằng model cần review; độ dài3–4 câu chỉ là gợi ý, trọng tâm là ranh giới và khi nào dùng.'],
+ ['289179','API-16-message-blocks.md','Giữ toàn bộ assistant response.content gồm text/tool_use và ID/input/name. Không giả định một text block hoặc vị trí cố định cho tool_use.'],
+ ['289184','API-17-tool-results.md','Tool result ở user content, type tool_result, tool_use_id khớp request, content và is_error. Mẫu response.content[1] chỉ minh họa; cần duyệt theo type và trả đủ kết quả cho mọi request trong lượt. Không trộn is_error với MCP isError/Converse status.'],
+ ['289178','API-18-tools-multi-turn.md','Ví dụ lấy ngày rồi cộng103ngày thể hiện dependency phải tuần tự. Wrapper giữ full blocks/message và tools; text_from_message chỉ dành hiển thị. Không dùng mutable default list trong mã production sao chép từ video.'],
+ ['289182','API-19-implement-loop.md','Duyệt mọi tool_use, route tool theo danh sách được phép, serialize result và báo is_error khi lỗi. stop_reason khác tool_use chưa đủ kết luận thành công: max_tokens/refusal/error cần xử lý riêng. Vòng while mẫu cần iteration/time limits.'],
+ ['289185','API-20-multiple-tools.md','Thêm tool bằng schema+dispatcher+implementation. set_reminder được bài xác nhận là placeholder print, không đặt reminder hệ thống. Chuỗi tool phụ thuộc kết quả trước không thể chạy song song mù quáng.']
+];
+for(const [id,file,note]of rows){const r=JSON.parse(fs.readFileSync('sources/vertex-lessons/'+id+'.json','utf8')),p='lessons/'+file,t=fs.readFileSync(p,'utf8');if(!t.includes(r.url))fs.writeFileSync(p,t+'\n## Đối chiếu Vertex\n\nĐã đọc ['+r.lesson+']('+r.url+'), sources/vertex-lessons/'+id+'.json. '+note+' Dùng chung câu hỏi khái niệm.\n');}
+fs.writeFileSync('sources/vertex-tool-mappings.json',JSON.stringify(rows.map(([id,lesson,note])=>({id,lesson,note,review:'full_collected_text_read'})),null,2));console.log('Mapped '+rows.length);

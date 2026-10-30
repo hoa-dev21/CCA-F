@@ -1,0 +1,13 @@
+{
+  "course": "vertex",
+  "id": "289146",
+  "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289146",
+  "title": "Overview of Claude Models",
+  "source": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api",
+  "sourceType": "official public course assistant notes; not video transcript",
+  "key": "vertex",
+  "collectedAt": "2026-10-29T18:35:29.698Z",
+  "text": "Claude models = 3 families optimized for different priorities\n\n**Opus** = highest intelligence model. For complex multi-step tasks requiring deep reasoning and planning. Can work independently for hours. Supports reasoning capability. Trade-off = higher cost + moderate latency.\n\n**Sonnet** = balanced model. Good intelligence + speed + cost efficiency. Strong coding abilities, precise code edits without breaking functionality. Fast text generation. Sweet spot for most use cases.\n\n**Haiku** = fastest model. Optimized for speed + cost efficiency. No reasoning capabilities. Best for real-time user interactions + high-volume processing.\n\n**Selection framework**: Intelligence priority → Opus. Speed priority → Haiku. Balanced needs → Sonnet.\n\n**Key insight**: Teams often use multiple models in same application. Haiku for user interactions, Sonnet for business logic, Opus for complex reasoning tasks.\n\nAll models share core capabilities = text generation, coding, image analysis.",
+  "reviewNote": "Ghi chú Vertex cũng phân model theo yêu cầu và gợi ý dùng nhiều model. Không học thuộc tuyên bố Haiku không có reasoning như quy tắc hiện hành cho mọi phiên bản. Chọn theo số đo của tác vụ và hỗ trợ của project.",
+  "lesson": "BEDROCK-02-model-tradeoffs.md"
+}

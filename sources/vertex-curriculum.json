@@ -1,0 +1,374 @@
+[
+  {
+    "text": "Welcome to the course",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289145"
+  },
+  {
+    "text": "Overview of Claude models",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289146"
+  },
+  {
+    "text": "Accessing the API",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289151"
+  },
+  {
+    "text": "Vertex AI Setup",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/307525"
+  },
+  {
+    "text": "Making a request",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289155"
+  },
+  {
+    "text": "Multi-turn conversations",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289156"
+  },
+  {
+    "text": "Chat exercise",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289150"
+  },
+  {
+    "text": "System prompts",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289153"
+  },
+  {
+    "text": "System prompts exercise",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289157"
+  },
+  {
+    "text": "Temperature",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289154"
+  },
+  {
+    "text": "Course satisfaction survey",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/297285"
+  },
+  {
+    "text": "Response streaming",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289162"
+  },
+  {
+    "text": "Controlling model output",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289160"
+  },
+  {
+    "text": "Structured data",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289158"
+  },
+  {
+    "text": "Structured data exercise",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289152"
+  },
+  {
+    "text": "Quiz on accessing Claude with the API",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289281"
+  },
+  {
+    "text": "Prompt evaluation",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289159"
+  },
+  {
+    "text": "A typical eval workflow",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289161"
+  },
+  {
+    "text": "Generating test datasets",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289163"
+  },
+  {
+    "text": "Running the eval",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289166"
+  },
+  {
+    "text": "Model based grading",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289168"
+  },
+  {
+    "text": "Code based grading",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289167"
+  },
+  {
+    "text": "Exercise on prompt evals",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289164"
+  },
+  {
+    "text": "Quiz on prompt evaluation",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289279"
+  },
+  {
+    "text": "Prompt engineering",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289169"
+  },
+  {
+    "text": "Being clear and direct",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289170"
+  },
+  {
+    "text": "Being specific",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289165"
+  },
+  {
+    "text": "Structure with XML tags",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289171"
+  },
+  {
+    "text": "Providing examples",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289177"
+  },
+  {
+    "text": "Exercise on prompting",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289173"
+  },
+  {
+    "text": "Quiz on prompt engineering techniques",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289278"
+  },
+  {
+    "text": "Introducing tool use",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289172"
+  },
+  {
+    "text": "Project overview",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289175"
+  },
+  {
+    "text": "Tool functions",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289176"
+  },
+  {
+    "text": "Tool schemas",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289174"
+  },
+  {
+    "text": "Handling message blocks",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289179"
+  },
+  {
+    "text": "Sending tool results",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289184"
+  },
+  {
+    "text": "Multi-turn conversations with tools",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289178"
+  },
+  {
+    "text": "Implementing multiple turns",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289182"
+  },
+  {
+    "text": "Using multiple tools",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289185"
+  },
+  {
+    "text": "The batch tool",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289189"
+  },
+  {
+    "text": "Tools for structured data",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289181"
+  },
+  {
+    "text": "The text edit tool",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289180"
+  },
+  {
+    "text": "The web search tool",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289183"
+  },
+  {
+    "text": "Quiz on tool use with Claude",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289280"
+  },
+  {
+    "text": "Introducing Retrieval Augmented Generation",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289191"
+  },
+  {
+    "text": "Text chunking strategies",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289208"
+  },
+  {
+    "text": "Text embeddings",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289188"
+  },
+  {
+    "text": "The full RAG flow",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289190"
+  },
+  {
+    "text": "Implementing the RAG flow",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289186"
+  },
+  {
+    "text": "BM25 lexical search",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289195"
+  },
+  {
+    "text": "A Multi-index RAG pipeline",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289193"
+  },
+  {
+    "text": "Reranking results",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289192"
+  },
+  {
+    "text": "Contextual retrieval",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289187"
+  },
+  {
+    "text": "Quiz on Retrieval Augmented Generation",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289277"
+  },
+  {
+    "text": "Extended thinking",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289197"
+  },
+  {
+    "text": "Image support",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289203"
+  },
+  {
+    "text": "PDF support",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289198"
+  },
+  {
+    "text": "Citations",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289202"
+  },
+  {
+    "text": "Prompt caching",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289196"
+  },
+  {
+    "text": "Rules of prompt caching",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289194"
+  },
+  {
+    "text": "Prompt caching in action",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289200"
+  },
+  {
+    "text": "Quiz on features of Claude",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289275"
+  },
+  {
+    "text": "Introducing MCP",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289201"
+  },
+  {
+    "text": "MCP clients",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289204"
+  },
+  {
+    "text": "Project setup",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289199"
+  },
+  {
+    "text": "Defining tools with MCP",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289235"
+  },
+  {
+    "text": "The server inspector",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289207"
+  },
+  {
+    "text": "Implementing a client",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289206"
+  },
+  {
+    "text": "Defining resources",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289248"
+  },
+  {
+    "text": "Accessing resources",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289247"
+  },
+  {
+    "text": "Defining prompts",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289249"
+  },
+  {
+    "text": "Prompts in the client",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289209"
+  },
+  {
+    "text": "MCP review",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289205"
+  },
+  {
+    "text": "Quiz on Model Context Protocol",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289276"
+  },
+  {
+    "text": "Anthropic apps",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289230"
+  },
+  {
+    "text": "Claude Code setup",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289232"
+  },
+  {
+    "text": "Claude Code in action",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289246"
+  },
+  {
+    "text": "Enhancements with MCP servers",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289231"
+  },
+  {
+    "text": "Parallelizing Claude Code",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289241"
+  },
+  {
+    "text": "Automated debugging",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289238"
+  },
+  {
+    "text": "Computer use",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289233"
+  },
+  {
+    "text": "How computer use works",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289234"
+  },
+  {
+    "text": "Agents and workflows",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289244"
+  },
+  {
+    "text": "Parallelization workflows",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289236"
+  },
+  {
+    "text": "Chaining workflows",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289239"
+  },
+  {
+    "text": "Routing workflows",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289242"
+  },
+  {
+    "text": "Agents and tools",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289243"
+  },
+  {
+    "text": "Environment inspection",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289237"
+  },
+  {
+    "text": "Workflows vs agents",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289245"
+  },
+  {
+    "text": "Quiz on agents and workflows",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289274"
+  },
+  {
+    "text": "Final assessment quiz",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/290880"
+  },
+  {
+    "text": "Course Wrap Up",
+    "href": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289240"
+  }
+]

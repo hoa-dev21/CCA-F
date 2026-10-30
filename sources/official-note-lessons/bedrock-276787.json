@@ -1,0 +1,13 @@
+{
+  "course": "bedrock",
+  "id": "276787",
+  "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276787",
+  "title": "Prompt Caching in Action",
+  "source": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api",
+  "sourceType": "official public course assistant notes; not video transcript",
+  "key": "bedrock",
+  "collectedAt": "2026-10-29T18:35:29.698Z",
+  "text": "Prompt caching = storing processed prompt parts to reuse in subsequent requests, reducing cost and latency\n\nImplementation:\n- Add cache_point with type=\"default\" to system prompt parts\n- Concatenate cache_point to tools list \n- Include usage field in response to monitor cache activity\n\nCache behavior:\n- First request = cache_write (stores processed tokens)\n- Subsequent requests = cache_read (retrieves cached tokens)\n- Cache expires after 5 minutes of inactivity\n- Changing cached content triggers new cache_write\n\nUsage monitoring:\n- cache_write_input_tokens = tokens stored to cache\n- cache_read_input_tokens = tokens retrieved from cache\n- Monitor usage field to verify caching effectiveness\n\nBest practices:\n- Cache system prompts (rarely change between requests)\n- Cache tool schemas (static definitions, often >1024 tokens)\n- Minimum 1024 tokens required for caching\n- Cache survives text changes below cache_point\n- Cache invalidated by content changes above cache_point\n\nBenefits = reduced generation cost + faster response times for repeated prompt components",
+  "reviewNote": "Nguồn ghi chú nêu cache system/tools, theo dõi cache write/read usage và nội dung ổn định trước breakpoint. Các tên cache_point, cache_write_input_tokens trong ghi chú không tự là field Converse hiện hành; đối chiếu contract SDK/provider trước triển khai. TTL5phút/ngưỡng1024 là số của nguồn, không bảo đảm phổ quát.",
+  "lesson": "API-56-cache-observation.md"
+}

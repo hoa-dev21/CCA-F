@@ -1,0 +1,212 @@
+[
+  {
+    "title": "What is Claude?",
+    "url": "https://anthropic-partners.skilljar.com/claude-101/383389",
+    "source": "captured",
+    "lesson": "CLAUDE101-01-overview.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/claude101-lessons/383389.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Your first conversation with Claude",
+    "url": "https://anthropic-partners.skilljar.com/claude-101/383390",
+    "source": "captured",
+    "lesson": "CLAUDE101-02-conversation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/claude101-lessons/383390.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Getting better results",
+    "url": "https://anthropic-partners.skilljar.com/claude-101/383392",
+    "source": "captured",
+    "lesson": "CLAUDE101-03-better-results.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/claude101-lessons/383392.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "How you'll work with Claude on your desktop",
+    "url": "https://anthropic-partners.skilljar.com/claude-101/440908",
+    "source": "captured",
+    "lesson": "CLAUDE101-11-desktop.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/claude101-lessons/440908.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Introduction to projects",
+    "url": "https://anthropic-partners.skilljar.com/claude-101/383393",
+    "source": "captured",
+    "lesson": "CLAUDE101-04-projects.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/claude101-lessons/383393.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Creating with artifacts",
+    "url": "https://anthropic-partners.skilljar.com/claude-101/383394",
+    "source": "captured",
+    "lesson": "CLAUDE101-12-artifacts.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/claude101-lessons/383394.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Working with skills",
+    "url": "https://anthropic-partners.skilljar.com/claude-101/383396",
+    "source": "captured",
+    "lesson": "CLAUDE101-05-skills.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/claude101-lessons/383396.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Connecting your tools",
+    "url": "https://anthropic-partners.skilljar.com/claude-101/383397",
+    "source": "captured",
+    "lesson": "CLAUDE101-06-connectors.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/claude101-lessons/383397.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Enterprise search",
+    "url": "https://anthropic-partners.skilljar.com/claude-101/383398",
+    "source": "captured",
+    "lesson": "CLAUDE101-07-enterprise-search.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/claude101-lessons/383398.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Research for deep dives",
+    "url": "https://anthropic-partners.skilljar.com/claude-101/383399",
+    "source": "captured",
+    "lesson": "CLAUDE101-08-research.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/claude101-lessons/383399.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Claude in action: use-cases by role",
+    "url": "https://anthropic-partners.skilljar.com/claude-101/383401",
+    "source": "captured",
+    "lesson": "CLAUDE101-09-roles.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/claude101-lessons/383401.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Other ways to work with Claude",
+    "url": "https://anthropic-partners.skilljar.com/claude-101/383402",
+    "source": "captured",
+    "lesson": "CLAUDE101-13-interfaces.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/claude101-lessons/383402.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "What's next?",
+    "url": "https://anthropic-partners.skilljar.com/claude-101/385338",
+    "source": "captured",
+    "lesson": "CLAUDE101-10-next.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/claude101-lessons/385338.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Certificate of completion",
+    "url": "https://anthropic-partners.skilljar.com/claude-101/385349",
+    "source": "captured",
+    "lesson": null,
+    "assessment": false,
+    "administrative": true,
+    "evidence": {
+      "pageText": "sources/claude101-lessons/385349.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "289189",
+    "lesson": "BEDROCK-06-batch-tool.md",
+    "note": "Mẫu Vertex cũng dùng vòng for đồng bộ, không tạo concurrency thật và không phải Message Batches API. Schema arguments khai báo object nhưng mã json.loads(invocation.arguments) đòi string: phải thống nhất contract trước chạy. Giới hạn batch, validate từng invocation, quyền và lỗi từng phần; không cho batch tự lồng vô hạn.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289181",
+    "lesson": "EXAM-05-structured-output.md",
+    "note": "Tool extraction lấy dữ liệu từ tool_use.input và dùng tool_choice chọn đúng tool khi mode hỗ trợ. Chỉ properties không làm field bắt buộc; cần required/enum/nullability theo contract và validation. Câu guaranteed reliability trong bài không chứng minh dữ liệu đúng nguồn. Không cần thực thi hành động giả nếu chỉ dùng tool làm output contract; nếu tiếp tục conversation phải giữ đúng giao thức tool results.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289180",
+    "lesson": "API-51-text-editor.md",
+    "note": "Schema editor có sẵn nhưng ứng dụng triển khai executor và giới hạn đường dẫn. Mã model-prefix/version/undo trong video phụ thuộc model; không khẳng định mọi phiên bản hỗ trợ cùng tập lệnh.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289183",
+    "lesson": "API-52-web-search.md",
+    "note": "Ví dụ server-side search có max_uses/allowed_domains và search/citation blocks. Trái với client-side editor, search được dịch vụ thực thi khi provider/model hỗ trợ. Cần kiểm tra hỗ trợ trên Vertex đang dùng; video không tự chứng minh khả dụng hiện hành. Allowed domain không bảo đảm mọi claim đúng; giữ citation và kiểm chứng nguồn.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289191",
+    "lesson": "API-43-rag-intro.md",
+    "note": "RAG thay prompt tài liệu800trang bằng các chunk được truy hồi; tiết kiệm input nhưng có nguy cơ bỏ bối cảnh liên quan. Không có chiến lược luôn tốt nhất; đánh giá trên query/tài liệu đại diện.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289208",
+    "lesson": "API-44-chunking.md",
+    "note": "So sánh size/structure/semantic và overlap. Hai vòng chunk mẫu cần bảo đảm0<=overlap<size để tiến triển; câu character-based luôn đáng tin nhất cho code không là quy tắc phổ quát. Giữ header/metadata và đo chất lượng retrieval.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289188",
+    "lesson": "API-45-embeddings.md",
+    "note": "Mẫu Vertex dùng google-genai embed_content với text-embedding-005, khác Titan trong Bedrock. Model/location trong video không được trình bày như danh mục hiện hành; khoảng[-1,1] không là đặc tính phổ quát của mọi embedding. Dùng đúng model/space và contract query/document, kiểm tra shape/dimension.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289190",
+    "lesson": "API-46-rag-flow.md",
+    "note": "Pipeline offline chunk/embed/store và online query/embed/search/prompt. Vector2chiều có trục medicine/software là mô hình minh họa, không là nhãn thực của embedding. Không tự giả định mọi API đã chuẩn hóa; query hỏi số bug nhưng nguồn chỉ nói nỗ lực không đủ để suy con số.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289186",
+    "lesson": "API-47-rag-implementation.md",
+    "note": "VectorIndex lưu embedding kèm text hoặc source ID. generate_embedding có thể trả list vectors: cần kiểm tra shape truy vấn đơn và cardinality trước zip để không bỏ chunk âm thầm. Distance0.71/0.72 không là confidence đáp án.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289195",
+    "lesson": "API-48-bm25.md",
+    "note": "ID incident hiếm cần lexical match bổ sung semantic. BM25 dùng term frequency/rarity cùng chuẩn hóa độ dài, không chỉ đếm từ. Kiểm tra tokenizer cho identifier có dấu; không bảo đảm mọi exact match được xếp đúng nếu nội dung không trả lời query.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289193",
+    "lesson": "API-49-hybrid.md",
+    "note": "Retriever hợp nhất vector/BM25 bằng reciprocal rank fusion, không cộng raw cosine/BM25 scores. k_rrf và top-k là tham số khác nhau. Mẫu list comprehension thực thi tuần tự; kiến trúc có thể song song khi host triển khai.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289192",
+    "lesson": "BEDROCK-08-reranking.md",
+    "note": "Rerank ứng viên sau hybrid theo query, trả IDs giảm output. Validate ID thuộc tập ứng viên, số lượng/không trùng và thứ tự trước lấy nội dung. Reranker không lấy lại được tài liệu đã bị retrieval bỏ; đo chi phí/latency và cải thiện thực tế.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289187",
+    "lesson": "BEDROCK-09-contextual-retrieval.md",
+    "note": "Thêm snippet bối cảnh trước index, giữ riêng phần sinh và nguồn thật. Chọn chunk đầu và lân cận là bối cảnh giảm, không bảo đảm đủ. Code prompt minh họa thiếu f-string và result.text cần khớp wrapper; không sao chép như mã đã chạy.",
+    "review": "full_collected_text_read"
+  }
+]

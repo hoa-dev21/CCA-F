@@ -1,0 +1,304 @@
+{
+  "lesson": "Exercise on prompt evals",
+  "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287738",
+  "collectedAt": "2026-10-29T18:39:31.378Z",
+  "sourceType": "English captions linked by official lesson player",
+  "media": {
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287738",
+    "players": [
+      {
+        "id": "botr_0TnV7jUw_Akyo8gQO_div",
+        "playlist": [
+          {
+            "sources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/0TnV7jUw.m3u8?exp=1793310000&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              }
+            ],
+            "tracks": [
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/8BUTCpzr.srt",
+                "label": "English",
+                "sideloaded": true,
+                "data": [],
+                "name": "English",
+                "_id": "https://cdn.jwplayer.com/tracks/8BUTCpzr.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/xKTptsKf.srt",
+                "label": "French",
+                "sideloaded": true,
+                "data": [],
+                "name": "French",
+                "_id": "https://cdn.jwplayer.com/tracks/xKTptsKf.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/2L3o7JQX.srt",
+                "label": "German",
+                "sideloaded": true,
+                "data": [],
+                "name": "German",
+                "_id": "https://cdn.jwplayer.com/tracks/2L3o7JQX.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/bQdupGTb.srt",
+                "label": "Japanese",
+                "sideloaded": true,
+                "data": [],
+                "name": "Japanese",
+                "_id": "https://cdn.jwplayer.com/tracks/bQdupGTb.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/W7nimnec.srt",
+                "label": "Korean",
+                "sideloaded": true,
+                "data": [],
+                "name": "Korean",
+                "_id": "https://cdn.jwplayer.com/tracks/W7nimnec.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/UaUbVKJU.srt",
+                "label": "Portuguese",
+                "sideloaded": true,
+                "data": [],
+                "name": "Portuguese",
+                "_id": "https://cdn.jwplayer.com/tracks/UaUbVKJU.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/ltj92vVx.srt",
+                "label": "Spanish",
+                "sideloaded": true,
+                "data": [],
+                "name": "Spanish",
+                "_id": "https://cdn.jwplayer.com/tracks/ltj92vVx.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "thumbnails",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/strips/0TnV7jUw-120.vtt"
+              }
+            ],
+            "minDvrWindow": 120,
+            "image": "https://cdn.jwplayer.com/v2/media/0TnV7jUw/poster.jpg?width=720",
+            "images": [
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/0TnV7jUw/poster.jpg?width=320",
+                "width": 320,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/0TnV7jUw/poster.jpg?width=480",
+                "width": 480,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/0TnV7jUw/poster.jpg?width=640",
+                "width": 640,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/0TnV7jUw/poster.jpg?width=720",
+                "width": 720,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/0TnV7jUw/poster.jpg?width=1280",
+                "width": 1280,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/0TnV7jUw/poster.jpg?width=1920",
+                "width": 1920,
+                "type": "image/jpeg"
+              }
+            ],
+            "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=0TnV7jUw&token=REDACTED",
+            "title": "04 - 007 - Exercise on Prompt Evals.mp4",
+            "mediaid": "0TnV7jUw",
+            "link": null,
+            "duration": 284.367,
+            "pubdate": 1748378319,
+            "description": null,
+            "tags": "",
+            "preload": "auto",
+            "allSources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/0TnV7jUw.m3u8?exp=1793310000&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/0TnV7jUw-B9NwIVRu.mp4?exp=1793310000&sig=REDACTED",
+                "width": 320,
+                "height": 180,
+                "label": "180p",
+                "bitrate": 160288,
+                "framerate": 30,
+                "filesize": 5690231,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/0TnV7jUw-muagBOKI.mp4?exp=1793310000&sig=REDACTED",
+                "width": 480,
+                "height": 270,
+                "label": "270p",
+                "bitrate": 194393,
+                "framerate": 30,
+                "filesize": 6900957,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/0TnV7jUw-4Xe8IV8X.mp4?exp=1793310000&sig=REDACTED",
+                "width": 720,
+                "height": 406,
+                "label": "406p",
+                "bitrate": 238718,
+                "framerate": 30,
+                "filesize": 8474521,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/0TnV7jUw-m7ew0xq8.mp4?exp=1793310000&sig=REDACTED",
+                "width": 1280,
+                "height": 720,
+                "label": "720p",
+                "bitrate": 387205,
+                "framerate": 30,
+                "filesize": 13745793,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/0TnV7jUw-eNgUZBQ2.m4a?exp=1793310000&sig=REDACTED",
+                "label": "Audio",
+                "bitrate": 113567,
+                "filesize": 4031661,
+                "mimeType": "audio/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/0TnV7jUw-hFUVmOoC.mp4?exp=1793310000&sig=REDACTED",
+                "width": 1920,
+                "height": 1080,
+                "label": "1080p",
+                "bitrate": 613462,
+                "framerate": 30,
+                "filesize": 21777902,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              }
+            ],
+            "file": "https://cdn.jwplayer.com/manifests/0TnV7jUw.m3u8?exp=1793310000&sig=REDACTED",
+            "feedData": {},
+            "chapters": {
+              "defaultLanguage": "en-US",
+              "timestamps": []
+            },
+            "label": "https://cdn.jwplayer.com/manifests/0TnV7jUw.m3u8?exp=1793310000&sig=REDACTED",
+            "progressTracker": {
+              "10": false,
+              "25": false,
+              "50": false,
+              "75": false
+            }
+          }
+        ],
+        "captions": [
+          {
+            "id": "off",
+            "label": "Off"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/8BUTCpzr.srt",
+            "label": "English"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/xKTptsKf.srt",
+            "label": "French"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/2L3o7JQX.srt",
+            "label": "German"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/bQdupGTb.srt",
+            "label": "Japanese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/W7nimnec.srt",
+            "label": "Korean"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/UaUbVKJU.srt",
+            "label": "Portuguese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/ltj92vVx.srt",
+            "label": "Spanish"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "blob:https://anthropic-partners.skilljar.com/e41accb4-b47c-40f3-b015-e501861ffbe5",
+        "tracks": [],
+        "sources": []
+      }
+    ],
+    "iframes": []
+  },
+  "captionUrl": "https://cdn.jwplayer.com/tracks/8BUTCpzr.srt",
+  "rawCaptions": "1\n00:00:00,031 --> 00:00:02,575\nLet's try out an exercise to improve our prompt\n\n2\n00:00:02,595 --> 00:00:05,158\nevaluation workflow. So here's the task\n\n3\n00:00:05,198 --> 00:00:07,804\nI'm going to give you. I want to improve our model\n\n4\n00:00:07,944 --> 00:00:10,747\ngreater a little bit by providing it with more context\n\n5\n00:00:10,929 --> 00:00:13,432\non what a good solution should actually look like.\n\n6\n00:00:14,073 --> 00:00:16,638\nNow, at first glance, that might sound a little bit challenging, but it turns\n\n7\n00:00:16,718 --> 00:00:19,282\nout you only really have to go through two steps to add\n\n8\n00:00:19,301 --> 00:00:21,966\nin this additional context. So in step one,\n\n9\n00:00:22,065 --> 00:00:24,987\nI would encourage you to go back to the prompt where we generate\n\n10\n00:00:25,068 --> 00:00:27,890\nour data set. And inside that prompt, try asking\n\n11\n00:00:27,931 --> 00:00:30,794\nit for some solution criteria to be included\n\n12\n00:00:30,814 --> 00:00:33,316\nin every test case. So ideally,\n\n13\n00:00:33,496 --> 00:00:36,018\nour test cases that could output should now have\n\n14\n00:00:36,078 --> 00:00:38,761\nsome additional solution criteria key, which\n\n15\n00:00:38,841 --> 00:00:41,622\nmight look like what you see right here. So it might say something\n\n16\n00:00:41,683 --> 00:00:44,625\nabout what a good solution would look like. Maybe you say, well,\n\n17\n00:00:44,665 --> 00:00:47,709\na good solution would include this characteristic and this characteristic\n\n18\n00:00:47,808 --> 00:00:50,674\nand this characteristic. Once we have this additional\n\n19\n00:00:50,735 --> 00:00:53,439\nsolution criteria, we can then insert that into\n\n20\n00:00:53,460 --> 00:00:56,543\nour grade by model prompt. So\n\n21\n00:00:56,603 --> 00:00:59,247\nyou might find the existing area of that prompt where\n\n22\n00:00:59,287 --> 00:01:01,851\nwe put in our solution to evaluate, and then\n\n23\n00:01:01,911 --> 00:01:04,855\nright after it, you might add in that newly generated\n\n24\n00:01:04,896 --> 00:01:07,459\nsolution criteria. And that's all it\n\n25\n00:01:07,500 --> 00:01:10,224\nwould really take to give our model greater a little\n\n26\n00:01:10,243 --> 00:01:12,927\nbit better idea of what a good solution would actually look\n\n27\n00:01:12,968 --> 00:01:15,843\nlike. As usual, I would encourage you to pause\n\n28\n00:01:15,862 --> 00:01:18,427\nthe video right now and give this exercise a shot.\n\n29\n00:01:19,269 --> 00:01:21,993\nOtherwise, we're going to go through a solution right now. So\n\n30\n00:01:22,474 --> 00:01:25,140\nthe solution really is just going to be these two separate steps.\n\n31\n00:01:25,280 --> 00:01:28,004\nShould be pretty straightforward. To get started, back\n\n32\n00:01:28,064 --> 00:01:30,769\ninside my notebook, I'm going to find our generate dataset\n\n33\n00:01:30,829 --> 00:01:33,454\nfunction. And inside there, I'll find the really big prompt\n\n34\n00:01:33,495 --> 00:01:36,076\nwe put in. And then when we ask for each\n\n35\n00:01:36,096 --> 00:01:38,640\nof these different test cases, I'm going to say in addition to a\n\n36\n00:01:38,700 --> 00:01:41,284\ntask in the output format, I also want to\n\n37\n00:01:41,384 --> 00:01:44,067\nget some solution criteria.\n\n38\n00:01:45,170 --> 00:01:47,753\nAnd then I'll put in a string right here just to give our model\n\n39\n00:01:47,793 --> 00:01:50,918\nan indication of what this key should actually be. So\n\n40\n00:01:50,938 --> 00:01:54,802\nI'm going to ask for some key criteria for\n\n41\n00:01:54,843 --> 00:01:59,329\nevaluating the solution. And\n\n42\n00:01:59,370 --> 00:02:02,513\nthat's pretty much it. So I'm going to rerun\n\n43\n00:02:02,534 --> 00:02:05,269\nthe cell. I'm going to go to the cell underneath\n\n44\n00:02:05,310 --> 00:02:07,823\nit and regenerate the data\n\n45\n00:02:07,843 --> 00:02:11,807\nset. Okay,\n\n46\n00:02:11,828 --> 00:02:15,032\njust a couple of seconds, it should be done. There we go. So\n\n47\n00:02:15,072 --> 00:02:17,615\nnow we should have an updated data set.json\n\n48\n00:02:17,675 --> 00:02:20,359\nfile. I'm gonna open that file up. And I should now see\n\n49\n00:02:20,399 --> 00:02:23,081\nsome updated tasks in here, still with the format, but\n\n50\n00:02:23,141 --> 00:02:25,944\nnow I've also got some solution criteria. So\n\n51\n00:02:25,965 --> 00:02:28,508\nthe solution criteria, we can read over, of course\n\n52\n00:02:28,549 --> 00:02:31,132\nyours is gonna look different than mine, but it's gonna get\n\n53\n00:02:31,151 --> 00:02:33,754\ngoing to give some idea on, again, what a good\n\n54\n00:02:33,794 --> 00:02:36,361\nsolution will actually look like. Next up is\n\n55\n00:02:36,521 --> 00:02:39,167\nstep number two. We're going to find our grade by model\n\n56\n00:02:39,206 --> 00:02:41,711\nfunction and specifically the prompt inside there.\n\n57\n00:02:42,233 --> 00:02:44,877\nAnd we're going to include this newly generated solution\n\n58\n00:02:44,918 --> 00:02:47,622\ncriteria. Again, just to tell the model grader\n\n59\n00:02:47,924 --> 00:02:50,468\nwhat a good solution looks like. So for that, I\n\n60\n00:02:50,508 --> 00:02:53,955\nwill go back to the notebook. I will scroll down and\n\n61\n00:02:54,014 --> 00:02:56,520\nfind that grade by model function. Here\n\n62\n00:02:56,539 --> 00:02:59,508\nit is right here. So I'm going to find the prompt. We\n\n63\n00:02:59,549 --> 00:03:02,151\nare already putting in the original task, the\n\n64\n00:03:02,312 --> 00:03:04,814\noutput that was generated. And then right after that, I'm going\n\n65\n00:03:04,835 --> 00:03:07,657\nto put in some note to the model and just say, here's\n\n66\n00:03:07,677 --> 00:03:10,381\nsome criteria that you should use to evaluate the solution.\n\n67\n00:03:11,322 --> 00:03:13,903\nSo criteria you should\n\n68\n00:03:14,125 --> 00:03:17,649\nuse to evaluate the solution.\n\n69\n00:03:18,610 --> 00:03:21,132\nI'm going to put in some tags. And I'll tell\n\n70\n00:03:21,171 --> 00:03:24,175\nyou why we are adding in these tags very shortly as\n\n71\n00:03:24,216 --> 00:03:27,258\nwe start to discuss prompt engineering.\n\n72\n00:03:27,457 --> 00:03:30,141\nAnd then I'm going to interpolate in from the test case,\n\n73\n00:03:30,984 --> 00:03:34,449\nour solution criteria. And\n\n74\n00:03:34,468 --> 00:03:37,312\nthat key right there, remember our test case is really these\n\n75\n00:03:37,493 --> 00:03:40,078\nobjects, each of these objects one by one. So we know\n\n76\n00:03:40,117 --> 00:03:42,741\nbecause we see it right here inside this file, there is a key inside\n\n77\n00:03:42,782 --> 00:03:45,306\nthat dictionary of solution criteria. So\n\n78\n00:03:45,325 --> 00:03:47,830\nwe're taking that sentence right there and putting it\n\n79\n00:03:48,390 --> 00:03:50,895\nright here. All right, so\n\n80\n00:03:50,914 --> 00:03:54,617\nnow time to run the cell. And\n\n81\n00:03:54,638 --> 00:03:57,520\nwe're going to rerun our pipeline and see how everything\n\n82\n00:03:57,561 --> 00:04:01,506\nis working. So I'll go down to\n\n83\n00:04:02,366 --> 00:04:04,929\nthe run eval function. And then right after that is where\n\n84\n00:04:04,949 --> 00:04:07,632\nwe actually execute everything. So I'm going to run that.\n\n85\n00:04:08,372 --> 00:04:10,936\nAnd then we get our updated score back. Now, I\n\n86\n00:04:10,955 --> 00:04:13,598\nwant to print out the results really quickly, just so we can\n\n87\n00:04:13,658 --> 00:04:16,221\nsee how this is going to affect the actual output.\n\n88\n00:04:16,742 --> 00:04:19,324\nSo we'll do another print of JSON, dumps,\n\n89\n00:04:19,706 --> 00:04:25,105\nresults with an indent of two. So\n\n90\n00:04:25,144 --> 00:04:27,651\nnow we can see the output from our model, so\n\n91\n00:04:27,672 --> 00:04:30,218\nthat's the actual produced output. Here's our test\n\n92\n00:04:30,259 --> 00:04:32,785\ncase, so we can take a look at the task in the solution criteria.\n\n93\n00:04:33,487 --> 00:04:36,293\nHere's the score, in this case it was 9, and now hopefully\n\n94\n00:04:36,314 --> 00:04:38,940\nour reasoning section, which is produced by the model grater,\n\n95\n00:04:39,281 --> 00:04:41,788\nis going to be a little bit more fleshed out than it was before\n\n96\n00:04:42,108 --> 00:04:44,394\nbecause we are including that solution criteria.",
+  "transcriptText": "Let's try out an exercise to improve our prompt\n\nevaluation workflow. So here's the task\n\nI'm going to give you. I want to improve our model\n\ngreater a little bit by providing it with more context\n\non what a good solution should actually look like.\n\nNow, at first glance, that might sound a little bit challenging, but it turns\n\nout you only really have to go through two steps to add\n\nin this additional context. So in step one,\n\nI would encourage you to go back to the prompt where we generate\n\nour data set. And inside that prompt, try asking\n\nit for some solution criteria to be included\n\nin every test case. So ideally,\n\nour test cases that could output should now have\n\nsome additional solution criteria key, which\n\nmight look like what you see right here. So it might say something\n\nabout what a good solution would look like. Maybe you say, well,\n\na good solution would include this characteristic and this characteristic\n\nand this characteristic. Once we have this additional\n\nsolution criteria, we can then insert that into\n\nour grade by model prompt. So\n\nyou might find the existing area of that prompt where\n\nwe put in our solution to evaluate, and then\n\nright after it, you might add in that newly generated\n\nsolution criteria. And that's all it\n\nwould really take to give our model greater a little\n\nbit better idea of what a good solution would actually look\n\nlike. As usual, I would encourage you to pause\n\nthe video right now and give this exercise a shot.\n\nOtherwise, we're going to go through a solution right now. So\n\nthe solution really is just going to be these two separate steps.\n\nShould be pretty straightforward. To get started, back\n\ninside my notebook, I'm going to find our generate dataset\n\nfunction. And inside there, I'll find the really big prompt\n\nwe put in. And then when we ask for each\n\nof these different test cases, I'm going to say in addition to a\n\ntask in the output format, I also want to\n\nget some solution criteria.\n\nAnd then I'll put in a string right here just to give our model\n\nan indication of what this key should actually be. So\n\nI'm going to ask for some key criteria for\n\nevaluating the solution. And\n\nthat's pretty much it. So I'm going to rerun\n\nthe cell. I'm going to go to the cell underneath\n\nit and regenerate the data\n\nset. Okay,\n\njust a couple of seconds, it should be done. There we go. So\n\nnow we should have an updated data set.json\n\nfile. I'm gonna open that file up. And I should now see\n\nsome updated tasks in here, still with the format, but\n\nnow I've also got some solution criteria. So\n\nthe solution criteria, we can read over, of course\n\nyours is gonna look different than mine, but it's gonna get\n\ngoing to give some idea on, again, what a good\n\nsolution will actually look like. Next up is\n\nstep number two. We're going to find our grade by model\n\nfunction and specifically the prompt inside there.\n\nAnd we're going to include this newly generated solution\n\ncriteria. Again, just to tell the model grader\n\nwhat a good solution looks like. So for that, I\n\nwill go back to the notebook. I will scroll down and\n\nfind that grade by model function. Here\n\nit is right here. So I'm going to find the prompt. We\n\nare already putting in the original task, the\n\noutput that was generated. And then right after that, I'm going\n\nto put in some note to the model and just say, here's\n\nsome criteria that you should use to evaluate the solution.\n\nSo criteria you should\n\nuse to evaluate the solution.\n\nI'm going to put in some tags. And I'll tell\n\nyou why we are adding in these tags very shortly as\n\nwe start to discuss prompt engineering.\n\nAnd then I'm going to interpolate in from the test case,\n\nour solution criteria. And\n\nthat key right there, remember our test case is really these\n\nobjects, each of these objects one by one. So we know\n\nbecause we see it right here inside this file, there is a key inside\n\nthat dictionary of solution criteria. So\n\nwe're taking that sentence right there and putting it\n\nright here. All right, so\n\nnow time to run the cell. And\n\nwe're going to rerun our pipeline and see how everything\n\nis working. So I'll go down to\n\nthe run eval function. And then right after that is where\n\nwe actually execute everything. So I'm going to run that.\n\nAnd then we get our updated score back. Now, I\n\nwant to print out the results really quickly, just so we can\n\nsee how this is going to affect the actual output.\n\nSo we'll do another print of JSON, dumps,\n\nresults with an indent of two. So\n\nnow we can see the output from our model, so\n\nthat's the actual produced output. Here's our test\n\ncase, so we can take a look at the task in the solution criteria.\n\nHere's the score, in this case it was 9, and now hopefully\n\nour reasoning section, which is produced by the model grater,\n\nis going to be a little bit more fleshed out than it was before\n\nbecause we are including that solution criteria.",
+  "downloads": [
+    {
+      "text": "001_prompt_evals_complete.ipynb\n(opens in new tab)",
+      "href": "https://cc.sj-cdn.net/instructor/4hdejjwplbrm-anthropic/assets/1762977827/001_prompt_evals_complete.ipynb?response-content-disposition=attachment&Expires=1793302766&Signature=REDACTED&Key-Pair-Id=REDACTED"
+    }
+  ]
+}

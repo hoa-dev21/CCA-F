@@ -1,0 +1,11 @@
+const fs=require('fs');
+const rows=[
+ ['289158','API-64-structured-historical.md','Mẫu ghép assistant prefill ```json với stop sequence ``` rồi json.loads. Đây là kỹ thuật lịch sử trong video, không bảo đảm schema/giá trị đúng và không mặc định tương thích mọi model/thinking mode. Ưu tiên output contract được hỗ trợ cùng validation.'],
+ ['289160','BEDROCK-05-output-control.md','Ví dụ Vertex dùng assistant message prefill và stop_sequences ở wrapper Messages, khác cấu trúc Converse. Prefix không tự lặp vào phần text mới; stop marker chặn sinh tiếp nhưng có thể làm dữ liệu chưa hoàn chỉnh. Khả năng hỗ trợ phụ thuộc model.'],
+ ['289159','API-04-prompt-evaluation.md','Bài phân biệt kỹ thuật prompt với đo hiệu quả; test một vài ví dụ không đủ dự đoán dữ liệu production. Eval cung cấp bằng chứng theo dataset/rubric, không tự trở thành khách quan tuyệt đối hay bảo đảm mọi đầu vào.'],
+ ['289161','API-05-eval-workflow.md','Năm bước: draft, dataset, run model, grade, đổi prompt và chạy lại. Trung bình7.66/8.7 chỉ minh họa; cần giữ điều kiện so sánh, kiểm tra từng loại lỗi và tránh tối ưu theo bộ phát triển duy nhất.'],
+ ['289163','API-06-test-datasets.md','Dataset minh họa AWS Python/JSON/regex, có thể soạn tay hoặc sinh với model rồi lưu. Ba ví dụ không đủ đại diện production; dữ liệu sinh cần review, edge cases và tách tập kiểm tra. Prefill/stop không thay JSON/schema validation.'],
+ ['289168','API-08-model-grading.md','Chọn code/model/human grader theo tiêu chí. Syntax kiểm tra được bằng code; task following cần bằng chứng hành vi/rubric, có thể kết hợp model và con người. Lời giải thích của grader không tự chứng minh điểm đúng; hiệu chỉnh với mẫu gán nhãn và xem lỗi theo nhóm thay vì chỉ trung bình.']
+];
+for(const [id,file,note]of rows){const r=JSON.parse(fs.readFileSync('sources/vertex-lessons/'+id+'.json','utf8')),p='lessons/'+file,t=fs.readFileSync(p,'utf8');if(!t.includes(r.url))fs.writeFileSync(p,t+'\n## Đối chiếu Vertex\n\nĐã đọc ['+r.lesson+']('+r.url+'), sources/vertex-lessons/'+id+'.json. '+note+' Dùng chung câu hỏi khái niệm.\n');}
+fs.writeFileSync('sources/vertex-eval-mappings.json',JSON.stringify(rows.map(([id,lesson,note])=>({id,lesson,note,review:'full_collected_text_read'})),null,2));console.log('Mapped '+rows.length);

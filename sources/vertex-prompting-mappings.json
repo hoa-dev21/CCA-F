@@ -1,0 +1,32 @@
+[
+  {
+    "id": "289169",
+    "lesson": "API-10-prompt-engineering.md",
+    "note": "Chu trình goal/baseline/eval/thay đổi/re-eval; đọc lỗi theo nhóm. Ví dụ meal plan và concurrency1–3 là minh họa, không là benchmark hay giới hạn universal. Không phải mọi thay đổi đều tăng điểm; giữ hay bỏ dựa trên bằng chứng.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289170",
+    "lesson": "API-11-clear-direct.md",
+    "note": "Nêu hành động, đối tượng và ràng buộc trực tiếp ở đầu prompt. Các mức điểm2.32/3.92 thuộc ví dụ khóa, không bảo đảm tăng chất lượng cho mọi bài toán.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289165",
+    "lesson": "API-12-specificity.md",
+    "note": "Tách thuộc tính đầu ra với bước xử lý; ràng buộc lượng/định dạng/nội dung cần đo được. Bước cân nhắc không đồng nghĩa yêu cầu lộ toàn bộ suy nghĩ nội bộ. Điểm3.92/7.86 chỉ là ví dụ.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289171",
+    "lesson": "API-13-xml.md",
+    "note": "XML phân ranh instructions/data/code/docs và tên tag mô tả vai trò. Delimiter tăng rõ ràng nhưng không tạo ranh giới bảo mật tự động; nội dung bên trong vẫn là dữ liệu chưa tin cậy theo nguồn.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289177",
+    "lesson": "API-14-examples.md",
+    "note": "Input/output mẫu giúp format và ca khó như sarcasm; chọn ví dụ phát triển đã review và giữ test holdout riêng. Điểm10 từ model grader chưa đủ chứng minh mẫu hoàn hảo; tránh đưa test đang chấm vào prompt rồi báo điểm như bằng chứng khái quát hóa.",
+    "review": "full_collected_text_read"
+  }
+]

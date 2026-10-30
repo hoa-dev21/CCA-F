@@ -1,0 +1,200 @@
+{
+  "lesson": "Exercise on prompting",
+  "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289173",
+  "collectedAt": "2026-10-30T02:09:02.541Z",
+  "sourceType": "English captions linked by official lesson player",
+  "media": {
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289173",
+    "players": [
+      {
+        "id": "botr_hlYSjyD6_Akyo8gQO_div",
+        "playlist": [
+          {
+            "sources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/hlYSjyD6.m3u8?exp=1793337120&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              }
+            ],
+            "tracks": [
+              {
+                "kind": "thumbnails",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/strips/hlYSjyD6-120.vtt"
+              }
+            ],
+            "minDvrWindow": 120,
+            "image": "https://cdn.jwplayer.com/v2/media/hlYSjyD6/poster.jpg?width=720",
+            "images": [
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/hlYSjyD6/poster.jpg?width=320",
+                "width": 320,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/hlYSjyD6/poster.jpg?width=480",
+                "width": 480,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/hlYSjyD6/poster.jpg?width=640",
+                "width": 640,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/hlYSjyD6/poster.jpg?width=720",
+                "width": 720,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/hlYSjyD6/poster.jpg?width=1280",
+                "width": 1280,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/hlYSjyD6/poster.jpg?width=1920",
+                "width": 1920,
+                "type": "image/jpeg"
+              }
+            ],
+            "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=hlYSjyD6&token=REDACTED",
+            "title": "05 - 006 - Exercise on Prompting.mp4",
+            "mediaid": "hlYSjyD6",
+            "link": null,
+            "duration": 322.134,
+            "pubdate": 1748548819,
+            "description": null,
+            "tags": "",
+            "preload": "auto",
+            "allSources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/hlYSjyD6.m3u8?exp=1793337120&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/hlYSjyD6-B9NwIVRu.mp4?exp=1793337120&sig=REDACTED",
+                "width": 320,
+                "height": 180,
+                "label": "180p",
+                "bitrate": 159592,
+                "framerate": 30,
+                "filesize": 6423580,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/hlYSjyD6-muagBOKI.mp4?exp=1793337120&sig=REDACTED",
+                "width": 480,
+                "height": 270,
+                "label": "270p",
+                "bitrate": 191893,
+                "framerate": 30,
+                "filesize": 7723727,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/hlYSjyD6-4Xe8IV8X.mp4?exp=1793337120&sig=REDACTED",
+                "width": 720,
+                "height": 406,
+                "label": "406p",
+                "bitrate": 248652,
+                "framerate": 30,
+                "filesize": 10008266,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/hlYSjyD6-m7ew0xq8.mp4?exp=1793337120&sig=REDACTED",
+                "width": 1280,
+                "height": 720,
+                "label": "720p",
+                "bitrate": 418331,
+                "framerate": 30,
+                "filesize": 16837845,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/hlYSjyD6-eNgUZBQ2.m4a?exp=1793337120&sig=REDACTED",
+                "label": "Audio",
+                "bitrate": 113454,
+                "filesize": 4566552,
+                "mimeType": "audio/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/hlYSjyD6-hFUVmOoC.mp4?exp=1793337120&sig=REDACTED",
+                "width": 1920,
+                "height": 1080,
+                "label": "1080p",
+                "bitrate": 630487,
+                "framerate": 30,
+                "filesize": 25377113,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              }
+            ],
+            "file": "https://cdn.jwplayer.com/manifests/hlYSjyD6.m3u8?exp=1793337120&sig=REDACTED",
+            "feedData": {},
+            "chapters": {
+              "defaultLanguage": "en-US",
+              "timestamps": []
+            },
+            "label": "https://cdn.jwplayer.com/manifests/hlYSjyD6.m3u8?exp=1793337120&sig=REDACTED",
+            "progressTracker": {
+              "10": false,
+              "25": false,
+              "50": false,
+              "75": false
+            },
+            "played": true
+          }
+        ],
+        "captions": [
+          {
+            "id": "off",
+            "label": "Off"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "blob:https://anthropic-partners.skilljar.com/72ef1357-ffc7-4c6f-9f85-fbf45bff7e0c",
+        "tracks": [],
+        "sources": []
+      }
+    ],
+    "iframes": []
+  },
+  "captionUrl": null,
+  "rawCaptions": "",
+  "transcriptText": "",
+  "downloads": [
+    {
+      "text": "003_exercise.ipynb\n(opens in new tab)",
+      "href": "https://cc.sj-cdn.net/instructor/4hdejjwplbrm-anthropic-poc/assets/1748559570/003_exercise.ipynb?response-content-disposition=attachment&Expires=1793329732&Signature=REDACTED&Key-Pair-Id=REDACTED"
+    }
+  ]
+}

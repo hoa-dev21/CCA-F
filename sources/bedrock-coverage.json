@@ -1,0 +1,1247 @@
+[
+  {
+    "title": "Introduction to the course",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/241929",
+    "source": "captured",
+    "lesson": "BEDROCK-01-introduction.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/241929.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Overview of Claude Models",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/303332",
+    "source": "captured",
+    "lesson": "BEDROCK-02-model-tradeoffs.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/303332.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Accessing the API",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276716",
+    "source": "captured",
+    "lesson": "BEDROCK-03-request-flow.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276716.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Making a request",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276719",
+    "source": "captured",
+    "lesson": "BEDROCK-04-converse-request.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276719.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Multi-Turn conversations",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276722",
+    "source": "captured",
+    "lesson": "API-02-multi-turn.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276722.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Chat bot exercise",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276725",
+    "source": "missing_or_video_only",
+    "lesson": "API-02-multi-turn.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276725.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "System prompts",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276726",
+    "source": "captured",
+    "lesson": "API-03-system-prompts.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276726.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "System prompt exercise",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276717",
+    "source": "missing_or_video_only",
+    "lesson": "API-69-system-exercise.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276717.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Temperature",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276720",
+    "source": "captured",
+    "lesson": "API-40-temperature.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276720.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Streaming",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276721",
+    "source": "captured",
+    "lesson": "API-61-response-streaming.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276721.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Controlling model output",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276723",
+    "source": "captured",
+    "lesson": "BEDROCK-05-output-control.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276723.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Structured data",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276724",
+    "source": "captured",
+    "lesson": "API-64-structured-historical.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276724.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Structured data exercise",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276718",
+    "source": "missing_or_video_only",
+    "lesson": "API-70-structured-exercise.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276718.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on working with the API",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/289293",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/289293.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Prompt evaluation",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276731",
+    "source": "captured",
+    "lesson": "API-04-prompt-evaluation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276731.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "A typical eval workflow",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276732",
+    "source": "captured",
+    "lesson": "API-05-eval-workflow.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276732.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Generating test datasets",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276733",
+    "source": "captured",
+    "lesson": "API-06-test-datasets.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276733.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Running the eval",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276736",
+    "source": "captured",
+    "lesson": "API-07-running-eval.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276736.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Model based grading",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276738",
+    "source": "captured",
+    "lesson": "API-08-model-grading.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276738.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Code based grading",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276735",
+    "source": "captured",
+    "lesson": "API-09-code-grading.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276735.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Exercise on prompt evals",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276734",
+    "source": "missing_or_video_only",
+    "lesson": "API-71-eval-exercise.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276734.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on prompt evaluations",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/289297",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/289297.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Prompt engineering",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276749",
+    "source": "captured",
+    "lesson": "API-10-prompt-engineering.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276749.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Being clear and direct",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276743",
+    "source": "captured",
+    "lesson": "API-11-clear-direct.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276743.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Being specific",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276745",
+    "source": "captured",
+    "lesson": "API-12-specificity.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276745.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Structure with XML tags",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276744",
+    "source": "captured",
+    "lesson": "API-13-xml.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276744.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Providing examples",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276747",
+    "source": "captured",
+    "lesson": "API-14-examples.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276747.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Exercise on prompting",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276746",
+    "source": "missing_or_video_only",
+    "lesson": "API-72-prompting-exercise.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276746.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on prompt engineering",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/289298",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/289298.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Introducing tool use",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276756",
+    "source": "captured",
+    "lesson": "API-01-tool-use.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276756.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Tool functions",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276757",
+    "source": "captured",
+    "lesson": "API-42-tool-functions.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276757.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "JSON Schema for tools",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276758",
+    "source": "captured",
+    "lesson": "API-15-tool-schemas.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276758.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Handling tool use responses",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276764",
+    "source": "captured",
+    "lesson": "API-16-message-blocks.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276764.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Running tool functions",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276762",
+    "source": "captured",
+    "lesson": "API-19-implement-loop.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276762.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Sending tool results",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276760",
+    "source": "captured",
+    "lesson": "API-17-tool-results.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276760.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Multi-Turn conversations with tools",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276759",
+    "source": "captured",
+    "lesson": "API-18-tools-multi-turn.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276759.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Adding multiple tools",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276761",
+    "source": "captured",
+    "lesson": "API-20-multiple-tools.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276761.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Batch tool use",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276766",
+    "source": "captured",
+    "lesson": "BEDROCK-06-batch-tool.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276766.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Structured data with tools",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276765",
+    "source": "captured",
+    "lesson": "EXAM-05-structured-output.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276765.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Flexible tool extraction",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276763",
+    "source": "captured",
+    "lesson": "BEDROCK-07-flexible-extraction.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276763.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "The text editor tool",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276767",
+    "source": "captured",
+    "lesson": "API-51-text-editor.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276767.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on tool use",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/289296",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/289296.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Introducing Retrieval Augmented Generation",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276780",
+    "source": "captured",
+    "lesson": "API-43-rag-intro.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276780.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Text chunking strategies",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276782",
+    "source": "captured",
+    "lesson": "API-44-chunking.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276782.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Text embeddings",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276777",
+    "source": "captured",
+    "lesson": "API-45-embeddings.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276777.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "The full RAG flow",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276774",
+    "source": "captured",
+    "lesson": "API-46-rag-flow.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276774.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Implementing the RAG flow",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276781",
+    "source": "captured",
+    "lesson": "API-47-rag-implementation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276781.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "BM25 lexical search",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276776",
+    "source": "captured",
+    "lesson": "API-48-bm25.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276776.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "A multi-search RAG pipeline",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276779",
+    "source": "captured",
+    "lesson": "API-49-hybrid.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276779.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Reranking results",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276775",
+    "source": "captured",
+    "lesson": "BEDROCK-08-reranking.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276775.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Contextual retrieval",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276778",
+    "source": "captured",
+    "lesson": "BEDROCK-09-contextual-retrieval.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276778.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on Retrieval Augmented Generation",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/289295",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/289295.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Extended thinking",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276788",
+    "source": "captured",
+    "lesson": "API-60-thinking.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276788.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Image support",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276789",
+    "source": "captured",
+    "lesson": "API-59-images.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276789.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "PDF support",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/308839",
+    "source": "captured",
+    "lesson": "API-58-pdf-input.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/308839.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Citations",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/308840",
+    "source": "captured",
+    "lesson": "API-53-citations.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/308840.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Prompt caching",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276786",
+    "source": "captured",
+    "lesson": "API-54-cache-intro.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276786.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Rules of prompt caching",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276785",
+    "source": "captured",
+    "lesson": "API-55-cache-rules.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276785.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Prompt caching in action",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276787",
+    "source": "missing_or_video_only",
+    "lesson": "API-56-cache-observation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276787.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": true,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on features of Claude",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/289300",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/289300.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Introducing MCP",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276798",
+    "source": "captured",
+    "lesson": "API-21-intro-mcp.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276798.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "MCP clients",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276793",
+    "source": "captured",
+    "lesson": "API-22-mcp-clients.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276793.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Project setup",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276792",
+    "source": "captured",
+    "lesson": "API-65-mcp-project-setup.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276792.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Defining tools with MCP",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276800",
+    "source": "captured",
+    "lesson": "API-23-define-mcp-tools.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276800.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "The server inspector",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276796",
+    "source": "captured",
+    "lesson": "API-24-mcp-inspector.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276796.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Implementing a client",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276802",
+    "source": "captured",
+    "lesson": "API-25-mcp-client-implementation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276802.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Defining resources",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276799",
+    "source": "captured",
+    "lesson": "API-26-resources.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276799.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Accessing resources",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276797",
+    "source": "captured",
+    "lesson": "API-27-access-resources.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276797.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Defining prompts",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276801",
+    "source": "captured",
+    "lesson": "API-28-define-prompts.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276801.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Prompts in the client",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276795",
+    "source": "captured",
+    "lesson": "API-29-client-prompts.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276795.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "MCP review",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276794",
+    "source": "captured",
+    "lesson": "MCP-01-control-patterns.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276794.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on Model Context Protocol",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/289299",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/289299.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Agents overview",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276804",
+    "source": "missing_or_video_only",
+    "lesson": "API-66-apps.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276804.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Claude Code setup",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276809",
+    "source": "missing_or_video_only",
+    "lesson": "API-67-code-setup.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276809.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Claude Code in action",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276811",
+    "source": "captured",
+    "lesson": "API-30-code-workflow.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276811.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Enhancements with MCP servers",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276806",
+    "source": "captured",
+    "lesson": "API-31-code-mcp.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276806.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Parallelizing Claude Code",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276810",
+    "source": "captured",
+    "lesson": "BEDROCK-10-parallel-code.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276810.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Automated debugging",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276812",
+    "source": "captured",
+    "lesson": "BEDROCK-11-automated-debugging.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276812.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Computer Use",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276807",
+    "source": "captured",
+    "lesson": "BEDROCK-12-computer-use.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276807.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "How Computer Use works",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276805",
+    "source": "captured",
+    "lesson": "BEDROCK-13-computer-use-loop.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276805.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Qualities of agents",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276808",
+    "source": "captured",
+    "lesson": "BEDROCK-14-agent-qualities.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276808.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Final assessment quiz",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/290881",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/290881.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Course wrap up",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276827",
+    "source": "missing_or_video_only",
+    "lesson": "API-68-course-orientation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/bedrock-lessons/276827.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  }
+]

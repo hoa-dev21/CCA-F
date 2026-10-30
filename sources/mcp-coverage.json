@@ -1,0 +1,212 @@
+[
+  {
+    "title": "Welcome to the course",
+    "url": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/303756",
+    "source": "captured",
+    "lesson": "API-21-intro-mcp.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/mcp-lessons/303756.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Introducing MCP",
+    "url": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296689",
+    "source": "captured",
+    "lesson": "API-21-intro-mcp.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/mcp-lessons/296689.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "MCP clients",
+    "url": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296690",
+    "source": "captured",
+    "lesson": "API-22-mcp-clients.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/mcp-lessons/296690.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Project setup",
+    "url": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296694",
+    "source": "missing_or_video_only",
+    "lesson": "API-65-mcp-project-setup.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/mcp-lessons/296694.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Defining tools with MCP",
+    "url": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296697",
+    "source": "captured",
+    "lesson": "API-23-define-mcp-tools.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/mcp-lessons/296697.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "The server inspector",
+    "url": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296693",
+    "source": "captured",
+    "lesson": "API-24-mcp-inspector.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/mcp-lessons/296693.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Course satisfaction survey",
+    "url": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/297281",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/mcp-lessons/297281.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Implementing a client",
+    "url": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296696",
+    "source": "captured",
+    "lesson": "API-25-mcp-client-implementation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/mcp-lessons/296696.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Defining resources",
+    "url": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296699",
+    "source": "captured",
+    "lesson": "API-26-resources.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/mcp-lessons/296699.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Accessing resources",
+    "url": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296695",
+    "source": "captured",
+    "lesson": "API-27-access-resources.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/mcp-lessons/296695.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Defining prompts",
+    "url": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296698",
+    "source": "captured",
+    "lesson": "API-28-define-prompts.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/mcp-lessons/296698.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Prompts in the client",
+    "url": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296692",
+    "source": "captured",
+    "lesson": "API-29-client-prompts.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/mcp-lessons/296692.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Final assessment on MCP",
+    "url": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/297196",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/mcp-lessons/297196.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "MCP review",
+    "url": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296691",
+    "source": "captured",
+    "lesson": "MCP-01-control-patterns.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/mcp-lessons/296691.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  }
+]

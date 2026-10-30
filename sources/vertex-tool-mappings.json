@@ -1,0 +1,56 @@
+[
+  {
+    "id": "289172",
+    "lesson": "API-01-tool-use.md",
+    "note": "Tool cung cấp dữ liệu ngoài qua vòng request/executor/result. Dữ liệu thời gian thực vẫn có thể cũ hoặc sai; model không tự thực thi Python chỉ nhờ khai báo tool.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289175",
+    "lesson": "API-41-reminder-project.md",
+    "note": "Dự án chia lấy thời gian, cộng thời lượng và tạo reminder. Phải xét timezone/độ mơ hồ; lời giới thiệu nói scheduled notification nhưng implementation ở289185 chỉ là placeholder print. Không khẳng định đã hẹn nhắc thật.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289176",
+    "lesson": "API-42-tool-functions.md",
+    "note": "Tên/arguments rõ, validate đầu vào, lỗi có thể sửa. datetime.now() trong mẫu dùng giờ môi trường và chưa gắn timezone; tự động thực thi là trách nhiệm host, không của model. Không lộ lỗi/secrets nhạy cảm nguyên văn.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289174",
+    "lesson": "API-15-tool-schemas.md",
+    "note": "Mẫu Messages dùng name/description/input_schema, khác Converse toolSpec/inputSchema. ToolParam hỗ trợ kiểm tra kiểu khi phát triển, không thay validation runtime. Schema sinh bằng model cần review; độ dài3–4 câu chỉ là gợi ý, trọng tâm là ranh giới và khi nào dùng.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289179",
+    "lesson": "API-16-message-blocks.md",
+    "note": "Giữ toàn bộ assistant response.content gồm text/tool_use và ID/input/name. Không giả định một text block hoặc vị trí cố định cho tool_use.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289184",
+    "lesson": "API-17-tool-results.md",
+    "note": "Tool result ở user content, type tool_result, tool_use_id khớp request, content và is_error. Mẫu response.content[1] chỉ minh họa; cần duyệt theo type và trả đủ kết quả cho mọi request trong lượt. Không trộn is_error với MCP isError/Converse status.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289178",
+    "lesson": "API-18-tools-multi-turn.md",
+    "note": "Ví dụ lấy ngày rồi cộng103ngày thể hiện dependency phải tuần tự. Wrapper giữ full blocks/message và tools; text_from_message chỉ dành hiển thị. Không dùng mutable default list trong mã production sao chép từ video.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289182",
+    "lesson": "API-19-implement-loop.md",
+    "note": "Duyệt mọi tool_use, route tool theo danh sách được phép, serialize result và báo is_error khi lỗi. stop_reason khác tool_use chưa đủ kết luận thành công: max_tokens/refusal/error cần xử lý riêng. Vòng while mẫu cần iteration/time limits.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289185",
+    "lesson": "API-20-multiple-tools.md",
+    "note": "Thêm tool bằng schema+dispatcher+implementation. set_reminder được bài xác nhận là placeholder print, không đặt reminder hệ thống. Chuỗi tool phụ thuộc kết quả trước không thể chạy song song mù quáng.",
+    "review": "full_collected_text_read"
+  }
+]

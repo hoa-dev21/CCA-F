@@ -1,0 +1,9 @@
+const fs=require('fs');
+const rows=[
+ ['289242','API-35-routing.md','Router phân loại rồi chọn pipeline chuyên biệt, không chạy mọi nhánh. Ví dụ3–10categories là hướng dẫn minh họa; cần xử lý input mơ hồ/không thuộc nhóm và đo lỗi router. Không mặc định mọi đề tài programming/surfing luôn có cùng ý định.'],
+ ['289243','API-36-agent-tools.md','Tool đủ tổng quát để kết hợp, nhưng mỗi tool có mô tả và ranh giới rõ. Agent hỏi ngày mua khi thiếu thông tin tính warranty. Bash đa dụng không thay quyền tối thiểu hoặc công cụ hẹp phù hợp; ví dụ post_media không trao quyền xuất bản khi người dùng chưa yêu cầu.'],
+ ['289237','API-37-environment.md','Đọc trạng thái trước sửa, quan sát sau thao tác; ví dụ captions/timing/screenshots/file format giúp kiểm chứng video. Không mặc định mọi Computer Use executor tự trả ảnh sau mỗi action; host phải cung cấp quan sát phù hợp. Mức kiểm tra theo kết quả và tác động, không cần lặp kiểm tra vô ích sau mỗi bước nhỏ.'],
+ ['289245','API-38-workflow-tradeoffs.md','Workflow dự đoán/đánh giá dễ hơn nhưng kém linh hoạt; agent thích ứng nhưng chi phí/độ tin cậy khó kiểm soát. Chọn theo yêu cầu và eval; lời so sánh lower completion rate trong video không là benchmark phổ quát, và không hệ thống nào được bảo đảm100% chỉ nhờ chọn workflow.']
+];
+for(const [id,file,note]of rows){const r=JSON.parse(fs.readFileSync('sources/vertex-lessons/'+id+'.json','utf8')),p='lessons/'+file,t=fs.readFileSync(p,'utf8');if(!t.includes(r.url))fs.writeFileSync(p,t+'\n## Đối chiếu Vertex\n\nĐã đọc ['+r.lesson+']('+r.url+'), sources/vertex-lessons/'+id+'.json. '+note+' Dùng chung câu hỏi khái niệm.\n');}
+fs.writeFileSync('sources/vertex-workflow-final-mappings.json',JSON.stringify(rows.map(([id,lesson,note])=>({id,lesson,note,review:'full_collected_text_read'})),null,2));console.log('Mapped '+rows.length);

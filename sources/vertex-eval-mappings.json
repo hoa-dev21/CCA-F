@@ -1,0 +1,38 @@
+[
+  {
+    "id": "289158",
+    "lesson": "API-64-structured-historical.md",
+    "note": "Mẫu ghép assistant prefill ```json với stop sequence ``` rồi json.loads. Đây là kỹ thuật lịch sử trong video, không bảo đảm schema/giá trị đúng và không mặc định tương thích mọi model/thinking mode. Ưu tiên output contract được hỗ trợ cùng validation.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289160",
+    "lesson": "BEDROCK-05-output-control.md",
+    "note": "Ví dụ Vertex dùng assistant message prefill và stop_sequences ở wrapper Messages, khác cấu trúc Converse. Prefix không tự lặp vào phần text mới; stop marker chặn sinh tiếp nhưng có thể làm dữ liệu chưa hoàn chỉnh. Khả năng hỗ trợ phụ thuộc model.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289159",
+    "lesson": "API-04-prompt-evaluation.md",
+    "note": "Bài phân biệt kỹ thuật prompt với đo hiệu quả; test một vài ví dụ không đủ dự đoán dữ liệu production. Eval cung cấp bằng chứng theo dataset/rubric, không tự trở thành khách quan tuyệt đối hay bảo đảm mọi đầu vào.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289161",
+    "lesson": "API-05-eval-workflow.md",
+    "note": "Năm bước: draft, dataset, run model, grade, đổi prompt và chạy lại. Trung bình7.66/8.7 chỉ minh họa; cần giữ điều kiện so sánh, kiểm tra từng loại lỗi và tránh tối ưu theo bộ phát triển duy nhất.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289163",
+    "lesson": "API-06-test-datasets.md",
+    "note": "Dataset minh họa AWS Python/JSON/regex, có thể soạn tay hoặc sinh với model rồi lưu. Ba ví dụ không đủ đại diện production; dữ liệu sinh cần review, edge cases và tách tập kiểm tra. Prefill/stop không thay JSON/schema validation.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289168",
+    "lesson": "API-08-model-grading.md",
+    "note": "Chọn code/model/human grader theo tiêu chí. Syntax kiểm tra được bằng code; task following cần bằng chứng hành vi/rubric, có thể kết hợp model và con người. Lời giải thích của grader không tự chứng minh điểm đúng; hiệu chỉnh với mẫu gán nhãn và xem lỗi theo nhóm thay vì chỉ trung bình.",
+    "review": "full_collected_text_read"
+  }
+]

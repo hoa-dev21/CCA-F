@@ -1,0 +1,51 @@
+[
+  {
+    "id": "276780",
+    "lesson": "API-43-rag-intro.md",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276780",
+    "review": "full_text_read_concepts_compared",
+    "note": "Cùng đánh đổi truy xuất phần liên quan với việc đưa toàn bộ tài liệu vào prompt."
+  },
+  {
+    "id": "276782",
+    "lesson": "API-44-chunking.md",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276782",
+    "review": "full_text_read_concepts_compared",
+    "note": "Cùng so sánh size/structure/semantic và overlap; lựa chọn cần đánh giá trên tài liệu thật, không mặc định một cách luôn tốt nhất."
+  },
+  {
+    "id": "276777",
+    "lesson": "API-45-embeddings.md",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276777",
+    "review": "full_text_read_concepts_compared",
+    "note": "Mẫu dùng Bedrock invoke_model với Titan, khác SDK/provider embeddings trong khóa API. Dimension/range/normalization trong video không phải thuộc tính mọi embedding; query và chunks phải dùng biểu diễn tương thích."
+  },
+  {
+    "id": "276774",
+    "lesson": "API-46-rag-flow.md",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276774",
+    "review": "full_text_read_concepts_compared",
+    "note": "Cùng pipeline và ví dụ cosine. Các trục có nhãn trong hình là mô hình tưởng tượng để giải thích, không chứng minh vector thật diễn giải được từng chiều."
+  },
+  {
+    "id": "276781",
+    "lesson": "API-47-rag-implementation.md",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276781",
+    "review": "full_text_read_concepts_compared",
+    "note": "Mẫu tạo embeddings từng chunk và lưu cùng content. Distance hỗ trợ xếp hạng liên quan, không phải confidence đã hiệu chỉnh hoặc xác suất câu trả lời đúng."
+  },
+  {
+    "id": "276776",
+    "lesson": "API-48-bm25.md",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276776",
+    "review": "full_text_read_concepts_compared",
+    "note": "Cùng ví dụ incident ID và bổ sung lexical với semantic search. Giải thích term-frequency/rarity trong khóa chưa phải toàn bộ công thức BM25."
+  },
+  {
+    "id": "276779",
+    "lesson": "API-49-hybrid.md",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276779",
+    "review": "full_text_read_concepts_compared",
+    "note": "Cùng Retriever và RRF theo thứ hạng; không cộng raw scores khác thang. Đoạn code rút gọn trong trang là skeleton, không xác nhận đã thực thi pipeline hoàn chỉnh."
+  }
+]

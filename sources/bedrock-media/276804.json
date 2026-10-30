@@ -1,0 +1,545 @@
+{
+  "lesson": "Agents overview",
+  "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276804",
+  "collectedAt": "2026-10-30T02:07:20.760Z",
+  "sourceType": "English captions linked by official lesson player",
+  "media": {
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276804",
+    "players": [
+      {
+        "id": "botr_btmjanJx_Akyo8gQO_div",
+        "playlist": [
+          {
+            "sources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/btmjanJx.m3u8?exp=1793336880&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              }
+            ],
+            "tracks": [
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/nA99xO9n.srt",
+                "label": "English",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "English",
+                "_id": "https://cdn.jwplayer.com/tracks/nA99xO9n.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/Ge88899u.srt",
+                "label": "French",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "French",
+                "_id": "https://cdn.jwplayer.com/tracks/Ge88899u.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/jXq8lwZq.srt",
+                "label": "German",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "German",
+                "_id": "https://cdn.jwplayer.com/tracks/jXq8lwZq.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/OM7YWSvD.srt",
+                "label": "Hindi",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Hindi",
+                "_id": "https://cdn.jwplayer.com/tracks/OM7YWSvD.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/h6KMjUhO.srt",
+                "label": "Japanese",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Japanese",
+                "_id": "https://cdn.jwplayer.com/tracks/h6KMjUhO.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/6qpPGeuL.srt",
+                "label": "Korean",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Korean",
+                "_id": "https://cdn.jwplayer.com/tracks/6qpPGeuL.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/vphMtBvo.srt",
+                "label": "Portuguese",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Portuguese",
+                "_id": "https://cdn.jwplayer.com/tracks/vphMtBvo.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/ffiKWX5w.srt",
+                "label": "Spanish",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Spanish",
+                "_id": "https://cdn.jwplayer.com/tracks/ffiKWX5w.srt"
+              },
+              {
+                "kind": "thumbnails",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/strips/btmjanJx-120.vtt"
+              }
+            ],
+            "minDvrWindow": 120,
+            "image": "https://cdn.jwplayer.com/v2/media/btmjanJx/poster.jpg?width=720",
+            "images": [
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/btmjanJx/poster.jpg?width=320",
+                "width": 320,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/btmjanJx/poster.jpg?width=480",
+                "width": 480,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/btmjanJx/poster.jpg?width=640",
+                "width": 640,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/btmjanJx/poster.jpg?width=720",
+                "width": 720,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/btmjanJx/poster.jpg?width=1280",
+                "width": 1280,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/btmjanJx/poster.jpg?width=1920",
+                "width": 1920,
+                "type": "image/jpeg"
+              }
+            ],
+            "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=btmjanJx&token=REDACTED",
+            "title": "12 - 001 - Agents Overview.mp4",
+            "mediaid": "btmjanJx",
+            "link": null,
+            "duration": 64.334,
+            "pubdate": 1746119112,
+            "description": null,
+            "tags": "",
+            "preload": "auto",
+            "allSources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/btmjanJx.m3u8?exp=1793336880&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/btmjanJx-B9NwIVRu.mp4?exp=1793336880&sig=REDACTED",
+                "width": 320,
+                "height": 180,
+                "label": "180p",
+                "bitrate": 140256,
+                "framerate": 30,
+                "filesize": 1122053,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/btmjanJx-muagBOKI.mp4?exp=1793336880&sig=REDACTED",
+                "width": 480,
+                "height": 270,
+                "label": "270p",
+                "bitrate": 158599,
+                "framerate": 30,
+                "filesize": 1268799,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/btmjanJx-4Xe8IV8X.mp4?exp=1793336880&sig=REDACTED",
+                "width": 720,
+                "height": 406,
+                "label": "406p",
+                "bitrate": 185064,
+                "framerate": 30,
+                "filesize": 1480513,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/btmjanJx-m7ew0xq8.mp4?exp=1793336880&sig=REDACTED",
+                "width": 1280,
+                "height": 720,
+                "label": "720p",
+                "bitrate": 254459,
+                "framerate": 30,
+                "filesize": 2035674,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/btmjanJx-eNgUZBQ2.m4a?exp=1793336880&sig=REDACTED",
+                "label": "Audio",
+                "bitrate": 114142,
+                "filesize": 913141,
+                "mimeType": "audio/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/btmjanJx-hFUVmOoC.mp4?exp=1793336880&sig=REDACTED",
+                "width": 1920,
+                "height": 1080,
+                "label": "1080p",
+                "bitrate": 358393,
+                "framerate": 30,
+                "filesize": 2867146,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              }
+            ],
+            "file": "https://cdn.jwplayer.com/manifests/btmjanJx.m3u8?exp=1793336880&sig=REDACTED",
+            "feedData": {},
+            "chapters": {
+              "defaultLanguage": "en-US",
+              "timestamps": []
+            },
+            "label": "https://cdn.jwplayer.com/manifests/btmjanJx.m3u8?exp=1793336880&sig=REDACTED",
+            "progressTracker": {
+              "10": false,
+              "25": false,
+              "50": false,
+              "75": false
+            }
+          }
+        ],
+        "captions": [
+          {
+            "id": "off",
+            "label": "Off"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/nA99xO9n.srt",
+            "label": "English"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/Ge88899u.srt",
+            "label": "French"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/jXq8lwZq.srt",
+            "label": "German"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/OM7YWSvD.srt",
+            "label": "Hindi"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/h6KMjUhO.srt",
+            "label": "Japanese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/6qpPGeuL.srt",
+            "label": "Korean"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/vphMtBvo.srt",
+            "label": "Portuguese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/ffiKWX5w.srt",
+            "label": "Spanish"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "blob:https://anthropic-partners.skilljar.com/2929ae2f-c2ea-411f-a713-6ebd8379b3a1",
+        "tracks": [],
+        "sources": []
+      }
+    ],
+    "iframes": []
+  },
+  "captionUrl": "https://cdn.jwplayer.com/tracks/nA99xO9n.srt",
+  "rawCaptions": "1\n00:00:00,000 --> 00:00:01,820\n This is going to be an exciting module.\n\n2\n00:00:01,820 --> 00:00:03,700\n We are going to learn about building agents,\n\n3\n00:00:03,700 --> 00:00:05,900\n which are one of the most interesting use cases\n\n4\n00:00:05,900 --> 00:00:07,660\n of language models.\n\n5\n00:00:07,660 --> 00:00:10,540\n However, as exciting as agents are,\n\n6\n00:00:10,540 --> 00:00:12,780\n we really have our work cut out for us.\n\n7\n00:00:12,780 --> 00:00:15,740\n You see, the field of agents is still being explored.\n\n8\n00:00:15,740 --> 00:00:17,900\n There are a variety of different open questions\n\n9\n00:00:17,900 --> 00:00:20,580\n about absolutely foundational aspects of agents.\n\n10\n00:00:20,580 --> 00:00:23,660\n For example, there isn't even a single agreed upon definition\n\n11\n00:00:23,660 --> 00:00:25,700\n of what an agent is.\n\n12\n00:00:25,700 --> 00:00:27,580\n So with this difficulty in mind,\n\n13\n00:00:27,580 --> 00:00:29,900\n let me show you how we are going to cover agents\n\n14\n00:00:29,900 --> 00:00:31,660\n inside this module.\n\n15\n00:00:31,660 --> 00:00:33,060\n Here's our plan.\n\n16\n00:00:33,060 --> 00:00:34,460\n We are going to kick off this section\n\n17\n00:00:34,460 --> 00:00:37,180\n by examining two agents that have been authored\n\n18\n00:00:37,180 --> 00:00:38,720\n and released by Anthropic.\n\n19\n00:00:38,720 --> 00:00:41,020\n They are Claude Code and Computer Use.\n\n20\n00:00:41,020 --> 00:00:43,580\n If we can understand how these agents were designed\n\n21\n00:00:43,580 --> 00:00:45,820\n and how they work, we can extract some insight\n\n22\n00:00:45,820 --> 00:00:47,660\n into what agents really are\n\n23\n00:00:47,660 --> 00:00:49,940\n and what makes an effective agent.\n\n24\n00:00:49,940 --> 00:00:51,940\n We are going to start with Claude Code.\n\n25\n00:00:51,940 --> 00:00:53,740\n I'll walk you through the setup process.\n\n26\n00:00:53,740 --> 00:00:55,220\n We'll understand its use cases\n\n27\n00:00:55,220 --> 00:00:57,660\n and get some hands-on experience with it.\n\n28\n00:00:57,660 --> 00:01:00,220\n We will then repeat that process with Computer Use\n\n29\n00:01:00,220 --> 00:01:01,860\n and then circle back and analyze\n\n30\n00:01:01,860 --> 00:01:04,140\n what makes these agents so successful.",
+  "transcriptText": "This is going to be an exciting module.\n\n We are going to learn about building agents,\n\n which are one of the most interesting use cases\n\n of language models.\n\n However, as exciting as agents are,\n\n we really have our work cut out for us.\n\n You see, the field of agents is still being explored.\n\n There are a variety of different open questions\n\n about absolutely foundational aspects of agents.\n\n For example, there isn't even a single agreed upon definition\n\n of what an agent is.\n\n So with this difficulty in mind,\n\n let me show you how we are going to cover agents\n\n inside this module.\n\n Here's our plan.\n\n We are going to kick off this section\n\n by examining two agents that have been authored\n\n and released by Anthropic.\n\n They are Claude Code and Computer Use.\n\n If we can understand how these agents were designed\n\n and how they work, we can extract some insight\n\n into what agents really are\n\n and what makes an effective agent.\n\n We are going to start with Claude Code.\n\n I'll walk you through the setup process.\n\n We'll understand its use cases\n\n and get some hands-on experience with it.\n\n We will then repeat that process with Computer Use\n\n and then circle back and analyze\n\n what makes these agents so successful.",
+  "downloads": []
+}

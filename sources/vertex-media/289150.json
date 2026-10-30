@@ -1,0 +1,301 @@
+{
+  "lesson": "Chat exercise",
+  "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289150",
+  "collectedAt": "2026-10-30T02:08:16.934Z",
+  "sourceType": "English captions linked by official lesson player",
+  "media": {
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289150",
+    "players": [
+      {
+        "id": "botr_wZ2W60oe_Akyo8gQO_div",
+        "playlist": [
+          {
+            "sources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/wZ2W60oe.m3u8?exp=1793337120&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              }
+            ],
+            "tracks": [
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/ZhkRJJDj.srt",
+                "label": "English",
+                "sideloaded": true,
+                "data": [],
+                "name": "English",
+                "_id": "https://cdn.jwplayer.com/tracks/ZhkRJJDj.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/3Eu2aMd0.srt",
+                "label": "French",
+                "sideloaded": true,
+                "data": [],
+                "name": "French",
+                "_id": "https://cdn.jwplayer.com/tracks/3Eu2aMd0.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/FNPoDjpG.srt",
+                "label": "German",
+                "sideloaded": true,
+                "data": [],
+                "name": "German",
+                "_id": "https://cdn.jwplayer.com/tracks/FNPoDjpG.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/7feViH8a.srt",
+                "label": "Japanese",
+                "sideloaded": true,
+                "data": [],
+                "name": "Japanese",
+                "_id": "https://cdn.jwplayer.com/tracks/7feViH8a.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/xGzhdWWa.srt",
+                "label": "Korean",
+                "sideloaded": true,
+                "data": [],
+                "name": "Korean",
+                "_id": "https://cdn.jwplayer.com/tracks/xGzhdWWa.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/yFlbBMBU.srt",
+                "label": "Portuguese",
+                "sideloaded": true,
+                "data": [],
+                "name": "Portuguese",
+                "_id": "https://cdn.jwplayer.com/tracks/yFlbBMBU.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/HZ70qjrj.srt",
+                "label": "Spanish",
+                "sideloaded": true,
+                "data": [],
+                "name": "Spanish",
+                "_id": "https://cdn.jwplayer.com/tracks/HZ70qjrj.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "thumbnails",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/strips/wZ2W60oe-120.vtt"
+              }
+            ],
+            "minDvrWindow": 120,
+            "image": "https://cdn.jwplayer.com/v2/media/wZ2W60oe/poster.jpg?width=720",
+            "images": [
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/wZ2W60oe/poster.jpg?width=320",
+                "width": 320,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/wZ2W60oe/poster.jpg?width=480",
+                "width": 480,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/wZ2W60oe/poster.jpg?width=640",
+                "width": 640,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/wZ2W60oe/poster.jpg?width=720",
+                "width": 720,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/wZ2W60oe/poster.jpg?width=1280",
+                "width": 1280,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/wZ2W60oe/poster.jpg?width=1920",
+                "width": 1920,
+                "type": "image/jpeg"
+              }
+            ],
+            "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=wZ2W60oe&token=REDACTED",
+            "title": "03 - 005 - Chat Exercise.mp4",
+            "mediaid": "wZ2W60oe",
+            "link": null,
+            "duration": 234.8,
+            "pubdate": 1748548800,
+            "description": null,
+            "tags": "",
+            "preload": "auto",
+            "allSources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/wZ2W60oe.m3u8?exp=1793337120&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/wZ2W60oe-B9NwIVRu.mp4?exp=1793337120&sig=REDACTED",
+                "width": 320,
+                "height": 180,
+                "label": "180p",
+                "bitrate": 147943,
+                "framerate": 30,
+                "filesize": 4327346,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/wZ2W60oe-muagBOKI.mp4?exp=1793337120&sig=REDACTED",
+                "width": 480,
+                "height": 270,
+                "label": "270p",
+                "bitrate": 172144,
+                "framerate": 30,
+                "filesize": 5035218,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/wZ2W60oe-4Xe8IV8X.mp4?exp=1793337120&sig=REDACTED",
+                "width": 720,
+                "height": 406,
+                "label": "406p",
+                "bitrate": 200342,
+                "framerate": 30,
+                "filesize": 5860023,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/wZ2W60oe-m7ew0xq8.mp4?exp=1793337120&sig=REDACTED",
+                "width": 1280,
+                "height": 720,
+                "label": "720p",
+                "bitrate": 283230,
+                "framerate": 30,
+                "filesize": 8284484,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/wZ2W60oe-eNgUZBQ2.m4a?exp=1793337120&sig=REDACTED",
+                "label": "Audio",
+                "bitrate": 113805,
+                "filesize": 3328812,
+                "mimeType": "audio/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/wZ2W60oe-hFUVmOoC.mp4?exp=1793337120&sig=REDACTED",
+                "width": 1920,
+                "height": 1080,
+                "label": "1080p",
+                "bitrate": 409493,
+                "framerate": 30,
+                "filesize": 11977699,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              }
+            ],
+            "file": "https://cdn.jwplayer.com/manifests/wZ2W60oe.m3u8?exp=1793337120&sig=REDACTED",
+            "feedData": {},
+            "chapters": {
+              "defaultLanguage": "en-US",
+              "timestamps": []
+            },
+            "label": "https://cdn.jwplayer.com/manifests/wZ2W60oe.m3u8?exp=1793337120&sig=REDACTED",
+            "progressTracker": {
+              "10": false,
+              "25": false,
+              "50": false,
+              "75": false
+            },
+            "starttime": 0,
+            "played": true
+          }
+        ],
+        "captions": [
+          {
+            "id": "off",
+            "label": "Off"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/ZhkRJJDj.srt",
+            "label": "English"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/3Eu2aMd0.srt",
+            "label": "French"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/FNPoDjpG.srt",
+            "label": "German"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/7feViH8a.srt",
+            "label": "Japanese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/xGzhdWWa.srt",
+            "label": "Korean"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/yFlbBMBU.srt",
+            "label": "Portuguese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/HZ70qjrj.srt",
+            "label": "Spanish"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "blob:https://anthropic-partners.skilljar.com/23d916d2-98ff-4fac-b053-6ac93097cfea",
+        "tracks": [],
+        "sources": []
+      }
+    ],
+    "iframes": []
+  },
+  "captionUrl": "https://cdn.jwplayer.com/tracks/ZhkRJJDj.srt",
+  "rawCaptions": "1\n00:00:00,993 --> 00:00:03,576\nLet's go through a quick exercise just to make sure everything's\n\n2\n00:00:03,636 --> 00:00:06,139\nmaking sense so far. In this exercise, we're going to\n\n3\n00:00:06,160 --> 00:00:08,682\nbe building a very small chatbot that is going to run out\n\n4\n00:00:08,723 --> 00:00:11,606\nof our Jupyter notebook. Here's how it's going to work. Whenever\n\n5\n00:00:11,627 --> 00:00:14,230\nwe run a cell, we're going to prompt the user to enter\n\n6\n00:00:14,330 --> 00:00:17,094\nin some text using the built-in input function.\n\n7\n00:00:17,695 --> 00:00:20,277\nWe're then going to take whatever the user enters and add it into\n\n8\n00:00:20,338 --> 00:00:22,961\na list of messages. We'll then take the list of messages and\n\n9\n00:00:23,021 --> 00:00:25,705\npass it off to the API through the use of our chat function\n\n10\n00:00:25,786 --> 00:00:28,649\nthat we just put together. That's going to give us some feedback\n\n11\n00:00:28,731 --> 00:00:31,373\nfrom Claude, so some generated text. We're going to take\n\n12\n00:00:31,394 --> 00:00:34,478\nthat generated text and add it into our list of messages. We'll\n\n13\n00:00:34,539 --> 00:00:37,082\nprint that generated text and then we will loop and\n\n14\n00:00:37,122 --> 00:00:39,786\ngo back to step one so that we repeat the entire process\n\n15\n00:00:39,906 --> 00:00:42,411\nall over again. I'm going to show you how this thing\n\n16\n00:00:42,451 --> 00:00:45,073\nis intended to work very quickly. So I've already put\n\n17\n00:00:45,154 --> 00:00:47,697\na solution together. I've hidden it inside this cell,\n\n18\n00:00:48,218 --> 00:00:50,780\nand I'm going to run this cell again just so you can see how I intend\n\n19\n00:00:50,801 --> 00:00:53,404\nfor this thing to work. So whenever I run the cell, I'm\n\n20\n00:00:53,444 --> 00:00:56,228\ngoing to immediately prompt the user for some inputs using\n\n21\n00:00:56,268 --> 00:00:58,831\nthe built in input function. And I'll show you how to use that in just\n\n22\n00:00:58,890 --> 00:01:01,393\na moment in case you're not familiar with it. Then I'm going\n\n23\n00:01:01,414 --> 00:01:03,957\nto enter in something like what's one plus one.\n\n24\n00:01:05,236 --> 00:01:07,843\nI should see my message printed right away, and then I should\n\n25\n00:01:07,942 --> 00:01:10,590\nmake use of the chat function to get a response from Claude and\n\n26\n00:01:10,631 --> 00:01:13,138\nprint that up as well. And then I should be prompted once\n\n27\n00:01:13,177 --> 00:01:15,885\nagain to add in some more text. So now I could say something like\n\n28\n00:01:16,566 --> 00:01:19,361\nadd to that answer. And\n\n29\n00:01:19,382 --> 00:01:22,147\nthen I should see that I'm maintaining the history or the context\n\n30\n00:01:22,188 --> 00:01:24,915\nof my conversation. So I should now get a response back\n\n31\n00:01:25,275 --> 00:01:27,820\nthat says taking the previous answer to and adding to it\n\n32\n00:01:27,881 --> 00:01:30,387\nshould result in four. And again, this should go on\n\n33\n00:01:30,427 --> 00:01:33,093\nforever until I eventually interrupt the process\n\n34\n00:01:33,414 --> 00:01:36,019\nby clicking the interrupt button right here and hitting\n\n35\n00:01:36,039 --> 00:01:38,543\nescape. Now, as I mentioned, if\n\n36\n00:01:38,563 --> 00:01:41,171\nyou're not familiar with the built-in input function, no problem.\n\n37\n00:01:41,271 --> 00:01:44,177\nI'm going to give you a little hint right now and just make sure that\n\n38\n00:01:44,198 --> 00:01:46,765\nit's really clear what we want to do. So I'm going to paste in a little bit of\n\n39\n00:01:46,805 --> 00:01:50,233\ncode that you can use as a little template. All\n\n40\n00:01:50,274 --> 00:01:53,180\nright, so here's the general structure that we want to use.\n\n41\n00:01:53,262 --> 00:01:55,965\nWe want to initialize a starting list\n\n42\n00:01:56,004 --> 00:01:58,569\nof messages that's going to start off entirely empty. And then we're going\n\n43\n00:01:58,588 --> 00:02:01,753\nto have a while true loop that is going to run forever. And\n\n44\n00:02:01,793 --> 00:02:04,456\nthen inside the while loop, we're going to ask the user to enter\n\n45\n00:02:04,596 --> 00:02:07,719\nin some text, making use of the, again, built-in input\n\n46\n00:02:07,780 --> 00:02:10,503\nfunction. Whenever the user types into the displayed\n\n47\n00:02:10,604 --> 00:02:13,647\ninput, we'll be assigned to this user input variable. And\n\n48\n00:02:13,668 --> 00:02:16,211\nthen I put some comments in here just to guide you through the steps of what\n\n49\n00:02:16,251 --> 00:02:18,866\nwe need to do. All right, so go ahead and\n\n50\n00:02:19,026 --> 00:02:21,609\npause the video right here. I would encourage you to give this exercise\n\n51\n00:02:21,688 --> 00:02:24,312\na shot. Otherwise, stick around and we'll go\n\n52\n00:02:24,352 --> 00:02:26,933\nover a solution right now. So let's get\n\n53\n00:02:26,954 --> 00:02:29,537\nto it. Let me show you how we could put this together. So\n\n54\n00:02:29,597 --> 00:02:32,159\nto implement the rest of this, we really just have to follow the different comments\n\n55\n00:02:32,180 --> 00:02:34,861\nthat I put in here. The first thing we're going to do is take\n\n56\n00:02:34,901 --> 00:02:37,884\nthat user input and add it into our list of messages using\n\n57\n00:02:37,925 --> 00:02:40,448\nthe add user message function that we just put together\n\n58\n00:02:40,487 --> 00:02:43,330\na moment to go. So I'm going to call add user\n\n59\n00:02:43,591 --> 00:02:46,373\nmessage. I'll pass in the list of messages and\n\n60\n00:02:46,413 --> 00:02:49,340\nmy user input. Then\n\n61\n00:02:49,360 --> 00:02:53,008\nI'm going to call Claude using the built in chat function and\n\n62\n00:02:53,049 --> 00:02:55,615\npass in my list of messages. That's going to give\n\n63\n00:02:55,634 --> 00:02:58,420\nme back some answer. I'm going to take\n\n64\n00:02:58,461 --> 00:03:01,127\nthat answer and add it in as an assistant message\n\n65\n00:03:01,268 --> 00:03:03,834\nto my list of messages. So add assistant\n\n66\n00:03:03,993 --> 00:03:07,134\nmessage. like\n\n67\n00:03:07,194 --> 00:03:09,840\nso. And then I just need to print out the generated\n\n68\n00:03:09,900 --> 00:03:12,844\ntext. And optionally, I can put in some delimiters\n\n69\n00:03:13,365 --> 00:03:15,929\nin the form of little dashes. Just make sure that it's clear\n\n70\n00:03:16,009 --> 00:03:18,753\nto whoever's using this application that it's being generated\n\n71\n00:03:18,933 --> 00:03:21,538\nby our AI. So I'll print a\n\n72\n00:03:21,579 --> 00:03:24,223\ndash, dash, dash. And\n\n73\n00:03:24,323 --> 00:03:26,986\nin between two of those, I'll print out my answer\n\n74\n00:03:27,448 --> 00:03:31,153\nthat I got back. And that's it. So\n\n75\n00:03:31,193 --> 00:03:34,132\nnow to test this out, I'm going to run the cell. And\n\n76\n00:03:34,171 --> 00:03:36,716\nthen I should see some output up here underneath the cell after\n\n77\n00:03:36,756 --> 00:03:39,740\nI start chatting with Claude. So I'm going to ask Claude what's\n\n78\n00:03:39,900 --> 00:03:42,462\none plus one. And I'll get my response\n\n79\n00:03:42,522 --> 00:03:46,008\nback and two more. And\n\n80\n00:03:46,068 --> 00:03:48,871\nI should see adding two more to one plus one should give us four.\n\n81\n00:03:49,572 --> 00:03:52,395\nAll right, very good. So there is our very simple implementation\n\n82\n00:03:52,536 --> 00:03:53,937\nof a looping chatbot.",
+  "transcriptText": "Let's go through a quick exercise just to make sure everything's\n\nmaking sense so far. In this exercise, we're going to\n\nbe building a very small chatbot that is going to run out\n\nof our Jupyter notebook. Here's how it's going to work. Whenever\n\nwe run a cell, we're going to prompt the user to enter\n\nin some text using the built-in input function.\n\nWe're then going to take whatever the user enters and add it into\n\na list of messages. We'll then take the list of messages and\n\npass it off to the API through the use of our chat function\n\nthat we just put together. That's going to give us some feedback\n\nfrom Claude, so some generated text. We're going to take\n\nthat generated text and add it into our list of messages. We'll\n\nprint that generated text and then we will loop and\n\ngo back to step one so that we repeat the entire process\n\nall over again. I'm going to show you how this thing\n\nis intended to work very quickly. So I've already put\n\na solution together. I've hidden it inside this cell,\n\nand I'm going to run this cell again just so you can see how I intend\n\nfor this thing to work. So whenever I run the cell, I'm\n\ngoing to immediately prompt the user for some inputs using\n\nthe built in input function. And I'll show you how to use that in just\n\na moment in case you're not familiar with it. Then I'm going\n\nto enter in something like what's one plus one.\n\nI should see my message printed right away, and then I should\n\nmake use of the chat function to get a response from Claude and\n\nprint that up as well. And then I should be prompted once\n\nagain to add in some more text. So now I could say something like\n\nadd to that answer. And\n\nthen I should see that I'm maintaining the history or the context\n\nof my conversation. So I should now get a response back\n\nthat says taking the previous answer to and adding to it\n\nshould result in four. And again, this should go on\n\nforever until I eventually interrupt the process\n\nby clicking the interrupt button right here and hitting\n\nescape. Now, as I mentioned, if\n\nyou're not familiar with the built-in input function, no problem.\n\nI'm going to give you a little hint right now and just make sure that\n\nit's really clear what we want to do. So I'm going to paste in a little bit of\n\ncode that you can use as a little template. All\n\nright, so here's the general structure that we want to use.\n\nWe want to initialize a starting list\n\nof messages that's going to start off entirely empty. And then we're going\n\nto have a while true loop that is going to run forever. And\n\nthen inside the while loop, we're going to ask the user to enter\n\nin some text, making use of the, again, built-in input\n\nfunction. Whenever the user types into the displayed\n\ninput, we'll be assigned to this user input variable. And\n\nthen I put some comments in here just to guide you through the steps of what\n\nwe need to do. All right, so go ahead and\n\npause the video right here. I would encourage you to give this exercise\n\na shot. Otherwise, stick around and we'll go\n\nover a solution right now. So let's get\n\nto it. Let me show you how we could put this together. So\n\nto implement the rest of this, we really just have to follow the different comments\n\nthat I put in here. The first thing we're going to do is take\n\nthat user input and add it into our list of messages using\n\nthe add user message function that we just put together\n\na moment to go. So I'm going to call add user\n\nmessage. I'll pass in the list of messages and\n\nmy user input. Then\n\nI'm going to call Claude using the built in chat function and\n\npass in my list of messages. That's going to give\n\nme back some answer. I'm going to take\n\nthat answer and add it in as an assistant message\n\nto my list of messages. So add assistant\n\nmessage. like\n\nso. And then I just need to print out the generated\n\ntext. And optionally, I can put in some delimiters\n\nin the form of little dashes. Just make sure that it's clear\n\nto whoever's using this application that it's being generated\n\nby our AI. So I'll print a\n\ndash, dash, dash. And\n\nin between two of those, I'll print out my answer\n\nthat I got back. And that's it. So\n\nnow to test this out, I'm going to run the cell. And\n\nthen I should see some output up here underneath the cell after\n\nI start chatting with Claude. So I'm going to ask Claude what's\n\none plus one. And I'll get my response\n\nback and two more. And\n\nI should see adding two more to one plus one should give us four.\n\nAll right, very good. So there is our very simple implementation\n\nof a looping chatbot.",
+  "downloads": []
+}

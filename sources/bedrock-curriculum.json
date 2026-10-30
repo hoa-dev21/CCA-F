@@ -1,0 +1,334 @@
+[
+  {
+    "text": "Introduction to the course",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/241929"
+  },
+  {
+    "text": "Overview of Claude Models",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/303332"
+  },
+  {
+    "text": "Accessing the API",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276716"
+  },
+  {
+    "text": "Making a request",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276719"
+  },
+  {
+    "text": "Multi-Turn conversations",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276722"
+  },
+  {
+    "text": "Chat bot exercise",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276725"
+  },
+  {
+    "text": "System prompts",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276726"
+  },
+  {
+    "text": "System prompt exercise",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276717"
+  },
+  {
+    "text": "Temperature",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276720"
+  },
+  {
+    "text": "Streaming",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276721"
+  },
+  {
+    "text": "Controlling model output",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276723"
+  },
+  {
+    "text": "Structured data",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276724"
+  },
+  {
+    "text": "Structured data exercise",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276718"
+  },
+  {
+    "text": "Quiz on working with the API",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/289293"
+  },
+  {
+    "text": "Prompt evaluation",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276731"
+  },
+  {
+    "text": "A typical eval workflow",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276732"
+  },
+  {
+    "text": "Generating test datasets",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276733"
+  },
+  {
+    "text": "Running the eval",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276736"
+  },
+  {
+    "text": "Model based grading",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276738"
+  },
+  {
+    "text": "Code based grading",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276735"
+  },
+  {
+    "text": "Exercise on prompt evals",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276734"
+  },
+  {
+    "text": "Quiz on prompt evaluations",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/289297"
+  },
+  {
+    "text": "Prompt engineering",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276749"
+  },
+  {
+    "text": "Being clear and direct",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276743"
+  },
+  {
+    "text": "Being specific",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276745"
+  },
+  {
+    "text": "Structure with XML tags",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276744"
+  },
+  {
+    "text": "Providing examples",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276747"
+  },
+  {
+    "text": "Exercise on prompting",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276746"
+  },
+  {
+    "text": "Quiz on prompt engineering",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/289298"
+  },
+  {
+    "text": "Introducing tool use",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276756"
+  },
+  {
+    "text": "Tool functions",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276757"
+  },
+  {
+    "text": "JSON Schema for tools",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276758"
+  },
+  {
+    "text": "Handling tool use responses",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276764"
+  },
+  {
+    "text": "Running tool functions",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276762"
+  },
+  {
+    "text": "Sending tool results",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276760"
+  },
+  {
+    "text": "Multi-Turn conversations with tools",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276759"
+  },
+  {
+    "text": "Adding multiple tools",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276761"
+  },
+  {
+    "text": "Batch tool use",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276766"
+  },
+  {
+    "text": "Structured data with tools",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276765"
+  },
+  {
+    "text": "Flexible tool extraction",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276763"
+  },
+  {
+    "text": "The text editor tool",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276767"
+  },
+  {
+    "text": "Quiz on tool use",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/289296"
+  },
+  {
+    "text": "Introducing Retrieval Augmented Generation",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276780"
+  },
+  {
+    "text": "Text chunking strategies",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276782"
+  },
+  {
+    "text": "Text embeddings",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276777"
+  },
+  {
+    "text": "The full RAG flow",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276774"
+  },
+  {
+    "text": "Implementing the RAG flow",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276781"
+  },
+  {
+    "text": "BM25 lexical search",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276776"
+  },
+  {
+    "text": "A multi-search RAG pipeline",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276779"
+  },
+  {
+    "text": "Reranking results",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276775"
+  },
+  {
+    "text": "Contextual retrieval",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276778"
+  },
+  {
+    "text": "Quiz on Retrieval Augmented Generation",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/289295"
+  },
+  {
+    "text": "Extended thinking",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276788"
+  },
+  {
+    "text": "Image support",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276789"
+  },
+  {
+    "text": "PDF support",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/308839"
+  },
+  {
+    "text": "Citations",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/308840"
+  },
+  {
+    "text": "Prompt caching",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276786"
+  },
+  {
+    "text": "Rules of prompt caching",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276785"
+  },
+  {
+    "text": "Prompt caching in action",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276787"
+  },
+  {
+    "text": "Quiz on features of Claude",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/289300"
+  },
+  {
+    "text": "Introducing MCP",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276798"
+  },
+  {
+    "text": "MCP clients",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276793"
+  },
+  {
+    "text": "Project setup",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276792"
+  },
+  {
+    "text": "Defining tools with MCP",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276800"
+  },
+  {
+    "text": "The server inspector",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276796"
+  },
+  {
+    "text": "Implementing a client",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276802"
+  },
+  {
+    "text": "Defining resources",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276799"
+  },
+  {
+    "text": "Accessing resources",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276797"
+  },
+  {
+    "text": "Defining prompts",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276801"
+  },
+  {
+    "text": "Prompts in the client",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276795"
+  },
+  {
+    "text": "MCP review",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276794"
+  },
+  {
+    "text": "Quiz on Model Context Protocol",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/289299"
+  },
+  {
+    "text": "Agents overview",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276804"
+  },
+  {
+    "text": "Claude Code setup",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276809"
+  },
+  {
+    "text": "Claude Code in action",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276811"
+  },
+  {
+    "text": "Enhancements with MCP servers",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276806"
+  },
+  {
+    "text": "Parallelizing Claude Code",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276810"
+  },
+  {
+    "text": "Automated debugging",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276812"
+  },
+  {
+    "text": "Computer Use",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276807"
+  },
+  {
+    "text": "How Computer Use works",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276805"
+  },
+  {
+    "text": "Qualities of agents",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276808"
+  },
+  {
+    "text": "Final assessment quiz",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/290881"
+  },
+  {
+    "text": "Course wrap up",
+    "href": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276827"
+  }
+]

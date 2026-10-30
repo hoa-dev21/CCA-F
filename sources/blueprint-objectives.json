@@ -1,0 +1,182 @@
+[
+  {
+    "id": "1.1",
+    "title": "Design and implement agentic loops for autonomous task execution",
+    "page": 5,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "1.2",
+    "title": "Orchestrate multi-agent systems with coordinator-subagent patterns",
+    "page": 5,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "1.3",
+    "title": "Con fi gure subagent invocation, context passing, and spawning",
+    "page": 6,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "1.4",
+    "title": "Implement multi-step work fl ows with enforcement and handoff patterns",
+    "page": 7,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "1.5",
+    "title": "Apply Agent SDK hooks for tool call interception and data normalization",
+    "page": 7,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "1.6",
+    "title": "Design task decomposition strategies for complex work fl ows",
+    "page": 8,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "1.7",
+    "title": "Manage session state, resumption, and forking",
+    "page": 8,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "2.1",
+    "title": "Design effective tool interfaces with clear descriptions and boundaries",
+    "page": 9,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "2.2",
+    "title": "Implement structured error responses for MCP tools",
+    "page": 9,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "2.3",
+    "title": "Distribute tools appropriately across agents and con fi gure tool choice",
+    "page": 10,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "2.4",
+    "title": "Integrate MCP servers into Claude Code and agent work fl ows",
+    "page": 11,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "2.5",
+    "title": "Select and apply built-in tools (Read, Write, Edit, Bash, Grep, Glob) effectively",
+    "page": 11,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "3.1",
+    "title": "Con fi gure CLAUDE.md fi les with appropriate hierarchy, scoping, and modular organization",
+    "page": 12,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "3.2",
+    "title": "Create and con fi gure custom slash commands and skills",
+    "page": 13,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "3.3",
+    "title": "Apply path-speci fi c rules for conditional convention loading",
+    "page": 13,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "3.4",
+    "title": "Determine when to use plan mode vs direct execution",
+    "page": 14,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "3.5",
+    "title": "Apply iterative re fi nement techniques for progressive improvement",
+    "page": 14,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "3.6",
+    "title": "Integrate Claude Code into CI/CD pipelines",
+    "page": 15,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "4.1",
+    "title": "Design prompts with explicit criteria to improve precision and reduce false positives",
+    "page": 16,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "4.2",
+    "title": "Apply few-shot prompting to improve output consistency and quality",
+    "page": 16,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "4.3",
+    "title": "Enforce structured output using tool use and JSON schemas",
+    "page": 17,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "4.4",
+    "title": "Implement validation, retry, and feedback loops for extraction quality",
+    "page": 18,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "4.5",
+    "title": "Design ef fi cient batch processing strategies",
+    "page": 18,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "4.6",
+    "title": "Design multi-instance and multi-pass review architectures",
+    "page": 19,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "5.1",
+    "title": "Manage conversation context to preserve critical information across long interactions",
+    "page": 19,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "5.2",
+    "title": "Design effective escalation and ambiguity resolution patterns",
+    "page": 20,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "5.3",
+    "title": "Implement error propagation strategies across multi-agent systems",
+    "page": 21,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "5.4",
+    "title": "Manage context effectively in large codebase exploration",
+    "page": 21,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "5.5",
+    "title": "Design human review work fl ows and con fi dence calibration",
+    "page": 22,
+    "status": "needs_content_review"
+  },
+  {
+    "id": "5.6",
+    "title": "Preserve information provenance and handle uncertainty in multi- source synthesis",
+    "page": 23,
+    "status": "needs_content_review"
+  }
+]

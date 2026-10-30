@@ -1,0 +1,1277 @@
+[
+  {
+    "title": "Welcome to the course",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287818",
+    "source": "missing_or_video_only",
+    "lesson": "API-68-course-orientation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287818.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Overview of Claude models",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287722",
+    "source": "missing_or_video_only",
+    "lesson": "BEDROCK-02-model-tradeoffs.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287722.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": true,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Accessing the API",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287726",
+    "source": "captured",
+    "lesson": "API-62-api-lifecycle.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287726.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Getting an API key",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/296766",
+    "source": "captured",
+    "lesson": "API-63-api-key.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/296766.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Making a request",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287725",
+    "source": "captured",
+    "lesson": "API-39-request.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287725.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Multi-Turn conversations",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287735",
+    "source": "captured",
+    "lesson": "API-02-multi-turn.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287735.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Chat exercise",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287727",
+    "source": "missing_or_video_only",
+    "lesson": "API-02-multi-turn.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287727.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "System prompts",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287733",
+    "source": "captured",
+    "lesson": "API-03-system-prompts.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287733.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "System prompts exercise",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287724",
+    "source": "missing_or_video_only",
+    "lesson": "API-69-system-exercise.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287724.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Temperature",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287728",
+    "source": "captured",
+    "lesson": "API-40-temperature.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287728.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Course satisfaction survey",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/297284",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/297284.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Response streaming",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287734",
+    "source": "captured",
+    "lesson": "API-61-response-streaming.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287734.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Structured data",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287732",
+    "source": "captured",
+    "lesson": "API-64-structured-historical.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287732.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Structured data exercise",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287729",
+    "source": "missing_or_video_only",
+    "lesson": "API-70-structured-exercise.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287729.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on accessing Claude with the API",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/289117",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/289117.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Prompt evaluation",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287731",
+    "source": "captured",
+    "lesson": "API-04-prompt-evaluation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287731.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "A typical eval workflow",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287736",
+    "source": "captured",
+    "lesson": "API-05-eval-workflow.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287736.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Generating test datasets",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287739",
+    "source": "captured",
+    "lesson": "API-06-test-datasets.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287739.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Running the eval",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287743",
+    "source": "captured",
+    "lesson": "API-07-running-eval.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287743.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Model based grading",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287742",
+    "source": "captured",
+    "lesson": "API-08-model-grading.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287742.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Code based grading",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287737",
+    "source": "captured",
+    "lesson": "API-09-code-grading.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287737.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Exercise on prompt evals",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287738",
+    "source": "missing_or_video_only",
+    "lesson": "API-71-eval-exercise.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287738.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on prompt evaluation",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/289118",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/289118.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Prompt engineering",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287745",
+    "source": "captured",
+    "lesson": "API-10-prompt-engineering.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287745.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Being clear and direct",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287744",
+    "source": "captured",
+    "lesson": "API-11-clear-direct.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287744.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Being specific",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287740",
+    "source": "captured",
+    "lesson": "API-12-specificity.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287740.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Structure with XML tags",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287741",
+    "source": "captured",
+    "lesson": "API-13-xml.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287741.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Providing examples",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287746",
+    "source": "captured",
+    "lesson": "API-14-examples.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287746.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Exercise on prompting",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287748",
+    "source": "missing_or_video_only",
+    "lesson": "API-72-prompting-exercise.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287748.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on prompt engineering techniques",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/289121",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/289121.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Introducing tool use",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287747",
+    "source": "captured",
+    "lesson": "API-01-tool-use.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287747.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Project overview",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287751",
+    "source": "captured",
+    "lesson": "API-41-reminder-project.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287751.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Tool functions",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287756",
+    "source": "captured",
+    "lesson": "API-42-tool-functions.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287756.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Tool schemas",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287753",
+    "source": "captured",
+    "lesson": "API-15-tool-schemas.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287753.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Handling message blocks",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287757",
+    "source": "captured",
+    "lesson": "API-16-message-blocks.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287757.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Sending tool results",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287752",
+    "source": "captured",
+    "lesson": "API-17-tool-results.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287752.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Multi-turn conversations with tools",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287750",
+    "source": "captured",
+    "lesson": "API-18-tools-multi-turn.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287750.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Implementing multiple turns",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287758",
+    "source": "captured",
+    "lesson": "API-19-implement-loop.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287758.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Using multiple tools",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287749",
+    "source": "captured",
+    "lesson": "API-20-multiple-tools.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287749.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Fine grained tool calling",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/313160",
+    "source": "captured",
+    "lesson": "API-50-tool-streaming.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/313160.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "The text edit tool",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287760",
+    "source": "captured",
+    "lesson": "API-51-text-editor.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287760.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "The web search tool",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287755",
+    "source": "captured",
+    "lesson": "API-52-web-search.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287755.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on tool use with Claude",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/289122",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/289122.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Introducing Retrieval Augmented Generation",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287763",
+    "source": "captured",
+    "lesson": "API-43-rag-intro.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287763.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Text chunking strategies",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287776",
+    "source": "captured",
+    "lesson": "API-44-chunking.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287776.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Text embeddings",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287759",
+    "source": "captured",
+    "lesson": "API-45-embeddings.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287759.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "The full RAG flow",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287764",
+    "source": "captured",
+    "lesson": "API-46-rag-flow.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287764.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Implementing the RAG flow",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287761",
+    "source": "captured",
+    "lesson": "API-47-rag-implementation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287761.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "BM25 lexical search",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287767",
+    "source": "captured",
+    "lesson": "API-48-bm25.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287767.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "A Multi-Index RAG pipeline",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287766",
+    "source": "captured",
+    "lesson": "API-49-hybrid.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287766.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Extended thinking",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287773",
+    "source": "captured",
+    "lesson": "API-60-thinking.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287773.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Image support",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287778",
+    "source": "captured",
+    "lesson": "API-59-images.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287778.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "PDF support",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287768",
+    "source": "captured",
+    "lesson": "API-58-pdf-input.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287768.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Citations",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287771",
+    "source": "captured",
+    "lesson": "API-53-citations.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287771.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Prompt caching",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287772",
+    "source": "captured",
+    "lesson": "API-54-cache-intro.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287772.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Rules of prompt caching",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287770",
+    "source": "captured",
+    "lesson": "API-55-cache-rules.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287770.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Prompt caching in action",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287774",
+    "source": "captured",
+    "lesson": "API-56-cache-observation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287774.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Code execution and the Files API",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287777",
+    "source": "captured",
+    "lesson": "API-57-files-execution.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287777.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on features of Claude",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/289124",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/289124.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Introducing MCP",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287780",
+    "source": "captured",
+    "lesson": "API-21-intro-mcp.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287780.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "MCP clients",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287775",
+    "source": "captured",
+    "lesson": "API-22-mcp-clients.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287775.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Project setup",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287785",
+    "source": "captured",
+    "lesson": "API-65-mcp-project-setup.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287785.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Defining tools with MCP",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287797",
+    "source": "captured",
+    "lesson": "API-23-define-mcp-tools.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287797.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "The server inspector",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287781",
+    "source": "captured",
+    "lesson": "API-24-mcp-inspector.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287781.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Implementing a client",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287793",
+    "source": "captured",
+    "lesson": "API-25-mcp-client-implementation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287793.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Defining resources",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287782",
+    "source": "captured",
+    "lesson": "API-26-resources.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287782.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Accessing resources",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287783",
+    "source": "captured",
+    "lesson": "API-27-access-resources.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287783.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Defining prompts",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287784",
+    "source": "captured",
+    "lesson": "API-28-define-prompts.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287784.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Prompts in the client",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287786",
+    "source": "captured",
+    "lesson": "API-29-client-prompts.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287786.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "MCP review",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287790",
+    "source": "missing_or_video_only",
+    "lesson": "MCP-01-control-patterns.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287790.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on Model Context Protocol",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/289126",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/289126.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Anthropic apps",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287787",
+    "source": "captured",
+    "lesson": "API-66-apps.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287787.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Claude Code setup",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287788",
+    "source": "captured",
+    "lesson": "API-67-code-setup.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287788.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Claude Code in action",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287805",
+    "source": "captured",
+    "lesson": "API-30-code-workflow.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287805.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Enhancements with MCP servers",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287792",
+    "source": "captured",
+    "lesson": "API-31-code-mcp.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287792.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Agents and workflows",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287796",
+    "source": "captured",
+    "lesson": "API-32-agents-workflows.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287796.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Parallelization workflows",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287804",
+    "source": "captured",
+    "lesson": "API-33-parallel.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287804.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Chaining workflows",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287800",
+    "source": "captured",
+    "lesson": "API-34-chaining.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287800.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Routing workflows",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287801",
+    "source": "captured",
+    "lesson": "API-35-routing.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287801.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Agents and tools",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287803",
+    "source": "captured",
+    "lesson": "API-36-agent-tools.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287803.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Environment inspection",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287798",
+    "source": "captured",
+    "lesson": "API-37-environment.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287798.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Workflows vs agents",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287794",
+    "source": "captured",
+    "lesson": "API-38-workflow-tradeoffs.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287794.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on Agents and Workflows",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/289130",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/289130.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Final Assessment",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/290899",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/290899.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Course Wrap Up",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287802",
+    "source": "missing_or_video_only",
+    "lesson": "API-68-course-orientation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/api-lessons/287802.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  }
+]

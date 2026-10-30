@@ -1,0 +1,26 @@
+[
+  {
+    "vertex": "289146",
+    "api": "287722",
+    "exact": true,
+    "review": "Whole text equal except explicitly reviewed built-in/built in or an/and ASR spelling"
+  },
+  {
+    "vertex": "289150",
+    "api": "287727",
+    "exact": false,
+    "review": "Whole text equal except explicitly reviewed built-in/built in or an/and ASR spelling"
+  },
+  {
+    "vertex": "289157",
+    "api": "287724",
+    "exact": false,
+    "review": "Whole text equal except explicitly reviewed built-in/built in or an/and ASR spelling"
+  },
+  {
+    "vertex": "289152",
+    "api": "287729",
+    "exact": true,
+    "review": "Whole text equal except explicitly reviewed built-in/built in or an/and ASR spelling"
+  }
+]

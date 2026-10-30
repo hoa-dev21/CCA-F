@@ -1,0 +1,712 @@
+[
+  {
+    "file": "API-01-tool-use.md",
+    "title": "Introducing tool use — Kết nối Claude với dữ liệu bên ngoài",
+    "questions": 3
+  },
+  {
+    "file": "API-02-multi-turn.md",
+    "title": "Multi-Turn conversations — Duy trì hội thoại nhiều lượt",
+    "questions": 3
+  },
+  {
+    "file": "API-03-system-prompts.md",
+    "title": "System prompts — Định hướng vai trò và cách trả lời",
+    "questions": 3
+  },
+  {
+    "file": "API-04-prompt-evaluation.md",
+    "title": "Prompt evaluation — Đo chất lượng thay vì chỉ thử vài lần",
+    "questions": 3
+  },
+  {
+    "file": "API-05-eval-workflow.md",
+    "title": "A typical eval workflow — Quy trình đánh giá",
+    "questions": 3
+  },
+  {
+    "file": "API-06-test-datasets.md",
+    "title": "Generating test datasets — Tạo tập đầu vào kiểm thử",
+    "questions": 3
+  },
+  {
+    "file": "API-07-running-eval.md",
+    "title": "Running the eval — Tổ chức pipeline đánh giá",
+    "questions": 3
+  },
+  {
+    "file": "API-08-model-grading.md",
+    "title": "Model based grading — Chấm bằng mô hình",
+    "questions": 3
+  },
+  {
+    "file": "API-09-code-grading.md",
+    "title": "Code based grading — Chấm bằng mã chương trình",
+    "questions": 3
+  },
+  {
+    "file": "API-10-prompt-engineering.md",
+    "title": "Prompt engineering — Cải tiến có kiểm chứng",
+    "questions": 3
+  },
+  {
+    "file": "API-11-clear-direct.md",
+    "title": "Being clear and direct — Giao nhiệm vụ rõ ràng",
+    "questions": 3
+  },
+  {
+    "file": "API-12-specificity.md",
+    "title": "Being specific — Nêu tiêu chí và bước xử lý",
+    "questions": 3
+  },
+  {
+    "file": "API-13-xml.md",
+    "title": "Structure with XML tags — Phân ranh giới nội dung",
+    "questions": 3
+  },
+  {
+    "file": "API-14-examples.md",
+    "title": "Providing examples — Dạy bằng ví dụ đầu vào và đầu ra",
+    "questions": 3
+  },
+  {
+    "file": "API-15-tool-schemas.md",
+    "title": "Tool schemas — Hợp đồng gọi công cụ",
+    "questions": 3
+  },
+  {
+    "file": "API-16-message-blocks.md",
+    "title": "Handling message blocks — Giữ đầy đủ cấu trúc phản hồi",
+    "questions": 3
+  },
+  {
+    "file": "API-17-tool-results.md",
+    "title": "Sending tool results — Trả kết quả đúng lần gọi",
+    "questions": 3
+  },
+  {
+    "file": "API-18-tools-multi-turn.md",
+    "title": "Multi-turn conversations with tools — Công cụ qua nhiều lượt",
+    "questions": 3
+  },
+  {
+    "file": "API-19-implement-loop.md",
+    "title": "Implementing multiple turns — Triển khai vòng lặp công cụ",
+    "questions": 3
+  },
+  {
+    "file": "API-20-multiple-tools.md",
+    "title": "Using multiple tools — Mở rộng tập công cụ",
+    "questions": 3
+  },
+  {
+    "file": "API-21-intro-mcp.md",
+    "title": "Introducing MCP — Chuẩn hóa lớp tích hợp",
+    "questions": 3
+  },
+  {
+    "file": "API-22-mcp-clients.md",
+    "title": "MCP clients — Khám phá và gọi công cụ",
+    "questions": 3
+  },
+  {
+    "file": "API-23-define-mcp-tools.md",
+    "title": "Defining tools with MCP — Mô tả hàm và tham số",
+    "questions": 3
+  },
+  {
+    "file": "API-24-mcp-inspector.md",
+    "title": "The server inspector — Kiểm tra MCP server độc lập",
+    "questions": 3
+  },
+  {
+    "file": "API-25-mcp-client-implementation.md",
+    "title": "Implementing a client — Quản lý session và giao diện gọi",
+    "questions": 3
+  },
+  {
+    "file": "API-26-resources.md",
+    "title": "Defining resources — Cung cấp dữ liệu theo URI",
+    "questions": 3
+  },
+  {
+    "file": "API-27-access-resources.md",
+    "title": "Accessing resources — Đưa tài liệu vào ngữ cảnh",
+    "questions": 3
+  },
+  {
+    "file": "API-28-define-prompts.md",
+    "title": "Defining prompts — Đóng gói mẫu hướng dẫn",
+    "questions": 3
+  },
+  {
+    "file": "API-29-client-prompts.md",
+    "title": "Prompts in the client — Khám phá và lấy mẫu có tham số",
+    "questions": 3
+  },
+  {
+    "file": "API-30-code-workflow.md",
+    "title": "Claude Code in action — Ngữ cảnh, kế hoạch, thực thi",
+    "questions": 3
+  },
+  {
+    "file": "API-31-code-mcp.md",
+    "title": "Enhancements with MCP servers — Mở rộng Claude Code",
+    "questions": 3
+  },
+  {
+    "file": "API-32-agents-workflows.md",
+    "title": "Agents and workflows — Chọn cách điều phối",
+    "questions": 3
+  },
+  {
+    "file": "API-33-parallel.md",
+    "title": "Parallelization workflows — Phân tích độc lập rồi tổng hợp",
+    "questions": 3
+  },
+  {
+    "file": "API-34-chaining.md",
+    "title": "Chaining workflows — Chia bước theo phụ thuộc",
+    "questions": 3
+  },
+  {
+    "file": "API-35-routing.md",
+    "title": "Routing workflows — Chọn nhánh chuyên biệt",
+    "questions": 3
+  },
+  {
+    "file": "API-36-agent-tools.md",
+    "title": "Agents and tools — Công cụ có thể kết hợp",
+    "questions": 3
+  },
+  {
+    "file": "API-37-environment.md",
+    "title": "Environment inspection — Quan sát kết quả hành động",
+    "questions": 3
+  },
+  {
+    "file": "API-38-workflow-tradeoffs.md",
+    "title": "Workflows vs agents — Đánh đổi giữa dự đoán và linh hoạt",
+    "questions": 3
+  },
+  {
+    "file": "API-39-request.md",
+    "title": "Making a request",
+    "questions": 3
+  },
+  {
+    "file": "API-40-temperature.md",
+    "title": "Temperature — Độ biến thiên đầu ra",
+    "questions": 3
+  },
+  {
+    "file": "API-41-reminder-project.md",
+    "title": "Project overview — Thiết kế hệ thống nhắc việc",
+    "questions": 3
+  },
+  {
+    "file": "API-42-tool-functions.md",
+    "title": "Tool functions — Hàm thực thi và lỗi hữu ích",
+    "questions": 3
+  },
+  {
+    "file": "API-43-rag-intro.md",
+    "title": "Introducing Retrieval Augmented Generation",
+    "questions": 3
+  },
+  {
+    "file": "API-44-chunking.md",
+    "title": "Text chunking strategies",
+    "questions": 3
+  },
+  {
+    "file": "API-45-embeddings.md",
+    "title": "Text embeddings",
+    "questions": 3
+  },
+  {
+    "file": "API-46-rag-flow.md",
+    "title": "The full RAG flow",
+    "questions": 3
+  },
+  {
+    "file": "API-47-rag-implementation.md",
+    "title": "Implementing the RAG flow",
+    "questions": 3
+  },
+  {
+    "file": "API-48-bm25.md",
+    "title": "BM25 lexical search",
+    "questions": 3
+  },
+  {
+    "file": "API-49-hybrid.md",
+    "title": "A Multi-Index RAG pipeline",
+    "questions": 3
+  },
+  {
+    "file": "API-50-tool-streaming.md",
+    "title": "Fine grained tool calling",
+    "questions": 3
+  },
+  {
+    "file": "API-51-text-editor.md",
+    "title": "The text edit tool",
+    "questions": 3
+  },
+  {
+    "file": "API-52-web-search.md",
+    "title": "The web search tool",
+    "questions": 3
+  },
+  {
+    "file": "API-53-citations.md",
+    "title": "Citations — Liên kết câu trả lời với tài liệu",
+    "questions": 3
+  },
+  {
+    "file": "API-54-cache-intro.md",
+    "title": "Prompt caching",
+    "questions": 3
+  },
+  {
+    "file": "API-55-cache-rules.md",
+    "title": "Rules of prompt caching",
+    "questions": 3
+  },
+  {
+    "file": "API-56-cache-observation.md",
+    "title": "Prompt caching in action",
+    "questions": 3
+  },
+  {
+    "file": "API-57-files-execution.md",
+    "title": "Code execution and the Files API",
+    "questions": 3
+  },
+  {
+    "file": "API-58-pdf-input.md",
+    "title": "PDF support",
+    "questions": 3
+  },
+  {
+    "file": "API-59-images.md",
+    "title": "Image support",
+    "questions": 3
+  },
+  {
+    "file": "API-60-thinking.md",
+    "title": "Extended thinking",
+    "questions": 3
+  },
+  {
+    "file": "API-61-response-streaming.md",
+    "title": "Response streaming",
+    "questions": 3
+  },
+  {
+    "file": "API-62-api-lifecycle.md",
+    "title": "Accessing the API",
+    "questions": 3
+  },
+  {
+    "file": "API-63-api-key.md",
+    "title": "Getting an API key",
+    "questions": 3
+  },
+  {
+    "file": "API-64-structured-historical.md",
+    "title": "Structured data — Ví dụ prefill và stop sequence",
+    "questions": 3
+  },
+  {
+    "file": "API-65-mcp-project-setup.md",
+    "title": "Project setup — CLI và server tài liệu",
+    "questions": 3
+  },
+  {
+    "file": "API-66-apps.md",
+    "title": "Anthropic apps — Ví dụ agent thực tế",
+    "questions": 3
+  },
+  {
+    "file": "API-67-code-setup.md",
+    "title": "Claude Code setup",
+    "questions": 3
+  },
+  {
+    "file": "API-68-course-orientation.md",
+    "title": "Welcome — Bản đồ nội dung và cách luyện thực hành",
+    "questions": 3
+  },
+  {
+    "file": "API-69-system-exercise.md",
+    "title": "System prompts exercise — Vai trò và tính súc tích",
+    "questions": 3
+  },
+  {
+    "file": "API-70-structured-exercise.md",
+    "title": "Structured data exercise — Prefill, delimiter và giới hạn bảo đảm",
+    "questions": 3
+  },
+  {
+    "file": "API-71-eval-exercise.md",
+    "title": "Exercise on prompt evals — Truyền tiêu chí cho grader",
+    "questions": 3
+  },
+  {
+    "file": "API-72-prompting-exercise.md",
+    "title": "Exercise on prompting — Trích chủ đề theo output contract",
+    "questions": 3
+  },
+  {
+    "file": "BEDROCK-01-introduction.md",
+    "title": "Introduction to the course",
+    "questions": 3
+  },
+  {
+    "file": "BEDROCK-02-model-tradeoffs.md",
+    "title": "Overview of Claude Models — Chọn theo đánh đổi",
+    "questions": 3
+  },
+  {
+    "file": "BEDROCK-03-request-flow.md",
+    "title": "Accessing the API — Luồng qua Bedrock",
+    "questions": 3
+  },
+  {
+    "file": "BEDROCK-04-converse-request.md",
+    "title": "Making a request — Adapter Converse",
+    "questions": 3
+  },
+  {
+    "file": "BEDROCK-05-output-control.md",
+    "title": "Controlling model output — Prefill và dấu dừng",
+    "questions": 3
+  },
+  {
+    "file": "BEDROCK-06-batch-tool.md",
+    "title": "Batch tool use — Gom lời gọi khác với chạy đồng thời",
+    "questions": 3
+  },
+  {
+    "file": "BEDROCK-07-flexible-extraction.md",
+    "title": "Flexible tool extraction — Linh hoạt và hợp đồng chặt",
+    "questions": 3
+  },
+  {
+    "file": "BEDROCK-08-reranking.md",
+    "title": "Reranking results — Xếp lại các ứng viên",
+    "questions": 3
+  },
+  {
+    "file": "BEDROCK-09-contextual-retrieval.md",
+    "title": "Contextual retrieval — Giữ bối cảnh của chunk",
+    "questions": 3
+  },
+  {
+    "file": "BEDROCK-10-parallel-code.md",
+    "title": "Parallelizing Claude Code — Cô lập công việc song song",
+    "questions": 3
+  },
+  {
+    "file": "BEDROCK-11-automated-debugging.md",
+    "title": "Automated debugging — Từ log đến PR có kiểm chứng",
+    "questions": 3
+  },
+  {
+    "file": "BEDROCK-12-computer-use.md",
+    "title": "Computer Use — Kiểm thử giao diện qua phản hồi trực quan",
+    "questions": 3
+  },
+  {
+    "file": "BEDROCK-13-computer-use-loop.md",
+    "title": "How Computer Use works — Ứng dụng thực thi vòng tool",
+    "questions": 3
+  },
+  {
+    "file": "BEDROCK-14-agent-qualities.md",
+    "title": "Qualities of agents — Quan sát, hành động, đánh giá",
+    "questions": 3
+  },
+  {
+    "file": "CLAUDE101-01-overview.md",
+    "title": "What is Claude?",
+    "questions": 3
+  },
+  {
+    "file": "CLAUDE101-02-conversation.md",
+    "title": "Your first conversation with Claude",
+    "questions": 3
+  },
+  {
+    "file": "CLAUDE101-03-better-results.md",
+    "title": "Getting better results",
+    "questions": 3
+  },
+  {
+    "file": "CLAUDE101-04-projects.md",
+    "title": "Introduction to projects",
+    "questions": 3
+  },
+  {
+    "file": "CLAUDE101-05-skills.md",
+    "title": "Working with skills",
+    "questions": 3
+  },
+  {
+    "file": "CLAUDE101-06-connectors.md",
+    "title": "Connecting your tools",
+    "questions": 3
+  },
+  {
+    "file": "CLAUDE101-07-enterprise-search.md",
+    "title": "Enterprise search",
+    "questions": 3
+  },
+  {
+    "file": "CLAUDE101-08-research.md",
+    "title": "Research for deep dives",
+    "questions": 3
+  },
+  {
+    "file": "CLAUDE101-09-roles.md",
+    "title": "Claude in action: use-cases by role",
+    "questions": 3
+  },
+  {
+    "file": "CLAUDE101-10-next.md",
+    "title": "What’s next? — Chọn bước thực hành",
+    "questions": 3
+  },
+  {
+    "file": "CLAUDE101-11-desktop.md",
+    "title": "How you’ll work with Claude on your desktop",
+    "questions": 3
+  },
+  {
+    "file": "CLAUDE101-12-artifacts.md",
+    "title": "Creating with artifacts",
+    "questions": 3
+  },
+  {
+    "file": "CLAUDE101-13-interfaces.md",
+    "title": "Other ways to work with Claude",
+    "questions": 3
+  },
+  {
+    "file": "CODE-01-steering.md",
+    "title": "Steering Long Sessions — Điều hướng phiên dài",
+    "questions": 3
+  },
+  {
+    "file": "CODE-02-claude-md.md",
+    "title": "A CLAUDE.md That Follows — Đặt hướng dẫn đúng chỗ",
+    "questions": 3
+  },
+  {
+    "file": "CODE-03-verification-skills.md",
+    "title": "Verification Skills — Quy trình kiểm chứng dùng lại",
+    "questions": 3
+  },
+  {
+    "file": "CODE-04-permissions.md",
+    "title": "Permission Modes — Quyền thực thi và kiểm chứng",
+    "questions": 3
+  },
+  {
+    "file": "CODE-05-hooks.md",
+    "title": "Hooks — Chặn trước, kiểm tra sau",
+    "questions": 3
+  },
+  {
+    "file": "CODE-06-headless.md",
+    "title": "Routines and Headless — Chọn nơi chạy tự động",
+    "questions": 3
+  },
+  {
+    "file": "CODE-07-ci-review.md",
+    "title": "GitHub Actions and Code Review — Review quản lý và CI tùy biến",
+    "questions": 3
+  },
+  {
+    "file": "CODE-08-unsupervised.md",
+    "title": "Verifying Unsupervised Runs — Kiểm chứng phiên tự chạy",
+    "questions": 3
+  },
+  {
+    "file": "CODE-09-plugins.md",
+    "title": "Plugins — Đóng gói cấu hình cho nhóm",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-01-multi-agent.md",
+    "title": "Điều phối nhiều agent và truyền ngữ cảnh",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-02-escalation.md",
+    "title": "Gate nghiệp vụ và bàn giao cho con người",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-03-errors-provenance.md",
+    "title": "Lỗi có cấu trúc và nguồn của kết luận",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-04-confidence.md",
+    "title": "Hiệu chỉnh confidence và chọn mẫu kiểm tra",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-05-structured-output.md",
+    "title": "Structured output — Schema và lựa chọn công cụ",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-06-validation-retry.md",
+    "title": "Validation và retry có phản hồi lỗi",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-07-batches.md",
+    "title": "Batch processing — Chọn theo độ trễ được phép",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-08-multi-pass-review.md",
+    "title": "Review độc lập và review nhiều lượt",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-09-mcp-scope-tools.md",
+    "title": "MCP scope và chọn công cụ khám phá codebase",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-10-rules-skills-scope.md",
+    "title": "Quy tắc theo đường dẫn và phạm vi skills/commands",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-11-errors-tool-scope.md",
+    "title": "Phân loại lỗi và phân phối công cụ theo vai trò",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-12-session-context.md",
+    "title": "Resume, fork và trạng thái qua ranh giới context",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-13-review-feedback-ci.md",
+    "title": "Tiêu chí review, phản hồi và CI có thể kiểm tra",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-14-loop-decomposition.md",
+    "title": "Điều kiện dừng và chia nhiệm vụ thích ứng",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-15-tool-contract-scenarios.md",
+    "title": "Tình huống tool contract, lỗi và lựa chọn công cụ",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-16-code-config-iteration.md",
+    "title": "Tình huống cấu hình Claude Code và lặp sửa theo bằng chứng",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-17-quality-examples-batch.md",
+    "title": "Tình huống few-shot, false positives và độ trễ batch",
+    "questions": 3
+  },
+  {
+    "file": "EXAM-18-context-source-review.md",
+    "title": "Tình huống context dài, nguồn mâu thuẫn và review có chọn mẫu",
+    "questions": 3
+  },
+  {
+    "file": "FLUENCY-01-introduction.md",
+    "title": "Introduction to AI Fluency — Học cách cộng tác",
+    "questions": 3
+  },
+  {
+    "file": "FLUENCY-02-collaboration.md",
+    "title": "Why do we need AI Fluency? — Ba cách cộng tác",
+    "questions": 3
+  },
+  {
+    "file": "FLUENCY-03-four-d.md",
+    "title": "The 4D Framework — Bốn năng lực",
+    "questions": 3
+  },
+  {
+    "file": "FLUENCY-04-generative-ai.md",
+    "title": "Generative AI fundamentals — Mô hình nền tảng",
+    "questions": 3
+  },
+  {
+    "file": "FLUENCY-05-limits.md",
+    "title": "Capabilities & limitations — Khả năng và giới hạn",
+    "questions": 3
+  },
+  {
+    "file": "FLUENCY-06-delegation.md",
+    "title": "A closer look at Delegation — Phân công có chủ đích",
+    "questions": 3
+  },
+  {
+    "file": "FLUENCY-07-planning.md",
+    "title": "Project planning and Delegation",
+    "questions": 3
+  },
+  {
+    "file": "FLUENCY-08-description.md",
+    "title": "A closer look at Description",
+    "questions": 3
+  },
+  {
+    "file": "FLUENCY-09-prompting.md",
+    "title": "Effective prompting techniques",
+    "questions": 3
+  },
+  {
+    "file": "FLUENCY-10-discernment.md",
+    "title": "A closer look at Discernment",
+    "questions": 3
+  },
+  {
+    "file": "FLUENCY-11-feedback-loop.md",
+    "title": "The Description-Discernment loop",
+    "questions": 3
+  },
+  {
+    "file": "FLUENCY-12-diligence.md",
+    "title": "A closer look at Diligence",
+    "questions": 3
+  },
+  {
+    "file": "FLUENCY-13-conclusion.md",
+    "title": "Conclusion — Tích hợp bốn năng lực",
+    "questions": 3
+  },
+  {
+    "file": "FLUENCY-14-activities.md",
+    "title": "Additional activities — Duy trì thực hành",
+    "questions": 3
+  },
+  {
+    "file": "MCP-01-control-patterns.md",
+    "title": "MCP review — Ai kiểm soát từng primitive?",
+    "questions": 3
+  },
+  {
+    "file": "VERTEX-01-setup.md",
+    "title": "Vertex AI Setup — Xác thực và quyền truy cập đúng provider",
+    "questions": 3
+  }
+]

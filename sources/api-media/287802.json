@@ -1,0 +1,300 @@
+{
+  "lesson": "Course Wrap Up",
+  "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287802",
+  "collectedAt": "2026-10-29T18:40:19.841Z",
+  "sourceType": "English captions linked by official lesson player",
+  "media": {
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287802",
+    "players": [
+      {
+        "id": "botr_FlKckv4Z_Akyo8gQO_div",
+        "playlist": [
+          {
+            "sources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/FlKckv4Z.m3u8?exp=1793310240&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              }
+            ],
+            "tracks": [
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/3eEQvWuu.srt",
+                "label": "English",
+                "sideloaded": true,
+                "data": [],
+                "name": "English",
+                "_id": "https://cdn.jwplayer.com/tracks/3eEQvWuu.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/okkUKI9l.srt",
+                "label": "French",
+                "sideloaded": true,
+                "data": [],
+                "name": "French",
+                "_id": "https://cdn.jwplayer.com/tracks/okkUKI9l.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/tnXMGKKc.srt",
+                "label": "German",
+                "sideloaded": true,
+                "data": [],
+                "name": "German",
+                "_id": "https://cdn.jwplayer.com/tracks/tnXMGKKc.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/cS0S25GW.srt",
+                "label": "Japanese",
+                "sideloaded": true,
+                "data": [],
+                "name": "Japanese",
+                "_id": "https://cdn.jwplayer.com/tracks/cS0S25GW.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/mkE5tPEG.srt",
+                "label": "Korean",
+                "sideloaded": true,
+                "data": [],
+                "name": "Korean",
+                "_id": "https://cdn.jwplayer.com/tracks/mkE5tPEG.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/sTCiUBdo.srt",
+                "label": "Portuguese",
+                "sideloaded": true,
+                "data": [],
+                "name": "Portuguese",
+                "_id": "https://cdn.jwplayer.com/tracks/sTCiUBdo.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/ZL3gVUED.srt",
+                "label": "Spanish",
+                "sideloaded": true,
+                "data": [],
+                "name": "Spanish",
+                "_id": "https://cdn.jwplayer.com/tracks/ZL3gVUED.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "thumbnails",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/strips/FlKckv4Z-120.vtt"
+              }
+            ],
+            "minDvrWindow": 120,
+            "image": "https://cdn.jwplayer.com/v2/media/FlKckv4Z/poster.jpg?width=720",
+            "images": [
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/FlKckv4Z/poster.jpg?width=320",
+                "width": 320,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/FlKckv4Z/poster.jpg?width=480",
+                "width": 480,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/FlKckv4Z/poster.jpg?width=640",
+                "width": 640,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/FlKckv4Z/poster.jpg?width=720",
+                "width": 720,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/FlKckv4Z/poster.jpg?width=1280",
+                "width": 1280,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/FlKckv4Z/poster.jpg?width=1920",
+                "width": 1920,
+                "type": "image/jpeg"
+              }
+            ],
+            "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=FlKckv4Z&token=REDACTED",
+            "title": "12 - 001 - Course Wrap Up.mp4",
+            "mediaid": "FlKckv4Z",
+            "link": null,
+            "duration": 192.134,
+            "pubdate": 1748378371,
+            "description": null,
+            "tags": "",
+            "preload": "auto",
+            "allSources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/FlKckv4Z.m3u8?exp=1793310240&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/FlKckv4Z-B9NwIVRu.mp4?exp=1793310240&sig=REDACTED",
+                "width": 320,
+                "height": 180,
+                "label": "180p",
+                "bitrate": 130364,
+                "framerate": 30,
+                "filesize": 3128757,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/FlKckv4Z-muagBOKI.mp4?exp=1793310240&sig=REDACTED",
+                "width": 480,
+                "height": 270,
+                "label": "270p",
+                "bitrate": 138145,
+                "framerate": 30,
+                "filesize": 3315483,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/FlKckv4Z-4Xe8IV8X.mp4?exp=1793310240&sig=REDACTED",
+                "width": 720,
+                "height": 406,
+                "label": "406p",
+                "bitrate": 151757,
+                "framerate": 30,
+                "filesize": 3642186,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/FlKckv4Z-m7ew0xq8.mp4?exp=1793310240&sig=REDACTED",
+                "width": 1280,
+                "height": 720,
+                "label": "720p",
+                "bitrate": 181492,
+                "framerate": 30,
+                "filesize": 4355809,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/FlKckv4Z-eNgUZBQ2.m4a?exp=1793310240&sig=REDACTED",
+                "label": "Audio",
+                "bitrate": 113512,
+                "filesize": 2724289,
+                "mimeType": "audio/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/FlKckv4Z-hFUVmOoC.mp4?exp=1793310240&sig=REDACTED",
+                "width": 1920,
+                "height": 1080,
+                "label": "1080p",
+                "bitrate": 222180,
+                "framerate": 30,
+                "filesize": 5332343,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              }
+            ],
+            "file": "https://cdn.jwplayer.com/manifests/FlKckv4Z.m3u8?exp=1793310240&sig=REDACTED",
+            "feedData": {},
+            "chapters": {
+              "defaultLanguage": "en-US",
+              "timestamps": []
+            },
+            "label": "https://cdn.jwplayer.com/manifests/FlKckv4Z.m3u8?exp=1793310240&sig=REDACTED",
+            "progressTracker": {
+              "10": false,
+              "25": false,
+              "50": false,
+              "75": false
+            },
+            "starttime": 0
+          }
+        ],
+        "captions": [
+          {
+            "id": "off",
+            "label": "Off"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/3eEQvWuu.srt",
+            "label": "English"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/okkUKI9l.srt",
+            "label": "French"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/tnXMGKKc.srt",
+            "label": "German"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/cS0S25GW.srt",
+            "label": "Japanese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/mkE5tPEG.srt",
+            "label": "Korean"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/sTCiUBdo.srt",
+            "label": "Portuguese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/ZL3gVUED.srt",
+            "label": "Spanish"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "blob:https://anthropic-partners.skilljar.com/109f5366-3247-45b2-95e8-2060ca2dbec8",
+        "tracks": [],
+        "sources": []
+      }
+    ],
+    "iframes": []
+  },
+  "captionUrl": "https://cdn.jwplayer.com/tracks/3eEQvWuu.srt",
+  "rawCaptions": "1\n00:00:00,318 --> 00:00:03,343\nIf you have made it through this course, you have put in a tremendous\n\n2\n00:00:03,403 --> 00:00:06,128\namount of effort, and I congratulate you. Before\n\n3\n00:00:06,168 --> 00:00:08,952\nwe close things out, I want to very quickly recap some of the major\n\n4\n00:00:08,993 --> 00:00:11,717\ntopics we discussed and give you some recommended follow-up\n\n5\n00:00:11,756 --> 00:00:14,301\ntopics to research in the future. First, a\n\n6\n00:00:14,342 --> 00:00:17,065\nquick recap of what we have covered. We began this course\n\n7\n00:00:17,106 --> 00:00:19,690\nby discussing some of the different models offered by Anthropic.\n\n8\n00:00:20,091 --> 00:00:22,936\nRemember, we have access to Haiku for fast, smaller requests,\n\n9\n00:00:23,256 --> 00:00:25,881\nand Sonnet for greater intelligence. We then spend\n\n10\n00:00:25,900 --> 00:00:28,864\na lot of time discussing how to access Claude via the API\n\n11\n00:00:29,225 --> 00:00:31,827\nand different parameters we could feed into Claude in order\n\n12\n00:00:31,867 --> 00:00:34,610\nto adjust its response. For example, we discussed\n\n13\n00:00:34,792 --> 00:00:37,615\ntemperature and stop sequences, message prefilling.\n\n14\n00:00:38,076 --> 00:00:40,579\nAll these are parameters we can use to direct Claude in\n\n15\n00:00:40,639 --> 00:00:43,161\ncertain directions, control its creativity, and ensure\n\n16\n00:00:43,182 --> 00:00:46,625\nthat we get the correct format of data or output that we expect.\n\n17\n00:00:46,606 --> 00:00:49,331\nWe then spend a good amount of time talking about prompt evaluations.\n\n18\n00:00:49,972 --> 00:00:52,837\nI cannot stress it enough. Prompt evaluations is,\n\n19\n00:00:53,076 --> 00:00:55,720\nby far, the most important practice for you to implement on\n\n20\n00:00:55,762 --> 00:00:58,466\nyour own projects. You might sit down and run\n\n21\n00:00:58,506 --> 00:01:01,131\na prompt 10 times on your own and think everything is okay,\n\n22\n00:01:01,430 --> 00:01:04,215\nbut as soon as you deploy it in production, your users might\n\n23\n00:01:04,256 --> 00:01:06,900\nnot get the results that you want them to get. The only\n\n24\n00:01:06,941 --> 00:01:09,465\nway to make sure that you are writing effective prompts is\n\n25\n00:01:09,525 --> 00:01:12,188\nby evaluating them. And remember, prompt devals, they\n\n26\n00:01:12,248 --> 00:01:14,754\ndon't have to be hard. You do not have to make use\n\n27\n00:01:14,873 --> 00:01:17,597\nof a fancy framework or do any kind of a big complicated\n\n28\n00:01:17,679 --> 00:01:20,183\nsetup. You can use Claude to generate\n\n29\n00:01:20,322 --> 00:01:22,968\na prompt evaluation framework on your own. And that's\n\n30\n00:01:23,087 --> 00:01:25,591\nkind of what you saw inside this course. The prompt deval framework\n\n31\n00:01:25,632 --> 00:01:28,236\nthat we made use of, a lot of that code was written directly by\n\n32\n00:01:28,337 --> 00:01:30,859\nClaude. We then spent some time discussing prompt\n\n33\n00:01:30,900 --> 00:01:33,501\nengineering. Remember, there's a handful of techniques for\n\n34\n00:01:33,542 --> 00:01:36,284\nyou to keep in mind. Chief among them is just simply being\n\n35\n00:01:36,405 --> 00:01:39,188\nclear and directly telling Claude what you expect\n\n36\n00:01:39,248 --> 00:01:41,911\nof it. After that, we spent a lot of effort on\n\n37\n00:01:41,971 --> 00:01:44,653\ntool use, and that was probably one of the more complicated sections\n\n38\n00:01:44,834 --> 00:01:47,496\ninside the course. Tool use is extremely important\n\n39\n00:01:47,576 --> 00:01:50,480\nbecause it dramatically expands the capabilities of Claude.\n\n40\n00:01:50,879 --> 00:01:53,623\nWe then spent some time with two important applications\n\n41\n00:01:53,662 --> 00:01:56,346\nthat then released by Anthropic Directly, Claude code\n\n42\n00:01:56,486 --> 00:01:59,049\nand Computer use. I hope you enjoyed getting\n\n43\n00:01:59,108 --> 00:02:01,754\nsome hands-on experience with Claude Code. Personally, it is\n\n44\n00:02:01,793 --> 00:02:04,317\nwhat I use to help me author code and projects.\n\n45\n00:02:04,698 --> 00:02:07,563\nI don't actually use a fancy in-editor assistant\n\n46\n00:02:07,603 --> 00:02:10,228\nthat much. I really just run Claude Code at the terminal\n\n47\n00:02:10,549 --> 00:02:13,092\nin the exact same style that you saw in those videos.\n\n48\n00:02:13,326 --> 00:02:16,170\nAnd then finally, we spent a decent amount of time discussing workflows\n\n49\n00:02:16,372 --> 00:02:18,955\nand agents. Now, remember, agents are\n\n50\n00:02:18,996 --> 00:02:21,539\ndefinitely interesting. It's a very exciting topic, but\n\n51\n00:02:21,580 --> 00:02:24,143\nyou very often are going to get better results and higher\n\n52\n00:02:24,223 --> 00:02:26,948\naccuracy by the use of workflows.\n\n53\n00:02:26,967 --> 00:02:29,632\nFor a lack of time, we were not able to cover every topic\n\n54\n00:02:29,731 --> 00:02:32,455\ninside of this course. There are some big ticket\n\n55\n00:02:32,556 --> 00:02:35,120\nitems that I recommend you follow up and do some research on your\n\n56\n00:02:35,199 --> 00:02:37,883\nown. Chief among them is a lot of topics around\n\n57\n00:02:37,924 --> 00:02:40,587\nagents. Understanding how to get agents to work\n\n58\n00:02:40,628 --> 00:02:43,132\ntogether with agent orchestration, understanding\n\n59\n00:02:43,192 --> 00:02:46,097\nhow to evaluate an agent's performance and monitor\n\n60\n00:02:46,116 --> 00:02:48,760\nit, and a variation on RAG, known as\n\n61\n00:02:48,781 --> 00:02:51,304\nagentic RAG, are all topics that I recommend you\n\n62\n00:02:51,343 --> 00:02:53,867\nspend some time to research on your own. I\n\n63\n00:02:53,927 --> 00:02:56,752\nalso recommend you take a look at some different techniques for RAG\n\n64\n00:02:56,853 --> 00:02:59,456\nevaluation and tool evaluation. Tool\n\n65\n00:02:59,477 --> 00:03:02,081\nevaluation is similar to prompt eVals. We want to make\n\n66\n00:03:02,122 --> 00:03:04,687\nsure that our tool descriptions are helping Claude in the\n\n67\n00:03:04,707 --> 00:03:07,413\nway we really expect. Well, that's it for now. Like\n\n68\n00:03:07,454 --> 00:03:10,099\nI said, I hope you enjoyed this course and I appreciate your time\n\n69\n00:03:10,240 --> 00:03:11,682\nin working through this content.",
+  "transcriptText": "If you have made it through this course, you have put in a tremendous\n\namount of effort, and I congratulate you. Before\n\nwe close things out, I want to very quickly recap some of the major\n\ntopics we discussed and give you some recommended follow-up\n\ntopics to research in the future. First, a\n\nquick recap of what we have covered. We began this course\n\nby discussing some of the different models offered by Anthropic.\n\nRemember, we have access to Haiku for fast, smaller requests,\n\nand Sonnet for greater intelligence. We then spend\n\na lot of time discussing how to access Claude via the API\n\nand different parameters we could feed into Claude in order\n\nto adjust its response. For example, we discussed\n\ntemperature and stop sequences, message prefilling.\n\nAll these are parameters we can use to direct Claude in\n\ncertain directions, control its creativity, and ensure\n\nthat we get the correct format of data or output that we expect.\n\nWe then spend a good amount of time talking about prompt evaluations.\n\nI cannot stress it enough. Prompt evaluations is,\n\nby far, the most important practice for you to implement on\n\nyour own projects. You might sit down and run\n\na prompt 10 times on your own and think everything is okay,\n\nbut as soon as you deploy it in production, your users might\n\nnot get the results that you want them to get. The only\n\nway to make sure that you are writing effective prompts is\n\nby evaluating them. And remember, prompt devals, they\n\ndon't have to be hard. You do not have to make use\n\nof a fancy framework or do any kind of a big complicated\n\nsetup. You can use Claude to generate\n\na prompt evaluation framework on your own. And that's\n\nkind of what you saw inside this course. The prompt deval framework\n\nthat we made use of, a lot of that code was written directly by\n\nClaude. We then spent some time discussing prompt\n\nengineering. Remember, there's a handful of techniques for\n\nyou to keep in mind. Chief among them is just simply being\n\nclear and directly telling Claude what you expect\n\nof it. After that, we spent a lot of effort on\n\ntool use, and that was probably one of the more complicated sections\n\ninside the course. Tool use is extremely important\n\nbecause it dramatically expands the capabilities of Claude.\n\nWe then spent some time with two important applications\n\nthat then released by Anthropic Directly, Claude code\n\nand Computer use. I hope you enjoyed getting\n\nsome hands-on experience with Claude Code. Personally, it is\n\nwhat I use to help me author code and projects.\n\nI don't actually use a fancy in-editor assistant\n\nthat much. I really just run Claude Code at the terminal\n\nin the exact same style that you saw in those videos.\n\nAnd then finally, we spent a decent amount of time discussing workflows\n\nand agents. Now, remember, agents are\n\ndefinitely interesting. It's a very exciting topic, but\n\nyou very often are going to get better results and higher\n\naccuracy by the use of workflows.\n\nFor a lack of time, we were not able to cover every topic\n\ninside of this course. There are some big ticket\n\nitems that I recommend you follow up and do some research on your\n\nown. Chief among them is a lot of topics around\n\nagents. Understanding how to get agents to work\n\ntogether with agent orchestration, understanding\n\nhow to evaluate an agent's performance and monitor\n\nit, and a variation on RAG, known as\n\nagentic RAG, are all topics that I recommend you\n\nspend some time to research on your own. I\n\nalso recommend you take a look at some different techniques for RAG\n\nevaluation and tool evaluation. Tool\n\nevaluation is similar to prompt eVals. We want to make\n\nsure that our tool descriptions are helping Claude in the\n\nway we really expect. Well, that's it for now. Like\n\nI said, I hope you enjoyed this course and I appreciate your time\n\nin working through this content.",
+  "downloads": []
+}

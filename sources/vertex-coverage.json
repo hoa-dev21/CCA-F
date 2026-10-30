@@ -1,0 +1,1397 @@
+[
+  {
+    "title": "Welcome to the course",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289145",
+    "source": "missing_or_video_only",
+    "lesson": "API-68-course-orientation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289145.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Overview of Claude models",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289146",
+    "source": "missing_or_video_only",
+    "lesson": "BEDROCK-02-model-tradeoffs.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289146.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": true,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Accessing the API",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289151",
+    "source": "captured",
+    "lesson": "API-62-api-lifecycle.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289151.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Vertex AI Setup",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/307525",
+    "source": "captured",
+    "lesson": "VERTEX-01-setup.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/307525.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Making a request",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289155",
+    "source": "captured",
+    "lesson": "API-39-request.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289155.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Multi-turn conversations",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289156",
+    "source": "captured",
+    "lesson": "API-02-multi-turn.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289156.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Chat exercise",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289150",
+    "source": "missing_or_video_only",
+    "lesson": "API-02-multi-turn.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289150.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "System prompts",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289153",
+    "source": "captured",
+    "lesson": "API-03-system-prompts.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289153.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "System prompts exercise",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289157",
+    "source": "missing_or_video_only",
+    "lesson": "API-69-system-exercise.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289157.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Temperature",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289154",
+    "source": "captured",
+    "lesson": "API-40-temperature.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289154.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Course satisfaction survey",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/297285",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/297285.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Response streaming",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289162",
+    "source": "captured",
+    "lesson": "API-61-response-streaming.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289162.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Controlling model output",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289160",
+    "source": "captured",
+    "lesson": "BEDROCK-05-output-control.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289160.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Structured data",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289158",
+    "source": "captured",
+    "lesson": "API-64-structured-historical.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289158.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Structured data exercise",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289152",
+    "source": "missing_or_video_only",
+    "lesson": "API-70-structured-exercise.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289152.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on accessing Claude with the API",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289281",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289281.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Prompt evaluation",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289159",
+    "source": "captured",
+    "lesson": "API-04-prompt-evaluation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289159.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "A typical eval workflow",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289161",
+    "source": "captured",
+    "lesson": "API-05-eval-workflow.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289161.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Generating test datasets",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289163",
+    "source": "captured",
+    "lesson": "API-06-test-datasets.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289163.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Running the eval",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289166",
+    "source": "captured",
+    "lesson": "API-07-running-eval.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289166.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Model based grading",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289168",
+    "source": "captured",
+    "lesson": "API-08-model-grading.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289168.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Code based grading",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289167",
+    "source": "captured",
+    "lesson": "API-09-code-grading.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289167.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Exercise on prompt evals",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289164",
+    "source": "missing_or_video_only",
+    "lesson": "API-71-eval-exercise.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289164.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on prompt evaluation",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289279",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289279.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Prompt engineering",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289169",
+    "source": "captured",
+    "lesson": "API-10-prompt-engineering.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289169.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Being clear and direct",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289170",
+    "source": "captured",
+    "lesson": "API-11-clear-direct.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289170.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Being specific",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289165",
+    "source": "captured",
+    "lesson": "API-12-specificity.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289165.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Structure with XML tags",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289171",
+    "source": "captured",
+    "lesson": "API-13-xml.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289171.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Providing examples",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289177",
+    "source": "captured",
+    "lesson": "API-14-examples.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289177.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Exercise on prompting",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289173",
+    "source": "missing_or_video_only",
+    "lesson": "API-72-prompting-exercise.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289173.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": true
+    }
+  },
+  {
+    "title": "Quiz on prompt engineering techniques",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289278",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289278.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Introducing tool use",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289172",
+    "source": "captured",
+    "lesson": "API-01-tool-use.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289172.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Project overview",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289175",
+    "source": "captured",
+    "lesson": "API-41-reminder-project.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289175.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Tool functions",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289176",
+    "source": "captured",
+    "lesson": "API-42-tool-functions.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289176.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Tool schemas",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289174",
+    "source": "captured",
+    "lesson": "API-15-tool-schemas.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289174.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Handling message blocks",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289179",
+    "source": "captured",
+    "lesson": "API-16-message-blocks.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289179.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Sending tool results",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289184",
+    "source": "captured",
+    "lesson": "API-17-tool-results.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289184.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Multi-turn conversations with tools",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289178",
+    "source": "captured",
+    "lesson": "API-18-tools-multi-turn.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289178.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Implementing multiple turns",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289182",
+    "source": "captured",
+    "lesson": "API-19-implement-loop.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289182.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Using multiple tools",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289185",
+    "source": "captured",
+    "lesson": "API-20-multiple-tools.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289185.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "The batch tool",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289189",
+    "source": "captured",
+    "lesson": "BEDROCK-06-batch-tool.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289189.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Tools for structured data",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289181",
+    "source": "captured",
+    "lesson": "EXAM-05-structured-output.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289181.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "The text edit tool",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289180",
+    "source": "captured",
+    "lesson": "API-51-text-editor.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289180.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "The web search tool",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289183",
+    "source": "captured",
+    "lesson": "API-52-web-search.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289183.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on tool use with Claude",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289280",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289280.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Introducing Retrieval Augmented Generation",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289191",
+    "source": "captured",
+    "lesson": "API-43-rag-intro.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289191.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Text chunking strategies",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289208",
+    "source": "captured",
+    "lesson": "API-44-chunking.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289208.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Text embeddings",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289188",
+    "source": "captured",
+    "lesson": "API-45-embeddings.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289188.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "The full RAG flow",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289190",
+    "source": "captured",
+    "lesson": "API-46-rag-flow.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289190.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Implementing the RAG flow",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289186",
+    "source": "captured",
+    "lesson": "API-47-rag-implementation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289186.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "BM25 lexical search",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289195",
+    "source": "captured",
+    "lesson": "API-48-bm25.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289195.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "A Multi-index RAG pipeline",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289193",
+    "source": "captured",
+    "lesson": "API-49-hybrid.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289193.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Reranking results",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289192",
+    "source": "captured",
+    "lesson": "BEDROCK-08-reranking.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289192.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Contextual retrieval",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289187",
+    "source": "captured",
+    "lesson": "BEDROCK-09-contextual-retrieval.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289187.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on Retrieval Augmented Generation",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289277",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289277.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Extended thinking",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289197",
+    "source": "captured",
+    "lesson": "API-60-thinking.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289197.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Image support",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289203",
+    "source": "captured",
+    "lesson": "API-59-images.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289203.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "PDF support",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289198",
+    "source": "missing_or_video_only",
+    "lesson": "API-58-pdf-input.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289198.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": true,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Citations",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289202",
+    "source": "captured",
+    "lesson": "API-53-citations.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289202.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Prompt caching",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289196",
+    "source": "captured",
+    "lesson": "API-54-cache-intro.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289196.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Rules of prompt caching",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289194",
+    "source": "captured",
+    "lesson": "API-55-cache-rules.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289194.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Prompt caching in action",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289200",
+    "source": "captured",
+    "lesson": "API-56-cache-observation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289200.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on features of Claude",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289275",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289275.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Introducing MCP",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289201",
+    "source": "captured",
+    "lesson": "API-21-intro-mcp.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289201.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "MCP clients",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289204",
+    "source": "captured",
+    "lesson": "API-22-mcp-clients.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289204.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Project setup",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289199",
+    "source": "captured",
+    "lesson": "API-65-mcp-project-setup.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289199.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Defining tools with MCP",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289235",
+    "source": "captured",
+    "lesson": "API-23-define-mcp-tools.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289235.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "The server inspector",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289207",
+    "source": "captured",
+    "lesson": "API-24-mcp-inspector.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289207.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Implementing a client",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289206",
+    "source": "captured",
+    "lesson": "API-25-mcp-client-implementation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289206.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Defining resources",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289248",
+    "source": "captured",
+    "lesson": "API-26-resources.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289248.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Accessing resources",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289247",
+    "source": "captured",
+    "lesson": "API-27-access-resources.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289247.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Defining prompts",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289249",
+    "source": "captured",
+    "lesson": "API-28-define-prompts.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289249.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Prompts in the client",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289209",
+    "source": "captured",
+    "lesson": "API-29-client-prompts.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289209.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "MCP review",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289205",
+    "source": "captured",
+    "lesson": "MCP-01-control-patterns.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289205.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on Model Context Protocol",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289276",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289276.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Anthropic apps",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289230",
+    "source": "missing_or_video_only",
+    "lesson": "API-66-apps.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289230.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Claude Code setup",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289232",
+    "source": "missing_or_video_only",
+    "lesson": "API-67-code-setup.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289232.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Claude Code in action",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289246",
+    "source": "missing_or_video_only",
+    "lesson": "API-30-code-workflow.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289246.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Enhancements with MCP servers",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289231",
+    "source": "missing_or_video_only",
+    "lesson": "API-31-code-mcp.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289231.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Parallelizing Claude Code",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289241",
+    "source": "missing_or_video_only",
+    "lesson": "BEDROCK-10-parallel-code.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289241.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Automated debugging",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289238",
+    "source": "missing_or_video_only",
+    "lesson": "BEDROCK-11-automated-debugging.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289238.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Computer use",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289233",
+    "source": "missing_or_video_only",
+    "lesson": "BEDROCK-12-computer-use.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289233.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "How computer use works",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289234",
+    "source": "missing_or_video_only",
+    "lesson": "BEDROCK-13-computer-use-loop.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289234.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Agents and workflows",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289244",
+    "source": "captured",
+    "lesson": "API-32-agents-workflows.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289244.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Parallelization workflows",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289236",
+    "source": "captured",
+    "lesson": "API-33-parallel.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289236.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Chaining workflows",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289239",
+    "source": "captured",
+    "lesson": "API-34-chaining.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289239.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Routing workflows",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289242",
+    "source": "captured",
+    "lesson": "API-35-routing.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289242.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Agents and tools",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289243",
+    "source": "captured",
+    "lesson": "API-36-agent-tools.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289243.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Environment inspection",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289237",
+    "source": "captured",
+    "lesson": "API-37-environment.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289237.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Workflows vs agents",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289245",
+    "source": "captured",
+    "lesson": "API-38-workflow-tradeoffs.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289245.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Quiz on agents and workflows",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289274",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289274.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Final assessment quiz",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/290880",
+    "source": "not_collected",
+    "lesson": null,
+    "assessment": true,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/290880.json",
+      "captionsCollected": false,
+      "captionsReviewed": false,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  },
+  {
+    "title": "Course Wrap Up",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289240",
+    "source": "missing_or_video_only",
+    "lesson": "API-68-course-orientation.md",
+    "assessment": false,
+    "administrative": false,
+    "evidence": {
+      "pageText": "sources/vertex-lessons/289240.json",
+      "captionsCollected": true,
+      "captionsReviewed": true,
+      "officialNotesReviewed": false,
+      "visualReviewed": false
+    }
+  }
+]

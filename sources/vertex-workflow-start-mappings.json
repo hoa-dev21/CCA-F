@@ -1,0 +1,20 @@
+[
+  {
+    "id": "289244",
+    "lesson": "API-32-agents-workflows.md",
+    "note": "Mẫu Image-to-CAD dùng mô tả -> CadQuery -> render -> chấm và sửa: evaluator-optimizer có flow xác định trước, không mặc định là agent chỉ vì gọi nhiều lần. Host phải triển khai flow, acceptance và giới hạn lỗi/vòng lặp.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289236",
+    "lesson": "API-33-parallel.md",
+    "note": "Tách phân tích vật liệu theo các nhánh độc lập, cùng ảnh và tiêu chí riêng rồi tổng hợp. Thời gian thường thấp hơn nhưng phụ thuộc concurrency/rate limits và latency tổng hợp; chuyên môn hóa không tự bảo đảm khuyến nghị kỹ thuật đúng.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289239",
+    "lesson": "API-34-chaining.md",
+    "note": "Chuỗi bước phụ thuộc kết quả trước, có thể xen validation/non-LLM processing. Ví dụ tạo rồi sửa bài theo ràng buộc không cho phép tự đăng social media; quyền xuất bản và tác động ngoài cần theo nhiệm vụ được giao. Đánh giá thay đổi để biết lợi ích có đáng latency bổ sung.",
+    "review": "full_collected_text_read"
+  }
+]

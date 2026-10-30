@@ -1,0 +1,26 @@
+[
+  {
+    "id": "289242",
+    "lesson": "API-35-routing.md",
+    "note": "Router phân loại rồi chọn pipeline chuyên biệt, không chạy mọi nhánh. Ví dụ3–10categories là hướng dẫn minh họa; cần xử lý input mơ hồ/không thuộc nhóm và đo lỗi router. Không mặc định mọi đề tài programming/surfing luôn có cùng ý định.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289243",
+    "lesson": "API-36-agent-tools.md",
+    "note": "Tool đủ tổng quát để kết hợp, nhưng mỗi tool có mô tả và ranh giới rõ. Agent hỏi ngày mua khi thiếu thông tin tính warranty. Bash đa dụng không thay quyền tối thiểu hoặc công cụ hẹp phù hợp; ví dụ post_media không trao quyền xuất bản khi người dùng chưa yêu cầu.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289237",
+    "lesson": "API-37-environment.md",
+    "note": "Đọc trạng thái trước sửa, quan sát sau thao tác; ví dụ captions/timing/screenshots/file format giúp kiểm chứng video. Không mặc định mọi Computer Use executor tự trả ảnh sau mỗi action; host phải cung cấp quan sát phù hợp. Mức kiểm tra theo kết quả và tác động, không cần lặp kiểm tra vô ích sau mỗi bước nhỏ.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289245",
+    "lesson": "API-38-workflow-tradeoffs.md",
+    "note": "Workflow dự đoán/đánh giá dễ hơn nhưng kém linh hoạt; agent thích ứng nhưng chi phí/độ tin cậy khó kiểm soát. Chọn theo yêu cầu và eval; lời so sánh lower completion rate trong video không là benchmark phổ quát, và không hệ thống nào được bảo đảm100% chỉ nhờ chọn workflow.",
+    "review": "full_collected_text_read"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "289197",
+    "lesson": "API-60-thinking.md",
+    "note": "Bài minh họa thinking/signature/redacted_thinking và trade-off latency/token; so sánh eval trước khi bật. Phần hiển thị không là toàn bộ suy nghĩ nội bộ hay bằng chứng correctness. Budget/cú pháp budget trong video và tương thích temperature/prefill cần kiểm tra theo SDK/model, không sao chép như contract hiện hành. Giữ blocks/signatures theo giao thức.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289203",
+    "lesson": "API-59-images.md",
+    "note": "Mẫu Messages image base64/media_type/data; ví dụ đếm bi và rubric ảnh vệ tinh minh họa giá trị của hướng dẫn cụ thể. Số ảnh/MB/pixel/token formula trong video không là giới hạn universal hiện hành; mô tả fire risk không đủ thay đánh giá chuyên môn. Tách quan sát được khỏi suy đoán, kiểm tra ca khó và uncertainty.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289202",
+    "lesson": "API-53-citations.md",
+    "note": "Document citations.enabled, title, PDF page locations hoặc text character locations giúp nối claim về nguồn. Citation không chứng minh nguồn đúng, đầy đủ hay claim được hỗ trợ; giữ index/location đúng bản tài liệu, xác minh trước hiển thị.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289196",
+    "lesson": "API-54-cache-intro.md",
+    "note": "Nguồn Vertex nói TTL5phút, API nói1giờ. Đây là giá trị của ví dụ khác nhau, cần kiểm tra provider/model/config khi triển khai. Cache tái sử dụng tính toán input ổn định, không là lưu sẵn câu trả lời hay semantic match.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289194",
+    "lesson": "API-55-cache-rules.md",
+    "note": "Mẫu cache_control ephemeral, thứ tự tools/system/messages và prefix giống hệt. TTL/ngưỡng1024/sốbreakpoints trong video là cấu hình theo thời điểm; không thêm nội dung vô nghĩa để vượt ngưỡng. Breakpoint ở tool không tự cache system phía sau.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "289200",
+    "lesson": "API-56-cache-observation.md",
+    "note": "Copy list/schema trước thêm cache_control tránh mutate đối tượng dùng chung. Quan sát cache_creation_input_tokens/cache_read_input_tokens để xác minh hit; thay system có thể vẫn đọc prefix tools ổn định. Không suy mọi ký tự đổi đều xóa mọi prefix hay caching luôn rẻ hơn với mọi workload.",
+    "review": "full_collected_text_read"
+  }
+]

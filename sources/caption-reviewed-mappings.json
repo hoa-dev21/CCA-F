@@ -1,0 +1,37 @@
+[
+  {
+    "course": "api",
+    "id": "287790",
+    "lesson": "MCP-01-control-patterns.md",
+    "note": "Phụ đề tổng kết tools model-controlled, resources app-controlled và prompts user-controlled; ví dụ UI chỉ minh họa một cách triển khai có thể dùng MCP, không chứng minh mọi nút Claude.ai thực sự gọi MCP. Host vẫn thực thi quyền và có thể chặn tool request. Dùng chung câu hỏi phân biệt ba primitives.",
+    "review": "full_official_captions_read"
+  },
+  {
+    "course": "api",
+    "id": "287802",
+    "lesson": "API-68-course-orientation.md",
+    "note": "Bài kết thúc nhấn mạnh eval thay thử tay vài lượt; prompt rõ/direct; tool use, Claude Code/Computer Use và workflow/agent trade-offs. Các hướng đọc tiếp được nêu là orchestration, agent eval/monitoring, agentic RAG và RAG/tool evaluation. Tool eval kiểm tra cả mô tả có giúp chọn đúng tool không. Đây là recap/định hướng tiếp, không bổ sung contract API mới và không tự xác nhận người học đã đạt chuẩn thi.",
+    "review": "full_official_captions_read"
+  },
+  {
+    "course": "bedrock",
+    "id": "276725",
+    "lesson": "API-02-multi-turn.md",
+    "note": "Bài chatbot Bedrock lấy user input, thêm vào messages, gọi chat, lưu assistant response rồi in. Ví dụ product description -> make it shorter -> add a color kiểm tra context. Khác cách hiển thị input giữa VSCode/browser notebook không làm thay đổi trách nhiệm lưu/gửi lịch sử; không bắt buộc chỉ dùng một IDE.",
+    "review": "full_official_captions_read"
+  },
+  {
+    "course": "bedrock",
+    "id": "276717",
+    "lesson": "API-69-system-exercise.md",
+    "note": "Cùng nhiệm vụ giảm preamble/comments của hàm kiểm tra ký tự trùng bằng system role concise Python engineer. Wrapper provider phải truyền system đúng cấu trúc; output súc tích hơn vẫn cần test chức năng. Không khái quát demo thành role prompt luôn tốt hơn mọi cách viết yêu cầu khác.",
+    "review": "full_official_captions_read"
+  },
+  {
+    "course": "bedrock",
+    "id": "276718",
+    "lesson": "API-70-structured-exercise.md",
+    "note": "Phụ đề xác nhận cùng bài ba AWS CLI commands với prefill/stop, nhãn bash, single block và không comment. Chỉ sinh text, không chạy lệnh. Khả năng prefill phụ thuộc model/provider; việc đạt format không chứng minh correctness hoặc quyền thực thi.",
+    "review": "full_official_captions_read"
+  }
+]

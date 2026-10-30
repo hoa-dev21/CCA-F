@@ -1,0 +1,13 @@
+{
+  "course": "vertex",
+  "id": "289198",
+  "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289198",
+  "title": "PDF Support",
+  "source": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api",
+  "sourceType": "official public course assistant notes; not video transcript",
+  "key": "vertex",
+  "collectedAt": "2026-10-29T18:35:29.698Z",
+  "text": "Claude PDF Support = ability to read and process PDF file content directly\n\nImplementation = nearly identical to image processing code with key changes:\n- File type: \"document\" instead of \"image\" \n- Media type: \"application/pdf\" instead of \"image/png\"\n- Variable naming: file_bytes instead of image_bytes\n\nPDF capabilities = extract text, images, charts, tables, and other document elements\n\nUsage pattern = attach PDF file, modify existing image processing code with type/media changes, send to Claude with text prompt\n\nKey benefit = single tool for comprehensive PDF content extraction and analysis",
+  "reviewNote": "Ghi chú chuyển image block thành document với media_type application/pdf và gửi cùng prompt; có thể phân tích text/chart/table nhưng không bảo đảm mọi thành phần đọc đúng. Ví dụ không chứng minh mọi model/provider chấp nhận cùng kích thước/cách mã hóa; giữ citation và kiểm tra trang liên quan.",
+  "lesson": "API-58-pdf-input.md"
+}

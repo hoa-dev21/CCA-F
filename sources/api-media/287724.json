@@ -1,0 +1,300 @@
+{
+  "lesson": "System prompts exercise",
+  "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287724",
+  "collectedAt": "2026-10-29T18:39:18.905Z",
+  "sourceType": "English captions linked by official lesson player",
+  "media": {
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287724",
+    "players": [
+      {
+        "id": "botr_7nj15ANp_Akyo8gQO_div",
+        "playlist": [
+          {
+            "sources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/7nj15ANp.m3u8?exp=1793310000&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              }
+            ],
+            "tracks": [
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/vDzzF1Bu.srt",
+                "label": "English",
+                "sideloaded": true,
+                "data": [],
+                "name": "English",
+                "_id": "https://cdn.jwplayer.com/tracks/vDzzF1Bu.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/coXcEXtj.srt",
+                "label": "French",
+                "sideloaded": true,
+                "data": [],
+                "name": "French",
+                "_id": "https://cdn.jwplayer.com/tracks/coXcEXtj.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/ZMxO2ptg.srt",
+                "label": "German",
+                "sideloaded": true,
+                "data": [],
+                "name": "German",
+                "_id": "https://cdn.jwplayer.com/tracks/ZMxO2ptg.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/l72ni8YT.srt",
+                "label": "Japanese",
+                "sideloaded": true,
+                "data": [],
+                "name": "Japanese",
+                "_id": "https://cdn.jwplayer.com/tracks/l72ni8YT.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/2s5m3l85.srt",
+                "label": "Korean",
+                "sideloaded": true,
+                "data": [],
+                "name": "Korean",
+                "_id": "https://cdn.jwplayer.com/tracks/2s5m3l85.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/5A5UHgr8.srt",
+                "label": "Portuguese",
+                "sideloaded": true,
+                "data": [],
+                "name": "Portuguese",
+                "_id": "https://cdn.jwplayer.com/tracks/5A5UHgr8.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/j5dTzt2p.srt",
+                "label": "Spanish",
+                "sideloaded": true,
+                "data": [],
+                "name": "Spanish",
+                "_id": "https://cdn.jwplayer.com/tracks/j5dTzt2p.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "thumbnails",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/strips/7nj15ANp-120.vtt"
+              }
+            ],
+            "minDvrWindow": 120,
+            "image": "https://cdn.jwplayer.com/v2/media/7nj15ANp/poster.jpg?width=720",
+            "images": [
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/7nj15ANp/poster.jpg?width=320",
+                "width": 320,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/7nj15ANp/poster.jpg?width=480",
+                "width": 480,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/7nj15ANp/poster.jpg?width=640",
+                "width": 640,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/7nj15ANp/poster.jpg?width=720",
+                "width": 720,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/7nj15ANp/poster.jpg?width=1280",
+                "width": 1280,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/7nj15ANp/poster.jpg?width=1920",
+                "width": 1920,
+                "type": "image/jpeg"
+              }
+            ],
+            "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=7nj15ANp&token=REDACTED",
+            "title": "03 - 007 - System Prompts Exercise.mp4",
+            "mediaid": "7nj15ANp",
+            "link": null,
+            "duration": 85.734,
+            "pubdate": 1748378307,
+            "description": null,
+            "tags": "",
+            "preload": "auto",
+            "allSources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/7nj15ANp.m3u8?exp=1793310000&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/7nj15ANp-B9NwIVRu.mp4?exp=1793310000&sig=REDACTED",
+                "width": 320,
+                "height": 180,
+                "label": "180p",
+                "bitrate": 161746,
+                "framerate": 30,
+                "filesize": 1718560,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/7nj15ANp-muagBOKI.mp4?exp=1793310000&sig=REDACTED",
+                "width": 480,
+                "height": 270,
+                "label": "270p",
+                "bitrate": 190555,
+                "framerate": 30,
+                "filesize": 2024650,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/7nj15ANp-4Xe8IV8X.mp4?exp=1793310000&sig=REDACTED",
+                "width": 720,
+                "height": 406,
+                "label": "406p",
+                "bitrate": 228000,
+                "framerate": 30,
+                "filesize": 2422502,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/7nj15ANp-m7ew0xq8.mp4?exp=1793310000&sig=REDACTED",
+                "width": 1280,
+                "height": 720,
+                "label": "720p",
+                "bitrate": 327500,
+                "framerate": 30,
+                "filesize": 3479691,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/7nj15ANp-eNgUZBQ2.m4a?exp=1793310000&sig=REDACTED",
+                "label": "Audio",
+                "bitrate": 114443,
+                "filesize": 1215960,
+                "mimeType": "audio/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/7nj15ANp-hFUVmOoC.mp4?exp=1793310000&sig=REDACTED",
+                "width": 1920,
+                "height": 1080,
+                "label": "1080p",
+                "bitrate": 450906,
+                "framerate": 30,
+                "filesize": 4790880,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              }
+            ],
+            "file": "https://cdn.jwplayer.com/manifests/7nj15ANp.m3u8?exp=1793310000&sig=REDACTED",
+            "feedData": {},
+            "chapters": {
+              "defaultLanguage": "en-US",
+              "timestamps": []
+            },
+            "label": "https://cdn.jwplayer.com/manifests/7nj15ANp.m3u8?exp=1793310000&sig=REDACTED",
+            "progressTracker": {
+              "10": false,
+              "25": false,
+              "50": false,
+              "75": false
+            },
+            "starttime": 0
+          }
+        ],
+        "captions": [
+          {
+            "id": "off",
+            "label": "Off"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/vDzzF1Bu.srt",
+            "label": "English"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/coXcEXtj.srt",
+            "label": "French"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/ZMxO2ptg.srt",
+            "label": "German"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/l72ni8YT.srt",
+            "label": "Japanese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/2s5m3l85.srt",
+            "label": "Korean"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/5A5UHgr8.srt",
+            "label": "Portuguese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/j5dTzt2p.srt",
+            "label": "Spanish"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "blob:https://anthropic-partners.skilljar.com/4eaf315b-480e-4212-8c1d-c8010a233b5e",
+        "tracks": [],
+        "sources": []
+      }
+    ],
+    "iframes": []
+  },
+  "captionUrl": "https://cdn.jwplayer.com/tracks/vDzzF1Bu.srt",
+  "rawCaptions": "1\n00:00:00,031 --> 00:00:02,537\nLet's go through a quick exercise on system\n\n2\n00:00:02,577 --> 00:00:05,144\nprompts. I've updated my notebook and I'm now asking\n\n3\n00:00:05,205 --> 00:00:07,812\nClaude to write out a Python function that is going to check a string\n\n4\n00:00:07,852 --> 00:00:10,439\nfor duplicate characters. If I run this\n\n5\n00:00:10,660 --> 00:00:13,246\nand print out the answer, I'm going to see a tremendous\n\n6\n00:00:13,346 --> 00:00:15,933\namount of code gets generated here. So some\n\n7\n00:00:15,974 --> 00:00:19,042\nof it is going to be a little bit of code, but there's also going to be a lot of explanation\n\n8\n00:00:19,141 --> 00:00:21,748\nand a lot of comments as well. So I would\n\n9\n00:00:21,789 --> 00:00:24,777\nlike to go through an exercise here where we try to reduce\n\n10\n00:00:24,817 --> 00:00:27,422\nthe amount of code that's being generated. I want to get\n\n11\n00:00:27,483 --> 00:00:30,050\ndown to as concise and implementation of this function\n\n12\n00:00:30,210 --> 00:00:32,734\nas possible. To do so, I would like you to write out\n\n13\n00:00:32,835 --> 00:00:35,820\na system prompt and pass it into the chat function call. Your\n\n14\n00:00:35,901 --> 00:00:38,585\nsystem prompt should assign a role to Claude and encourage\n\n15\n00:00:38,645 --> 00:00:41,429\nit to respond as concisely as possible. So\n\n16\n00:00:41,469 --> 00:00:44,194\nagain, go ahead and pause the video here, go ahead and give it a shot,\n\n17\n00:00:44,573 --> 00:00:47,418\nand we'll go over solution right about now.\n\n18\n00:00:47,399 --> 00:00:49,923\nTo solve this, I'm going to pass in a system prompt to\n\n19\n00:00:49,963 --> 00:00:52,848\nthe chat function call. And inside that, I'm going to assign\n\n20\n00:00:52,868 --> 00:00:55,634\na role to Claude that will encourage it to write very concise code.\n\n21\n00:00:56,054 --> 00:00:59,159\nI'll say you are a Python engineer who\n\n22\n00:00:59,320 --> 00:01:02,185\nwrites very concise code. So\n\n23\n00:01:02,204 --> 00:01:04,769\nlet's now run the cell and see what kind of response we get back\n\n24\n00:01:04,829 --> 00:01:07,456\nnow. All right, that is definitely much more\n\n25\n00:01:07,495 --> 00:01:10,280\nin line with what I was looking for. You'll see that the actual\n\n26\n00:01:10,340 --> 00:01:12,983\ncode we had to write to implement this uniqueness\n\n27\n00:01:13,043 --> 00:01:15,746\ncheck is very, very short, much shorter\n\n28\n00:01:15,787 --> 00:01:18,471\nthan the code we saw a moment ago. Hopefully you had some\n\n29\n00:01:18,510 --> 00:01:21,293\nsuccess with this exercise. And if you didn't, that is totally fine.\n\n30\n00:01:21,575 --> 00:01:24,078\nThere are going to be many other exercises throughout the course where\n\n31\n00:01:24,097 --> 00:01:25,540\nyou can test out your skills.",
+  "transcriptText": "Let's go through a quick exercise on system\n\nprompts. I've updated my notebook and I'm now asking\n\nClaude to write out a Python function that is going to check a string\n\nfor duplicate characters. If I run this\n\nand print out the answer, I'm going to see a tremendous\n\namount of code gets generated here. So some\n\nof it is going to be a little bit of code, but there's also going to be a lot of explanation\n\nand a lot of comments as well. So I would\n\nlike to go through an exercise here where we try to reduce\n\nthe amount of code that's being generated. I want to get\n\ndown to as concise and implementation of this function\n\nas possible. To do so, I would like you to write out\n\na system prompt and pass it into the chat function call. Your\n\nsystem prompt should assign a role to Claude and encourage\n\nit to respond as concisely as possible. So\n\nagain, go ahead and pause the video here, go ahead and give it a shot,\n\nand we'll go over solution right about now.\n\nTo solve this, I'm going to pass in a system prompt to\n\nthe chat function call. And inside that, I'm going to assign\n\na role to Claude that will encourage it to write very concise code.\n\nI'll say you are a Python engineer who\n\nwrites very concise code. So\n\nlet's now run the cell and see what kind of response we get back\n\nnow. All right, that is definitely much more\n\nin line with what I was looking for. You'll see that the actual\n\ncode we had to write to implement this uniqueness\n\ncheck is very, very short, much shorter\n\nthan the code we saw a moment ago. Hopefully you had some\n\nsuccess with this exercise. And if you didn't, that is totally fine.\n\nThere are going to be many other exercises throughout the course where\n\nyou can test out your skills.",
+  "downloads": []
+}

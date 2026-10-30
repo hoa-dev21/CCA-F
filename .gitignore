@@ -1,0 +1,12 @@
+node_modules/
+.npm-cache/
+.browser-profile/
+.browser-profile-user/
+browser-state.json
+.local-schemas/
+.study-tutor/
+.study-test/
+.env
+.env.*
+!.env.example
+*.log

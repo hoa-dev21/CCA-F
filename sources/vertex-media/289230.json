@@ -1,0 +1,408 @@
+{
+  "lesson": "Anthropic apps",
+  "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289230",
+  "collectedAt": "2026-10-30T02:09:54.236Z",
+  "sourceType": "English captions linked by official lesson player",
+  "media": {
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289230",
+    "players": [
+      {
+        "id": "botr_TMzGetqN_Akyo8gQO_div",
+        "playlist": [
+          {
+            "sources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/TMzGetqN.m3u8?exp=1793337120&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              }
+            ],
+            "tracks": [
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/lt6Ynr7k.srt",
+                "label": "English",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "English",
+                "_id": "https://cdn.jwplayer.com/tracks/lt6Ynr7k.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/kYNfKd7Q.srt",
+                "label": "French",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "French",
+                "_id": "https://cdn.jwplayer.com/tracks/kYNfKd7Q.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/IMtju3qK.srt",
+                "label": "German",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "German",
+                "_id": "https://cdn.jwplayer.com/tracks/IMtju3qK.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/qdzzTvGM.srt",
+                "label": "Japanese",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Japanese",
+                "_id": "https://cdn.jwplayer.com/tracks/qdzzTvGM.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/UhHmuclS.srt",
+                "label": "Korean",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Korean",
+                "_id": "https://cdn.jwplayer.com/tracks/UhHmuclS.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/Bnk4k3dX.srt",
+                "label": "Portuguese",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Portuguese",
+                "_id": "https://cdn.jwplayer.com/tracks/Bnk4k3dX.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/cBQ7qGgE.srt",
+                "label": "Spanish",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Spanish",
+                "_id": "https://cdn.jwplayer.com/tracks/cBQ7qGgE.srt"
+              },
+              {
+                "kind": "thumbnails",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/strips/TMzGetqN-120.vtt"
+              }
+            ],
+            "minDvrWindow": 120,
+            "image": "https://cdn.jwplayer.com/v2/media/TMzGetqN/poster.jpg?width=720",
+            "images": [
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/TMzGetqN/poster.jpg?width=320",
+                "width": 320,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/TMzGetqN/poster.jpg?width=480",
+                "width": 480,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/TMzGetqN/poster.jpg?width=640",
+                "width": 640,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/TMzGetqN/poster.jpg?width=720",
+                "width": 720,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/TMzGetqN/poster.jpg?width=1280",
+                "width": 1280,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/TMzGetqN/poster.jpg?width=1920",
+                "width": 1920,
+                "type": "image/jpeg"
+              }
+            ],
+            "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=TMzGetqN&token=REDACTED",
+            "title": "10 - 001 - Anthropic Apps.mp4",
+            "mediaid": "TMzGetqN",
+            "link": null,
+            "duration": 43.267,
+            "pubdate": 1748551807,
+            "description": null,
+            "tags": "",
+            "preload": "auto",
+            "allSources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/TMzGetqN.m3u8?exp=1793337120&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/TMzGetqN-B9NwIVRu.mp4?exp=1793337120&sig=REDACTED",
+                "width": 320,
+                "height": 180,
+                "label": "180p",
+                "bitrate": 136775,
+                "framerate": 30,
+                "filesize": 735170,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/TMzGetqN-muagBOKI.mp4?exp=1793337120&sig=REDACTED",
+                "width": 480,
+                "height": 270,
+                "label": "270p",
+                "bitrate": 152346,
+                "framerate": 30,
+                "filesize": 818862,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/TMzGetqN-4Xe8IV8X.mp4?exp=1793337120&sig=REDACTED",
+                "width": 720,
+                "height": 406,
+                "label": "406p",
+                "bitrate": 173787,
+                "framerate": 30,
+                "filesize": 934106,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/TMzGetqN-m7ew0xq8.mp4?exp=1793337120&sig=REDACTED",
+                "width": 1280,
+                "height": 720,
+                "label": "720p",
+                "bitrate": 228642,
+                "framerate": 30,
+                "filesize": 1228951,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/TMzGetqN-eNgUZBQ2.m4a?exp=1793337120&sig=REDACTED",
+                "label": "Audio",
+                "bitrate": 114304,
+                "filesize": 614386,
+                "mimeType": "audio/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/TMzGetqN-hFUVmOoC.mp4?exp=1793337120&sig=REDACTED",
+                "width": 1920,
+                "height": 1080,
+                "label": "1080p",
+                "bitrate": 315487,
+                "framerate": 30,
+                "filesize": 1695747,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              }
+            ],
+            "file": "https://cdn.jwplayer.com/manifests/TMzGetqN.m3u8?exp=1793337120&sig=REDACTED",
+            "feedData": {},
+            "chapters": {
+              "defaultLanguage": "en-US",
+              "timestamps": []
+            },
+            "label": "https://cdn.jwplayer.com/manifests/TMzGetqN.m3u8?exp=1793337120&sig=REDACTED",
+            "progressTracker": {
+              "10": false,
+              "25": false,
+              "50": false,
+              "75": false
+            },
+            "starttime": 0
+          }
+        ],
+        "captions": [
+          {
+            "id": "off",
+            "label": "Off"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/lt6Ynr7k.srt",
+            "label": "English"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/kYNfKd7Q.srt",
+            "label": "French"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/IMtju3qK.srt",
+            "label": "German"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/qdzzTvGM.srt",
+            "label": "Japanese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/UhHmuclS.srt",
+            "label": "Korean"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/Bnk4k3dX.srt",
+            "label": "Portuguese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/cBQ7qGgE.srt",
+            "label": "Spanish"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "blob:https://anthropic-partners.skilljar.com/7e273e81-940b-4eef-a3b3-6626e91b9586",
+        "tracks": [],
+        "sources": []
+      }
+    ],
+    "iframes": []
+  },
+  "captionUrl": "https://cdn.jwplayer.com/tracks/lt6Ynr7k.srt",
+  "rawCaptions": "1\n00:00:00,031 --> 00:00:02,573\nIn this module, we're going to take a look at two applications\n\n2\n00:00:02,593 --> 00:00:05,096\nthat have been built and deployed by Anthropic. They\n\n3\n00:00:05,155 --> 00:00:07,698\nare Claude code and Computer use. Claude\n\n4\n00:00:07,738 --> 00:00:10,320\ncode is a terminal-based coding assistant. I'm going to help\n\n5\n00:00:10,361 --> 00:00:12,903\nyou go through the setup process and then we're going to use Claude code\n\n6\n00:00:13,003 --> 00:00:15,544\non a very small sample project to understand exactly\n\n7\n00:00:15,585 --> 00:00:18,367\nhow it works. After that, we're going to take a look at Computer\n\n8\n00:00:18,388 --> 00:00:21,390\nuse. Computer use is a set of tools that dramatically\n\n9\n00:00:21,451 --> 00:00:24,013\nexpands Claude's capabilities. Both Claude code\n\n10\n00:00:24,152 --> 00:00:27,015\nand Computer use are extremely useful in their own right, but\n\n11\n00:00:27,036 --> 00:00:29,579\nthere's another reason that we're going to discuss them. You see,\n\n12\n00:00:29,739 --> 00:00:32,774\nClaude code and Computer use are perfect examples of agents.\n\n13\n00:00:33,176 --> 00:00:36,030\nAnd once we understand how they work, we'll be much better prepared\n\n14\n00:00:36,091 --> 00:00:38,944\nto understand what agents are and how to build an effective\n\n15\n00:00:38,984 --> 00:00:41,496\nagent. So let's go through the setup process\n\n16\n00:00:41,597 --> 00:00:43,284\nof Claude code in the next video.",
+  "transcriptText": "In this module, we're going to take a look at two applications\n\nthat have been built and deployed by Anthropic. They\n\nare Claude code and Computer use. Claude\n\ncode is a terminal-based coding assistant. I'm going to help\n\nyou go through the setup process and then we're going to use Claude code\n\non a very small sample project to understand exactly\n\nhow it works. After that, we're going to take a look at Computer\n\nuse. Computer use is a set of tools that dramatically\n\nexpands Claude's capabilities. Both Claude code\n\nand Computer use are extremely useful in their own right, but\n\nthere's another reason that we're going to discuss them. You see,\n\nClaude code and Computer use are perfect examples of agents.\n\nAnd once we understand how they work, we'll be much better prepared\n\nto understand what agents are and how to build an effective\n\nagent. So let's go through the setup process\n\nof Claude code in the next video.",
+  "downloads": []
+}

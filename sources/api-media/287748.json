@@ -1,0 +1,300 @@
+{
+  "lesson": "Exercise on prompting",
+  "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287748",
+  "collectedAt": "2026-10-29T18:39:36.634Z",
+  "sourceType": "English captions linked by official lesson player",
+  "media": {
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287748",
+    "players": [
+      {
+        "id": "botr_hYMCWYnk_Akyo8gQO_div",
+        "playlist": [
+          {
+            "sources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/hYMCWYnk.m3u8?exp=1793310000&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              }
+            ],
+            "tracks": [
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/FxPADiVR.srt",
+                "label": "English",
+                "sideloaded": true,
+                "data": [],
+                "name": "English",
+                "_id": "https://cdn.jwplayer.com/tracks/FxPADiVR.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/aoEwQ7yz.srt",
+                "label": "French",
+                "sideloaded": true,
+                "data": [],
+                "name": "French",
+                "_id": "https://cdn.jwplayer.com/tracks/aoEwQ7yz.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/13TXlg59.srt",
+                "label": "German",
+                "sideloaded": true,
+                "data": [],
+                "name": "German",
+                "_id": "https://cdn.jwplayer.com/tracks/13TXlg59.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/feZ9Oan1.srt",
+                "label": "Japanese",
+                "sideloaded": true,
+                "data": [],
+                "name": "Japanese",
+                "_id": "https://cdn.jwplayer.com/tracks/feZ9Oan1.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/bkGF7DjH.srt",
+                "label": "Korean",
+                "sideloaded": true,
+                "data": [],
+                "name": "Korean",
+                "_id": "https://cdn.jwplayer.com/tracks/bkGF7DjH.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/65ySR0hq.srt",
+                "label": "Portuguese",
+                "sideloaded": true,
+                "data": [],
+                "name": "Portuguese",
+                "_id": "https://cdn.jwplayer.com/tracks/65ySR0hq.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/aVYJInuc.srt",
+                "label": "Spanish",
+                "sideloaded": true,
+                "data": [],
+                "name": "Spanish",
+                "_id": "https://cdn.jwplayer.com/tracks/aVYJInuc.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "thumbnails",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/strips/hYMCWYnk-120.vtt"
+              }
+            ],
+            "minDvrWindow": 120,
+            "image": "https://cdn.jwplayer.com/v2/media/hYMCWYnk/poster.jpg?width=720",
+            "images": [
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/hYMCWYnk/poster.jpg?width=320",
+                "width": 320,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/hYMCWYnk/poster.jpg?width=480",
+                "width": 480,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/hYMCWYnk/poster.jpg?width=640",
+                "width": 640,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/hYMCWYnk/poster.jpg?width=720",
+                "width": 720,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/hYMCWYnk/poster.jpg?width=1280",
+                "width": 1280,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/hYMCWYnk/poster.jpg?width=1920",
+                "width": 1920,
+                "type": "image/jpeg"
+              }
+            ],
+            "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=hYMCWYnk&token=REDACTED",
+            "title": "05 - 006 - Exercise on Prompting.mp4",
+            "mediaid": "hYMCWYnk",
+            "link": null,
+            "duration": 322.134,
+            "pubdate": 1748378328,
+            "description": null,
+            "tags": "",
+            "preload": "auto",
+            "allSources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/hYMCWYnk.m3u8?exp=1793310000&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/hYMCWYnk-B9NwIVRu.mp4?exp=1793310000&sig=REDACTED",
+                "width": 320,
+                "height": 180,
+                "label": "180p",
+                "bitrate": 159655,
+                "framerate": 30,
+                "filesize": 6426148,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/hYMCWYnk-muagBOKI.mp4?exp=1793310000&sig=REDACTED",
+                "width": 480,
+                "height": 270,
+                "label": "270p",
+                "bitrate": 191808,
+                "framerate": 30,
+                "filesize": 7720299,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/hYMCWYnk-4Xe8IV8X.mp4?exp=1793310000&sig=REDACTED",
+                "width": 720,
+                "height": 406,
+                "label": "406p",
+                "bitrate": 248683,
+                "framerate": 30,
+                "filesize": 10009525,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/hYMCWYnk-m7ew0xq8.mp4?exp=1793310000&sig=REDACTED",
+                "width": 1280,
+                "height": 720,
+                "label": "720p",
+                "bitrate": 418711,
+                "framerate": 30,
+                "filesize": 16853139,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/hYMCWYnk-eNgUZBQ2.m4a?exp=1793310000&sig=REDACTED",
+                "label": "Audio",
+                "bitrate": 113454,
+                "filesize": 4566552,
+                "mimeType": "audio/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/hYMCWYnk-hFUVmOoC.mp4?exp=1793310000&sig=REDACTED",
+                "width": 1920,
+                "height": 1080,
+                "label": "1080p",
+                "bitrate": 629305,
+                "framerate": 30,
+                "filesize": 25329555,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              }
+            ],
+            "file": "https://cdn.jwplayer.com/manifests/hYMCWYnk.m3u8?exp=1793310000&sig=REDACTED",
+            "feedData": {},
+            "chapters": {
+              "defaultLanguage": "en-US",
+              "timestamps": []
+            },
+            "label": "https://cdn.jwplayer.com/manifests/hYMCWYnk.m3u8?exp=1793310000&sig=REDACTED",
+            "progressTracker": {
+              "10": false,
+              "25": false,
+              "50": false,
+              "75": false
+            },
+            "starttime": 0
+          }
+        ],
+        "captions": [
+          {
+            "id": "off",
+            "label": "Off"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/FxPADiVR.srt",
+            "label": "English"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/aoEwQ7yz.srt",
+            "label": "French"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/13TXlg59.srt",
+            "label": "German"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/feZ9Oan1.srt",
+            "label": "Japanese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/bkGF7DjH.srt",
+            "label": "Korean"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/65ySR0hq.srt",
+            "label": "Portuguese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/aVYJInuc.srt",
+            "label": "Spanish"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "blob:https://anthropic-partners.skilljar.com/36639d7f-4a77-49e0-ab43-0f58b56e0963",
+        "tracks": [],
+        "sources": []
+      }
+    ],
+    "iframes": []
+  },
+  "captionUrl": "https://cdn.jwplayer.com/tracks/FxPADiVR.srt",
+  "rawCaptions": "1\n00:00:00,031 --> 00:00:02,613\nLet's test your knowledge of prompt engineering by going through\n\n2\n00:00:02,633 --> 00:00:05,256\na quick exercise. Now for this exercise,\n\n3\n00:00:05,315 --> 00:00:08,458\nI made a new notebook called 003 underscore\n\n4\n00:00:08,499 --> 00:00:11,060\nexercise. You do not have to download this one.\n\n5\n00:00:11,160 --> 00:00:13,763\nAll I did was replace the task description, the\n\n6\n00:00:13,884 --> 00:00:16,606\nprompt input spec, and then adjusted\n\n7\n00:00:16,646 --> 00:00:19,309\nsome of the extra criteria down here. So if you want to,\n\n8\n00:00:19,428 --> 00:00:21,931\nyou could manually change all the stuff in the notebook you're working\n\n9\n00:00:21,971 --> 00:00:24,754\nout of, or alternatively just download this 003\n\n10\n00:00:25,013 --> 00:00:28,097\nexercise and get caught up with exactly where I am.\n\n11\n00:00:28,077 --> 00:00:30,942\nYour goal in this exercise is to improve an existing\n\n12\n00:00:31,001 --> 00:00:33,646\nprompt using all the prompt engineering topics we've learned about\n\n13\n00:00:33,725 --> 00:00:36,250\ninside this module. The dataset you're going to be\n\n14\n00:00:36,310 --> 00:00:38,835\nworking with is going to create a series of\n\n15\n00:00:38,975 --> 00:00:41,679\npassages of text from a scholarly\n\n16\n00:00:41,798 --> 00:00:44,404\narticle. The goal of your prompt is to\n\n17\n00:00:44,543 --> 00:00:47,148\ntake in that passage of text and extract all\n\n18\n00:00:47,188 --> 00:00:49,752\nthe topics from it into a JSON array\n\n19\n00:00:49,771 --> 00:00:52,335\nof strings. And when I say topic, I really just\n\n20\n00:00:52,396 --> 00:00:54,960\nmean, well, what does this article talk about?\n\n21\n00:00:55,360 --> 00:00:57,966\nSo if it's an article about, say, solar panels, I\n\n22\n00:00:57,985 --> 00:01:00,792\nwould want to get back a JSON array of strings that contains\n\n23\n00:01:01,353 --> 00:01:04,037\nsolar panels inside of it, only with any other topics\n\n24\n00:01:04,197 --> 00:01:06,923\nmentioned inside that text. The only\n\n25\n00:01:06,962 --> 00:01:09,628\ninput to the prompt is going to be a content property.\n\n26\n00:01:09,868 --> 00:01:12,608\nSo that's going to be one paragraph of text. Now,\n\n27\n00:01:12,909 --> 00:01:15,751\nin my notebook that I've opened right now, I have already executed\n\n28\n00:01:15,792 --> 00:01:18,594\nthe cell and generated a dataset. I\n\n29\n00:01:18,615 --> 00:01:21,198\nhave already put together a starter prompt for\n\n30\n00:01:21,259 --> 00:01:24,281\nyou, and right now it's a very poor prompt that can definitely\n\n31\n00:01:24,382 --> 00:01:27,025\nbe improved quite a bit. So go ahead\n\n32\n00:01:27,165 --> 00:01:29,929\nand play around with this prompt and use some of the different techniques\n\n33\n00:01:29,948 --> 00:01:32,652\nwe have learned about. In order to evaluate your progress,\n\n34\n00:01:33,013 --> 00:01:35,676\ngo ahead and run the cell down here. I've already included\n\n35\n00:01:35,695 --> 00:01:38,299\na couple of extra criteria to make sure that you're kind of\n\n36\n00:01:38,459 --> 00:01:41,066\nachieving the correct result. Remember,\n\n37\n00:01:41,227 --> 00:01:43,790\nwhenever you run the evaluation, you can always open up\n\n38\n00:01:43,831 --> 00:01:46,834\nthat report.html file and get a better understanding\n\n39\n00:01:46,875 --> 00:01:49,558\nof what's going on. By default, with that really\n\n40\n00:01:49,578 --> 00:01:52,281\nsimple prompt, I've got an average score of 2.8.\n\n41\n00:01:52,662 --> 00:01:55,305\nAnd so I'm hoping we can at least get that average\n\n42\n00:01:55,346 --> 00:01:58,510\nscore over maybe seven or so. As\n\n43\n00:01:58,609 --> 00:02:01,334\nusual, I would encourage you to pause the video right here and\n\n44\n00:02:01,394 --> 00:02:04,378\ngo ahead and give this exercise a shot. Otherwise,\n\n45\n00:02:04,397 --> 00:02:07,120\nif you want to stick around, I'm gonna go over a solution right\n\n46\n00:02:07,162 --> 00:02:09,837\naway. All right, so to solve this, we\n\n47\n00:02:09,897 --> 00:02:12,479\nknow without a doubt all the work we're going to be doing is\n\n48\n00:02:12,560 --> 00:02:15,082\nfocused on this variable right here. We need to\n\n49\n00:02:15,182 --> 00:02:17,985\nimprove this prompt in some way to get back some better\n\n50\n00:02:18,126 --> 00:02:20,769\noutputs. The first thing we might do here is\n\n51\n00:02:20,808 --> 00:02:23,491\nmake sure you run the evaluation at least one time to\n\n52\n00:02:23,532 --> 00:02:26,235\ngenerate that output.html file. And\n\n53\n00:02:26,254 --> 00:02:28,978\nthen once you have created that file, I would encourage you to open it up and\n\n54\n00:02:29,018 --> 00:02:31,540\ntake a look at some of the reasoning on why the\n\n55\n00:02:31,661 --> 00:02:34,437\noutput has been graded so poorly. You'll\n\n56\n00:02:34,457 --> 00:02:36,961\nnotice a common theme between each of these. A real\n\n57\n00:02:37,002 --> 00:02:39,506\ncommon theme right away that we can see is that, well, it\n\n58\n00:02:39,566 --> 00:02:42,169\ndoesn't like the fact that we are not returning a JSON\n\n59\n00:02:42,229 --> 00:02:44,834\narray of strings. To solve this problem, let's make\n\n60\n00:02:44,913 --> 00:02:47,677\nuse of that technique of being simple and direct inside\n\n61\n00:02:47,698 --> 00:02:50,260\nof our prompt. If we expect to get back a JSON array\n\n62\n00:02:50,282 --> 00:02:52,925\nof strings that contains all the topics out of this content,\n\n63\n00:02:53,325 --> 00:02:55,990\nwell, we need to be very simple and direct with Claude\n\n64\n00:02:56,069 --> 00:02:58,633\nand tell it exactly what we want. So I'm going to\n\n65\n00:02:58,734 --> 00:03:01,838\nupdate the first line of the prompt right here and I'll say extract\n\n66\n00:03:02,219 --> 00:03:04,824\nkey topics mentioned from a passage\n\n67\n00:03:05,044 --> 00:03:08,631\nof text from a scholarly journal\n\n68\n00:03:09,331 --> 00:03:12,176\ninto a JSON array of strings\n\n69\n00:03:13,218 --> 00:03:15,782\nas simple as I can phrase it and as direct as\n\n70\n00:03:15,843 --> 00:03:18,360\nI can possibly make it. And right away, if I\n\n71\n00:03:18,400 --> 00:03:21,223\nrerun the prompt with the evaluation, I\n\n72\n00:03:21,264 --> 00:03:24,449\nwill see that I get up to a kind of shocking 9.5\n\n73\n00:03:24,468 --> 00:03:26,972\nalmost immediately. So I kind of didn't really expect\n\n74\n00:03:27,012 --> 00:03:29,575\nit to go that well because there are still some other techniques\n\n75\n00:03:29,596 --> 00:03:32,139\nwe might want to try out here. But if we take a\n\n76\n00:03:32,159 --> 00:03:35,223\nlook at the report now, I'm definitely getting back this JSON\n\n77\n00:03:35,484 --> 00:03:38,108\ncontaining all the different topics mentioned. And it looks like\n\n78\n00:03:38,147 --> 00:03:41,012\nthe model grader is extremely happy with this output.\n\n79\n00:03:41,717 --> 00:03:44,421\nNow, I don't really want to leave it here. Obviously,\n\n80\n00:03:44,461 --> 00:03:46,965\nthere are some other techniques we can add in to make sure\n\n81\n00:03:46,985 --> 00:03:49,588\nthat we get the correct kind of output. So the next\n\n82\n00:03:49,628 --> 00:03:52,192\ntechnique we might add in is structuring our\n\n83\n00:03:52,211 --> 00:03:55,456\nprompt a little bit better by using some XML tags.\n\n84\n00:03:55,477 --> 00:03:58,180\nBefore and after the content that we're going to interpolate\n\n85\n00:03:58,219 --> 00:04:00,903\nin right here, I'm going to add in some XML tags\n\n86\n00:04:01,163 --> 00:04:03,927\nand I'm going to give them the name of simply text.\n\n87\n00:04:05,174 --> 00:04:07,679\nNow in this case, I'm choosing to call these tags\n\n88\n00:04:07,739 --> 00:04:10,444\ntext because I earlier referred to some text\n\n89\n00:04:10,564 --> 00:04:13,371\ninside of the first line of the prompt. So now we\n\n90\n00:04:13,411 --> 00:04:15,937\nhave just a little bit more clear connection between\n\n91\n00:04:15,977 --> 00:04:18,482\nus talking about a passage of text right here and\n\n92\n00:04:18,601 --> 00:04:21,329\nus providing the text right here. Another\n\n93\n00:04:21,410 --> 00:04:23,954\nimprovement that we might add in is to be very specific\n\n94\n00:04:24,074 --> 00:04:26,658\nin what we want Claude to do. So I could put in\n\n95\n00:04:26,678 --> 00:04:29,463\na series of steps for Claude to follow. Let's\n\n96\n00:04:29,485 --> 00:04:32,088\ntry that out. I might say follow these steps\n\n97\n00:04:32,589 --> 00:04:35,115\nand then list out exactly what I want Claude to do\n\n98\n00:04:35,194 --> 00:04:38,199\nstep by step. So we might say closely\n\n99\n00:04:38,240 --> 00:04:40,964\nexamine the provided\n\n100\n00:04:40,985 --> 00:04:44,059\ntext. Identify\n\n101\n00:04:44,079 --> 00:04:46,983\neach topic mentioned, add\n\n102\n00:04:47,103 --> 00:04:49,627\neach topic to a JSON array,\n\n103\n00:04:49,668 --> 00:04:52,591\nand then finally respond with the JSON\n\n104\n00:04:52,672 --> 00:04:55,175\narray. Do not provide any\n\n105\n00:04:55,315 --> 00:04:58,300\nother text or commentary. Now,\n\n106\n00:04:58,319 --> 00:05:00,944\nif you wanted to also add in an example using one\n\n107\n00:05:00,983 --> 00:05:03,528\nshot or multi-shot prompting, absolutely feel free\n\n108\n00:05:03,567 --> 00:05:06,151\nto do so. But we already have some pretty good scores,\n\n109\n00:05:06,512 --> 00:05:09,357\nso I think this is probably enough. I'm going to read on\n\n110\n00:05:09,396 --> 00:05:12,319\nthis prompt. I'll then run the evaluation\n\n111\n00:05:12,360 --> 00:05:15,047\nagain and I end up getting a 9.5 again.\n\n112\n00:05:15,367 --> 00:05:17,913\nSo I would say that this is a pretty strong prompt and I\n\n113\n00:05:17,934 --> 00:05:20,560\nwould definitely trust it to extract a list of topics\n\n114\n00:05:20,682 --> 00:05:21,603\nfrom an article.",
+  "transcriptText": "Let's test your knowledge of prompt engineering by going through\n\na quick exercise. Now for this exercise,\n\nI made a new notebook called 003 underscore\n\nexercise. You do not have to download this one.\n\nAll I did was replace the task description, the\n\nprompt input spec, and then adjusted\n\nsome of the extra criteria down here. So if you want to,\n\nyou could manually change all the stuff in the notebook you're working\n\nout of, or alternatively just download this 003\n\nexercise and get caught up with exactly where I am.\n\nYour goal in this exercise is to improve an existing\n\nprompt using all the prompt engineering topics we've learned about\n\ninside this module. The dataset you're going to be\n\nworking with is going to create a series of\n\npassages of text from a scholarly\n\narticle. The goal of your prompt is to\n\ntake in that passage of text and extract all\n\nthe topics from it into a JSON array\n\nof strings. And when I say topic, I really just\n\nmean, well, what does this article talk about?\n\nSo if it's an article about, say, solar panels, I\n\nwould want to get back a JSON array of strings that contains\n\nsolar panels inside of it, only with any other topics\n\nmentioned inside that text. The only\n\ninput to the prompt is going to be a content property.\n\nSo that's going to be one paragraph of text. Now,\n\nin my notebook that I've opened right now, I have already executed\n\nthe cell and generated a dataset. I\n\nhave already put together a starter prompt for\n\nyou, and right now it's a very poor prompt that can definitely\n\nbe improved quite a bit. So go ahead\n\nand play around with this prompt and use some of the different techniques\n\nwe have learned about. In order to evaluate your progress,\n\ngo ahead and run the cell down here. I've already included\n\na couple of extra criteria to make sure that you're kind of\n\nachieving the correct result. Remember,\n\nwhenever you run the evaluation, you can always open up\n\nthat report.html file and get a better understanding\n\nof what's going on. By default, with that really\n\nsimple prompt, I've got an average score of 2.8.\n\nAnd so I'm hoping we can at least get that average\n\nscore over maybe seven or so. As\n\nusual, I would encourage you to pause the video right here and\n\ngo ahead and give this exercise a shot. Otherwise,\n\nif you want to stick around, I'm gonna go over a solution right\n\naway. All right, so to solve this, we\n\nknow without a doubt all the work we're going to be doing is\n\nfocused on this variable right here. We need to\n\nimprove this prompt in some way to get back some better\n\noutputs. The first thing we might do here is\n\nmake sure you run the evaluation at least one time to\n\ngenerate that output.html file. And\n\nthen once you have created that file, I would encourage you to open it up and\n\ntake a look at some of the reasoning on why the\n\noutput has been graded so poorly. You'll\n\nnotice a common theme between each of these. A real\n\ncommon theme right away that we can see is that, well, it\n\ndoesn't like the fact that we are not returning a JSON\n\narray of strings. To solve this problem, let's make\n\nuse of that technique of being simple and direct inside\n\nof our prompt. If we expect to get back a JSON array\n\nof strings that contains all the topics out of this content,\n\nwell, we need to be very simple and direct with Claude\n\nand tell it exactly what we want. So I'm going to\n\nupdate the first line of the prompt right here and I'll say extract\n\nkey topics mentioned from a passage\n\nof text from a scholarly journal\n\ninto a JSON array of strings\n\nas simple as I can phrase it and as direct as\n\nI can possibly make it. And right away, if I\n\nrerun the prompt with the evaluation, I\n\nwill see that I get up to a kind of shocking 9.5\n\nalmost immediately. So I kind of didn't really expect\n\nit to go that well because there are still some other techniques\n\nwe might want to try out here. But if we take a\n\nlook at the report now, I'm definitely getting back this JSON\n\ncontaining all the different topics mentioned. And it looks like\n\nthe model grader is extremely happy with this output.\n\nNow, I don't really want to leave it here. Obviously,\n\nthere are some other techniques we can add in to make sure\n\nthat we get the correct kind of output. So the next\n\ntechnique we might add in is structuring our\n\nprompt a little bit better by using some XML tags.\n\nBefore and after the content that we're going to interpolate\n\nin right here, I'm going to add in some XML tags\n\nand I'm going to give them the name of simply text.\n\nNow in this case, I'm choosing to call these tags\n\ntext because I earlier referred to some text\n\ninside of the first line of the prompt. So now we\n\nhave just a little bit more clear connection between\n\nus talking about a passage of text right here and\n\nus providing the text right here. Another\n\nimprovement that we might add in is to be very specific\n\nin what we want Claude to do. So I could put in\n\na series of steps for Claude to follow. Let's\n\ntry that out. I might say follow these steps\n\nand then list out exactly what I want Claude to do\n\nstep by step. So we might say closely\n\nexamine the provided\n\ntext. Identify\n\neach topic mentioned, add\n\neach topic to a JSON array,\n\nand then finally respond with the JSON\n\narray. Do not provide any\n\nother text or commentary. Now,\n\nif you wanted to also add in an example using one\n\nshot or multi-shot prompting, absolutely feel free\n\nto do so. But we already have some pretty good scores,\n\nso I think this is probably enough. I'm going to read on\n\nthis prompt. I'll then run the evaluation\n\nagain and I end up getting a 9.5 again.\n\nSo I would say that this is a pretty strong prompt and I\n\nwould definitely trust it to extract a list of topics\n\nfrom an article.",
+  "downloads": []
+}

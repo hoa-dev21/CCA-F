@@ -1,0 +1,376 @@
+[
+  {
+    "id": "5.1",
+    "page": 19,
+    "title": "Manage conversation context to preserve critical information across long interactions",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-12-session-context.md",
+      "EXAM-18-context-source-review.md",
+      "API-02-multi-turn.md",
+      "API-19-implement-loop.md"
+    ],
+    "questions": [
+      "EXAM-12 Q3",
+      "EXAM-18 Q1",
+      "API-02 Q1–3"
+    ],
+    "knowledge": [
+      {
+        "item": "Progressive summarization risks: condensing numerical values, percentages, dates, and customer- stated expectations into vague summaries",
+        "evidence": "EXAM12/18: progressive summary mất số/ngày/kỳ vọng.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The \"lost in the middle\" effect: models reliably process information at the beginning and end of long inputs but may omit fi ndings from middle sections",
+        "evidence": "EXAM12: lost-in-middle là rủi ro vị trí input dài.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "How tool results accumulate in context and consume tokens disproportionately to their relevance (e.g., 40+ fi elds per order lookup when only 5 are relevant)",
+        "evidence": "EXAM12:40field chỉ5liên quan, lọc trước tích lũy.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The importance of passing complete conversation history in subsequent API requests to maintain conversational coherence",
+        "evidence": "API02/19: gửi context/history và content blocks cho request sau.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Extracting transactional facts (amounts, dates, order numbers, statuses) into a persistent \"case facts\" block included in each prompt, outside summarized history",
+        "evidence": "EXAM12/18Q1: case facts theo issue trong mỗi request ngoài history nén.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Extracting and persisting structured issue data (order IDs, amounts, statuses) into a separate context layer for multi-issue sessions",
+        "evidence": "EXAM12: context layer có cấu trúc theo order/issue.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Trimming verbose tool outputs to only relevant fi elds before they accumulate in context (e.g., keeping only return-relevant fi elds from order lookups)",
+        "evidence": "EXAM12: chỉ field tool liên quan, giữ nguồn để lấy lại.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Placing key fi ndings summaries at the beginning of aggregated inputs and organizing detailed results with explicit section headers to mitigate position effects",
+        "evidence": "EXAM12: key findings đầu input, headers cho chi tiết.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Requiring subagents to include metadata (dates, source locations, methodological context) in structured outputs to support accurate downstream synthesis",
+        "evidence": "EXAM12/03: metadata date/location/methodology giữ qua agents.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Modifying upstream agents to return structured data (key facts, citations, relevance scores) instead of verbose content and reasoning chains when downstream agents have limited context budgets",
+        "evidence": "EXAM12: upstream key facts/citations/relevance thay verbose reasoning.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "5.2",
+    "page": 20,
+    "title": "Design effective escalation and ambiguity resolution patterns",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-02-escalation.md"
+    ],
+    "questions": [
+      "EXAM-02 Q2–3"
+    ],
+    "knowledge": [
+      {
+        "item": "Appropriate escalation triggers: customer requests for a human, policy exceptions/gaps (not just complex cases), and inability to make meaningful progress",
+        "evidence": "EXAM02: yêu cầu người, policy gap/exception, không tiến triển.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The distinction between escalating immediately when a customer explicitly demands it versus offering to resolve when the issue is straightforward",
+        "evidence": "EXAM02Q2: explicit demand chuyển ngay, không ép điều tra.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Why sentiment-based escalation and self-reported con fi dence scores are unreliable proxies for actual case complexity",
+        "evidence": "EXAM02: sentiment/confidence không là proxy đáng tin.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "How multiple customer matches require clari fi cation (requesting additional identi fi ers) rather than heuristic selection",
+        "evidence": "EXAM02Q3: nhiều customer matches cần định danh thêm.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Adding explicit escalation criteria with few-shot examples to the system prompt demonstrating when to escalate versus resolve autonomously",
+        "evidence": "EXAM02: few-shot khách bực nhưng có thể xử lý so với explicit human request.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Honoring explicit customer requests for human agents immediately without fi rst attempting investigation",
+        "evidence": "EXAM02Q2: tôn trọng ngay yêu cầu rõ.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Acknowledging frustration while offering resolution when the issue is within the agent's capability, escalating only if the customer reiterates their preference",
+        "evidence": "EXAM02: thừa nhận frustration/đề nghị xử lý, tôn trọng nếu khách chọn người.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Escalating when policy is ambiguous or silent on the customer's speci fi c request (e.g., competitor price matching when policy only addresses own-site adjustments)",
+        "evidence": "EXAM02Q3: own-site price adjustment không suy competitor matching.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Instructing the agent to ask for additional identi fi ers when tool results return multiple matches, rather than selecting based on heuristics",
+        "evidence": "EXAM02Q3: hỏi identifier thay chọn theo heuristic.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "5.3",
+    "page": 21,
+    "title": "Implement error propagation strategies across multi-agent systems",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-03-errors-provenance.md",
+      "EXAM-11-errors-tool-scope.md"
+    ],
+    "questions": [
+      "EXAM-03 Q1/Q3",
+      "EXAM-11 Q1"
+    ],
+    "knowledge": [
+      {
+        "item": "Structured error context (failure type, attempted query, partial results, alternative approaches) as enabling intelligent coordinator recovery decisions",
+        "evidence": "EXAM03: failure/query/partial/alternatives cho coordinator.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The distinction between access failures (timeouts needing retry decisions) and valid empty results (successful queries with no matches)",
+        "evidence": "EXAM03: access failure khác valid empty.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Why generic error statuses (\"search unavailable\") hide valuable context from the coordinator",
+        "evidence": "EXAM03: generic unavailable thiếu tín hiệu phục hồi.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Why silently suppressing errors (returning empty results as success) or terminating entire work fl ows on single failures are both anti-patterns",
+        "evidence": "EXAM03Q1: không che lỗi thành empty hoặc hủy mọi nhánh.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Returning structured error context including failure type, what was attempted, partial results, and potential alternatives to enable coordinator recovery",
+        "evidence": "EXAM03Q1: structured context và attempts.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Distinguishing access failures from valid empty results in error reporting so the coordinator can make appropriate decisions",
+        "evidence": "EXAM03: báo đúng access failure/empty.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Having subagents implement local recovery for transient failures and only propagate errors they cannot resolve, including what was attempted and partial results",
+        "evidence": "EXAM03/11: local transient recovery giới hạn, propagate unresolved cùng partial/attempts.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Structuring synthesis output with coverage annotations indicating which fi ndings are well- supported versus which topic areas have gaps due to unavailable sources",
+        "evidence": "EXAM03: coverage annotations chủ đề có support và gaps unavailable sources.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "5.4",
+    "page": 21,
+    "title": "Manage context effectively in large codebase exploration",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-12-session-context.md",
+      "EXAM-10-rules-skills-scope.md"
+    ],
+    "questions": [
+      "EXAM-12 Q1–2",
+      "EXAM-10 Q2"
+    ],
+    "knowledge": [
+      {
+        "item": "Context degradation in extended sessions: models start giving inconsistent answers and referencing \"typical patterns\" rather than speci fi c classes discovered earlier",
+        "evidence": "EXAM12: typical-pattern answers thay class cụ thể/inconsistent findings là degradation.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The role of scratchpad fi les for persisting key fi ndings across context boundaries",
+        "evidence": "EXAM12: scratchpad key findings có đường dẫn/bằng chứng.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Subagent delegation for isolating verbose exploration output while the main agent coordinates high- level understanding",
+        "evidence": "EXAM12: nhánh khám phá giữ output dài, coordinator bức tranh tổng thể.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Structured state persistence for crash recovery: each agent exports state to a known location, and the coordinator loads a manifest on resume",
+        "evidence": "EXAM12Q2: state exports nơi biết trước và manifest nạp khi resume.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Spawning subagents to investigate speci fi c questions (e.g., \" fi nd all test fi les,\" \"trace refund fl ow dependencies\") while the main agent preserves high-level coordination",
+        "evidence": "EXAM12: câu hỏi hẹp find-tests/trace-refund cho nhánh riêng.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Having agents maintain scratchpad fi les recording key fi ndings, referencing them for subsequent questions to counteract context degradation",
+        "evidence": "EXAM12: scratchpad ghi và tham chiếu findings cho câu sau.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Summarizing key fi ndings from one exploration phase before spawning sub-agents for the next phase, injecting summaries into initial context",
+        "evidence": "EXAM12: summary phase trước đưa initial context phase sau.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Designing crash recovery using structured agent state exports (manifests) that the coordinator loads on resume and injects into agent prompts",
+        "evidence": "EXAM12Q2: manifest/state phải được load/inject, không chỉ tồn tại.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Using /compact to reduce context usage during extended exploration sessions when context fi lls with verbose discovery output",
+        "evidence": "EXAM12: /compact cho verbose discovery, giữ facts/state trước nén.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "5.5",
+    "page": 22,
+    "title": "Design human review work fl ows and con fi dence calibration",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-04-confidence.md",
+      "EXAM-18-context-source-review.md"
+    ],
+    "questions": [
+      "EXAM-04 Q1–3",
+      "EXAM-18 Q3"
+    ],
+    "knowledge": [
+      {
+        "item": "The risk that aggregate accuracy metrics (e.g., 97% overall) may mask poor performance on speci fi c document types or fi elds",
+        "evidence": "EXAM04:97%chung che field/loại hiếm yếu.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Strati fi ed random sampling for measuring error rates in high-con fi dence extractions and detecting novel error patterns",
+        "evidence": "EXAM04: stratified random sampling nhóm cao đo lỗi mới.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Field-level con fi dence scores calibrated using labeled validation sets for routing review attention",
+        "evidence": "EXAM04: field confidence cần labeled calibration.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The importance of validating accuracy by document type and fi eld segment before automating high- con fi dence extractions",
+        "evidence": "EXAM04: verify accuracy theo type/field trước giảm review.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Implementing strati fi ed random sampling of high-con fi dence extractions for ongoing error rate measurement and novel pattern detection",
+        "evidence": "EXAM04Q3/18Q3: tiếp tục stratified sampling high-confidence.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Analyzing accuracy by document type and fi eld to verify consistent performance across all segments before reducing human review",
+        "evidence": "EXAM04Q1: phân tích theo field/doc type.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Having models output fi eld-level con fi dence scores, then calibrating review thresholds using labeled validation sets",
+        "evidence": "EXAM04Q2: model score không tự là xác suất đúng, calibrate threshold với nhãn.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Routing extractions with low model con fi dence or ambiguous/contradictory source documents to human review, prioritizing limited reviewer capacity",
+        "evidence": "EXAM04Q3: low confidence/ambiguity/conflict ưu tiên human capacity.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "5.6",
+    "page": 23,
+    "title": "Preserve information provenance and handle uncertainty in multi- source synthesis",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-03-errors-provenance.md",
+      "EXAM-18-context-source-review.md"
+    ],
+    "questions": [
+      "EXAM-03 Q2–3",
+      "EXAM-18 Q2"
+    ],
+    "knowledge": [
+      {
+        "item": "How source attribution is lost during summarization steps when fi ndings are compressed without preserving claim-source mappings",
+        "evidence": "EXAM03Q3: summary dễ làm mất claim-source mapping.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The importance of structured claim-source mappings that the synthesis agent must preserve and merge when combining fi ndings",
+        "evidence": "EXAM03: synthesis merge giữ liên kết claim/location/source.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "How to handle con fl icting statistics from credible sources: annotating con fl icts with source attribution rather than arbitrarily selecting one value",
+        "evidence": "EXAM03Q2: annotating conflicts thay chọn trung bình/tùy tiện.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Temporal data: requiring publication/collection dates in structured outputs to prevent temporal differences from being misinterpreted as contradictions",
+        "evidence": "EXAM03: publication/collection dates phân biệt temporal difference.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Requiring subagents to output structured claim-source mappings (source URLs, document names, relevant excerpts) that downstream agents preserve through synthesis",
+        "evidence": "EXAM03: structured findings URL/document/excerpt/location/date/methodology.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Structuring reports with explicit sections distinguishing well-established fi ndings from contested ones, preserving original source characterizations and methodological context",
+        "evidence": "EXAM03: established/contested/gap sections giữ characterization nguồn.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Completing document analysis with con fl icting values included and explicitly annotated, letting the coordinator decide how to reconcile before passing to synthesis",
+        "evidence": "EXAM03: document analysis giữ các giá trị, coordinator đối chiếu trước synthesis.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Requiring subagents to include publication or data collection dates in structured outputs to enable correct temporal interpretation",
+        "evidence": "EXAM03Q2/18Q2: giữ date để không hiểu hai thời kỳ là contradiction.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Rendering different content types appropriately in synthesis outputs— fi nancial data as tables, news as prose, technical fi ndings as structured lists—rather than converting everything to a uniform format",
+        "evidence": "EXAM03: financial tables/news prose/technical structured lists theo kiểu dữ liệu.",
+        "status": "covered_in_summary"
+      }
+    ]
+  }
+]

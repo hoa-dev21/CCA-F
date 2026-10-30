@@ -1,0 +1,50 @@
+[
+  {
+    "id": "289151",
+    "lesson": "API-62-api-lifecycle.md",
+    "note": "Request đi qua backend và Vertex rồi trả response/usage/stop reason. Cụm API Key trong bài lifecycle không nên được chép thành yêu cầu dùng Anthropic API key cho Vertex: bài setup307525 và request289155 sử dụng thông tin xác thực Google/ADC cùng project/region. Không để credential bí mật trong frontend.",
+    "review": "text_review_or_verified_whole_text_equality"
+  },
+  {
+    "id": "289155",
+    "lesson": "API-39-request.md",
+    "note": "Bài dùng AnthropicVertex(region, project_id), client.messages.create và model ID có dạng riêng của Vertex. SDK extra [vertex], region global và model ID trong mẫu là chi tiết khóa học, không phải bảo đảm khả dụng cho mọi project/model. max_tokens là trần, không là mục tiêu; content[0].text chỉ phù hợp ví dụ text đơn giản.",
+    "review": "text_review_or_verified_whole_text_equality"
+  },
+  {
+    "id": "289156",
+    "lesson": "API-02-multi-turn.md",
+    "note": "Mẫu giữ danh sách user/assistant rồi gửi lịch sử trong messages. Stateless của request nói về context suy luận, không phải cam kết dữ liệu không bao giờ được lưu ở provider. Với tool/multimodal cần giữ content blocks phù hợp, không chỉ lấy phần text đầu tiên.",
+    "review": "text_review_or_verified_whole_text_equality"
+  },
+  {
+    "id": "289154",
+    "lesson": "API-40-temperature.md",
+    "note": "Mẫu messages.create đặt temperature trực tiếp, khác inferenceConfig của Bedrock Converse. Bài cũng nhắc xác suất không bảo đảm đầu ra khác nhau; không suy nhiệt độ thấp đồng nghĩa factual correctness hay lặp tuyệt đối.",
+    "review": "text_review_or_verified_whole_text_equality"
+  },
+  {
+    "id": "289162",
+    "lesson": "API-61-response-streaming.md",
+    "note": "Mẫu dùng messages.create(stream=True) hoặc messages.stream/text_stream/get_final_message. Chunk không bằng một từ; text_stream chỉ phục vụ hiển thị text, còn history/tool handling cần final content và trạng thái kết thúc. MessageDelta cập nhật metadata/stop reason không nên tự được coi là toàn bộ message đã hoàn tất.",
+    "review": "text_review_or_verified_whole_text_equality"
+  },
+  {
+    "id": "289167",
+    "lesson": "API-09-code-grading.md",
+    "note": "Đã so sánh toàn văn chuẩn hóa với nguồn API287737: chỉ khác cách diễn đạt upfront/ahead of time và average/take the average. Dùng chung kiến thức code-based grading, không đếm câu hỏi trùng.",
+    "review": "text_review_or_verified_whole_text_equality"
+  },
+  {
+    "id": "289153",
+    "lesson": "API-03-system-prompts.md",
+    "note": "Toàn bộ mainText sau bỏ whitespace, timestamp và player timer trùng nguồn đã đọc https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287733. Đối chiếu toàn văn, không suy từ tiêu đề.",
+    "review": "text_review_or_verified_whole_text_equality"
+  },
+  {
+    "id": "289166",
+    "lesson": "API-07-running-eval.md",
+    "note": "Toàn bộ mainText sau bỏ whitespace, timestamp và player timer trùng nguồn đã đọc https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287743. Đối chiếu toàn văn, không suy từ tiêu đề.",
+    "review": "text_review_or_verified_whole_text_equality"
+  }
+]

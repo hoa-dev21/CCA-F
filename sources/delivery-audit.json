@@ -1,0 +1,73 @@
+{
+  "checkedAt": "2026-10-30T02:24:14.394Z",
+  "scope": "structural checks plus current source mapping; does not independently prove semantic correctness",
+  "lessons": 142,
+  "questions": 426,
+  "singleChoice": 405,
+  "multipleChoice": 21,
+  "issues": [],
+  "courses": [
+    {
+      "key": "fluency",
+      "totalLearning": 14,
+      "mapped": 14,
+      "pending": [],
+      "assessments": 0,
+      "administrative": 1
+    },
+    {
+      "key": "api",
+      "totalLearning": 76,
+      "mapped": 76,
+      "pending": [],
+      "assessments": 9,
+      "administrative": 0
+    },
+    {
+      "key": "vertex",
+      "totalLearning": 83,
+      "mapped": 83,
+      "pending": [],
+      "assessments": 10,
+      "administrative": 0
+    },
+    {
+      "key": "code",
+      "totalLearning": 9,
+      "mapped": 9,
+      "pending": [],
+      "assessments": 1,
+      "administrative": 0
+    },
+    {
+      "key": "claude101",
+      "totalLearning": 13,
+      "mapped": 13,
+      "pending": [],
+      "assessments": 0,
+      "administrative": 1
+    },
+    {
+      "key": "bedrock",
+      "totalLearning": 75,
+      "mapped": 75,
+      "pending": [],
+      "assessments": 8,
+      "administrative": 0
+    },
+    {
+      "key": "mcp",
+      "totalLearning": 12,
+      "mapped": 12,
+      "pending": [],
+      "assessments": 2,
+      "administrative": 0
+    }
+  ],
+  "sourceMappingsChecked": 282,
+  "sourceEvidenceIssues": [],
+  "blueprint": {
+    "reviewedTasks": 30,
+    "reviewedItems": 240
+  }
+}

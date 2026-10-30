@@ -1,0 +1,50 @@
+[
+  {
+    "course": "api",
+    "id": "287722",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287722",
+    "title": "Overview of Claude Models",
+    "source": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api",
+    "sourceType": "official public course assistant notes; not video transcript",
+    "key": "1p",
+    "collectedAt": "2026-10-29T18:35:29.698Z",
+    "reviewNote": "Ghi chú giới thiệu Opus/Sonnet/Haiku theo đánh đổi intelligence/speed/cost và phân model theo bước. Các câu về thinking hoặc làm việc nhiều giờ là mô tả theo thời điểm, không là giới hạn/bảo đảm hiện hành; giữ nguyên tắc chọn qua eval.",
+    "lesson": "BEDROCK-02-model-tradeoffs.md"
+  },
+  {
+    "course": "vertex",
+    "id": "289146",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289146",
+    "title": "Overview of Claude Models",
+    "source": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api",
+    "sourceType": "official public course assistant notes; not video transcript",
+    "key": "vertex",
+    "collectedAt": "2026-10-29T18:35:29.698Z",
+    "reviewNote": "Ghi chú Vertex cũng phân model theo yêu cầu và gợi ý dùng nhiều model. Không học thuộc tuyên bố Haiku không có reasoning như quy tắc hiện hành cho mọi phiên bản. Chọn theo số đo của tác vụ và hỗ trợ của project.",
+    "lesson": "BEDROCK-02-model-tradeoffs.md"
+  },
+  {
+    "course": "bedrock",
+    "id": "276787",
+    "url": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276787",
+    "title": "Prompt Caching in Action",
+    "source": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api",
+    "sourceType": "official public course assistant notes; not video transcript",
+    "key": "bedrock",
+    "collectedAt": "2026-10-29T18:35:29.698Z",
+    "reviewNote": "Nguồn ghi chú nêu cache system/tools, theo dõi cache write/read usage và nội dung ổn định trước breakpoint. Các tên cache_point, cache_write_input_tokens trong ghi chú không tự là field Converse hiện hành; đối chiếu contract SDK/provider trước triển khai. TTL5phút/ngưỡng1024 là số của nguồn, không bảo đảm phổ quát.",
+    "lesson": "API-56-cache-observation.md"
+  },
+  {
+    "course": "vertex",
+    "id": "289198",
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289198",
+    "title": "PDF Support",
+    "source": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api",
+    "sourceType": "official public course assistant notes; not video transcript",
+    "key": "vertex",
+    "collectedAt": "2026-10-29T18:35:29.698Z",
+    "reviewNote": "Ghi chú chuyển image block thành document với media_type application/pdf và gửi cùng prompt; có thể phân tích text/chart/table nhưng không bảo đảm mọi thành phần đọc đúng. Ví dụ không chứng minh mọi model/provider chấp nhận cùng kích thước/cách mã hóa; giữ citation và kiểm tra trang liên quan.",
+    "lesson": "API-58-pdf-input.md"
+  }
+]

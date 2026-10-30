@@ -1,0 +1,32 @@
+[
+  {
+    "id": "276720",
+    "lesson": "API-40-temperature.md",
+    "note": "Ví dụ Converse đặt inferenceConfig.temperature. Temperature thấp có thể giảm độ biến thiên, không bảo đảm kết quả đúng hoặc lặp lại tuyệt đối; các khoảng và default trong video không được dùng như cấu hình hiện hành cho mọi model.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "276721",
+    "lesson": "API-61-response-streaming.md",
+    "note": "Ví dụ dùng converse_stream, response.stream và contentBlockDelta.delta.text. Bộ xử lý thực tế phải phân biệt text/tool/reasoning/error events, tích lũy theo block và kiểm tra trạng thái kết thúc, không giả định mọi delta đều có text.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "276767",
+    "lesson": "API-51-text-editor.md",
+    "note": "Schema text editor do nhà cung cấp định nghĩa; ứng dụng vẫn phải triển khai đọc/ghi file và giới hạn đường dẫn. IDs và undo trong video phụ thuộc phiên bản, không phải mọi phiên bản editor đều hỗ trợ cùng lệnh.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "276811",
+    "lesson": "API-30-code-workflow.md",
+    "note": "Nguồn Bedrock cũng trình bày đọc code, lập kế hoạch rồi triển khai; TDD chọn test phù hợp trước khi viết code. /init và CLAUDE.md phục vụ ngữ cảnh dự án; phím # và cú pháp giao diện cũ trong video cần kiểm tra trước khi dùng. Không tự stage/commit chỉ vì bài có ví dụ.",
+    "review": "full_collected_text_read"
+  },
+  {
+    "id": "276806",
+    "lesson": "API-31-code-mcp.md",
+    "note": "Claude Code là MCP client; ví dụ server documents chuyển PDF/Word thành Markdown. Server mở rộng tools/resources/prompts nhưng chỉ dùng capability client hỗ trợ. Danh sách server là ví dụ lịch sử, không khẳng định uy tín hay cài sẵn; quyền truy cập và cấu hình phải có phạm vi rõ.",
+    "review": "full_collected_text_read"
+  }
+]

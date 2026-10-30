@@ -1,0 +1,366 @@
+[
+  {
+    "id": "1.1",
+    "page": 5,
+    "title": "Design and implement agentic loops for autonomous task execution",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "API-19-implement-loop.md",
+      "API-32-agents-workflows.md",
+      "EXAM-14-loop-decomposition.md"
+    ],
+    "questions": [
+      "API-19 Q1–3",
+      "EXAM-14 Q1"
+    ],
+    "knowledge": [
+      {
+        "item": "The agentic loop lifecycle: sending requests to Claude, inspecting stop_reason (\"tool_use\" vs \"end_turn\"), executing requested tools, and returning results for the next iteration",
+        "evidence": "API19: lifecycle/tool_use/end_turn và ngoại lệ.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "How tool results are appended to conversation history so the model can reason about the next action",
+        "evidence": "API19: lưu assistant rồi user tool results có ID.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The distinction between model-driven decision-making (Claude reasons about which tool to call next based on context) and pre-con fi gured decision trees or tool sequences",
+        "evidence": "API19/API32: model chọn bước theo context, khác cây quyết định mã hóa.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Implementing agentic loop control fl ow that continues when stop_reason is \"tool_use\" and terminates when stop_reason is \"end_turn\"",
+        "evidence": "API19/EXAM14: tiếp tục tool_use, kết thúc end_turn, xử lý reason khác.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Adding tool results to conversation context between iterations so the model can incorporate new information into its reasoning",
+        "evidence": "API19: thêm kết quả từng ID và is_error vào history.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Avoiding anti-patterns such as parsing natural language signals to determine loop termination, setting arbitrary iteration caps as the primary stopping mechanism, or checking for assistant text content as a completion indicator",
+        "evidence": "API19/EXAM14: không parse lời nói, text hoặc cap để chứng minh thành công.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "1.2",
+    "page": 5,
+    "title": "Orchestrate multi-agent systems with coordinator-subagent patterns",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-01-multi-agent.md"
+    ],
+    "questions": [
+      "EXAM-01 Q1–3"
+    ],
+    "knowledge": [
+      {
+        "item": "Hub-and-spoke architecture where a coordinator agent manages all inter-subagent communication, error handling, and information routing",
+        "evidence": "Tóm tắt: hub-and-spoke và coordinator định tuyến/xử lý lỗi.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "How subagents operate with isolated context—they do not inherit the coordinator's conversation history automatically",
+        "evidence": "Tóm tắt: context riêng, không tự kế thừa lịch sử.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The role of the coordinator in task decomposition, delegation, result aggregation, and deciding which subagents to invoke based on query complexity",
+        "evidence": "Tóm tắt: coordinator phân tích, phân việc, chọn nhánh và tổng hợp.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Risks of overly narrow task decomposition by the coordinator, leading to incomplete coverage of broad research topics",
+        "evidence": "Tóm tắt: chia hẹp quá gây bỏ sót nghiên cứu rộng.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Designing coordinator agents that analyze query requirements and dynamically select which subagents to invoke rather than always routing through the full pipeline",
+        "evidence": "Tóm tắt/Q2: chọn agent theo yêu cầu, không gọi mọi nhánh.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Partitioning research scope across subagents to minimize duplication (e.g., assigning distinct subtopics or source types to each agent)",
+        "evidence": "Tóm tắt: chia theo subtopic/loại nguồn, giảm trùng.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Implementing iterative re fi nement loops where the coordinator evaluates synthesis output for gaps, re-delegates to search and analysis subagents with targeted queries, and re-invokes synthesis until coverage is suf fi cient",
+        "evidence": "Tóm tắt/Q3: tìm gap và giao lại truy vấn có mục tiêu trước tổng hợp.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Routing all subagent communication through the coordinator for observability, consistent error handling, and controlled information fl ow",
+        "evidence": "Tóm tắt/Q2: định tuyến tập trung qua coordinator.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "1.3",
+    "page": 6,
+    "title": "Con fi gure subagent invocation, context passing, and spawning",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-01-multi-agent.md",
+      "EXAM-12-session-context.md"
+    ],
+    "questions": [
+      "EXAM-01 Q1–3",
+      "EXAM-12 Q1–2"
+    ],
+    "knowledge": [
+      {
+        "item": "The Task tool as the mechanism for spawning subagents, and the requirement that allowedTools must include \"Task\" for a coordinator to invoke subagents",
+        "evidence": "EXAM01: Task phải có trong allowedTools theo giao diện đề cương.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "That subagent context must be explicitly provided in the prompt—subagents do not automatically inherit parent context or share memory between invocations",
+        "evidence": "EXAM01: prompt chứa context rõ, không shared memory ngầm.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The AgentDe fi nition con fi guration including descriptions, system prompts, and tool restrictions for each subagent type",
+        "evidence": "EXAM01: AgentDefinition có description/system prompt/tool restrictions.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Fork-based session management for exploring divergent approaches from a shared analysis baseline",
+        "evidence": "EXAM12: fork tạo nhánh từ baseline chung.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Including complete fi ndings from prior agents directly in the subagent's prompt (e.g., passing web search results and document analysis outputs to the synthesis subagent)",
+        "evidence": "EXAM01/Q1: truyền findings trước vào synthesis prompt.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Using structured data formats to separate content from metadata (source URLs, document names, page numbers) when passing context between agents to preserve attribution",
+        "evidence": "EXAM01: tách findings khỏi URLs/names/pages/date.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Spawning parallel subagents by emitting multiple Task tool calls in a single coordinator response rather than across separate turns",
+        "evidence": "EXAM01: nhiều yêu cầu độc lập cùng lượt cho song song.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Designing coordinator prompts that specify research goals and quality criteria rather than step-by- step procedural instructions, to enable subagent adaptability",
+        "evidence": "EXAM01: giao mục tiêu/tiêu chí chất lượng/phạm vi thay kịch bản cứng.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "1.4",
+    "page": 7,
+    "title": "Implement multi-step work fl ows with enforcement and handoff patterns",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-02-escalation.md"
+    ],
+    "questions": [
+      "EXAM-02 Q1–3"
+    ],
+    "knowledge": [
+      {
+        "item": "The difference between programmatic enforcement (hooks, prerequisite gates) and prompt-based guidance for work fl ow ordering",
+        "evidence": "Tóm tắt: gate mã khác prompt.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "When deterministic compliance is required (e.g., identity veri fi cation before fi nancial operations), prompt instructions alone have a non-zero failure rate",
+        "evidence": "Tóm tắt/Q1: xác minh tài chính cần cưỡng chế.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Structured handoff protocols for mid-process escalation that include customer details, root cause analysis, and recommended actions",
+        "evidence": "Handoff: định danh, nguyên nhân, đề xuất cho người không có transcript.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Implementing programmatic prerequisites that block downstream tool calls until prerequisite steps have completed (e.g., blocking process_refund until get_customer has returned a veri fi ed customer ID)",
+        "evidence": "Tóm tắt/Q1: block refund nếu chưa xác minh hợp lệ.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Decomposing multi-concern customer requests into distinct items, then investigating each in parallel using shared context before synthesizing a uni fi ed resolution",
+        "evidence": "Đoạn nhiều vấn đề: tách hạng mục, shared facts, điều tra độc lập song song, tổng hợp.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Compiling structured handoff summaries (customer ID, root cause, refund amount, recommended action) when escalating to human agents who lack access to the conversation transcript",
+        "evidence": "Handoff: customer ID/root cause/refund amount/recommended action rõ ràng.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "1.5",
+    "page": 7,
+    "title": "Apply Agent SDK hooks for tool call interception and data normalization",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-02-escalation.md",
+      "EXAM-14-loop-decomposition.md"
+    ],
+    "questions": [
+      "EXAM-14 Q3",
+      "EXAM-02 Q1"
+    ],
+    "knowledge": [
+      {
+        "item": "Hook patterns (e.g., PostToolUse) that intercept tool results for transformation before the model processes them",
+        "evidence": "EXAM02: PostToolUse chuẩn hóa kết quả trước model.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Hook patterns that intercept outgoing tool calls to enforce compliance rules (e.g., blocking refunds above a threshold)",
+        "evidence": "EXAM02/14: hook trước tool chặn hành động vượt ngưỡng.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The distinction between using hooks for deterministic guarantees versus relying on prompt instructions for probabilistic compliance",
+        "evidence": "EXAM02: deterministic enforcement khác compliance xác suất.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Implementing PostToolUse hooks to normalize heterogeneous data formats (Unix timestamps, ISO 8601, numeric status codes) from different MCP tools before the agent processes them",
+        "evidence": "EXAM02/14: Unix/ISO8601/numeric status theo contract và timezone, giữ nguồn.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Implementing tool call interception hooks that block policy-violating actions (e.g., refunds exceeding $500) and redirect to alternative work fl ows (e.g., human escalation)",
+        "evidence": "EXAM02/14: gate trước refund vượt ngưỡng và redirect human.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Choosing hooks over prompt-based enforcement when business rules require guaranteed compliance",
+        "evidence": "EXAM02/Q1: chọn gate/hooks thay prompt khi cần cưỡng chế.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "1.6",
+    "page": 8,
+    "title": "Design task decomposition strategies for complex work fl ows",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "API-32-agents-workflows.md",
+      "API-34-chaining.md",
+      "EXAM-08-multi-pass-review.md",
+      "EXAM-14-loop-decomposition.md"
+    ],
+    "questions": [
+      "API-32 Q1–3",
+      "EXAM-08 Q1/Q3",
+      "EXAM-14 Q2"
+    ],
+    "knowledge": [
+      {
+        "item": "When to use fi xed sequential pipelines (prompt chaining) versus dynamic adaptive decomposition based on intermediate fi ndings",
+        "evidence": "API32/34: predictable chaining khác dynamic adaptive plan.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Prompt chaining patterns that break reviews into sequential steps (e.g., analyze each fi le individually, then run a cross- fi le integration pass)",
+        "evidence": "EXAM08/14: per-file rồi cross-file integration.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The value of adaptive investigation plans that generate subtasks based on what is discovered at each step",
+        "evidence": "EXAM14: kế hoạch điều tra sinh nhiệm vụ theo findings.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Selecting task decomposition patterns appropriate to the work fl ow: prompt chaining for predictable multi-aspect reviews, dynamic decomposition for open-ended investigation tasks",
+        "evidence": "API32/EXAM14: chọn chaining cho bước biết trước, adaptive cho điều tra mở.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Splitting large code reviews into per- fi le local analysis passes plus a separate cross- fi le integration pass to avoid attention dilution",
+        "evidence": "EXAM08 Q1/Q3: local review rồi integration tránh attention dilution.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Decomposing open-ended tasks (e.g., \"add comprehensive tests to a legacy codebase\") by fi rst mapping structure, identifying high-impact areas, then creating a prioritized plan that adapts as dependencies are discovered",
+        "evidence": "EXAM14 Q2: map legacy repo, ưu tiên high-impact, cập nhật theo dependencies.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "1.7",
+    "page": 8,
+    "title": "Manage session state, resumption, and forking",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-12-session-context.md"
+    ],
+    "questions": [
+      "EXAM-12 Q1–2"
+    ],
+    "knowledge": [
+      {
+        "item": "Named session resumption using --resume <session-name> to continue a speci fi c prior conversation",
+        "evidence": "Đoạn bổ sung: --resume <session-name> chọn phiên đặt tên.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "fork_session for creating independent branches from a shared analysis baseline to explore divergent approaches",
+        "evidence": "Tóm tắt: fork_session nhánh độc lập từ baseline.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The importance of informing the agent about changes to previously analyzed fi les when resuming sessions after code modi fi cations",
+        "evidence": "Đoạn resume: thông báo file đã sửa.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Why starting a new session with a structured summary is more reliable than resuming with stale tool results",
+        "evidence": "Tóm tắt/Q1: summary mới khi tool results cũ nhiều.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Using --resume with session names to continue named investigation sessions across work sessions",
+        "evidence": "Đoạn bổ sung: resume named investigation theo đề cương.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Using fork_session to create parallel exploration branches (e.g., comparing two testing strategies or refactoring approaches from a shared codebase analysis)",
+        "evidence": "Tóm tắt: fork so sánh phương án độc lập, không đồng bộ findings ngầm.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Choosing between session resumption (when prior context is mostly valid) and starting fresh with injected summaries (when prior tool results are stale)",
+        "evidence": "Tóm tắt/Q1: chọn resume nếu context còn đúng, summary mới nếu stale.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Informing a resumed session about speci fi c fi le changes for targeted re-analysis rather than requiring full re-exploration",
+        "evidence": "Đoạn bổ sung: nêu file thay đổi để targeted re-analysis.",
+        "status": "covered_in_summary"
+      }
+    ]
+  }
+]

@@ -1,0 +1,119 @@
+[
+  {
+    "id": "276749",
+    "title": "Prompt engineering",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276749",
+    "sha256": "8ba0c1a4255411e2e067bba396e938cf97d289c395fb699696140dac5180fbec",
+    "lesson": "API-10-prompt-engineering.md",
+    "review": "full_text_read_concepts_compared",
+    "providerNotes": "Cùng chu trình mục tiêu–baseline–thử kỹ thuật–đánh giá lại. Mức tăng điểm trong ví dụ không bảo đảm cho tác vụ khác."
+  },
+  {
+    "id": "276743",
+    "title": "Being clear and direct",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276743",
+    "sha256": "b474137ddd82f92d2844eea42c04bff6196e01841e053d4133accb3bc34545e1",
+    "lesson": "API-11-clear-direct.md",
+    "review": "full_text_read_concepts_compared",
+    "providerNotes": "Cùng nguyên tắc giao nhiệm vụ rõ bằng hành động và đầu ra. Không biến “dùng mệnh lệnh” thành quy định mọi câu hỏi đều kém."
+  },
+  {
+    "id": "276745",
+    "title": "Being specific",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276745",
+    "sha256": "1431e7a4addb9900776dcc9797a4486d9b2ccc1c69106efe31b024918e46f65d",
+    "lesson": "API-12-specificity.md",
+    "review": "full_text_read_concepts_compared",
+    "providerNotes": "Cùng phân biệt quality guidelines và process steps; có thêm điểm minh họa theo từng cách, không phải kết quả áp dụng phổ quát."
+  },
+  {
+    "id": "276744",
+    "title": "Structure with XML tags",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276744",
+    "sha256": "6fb8d76d842124d92aae7dceafa680902f3eb5a8f10ff7fab9647bae67e52b44",
+    "lesson": "API-13-xml.md",
+    "review": "full_text_read_concepts_compared",
+    "providerNotes": "Cùng phân vùng mã/tài liệu và dữ liệu đầu vào bằng tags có nghĩa. Tags là tổ chức context, không tự là cơ chế bảo mật dữ liệu."
+  },
+  {
+    "id": "276747",
+    "title": "Providing examples",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276747",
+    "sha256": "f7c21479140db5cb5f1b2c681c1817ad882bbe503192542036975f6d8ec10a2d",
+    "lesson": "API-14-examples.md",
+    "review": "full_text_read_concepts_compared",
+    "providerNotes": "Cùng ví dụ châm biếm, few-shot và lựa chọn ví dụ từ eval. Tập ví dụ tốt không loại bỏ yêu cầu đánh giá trên trường hợp mới."
+  },
+  {
+    "id": "276756",
+    "title": "Introducing tool use",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276756",
+    "sha256": "e8040d29a6b5751f7f95b1c1bfe716cdc8acbc430fc055b3dd27bbe5b55086a2",
+    "lesson": "API-01-tool-use.md",
+    "review": "full_text_read_concepts_compared",
+    "providerNotes": "Cùng luồng yêu cầu dữ liệu–ứng dụng thực thi–model dùng kết quả. Thứ tự viết các thành phần mã có thể khác thứ tự chạy."
+  },
+  {
+    "id": "276757",
+    "title": "Tool functions",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276757",
+    "sha256": "b6607447128cdcd00d3aa86b7320abe6ddc1f737e8775f9c3418b342cc04fda4",
+    "lesson": "API-42-tool-functions.md",
+    "review": "full_text_read_concepts_compared",
+    "providerNotes": "Cùng mẫu công cụ thời gian/reminder và hợp đồng đầu vào. Không coi việc model có thể retry là bảo đảm mọi lỗi phải retry."
+  },
+  {
+    "id": "276758",
+    "title": "JSON Schema for tools",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276758",
+    "sha256": "f87f2654b6adc74c5a442d8ba6139f016f762b891b6377eb82f0ee5ffe0cf082",
+    "lesson": "API-15-tool-schemas.md",
+    "review": "full_text_read_concepts_compared",
+    "providerNotes": "Converse minh họa lớp toolSpec và inputSchema; không sao chép input_schema của Messages API thành field Converse. Sinh schema từ mẫu dữ liệu chỉ là khởi đầu, phải đối chiếu hợp đồng hàm và dữ liệu thật; không đưa secret/dữ liệu riêng vào converter bên ngoài."
+  },
+  {
+    "id": "276764",
+    "title": "Handling tool use responses",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276764",
+    "sha256": "2ad08fdc4dbad0bbf50022a3165435529d1fbe8b2668bf212179e0cadd4d268a",
+    "lesson": "API-16-message-blocks.md",
+    "review": "full_text_read_concepts_compared",
+    "providerNotes": "Converse dùng toolUse với toolUseId/name/input; phản hồi có stopReason. Giữ mọi content parts thay vì giả định block đầu luôn text. toolChoice trong ví dụ phân biệt auto/any/tool theo adapter provider."
+  },
+  {
+    "id": "276762",
+    "title": "Running tool functions",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276762",
+    "sha256": "42ba8de2811d39891f42bb9a3cd88d6e3b309a75d016b7d9372c59f0037f060b",
+    "lesson": "API-19-implement-loop.md",
+    "review": "full_text_read_concepts_compared",
+    "providerNotes": "Converse trả toolResult, toolUseId, content blocks và status success/error. Không nhầm status của provider với is_error trong API hoặc isError của MCP. Mỗi tool request cần kết quả liên kết đúng ID kể cả lỗi."
+  },
+  {
+    "id": "276760",
+    "title": "Sending tool results",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276760",
+    "sha256": "cb9b504c2696d0775607d13c9e780a4ec840149276b146b05e64e13be228dfc8",
+    "lesson": "API-17-tool-results.md",
+    "review": "full_text_read_concepts_compared",
+    "providerNotes": "Converse thêm tất cả tool result parts vào user message, bảo toàn assistant tool requests và định nghĩa tool trong request tiếp theo. Đầu ra thực thi vẫn phải có ID khớp."
+  },
+  {
+    "id": "276759",
+    "title": "Multi-Turn conversations with tools",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276759",
+    "sha256": "0b5f7c31791e76331f7b59274d18decd76a32ebf5a4035c11628250ee6b90423",
+    "lesson": "API-18-tools-multi-turn.md",
+    "review": "full_text_read_concepts_compared",
+    "providerNotes": "Đọc stopReason rồi ánh xạ sang trạng thái loop. Ví dụ dừng khi khác tool_use không chứng minh mọi lý do khác là thành công; max_tokens cần xử lý đầu ra bị cắt. Không thêm user message kết quả rỗng khi model không yêu cầu tool."
+  },
+  {
+    "id": "276761",
+    "title": "Adding multiple tools",
+    "source": "https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276761",
+    "sha256": "875d5b97d312524cbbb2ae852a1790aa0c44f7ca129d02a6ae0eaf3354261c5b",
+    "lesson": "API-20-multiple-tools.md",
+    "review": "full_text_read_concepts_compared",
+    "providerNotes": "Converse thêm schemas và router theo cùng nguyên tắc. Bài nói rõ set_reminder mẫu chỉ in output; nó chưa chứng minh có reminder thật tồn tại trong lịch/backend. Muốn triển khai phải có tích hợp và kiểm chứng trạng thái thực."
+  }
+]

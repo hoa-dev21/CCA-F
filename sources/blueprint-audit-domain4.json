@@ -1,0 +1,345 @@
+[
+  {
+    "id": "4.1",
+    "page": 16,
+    "title": "Design prompts with explicit criteria to improve precision and reduce false positives",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-13-review-feedback-ci.md",
+      "EXAM-17-quality-examples-batch.md"
+    ],
+    "questions": [
+      "EXAM-13 Q1",
+      "EXAM-17 Q2"
+    ],
+    "knowledge": [
+      {
+        "item": "The importance of explicit criteria over vague instructions (e.g., \" fl ag comments only when claimed behavior contradicts actual code behavior\" vs \"check that comments are accurate\")",
+        "evidence": "EXAM13: chỉ flag comment khi claimed behavior trái code.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "How general instructions like \"be conservative\" or \"only report high-con fi dence fi ndings\" fail to improve precision compared to speci fi c categorical criteria",
+        "evidence": "EXAM13: be conservative/high confidence không thay categorical criteria.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The impact of false positive rates on developer trust: high false positive categories undermine con fi dence in accurate categories",
+        "evidence": "EXAM13/17: nhiễu một nhóm làm mất trust nhóm đúng.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Writing speci fi c review criteria that de fi ne which issues to report (bugs, security) versus skip (minor style, local patterns) rather than relying on con fi dence-based fi ltering",
+        "evidence": "EXAM13 Q1: report bug/security, skip style/local acceptable patterns.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Temporarily disabling high false-positive categories to restore developer trust while improving prompts for those categories",
+        "evidence": "EXAM13/17Q2: tạm disable category nhiễu trong khi cải tiến.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "De fi ning explicit severity criteria with concrete code examples for each severity level to achieve consistent classi fi cation",
+        "evidence": "EXAM13: severity theo tác động, ví dụ tenant leak/null crash/style skip và output cụ thể.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "4.2",
+    "page": 16,
+    "title": "Apply few-shot prompting to improve output consistency and quality",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-13-review-feedback-ci.md",
+      "EXAM-17-quality-examples-batch.md",
+      "API-14-examples.md"
+    ],
+    "questions": [
+      "EXAM-13 Q1",
+      "EXAM-17 Q1",
+      "API-14 Q1–3"
+    ],
+    "knowledge": [
+      {
+        "item": "Few-shot examples as the most effective technique for achieving consistently formatted, actionable output when detailed instructions alone produce inconsistent results",
+        "evidence": "EXAM13/API14: examples khi instructions vẫn không nhất quán.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The role of few-shot examples in demonstrating ambiguous-case handling (e.g., tool selection for ambiguous requests, branch-level test coverage gaps)",
+        "evidence": "EXAM13: ca mơ hồ, guard hợp lệ so với null bug.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "How few-shot examples enable the model to generalize judgment to novel patterns rather than matching only pre-speci fi ed cases",
+        "evidence": "EXAM13: áp nguyên tắc lên ca mới, không chỉ match mẫu.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The effectiveness of few-shot examples for reducing hallucination in extraction tasks (e.g., handling informal measurements, varied document structures)",
+        "evidence": "EXAM13: extraction có inline/bibliography/embedded methodology/đơn vị không trang trọng.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Creating 2-4 targeted few-shot examples for ambiguous scenarios that show reasoning for why one action was chosen over plausible alternatives",
+        "evidence": "EXAM13: 2–4 targeted examples, lý do chọn hơn alternative.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Including few-shot examples that demonstrate speci fi c desired output format (location, issue, severity, suggested fi x) to achieve consistency",
+        "evidence": "EXAM13: file/location/issue/severity/suggested fix.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Providing few-shot examples distinguishing acceptable code patterns from genuine issues to reduce false positives while enabling generalization",
+        "evidence": "EXAM13: guarded dereference hợp lệ khác null crash tái hiện.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Using few-shot examples to demonstrate correct handling of varied document structures (inline citations vs bibliographies, methodology sections vs embedded details)",
+        "evidence": "EXAM13: cấu trúc citation và methodology khác nhau.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Adding few-shot examples showing correct extraction from documents with varied formats to address empty/null extraction of required fi elds",
+        "evidence": "EXAM17Q1: ví dụ extraction varied layout khi field có trong nguồn nhưng bị null.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "4.3",
+    "page": 17,
+    "title": "Enforce structured output using tool use and JSON schemas",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-05-structured-output.md",
+      "EXAM-11-errors-tool-scope.md",
+      "EXAM-15-tool-contract-scenarios.md"
+    ],
+    "questions": [
+      "EXAM-05 Q1–3",
+      "EXAM-15 Q1"
+    ],
+    "knowledge": [
+      {
+        "item": "Tool use (tool_use) with JSON schemas as the most reliable approach for guaranteed schema- compliant structured output, eliminating JSON syntax errors",
+        "evidence": "EXAM05: extraction schema/tool-use input, phân biệt contract thông thường với strict support thật.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The distinction between tool_choice: \"auto\" (model may return text instead of calling a tool), \"any\" (model must call a tool but can choose which), and forced tool selection (model must call a speci fi c named tool)",
+        "evidence": "EXAM05/11: auto/any/forced-name.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "That strict JSON schemas via tool use eliminate syntax errors but do not prevent semantic errors (e.g., line items that don't sum to total, values in wrong fi elds)",
+        "evidence": "EXAM05Q2: schema hợp lệ vẫn có semantic error tổng/nhầm trường.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Schema design considerations: required vs optional fi elds, enum fi elds with \"other\" + detail string patterns for extensible categories",
+        "evidence": "EXAM05Q3: required/optional/null và other+detail.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "De fi ning extraction tools with JSON schemas as input parameters and extracting structured data from the tool_use response",
+        "evidence": "EXAM05: tool schema rồi lấy dữ liệu tool_use input.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Setting tool_choice: \"any\" to guarantee structured output when multiple extraction schemas exist and the document type is unknown",
+        "evidence": "EXAM05: any khi nhiều extraction schemas/document type chưa rõ.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Forcing a speci fi c tool with tool_choice: {\"type\": \"tool\", \"name\": \"extract_metadata\"} to ensure a particular extraction runs before enrichment steps",
+        "evidence": "EXAM05/15Q1: forced metadata trước enrichment theo turn/gate.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Designing schema fi elds as optional (nullable) when source documents may not contain the information, preventing the model from fabricating values to satisfy required fi elds",
+        "evidence": "EXAM05Q3: optional khác nullable, thiếu dữ liệu không bịa.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Adding enum values like \"unclear\" for ambiguous cases and \"other\" + detail fi elds for extensible categorization",
+        "evidence": "EXAM05: unclear/other và detail cho ambiguity/extensibility.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Including format normalization rules in prompts alongside strict output schemas to handle inconsistent source formatting",
+        "evidence": "EXAM05: normalization format trong prompt cùng schema và business validation.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "4.4",
+    "page": 18,
+    "title": "Implement validation, retry, and feedback loops for extraction quality",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-06-validation-retry.md",
+      "EXAM-13-review-feedback-ci.md"
+    ],
+    "questions": [
+      "EXAM-06 Q1–3"
+    ],
+    "knowledge": [
+      {
+        "item": "Retry-with-error-feedback: appending speci fi c validation errors to the prompt on retry to guide the model toward correction",
+        "evidence": "EXAM06Q1: retry kèm lỗi cụ thể.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The limits of retry: retries are ineffective when the required information is simply absent from the source document (vs format or structural errors)",
+        "evidence": "EXAM06Q2: retry không tạo thông tin ở phụ lục chưa cung cấp.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Feedback loop design: tracking which code constructs trigger fi ndings (detected_pattern fi eld) to enable systematic analysis of dismissal patterns",
+        "evidence": "EXAM06: detected_pattern phân tích dismissal.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The difference between semantic validation errors (values don't sum, wrong fi eld placement) and schema syntax errors (eliminated by tool use)",
+        "evidence": "EXAM06: semantic validation khác cú pháp/schema.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Implementing follow-up requests that include the original document, the failed extraction, and speci fi c validation errors for model self-correction",
+        "evidence": "EXAM06Q1: original document+failed extraction+specific errors.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Identifying when retries will be ineffective (e.g., information exists only in an external document not provided) versus when they will succeed (format mismatches, structural output errors)",
+        "evidence": "EXAM06Q2: bổ sung nguồn hoặc missing/review khi thông tin vắng.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Adding detected_pattern fi elds to structured fi ndings to enable analysis of false positive patterns when developers dismiss fi ndings",
+        "evidence": "EXAM06: detected_pattern trong structured findings để xem false positives.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Designing self-correction validation fl ows: extracting \"calculated_total\" alongside \"stated_total\" to fl ag discrepancies, adding \"con fl ict_detected\" booleans for inconsistent source data",
+        "evidence": "EXAM06Q3: stated_total/calculated_total/conflict_detected riêng, không ghi đè mâu thuẫn.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "4.5",
+    "page": 18,
+    "title": "Design ef fi cient batch processing strategies",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-07-batches.md",
+      "EXAM-17-quality-examples-batch.md"
+    ],
+    "questions": [
+      "EXAM-07 Q1–3",
+      "EXAM-17 Q3"
+    ],
+    "knowledge": [
+      {
+        "item": "The Message Batches API: 50% cost savings, up to 24-hour processing window, no guaranteed latency SLA",
+        "evidence": "EXAM07: 50%/24giờ theo guide, không coi báo giá/SLA hiện hành đã xác minh.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Batch processing is appropriate for non-blocking, latency-tolerant workloads (overnight reports, weekly audits, nightly test generation) and inappropriate for blocking work fl ows (pre-merge checks)",
+        "evidence": "EXAM07Q1: latency-tolerant khác blocking pre-merge.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "The batch API does not support multi-turn tool calling within a single request (cannot execute tools mid-request and return results)",
+        "evidence": "EXAM07Q3: không có host-executed multiturn tools trong một request.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "custom_id fi elds for correlating batch request/response pairs",
+        "evidence": "EXAM07: custom_id ghép kết quả, không theo vị trí.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Matching API approach to work fl ow latency requirements: synchronous API for blocking pre-merge checks, batch API for overnight/weekly analysis",
+        "evidence": "EXAM07Q1: realtime cho blocking, batch cho overnight.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Calculating batch submission frequency based on SLA constraints (e.g., 4-hour windows to guarantee 30-hour SLA with 24-hour batch processing)",
+        "evidence": "EXAM07/17Q3: wait+processing,4giờ có đệm theo giả định.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Handling batch failures: resubmitting only failed documents (identi fi ed by custom_id) with appropriate modi fi cations (e.g., chunking documents that exceeded context limits)",
+        "evidence": "EXAM07Q2: chỉ resubmit failed IDs, sửa nguyên nhân quá dài.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Using prompt re fi nement on a sample set before batch-processing large volumes to maximize fi rst- pass success rates and reduce iterative resubmission costs",
+        "evidence": "EXAM07: refine prompt trên sample trước xử lý lớn.",
+        "status": "covered_in_summary"
+      }
+    ]
+  },
+  {
+    "id": "4.6",
+    "page": 19,
+    "title": "Design multi-instance and multi-pass review architectures",
+    "scope": "summary coverage reviewed against every knowledge/skill; questions are learning exercises, not an exam-readiness certification",
+    "files": [
+      "EXAM-08-multi-pass-review.md"
+    ],
+    "questions": [
+      "EXAM-08 Q1–3"
+    ],
+    "knowledge": [
+      {
+        "item": "Self-review limitations: a model retains reasoning context from generation, making it less likely to question its own decisions in the same session",
+        "evidence": "EXAM08: self-review giữ giả định của generator.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Independent review instances (without prior reasoning context) are more effective at catching subtle issues than self-review instructions or extended thinking",
+        "evidence": "EXAM08: reviewer context độc lập khác yêu cầu tự phản biện/thinking.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Multi-pass review: splitting large reviews into per- fi le local analysis passes plus cross- fi le integration passes to avoid attention dilution and contradictory fi ndings",
+        "evidence": "EXAM08Q1/Q3: per-file + integration tránh mất độ sâu/cross-file bugs.",
+        "status": "covered_in_summary"
+      }
+    ],
+    "skills": [
+      {
+        "item": "Using a second independent Claude instance to review generated code without the generator's reasoning context",
+        "evidence": "EXAM08Q2: independent instance nhận requirements/code, không generator reasoning.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Splitting large multi- fi le reviews into focused per- fi le passes for local issues plus separate integration passes for cross- fi le data fl ow analysis",
+        "evidence": "EXAM08Q1/Q3: local và cross-file data-flow pass.",
+        "status": "covered_in_summary"
+      },
+      {
+        "item": "Running veri fi cation passes where the model self-reports con fi dence alongside each fi nding to enable calibrated review routing",
+        "evidence": "EXAM08: verification pass tự báo confidence từng finding, hiệu chỉnh với labels trước routing.",
+        "status": "covered_in_summary"
+      }
+    ]
+  }
+]

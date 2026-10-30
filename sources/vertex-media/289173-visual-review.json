@@ -1,0 +1,19 @@
+{
+  "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289173",
+  "title": "Exercise on prompting",
+  "sourceType": "Visual review of notebook and evaluation report shown in the official lesson video; English caption track unavailable",
+  "mediaId": "hlYSjyD6",
+  "durationSeconds": 322,
+  "framesDirectory": "sources/vertex-media/289173-frames",
+  "sampling": "13 frames extracted every25seconds; frame positions approximately12.5+25n seconds",
+  "framesInspected": ["frame-01.jpg", "frame-03.jpg", "frame-05.jpg", "frame-08.jpg", "frame-10.jpg", "frame-12.jpg", "frame-13.jpg"],
+  "observations": [
+    "Notebook003_exercise creates four test cases for extracting topics from one paragraph of English scholarly text into a JSON array of strings.",
+    "Baseline evaluation report shows average2.8 and flags narrative/numbered output rather than the required JSON array.",
+    "The revised prompt explicitly requests key topics as a JSON array of strings.",
+    "Later prompt uses text XML delimiters and explicit steps to inspect text and identify topics.",
+    "Final displayed evaluation criteria require every topic, strings without extra commentary and the JSON array alone."
+  ],
+  "summaryLesson": "API-72-prompting-exercise.md",
+  "limits": "No claim of an official transcript or word-for-word audio review. Summary relies on visible task, prompt changes and evaluation criteria; related API/Bedrock captions provide additional conceptual explanation."
+}

@@ -1,0 +1,300 @@
+{
+  "lesson": "MCP review",
+  "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287790",
+  "collectedAt": "2026-10-29T18:39:52.196Z",
+  "sourceType": "English captions linked by official lesson player",
+  "media": {
+    "url": "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287790",
+    "players": [
+      {
+        "id": "botr_y9xXQ4lc_Akyo8gQO_div",
+        "playlist": [
+          {
+            "sources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/y9xXQ4lc.m3u8?exp=1793310000&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              }
+            ],
+            "tracks": [
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/HsFubMgU.srt",
+                "label": "English",
+                "sideloaded": true,
+                "data": [],
+                "name": "English",
+                "_id": "https://cdn.jwplayer.com/tracks/HsFubMgU.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/II9MPW4S.srt",
+                "label": "French",
+                "sideloaded": true,
+                "data": [],
+                "name": "French",
+                "_id": "https://cdn.jwplayer.com/tracks/II9MPW4S.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/zd4cGTv8.srt",
+                "label": "German",
+                "sideloaded": true,
+                "data": [],
+                "name": "German",
+                "_id": "https://cdn.jwplayer.com/tracks/zd4cGTv8.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/tRfssvsv.srt",
+                "label": "Japanese",
+                "sideloaded": true,
+                "data": [],
+                "name": "Japanese",
+                "_id": "https://cdn.jwplayer.com/tracks/tRfssvsv.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/OFfCwjMo.srt",
+                "label": "Korean",
+                "sideloaded": true,
+                "data": [],
+                "name": "Korean",
+                "_id": "https://cdn.jwplayer.com/tracks/OFfCwjMo.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/PklX8jjC.srt",
+                "label": "Portuguese",
+                "sideloaded": true,
+                "data": [],
+                "name": "Portuguese",
+                "_id": "https://cdn.jwplayer.com/tracks/PklX8jjC.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/EVPmKEMm.srt",
+                "label": "Spanish",
+                "sideloaded": true,
+                "data": [],
+                "name": "Spanish",
+                "_id": "https://cdn.jwplayer.com/tracks/EVPmKEMm.srt",
+                "xhr": {}
+              },
+              {
+                "kind": "thumbnails",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/strips/y9xXQ4lc-120.vtt"
+              }
+            ],
+            "minDvrWindow": 120,
+            "image": "https://cdn.jwplayer.com/v2/media/y9xXQ4lc/poster.jpg?width=720",
+            "images": [
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/y9xXQ4lc/poster.jpg?width=320",
+                "width": 320,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/y9xXQ4lc/poster.jpg?width=480",
+                "width": 480,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/y9xXQ4lc/poster.jpg?width=640",
+                "width": 640,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/y9xXQ4lc/poster.jpg?width=720",
+                "width": 720,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/y9xXQ4lc/poster.jpg?width=1280",
+                "width": 1280,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/y9xXQ4lc/poster.jpg?width=1920",
+                "width": 1920,
+                "type": "image/jpeg"
+              }
+            ],
+            "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=y9xXQ4lc&token=REDACTED",
+            "title": "09 - 011 - MCP Review.mp4",
+            "mediaid": "y9xXQ4lc",
+            "link": null,
+            "duration": 252.634,
+            "pubdate": 1748378361,
+            "description": null,
+            "tags": "",
+            "preload": "auto",
+            "allSources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/y9xXQ4lc.m3u8?exp=1793310000&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/y9xXQ4lc-B9NwIVRu.mp4?exp=1793310000&sig=REDACTED",
+                "width": 320,
+                "height": 180,
+                "label": "180p",
+                "bitrate": 137190,
+                "framerate": 30,
+                "filesize": 4321499,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/y9xXQ4lc-muagBOKI.mp4?exp=1793310000&sig=REDACTED",
+                "width": 480,
+                "height": 270,
+                "label": "270p",
+                "bitrate": 152893,
+                "framerate": 30,
+                "filesize": 4816158,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/y9xXQ4lc-4Xe8IV8X.mp4?exp=1793310000&sig=REDACTED",
+                "width": 720,
+                "height": 406,
+                "label": "406p",
+                "bitrate": 177419,
+                "framerate": 30,
+                "filesize": 5588714,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/y9xXQ4lc-m7ew0xq8.mp4?exp=1793310000&sig=REDACTED",
+                "width": 1280,
+                "height": 720,
+                "label": "720p",
+                "bitrate": 246013,
+                "framerate": 30,
+                "filesize": 7749427,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/y9xXQ4lc-eNgUZBQ2.m4a?exp=1793310000&sig=REDACTED",
+                "label": "Audio",
+                "bitrate": 113700,
+                "filesize": 3581557,
+                "mimeType": "audio/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/y9xXQ4lc-hFUVmOoC.mp4?exp=1793310000&sig=REDACTED",
+                "width": 1920,
+                "height": 1080,
+                "label": "1080p",
+                "bitrate": 334481,
+                "framerate": 30,
+                "filesize": 10536152,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              }
+            ],
+            "file": "https://cdn.jwplayer.com/manifests/y9xXQ4lc.m3u8?exp=1793310000&sig=REDACTED",
+            "feedData": {},
+            "chapters": {
+              "defaultLanguage": "en-US",
+              "timestamps": []
+            },
+            "label": "https://cdn.jwplayer.com/manifests/y9xXQ4lc.m3u8?exp=1793310000&sig=REDACTED",
+            "progressTracker": {
+              "10": false,
+              "25": false,
+              "50": false,
+              "75": false
+            },
+            "starttime": 0
+          }
+        ],
+        "captions": [
+          {
+            "id": "off",
+            "label": "Off"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/HsFubMgU.srt",
+            "label": "English"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/II9MPW4S.srt",
+            "label": "French"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/zd4cGTv8.srt",
+            "label": "German"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/tRfssvsv.srt",
+            "label": "Japanese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/OFfCwjMo.srt",
+            "label": "Korean"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/PklX8jjC.srt",
+            "label": "Portuguese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/EVPmKEMm.srt",
+            "label": "Spanish"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "blob:https://anthropic-partners.skilljar.com/afcb5573-b0cc-497b-9fc5-856722524584",
+        "tracks": [],
+        "sources": []
+      }
+    ],
+    "iframes": []
+  },
+  "captionUrl": "https://cdn.jwplayer.com/tracks/HsFubMgU.srt",
+  "rawCaptions": "1\n00:00:00,031 --> 00:00:02,552\nWe are all done with our project, but before we move on, I want\n\n2\n00:00:02,573 --> 00:00:05,176\nto do a quick recap on the three server primitives\n\n3\n00:00:05,195 --> 00:00:07,937\nthat we learned about. So tools, resources, and prompts.\n\n4\n00:00:08,579 --> 00:00:11,141\nIn particular, I want to highlight something interesting about each of\n\n5\n00:00:11,180 --> 00:00:14,064\nthese. Namely, what part of an app is really\n\n6\n00:00:14,144 --> 00:00:16,666\nresponsible for running each? In other words, in\n\n7\n00:00:16,725 --> 00:00:19,228\na typical application, who is really running each\n\n8\n00:00:19,248 --> 00:00:21,850\nof these things and who benefits from them? Well,\n\n9\n00:00:22,010 --> 00:00:25,114\nwe would say that tools are model controlled. This\n\n10\n00:00:25,173 --> 00:00:27,716\nmeans that Claude alone is really responsible for\n\n11\n00:00:27,775 --> 00:00:30,939\ndeciding when to run a given tool. Resources\n\n12\n00:00:30,978 --> 00:00:33,642\nare app controlled. In other words, some code\n\n13\n00:00:33,661 --> 00:00:36,326\nrunning inside of your app is going to decide that\n\n14\n00:00:36,345 --> 00:00:38,969\nit needs some data provided by a resource. It will\n\n15\n00:00:38,988 --> 00:00:41,893\nbe your app's code that decides to execute a resource\n\n16\n00:00:42,472 --> 00:00:45,076\nand use the return data in some way, maybe by\n\n17\n00:00:45,197 --> 00:00:48,140\nusing that data in the UI or something like that. In\n\n18\n00:00:48,179 --> 00:00:50,682\nour case, we fetch a resource and then use\n\n19\n00:00:50,723 --> 00:00:53,406\nthat data inside the UI to provide a list of autocomplete\n\n20\n00:00:53,506 --> 00:00:56,216\noptions. We also fetch a resource\n\n21\n00:00:56,517 --> 00:01:00,091\nto augment a prompt. Both of those things were really application-related\n\n22\n00:01:00,213 --> 00:01:02,722\ncode that was authored by you and I to\n\n23\n00:01:02,783 --> 00:01:05,540\nput together. And finally, prompts\n\n24\n00:01:05,659 --> 00:01:08,403\nare really user-controlled. So a user decides\n\n25\n00:01:08,424 --> 00:01:11,168\nwhen a prompt is going to run. A user might\n\n26\n00:01:11,289 --> 00:01:13,914\nstart the invocation of a prompt by clicking on some UI\n\n27\n00:01:13,993 --> 00:01:16,518\nelement, like a button or a menu option,\n\n28\n00:01:16,959 --> 00:01:19,483\nor they might make use of a slash command, which is what we\n\n29\n00:01:19,522 --> 00:01:22,027\ndid. The reason I highlight what is controlling each\n\n30\n00:01:22,046 --> 00:01:24,932\nof these is to give you some idea of their purpose.\n\n31\n00:01:24,912 --> 00:01:27,474\nSo if you ever need to add capabilities to\n\n32\n00:01:27,575 --> 00:01:30,299\nClaude, you're probably going to want to look at\n\n33\n00:01:30,478 --> 00:01:33,343\nimplementing some tools inside of your MCP server or\n\n34\n00:01:33,483 --> 00:01:36,025\nconsuming some server's tools through\n\n35\n00:01:36,066 --> 00:01:38,688\nyour MCP client. If you ever\n\n36\n00:01:38,748 --> 00:01:41,352\nwant to get some data into your app for the purposes of showing\n\n37\n00:01:41,412 --> 00:01:43,956\ncontent in UI or something similar, then you\n\n38\n00:01:43,995 --> 00:01:46,679\nprobably want to use a resource. And if you ever\n\n39\n00:01:46,879 --> 00:01:49,563\nwant to implement some kind of predefined workflow, you\n\n40\n00:01:49,623 --> 00:01:52,272\nprobably want to look at prompts. Now\n\n41\n00:01:52,293 --> 00:01:55,102\nyou can see examples of all these ideas inside\n\n42\n00:01:55,182 --> 00:01:57,689\nof the official Claude interface at\n\n43\n00:01:57,790 --> 00:02:00,299\nClaude.ai. So here's what it currently looks\n\n44\n00:02:00,338 --> 00:02:02,841\nlike for me. You'll notice that underneath the\n\n45\n00:02:03,001 --> 00:02:05,745\nmain chat input are some buttons right here. If\n\n46\n00:02:05,864 --> 00:02:08,487\nI click on one, and then click on one of these\n\n47\n00:02:08,527 --> 00:02:11,131\nexamples, you'll see that I immediately dove\n\n48\n00:02:11,151 --> 00:02:14,174\ninto a chat. So this was a user-controlled\n\n49\n00:02:14,213 --> 00:02:16,917\naction. I, as the user, decided to start\n\n50\n00:02:16,977 --> 00:02:19,479\noff this particular workflow, and I'm making use of a\n\n51\n00:02:19,539 --> 00:02:22,043\nprompt that was probably already written ahead of time\n\n52\n00:02:22,362 --> 00:02:24,985\nand probably has been optimized in some way. So\n\n53\n00:02:25,006 --> 00:02:27,568\nto implement that list of buttons right there, we would probably want\n\n54\n00:02:27,588 --> 00:02:30,512\nto put together a series of different prompts inside of an MCP\n\n55\n00:02:30,551 --> 00:02:33,637\nserver. Likewise, if I go back and\n\n56\n00:02:33,697 --> 00:02:36,562\nmaybe click on this little tab right here, the plus button,\n\n57\n00:02:36,582 --> 00:02:39,087\nyou'll notice that I have an add from Google Drive button.\n\n58\n00:02:39,508 --> 00:02:42,054\nNow, I'm not going to click on it because it's going to show some of my internal\n\n59\n00:02:42,093 --> 00:02:44,800\ndocuments. But if I click on that button, I'm going to see some\n\n60\n00:02:44,860 --> 00:02:48,447\ndocuments that I can add into this chat as some context.\n\n61\n00:02:48,628 --> 00:02:51,174\nKnowing what documents to actually render in that list,\n\n62\n00:02:51,435 --> 00:02:53,960\nand then whenever I click on one, automatically injecting its\n\n63\n00:02:54,241 --> 00:02:56,825\ncontents into the context of this chat, that is all\n\n64\n00:02:56,866 --> 00:02:59,551\napplication-related code. So it is solely\n\n65\n00:02:59,592 --> 00:03:02,236\nthe application that needs to know the list of documents\n\n66\n00:03:02,277 --> 00:03:04,842\nto render here. And that's, again, specifically\n\n67\n00:03:04,883 --> 00:03:07,508\nUI-related elements. So to implement\n\n68\n00:03:07,548 --> 00:03:10,173\nthat listing of documents from Google Drive, I\n\n69\n00:03:10,193 --> 00:03:12,818\nwould probably look at implementing a resource inside\n\n70\n00:03:12,837 --> 00:03:15,402\nof an MCP server. And then, finally, if I\n\n71\n00:03:15,483 --> 00:03:18,087\nenter in a message to this chat of something like,\n\n72\n00:03:18,587 --> 00:03:21,133\n\"what is 3 squared?\" Use JavaScript to calculate the value\n\n73\n00:03:21,353 --> 00:03:24,158\nand send it off, I'm clearly expecting Claude\n\n74\n00:03:24,199 --> 00:03:26,723\nto somehow execute some JavaScript code, which would\n\n75\n00:03:26,984 --> 00:03:29,639\nlikely be done through the use of a tool. In\n\n76\n00:03:29,680 --> 00:03:32,949\nthis case, the decision to use a tool was 100% model\n\n77\n00:03:32,989 --> 00:03:35,575\ncontrolled. It is the model that decided to use some\n\n78\n00:03:35,616 --> 00:03:38,403\nJavaScript tool execution. To implement something\n\n79\n00:03:38,424 --> 00:03:41,312\nlike this inside of an MCP server, we'd likely\n\n80\n00:03:41,372 --> 00:03:43,998\nwant to, you guessed it, provide a tool.\n\n81\n00:03:45,058 --> 00:03:47,622\nSo in total, that's our three different server\n\n82\n00:03:47,662 --> 00:03:50,165\nprimitives. And each one is really intended to\n\n83\n00:03:50,186 --> 00:03:53,129\nbe used by a different portion of your overall application.\n\n84\n00:03:53,590 --> 00:03:56,213\nSo we got tools which are generally going to serve your model,\n\n85\n00:03:56,754 --> 00:03:59,437\nresources, which are generally going to serve your app,\n\n86\n00:03:59,457 --> 00:04:02,602\nand prompts which are going to serve your users. And\n\n87\n00:04:02,622 --> 00:04:05,286\nonce again, these are high-level guidelines. And the only reason\n\n88\n00:04:05,346 --> 00:04:07,889\nI mentioned them is to just give you a sense of when\n\n89\n00:04:07,930 --> 00:04:10,652\nyou should use each of these primitives, depending upon what\n\n90\n00:04:10,712 --> 00:04:11,995\nyou are trying to put together.",
+  "transcriptText": "We are all done with our project, but before we move on, I want\n\nto do a quick recap on the three server primitives\n\nthat we learned about. So tools, resources, and prompts.\n\nIn particular, I want to highlight something interesting about each of\n\nthese. Namely, what part of an app is really\n\nresponsible for running each? In other words, in\n\na typical application, who is really running each\n\nof these things and who benefits from them? Well,\n\nwe would say that tools are model controlled. This\n\nmeans that Claude alone is really responsible for\n\ndeciding when to run a given tool. Resources\n\nare app controlled. In other words, some code\n\nrunning inside of your app is going to decide that\n\nit needs some data provided by a resource. It will\n\nbe your app's code that decides to execute a resource\n\nand use the return data in some way, maybe by\n\nusing that data in the UI or something like that. In\n\nour case, we fetch a resource and then use\n\nthat data inside the UI to provide a list of autocomplete\n\noptions. We also fetch a resource\n\nto augment a prompt. Both of those things were really application-related\n\ncode that was authored by you and I to\n\nput together. And finally, prompts\n\nare really user-controlled. So a user decides\n\nwhen a prompt is going to run. A user might\n\nstart the invocation of a prompt by clicking on some UI\n\nelement, like a button or a menu option,\n\nor they might make use of a slash command, which is what we\n\ndid. The reason I highlight what is controlling each\n\nof these is to give you some idea of their purpose.\n\nSo if you ever need to add capabilities to\n\nClaude, you're probably going to want to look at\n\nimplementing some tools inside of your MCP server or\n\nconsuming some server's tools through\n\nyour MCP client. If you ever\n\nwant to get some data into your app for the purposes of showing\n\ncontent in UI or something similar, then you\n\nprobably want to use a resource. And if you ever\n\nwant to implement some kind of predefined workflow, you\n\nprobably want to look at prompts. Now\n\nyou can see examples of all these ideas inside\n\nof the official Claude interface at\n\nClaude.ai. So here's what it currently looks\n\nlike for me. You'll notice that underneath the\n\nmain chat input are some buttons right here. If\n\nI click on one, and then click on one of these\n\nexamples, you'll see that I immediately dove\n\ninto a chat. So this was a user-controlled\n\naction. I, as the user, decided to start\n\noff this particular workflow, and I'm making use of a\n\nprompt that was probably already written ahead of time\n\nand probably has been optimized in some way. So\n\nto implement that list of buttons right there, we would probably want\n\nto put together a series of different prompts inside of an MCP\n\nserver. Likewise, if I go back and\n\nmaybe click on this little tab right here, the plus button,\n\nyou'll notice that I have an add from Google Drive button.\n\nNow, I'm not going to click on it because it's going to show some of my internal\n\ndocuments. But if I click on that button, I'm going to see some\n\ndocuments that I can add into this chat as some context.\n\nKnowing what documents to actually render in that list,\n\nand then whenever I click on one, automatically injecting its\n\ncontents into the context of this chat, that is all\n\napplication-related code. So it is solely\n\nthe application that needs to know the list of documents\n\nto render here. And that's, again, specifically\n\nUI-related elements. So to implement\n\nthat listing of documents from Google Drive, I\n\nwould probably look at implementing a resource inside\n\nof an MCP server. And then, finally, if I\n\nenter in a message to this chat of something like,\n\n\"what is 3 squared?\" Use JavaScript to calculate the value\n\nand send it off, I'm clearly expecting Claude\n\nto somehow execute some JavaScript code, which would\n\nlikely be done through the use of a tool. In\n\nthis case, the decision to use a tool was 100% model\n\ncontrolled. It is the model that decided to use some\n\nJavaScript tool execution. To implement something\n\nlike this inside of an MCP server, we'd likely\n\nwant to, you guessed it, provide a tool.\n\nSo in total, that's our three different server\n\nprimitives. And each one is really intended to\n\nbe used by a different portion of your overall application.\n\nSo we got tools which are generally going to serve your model,\n\nresources, which are generally going to serve your app,\n\nand prompts which are going to serve your users. And\n\nonce again, these are high-level guidelines. And the only reason\n\nI mentioned them is to just give you a sense of when\n\nyou should use each of these primitives, depending upon what\n\nyou are trying to put together.",
+  "downloads": []
+}

@@ -1,0 +1,342 @@
+﻿[
+    {
+        "text":  "Welcome to the course",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287818"
+    },
+    {
+        "text":  "Overview of Claude models",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287722"
+    },
+    {
+        "text":  "Accessing the API",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287726"
+    },
+    {
+        "text":  "Getting an API key",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/296766"
+    },
+    {
+        "text":  "Making a request",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287725"
+    },
+    {
+        "text":  "Multi-Turn conversations",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287735"
+    },
+    {
+        "text":  "Chat exercise",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287727"
+    },
+    {
+        "text":  "System prompts",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287733"
+    },
+    {
+        "text":  "System prompts exercise",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287724"
+    },
+    {
+        "text":  "Temperature",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287728"
+    },
+    {
+        "text":  "Course satisfaction survey",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/297284"
+    },
+    {
+        "text":  "Response streaming",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287734"
+    },
+    {
+        "text":  "Structured data",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287732"
+    },
+    {
+        "text":  "Structured data exercise",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287729"
+    },
+    {
+        "text":  "Quiz on accessing Claude with the API",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/289117"
+    },
+    {
+        "text":  "Prompt evaluation",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287731"
+    },
+    {
+        "text":  "A typical eval workflow",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287736"
+    },
+    {
+        "text":  "Generating test datasets",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287739"
+    },
+    {
+        "text":  "Running the eval",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287743"
+    },
+    {
+        "text":  "Model based grading",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287742"
+    },
+    {
+        "text":  "Code based grading",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287737"
+    },
+    {
+        "text":  "Exercise on prompt evals",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287738"
+    },
+    {
+        "text":  "Quiz on prompt evaluation",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/289118"
+    },
+    {
+        "text":  "Prompt engineering",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287745"
+    },
+    {
+        "text":  "Being clear and direct",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287744"
+    },
+    {
+        "text":  "Being specific",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287740"
+    },
+    {
+        "text":  "Structure with XML tags",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287741"
+    },
+    {
+        "text":  "Providing examples",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287746"
+    },
+    {
+        "text":  "Exercise on prompting",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287748"
+    },
+    {
+        "text":  "Quiz on prompt engineering techniques",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/289121"
+    },
+    {
+        "text":  "Introducing tool use",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287747"
+    },
+    {
+        "text":  "Project overview",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287751"
+    },
+    {
+        "text":  "Tool functions",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287756"
+    },
+    {
+        "text":  "Tool schemas",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287753"
+    },
+    {
+        "text":  "Handling message blocks",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287757"
+    },
+    {
+        "text":  "Sending tool results",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287752"
+    },
+    {
+        "text":  "Multi-turn conversations with tools",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287750"
+    },
+    {
+        "text":  "Implementing multiple turns",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287758"
+    },
+    {
+        "text":  "Using multiple tools",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287749"
+    },
+    {
+        "text":  "Fine grained tool calling",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/313160"
+    },
+    {
+        "text":  "The text edit tool",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287760"
+    },
+    {
+        "text":  "The web search tool",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287755"
+    },
+    {
+        "text":  "Quiz on tool use with Claude",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/289122"
+    },
+    {
+        "text":  "Introducing Retrieval Augmented Generation",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287763"
+    },
+    {
+        "text":  "Text chunking strategies",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287776"
+    },
+    {
+        "text":  "Text embeddings",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287759"
+    },
+    {
+        "text":  "The full RAG flow",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287764"
+    },
+    {
+        "text":  "Implementing the RAG flow",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287761"
+    },
+    {
+        "text":  "BM25 lexical search",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287767"
+    },
+    {
+        "text":  "A Multi-Index RAG pipeline",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287766"
+    },
+    {
+        "text":  "Extended thinking",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287773"
+    },
+    {
+        "text":  "Image support",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287778"
+    },
+    {
+        "text":  "PDF support",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287768"
+    },
+    {
+        "text":  "Citations",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287771"
+    },
+    {
+        "text":  "Prompt caching",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287772"
+    },
+    {
+        "text":  "Rules of prompt caching",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287770"
+    },
+    {
+        "text":  "Prompt caching in action",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287774"
+    },
+    {
+        "text":  "Code execution and the Files API",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287777"
+    },
+    {
+        "text":  "Quiz on features of Claude",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/289124"
+    },
+    {
+        "text":  "Introducing MCP",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287780"
+    },
+    {
+        "text":  "MCP clients",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287775"
+    },
+    {
+        "text":  "Project setup",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287785"
+    },
+    {
+        "text":  "Defining tools with MCP",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287797"
+    },
+    {
+        "text":  "The server inspector",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287781"
+    },
+    {
+        "text":  "Implementing a client",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287793"
+    },
+    {
+        "text":  "Defining resources",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287782"
+    },
+    {
+        "text":  "Accessing resources",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287783"
+    },
+    {
+        "text":  "Defining prompts",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287784"
+    },
+    {
+        "text":  "Prompts in the client",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287786"
+    },
+    {
+        "text":  "MCP review",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287790"
+    },
+    {
+        "text":  "Quiz on Model Context Protocol",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/289126"
+    },
+    {
+        "text":  "Anthropic apps",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287787"
+    },
+    {
+        "text":  "Claude Code setup",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287788"
+    },
+    {
+        "text":  "Claude Code in action",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287805"
+    },
+    {
+        "text":  "Enhancements with MCP servers",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287792"
+    },
+    {
+        "text":  "Agents and workflows",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287796"
+    },
+    {
+        "text":  "Parallelization workflows",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287804"
+    },
+    {
+        "text":  "Chaining workflows",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287800"
+    },
+    {
+        "text":  "Routing workflows",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287801"
+    },
+    {
+        "text":  "Agents and tools",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287803"
+    },
+    {
+        "text":  "Environment inspection",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287798"
+    },
+    {
+        "text":  "Workflows vs agents",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287794"
+    },
+    {
+        "text":  "Quiz on Agents and Workflows",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/289130"
+    },
+    {
+        "text":  "Final Assessment",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/290899"
+    },
+    {
+        "text":  "Course Wrap Up",
+        "href":  "https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287802"
+    }
+]

@@ -1,0 +1,525 @@
+{
+  "lesson": "Claude Code setup",
+  "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289232",
+  "collectedAt": "2026-10-30T02:10:02.266Z",
+  "sourceType": "English captions linked by official lesson player",
+  "media": {
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289232",
+    "players": [
+      {
+        "id": "botr_Ys0tsZy4_Akyo8gQO_div",
+        "playlist": [
+          {
+            "sources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/Ys0tsZy4.m3u8?exp=1793337120&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              }
+            ],
+            "tracks": [
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/gO3OQsFF.srt",
+                "label": "English",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "English",
+                "_id": "https://cdn.jwplayer.com/tracks/gO3OQsFF.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/s6Kr0K2c.srt",
+                "label": "French",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "French",
+                "_id": "https://cdn.jwplayer.com/tracks/s6Kr0K2c.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/BDGqzwCx.srt",
+                "label": "German",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "German",
+                "_id": "https://cdn.jwplayer.com/tracks/BDGqzwCx.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/nBy62l0O.srt",
+                "label": "Japanese",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Japanese",
+                "_id": "https://cdn.jwplayer.com/tracks/nBy62l0O.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/zdzr0QVn.srt",
+                "label": "Korean",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Korean",
+                "_id": "https://cdn.jwplayer.com/tracks/zdzr0QVn.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/pV0pGfoD.srt",
+                "label": "Portuguese",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Portuguese",
+                "_id": "https://cdn.jwplayer.com/tracks/pV0pGfoD.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/4zjRjOYQ.srt",
+                "label": "Spanish",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Spanish",
+                "_id": "https://cdn.jwplayer.com/tracks/4zjRjOYQ.srt"
+              },
+              {
+                "kind": "thumbnails",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/strips/Ys0tsZy4-120.vtt"
+              }
+            ],
+            "minDvrWindow": 120,
+            "image": "https://cdn.jwplayer.com/v2/media/Ys0tsZy4/poster.jpg?width=720",
+            "images": [
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/Ys0tsZy4/poster.jpg?width=320",
+                "width": 320,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/Ys0tsZy4/poster.jpg?width=480",
+                "width": 480,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/Ys0tsZy4/poster.jpg?width=640",
+                "width": 640,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/Ys0tsZy4/poster.jpg?width=720",
+                "width": 720,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/Ys0tsZy4/poster.jpg?width=1280",
+                "width": 1280,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/Ys0tsZy4/poster.jpg?width=1920",
+                "width": 1920,
+                "type": "image/jpeg"
+              }
+            ],
+            "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=Ys0tsZy4&token=REDACTED",
+            "title": "10 - 002 - Claude Code Setup.mp4",
+            "mediaid": "Ys0tsZy4",
+            "link": null,
+            "duration": 91.067,
+            "pubdate": 1748551809,
+            "description": null,
+            "tags": "",
+            "preload": "auto",
+            "allSources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/Ys0tsZy4.m3u8?exp=1793337120&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/Ys0tsZy4-B9NwIVRu.mp4?exp=1793337120&sig=REDACTED",
+                "width": 320,
+                "height": 180,
+                "label": "180p",
+                "bitrate": 134666,
+                "framerate": 30,
+                "filesize": 1531828,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/Ys0tsZy4-muagBOKI.mp4?exp=1793337120&sig=REDACTED",
+                "width": 480,
+                "height": 270,
+                "label": "270p",
+                "bitrate": 146588,
+                "framerate": 30,
+                "filesize": 1667446,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/Ys0tsZy4-4Xe8IV8X.mp4?exp=1793337120&sig=REDACTED",
+                "width": 720,
+                "height": 406,
+                "label": "406p",
+                "bitrate": 169159,
+                "framerate": 30,
+                "filesize": 1924193,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/Ys0tsZy4-m7ew0xq8.mp4?exp=1793337120&sig=REDACTED",
+                "width": 1280,
+                "height": 720,
+                "label": "720p",
+                "bitrate": 221597,
+                "framerate": 30,
+                "filesize": 2520676,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/Ys0tsZy4-eNgUZBQ2.m4a?exp=1793337120&sig=REDACTED",
+                "label": "Audio",
+                "bitrate": 113568,
+                "filesize": 1291836,
+                "mimeType": "audio/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/Ys0tsZy4-hFUVmOoC.mp4?exp=1793337120&sig=REDACTED",
+                "width": 1920,
+                "height": 1080,
+                "label": "1080p",
+                "bitrate": 285405,
+                "framerate": 30,
+                "filesize": 3246490,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              }
+            ],
+            "file": "https://cdn.jwplayer.com/manifests/Ys0tsZy4.m3u8?exp=1793337120&sig=REDACTED",
+            "feedData": {},
+            "chapters": {
+              "defaultLanguage": "en-US",
+              "timestamps": []
+            },
+            "label": "https://cdn.jwplayer.com/manifests/Ys0tsZy4.m3u8?exp=1793337120&sig=REDACTED",
+            "progressTracker": {
+              "10": false,
+              "25": false,
+              "50": false,
+              "75": false
+            },
+            "starttime": 0,
+            "played": true
+          }
+        ],
+        "captions": [
+          {
+            "id": "off",
+            "label": "Off"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/gO3OQsFF.srt",
+            "label": "English"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/s6Kr0K2c.srt",
+            "label": "French"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/BDGqzwCx.srt",
+            "label": "German"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/nBy62l0O.srt",
+            "label": "Japanese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/zdzr0QVn.srt",
+            "label": "Korean"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/pV0pGfoD.srt",
+            "label": "Portuguese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/4zjRjOYQ.srt",
+            "label": "Spanish"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "blob:https://anthropic-partners.skilljar.com/ee767a5d-1d4a-475d-a9ee-faed786ee553",
+        "tracks": [],
+        "sources": []
+      }
+    ],
+    "iframes": []
+  },
+  "captionUrl": "https://cdn.jwplayer.com/tracks/gO3OQsFF.srt",
+  "rawCaptions": "1\n00:00:00,031 --> 00:00:02,533\nLet's take a look at Claude Code. We'll do some\n\n2\n00:00:02,553 --> 00:00:05,078\nsetup, learn how it works, and see some advanced use\n\n3\n00:00:05,097 --> 00:00:07,881\ncases. Claude Code is a terminal-based\n\n4\n00:00:08,021 --> 00:00:10,585\ncoding assistant. This is a program running\n\n5\n00:00:10,644 --> 00:00:13,609\nin your terminal that can help with a wide variety of code-related\n\n6\n00:00:13,669 --> 00:00:16,693\ntasks. To help you with coding projects, Claude\n\n7\n00:00:16,733 --> 00:00:19,356\nCode has access to many different tools.\n\n8\n00:00:19,335 --> 00:00:22,199\nSo it has many basic tools like the ability to search, read,\n\n9\n00:00:22,300 --> 00:00:24,963\nand edit files. But it also has many advanced\n\n10\n00:00:25,003 --> 00:00:27,525\ntools like web fetching and terminal\n\n11\n00:00:27,646 --> 00:00:30,169\naccess. Finally, Claude Code can act\n\n12\n00:00:30,309 --> 00:00:33,051\nas an MCP client. And you know what that means. It\n\n13\n00:00:33,072 --> 00:00:36,216\nmeans it can consume tools that are provided by MCP\n\n14\n00:00:36,295 --> 00:00:39,118\nservers. So we can easily expand the capabilities\n\n15\n00:00:39,259 --> 00:00:42,122\nof Claude Code by adding in some additional MCP\n\n16\n00:00:42,182 --> 00:00:44,887\nservers. Let's now go through a little bit of setup and\n\n17\n00:00:44,968 --> 00:00:47,593\ninstall Claude Code on your machine. Setup\n\n18\n00:00:47,633 --> 00:00:50,237\nis easy. We're going to first install a copy\n\n19\n00:00:50,317 --> 00:00:52,963\nof Node.js. You might already have Node installed\n\n20\n00:00:53,003 --> 00:00:55,567\non your machine, and to figure out whether or not you do, open up\n\n21\n00:00:55,607 --> 00:00:58,713\nyour terminal and execute the command NPM help. If\n\n22\n00:00:58,753 --> 00:01:01,279\nyou see a result come back, that means you probably already\n\n23\n00:01:01,319 --> 00:01:03,914\nhave Node installed. Once you have node installed,\n\n24\n00:01:04,194 --> 00:01:06,796\nyou'll do a NPM install command that will install\n\n25\n00:01:06,856 --> 00:01:09,579\nClaude Code itself. Finally, you will need to set up three\n\n26\n00:01:09,620 --> 00:01:12,221\ndifferent environment variables, and I've listed those out at the bottom\n\n27\n00:01:12,242 --> 00:01:14,784\nof this diagram. Now a full setup guide can be\n\n28\n00:01:14,825 --> 00:01:17,408\nfound at the official Anthropic documentation at\n\n29\n00:01:17,567 --> 00:01:20,069\ndocs.anthropic.com. Now I'm going\n\n30\n00:01:20,109 --> 00:01:22,673\nto let you go through this setup process on your own, again, just\n\n31\n00:01:22,712 --> 00:01:25,516\nthese three steps right here. As soon as you are done,\n\n32\n00:01:25,575 --> 00:01:28,218\nwe're going to walk through a little project together and\n\n33\n00:01:28,259 --> 00:01:30,501\nsee what Claude Code can really do for us.",
+  "transcriptText": "Let's take a look at Claude Code. We'll do some\n\nsetup, learn how it works, and see some advanced use\n\ncases. Claude Code is a terminal-based\n\ncoding assistant. This is a program running\n\nin your terminal that can help with a wide variety of code-related\n\ntasks. To help you with coding projects, Claude\n\nCode has access to many different tools.\n\nSo it has many basic tools like the ability to search, read,\n\nand edit files. But it also has many advanced\n\ntools like web fetching and terminal\n\naccess. Finally, Claude Code can act\n\nas an MCP client. And you know what that means. It\n\nmeans it can consume tools that are provided by MCP\n\nservers. So we can easily expand the capabilities\n\nof Claude Code by adding in some additional MCP\n\nservers. Let's now go through a little bit of setup and\n\ninstall Claude Code on your machine. Setup\n\nis easy. We're going to first install a copy\n\nof Node.js. You might already have Node installed\n\non your machine, and to figure out whether or not you do, open up\n\nyour terminal and execute the command NPM help. If\n\nyou see a result come back, that means you probably already\n\nhave Node installed. Once you have node installed,\n\nyou'll do a NPM install command that will install\n\nClaude Code itself. Finally, you will need to set up three\n\ndifferent environment variables, and I've listed those out at the bottom\n\nof this diagram. Now a full setup guide can be\n\nfound at the official Anthropic documentation at\n\ndocs.anthropic.com. Now I'm going\n\nto let you go through this setup process on your own, again, just\n\nthese three steps right here. As soon as you are done,\n\nwe're going to walk through a little project together and\n\nsee what Claude Code can really do for us.",
+  "downloads": []
+}

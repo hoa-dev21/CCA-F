@@ -1,0 +1,10 @@
+const fs=require('fs');
+const rows=[
+ ['289248','API-26-resources.md','Direct URI và URI template dùng ReadResourceRequest/Result; mimeType mô tả dữ liệu. @document/autocomplete là cách client dùng resource, không bắt buộc mọi host có cùng UI. Resource read-only theo mục đích, server vẫn phải bảo vệ quyền truy cập.'],
+ ['289247','API-27-access-resources.md','read_resource gửi request client/server rồi host chèn nội dung vào prompt, tiết kiệm lượt model chọn tool chứ không loại bỏ request mạng. Mẫu chỉ lấy contents[0]; client thật cần xử lý nhiều contents, text/blob/MIME và validation phù hợp.'],
+ ['289249','API-28-define-prompts.md','Decorator prompt trả danh sách messages với tham số doc_id. Template tái sử dụng không tự thực hiện edit; model/host phải chạy vòng tools đúng quyền. Tuyên bố reliable every time chỉ là lợi ích mong muốn, không bảo đảm chất lượng mọi input.'],
+ ['289209','API-29-client-prompts.md','list_prompts lấy danh sách; get_prompt truyền arguments để server tạo messages; client hiển thị slash command nếu hỗ trợ. Discovery không là execution, không mặc định mọi MCP client tự có slash UI.'],
+ ['289205','MCP-01-control-patterns.md','Tools model-controlled, resources app-controlled, prompts user-controlled là hướng thiết kế. Host vẫn thực thi quyền và có thể chặn tool call; entirely controlled by Claude trong lời kể không bỏ host authorization. UI ví dụ không chứng minh mọi nút chat tương ứng một MCP server thực.']
+];
+for(const [id,file,note]of rows){const r=JSON.parse(fs.readFileSync('sources/vertex-lessons/'+id+'.json','utf8')),p='lessons/'+file,t=fs.readFileSync(p,'utf8');if(!t.includes(r.url))fs.writeFileSync(p,t+'\n## Đối chiếu Vertex\n\nĐã đọc ['+r.lesson+']('+r.url+'), sources/vertex-lessons/'+id+'.json. '+note+' Dùng chung câu hỏi khái niệm.\n');}
+fs.writeFileSync('sources/vertex-mcp-final-mappings.json',JSON.stringify(rows.map(([id,lesson,note])=>({id,lesson,note,review:'full_collected_text_read'})),null,2));console.log('Mapped '+rows.length);

@@ -1,0 +1,58 @@
+﻿[
+    {
+        "text":  "Welcome to the course",
+        "href":  "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/303756"
+    },
+    {
+        "text":  "Introducing MCP",
+        "href":  "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296689"
+    },
+    {
+        "text":  "MCP clients",
+        "href":  "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296690"
+    },
+    {
+        "text":  "Project setup",
+        "href":  "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296694"
+    },
+    {
+        "text":  "Defining tools with MCP",
+        "href":  "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296697"
+    },
+    {
+        "text":  "The server inspector",
+        "href":  "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296693"
+    },
+    {
+        "text":  "Course satisfaction survey",
+        "href":  "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/297281"
+    },
+    {
+        "text":  "Implementing a client",
+        "href":  "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296696"
+    },
+    {
+        "text":  "Defining resources",
+        "href":  "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296699"
+    },
+    {
+        "text":  "Accessing resources",
+        "href":  "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296695"
+    },
+    {
+        "text":  "Defining prompts",
+        "href":  "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296698"
+    },
+    {
+        "text":  "Prompts in the client",
+        "href":  "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296692"
+    },
+    {
+        "text":  "Final assessment on MCP",
+        "href":  "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/297196"
+    },
+    {
+        "text":  "MCP review",
+        "href":  "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296691"
+    }
+]

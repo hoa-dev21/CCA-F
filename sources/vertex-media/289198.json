@@ -1,0 +1,513 @@
+{
+  "lesson": "PDF support",
+  "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289198",
+  "collectedAt": "2026-10-30T02:09:27.254Z",
+  "sourceType": "English captions linked by official lesson player",
+  "media": {
+    "url": "https://anthropic-partners.skilljar.com/claude-with-google-vertex/289198",
+    "players": [
+      {
+        "id": "botr_RK2lcLSI_Akyo8gQO_div",
+        "playlist": [
+          {
+            "sources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/RK2lcLSI.m3u8?exp=1793337120&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              }
+            ],
+            "tracks": [
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/09sjqvSY.srt",
+                "label": "English",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "English",
+                "_id": "https://cdn.jwplayer.com/tracks/09sjqvSY.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/8vbTKk7o.srt",
+                "label": "French",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "French",
+                "_id": "https://cdn.jwplayer.com/tracks/8vbTKk7o.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/dcZMyDFp.srt",
+                "label": "German",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "German",
+                "_id": "https://cdn.jwplayer.com/tracks/dcZMyDFp.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/4XimwtSh.srt",
+                "label": "Japanese",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Japanese",
+                "_id": "https://cdn.jwplayer.com/tracks/4XimwtSh.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/w8L5jxhD.srt",
+                "label": "Korean",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Korean",
+                "_id": "https://cdn.jwplayer.com/tracks/w8L5jxhD.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/5H5d2MQ1.srt",
+                "label": "Portuguese",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Portuguese",
+                "_id": "https://cdn.jwplayer.com/tracks/5H5d2MQ1.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/tracks/CbTqUeRw.srt",
+                "label": "Spanish",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Spanish",
+                "_id": "https://cdn.jwplayer.com/tracks/CbTqUeRw.srt"
+              },
+              {
+                "kind": "thumbnails",
+                "default": false,
+                "file": "https://cdn.jwplayer.com/strips/RK2lcLSI-120.vtt"
+              }
+            ],
+            "minDvrWindow": 120,
+            "image": "https://cdn.jwplayer.com/v2/media/RK2lcLSI/poster.jpg?width=720",
+            "images": [
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/RK2lcLSI/poster.jpg?width=320",
+                "width": 320,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/RK2lcLSI/poster.jpg?width=480",
+                "width": 480,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/RK2lcLSI/poster.jpg?width=640",
+                "width": 640,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/RK2lcLSI/poster.jpg?width=720",
+                "width": 720,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/RK2lcLSI/poster.jpg?width=1280",
+                "width": 1280,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://cdn.jwplayer.com/v2/media/RK2lcLSI/poster.jpg?width=1920",
+                "width": 1920,
+                "type": "image/jpeg"
+              }
+            ],
+            "recommendations": "https://cdn.jwplayer.com/v2/playlists/Xk7xK52v?related_media_id=RK2lcLSI&token=REDACTED",
+            "title": "08 - 003 - PDF Support.mp4",
+            "mediaid": "RK2lcLSI",
+            "link": null,
+            "duration": 89.534,
+            "pubdate": 1748548839,
+            "description": null,
+            "tags": "",
+            "preload": "auto",
+            "allSources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://cdn.jwplayer.com/manifests/RK2lcLSI.m3u8?exp=1793337120&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/RK2lcLSI-B9NwIVRu.mp4?exp=1793337120&sig=REDACTED",
+                "width": 320,
+                "height": 180,
+                "label": "180p",
+                "bitrate": 146211,
+                "framerate": 30,
+                "filesize": 1626604,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/RK2lcLSI-muagBOKI.mp4?exp=1793337120&sig=REDACTED",
+                "width": 480,
+                "height": 270,
+                "label": "270p",
+                "bitrate": 168073,
+                "framerate": 30,
+                "filesize": 1869822,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/RK2lcLSI-4Xe8IV8X.mp4?exp=1793337120&sig=REDACTED",
+                "width": 720,
+                "height": 406,
+                "label": "406p",
+                "bitrate": 203451,
+                "framerate": 30,
+                "filesize": 2263398,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/RK2lcLSI-m7ew0xq8.mp4?exp=1793337120&sig=REDACTED",
+                "width": 1280,
+                "height": 720,
+                "label": "720p",
+                "bitrate": 299434,
+                "framerate": 30,
+                "filesize": 3331209,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/RK2lcLSI-eNgUZBQ2.m4a?exp=1793337120&sig=REDACTED",
+                "label": "Audio",
+                "bitrate": 114173,
+                "filesize": 1270179,
+                "mimeType": "audio/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://cdn.jwplayer.com/videos/RK2lcLSI-hFUVmOoC.mp4?exp=1793337120&sig=REDACTED",
+                "width": 1920,
+                "height": 1080,
+                "label": "1080p",
+                "bitrate": 423987,
+                "framerate": 30,
+                "filesize": 4716865,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              }
+            ],
+            "file": "https://cdn.jwplayer.com/manifests/RK2lcLSI.m3u8?exp=1793337120&sig=REDACTED",
+            "feedData": {},
+            "chapters": {
+              "defaultLanguage": "en-US",
+              "timestamps": []
+            },
+            "label": "https://cdn.jwplayer.com/manifests/RK2lcLSI.m3u8?exp=1793337120&sig=REDACTED",
+            "progressTracker": {
+              "10": false,
+              "25": false,
+              "50": false,
+              "75": false
+            },
+            "starttime": 0,
+            "played": true
+          }
+        ],
+        "captions": [
+          {
+            "id": "off",
+            "label": "Off"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/09sjqvSY.srt",
+            "label": "English"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/8vbTKk7o.srt",
+            "label": "French"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/dcZMyDFp.srt",
+            "label": "German"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/4XimwtSh.srt",
+            "label": "Japanese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/w8L5jxhD.srt",
+            "label": "Korean"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/5H5d2MQ1.srt",
+            "label": "Portuguese"
+          },
+          {
+            "id": "https://cdn.jwplayer.com/tracks/CbTqUeRw.srt",
+            "label": "Spanish"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "blob:https://anthropic-partners.skilljar.com/6620b2f9-ba84-4644-ad7d-6129fa105a8f",
+        "tracks": [],
+        "sources": []
+      }
+    ],
+    "iframes": []
+  },
+  "captionUrl": "https://cdn.jwplayer.com/tracks/09sjqvSY.srt",
+  "rawCaptions": "1\n00:00:00,031 --> 00:00:02,615\nBesides images, Claude can also read content\n\n2\n00:00:02,654 --> 00:00:05,177\ndirectly out of a PDF file. I'm going to show you how you\n\n3\n00:00:05,217 --> 00:00:07,862\ndo that in this video. Attached to this video, you will\n\n4\n00:00:07,942 --> 00:00:10,826\nfind a document called earth.pdf.\n\n5\n00:00:10,846 --> 00:00:13,368\nIf you open it up, you'll see that it's just a couple of pages out of\n\n6\n00:00:13,388 --> 00:00:15,893\nthe Wikipedia article on Earth. So make\n\n7\n00:00:15,913 --> 00:00:18,637\nsure you download this PDF file and place it inside the same\n\n8\n00:00:18,657 --> 00:00:21,341\ndirectory as your notebook. To read a PDF\n\n9\n00:00:21,382 --> 00:00:23,888\nfile, we use almost the exact same code that we use for\n\n10\n00:00:23,928 --> 00:00:26,978\nreading an image and feeding the image into Claude. So\n\n11\n00:00:27,018 --> 00:00:29,585\nI'm going to find where we are currently opening up an image right\n\n12\n00:00:29,605 --> 00:00:33,396\nhere, and I'm going to change it to earth.pdf.\n\n13\n00:00:34,506 --> 00:00:37,030\nI'm going to rename this variable from image bytes to\n\n14\n00:00:37,070 --> 00:00:39,875\nhow about file bytes, because no longer are we reading\n\n15\n00:00:39,895 --> 00:00:42,478\nan image. I'm going to make sure I update the variable down here\n\n16\n00:00:42,518 --> 00:00:45,121\nas well. I'm going to change the\n\n17\n00:00:45,262 --> 00:00:47,987\ntype right here from image to document, and\n\n18\n00:00:48,006 --> 00:00:50,850\nthen the media type will go from image slash\n\n19\n00:00:50,970 --> 00:00:53,814\npng to application slash pdf.\n\n20\n00:00:54,892 --> 00:00:57,459\nAnd then finally, the question that we're asking of Claude\n\n21\n00:00:57,579 --> 00:01:00,125\nabout this document, rather than feeding in our big\n\n22\n00:01:00,225 --> 00:01:02,874\nprompt that we have in the previous cell, I'm going to ask Claude to\n\n23\n00:01:02,973 --> 00:01:05,981\nsummarize the document in one\n\n24\n00:01:06,046 --> 00:01:08,891\nsentence. And let's see what we get out of Claude. So\n\n25\n00:01:08,912 --> 00:01:11,558\nI'm going to run this. And there's\n\n26\n00:01:11,597 --> 00:01:14,242\nthe summary. It looks like it successfully read the contents of\n\n27\n00:01:14,284 --> 00:01:16,808\nthat PDF file. Now, Claude has the ability to\n\n28\n00:01:16,888 --> 00:01:19,515\nnot only read text out of a PDF, it can also read\n\n29\n00:01:19,534 --> 00:01:22,581\nimages or charts, tables, and so on. So\n\n30\n00:01:22,620 --> 00:01:25,167\nyou should really think of Claude as being like a one stop shop\n\n31\n00:01:25,227 --> 00:01:28,072\nfor extracting just about any kind of information out\n\n32\n00:01:28,212 --> 00:01:29,555\nof a PDF document.",
+  "transcriptText": "Besides images, Claude can also read content\n\ndirectly out of a PDF file. I'm going to show you how you\n\ndo that in this video. Attached to this video, you will\n\nfind a document called earth.pdf.\n\nIf you open it up, you'll see that it's just a couple of pages out of\n\nthe Wikipedia article on Earth. So make\n\nsure you download this PDF file and place it inside the same\n\ndirectory as your notebook. To read a PDF\n\nfile, we use almost the exact same code that we use for\n\nreading an image and feeding the image into Claude. So\n\nI'm going to find where we are currently opening up an image right\n\nhere, and I'm going to change it to earth.pdf.\n\nI'm going to rename this variable from image bytes to\n\nhow about file bytes, because no longer are we reading\n\nan image. I'm going to make sure I update the variable down here\n\nas well. I'm going to change the\n\ntype right here from image to document, and\n\nthen the media type will go from image slash\n\npng to application slash pdf.\n\nAnd then finally, the question that we're asking of Claude\n\nabout this document, rather than feeding in our big\n\nprompt that we have in the previous cell, I'm going to ask Claude to\n\nsummarize the document in one\n\nsentence. And let's see what we get out of Claude. So\n\nI'm going to run this. And there's\n\nthe summary. It looks like it successfully read the contents of\n\nthat PDF file. Now, Claude has the ability to\n\nnot only read text out of a PDF, it can also read\n\nimages or charts, tables, and so on. So\n\nyou should really think of Claude as being like a one stop shop\n\nfor extracting just about any kind of information out\n\nof a PDF document.",
+  "downloads": [
+    {
+      "text": "earth.pdf\n(opens in new tab)",
+      "href": "https://cc.sj-cdn.net/instructor/4hdejjwplbrm-anthropic-poc/assets/1748559956/earth.pdf?response-content-disposition=attachment&Expires=1793329743&Signature=REDACTED&Key-Pair-Id=REDACTED"
+    }
+  ]
+}

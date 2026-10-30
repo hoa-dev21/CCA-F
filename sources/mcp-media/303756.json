@@ -1,0 +1,467 @@
+{
+  "lesson": "Welcome to the course",
+  "url": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/303756",
+  "collectedAt": "2026-10-30T02:11:52.457Z",
+  "sourceType": "English captions linked by official lesson player",
+  "media": {
+    "url": "https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/303756",
+    "players": [
+      {
+        "id": "botr_yddVFhdH_Akyo8gQO_d44adf99-4ec2-40eb-a068-290187a3bc55_div",
+        "playlist": [
+          {
+            "sources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://content.jwplatform.com/manifests/yddVFhdH.m3u8?exp=1793329909&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              }
+            ],
+            "tracks": [
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://content.jwplatform.com/tracks/U1XBzDrb.srt",
+                "label": "English",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "English",
+                "_id": "https://content.jwplatform.com/tracks/U1XBzDrb.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://content.jwplatform.com/tracks/ErP2WDEv.srt",
+                "label": "French",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "French",
+                "_id": "https://content.jwplatform.com/tracks/ErP2WDEv.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://content.jwplatform.com/tracks/NfNVaT6h.srt",
+                "label": "German",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "German",
+                "_id": "https://content.jwplatform.com/tracks/NfNVaT6h.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://content.jwplatform.com/tracks/NBA0SUfv.srt",
+                "label": "Japanese",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Japanese",
+                "_id": "https://content.jwplatform.com/tracks/NBA0SUfv.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://content.jwplatform.com/tracks/IMcWy8Ec.srt",
+                "label": "Korean",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Korean",
+                "_id": "https://content.jwplatform.com/tracks/IMcWy8Ec.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://content.jwplatform.com/tracks/tmAFrP1J.srt",
+                "label": "Portuguese",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Portuguese",
+                "_id": "https://content.jwplatform.com/tracks/tmAFrP1J.srt"
+              },
+              {
+                "kind": "captions",
+                "default": false,
+                "file": "https://content.jwplatform.com/tracks/M1X4KZa4.srt",
+                "label": "Spanish",
+                "sideloaded": true,
+                "data": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "name": "Spanish",
+                "_id": "https://content.jwplatform.com/tracks/M1X4KZa4.srt"
+              },
+              {
+                "kind": "thumbnails",
+                "default": false,
+                "file": "https://content.jwplatform.com/strips/yddVFhdH-120.vtt"
+              }
+            ],
+            "minDvrWindow": 120,
+            "title": "001 - Welcome to the Course.mp4",
+            "mediaid": "yddVFhdH",
+            "link": "https://content.jwplatform.com/previews/yddVFhdH?exp=1793329909&sig=REDACTED",
+            "image": "https://content.jwplatform.com/v2/media/yddVFhdH/poster.jpg?width=720",
+            "images": [
+              {
+                "src": "https://content.jwplatform.com/v2/media/yddVFhdH/poster.jpg?width=320",
+                "width": 320,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://content.jwplatform.com/v2/media/yddVFhdH/poster.jpg?width=480",
+                "width": 480,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://content.jwplatform.com/v2/media/yddVFhdH/poster.jpg?width=640",
+                "width": 640,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://content.jwplatform.com/v2/media/yddVFhdH/poster.jpg?width=720",
+                "width": 720,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://content.jwplatform.com/v2/media/yddVFhdH/poster.jpg?width=1280",
+                "width": 1280,
+                "type": "image/jpeg"
+              },
+              {
+                "src": "https://content.jwplatform.com/v2/media/yddVFhdH/poster.jpg?width=1920",
+                "width": 1920,
+                "type": "image/jpeg"
+              }
+            ],
+            "siteid": "Lc4Rn1s0",
+            "duration": 64,
+            "content_source_type": "file",
+            "pubdate": 1751047443,
+            "updated": 1751047481,
+            "description": "",
+            "variations": {},
+            "preload": "auto",
+            "allSources": [
+              {
+                "default": false,
+                "type": "hls",
+                "file": "https://content.jwplatform.com/manifests/yddVFhdH.m3u8?exp=1793329909&sig=REDACTED",
+                "label": "0",
+                "mimeType": "application/vnd.apple.mpegurl",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://content.jwplatform.com/videos/yddVFhdH-B9NwIVRu.mp4?exp=1793329909&sig=REDACTED",
+                "height": 180,
+                "width": 320,
+                "label": "H.264 320px",
+                "bitrate": 132217,
+                "filesize": 1057739,
+                "framerate": 30,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://content.jwplatform.com/videos/yddVFhdH-muagBOKI.mp4?exp=1793329909&sig=REDACTED",
+                "height": 270,
+                "width": 480,
+                "label": "H.264 480px",
+                "bitrate": 141637,
+                "filesize": 1133099,
+                "framerate": 30,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://content.jwplatform.com/videos/yddVFhdH-4Xe8IV8X.mp4?exp=1793329909&sig=REDACTED",
+                "height": 406,
+                "width": 720,
+                "label": "H.264 720px",
+                "bitrate": 157898,
+                "filesize": 1263184,
+                "framerate": 30,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://content.jwplatform.com/videos/yddVFhdH-m7ew0xq8.mp4?exp=1793329909&sig=REDACTED",
+                "height": 720,
+                "width": 1280,
+                "label": "H.264 1280px",
+                "bitrate": 194883,
+                "filesize": 1559070,
+                "framerate": 30,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://content.jwplatform.com/videos/yddVFhdH-eNgUZBQ2.m4a?exp=1793329909&sig=REDACTED",
+                "label": "AAC Audio",
+                "bitrate": 114067,
+                "filesize": 912540,
+                "mimeType": "audio/mp4",
+                "preload": "auto"
+              },
+              {
+                "default": false,
+                "type": "mp4",
+                "file": "https://content.jwplatform.com/videos/yddVFhdH-hFUVmOoC.mp4?exp=1793329909&sig=REDACTED",
+                "height": 1080,
+                "width": 1920,
+                "label": "H.264 1920px",
+                "bitrate": 242578,
+                "filesize": 1940630,
+                "framerate": 30,
+                "mimeType": "video/mp4",
+                "preload": "auto"
+              }
+            ],
+            "file": "https://content.jwplatform.com/manifests/yddVFhdH.m3u8?exp=1793329909&sig=REDACTED",
+            "feedData": {
+              "title": "001 - Welcome to the Course.mp4",
+              "description": "",
+              "kind": "Single Item",
+              "siteid": "Lc4Rn1s0",
+              "feed_instance_id": "9477b053-6356-41e6-8353-64f3a758336b"
+            },
+            "chapters": {
+              "defaultLanguage": "en-US",
+              "timestamps": []
+            },
+            "label": "https://content.jwplatform.com/manifests/yddVFhdH.m3u8?exp=1793329909&sig=REDACTED",
+            "progressTracker": {
+              "10": false,
+              "25": false,
+              "50": false,
+              "75": false
+            }
+          }
+        ],
+        "captions": [
+          {
+            "id": "off",
+            "label": "Off"
+          },
+          {
+            "id": "https://content.jwplatform.com/tracks/U1XBzDrb.srt",
+            "label": "English"
+          },
+          {
+            "id": "https://content.jwplatform.com/tracks/ErP2WDEv.srt",
+            "label": "French"
+          },
+          {
+            "id": "https://content.jwplatform.com/tracks/NfNVaT6h.srt",
+            "label": "German"
+          },
+          {
+            "id": "https://content.jwplatform.com/tracks/NBA0SUfv.srt",
+            "label": "Japanese"
+          },
+          {
+            "id": "https://content.jwplatform.com/tracks/IMcWy8Ec.srt",
+            "label": "Korean"
+          },
+          {
+            "id": "https://content.jwplatform.com/tracks/tmAFrP1J.srt",
+            "label": "Portuguese"
+          },
+          {
+            "id": "https://content.jwplatform.com/tracks/M1X4KZa4.srt",
+            "label": "Spanish"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "blob:https://anthropic-partners.skilljar.com/ee3119f8-b78e-401b-9883-e79c40443b86",
+        "tracks": [],
+        "sources": []
+      }
+    ],
+    "iframes": []
+  },
+  "captionUrl": "https://content.jwplatform.com/tracks/U1XBzDrb.srt",
+  "rawCaptions": "1\n00:00:00,031 --> 00:00:02,674\nWelcome to this course focused on getting started with\n\n2\n00:00:02,714 --> 00:00:05,258\nmodel context protocol. My name is Stephen Grider\n\n3\n00:00:05,458 --> 00:00:08,643\nand I'll be guiding you through everything you need to know around MCP.\n\n4\n00:00:09,323 --> 00:00:11,926\nLet's first begin by understanding exactly what we'll cover in\n\n5\n00:00:11,946 --> 00:00:14,490\nthe coming videos. We'll first get an overview\n\n6\n00:00:14,509 --> 00:00:17,254\non MCP and understand what problems it is intended\n\n7\n00:00:17,314 --> 00:00:19,836\nto solve. We'll then start to look at the basics\n\n8\n00:00:19,937 --> 00:00:23,082\nof MCP architecture by covering the responsibilities\n\n9\n00:00:23,262 --> 00:00:25,961\nof MCP clients and servers. Then\n\n10\n00:00:26,021 --> 00:00:28,727\nit is on to the three basic components of an MCP\n\n11\n00:00:28,766 --> 00:00:31,591\nserver. First, we'll look at tools, which are intended\n\n12\n00:00:31,611 --> 00:00:34,295\nto be consumed by language models. After\n\n13\n00:00:34,335 --> 00:00:36,939\nthat, we'll study resources, which allow a server to\n\n14\n00:00:36,999 --> 00:00:39,743\nshare data with clients. And finally, prompts,\n\n15\n00:00:40,024 --> 00:00:42,588\nwhich will provide tune directions to language\n\n16\n00:00:42,648 --> 00:00:45,201\nmodels. Now there's a lot of content for\n\n17\n00:00:45,241 --> 00:00:47,828\nus to get through, so there are a couple of requirements on\n\n18\n00:00:47,868 --> 00:00:50,695\nyour side. First, you need to have some basic Python\n\n19\n00:00:50,735 --> 00:00:53,582\nknowledge. Second, we will be writing out some code,\n\n20\n00:00:53,823 --> 00:00:57,031\nand this will require a local Python installation. We\n\n21\n00:00:57,072 --> 00:00:59,880\nwill be managing our project with the UV CLI.\n\n22\n00:01:00,240 --> 00:01:02,987\nAnd if you don't have it installed, I recommend grabbing it now. I'll\n\n23\n00:01:03,008 --> 00:01:04,311\nget a link to it on the screen.",
+  "transcriptText": "Welcome to this course focused on getting started with\n\nmodel context protocol. My name is Stephen Grider\n\nand I'll be guiding you through everything you need to know around MCP.\n\nLet's first begin by understanding exactly what we'll cover in\n\nthe coming videos. We'll first get an overview\n\non MCP and understand what problems it is intended\n\nto solve. We'll then start to look at the basics\n\nof MCP architecture by covering the responsibilities\n\nof MCP clients and servers. Then\n\nit is on to the three basic components of an MCP\n\nserver. First, we'll look at tools, which are intended\n\nto be consumed by language models. After\n\nthat, we'll study resources, which allow a server to\n\nshare data with clients. And finally, prompts,\n\nwhich will provide tune directions to language\n\nmodels. Now there's a lot of content for\n\nus to get through, so there are a couple of requirements on\n\nyour side. First, you need to have some basic Python\n\nknowledge. Second, we will be writing out some code,\n\nand this will require a local Python installation. We\n\nwill be managing our project with the UV CLI.\n\nAnd if you don't have it installed, I recommend grabbing it now. I'll\n\nget a link to it on the screen.",
+  "downloads": []
+}
