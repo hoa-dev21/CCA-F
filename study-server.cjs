@@ -10,8 +10,8 @@ const token=crypto.randomBytes(24).toString('hex');
 const bridge=createBridge(ROOT),sessions=new Map();
 const allowedHosts=new Set([`${HOST}:${PORT}`,`localhost:${PORT}`]);
 const allowedOrigins=new Set([`http://${HOST}:${PORT}`,`http://localhost:${PORT}`]);
-const assets={'/':'index.html','/app.js':'app.js','/styles.css':'styles.css','/favicon.svg':'favicon.svg'};
-const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml'};
+const assets={'/':'index.html','/app.js':'app.js','/styles.css':'styles.css','/favicon.svg':'favicon.svg','/fonts/NotoSerif-Variable.ttf':'fonts/NotoSerif-Variable.ttf','/fonts/NotoSans-Variable.ttf':'fonts/NotoSans-Variable.ttf'};
+const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.ttf':'font/ttf'};
 function json(res,status,data){res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(data));}
 async function body(req){let text='';for await(const chunk of req){text+=chunk;if(Buffer.byteLength(text)>65000)throw Object.assign(new Error('Câu hỏi quá dài.'),{status:413});}try{return JSON.parse(text);}catch{throw Object.assign(new Error('Dữ liệu không hợp lệ.'),{status:400});}}
 function errorMessage(e){if(e.code==='LOGIN_REQUIRED'||e.code==='CHATGPT_LOGIN_REQUIRED'||e.code==='HOME_UNAVAILABLE')return e.message;if(/limit|quota|usage|rate/i.test(e.message))return 'Tài khoản đang chạm giới hạn sử dụng. Hãy thử lại sau hoặc sao chép câu hỏi để hỏi trong cuộc trò chuyện này.';if(e.message==='CHAT_CANCELLED')return 'Đã dừng câu trả lời.';if(e.message==='SESSION_EXPIRED')return 'Phiên gia sư đã đóng. Bắt đầu phiên mới để tiếp tục.';return 'Chưa nhận được câu trả lời từ Codex. Kiểm tra đăng nhập/kết nối rồi thử lại; bạn có thể dùng nút sao chép câu hỏi.';}
