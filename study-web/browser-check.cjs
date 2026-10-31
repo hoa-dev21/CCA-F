@@ -24,6 +24,14 @@ const {chromium}=require('playwright');
   await page.fill('#search','MCP');assert.ok((await page.locator('.lesson-link').count())>0);
   await page.locator('.lesson-link').first().click();await page.waitForTimeout(150);await page.fill('#chat-input','Vì sao schema chưa phải là executor?');await page.click('#copy-question');const copied=await page.evaluate(()=>window.__copiedStudyText);assert.match(copied,/schema chưa phải/);assert.ok(!copied.includes('Đáp án tham chiếu'));
   const lib=await(await fetch(origin+'/api/library')).json();assert.equal(lib.lessons.length,142);assert.equal(lib.totalQuestions,426);
+  for(const path of ['beginner','quick']){
+   assert.ok(lib.learningPaths[path].stages.length);
+   await page.selectOption('#learning-path',path);
+   await page.waitForFunction(expected=>JSON.parse(localStorage.getItem('architect-study-v1')).path===expected,path);
+   assert.equal(await page.locator('#learning-path').inputValue(),path);
+   assert.equal(await page.locator('#path-description').innerText(),lib.learningPaths[path].description);
+   assert.equal(await page.locator('.lesson-link').count(),142);
+  }
   const forbidden=await fetch(origin+'/api/chat',{method:'POST',headers:{'Content-Type':'application/json','Origin':'https://untrusted.example','X-Study-Token':lib.token},body:'{}'});assert.equal(forbidden.status,403);
   assert.equal((await fetch(origin+'/sources/current-media.json')).status,404);assert.equal((await fetch(origin+'/api/lesson?id=../.codex/auth.json')).status,404);
   await page.screenshot({path:'.study-test/desktop-final.png',fullPage:true});

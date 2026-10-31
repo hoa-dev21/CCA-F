@@ -9,15 +9,18 @@ const chatMarkdown=new marked.Marked({gfm:true,breaks:true,renderer:{
 let saved;try{saved=JSON.parse(localStorage.getItem('architect-study-v1')||'{}');}catch{saved={};}
 const state={path:saved.path||'quick',pathLast:saved.pathLast||{},learningPaths:{},allLibrary:[],library:[],groups:{},recommended:[],token:'',current:null,tab:'read',practice:null,openGroups:new Set(['EXAM']),read:saved.read||{},answers:saved.answers||{},chats:saved.chats||{},last:saved.last,chatLessonId:null,questionId:null,chatStatus:null,controller:null,busy:false};
 const cache=new Map();let toastTimer;
+$('#learning-path').disabled=true;
 function persist(){try{localStorage.setItem('architect-study-v1',JSON.stringify({path:state.path,pathLast:state.pathLast,read:state.read,answers:state.answers,chats:state.chats,last:state.current?.id||state.last}));}catch{toast('Trình duyệt chưa cho lưu tiến độ. Bạn vẫn có thể học bình thường.');}}
 function toast(message){clearTimeout(toastTimer);$('#toast').textContent=message;$('#toast').hidden=false;toastTimer=setTimeout(()=>$('#toast').hidden=true,4500);}
 async function api(url,options){const r=await fetch(url,options);const x=await r.json();if(!r.ok)throw new Error(x.error||'Không kết nối được web local.');return x;}
 async function getLesson(id){if(!cache.has(id))cache.set(id,await api('/api/lesson?id='+encodeURIComponent(id)));return cache.get(id);}
 function applyLearningPath(){
+ if(!state.learningPaths?.quick||!state.learningPaths?.beginner)throw new Error('Hãy khởi động lại máy chủ học rồi tải lại trang để cập nhật lộ trình.');
  if(!state.learningPaths[state.path])state.path='quick';
  const path=state.learningPaths[state.path];const byId=new Map(state.allLibrary.map(l=>[l.id,l]));
  state.library=path.stages.flatMap(s=>s.lessons.map(id=>byId.get(id)));
  $('#learning-path').value=state.path;$('#path-description').textContent=path.description;
+ $('#learning-path').disabled=false;
 }
 $('#learning-path').onchange=async e=>{if(state.busy){e.target.value=state.path;return toast('Hãy dừng hoặc chờ câu trả lời trước khi đổi lộ trình.');}state.path=e.target.value;applyLearningPath();$('#search').value='';const id=state.pathLast[state.path]||state.library[0].id;history.replaceState(null,'','#lesson='+encodeURIComponent(id));await loadLesson(id);};
 function codeLabel(id){return id.replace('.md','').split('-').slice(0,2).join(' ');}
