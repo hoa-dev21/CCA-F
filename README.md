@@ -30,6 +30,6 @@ Xem [hướng dẫn web](WEB_LOCAL.md), [lộ trình học](ON_TAP_NHANH.md), [d
 npm run study:test
 ```
 
-Các script `build-*`, `map-*`, `write-*` và `audit-*` phục vụ biên soạn, đối chiếu và kiểm tra tài liệu. Thư mục `sources` lưu dữ liệu nguồn và các bảng ánh xạ; tham số ký truy cập media được làm sạch trước khi đưa lên GitHub. Hồ sơ trình duyệt, dữ liệu đăng nhập, cache và tiến trình học cá nhân không nằm trong repository.
+Mã ứng dụng nằm trong `study-server.cjs` và `study-web/`; các kiểm thử cũng nằm trong `study-web/`. Thư mục `lessons/` chứa bài học, còn `sources/` lưu dữ liệu nguồn và bảng đối chiếu được dẫn trong bài. Các script thu thập, biên soạn và xuất bản dùng một lần đã được dọn bỏ. Dữ liệu đăng nhập, cache và tiến trình học cá nhân không nằm trong repository.
 
 Đây là bộ tài liệu luyện tập, không phải đề thi thật hoặc sản phẩm chính thức của Anthropic.
