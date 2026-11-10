@@ -5,6 +5,8 @@ const crypto=require('node:crypto');
 const {spawn}=require('node:child_process');
 const {ROOT,GROUPS,lessons,library,recommended,learningPaths,chatContext}=require('./study-web/library.cjs');
 const {createBridge}=require('./study-web/codex-bridge.cjs');
+if(fs.existsSync(path.join(ROOT,'.env')))process.loadEnvFile(path.join(ROOT,'.env'));
+const sync=require('./study-web/turso-sync.cjs').createSync();
 const PORT=Number(process.env.STUDY_PORT||43130),HOST='127.0.0.1';
 const token=crypto.randomBytes(24).toString('hex');
 const bridge=createBridge(ROOT),sessions=new Map();
@@ -13,8 +15,9 @@ const allowedOrigins=new Set([`http://${HOST}:${PORT}`,`http://localhost:${PORT}
 const assets={'/':'index.html','/app.js':'app.js','/marked.js':'../node_modules/marked/lib/marked.umd.js','/styles.css':'styles.css','/favicon.svg':'favicon.svg','/fonts/NotoSerif-Variable.ttf':'fonts/NotoSerif-Variable.ttf','/fonts/NotoSans-Variable.ttf':'fonts/NotoSans-Variable.ttf'};
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.ttf':'font/ttf'};
 assets['/marked.js']='../node_modules/marked/lib/marked.umd.js';
+assets['/sync-state.js']='sync-state.js';
 function json(res,status,data){res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(data));}
-async function body(req){let text='';for await(const chunk of req){text+=chunk;if(Buffer.byteLength(text)>65000)throw Object.assign(new Error('Câu hỏi quá dài.'),{status:413});}try{return JSON.parse(text);}catch{throw Object.assign(new Error('Dữ liệu không hợp lệ.'),{status:400});}}
+async function body(req,limit=65000){let text='';for await(const chunk of req){text+=chunk;if(Buffer.byteLength(text)>limit)throw Object.assign(new Error('Dữ liệu quá lớn.'),{status:413});}try{return JSON.parse(text);}catch{throw Object.assign(new Error('Dữ liệu không hợp lệ.'),{status:400});}}
 function errorMessage(e){if(e.code==='LOGIN_REQUIRED'||e.code==='CHATGPT_LOGIN_REQUIRED'||e.code==='HOME_UNAVAILABLE')return e.message;if(/limit|quota|usage|rate/i.test(e.message))return 'Tài khoản đang chạm giới hạn sử dụng. Hãy thử lại sau hoặc sao chép câu hỏi để hỏi trong cuộc trò chuyện này.';if(e.message==='CHAT_CANCELLED')return 'Đã dừng câu trả lời.';if(e.message==='SESSION_EXPIRED')return 'Phiên gia sư đã đóng. Bắt đầu phiên mới để tiếp tục.';return 'Chưa nhận được câu trả lời từ Codex. Kiểm tra đăng nhập/kết nối rồi thử lại; bạn có thể dùng nút sao chép câu hỏi.';}
 const server=http.createServer(async(req,res)=>{
   res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','no-referrer');
@@ -26,10 +29,15 @@ const server=http.createServer(async(req,res)=>{
     if(req.method==='GET'&&url.pathname==='/api/library')return json(res,200,{lessons:library,groups:GROUPS,recommended,learningPaths,totalQuestions:[...lessons.values()].reduce((n,l)=>n+l.questions.length,0),token});
     if(req.method==='GET'&&url.pathname==='/api/lesson'){const l=lessons.get(url.searchParams.get('id'));if(!l)return json(res,404,{error:'Không tìm thấy bài học.'});const {raw,...visible}=l;return json(res,200,visible);}
     if(req.method==='GET'&&url.pathname==='/api/chat/status')return json(res,200,await bridge.status());
+    if(req.method==='GET'&&url.pathname==='/api/sync/status')return json(res,200,{enabled:sync.enabled,profile:sync.profile});
     if(req.method==='POST'){
       if(!allowedOrigins.has(req.headers.origin)||req.headers['x-study-token']!==token)return json(res,403,{error:'Yêu cầu phải được gửi từ trang học local.'});
       if(!req.headers['content-type']?.startsWith('application/json'))return json(res,415,{error:'Định dạng không được hỗ trợ.'});
-      const data=await body(req);
+      const data=await body(req,url.pathname==='/api/sync'?1024*1024:65000);
+      if(url.pathname==='/api/sync'){
+        try{return json(res,200,await sync.exchange(data.records));}
+        catch(e){return json(res,e.status||503,{error:e.status?e.message:'Chưa đồng bộ được Turso. Kiểm tra mạng, URL và token; tiến độ vẫn được giữ trên thiết bị.'});}
+      }
       if(url.pathname==='/api/chat/reconnect'){bridge.close();sessions.clear();return json(res,200,await bridge.status());}
       if(url.pathname!=='/api/chat')return json(res,404,{error:'Không tìm thấy chức năng.'});
       const lesson=lessons.get(data.lessonId);if(!lesson)return json(res,400,{error:'Hãy chọn một bài học.'});
@@ -61,5 +69,5 @@ server.listen(PORT,HOST,()=>{
   if(process.argv.includes('--open')){if(process.platform==='win32')spawn('explorer.exe',[url],{windowsHide:true,stdio:'ignore'}).unref();else if(process.platform==='darwin')spawn('open',[url],{stdio:'ignore'}).unref();}
 });
 server.on('error',e=>{console.error(e.code==='EADDRINUSE'?`Cổng ${PORT} đang được dùng. Mở http://${HOST}:${PORT} hoặc đặt STUDY_PORT khác.`:'Không mở được web local.');bridge.close();process.exitCode=1;});
-function shutdown(){bridge.close();server.close(()=>process.exit(0));setTimeout(()=>process.exit(0),1500).unref();}
+function shutdown(){bridge.close();sync.close();server.close(()=>process.exit(0));setTimeout(()=>process.exit(0),1500).unref();}
 process.on('SIGINT',shutdown);process.on('SIGTERM',shutdown);

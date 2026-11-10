@@ -24,6 +24,10 @@ Chat trong web là một phiên riêng, không tự kế thừa lịch sử củ
 
 Xem [hướng dẫn web](WEB_LOCAL.md), [lộ trình học](ON_TAP_NHANH.md), [danh mục bài](lessons/README.md) và [đối chiếu nội dung](BLUEPRINT_AUDIT.md).
 
+## Đồng bộ giữa các thiết bị
+
+Có thể dùng Turso để đồng bộ tiến độ, đáp án và vị trí bài học. Xem [hướng dẫn cấu hình Turso](TURSO_SYNC.md). Nếu chưa cấu hình, ứng dụng tiếp tục lưu trên trình duyệt.
+
 ## Kiểm tra
 
 ```powershell

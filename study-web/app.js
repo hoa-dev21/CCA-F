@@ -10,7 +10,33 @@ let saved;try{saved=JSON.parse(localStorage.getItem('architect-study-v1')||'{}')
 const state={path:saved.path||'quick',pathLast:saved.pathLast||{},learningPaths:{},allLibrary:[],library:[],groups:{},recommended:[],token:'',current:null,tab:'read',practice:null,openGroups:new Set(['EXAM']),read:saved.read||{},answers:saved.answers||{},chats:saved.chats||{},last:saved.last,chatLessonId:null,questionId:null,chatStatus:null,controller:null,busy:false};
 const cache=new Map();let toastTimer;
 $('#learning-path').disabled=true;
-function persist(){try{localStorage.setItem('architect-study-v1',JSON.stringify({path:state.path,pathLast:state.pathLast,read:state.read,answers:state.answers,chats:state.chats,last:state.current?.id||state.last}));}catch{toast('Trình duyệt chưa cho lưu tiến độ. Bạn vẫn có thể học bình thường.');}}
+let syncRecords=saved.syncRecords||StudySyncState.capture(state,{},true);
+let syncEnabled=false,syncBusy=false,syncTimer;
+let acknowledged=new Map();
+function saveLocal(){try{localStorage.setItem('architect-study-v1',JSON.stringify({path:state.path,pathLast:state.pathLast,read:state.read,answers:state.answers,chats:state.chats,last:state.last,syncRecords}));}catch{toast('Trình duyệt chưa cho lưu tiến độ. Bạn vẫn có thể học bình thường.');}}
+function persist(){StudySyncState.capture(state,syncRecords);saveLocal();if(syncEnabled){clearTimeout(syncTimer);syncTimer=setTimeout(()=>syncNow(),1500);}}
+async function syncNow(initial=false){
+ if(!syncEnabled||syncBusy)return;
+ syncBusy=true;$('#sync-now').disabled=true;$('#sync-status').textContent='Đang đồng bộ…';
+ try{
+  const records=Object.values(syncRecords).filter(r=>acknowledged.get(r.key)!==r.id);
+  const response=await api('/api/sync',{method:'POST',headers:{'Content-Type':'application/json','X-Study-Token':state.token},body:JSON.stringify({records}),signal:AbortSignal.timeout(15000)});
+  StudySyncState.merge(syncRecords,response.records);
+  acknowledged=new Map(response.records.map(r=>[r.key,r.id]));
+  const location={path:state.path,last:state.last,pathLast:state.pathLast};
+  StudySyncState.apply(state,syncRecords);saveLocal();
+  if(!initial){Object.assign(state,location);renderSidebar();if(state.tab==='quiz')renderQuiz();
+   if(state.current)$('#mark-read').innerHTML=state.read[state.current.id]?'Đã đọc · kiểm tra lại <span>→</span>':'Đã hiểu, làm bài tập <span>→</span>';
+  }
+  $('#sync-status').textContent='Đã đồng bộ · '+new Date().toLocaleTimeString('vi-VN');
+ }catch(e){$('#sync-status').textContent='Chưa đồng bộ · dữ liệu vẫn lưu trên máy';$('#sync-status').title=e.message;}
+ finally{syncBusy=false;$('#sync-now').disabled=false;}
+}
+async function startSync(){try{const config=await api('/api/sync/status');syncEnabled=config.enabled;$('#sync-now').disabled=!syncEnabled;if(syncEnabled)await syncNow(true);else $('#sync-status').textContent='Chưa bật đồng bộ · lưu trên máy';}catch{$('#sync-status').textContent='Chưa kiểm tra được đồng bộ';}}
+$('#sync-now').onclick=()=>syncEnabled?syncNow():startSync();
+setInterval(()=>{if(!document.hidden)syncNow();},120000);
+window.addEventListener('online',()=>syncNow());
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncNow();});
 function toast(message){clearTimeout(toastTimer);$('#toast').textContent=message;$('#toast').hidden=false;toastTimer=setTimeout(()=>$('#toast').hidden=true,4500);}
 async function api(url,options){const r=await fetch(url,options);const x=await r.json();if(!r.ok)throw new Error(x.error||'Không kết nối được web local.');return x;}
 async function getLesson(id){if(!cache.has(id))cache.set(id,await api('/api/lesson?id='+encodeURIComponent(id)));return cache.get(id);}
@@ -75,4 +101,4 @@ $('#copy-question').onclick=()=>copyQuestion().catch(e=>toast(e.message));
 $('#menu-toggle').onclick=()=>$('#sidebar').classList.toggle('open');$('#mobile-tutor').onclick=()=>$('#tutor').classList.toggle('open');
 document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();$('#sidebar').classList.add('open');$('#search').focus();}if(e.key==='Escape'){$('#sidebar').classList.remove('open');$('#tutor').classList.remove('open');}});
 window.addEventListener('hashchange',()=>{const id=new URLSearchParams(location.hash.slice(1)).get('lesson');if(id)loadLesson(id);});
-(async()=>{try{const x=await api('/api/library');Object.assign(state,{library:x.lessons,groups:x.groups,recommended:x.recommended,token:x.token,learningPaths:x.learningPaths,allLibrary:x.lessons});applyLearningPath();$('#question-count').textContent=x.totalQuestions+' câu hỏi';const wanted=new URLSearchParams(location.hash.slice(1)).get('lesson')||state.pathLast[state.path]||state.last||state.library[0].id;await loadLesson(wanted);status();}catch(e){$('#lesson-title').textContent='Chưa mở được thư viện.';$('#lesson-subtitle').textContent=e.message;}})();
+(async()=>{try{const x=await api('/api/library');Object.assign(state,{library:x.lessons,groups:x.groups,recommended:x.recommended,token:x.token,learningPaths:x.learningPaths,allLibrary:x.lessons});await startSync();applyLearningPath();$('#question-count').textContent=x.totalQuestions+' câu hỏi';const wanted=new URLSearchParams(location.hash.slice(1)).get('lesson')||state.pathLast[state.path]||state.last||state.library[0].id;await loadLesson(wanted);status();}catch(e){$('#lesson-title').textContent='Chưa mở được thư viện.';$('#lesson-subtitle').textContent=e.message;}})();

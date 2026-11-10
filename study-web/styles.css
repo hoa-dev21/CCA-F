@@ -19,3 +19,4 @@
 .chat-markdown blockquote{border-left:2px solid #a9b69a;margin:.8em 0;padding-left:10px}.chat-markdown table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:.8em 0}.chat-markdown th,.chat-markdown td{padding:5px 8px;border:1px solid var(--line);text-align:left}.chat-markdown hr{border:0;border-top:1px solid var(--line);margin:1em 0}.chat-markdown a{text-underline-offset:2px}
 
 .path-picker{padding:0 20px 12px}.path-picker label{display:block;font-size:11px;margin-bottom:5px;color:var(--green)}.path-picker select{width:100%;font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:8px}.path-picker p{font-size:10px;line-height:1.6;color:var(--muted);margin:6px 0 0}
+.sync-panel{padding:12px 22px;border-top:1px solid #dfe6d6}.sync-panel p{font-size:11px;line-height:1.5;margin:5px 0;color:#687b5a}.sync-panel .text-button{font-size:12px}
