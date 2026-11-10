@@ -1,8 +1,8 @@
-# Parallelizing Claude Code — Cô lập công việc song song
+# Cô lập công việc song song
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276810), sources/bedrock-lessons/276810.json. Câu hỏi tự biên soạn, không phải đề thi thật.
 
-## Tóm tắt
+## Nội dung bài học
 
 Nhiều phiên Claude Code cùng sửa một thư mục dễ ghi đè hoặc đọc trạng thái chưa hoàn chỉnh của nhau. Bài dùng Git worktrees: mỗi nhánh có thư mục làm việc riêng, giao nhiệm vụ có ranh giới rồi tích hợp thay đổi sau khi hoàn thành. Worktree chia sẻ kho Git, không phải bản sao độc lập hoàn toàn.
 
@@ -18,7 +18,7 @@ A. Tăng số phiên trong cùng thư mục.
 
 B. Giao phạm vi rõ, dùng worktree/nhánh riêng và kiểm tra tích hợp.
 
-C. Chỉ yêu cầu model cẩn thận hơn.
+C. Chỉ yêu cầu mô hình cẩn thận hơn.
 
 D. Tắt kiểm tra diff.
 
@@ -28,7 +28,7 @@ A. Worktree không tự cô lập trạng thái dịch vụ ngoài thư mục Gi
 
 B. Git không cho nhiều nhánh.
 
-C. Model không thể chạy test.
+C. Mô hình không thể chạy test.
 
 D. Mọi worktree đều ghi cùng file theo định nghĩa.
 
@@ -40,7 +40,7 @@ B. Xóa test để tiết kiệm thời gian.
 
 C. Chỉ đọc commit message.
 
-D. Review thay đổi kết hợp và kiểm thử hành vi liên quan.
+D. Kiểm tra thay đổi kết hợp và kiểm thử hành vi liên quan.
 
 ## Đáp án
 
@@ -48,8 +48,8 @@ D. Review thay đổi kết hợp và kiểm thử hành vi liên quan.
 
 2. **A.** Worktree không tự cô lập trạng thái dịch vụ ngoài thư mục Git. B và C sai; D nhầm thư mục làm việc riêng với dịch vụ được chia sẻ. Cần dữ liệu test hoặc database riêng.
 
-3. **D.** Review thay đổi kết hợp và kiểm thử hành vi liên quan. A bỏ qua xung đột ngữ nghĩa; B bỏ bằng chứng; C không kiểm tra hành vi thực tế.
+3. **D.** Kiểm tra thay đổi kết hợp và kiểm thử hành vi liên quan. A bỏ qua xung đột ngữ nghĩa; B bỏ bằng chứng; C không kiểm tra hành vi thực tế.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Parallelizing Claude Code](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289241), sources/vertex-media/289241.json. Phụ đề mô tả worktree riêng, custom commands/$ARGUMENTS tạo và merge nhánh, review commit và xử lý conflict. Worktree không cô lập dịch vụ hay dependencies symlink dùng chung; merge không xung đột text vẫn cần kiểm thử tích hợp. Không nhân số instance vô hạn theo lời quảng bá productivity. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Đã đọc toàn bộ phụ đề tiếng Anh của [Parallelizing Claude Code](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289241), sources/vertex-media/289241.json. Phụ đề mô tả worktree riêng, custom commands/$ARGUMENTS tạo và merge nhánh, kiểm tra commit và xử lý conflict. Worktree không cô lập dịch vụ hay dependencies symlink dùng chung; merge không xung đột text vẫn cần kiểm thử tích hợp. Không nhân số instance vô hạn theo lời quảng bá productivity. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.

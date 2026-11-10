@@ -1,12 +1,12 @@
-# Accessing the API — Luồng qua Bedrock
+# Luồng qua Bedrock
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276716), sources/bedrock-lessons/276716.json. Tóm tắt và câu hỏi tự biên soạn; cloud configuration chi tiết đọc bổ trợ, không thay trọng tâm Exam Guide.
 
-## Tóm tắt
+## Nội dung bài học
 
-Trong mẫu, trình duyệt gửi câu hỏi tới backend; backend dùng Bedrock client với định danh model; Bedrock trả assistant message; backend đưa kết quả về UI. Việc chọn cloud provider thay lớp tích hợp, không bỏ trách nhiệm quản lý dữ liệu và hội thoại của ứng dụng.
+Trong mẫu, trình duyệt gửi câu hỏi tới hệ thống xử lý phía máy chủ; hệ thống xử lý phía máy chủ dùng Bedrock client với định danh mô hình; Bedrock trả assistant message; hệ thống xử lý phía máy chủ đưa kết quả về UI. Việc chọn cloud nhà cung cấp thay lớp tích hợp, không bỏ trách nhiệm quản lý dữ liệu và hội thoại của ứng dụng.
 
-Để chẩn đoán lỗi, phân biệt client/backend, lớp SDK/provider và xử lý phản hồi. Không coi việc gửi request thành công là bằng chứng model đã tạo đầu ra đúng nhiệm vụ.
+Để chẩn đoán lỗi, phân biệt client/backend, lớp SDK/provider và xử lý phản hồi. Không coi việc gửi yêu cầu thành công là bằng chứng mô hình đã tạo đầu ra đúng nhiệm vụ.
 
 Bài ngắn giải thích luồng tổng thể, không mô tả đầy đủ IAM, cấu hình vùng hay bảo đảm dữ liệu. Các chi tiết cloud configuration nằm ngoài phạm vi Exam Guide đã tải; không suy chính sách bảo mật chỉ từ sơ đồ luồng.
 
@@ -16,9 +16,9 @@ Bài ngắn giải thích luồng tổng thể, không mô tả đầy đủ IAM
 
 A. Chỉ CSS của trang.
 
-B. Backend ứng dụng.
+B. Hệ thống xử lý phía máy chủ ứng dụng.
 
-C. Tên model tự gọi.
+C. Tên mô hình tự gọi.
 
 D. Chỉ file ảnh.
 
@@ -32,7 +32,7 @@ C. Từng chặng UI/backend/provider và cấu trúc phản hồi.
 
 D. Không cần kết quả API.
 
-**3. Chọn một.** Sơ đồ request ngắn có đủ để khẳng định mọi chính sách lưu trữ dữ liệu không?
+**3. Chọn một.** Sơ đồ yêu cầu ngắn có đủ để khẳng định mọi chính sách lưu trữ dữ liệu không?
 
 A. Chưa; cần tài liệu chính sách/cấu hình có thẩm quyền.
 
@@ -44,7 +44,7 @@ D. Đủ nếu API trả nhanh.
 
 ## Đáp án
 
-1. **B.** B đúng luồng; A, C, D không thực hiện request SDK trong mẫu.
+1. **B.** B đúng luồng; A, C, D không thực hiện yêu cầu SDK trong mẫu.
 
 2. **C.** C cô lập tầng lỗi; A, B không quan sát luồng, D bỏ bằng chứng.
 

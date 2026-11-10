@@ -1,10 +1,10 @@
-# Additional activities — Duy trì thực hành
+# Duy trì thực hành
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/314863), sources/fluency-lessons/314863.json. Bản rút gọn/chuyển ngữ từ văn bản bài học; câu hỏi tự biên soạn, không phải đề thi thật.
 
 Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025). Bản gốc và phần chuyển thể này theo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); có bổ sung ví dụ/câu hỏi.
 
-## Tóm tắt
+## Nội dung bài học
 
 Bài gợi ý kế hoạch phát triển theo 4D: tự đánh giá, chọn một hoặc hai ưu tiên, đặt hoạt động, lịch thực hành và dấu hiệu tiến bộ. Một thư viện prompt hữu ích giữ mẫu có biến đầu vào, ví dụ kết quả tốt và cách đánh giá, rồi cập nhật qua sử dụng.
 

@@ -1,8 +1,8 @@
-# Prompts in the client — Khám phá và lấy mẫu có tham số
+# Khám phá và lấy mẫu có tham số
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287786), sources/api-lessons/287786.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
 Client dùng `list_prompts()` để khám phá mẫu có sẵn, và `get_prompt(name, args)` để lấy messages của mẫu cụ thể sau khi thay tham số.
 
@@ -22,21 +22,21 @@ B. `list_prompts()`.
 
 C. Trả kết quả định dạng giả.
 
-D. Xóa context.
+D. Xóa ngữ cảnh.
 
 **2. Chọn một.** Mẫu yêu cầu `doc_id`, client truyền một khóa không đúng tên. Cần kiểm tra gì?
 
 A. Chỉ tăng độ dài output.
 
-B. Chỉ đổi model.
+B. Chỉ đổi mô hình.
 
 C. Hợp đồng tham số giữa client và prompt phía server.
 
-D. Chỉ thay giọng điệu user message.
+D. Chỉ thay giọng điệu tin nhắn của người dùng.
 
 **3. Chọn một.** `get_prompt` trả messages đúng. Để hoàn thành tác vụ, bước nào còn cần?
 
-A. Gửi messages cho Claude và xử lý các tool calls cần thiết.
+A. Gửi messages cho Claude và xử lý các công cụ calls cần thiết.
 
 B. Coi việc lấy template là đã sửa tài liệu.
 

@@ -1,8 +1,8 @@
-# Claude Code in action — Ngữ cảnh, kế hoạch, thực thi
+# Ngữ cảnh, kế hoạch, thực thi
 
 Nguồn: [bài chính thức trong khóa API](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287805), sources/api-lessons/287805.json. Chưa thay thế khóa Claude Code in Action riêng. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
 Claude Code hỗ trợ nhiều giai đoạn phát triển, không chỉ sinh đoạn mã. Bài đề xuất đưa các file liên quan vào ngữ cảnh, yêu cầu lập kế hoạch trước khi sửa, rồi triển khai khi cách làm đã rõ.
 
@@ -10,7 +10,7 @@ Claude Code hỗ trợ nhiều giai đoạn phát triển, không chỉ sinh đo
 
 Một luồng khác là xác định test case, viết các kiểm thử có ý nghĩa rồi triển khai để đáp ứng chúng. Tiêu chí kiểm tra rõ giúp xác minh hành vi thay vì chỉ tin lời mô tả “đã xong”.
 
-Ví dụ tự biên soạn: thêm công cụ chuyển đổi tài liệu vào dự án có sẵn. Trước hết đọc module xử lý tài liệu và cách đăng ký MCP tools, sau đó lập kế hoạch tái sử dụng mã, xác định trường hợp file thiếu, rồi triển khai và kiểm tra.
+Ví dụ để dễ hình dung: thêm công cụ chuyển đổi tài liệu vào dự án có sẵn. Trước hết đọc module xử lý tài liệu và cách đăng ký MCP các công cụ, sau đó lập kế hoạch tái sử dụng mã, xác định trường hợp file thiếu, rồi triển khai và kiểm tra.
 
 Bài có nhắc các lệnh giao diện của phiên bản lúc giảng. Bản ôn này tập trung quy trình; không coi toàn bộ shortcut cũ trong video là cú pháp hiện hành.
 
@@ -22,7 +22,7 @@ A. Đọc các file và mẫu liên quan trước khi lập kế hoạch.
 
 B. Chỉ yêu cầu sinh mã nhanh hơn.
 
-C. Bỏ cấu trúc dự án khỏi context.
+C. Bỏ cấu trúc dự án khỏi ngữ cảnh.
 
 D. Tăng độ dài phản hồi cuối.
 
@@ -58,4 +58,4 @@ D. Chỉ đổi tên hàm để coi là hoàn thành.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Claude Code in action](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289246), sources/vertex-media/289246.json. Đã đọc đầy đủ thực hành document-path-to-Markdown: đọc README/setup, /init và project/local/user memory; đọc tool mẫu cùng hàm conversion trước lập kế hoạch rồi triển khai. Workflow khác chọn test cases phù hợp trước implementation; /clear ở demo tách context để không dùng lại lời giải trước. Phím #/cú pháp video theo phiên bản; không tự commit/stash/deploy chỉ vì video có ví dụ. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Đã đọc toàn bộ phụ đề tiếng Anh của [Claude Code in action](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289246), sources/vertex-media/289246.json. Đã đọc đầy đủ thực hành document-path-to-Markdown: đọc README/setup, /init và project/local/user memory; đọc công cụ mẫu cùng hàm conversion trước lập kế hoạch rồi triển khai. Quy trình làm việc khác chọn test cases phù hợp trước implementation; /clear ở demo tách ngữ cảnh để không dùng lại lời giải trước. Phím #/cú pháp video theo phiên bản; không tự commit/stash/deploy chỉ vì video có ví dụ. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.

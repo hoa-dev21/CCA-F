@@ -2,11 +2,11 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101/440908), sources/claude101-lessons/440908.json, đã đọc văn bản đầy đủ. Tóm tắt/câu hỏi tự biên soạn, không phải đề thi thật.
 
-## Tóm tắt
+## Nội dung bài học
 
 Bài phân biệt ba hình dạng công việc: hội thoại từng lượt trong Chat, bàn giao nhiệm vụ nhiều bước trong Cowork và xây phần mềm với Code. Chọn theo cách làm việc, không chỉ theo tên tab.
 
-Chat phù hợp khi giá trị nằm trong trao đổi và phản hồi từng bước. Bàn giao phù hợp khi mô tả được đầu ra, cần nhiều nguồn hoặc nhiều bước và muốn xem kế hoạch/kết quả. Code phù hợp đọc, sửa và kiểm tra codebase. Mọi cách đều cần phạm vi và review phù hợp mức tự chủ.
+Chat phù hợp khi giá trị nằm trong trao đổi và phản hồi từng bước. Bàn giao phù hợp khi mô tả được đầu ra, cần nhiều nguồn hoặc nhiều bước và muốn xem kế hoạch/kết quả. Code phù hợp đọc, sửa và kiểm tra codebase. Mọi cách đều cần phạm vi và kiểm tra phù hợp mức tự chủ.
 
 Phân biệt công việc chạy cloud với việc cần file/môi trường cục bộ: điều kiện máy mở hay kết nối nguồn phụ thuộc nơi chạy thực tế. Không suy rằng mọi tác vụ luôn chạy được khi máy tắt. Availability và thao tác UI trong bài có thể thay đổi; chi tiết computer use không phải mục tiêu thi Architect đã tải.
 
@@ -46,6 +46,6 @@ D. Không cần vì mọi tác vụ đều cloud.
 
 1. **A.** A phù hợp trao đổi; B thiếu tương tác, C không đúng nhiệm vụ, D bỏ lựa chọn phù hợp.
 
-2. **B.** B cung cấp workflow phát triển; A, C, D không đáp ứng thực thi kiểm tra mã.
+2. **B.** B cung cấp quy trình làm việc phát triển; A, C, D không đáp ứng thực thi kiểm tra mã.
 
 3. **C.** C kiểm tra phụ thuộc thực; A, B không tạo truy cập, D suy rộng sai nơi chạy.

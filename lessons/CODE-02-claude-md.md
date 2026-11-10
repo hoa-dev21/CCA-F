@@ -1,14 +1,14 @@
-# A CLAUDE.md That Follows — Đặt hướng dẫn đúng chỗ
+# Đặt hướng dẫn đúng chỗ
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-code-in-action/486929), sources/code-lessons/486929.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
 CLAUDE.md là hướng dẫn mô hình đọc, không phải cơ chế cưỡng chế mọi thao tác. Quy ước như cách đặt tên hoặc vị trí file phù hợp ở đây; hành động không được phép xảy ra cần hook hoặc kiểm soát bằng mã.
 
-Bài phân biệt managed policy cấp tổ chức, user cho sở thích qua các dự án, project chia sẻ trong repo và local cho ghi chú cá nhân của repo đó. Chọn phạm vi theo người cần chịu ảnh hưởng. Không đặt quyết định riêng của một nhánh vào quy tắc dùng chung nếu không muốn ảnh hưởng cả nhóm.
+Bài phân biệt managed policy cấp tổ chức, user cho sở thích qua các dự án, dự án chia sẻ trong repo và local cho ghi chú cá nhân của repo đó. Chọn phạm vi theo người cần chịu ảnh hưởng. Không đặt quyết định riêng của một nhánh vào quy tắc dùng chung nếu không muốn ảnh hưởng cả nhóm.
 
-Imports giúp chia file theo chủ đề, nhưng nội dung được mở rộng vào context. Chia thành nhiều file rồi import toàn bộ không tự giảm token cần đọc.
+Imports giúp chia file theo chủ đề, nhưng nội dung được mở rộng vào ngữ cảnh. Chia thành nhiều file rồi import toàn bộ không tự giảm token cần đọc.
 
 Quy tắc tốt phải cụ thể, kiểm tra được và nói rõ hành vi thay thế. “Đặt API handler trong thư mục X, mỗi file một handler” rõ hơn “làm theo best practices”. Giữ file gọn và sửa những quy tắc gây hiểu nhầm thay vì cứ nối thêm các chỉ dẫn trùng hoặc mâu thuẫn.
 
@@ -24,7 +24,7 @@ C. Hook/kiểm soát bằng mã chặn thao tác trước thực thi.
 
 D. Chỉ nhắc ở phản hồi cuối.
 
-**2. Chọn một.** Tách file dài thành ba file rồi import cả ba có giảm context tự động không?
+**2. Chọn một.** Tách file dài thành ba file rồi import cả ba có giảm ngữ cảnh tự động không?
 
 A. Không; imports tổ chức nội dung, phần được import vẫn phải đọc.
 
@@ -42,7 +42,7 @@ B. Local của repo.
 
 C. User cho mọi repo bất kể liên quan.
 
-D. Project chung cho cả nhóm một cách mặc định.
+D. Dự án chung cho cả nhóm một cách mặc định.
 
 ## Đáp án
 

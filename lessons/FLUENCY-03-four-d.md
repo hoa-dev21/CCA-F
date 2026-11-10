@@ -1,16 +1,16 @@
-# The 4D Framework — Bốn năng lực
+# Bốn năng lực
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291876), sources/fluency-lessons/291876.json. Tóm tắt tiếng Việt và câu hỏi tự biên soạn từ văn bản bài học.
 
 Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025), AI Fluency: Framework & Foundations; bản gốc và phần chuyển thể bài này theo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Đây là bản rút gọn/chuyển ngữ, có ví dụ và câu hỏi mới.
 
-## Tóm tắt
+## Nội dung bài học
 
 Delegation quyết định phần nào do người làm, phần nào phối hợp và phần nào giao AI. Description truyền đạt nhiệm vụ, bối cảnh và tiêu chí. Discernment đánh giá đầu ra và cách AI hoạt động bằng phán đoán có căn cứ. Diligence bảo đảm việc sử dụng AI có trách nhiệm.
 
 Bốn năng lực hỗ trợ nhau. Đánh giá phát hiện lỗi có thể khiến bạn mô tả lại yêu cầu hoặc đổi phần được giao AI. Không coi chúng là bốn hộp phải làm đúng một lần theo thứ tự cố định.
 
-Ví dụ tự biên soạn: AI soạn phân tích dữ liệu; người xác minh nguồn và quyết định công bố. Nếu dữ liệu không phù hợp để đưa vào hệ thống, cần xem lại việc giao nhiệm vụ từ đầu, không chỉ sửa câu prompt.
+Ví dụ để dễ hình dung: AI soạn phân tích dữ liệu; người xác minh nguồn và quyết định công bố. Nếu dữ liệu không phù hợp để đưa vào hệ thống, cần xem lại việc giao nhiệm vụ từ đầu, không chỉ sửa câu prompt.
 
 ## Câu hỏi
 

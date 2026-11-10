@@ -1,22 +1,22 @@
-# Running the eval — Tổ chức pipeline đánh giá
+# Tổ chức quy trình xử lý đánh giá
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287743), bản nội dung sources/api-lessons/287743.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
-Bài tách pipeline thành ba trách nhiệm. `run_prompt` ghép một test case với mẫu prompt rồi lấy đầu ra. `run_test_case` chạy trường hợp đó và chấm kết quả. `run_eval` lặp qua dataset, tập hợp các kết quả.
+Bài tách quy trình xử lý thành ba trách nhiệm. `run_prompt` ghép một test case với mẫu prompt rồi lấy đầu ra. `run_test_case` chạy trường hợp đó và chấm kết quả. `run_eval` lặp qua bộ dữ liệu, tập hợp các kết quả.
 
 Mỗi bản ghi kết quả giữ `test_case`, `output` và `score`. Lưu cả đầu vào lẫn đầu ra cho phép truy ngược nguyên nhân thay vì chỉ nhìn con số tổng hợp.
 
-Trong bài, điểm `10` ban đầu là **placeholder** để kiểm tra luồng chạy; tác giả nói rõ phải thay bằng grader thật. Chạy hết dataset mà tất cả được gán điểm cố định không chứng minh prompt đạt chất lượng.
+Trong bài, điểm `10` ban đầu là **placeholder** để kiểm tra luồng chạy; tác giả nói rõ phải thay bằng bộ chấm điểm thật. Chạy hết bộ dữ liệu mà tất cả được gán điểm cố định không chứng minh prompt đạt chất lượng.
 
-Ví dụ tự biên soạn: pipeline tạo 100 bản ghi thành công nhưng chưa triển khai logic chấm. Kết luận đúng là đã kiểm tra được việc điều phối request và thu kết quả; chất lượng câu trả lời vẫn chưa được đánh giá.
+Ví dụ để dễ hình dung: quy trình xử lý tạo 100 bản ghi thành công nhưng chưa triển khai logic chấm. Kết luận đúng là đã kiểm tra được việc điều phối yêu cầu và thu kết quả; chất lượng câu trả lời vẫn chưa được đánh giá.
 
 Từ khóa: **test case** — trường hợp kiểm thử; **output** — đầu ra; **placeholder** — giá trị tạm.
 
 ## Câu hỏi
 
-**1. Chọn một.** Pipeline luôn gán `score=10`. Kết quả có thể chứng minh gì?
+**1. Chọn một.** Quy trình xử lý luôn gán `score=10`. Kết quả có thể chứng minh gì?
 
 A. Mọi đầu ra đều đúng.
 
@@ -24,7 +24,7 @@ B. Prompt tốt nhất đã được tìm thấy.
 
 C. Các bước chạy và tập hợp kết quả hoạt động, chưa chứng minh chất lượng.
 
-D. Không cần triển khai grader.
+D. Không cần triển khai bộ chấm điểm.
 
 **2. Chọn hai.** Ngoài điểm, nên giữ dữ liệu nào theo cấu trúc bài học?
 
@@ -36,7 +36,7 @@ C. Đầu ra thực tế.
 
 D. Một điểm tự đặt để thay đầu ra.
 
-**3. Chọn một.** Hàm nào chịu trách nhiệm chạy toàn bộ dataset?
+**3. Chọn một.** Hàm nào chịu trách nhiệm chạy toàn bộ bộ dữ liệu?
 
 A. `run_prompt`.
 
@@ -54,7 +54,7 @@ D. Hàm đọc system prompt.
 
 ## Đối chiếu Bedrock
 
-Đã đọc và đối chiếu [Running the eval](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276736), sources/bedrock-lessons/276736.json. Dùng chung bản tóm tắt và câu hỏi về phương pháp eval vì các mục tiêu chính tương đương. Mã gọi provider vẫn cần adapter Converse phù hợp; ví dụ prefill/stop sequence và tên model không được coi là hỗ trợ hiện hành đã xác minh. Không tính lại một bộ câu hỏi mới cho cùng nội dung.
+Đã đọc và đối chiếu [Running the eval](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276736), sources/bedrock-lessons/276736.json. Dùng chung bản tóm tắt và câu hỏi về phương pháp phép đánh giá vì các mục tiêu chính tương đương. Mã gọi nhà cung cấp vẫn cần adapter Converse phù hợp; ví dụ prefill/stop sequence và tên mô hình không được coi là hỗ trợ hiện hành đã xác minh. Không tính lại một bộ câu hỏi mới cho cùng nội dung.
 
 ## Đối chiếu Vertex
 

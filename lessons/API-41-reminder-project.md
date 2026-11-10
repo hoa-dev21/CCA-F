@@ -1,18 +1,18 @@
-# Project overview — Thiết kế hệ thống nhắc việc
+# Thiết kế hệ thống nhắc việc
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287751), sources/api-lessons/287751.json. Tóm tắt và câu hỏi tự biên soạn; ghi rõ các giới hạn của ví dụ khi cần.
 
-## Tóm tắt
+## Nội dung bài học
 
 Bài dùng tác vụ nhắc việc để chỉ ra khoảng cách giữa câu trả lời và hành động thật. Cần ba khả năng: lấy thời gian hiện tại, tính mốc thời gian và ghi nhắc việc vào hệ thống.
 
-Model có thể diễn đạt một lời hứa, nhưng lời hứa không tạo bản ghi. Nếu ngày tính toán cần dữ liệu thời gian hiện tại, kết quả bước trước phải được dùng cho bước sau. Tách các khả năng có hợp đồng rõ giúp phối hợp và kiểm tra từng phần.
+Mô hình có thể diễn đạt một lời hứa, nhưng lời hứa không tạo bản ghi. Nếu ngày tính toán cần dữ liệu thời gian hiện tại, kết quả bước trước phải được dùng cho bước sau. Tách các khả năng có hợp đồng rõ giúp phối hợp và kiểm tra từng phần.
 
-Ví dụ tự biên soạn: khách muốn nhắc sau một số ngày; hệ thống cần mốc chính xác và xác nhận thao tác tạo reminder. Quy ước timezone/ngày mơ hồ là điều cần làm rõ theo hợp đồng ứng dụng, không mặc định model tự có mọi trạng thái môi trường.
+Ví dụ để dễ hình dung: khách muốn nhắc sau một số ngày; hệ thống cần mốc chính xác và xác nhận thao tác tạo lời nhắc việc. Quy ước timezone/ngày mơ hồ là điều cần làm rõ theo hợp đồng ứng dụng, không mặc định mô hình tự có mọi trạng thái môi trường.
 
 ## Câu hỏi
 
-**1. Chọn một.** Claude trả “tôi sẽ nhắc bạn” nhưng chưa gọi backend. Đã hoàn tất chưa?
+**1. Chọn một.** Claude trả “tôi sẽ nhắc bạn” nhưng chưa gọi hệ thống xử lý phía máy chủ. Đã hoàn tất chưa?
 
 A. Rồi, vì lời hứa rõ.
 
@@ -32,7 +32,7 @@ C. Cung cấp phép tính chuyên biệt đáng tin hơn việc chỉ dựa câu
 
 D. Để tự động xóa lịch sử.
 
-**3. Chọn một.** Bước tạo reminder phụ thuộc mốc tính trước. Luồng nào đúng?
+**3. Chọn một.** Bước tạo lời nhắc việc phụ thuộc mốc tính trước. Luồng nào đúng?
 
 A. Nhận kết quả tính rồi dùng mốc đó để tạo nhắc việc.
 
@@ -52,4 +52,4 @@ D. Chỉ thêm lời giải thích.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Project overview](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289175), sources/vertex-lessons/289175.json. Dự án chia lấy thời gian, cộng thời lượng và tạo reminder. Phải xét timezone/độ mơ hồ; lời giới thiệu nói scheduled notification nhưng implementation ở289185 chỉ là placeholder print. Không khẳng định đã hẹn nhắc thật. Dùng chung câu hỏi khái niệm.
+Đã đọc [Project overview](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289175), sources/vertex-lessons/289175.json. Dự án chia lấy thời gian, cộng thời lượng và tạo lời nhắc việc. Phải xét timezone/độ mơ hồ; lời giới thiệu nói scheduled notification nhưng implementation ở289185 chỉ là placeholder print. Không khẳng định đã hẹn nhắc thật. Dùng chung câu hỏi khái niệm.

@@ -1,8 +1,8 @@
-# Structure with XML tags — Phân ranh giới nội dung
+# Phân ranh giới nội dung
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287741), sources/api-lessons/287741.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
 Khi prompt trộn yêu cầu, tài liệu và mã nguồn, mô hình có thể khó phân biệt phần nào phục vụ mục đích nào. Các cặp thẻ như `<source_code>...</source_code>` và `<reference_docs>...</reference_docs>` tạo ranh giới rõ.
 
@@ -10,7 +10,7 @@ Không cần một bộ tên thẻ chuẩn. Chọn tên mô tả nội dung, dù
 
 Bài đặc biệt khuyến nghị cách này với ngữ cảnh dài, nhiều loại nội dung hoặc nhiều biến được chèn vào template. Lợi ích chính là tổ chức thông tin, không phải thay thế dữ liệu còn thiếu.
 
-Ví dụ tự biên soạn: tách log lỗi và đoạn cấu hình thành hai vùng rồi yêu cầu đối chiếu chúng. Việc có ranh giới giúp biết lỗi nằm trong log hay trong cấu hình, thay vì coi toàn bộ là một khối văn bản.
+Ví dụ để dễ hình dung: tách log lỗi và đoạn cấu hình thành hai vùng rồi yêu cầu đối chiếu chúng. Việc có ranh giới giúp biết lỗi nằm trong log hay trong cấu hình, thay vì coi toàn bộ là một khối văn bản.
 
 ## Câu hỏi
 
@@ -22,7 +22,7 @@ B. Dùng cặp thẻ mô tả riêng cho mã và tài liệu.
 
 C. Xóa tài liệu tham chiếu.
 
-D. Đổi tên model mà giữ nguyên nội dung.
+D. Đổi tên mô hình mà giữ nguyên nội dung.
 
 **2. Chọn một.** Quy tắc đặt tên thẻ nào đúng theo bài?
 
@@ -42,7 +42,7 @@ B. Tự truy vấn cơ sở dữ liệu chưa tích hợp.
 
 C. Bảo đảm mọi kết luận đều đúng.
 
-D. Tăng dung lượng context vô hạn.
+D. Tăng dung lượng ngữ cảnh vô hạn.
 
 ## Đáp án
 
@@ -52,7 +52,7 @@ D. Tăng dung lượng context vô hạn.
 
 ## Đối chiếu Bedrock: Structure with XML tags
 
-Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276744) và đối chiếu khái niệm với bài chung. Cùng phân vùng mã/tài liệu và dữ liệu đầu vào bằng tags có nghĩa. Tags là tổ chức context, không tự là cơ chế bảo mật dữ liệu. Nguồn: sources/bedrock-lessons/276744.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
+Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276744) và đối chiếu khái niệm với bài chung. Cùng phân vùng mã/tài liệu và dữ liệu đầu vào bằng tags có nghĩa. Tags là tổ chức ngữ cảnh, không tự là cơ chế bảo mật dữ liệu. Nguồn: sources/bedrock-lessons/276744.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
 
 ## Đối chiếu Vertex
 

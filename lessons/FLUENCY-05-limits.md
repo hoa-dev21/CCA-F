@@ -1,16 +1,16 @@
-# Capabilities & limitations — Khả năng và giới hạn
+# Khả năng và giới hạn
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291880), sources/fluency-lessons/291880.json. Tóm tắt tiếng Việt và câu hỏi tự biên soạn từ văn bản bài học.
 
 Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025), AI Fluency: Framework & Foundations; bản gốc và phần chuyển thể bài này theo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Đây là bản rút gọn/chuyển ngữ, có ví dụ và câu hỏi mới.
 
-## Tóm tắt
+## Nội dung bài học
 
-Generative AI linh hoạt với nhiều tác vụ ngôn ngữ, có thể theo dõi hội thoại khi được cung cấp ngữ cảnh và kết nối công cụ để dùng thông tin bên ngoài. Khả năng này đi cùng hạn chế: kiến thức có mốc thời gian, có thể tạo thông tin sai, context hữu hạn và các bài toán suy luận khó.
+Generative AI linh hoạt với nhiều tác vụ ngôn ngữ, có thể theo dõi hội thoại khi được cung cấp ngữ cảnh và kết nối công cụ để dùng thông tin bên ngoài. Khả năng này đi cùng hạn chế: kiến thức có mốc thời gian, có thể tạo thông tin sai, ngữ cảnh hữu hạn và các bài toán suy luận khó.
 
-Câu trả lời trôi chảy không tự chứng minh độ đúng. Chọn ứng dụng dựa trên khả năng thực tế và cách kiểm chứng, không dựa vào một ví dụ thành công đơn lẻ. Con người bổ sung chuyên môn, phán đoán và trách nhiệm.
+Câu trả lời trôi chảy không đủ để chứng minh độ đúng. Chọn ứng dụng dựa trên khả năng thực tế và cách kiểm chứng, không dựa vào một ví dụ thành công đơn lẻ. Con người bổ sung chuyên môn, phán đoán và trách nhiệm.
 
-Ví dụ tự biên soạn: báo cáo về trạng thái đơn hàng hiện tại cần nguồn dữ liệu mới hoặc công cụ tích hợp; không nên chỉ dựa vào tri thức huấn luyện. Trong API, ứng dụng vẫn phải quản lý lịch sử/context phù hợp, không suy từ trải nghiệm chat rằng request độc lập tự nhớ nhau.
+Ví dụ để dễ hình dung: báo cáo về trạng thái đơn hàng hiện tại cần nguồn dữ liệu mới hoặc công cụ tích hợp; không nên chỉ dựa vào tri thức huấn luyện. Trong API, ứng dụng vẫn phải quản lý lịch sử/context phù hợp, không suy từ trải nghiệm chat rằng yêu cầu độc lập tự nhớ nhau.
 
 ## Câu hỏi
 
@@ -34,15 +34,15 @@ C. Không cần kết nối hệ thống.
 
 D. Tăng độ dài câu trả lời thay truy xuất.
 
-**3. Chọn một.** Tại sao cần quản lý context ở phiên dài?
+**3. Chọn một.** Tại sao cần quản lý ngữ cảnh ở phiên dài?
 
-A. Context là vô hạn.
+A. Ngữ cảnh là vô hạn.
 
 B. Mọi thông tin cũ được giữ chính xác mãi.
 
 C. Không thể dùng hội thoại.
 
-D. Context hữu hạn, thông tin quan trọng có thể không còn trong đầu vào phù hợp.
+D. Ngữ cảnh hữu hạn, thông tin quan trọng có thể không còn trong đầu vào phù hợp.
 
 ## Đáp án
 

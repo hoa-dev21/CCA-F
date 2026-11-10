@@ -2,7 +2,7 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287767), sources/api-lessons/287767.json. Bài bổ trợ từ khóa API; chi tiết embeddings/vector DB không thuộc phạm vi Exam Guide đã tải. Câu hỏi tự biên soạn để kiểm tra bài học, không phải đề thi thật.
 
-## Tóm tắt
+## Nội dung bài học
 
 Semantic search tốt với cách diễn đạt gần nghĩa nhưng có thể bỏ sót mã sự cố hoặc thuật ngữ chính xác. Lexical search như BM25 bổ sung tín hiệu từ từ khóa, phù hợp trường hợp cần khớp tên/ID.
 
@@ -10,17 +10,17 @@ Bài giới thiệu trọng số từ xuất hiện phổ biến/hiếm và kế
 
 ## Câu hỏi
 
-**1. Chọn một.** Semantic retrieval trả đoạn cùng chủ đề nhưng không có incident ID cần tìm. Bổ sung nào sát bài?
+**1. Chọn một.** Semantic truy xuất dữ liệu trả đoạn cùng chủ đề nhưng không có incident ID cần tìm. Bổ sung nào sát bài?
 
 A. Chỉ đổi tone.
 
 B. Lexical search cho term/ID chính xác rồi kết hợp kết quả.
 
-C. Bỏ incident ID khỏi query.
+C. Bỏ incident ID khỏi truy vấn tìm kiếm.
 
 D. Tự đoán nội dung incident.
 
-**2. Chọn một.** Hai cách retrieval bổ sung nhau thế nào?
+**2. Chọn một.** Hai cách truy xuất dữ liệu bổ sung nhau thế nào?
 
 A. Cả hai không có khác biệt.
 
@@ -54,4 +54,4 @@ D. Chắc chắn, BM25 thay mọi validation.
 
 ## Đối chiếu Vertex
 
-Đã đọc [BM25 lexical search](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289195), sources/vertex-lessons/289195.json. ID incident hiếm cần lexical match bổ sung semantic. BM25 dùng term frequency/rarity cùng chuẩn hóa độ dài, không chỉ đếm từ. Kiểm tra tokenizer cho identifier có dấu; không bảo đảm mọi exact match được xếp đúng nếu nội dung không trả lời query. Dùng chung câu hỏi khái niệm.
+Đã đọc [BM25 lexical search](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289195), sources/vertex-lessons/289195.json. ID incident hiếm cần lexical match bổ sung semantic. BM25 dùng term frequency/rarity cùng chuẩn hóa độ dài, không chỉ đếm từ. Kiểm tra tokenizer cho identifier có dấu; không bảo đảm mọi exact match được xếp đúng nếu nội dung không trả lời truy vấn tìm kiếm. Dùng chung câu hỏi khái niệm.

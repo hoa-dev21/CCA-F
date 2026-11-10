@@ -1,8 +1,8 @@
-# Verification Skills — Quy trình kiểm chứng dùng lại
+# Quy trình kiểm chứng dùng lại
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-code-in-action/486930), sources/code-lessons/486930.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
 Skill đóng gói một quy trình lặp lại. Ví dụ kiểm chứng gồm chạy test, đọc diff, kiểm tra không làm yếu test để tạo kết quả xanh, rồi báo đạt/không đạt kèm bằng chứng.
 
@@ -10,7 +10,7 @@ Mô tả skill giúp hệ thống nhận diện khi nào quy trình liên quan. 
 
 Phân biệt ba bề mặt: CLAUDE.md cho quy ước thường trực; skill cho quy trình theo loại tác vụ; hook cho điều kiện phải được cưỡng chế. Skill tự kích hoạt theo mô tả vẫn dựa vào việc tuân theo hướng dẫn, không thay cơ chế chặn bằng mã nếu quy tắc tuyệt đối không được bỏ qua.
 
-Ví dụ tự biên soạn: test xanh sau khi xóa assertion không chứng minh tính năng đúng. Cần đọc thay đổi test và xem kết quả chạy thực tế, thay vì chỉ tin câu “đã kiểm tra”.
+Ví dụ để dễ hình dung: test xanh sau khi xóa assertion không chứng minh tính năng đúng. Cần đọc thay đổi test và xem kết quả chạy thực tế, thay vì chỉ tin câu “đã kiểm tra”.
 
 ## Câu hỏi
 

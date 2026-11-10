@@ -4,11 +4,11 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/ai-fluency
 
 Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025). Bản gốc và phần chuyển thể này theo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); có bổ sung ví dụ/câu hỏi.
 
-## Tóm tắt
+## Nội dung bài học
 
 Bài giới thiệu sáu kỹ thuật: cung cấp bối cảnh, đưa ví dụ, chỉ định ràng buộc, chia nhiệm vụ phức tạp, dành bước xem xét trước khi trả lời và xác định vai trò/giọng điệu.
 
-Chọn kỹ thuật theo lỗi: đầu ra sai format thì nêu format và ví dụ; thiếu bối cảnh thì bổ sung dữ liệu liên quan; tác vụ nhiều yêu cầu thì chia bước. Có thể nhờ AI giúp cải thiện prompt, nhưng đánh giá kết quả thực tế vẫn cần thiết. Không coi lời yêu cầu “nghĩ trước” là bảo đảm mọi kết luận đúng hoặc là yêu cầu cung cấp toàn bộ suy nghĩ nội bộ.
+Chọn kỹ thuật theo lỗi: đầu ra sai định dạng thì nêu định dạng và ví dụ; thiếu bối cảnh thì bổ sung dữ liệu liên quan; tác vụ nhiều yêu cầu thì chia bước. Có thể nhờ AI giúp cải thiện prompt, nhưng đánh giá kết quả thực tế vẫn cần thiết. Không coi lời yêu cầu “nghĩ trước” là bảo đảm mọi kết luận đúng hoặc là yêu cầu cung cấp toàn bộ suy nghĩ nội bộ.
 
 ## Câu hỏi
 

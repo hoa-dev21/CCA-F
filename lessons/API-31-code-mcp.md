@@ -1,10 +1,10 @@
-# Enhancements with MCP servers — Mở rộng Claude Code
+# Mở rộng Claude Code
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287792), sources/api-lessons/287792.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
-Claude Code có MCP client tích hợp để kết nối server cung cấp khả năng ngoài các công cụ sẵn có. Server có thể cung cấp tools, resources và prompt templates cho một dịch vụ hoặc chức năng nội bộ.
+Claude Code có MCP client tích hợp để kết nối server cung cấp khả năng ngoài các công cụ sẵn có. Server có thể cung cấp các công cụ, resources và prompt templates cho một dịch vụ hoặc chức năng nội bộ.
 
 Bài minh họa server chuyển tài liệu sang Markdown. Cần có công cụ thực thi ở server và đăng ký kết nối để Claude Code dùng được, thay vì chỉ nêu tên công cụ trong yêu cầu.
 
@@ -16,21 +16,21 @@ Bài này nêu khả năng mở rộng. Các vấn đề phạm vi cấu hình p
 
 **1. Chọn một.** Claude Code cần chức năng đọc định dạng nội bộ mà công cụ sẵn có không hỗ trợ. Cách mở rộng theo bài?
 
-A. Yêu cầu model đoán định dạng.
+A. Yêu cầu mô hình đoán định dạng.
 
 B. Chỉ đổi tên file thành văn bản.
 
 C. Kết nối MCP server cung cấp chức năng tương ứng.
 
-D. Coi việc nhắc tên tool là đã tích hợp.
+D. Coi việc nhắc tên công cụ là đã tích hợp.
 
-**2. Chọn hai.** Ngoài tools, hai thành phần nào được bài nhắc tới?
+**2. Chọn hai.** Ngoài các công cụ, hai thành phần nào được bài nhắc tới?
 
 A. Resources.
 
 B. Prompt templates.
 
-C. Tự động huấn luyện lại mọi model.
+C. Tự động huấn luyện lại mọi mô hình.
 
 D. Bảo đảm không cần kiểm tra kết quả.
 
@@ -42,7 +42,7 @@ B. Nối tất cả rồi bỏ mọi mô tả.
 
 C. Chỉ nhìn số server để đánh giá năng lực.
 
-D. Xác định khả năng cần cho workflow rồi chọn tích hợp tương ứng.
+D. Xác định khả năng cần cho quy trình làm việc rồi chọn tích hợp tương ứng.
 
 ## Đáp án
 
@@ -56,4 +56,4 @@ D. Xác định khả năng cần cho workflow rồi chọn tích hợp tương 
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Enhancements with MCP servers](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289231), sources/vertex-media/289231.json. MCP client tích hợp nhận server documents cung cấp conversion tool, ví dụ claude mcp add rồi kiểm tra với fixtures PDF/Word. Danh sách Sentry/Jira/Slack là ví dụ tích hợp; quyền gửi tin và ghi dữ liệu vẫn theo nhiệm vụ được giao. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Đã đọc toàn bộ phụ đề tiếng Anh của [Enhancements with MCP servers](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289231), sources/vertex-media/289231.json. MCP client tích hợp nhận server documents cung cấp conversion công cụ, ví dụ claude mcp add rồi kiểm tra với fixtures PDF/Word. Danh sách Sentry/Jira/Slack là ví dụ tích hợp; quyền gửi tin và ghi dữ liệu vẫn theo nhiệm vụ được giao. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.

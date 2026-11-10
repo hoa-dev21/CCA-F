@@ -2,7 +2,7 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/241929), sources/bedrock-lessons/241929.json. Tóm tắt và câu hỏi tự biên soạn; cloud configuration chi tiết đọc bổ trợ, không thay trọng tâm Exam Guide.
 
-## Tóm tắt
+## Nội dung bài học
 
 Bài mở đầu giới thiệu cấu trúc, lộ trình và đối tượng khóa học. Đây là phần định hướng chuẩn bị, không phải bằng chứng đã hoàn thành nội dung hoặc đạt kỹ năng triển khai.
 

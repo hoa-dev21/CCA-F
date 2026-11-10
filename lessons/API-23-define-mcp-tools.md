@@ -1,10 +1,10 @@
-# Defining tools with MCP — Mô tả hàm và tham số
+# Mô tả hàm và tham số
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287797), sources/api-lessons/287797.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
-Bài dùng Python SDK và decorator để khai báo tool đọc, sửa tài liệu. Type hints cùng mô tả tham số giúp SDK tạo schema, giảm phần mã khai báo lặp lại.
+Bài dùng Python SDK và decorator để khai báo công cụ đọc, sửa tài liệu. Type hints cùng mô tả tham số giúp SDK tạo bản mô tả cấu trúc dữ liệu, giảm phần mã khai báo lặp lại.
 
 Tên và description nêu chức năng. Tham số `doc_id` xác định tài liệu; với thao tác thay chuỗi, cần mô tả rõ chuỗi cũ phải khớp chính xác, kể cả khoảng trắng. Hợp đồng chi tiết giúp mô hình tạo lời gọi phù hợp.
 
@@ -14,7 +14,7 @@ Ví dụ dùng dictionary trong bộ nhớ để minh họa, không phải thi�
 
 ## Câu hỏi
 
-**1. Chọn một.** SDK tạo schema từ type hints có thay thế logic sửa tài liệu không?
+**1. Chọn một.** SDK tạo bản mô tả cấu trúc dữ liệu từ type hints có thay thế logic sửa tài liệu không?
 
 A. Có, mọi nghiệp vụ tự được sinh.
 
@@ -24,7 +24,7 @@ C. Không, hàm vẫn phải triển khai hành động thực tế.
 
 D. Không cần hàm nếu có description dài.
 
-**2. Chọn một.** Tool yêu cầu chuỗi khớp cả khoảng trắng. Nên mô tả ở đâu?
+**2. Chọn một.** Công cụ yêu cầu chuỗi khớp cả khoảng trắng. Nên mô tả ở đâu?
 
 A. Trong mô tả tham số liên quan.
 
@@ -56,8 +56,8 @@ D. Đọc tài liệu bất kỳ khác.
 
 ## Đối chiếu MCP trong khóa Bedrock
 
-Đã đọc [Defining tools with MCP](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276800), sources/bedrock-lessons/276800.json và đối chiếu với bài chung. Cùng decorator, type hints và Field tạo schema đọc/sửa tài liệu. Python replace trong ví dụ là thao tác đơn giản, không chứng minh uniqueness hay hợp đồng production. Dùng chung câu hỏi khái niệm tương đương, không đếm lặp.
+Đã đọc [Defining tools with MCP](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276800), sources/bedrock-lessons/276800.json và đối chiếu với bài chung. Cùng decorator, type hints và Field tạo bản mô tả cấu trúc dữ liệu đọc/sửa tài liệu. Python replace trong ví dụ là thao tác đơn giản, không chứng minh uniqueness hay hợp đồng production. Dùng chung câu hỏi khái niệm tương đương, không đếm lặp.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Defining tools with MCP](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289235), sources/vertex-lessons/289235.json. FastMCP decorator và typed arguments sinh schema; vẫn cần domain validation/authorization. edit_document dùng str.replace có thể thay mọi lần khớp, không báo khi old_str vắng; thêm guard nếu contract đòi một lần khớp duy nhất. Mẫu add_ints thiếu kiểu tham số không nên coi là schema đầy đủ đã kiểm thử. Dùng chung câu hỏi khái niệm.
+Đã đọc [Defining tools with MCP](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289235), sources/vertex-lessons/289235.json. FastMCP decorator và typed arguments sinh bản mô tả cấu trúc dữ liệu; vẫn cần domain validation/authorization. edit_document dùng str.replace có thể thay mọi lần khớp, không báo khi old_str vắng; thêm guard nếu quy định về dữ liệu và hành vi đòi một lần khớp duy nhất. Mẫu add_ints thiếu kiểu tham số không nên coi là bản mô tả cấu trúc dữ liệu đầy đủ đã kiểm thử. Dùng chung câu hỏi khái niệm.

@@ -2,7 +2,7 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287768), sources/api-lessons/287768.json. Tóm tắt/câu hỏi tự biên soạn. Nội dung chi tiết sản phẩm có thể thay đổi; không tuyên bố đã xác minh phiên bản triển khai hiện hành.
 
-## Tóm tắt
+## Nội dung bài học
 
 Bài minh họa gửi PDF trong document block, thay vì image block, với media type phù hợp. Có thể yêu cầu tóm tắt hoặc lấy dữ liệu từ nội dung tài liệu. PDF có thể chứa văn bản, bảng, hình và cấu trúc cần hiểu cùng nhau.
 
@@ -22,7 +22,7 @@ C. Chỉ tên file bất kỳ.
 
 D. Luôn image/png dù không đổi file.
 
-**2. Chọn một.** Model không trích được một trường. Có thể kết luận ngay nó không có trong PDF?
+**2. Chọn một.** Mô hình không trích được một trường. Có thể kết luận ngay nó không có trong PDF?
 
 A. Luôn có thể.
 
@@ -30,7 +30,7 @@ B. Có nếu output ngắn.
 
 C. Chưa; kiểm tra trang/bảng và khả năng đọc nguồn trước.
 
-D. Có nếu có citation bất kỳ.
+D. Có nếu có trích dẫn nguồn bất kỳ.
 
 **3. Chọn một.** Để kiểm tra bản trích xuất quan trọng nên làm gì?
 
@@ -56,8 +56,8 @@ D. Chỉ đánh giá văn phong.
 
 ## Bổ sung từ ghi chú khóa học chính thức
 
-Mục [PDF support](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289198) được đối chiếu qua ghi chú do trang khóa cung cấp cho trợ lý của khóa, key vertex, tiêu đề “PDF Support”; nguồn [trang khóa](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api). Bản lưu: sources/official-note-lessons/vertex-289198.json. Đây là ghi chú tóm tắt chính thức, không phải bản chép video đã xem. Ghi chú chuyển image block thành document với media_type application/pdf và gửi cùng prompt; có thể phân tích text/chart/table nhưng không bảo đảm mọi thành phần đọc đúng. Ví dụ không chứng minh mọi model/provider chấp nhận cùng kích thước/cách mã hóa; giữ citation và kiểm tra trang liên quan. Dùng chung câu hỏi khái niệm.
+Mục [PDF support](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289198) được đối chiếu qua ghi chú do trang khóa cung cấp cho trợ lý của khóa, key vertex, tiêu đề “PDF Support”; nguồn [trang khóa](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api). Bản lưu: sources/official-note-lessons/vertex-289198.json. Đây là ghi chú tóm tắt chính thức, không phải bản chép video đã xem. Ghi chú chuyển image block thành document với media_type application/pdf và gửi cùng prompt; có thể phân tích text/chart/table nhưng không bảo đảm mọi thành phần đọc đúng. Ví dụ không chứng minh mọi model/provider chấp nhận cùng kích thước/cách mã hóa; giữ trích dẫn nguồn và kiểm tra trang liên quan. Dùng chung câu hỏi khái niệm.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [PDF support](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289198), sources/vertex-media/289198.json. Ngoài notes đã review, phụ đề xác nhận ví dụ earth.pdf đổi image block sang document/media_type application/pdf và hỏi tóm tắt. Phân tích PDF có thể gồm text/chart/table nhưng không bảo đảm extraction đúng mọi thành phần, cần kiểm chứng theo nguồn. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Đã đọc toàn bộ phụ đề tiếng Anh của [PDF support](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289198), sources/vertex-media/289198.json. Ngoài notes đã kiểm tra, phụ đề xác nhận ví dụ earth.pdf đổi image block sang document/media_type application/pdf và hỏi tóm tắt. Phân tích PDF có thể gồm text/chart/table nhưng không bảo đảm extraction đúng mọi thành phần, cần kiểm chứng theo nguồn. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.

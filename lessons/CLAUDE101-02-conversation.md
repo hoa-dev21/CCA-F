@@ -2,13 +2,13 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101/383390), sources/claude101-lessons/383390.json (đã đọc text đầy đủ). Tóm tắt và câu hỏi tự biên soạn, không phải đề thi thật. Bài nền tảng, không thay cho mục tiêu kỹ thuật của Exam Guide.
 
-## Tóm tắt
+## Nội dung bài học
 
-Một prompt hữu ích nêu ba phần: bối cảnh/mục tiêu, nhiệm vụ cụ thể và quy tắc đầu ra. Đính kèm tài liệu liên quan giúp model làm việc với dữ liệu thật thay vì đoán tình huống.
+Một prompt hữu ích nêu ba phần: bối cảnh/mục tiêu, nhiệm vụ cụ thể và quy tắc đầu ra. Đính kèm tài liệu liên quan giúp mô hình làm việc với dữ liệu thật thay vì đoán tình huống.
 
 Dùng follow-up và phản hồi cụ thể để cải tiến: chỉ ra đoạn cần ngắn hơn, góc phân tích còn thiếu hoặc cách diễn đạt cần đổi. Khi hội thoại lệch nhiều, có thể khởi đầu rõ hơn trong chat mới.
 
-Bài đề cập memory và skills ở ứng dụng. Không suy từ memory sản phẩm rằng mỗi request Messages API tự giữ lịch sử; ở mẫu API đã học, ứng dụng phải truyền context. Giao diện cũ trong video có phần đã được khóa ghi chú là thay đổi, nên tập trung nguyên tắc giao tiếp.
+Bài đề cập memory và skills ở ứng dụng. Không suy từ memory sản phẩm rằng mỗi yêu cầu Messages API tự giữ lịch sử; ở mẫu API đã học, ứng dụng phải truyền ngữ cảnh. Giao diện cũ trong video có phần đã được khóa ghi chú là thay đổi, nên tập trung nguyên tắc giao tiếp.
 
 ## Câu hỏi
 
@@ -32,11 +32,11 @@ C. Xóa dữ liệu nguồn bất kể cần.
 
 D. Coi bản nháp là kết quả bắt buộc.
 
-**3. Chọn một.** Memory trên ứng dụng có chứng minh API request độc lập tự nhớ nhau không?
+**3. Chọn một.** Memory trên ứng dụng có chứng minh API yêu cầu độc lập tự nhớ nhau không?
 
 A. Có, mọi API dùng cùng cơ chế.
 
-B. Không; cần phân biệt giao diện và trách nhiệm quản lý context của API.
+B. Không; cần phân biệt giao diện và trách nhiệm quản lý ngữ cảnh của API.
 
 C. Có, nếu cùng API key.
 

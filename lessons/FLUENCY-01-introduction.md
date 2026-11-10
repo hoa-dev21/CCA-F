@@ -1,10 +1,10 @@
-# Introduction to AI Fluency — Học cách cộng tác
+# Học cách cộng tác
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291863), sources/fluency-lessons/291863.json. Tóm tắt tiếng Việt và câu hỏi tự biên soạn từ văn bản bài học.
 
 Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025), AI Fluency: Framework & Foundations; bản gốc và phần chuyển thể bài này theo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Đây là bản rút gọn/chuyển ngữ, có ví dụ và câu hỏi mới.
 
-## Tóm tắt
+## Nội dung bài học
 
 AI Fluency là năng lực cộng tác với AI hiệu quả, tiết kiệm công sức, có đạo đức và an toàn. Khóa học hướng tới kỹ năng bền vững thay vì chỉ ghi nhớ mẹo cho một phiên bản sản phẩm. Bốn năng lực gồm Delegation, Description, Discernment và Diligence.
 
@@ -20,7 +20,7 @@ A. Chỉ tốc độ gõ prompt.
 
 B. Đánh giá đầu ra và trách nhiệm sử dụng.
 
-C. Chỉ số lượng model đã thử.
+C. Chỉ số lượng mô hình đã thử.
 
 D. Độ dài tên dự án.
 

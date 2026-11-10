@@ -1,12 +1,12 @@
-# Being specific — Nêu tiêu chí và bước xử lý
+# Nêu tiêu chí và bước xử lý
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287740), sources/api-lessons/287740.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
 Bài phân biệt hai loại hướng dẫn: **đặc tính đầu ra** và **các bước xử lý**. Đặc tính đầu ra gồm độ dài, cấu trúc, nội dung phải có và giọng điệu. Các bước xử lý định hướng cách khảo sát vấn đề trước khi đưa kết quả.
 
-Ví dụ tự biên soạn: “Phân tích nguyên nhân doanh số giảm” có thể dẫn tới câu trả lời chỉ xem một yếu tố. Có thể yêu cầu xem dữ liệu thị trường, thay đổi nội bộ và phản hồi khách hàng, rồi tổng hợp các giả thuyết kèm căn cứ. Đồng thời xác định đầu ra cần có: giả thuyết, bằng chứng và thông tin còn thiếu.
+Ví dụ để dễ hình dung: “Phân tích nguyên nhân doanh số giảm” có thể dẫn tới câu trả lời chỉ xem một yếu tố. Có thể yêu cầu xem dữ liệu thị trường, thay đổi nội bộ và phản hồi khách hàng, rồi tổng hợp các giả thuyết kèm căn cứ. Đồng thời xác định đầu ra cần có: giả thuyết, bằng chứng và thông tin còn thiếu.
 
 Chọn mức chi tiết phù hợp. Tác vụ đơn giản có thể chỉ cần hợp đồng đầu ra rõ. Vấn đề nhiều yếu tố hưởng lợi từ các bước khảo sát. Mục đích là tăng bao phủ và tính nhất quán, không phải kéo dài prompt vô hạn.
 
@@ -42,13 +42,13 @@ B. Luôn sai cú pháp.
 
 C. Chưa xác định rõ tiêu chí đầu ra để kiểm tra.
 
-D. Là một schema bắt buộc.
+D. Là một bản mô tả cấu trúc dữ liệu bắt buộc.
 
 ## Đáp án
 
 1. **A.** B, C, D mô tả quá trình, không phải cấu trúc sản phẩm.
 2. **B.** A và D thay hình thức; C làm yêu cầu mơ hồ hơn.
-3. **C.** A và B không đúng; D nhầm lời hướng dẫn với schema.
+3. **C.** A và B không đúng; D nhầm lời hướng dẫn với bản mô tả cấu trúc dữ liệu.
 
 ## Đối chiếu Bedrock: Being specific
 

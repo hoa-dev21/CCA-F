@@ -2,13 +2,13 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101/383399), sources/claude101-lessons/383399.json, đã đọc văn bản gốc. Tóm tắt và câu hỏi tự biên soạn; không phải đề thi thật.
 
-## Tóm tắt
+## Nội dung bài học
 
-Research là quá trình điều tra nhiều bước: lập cách tìm, truy vấn nhiều nguồn, chọn hướng tiếp theo dựa trên phát hiện và tổng hợp có citations. Nó đổi thêm thời gian xử lý lấy độ bao quát, không nên dùng mặc định cho một dữ kiện đơn giản.
+Research là quá trình điều tra nhiều bước: lập cách tìm, truy vấn nhiều nguồn, chọn hướng tiếp theo dựa trên phát hiện và tổng hợp có các trích dẫn nguồn. Nó đổi thêm thời gian xử lý lấy độ bao quát, không nên dùng mặc định cho một dữ kiện đơn giản.
 
 Bài phân biệt: web search cho tra cứu cụ thể; Research cho điều tra nhiều góc; Thinking cho suy luận không cần thêm nguồn; Enterprise Search cho tri thức tổ chức. Lựa chọn phụ thuộc dữ liệu và độ sâu cần thiết.
 
-Prompt nghiên cứu nên nêu mục tiêu, phần báo cáo, phạm vi thời gian/địa lý và ràng buộc. Kết hợp dữ liệu nội bộ chỉ khi có nguồn kết nối và quyền. Kiểm tra citations của claim quan trọng thay vì coi một báo cáo dài tự chứng minh độ đúng.
+Prompt nghiên cứu nên nêu mục tiêu, phần báo cáo, phạm vi thời gian/địa lý và ràng buộc. Kết hợp dữ liệu nội bộ chỉ khi có nguồn kết nối và quyền. Kiểm tra các trích dẫn nguồn của claim quan trọng thay vì coi một báo cáo dài tự chứng minh độ đúng.
 
 ## Câu hỏi
 

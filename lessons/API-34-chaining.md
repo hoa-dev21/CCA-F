@@ -1,10 +1,10 @@
-# Chaining workflows — Chia bước theo phụ thuộc
+# Chia bước theo phụ thuộc
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287800), sources/api-lessons/287800.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
-Chaining chia tác vụ thành các bước tuần tự; kết quả bước trước được dùng cho bước sau. Có thể chèn xử lý bằng mã hoặc validation giữa các lần gọi model.
+Chaining chia tác vụ thành các bước tuần tự; kết quả bước trước được dùng cho bước sau. Có thể chèn xử lý bằng mã hoặc validation giữa các lần gọi mô hình.
 
 Bài minh họa tách tạo nội dung và sửa theo các ràng buộc cụ thể. Thay vì bắt một prompt vừa sáng tác vừa kiểm tra hàng loạt yêu cầu, lượt sau tập trung rà soát và sửa đầu ra đã có.
 
@@ -50,4 +50,4 @@ D. Tạo bản nháp rồi dùng lượt sửa tập trung vào quy tắc bị b
 
 ## Đối chiếu Vertex
 
-Đã đọc [Chaining workflows](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289239), sources/vertex-lessons/289239.json. Chuỗi bước phụ thuộc kết quả trước, có thể xen validation/non-LLM processing. Ví dụ tạo rồi sửa bài theo ràng buộc không cho phép tự đăng social media; quyền xuất bản và tác động ngoài cần theo nhiệm vụ được giao. Đánh giá thay đổi để biết lợi ích có đáng latency bổ sung. Dùng chung câu hỏi khái niệm.
+Đã đọc [Chaining workflows](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289239), sources/vertex-lessons/289239.json. Chuỗi bước phụ thuộc kết quả trước, có thể xen validation/non-LLM processing. Ví dụ tạo rồi sửa bài theo ràng buộc không cho phép tự đăng social media; quyền xuất bản và tác động ngoài cần theo nhiệm vụ được giao. Đánh giá thay đổi để biết lợi ích có đáng độ trễ bổ sung. Dùng chung câu hỏi khái niệm.

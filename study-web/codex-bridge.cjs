@@ -3,10 +3,24 @@ const readline = require('node:readline');
 const { EventEmitter } = require('node:events');
 const path = require('node:path');
 const fs = require('node:fs');
+const { createRequire } = require('node:module');
 function resolveCodex() {
   if (process.env.STUDY_CODEX_BIN) return process.env.STUDY_CODEX_BIN;
   if (process.platform !== 'win32') return 'codex';
-  for (const dir of (process.env.PATH || '').split(path.delimiter)) {const exe=path.join(dir,'codex.exe');if(fs.existsSync(exe))return exe;}
+  for (const entry of (process.env.PATH || '').split(path.delimiter)) {
+    const dir=entry.replace(/^"|"$/g,'');if(!dir)continue;
+    const exe=path.join(dir,'codex.exe');if(fs.existsSync(exe))return exe;
+    // npm exposes a .cmd/.ps1 shim; spawn the native binary without a shell.
+    const launcher=path.join(dir,'node_modules','@openai','codex','bin','codex.js');
+    if(fs.existsSync(launcher)){
+      const arch=process.arch==='arm64'?'aarch64':process.arch==='x64'?'x86_64':null;
+      if(!arch)continue;
+      const target=arch+'-pc-windows-msvc';
+      const roots=[path.join(path.dirname(launcher),'..','vendor')];
+      try {roots.unshift(path.join(path.dirname(createRequire(launcher).resolve('@openai/codex-win32-'+process.arch+'/package.json')),'vendor'));}catch{}
+      for(const root of roots){const binary=path.join(root,target,'bin','codex.exe');if(fs.existsSync(binary))return binary;}
+    }
+  }
   const releases=process.env.USERPROFILE&&path.join(process.env.USERPROFILE,'.codex','packages','standalone','releases');
   if(releases&&fs.existsSync(releases)){const candidates=fs.readdirSync(releases).filter(x=>/windows/.test(x)).sort((a,b)=>b.localeCompare(a,undefined,{numeric:true}));for(const release of candidates){const exe=path.join(releases,release,'bin','codex.exe');if(fs.existsSync(exe))return exe;}}
   return 'codex.exe';

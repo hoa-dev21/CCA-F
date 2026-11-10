@@ -1,18 +1,18 @@
-# Making a request — Adapter Converse
+# Adapter Converse
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276719), sources/bedrock-lessons/276719.json. Tóm tắt và câu hỏi tự biên soạn; cloud configuration chi tiết đọc bổ trợ, không thay trọng tâm Exam Guide.
 
-## Tóm tắt
+## Nội dung bài học
 
-Bài dùng boto3 Bedrock Runtime và Converse. Message có role, content là danh sách blocks; phản hồi mẫu nằm trong output.message. Không sao chép tên trường của Anthropic Messages API sang Converse mà không có adapter.
+Bài dùng boto3 Bedrock Runtime và Converse. Message có role, nội dung là danh sách blocks; phản hồi mẫu nằm trong output.message. Không sao chép tên trường của Anthropic Messages API sang Converse mà không có adapter.
 
-Model availability và định danh phụ thuộc môi trường/vùng. Inference profile trong bài hỗ trợ định tuyến theo cấu hình được phép, không có nghĩa bỏ qua mọi ràng buộc vùng, quyền hay residency. Cần kiểm tra model/profile đúng vùng và tài khoản thay vì chỉ sửa prompt khi lỗi dịch vụ báo không tìm thấy model.
+Mô hình availability và định danh phụ thuộc môi trường/vùng. Inference profile trong bài hỗ trợ định tuyến theo cấu hình được phép, không có nghĩa bỏ qua mọi ràng buộc vùng, quyền hay residency. Cần kiểm tra model/profile đúng vùng và tài khoản thay vì chỉ sửa prompt khi lỗi dịch vụ báo không tìm thấy mô hình.
 
-Ví dụ cơ bản lấy text block đầu để hiển thị. Khi dùng tools hoặc nhiều loại nội dung, giữ message đầy đủ cho logic và lịch sử. Định danh, region và SDK trong video phải xác minh trước khi chạy hiện tại.
+Ví dụ cơ bản lấy text block đầu để hiển thị. Khi dùng các công cụ hoặc nhiều loại nội dung, giữ message đầy đủ cho logic và lịch sử. Định danh, region và SDK trong video phải xác minh trước khi chạy hiện tại.
 
 ## Câu hỏi
 
-**1. Chọn một.** Đã chuyển sang Converse nhưng vẫn đọc response.content như API khác và lỗi. Sửa gì?
+**1. Chọn một.** Đã chuyển sang Converse nhưng vẫn đọc phản hồi.nội dung như API khác và lỗi. Sửa gì?
 
 A. Chỉ tăng temperature.
 
@@ -20,9 +20,9 @@ B. Chỉ đổi prompt.
 
 C. Bỏ xử lý phản hồi.
 
-D. Adapter theo cấu trúc request/response đúng provider.
+D. Adapter theo cấu trúc request/response đúng nhà cung cấp.
 
-**2. Chọn một.** Service báo model không tồn tại trong môi trường đã chọn. Kiểm tra trực tiếp?
+**2. Chọn một.** Service báo mô hình không tồn tại trong môi trường đã chọn. Kiểm tra trực tiếp?
 
 A. Model/profile ID, vùng hỗ trợ và quyền/cấu hình tài khoản.
 
@@ -46,6 +46,6 @@ D. Có, bất kể chính sách tổ chức.
 
 1. **D.** D sửa hợp đồng; A và B không đổi cấu trúc, C mất kết quả.
 
-2. **A.** A nhắm lỗi tích hợp; B, C, D không làm model có sẵn.
+2. **A.** A nhắm lỗi tích hợp; B, C, D không làm mô hình có sẵn.
 
 3. **B.** B giữ kiểm tra cấu hình; A, C, D suy rộng cơ chế định tuyến.

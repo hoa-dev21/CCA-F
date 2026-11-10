@@ -2,9 +2,9 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101/383393), sources/claude101-lessons/383393.json (đã đọc text đầy đủ). Tóm tắt và câu hỏi tự biên soạn, không phải đề thi thật. Bài nền tảng, không thay cho mục tiêu kỹ thuật của Exam Guide.
 
-## Tóm tắt
+## Nội dung bài học
 
-Projects tổ chức bối cảnh dài hạn: tài liệu tham chiếu, các chat liên quan và hướng dẫn dùng trong dự án. Phù hợp công việc tiếp diễn cần tái sử dụng cùng nguồn và quy ước. Project description giúp người quản lý hiểu mục đích, không nên giả định nó thay project instructions cho model.
+Projects tổ chức bối cảnh dài hạn: tài liệu tham chiếu, các chat liên quan và hướng dẫn dùng trong dự án. Phù hợp công việc tiếp diễn cần tái sử dụng cùng nguồn và quy ước. Dự án description giúp người quản lý hiểu mục đích, không nên giả định nó thay dự án instructions cho mô hình.
 
 Knowledge chứa thông tin; instructions nêu cách phản hồi và yêu cầu. Giữ tài liệu cập nhật, đặt tên có nghĩa và tham chiếu đúng nguồn giúp truy xuất. Khi dữ liệu lớn, hệ thống có thể truy xuất phần liên quan thay vì tải mọi tài liệu cùng lúc.
 
@@ -18,13 +18,13 @@ A. Chỉ rút ngắn tên file.
 
 B. Bỏ guide khỏi mọi chat.
 
-C. Đưa tài liệu vào knowledge của project và dùng instructions phù hợp.
+C. Đưa tài liệu vào knowledge của dự án và dùng instructions phù hợp.
 
 D. Chỉ viết mục đích ở tên tài khoản.
 
-**2. Chọn một.** Muốn mọi chat trong project dùng một mẫu phản hồi. Nên đặt ở đâu?
+**2. Chọn một.** Muốn mọi chat trong dự án dùng một mẫu phản hồi. Nên đặt ở đâu?
 
-A. Project instructions.
+A. Dự án instructions.
 
 B. Chỉ description cho người xem.
 
@@ -38,13 +38,13 @@ A. Thêm mọi người quyền sửa bất kể cần.
 
 B. Rà soát/cập nhật knowledge và phân biệt phiên bản.
 
-C. Chỉ yêu cầu model tự tin hơn.
+C. Chỉ yêu cầu mô hình tự tin hơn.
 
 D. Không cần quản lý nguồn.
 
 ## Đáp án
 
-1. **C.** C tái sử dụng nguồn và quy tắc; A không chia sẻ context, B bỏ nguồn, D sai nơi.
+1. **C.** C tái sử dụng nguồn và quy tắc; A không chia sẻ ngữ cảnh, B bỏ nguồn, D sai nơi.
 
 2. **A.** A là bề mặt hướng dẫn; B không thay instructions, C và D không xác định hành vi.
 

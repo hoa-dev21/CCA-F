@@ -1,18 +1,18 @@
-# Code based grading — Chấm bằng mã chương trình
+# Chấm bằng mã chương trình
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287737), bản nội dung sources/api-lessons/287737.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
-Code grader phù hợp với các điều kiện kiểm tra được bằng chương trình. Trong bài, JSON được parse bằng `json.loads`, Python được kiểm tra cú pháp qua `ast.parse`, regex được biên dịch bằng `re.compile`.
+Code bộ chấm điểm phù hợp với các điều kiện kiểm tra được bằng chương trình. Trong bài, JSON được parse bằng `json.loads`, Python được kiểm tra cú pháp qua `ast.parse`, regex được biên dịch bằng `re.compile`.
 
-Dataset có trường `format` để chọn đúng validator. Đầu ra JSON phải được kiểm tra như JSON; một chuỗi hợp lệ ở định dạng khác không đáp ứng hợp đồng đầu ra.
+Bộ dữ liệu có trường `format` để chọn đúng validator. Đầu ra JSON phải được kiểm tra như JSON; một chuỗi hợp lệ ở định dạng khác không đáp ứng hợp đồng đầu ra.
 
-Điểm mấu chốt: **parse được không đồng nghĩa làm đúng tác vụ**. Python đúng cú pháp có thể thực hiện phép tính sai; regex biên dịch được có thể khớp nhầm chuỗi. Bài kết hợp code grader với model grader để kiểm tra cả hình thức và nội dung.
+Điểm mấu chốt: **parse được không đồng nghĩa làm đúng tác vụ**. Python đúng cú pháp có thể thực hiện phép tính sai; regex biên dịch được có thể khớp nhầm chuỗi. Bài kết hợp code bộ chấm điểm với mô hình bộ chấm điểm để kiểm tra cả hình thức và nội dung.
 
 Mẫu tính trung bình hai điểm là một lựa chọn minh họa. Trọng số có thể điều chỉnh theo yêu cầu ứng dụng; không mặc định điểm trung bình cao khiến một lỗi cú pháp bắt buộc được chấp nhận.
 
-Ví dụ tự biên soạn: hệ thống nhận regex phải lọc mã hợp lệ. Cần phân biệt kiểm tra biên dịch regex và kiểm tra nó chấp nhận, từ chối đúng các mẫu dữ liệu.
+Ví dụ để dễ hình dung: hệ thống nhận regex phải lọc mã hợp lệ. Cần phân biệt kiểm tra biên dịch regex và kiểm tra nó chấp nhận, từ chối đúng các mẫu dữ liệu.
 
 ## Câu hỏi
 
@@ -54,8 +54,8 @@ D. Mọi trường hợp phải đạt 10.
 
 ## Đối chiếu Bedrock
 
-Đã đọc và đối chiếu [Code based grading](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276735), sources/bedrock-lessons/276735.json. Dùng chung bản tóm tắt và câu hỏi về phương pháp eval vì các mục tiêu chính tương đương. Mã gọi provider vẫn cần adapter Converse phù hợp; ví dụ prefill/stop sequence và tên model không được coi là hỗ trợ hiện hành đã xác minh. Không tính lại một bộ câu hỏi mới cho cùng nội dung.
+Đã đọc và đối chiếu [Code based grading](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276735), sources/bedrock-lessons/276735.json. Dùng chung bản tóm tắt và câu hỏi về phương pháp phép đánh giá vì các mục tiêu chính tương đương. Mã gọi nhà cung cấp vẫn cần adapter Converse phù hợp; ví dụ prefill/stop sequence và tên mô hình không được coi là hỗ trợ hiện hành đã xác minh. Không tính lại một bộ câu hỏi mới cho cùng nội dung.
 
 ## Đối chiếu Vertex
 
-Nguồn [Code based grading](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289167), sources/vertex-lessons/289167.json. Đã so sánh toàn văn chuẩn hóa với nguồn API287737: chỉ khác cách diễn đạt upfront/ahead of time và average/take the average. Dùng chung kiến thức code-based grading, không đếm câu hỏi trùng.
+Nguồn [Code based grading](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289167), sources/vertex-lessons/289167.json. Đã so sánh toàn văn chuẩn hóa với nguồn API287737: chỉ khác cách diễn đạt upfront/ahead of time và average/take the average. Dùng chung kiến thức code-based việc chấm điểm, không đếm câu hỏi trùng.

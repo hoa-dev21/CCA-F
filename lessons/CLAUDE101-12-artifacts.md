@@ -2,7 +2,7 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101/383394), sources/claude101-lessons/383394.json, đã đọc văn bản đầy đủ. Tóm tắt/câu hỏi tự biên soạn, không phải đề thi thật.
 
-## Tóm tắt
+## Nội dung bài học
 
 Artifact là đầu ra độc lập để xem, chỉnh và dùng lại, như tài liệu, deck, prototype hoặc dashboard. Khác một câu trả lời nằm trong chat, artifact có bề mặt thao tác riêng; khác file creation, nó không chỉ là một tệp tải về để mở ứng dụng khác.
 

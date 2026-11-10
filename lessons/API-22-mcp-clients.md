@@ -1,12 +1,12 @@
-# MCP clients — Khám phá và gọi công cụ
+# Khám phá và gọi công cụ
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287775), sources/api-lessons/287775.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
-MCP client là cầu nối giao tiếp với MCP server. Hai hoạt động quan trọng là **liệt kê công cụ** và **gọi công cụ**. Liệt kê cung cấp định nghĩa để ứng dụng đưa vào request cho Claude; gọi công cụ yêu cầu server thực thi tên và đối số đã chọn.
+MCP client là cầu nối giao tiếp với MCP server. Hai hoạt động quan trọng là **liệt kê công cụ** và **gọi công cụ**. Liệt kê cung cấp định nghĩa để ứng dụng đưa vào yêu cầu cho Claude; gọi công cụ yêu cầu server thực thi tên và đối số đã chọn.
 
-Luồng trong bài: người dùng hỏi → ứng dụng lấy danh sách tools qua client → gửi câu hỏi và tools cho Claude → nhận tool request → client chuyển yêu cầu sang server → server gọi dịch vụ → kết quả về ứng dụng → gửi lại Claude để tạo câu trả lời.
+Luồng trong bài: người dùng hỏi → ứng dụng lấy danh sách các công cụ qua client → gửi câu hỏi và các công cụ cho Claude → nhận yêu cầu gọi công cụ → client chuyển yêu cầu sang server → server gọi dịch vụ → kết quả về ứng dụng → gửi lại Claude để tạo câu trả lời.
 
 Lấy danh sách không thực thi công cụ. Gọi công cụ cũng chưa tự tạo câu trả lời cuối: ứng dụng vẫn cần nối kết quả vào hội thoại.
 
@@ -18,21 +18,21 @@ Bài đề cập khả năng dùng nhiều phương thức giao tiếp. Phần �
 
 A. Tự đoán từ tên dịch vụ.
 
-B. Yêu cầu liệt kê tools.
+B. Yêu cầu liệt kê các công cụ.
 
 C. Tạo câu trả lời cuối ngay.
 
 D. Gửi kết quả giả.
 
-**2. Chọn một.** Claude đã yêu cầu một tool. Bước nào nối tới MCP server?
+**2. Chọn một.** Claude đã yêu cầu một công cụ. Bước nào nối tới MCP server?
 
-A. Chỉ hiển thị tên tool.
+A. Chỉ hiển thị tên công cụ.
 
 B. Xóa các đối số.
 
 C. Đổi tên câu hỏi.
 
-D. Client gửi yêu cầu gọi tool với tên và đối số.
+D. Client gửi yêu cầu gọi công cụ với tên và đối số.
 
 **3. Chọn một.** Server đã trả dữ liệu. Điều gì cần để Claude dùng dữ liệu ấy?
 
@@ -40,15 +40,15 @@ A. Ứng dụng gửi kết quả vào lượt hội thoại tiếp theo.
 
 B. Chỉ giữ trong log mà không gửi.
 
-C. Không cần làm gì vì đã liệt kê tools.
+C. Không cần làm gì vì đã liệt kê các công cụ.
 
-D. Đổi schema thành câu trả lời của người dùng.
+D. Đổi bản mô tả cấu trúc dữ liệu thành câu trả lời của người dùng.
 
 ## Đáp án
 
 1. **B.** A không đáng tin; C chưa có dữ liệu; D tạo thông tin giả.
 2. **D.** A không thực thi; B bỏ thông tin đầu vào; C không liên quan lớp tích hợp.
-3. **A.** B không đưa dữ liệu vào context; C nhầm khám phá với trả kết quả; D nhầm định nghĩa và dữ liệu.
+3. **A.** B không đưa dữ liệu vào ngữ cảnh; C nhầm khám phá với trả kết quả; D nhầm định nghĩa và dữ liệu.
 
 ## Đối chiếu khóa MCP riêng
 
@@ -60,4 +60,4 @@ D. Đổi schema thành câu trả lời của người dùng.
 
 ## Đối chiếu Vertex
 
-Đã đọc [MCP clients](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289204), sources/vertex-lessons/289204.json. Mạch list_tools -> model tool_use -> call_tool -> result -> model. Stdio và HTTP là các lựa chọn cần theo specification/implementation; WebSocket trong lời kể không được mặc định là transport tiêu chuẩn có sẵn ở mọi client. Dùng chung câu hỏi khái niệm.
+Đã đọc [MCP clients](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289204), sources/vertex-lessons/289204.json. Mạch list_tools -> mô hình tool_use -> call_tool -> result -> mô hình. Stdio và HTTP là các lựa chọn cần theo specification/implementation; WebSocket trong lời kể không được mặc định là transport tiêu chuẩn có sẵn ở mọi client. Dùng chung câu hỏi khái niệm.

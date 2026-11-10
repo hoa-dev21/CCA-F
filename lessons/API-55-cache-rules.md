@@ -2,7 +2,7 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287770), sources/api-lessons/287770.json. Tóm tắt/câu hỏi tự biên soạn. Nội dung chi tiết sản phẩm có thể thay đổi; không tuyên bố đã xác minh phiên bản triển khai hiện hành.
 
-## Tóm tắt
+## Nội dung bài học
 
 Bài mô tả breakpoint để chọn phần prefix có thể tái sử dụng. Ở mẫu thủ công, marker cache_control nằm trên block; nội dung trước và tại breakpoint phải đáp ứng điều kiện khớp của dịch vụ. Nội dung thay đổi sau đó vẫn cần xử lý riêng.
 
@@ -12,7 +12,7 @@ TTL, ngưỡng token, số breakpoint và cơ chế bật tự động/thủ cô
 
 ## Câu hỏi
 
-**1. Chọn một.** Phần tài liệu ổn định bị chèn dữ liệu thay đổi ở đầu mỗi request. Nên xem xét gì?
+**1. Chọn một.** Phần tài liệu ổn định bị chèn dữ liệu thay đổi ở đầu mỗi yêu cầu. Nên xem xét gì?
 
 A. Đổi font.
 
@@ -32,7 +32,7 @@ C. Vì output luôn bằng input.
 
 D. Vì đó là cách xác minh đúng duy nhất.
 
-**3. Chọn một.** Có thể áp ngưỡng/TTL trong video cho mọi model hiện tại không?
+**3. Chọn một.** Có thể áp ngưỡng/TTL trong video cho mọi mô hình hiện tại không?
 
 A. Có, luôn bất biến.
 
@@ -56,4 +56,4 @@ D. Có, không cần usage.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Rules of prompt caching](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289194), sources/vertex-lessons/289194.json. Mẫu cache_control ephemeral, thứ tự tools/system/messages và prefix giống hệt. TTL/ngưỡng1024/sốbreakpoints trong video là cấu hình theo thời điểm; không thêm nội dung vô nghĩa để vượt ngưỡng. Breakpoint ở tool không tự cache system phía sau. Dùng chung câu hỏi khái niệm.
+Đã đọc [Rules of prompt caching](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289194), sources/vertex-lessons/289194.json. Mẫu cache_control ephemeral, thứ tự tools/system/messages và prefix giống hệt. TTL/ngưỡng1024/sốbreakpoints trong video là cấu hình theo thời điểm; không thêm nội dung vô nghĩa để vượt ngưỡng. Breakpoint ở công cụ không tự cache system phía sau. Dùng chung câu hỏi khái niệm.

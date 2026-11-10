@@ -2,13 +2,13 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287777), sources/api-lessons/287777.json. Tóm tắt/câu hỏi tự biên soạn. Nội dung chi tiết sản phẩm có thể thay đổi; không tuyên bố đã xác minh phiên bản triển khai hiện hành.
 
-## Tóm tắt
+## Nội dung bài học
 
-Files API trong bài cho phép upload và tham chiếu file bằng ID thay vì nhúng lại toàn bộ bytes mỗi lần. Code execution là server tool; ứng dụng vẫn quản lý đầu vào, kết quả và file sinh ra.
+Files API trong bài cho phép upload và tham chiếu file bằng ID thay vì nhúng lại toàn bộ bytes mỗi lần. Code execution là server công cụ; ứng dụng vẫn quản lý đầu vào, kết quả và file sinh ra.
 
 Luồng mẫu: upload CSV, đưa tham chiếu phù hợp vào môi trường thực thi, yêu cầu phân tích, đọc code/results và lấy output file theo ID. Không nhầm file ID với việc nội dung chắc chắn đã được đưa vào đúng container hoặc đã phân tích thành công.
 
-Giới hạn network, loại runtime và schema version trong video là thuộc tính phiên bản, phải kiểm tra trước triển khai. Với phân tích dữ liệu, kiểm tra phép tính và sản phẩm sinh ra chứ không chỉ chấp nhận lời tóm tắt.
+Giới hạn network, loại runtime và bản mô tả cấu trúc dữ liệu version trong video là thuộc tính phiên bản, phải kiểm tra trước triển khai. Với phân tích dữ liệu, kiểm tra phép tính và sản phẩm sinh ra chứ không chỉ chấp nhận lời tóm tắt.
 
 ## Câu hỏi
 
@@ -18,13 +18,13 @@ A. Có, ID là báo cáo.
 
 B. Có, upload tự chạy mọi code.
 
-C. Có, không cần tool.
+C. Có, không cần công cụ.
 
 D. Không; còn đưa file vào luồng phù hợp, chạy và kiểm tra kết quả.
 
-**2. Chọn một.** Code execution thuộc loại tool nào theo bài?
+**2. Chọn một.** Code execution thuộc loại công cụ nào theo bài?
 
-A. Server tool, không cần ứng dụng tự triển khai runtime mẫu đó.
+A. Server công cụ, không cần ứng dụng tự triển khai runtime mẫu đó.
 
 B. Luôn là hàm local do user viết.
 
@@ -32,7 +32,7 @@ C. Chỉ text không thực thi.
 
 D. Chỉ tên file.
 
-**3. Chọn một.** Model sinh biểu đồ để tải về. Cần xử lý gì?
+**3. Chọn một.** Mô hình sinh biểu đồ để tải về. Cần xử lý gì?
 
 A. Chỉ tin thông báo.
 

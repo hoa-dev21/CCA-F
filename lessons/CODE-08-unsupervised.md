@@ -1,16 +1,16 @@
-# Verifying Unsupervised Runs — Kiểm chứng phiên tự chạy
+# Kiểm chứng phiên tự chạy
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-code-in-action/486938), sources/code-lessons/486938.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
-Càng ít quan sát quá trình, càng cần tái dựng bằng chứng sau khi chạy. Bắt đầu từ diff và trạng thái thật thay vì bản tóm tắt của agent. Xem các file nằm trong kế hoạch, rồi tìm thay đổi ngoài phạm vi.
+Càng ít quan sát quá trình, càng cần tái dựng bằng chứng sau khi chạy. Bắt đầu từ diff và trạng thái thật thay vì bản tóm tắt của tác nhân AI. Xem các file nằm trong kế hoạch, rồi tìm thay đổi ngoài phạm vi.
 
 Chạy test và quan sát kết quả thực tế. Hook có thể biến kiểm thử thành gate thay vì một lời hứa trong prompt. Với headless, xem cả kết quả JSON và exit code; một trong hai riêng lẻ có thể chưa đủ để xác nhận toàn bộ yêu cầu.
 
-Review độc lập bằng phiên mới có thể tìm lỗi mà người viết đã bỏ qua, nhưng không thay phép kiểm tra thực thi. Guardrail quyền kiểm tra hành động, không xác nhận code đúng.
+Kiểm tra độc lập bằng phiên mới có thể tìm lỗi mà người viết đã bỏ qua, nhưng không thay phép kiểm tra thực thi. Guardrail quyền kiểm tra hành động, không xác nhận code đúng.
 
-Ví dụ tự biên soạn: agent báo hoàn tất refactor nhưng sửa thêm một file triển khai. Dù test unit xanh, vẫn cần xem thay đổi ngoài phạm vi và kiểm tra phù hợp trước khi chấp nhận.
+Ví dụ để dễ hình dung: tác nhân AI báo hoàn tất refactor nhưng sửa thêm một file triển khai. Dù test unit xanh, vẫn cần xem thay đổi ngoài phạm vi và kiểm tra phù hợp trước khi chấp nhận.
 
 ## Câu hỏi
 
@@ -18,13 +18,13 @@ Ví dụ tự biên soạn: agent báo hoàn tất refactor nhưng sửa thêm m
 
 A. Chỉ đọc lại tóm tắt.
 
-B. Chỉ yêu cầu agent tự tin hơn.
+B. Chỉ yêu cầu tác nhân AI tự tin hơn.
 
 C. Diff thực tế, gồm cả thay đổi ngoài kế hoạch.
 
 D. Chỉ đếm số commit.
 
-**2. Chọn một.** Agent nói “đã chạy test” nhưng không có kết quả ghi lại. Kết luận phù hợp?
+**2. Chọn một.** Tác nhân AI nói “đã chạy test” nhưng không có kết quả ghi lại. Kết luận phù hợp?
 
 A. Cần chạy/quan sát gate thực tế; lời tuyên bố chưa đủ bằng chứng.
 
@@ -34,7 +34,7 @@ C. Bỏ test vì đã có kiểm tra quyền.
 
 D. Chỉ sửa tài liệu để ghi pass.
 
-**3. Chọn một.** Reviewer độc lập có vai trò nào?
+**3. Chọn một.** Người kiểm tra độc lập có vai trò nào?
 
 A. Bảo đảm không cần test.
 

@@ -1,8 +1,8 @@
-# Being clear and direct — Giao nhiệm vụ rõ ràng
+# Giao nhiệm vụ rõ ràng
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287744), sources/api-lessons/287744.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
 Mở đầu prompt bằng việc Claude cần thực hiện. Dùng ngôn ngữ đơn giản, động từ hành động và mô tả sản phẩm mong muốn, thay vì kể dài về chủ đề rồi để mô hình đoán nhiệm vụ.
 
@@ -10,7 +10,7 @@ Mở đầu prompt bằng việc Claude cần thực hiện. Dùng ngôn ngữ �
 
 Bài minh họa bằng việc thay câu hỏi mơ hồ về ăn uống thành yêu cầu tạo thực đơn một ngày, có đối tượng và ràng buộc. Mức tăng điểm trong ví dụ là kết quả của ví dụ ấy, không phải mức tăng được bảo đảm cho ứng dụng khác.
 
-Đây là kỹ thuật diễn đạt nhiệm vụ, không phải quy định mọi câu hỏi đều sai. Với prompt dùng trong ứng dụng, mục tiêu là giảm cách hiểu khác nhau và kiểm chứng bằng eval.
+Đây là kỹ thuật diễn đạt nhiệm vụ, không phải quy định mọi câu hỏi đều sai. Với prompt dùng trong ứng dụng, mục tiêu là giảm cách hiểu khác nhau và kiểm chứng bằng phép đánh giá.
 
 ## Câu hỏi
 

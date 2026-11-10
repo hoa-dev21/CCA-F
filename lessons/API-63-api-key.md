@@ -2,9 +2,9 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/296766), sources/api-lessons/296766.json. Bản tóm tắt văn bản và câu hỏi tự biên soạn; không phải xác nhận đã chạy bài thực hành.
 
-## Tóm tắt
+## Nội dung bài học
 
-Bài hướng dẫn người học tạo khóa trong console, chọn workspace/tên và giữ secret để dùng ở bài request tiếp theo. Đây là bước chuẩn bị thực hành, không phải kiến thức cần ưu tiên cho Exam Guide Architect.
+Bài hướng dẫn người học tạo khóa trong console, chọn workspace/tên và giữ secret để dùng ở bài yêu cầu tiếp theo. Đây là bước chuẩn bị thực hành, không phải kiến thức cần ưu tiên cho Exam Guide Architect.
 
 Bản tóm tắt không thực hiện tạo, xóa hay sao chép khóa thay người học. Giao diện console và lựa chọn xác thực có thể thay đổi; dùng hướng dẫn chính thức của môi trường thực tế khi cần.
 

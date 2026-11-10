@@ -2,9 +2,9 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287772), sources/api-lessons/287772.json. Tóm tắt/câu hỏi tự biên soạn. Nội dung chi tiết sản phẩm có thể thay đổi; không tuyên bố đã xác minh phiên bản triển khai hiện hành.
 
-## Tóm tắt
+## Nội dung bài học
 
-Caching tái sử dụng phần xử lý của nội dung đầu vào lặp lại, nhằm giảm độ trễ/chi phí ở trường hợp phù hợp. Nó không phải lưu câu trả lời cuối để trả nguyên bản và không thay trách nhiệm gửi context của ứng dụng.
+Caching tái sử dụng phần xử lý của nội dung đầu vào lặp lại, nhằm giảm độ trễ/chi phí ở trường hợp phù hợp. Nó không phải lưu câu trả lời cuối để trả nguyên bản và không thay trách nhiệm gửi ngữ cảnh của ứng dụng.
 
 Khóa minh họa lợi ích khi hỏi nhiều câu về cùng tài liệu hoặc dùng tool/system prompt ổn định. Cần nội dung thực sự có thể tái sử dụng và phép đo usage. Không suy ra “nội dung gần giống” luôn cache hit.
 
@@ -20,9 +20,9 @@ B. Phần xử lý đầu vào có thể tái sử dụng.
 
 C. Quyền đăng nhập.
 
-D. Mọi lỗi backend.
+D. Mọi lỗi hệ thống xử lý phía máy chủ.
 
-**2. Chọn một.** Cache có thay việc truyền context cần thiết không?
+**2. Chọn một.** Cache có thay việc truyền ngữ cảnh cần thiết không?
 
 A. Có, không cần messages.
 
@@ -34,11 +34,11 @@ D. Có, chỉ cần cùng API key.
 
 **3. Chọn một.** Tác vụ nào là ứng viên đáng đo lợi ích cache?
 
-A. Nhiều request dùng cùng tài liệu dài ổn định.
+A. Nhiều yêu cầu dùng cùng tài liệu dài ổn định.
 
-B. Mỗi request hoàn toàn khác nguồn.
+B. Mỗi yêu cầu hoàn toàn khác nguồn.
 
-C. Chỉ một request nhỏ rồi không lặp.
+C. Chỉ một yêu cầu nhỏ rồi không lặp.
 
 D. Không gửi dữ liệu.
 

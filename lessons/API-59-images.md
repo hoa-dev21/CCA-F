@@ -2,7 +2,7 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287778), sources/api-lessons/287778.json. Tóm tắt/câu hỏi tự biên soạn. Nội dung chi tiết sản phẩm có thể thay đổi; không tuyên bố đã xác minh phiên bản triển khai hiện hành.
 
-## Tóm tắt
+## Nội dung bài học
 
 Ảnh được đưa vào message cùng text hướng dẫn để yêu cầu mô tả, so sánh hoặc phân tích. Bài khuyến khích tiêu chí rõ, ví dụ và chia nhiệm vụ thay vì một câu quá mơ hồ.
 
@@ -14,7 +14,7 @@ Vision nằm ngoài phạm vi Exam Guide Architect đã tải. Không dùng ví 
 
 **1. Chọn một.** Ảnh phức tạp và câu hỏi quá chung cho kết quả yếu. Cải thiện theo bài?
 
-A. Chỉ yêu cầu model chắc chắn.
+A. Chỉ yêu cầu mô hình chắc chắn.
 
 B. Bỏ ảnh.
 
@@ -22,7 +22,7 @@ C. Không nêu mục tiêu.
 
 D. Nêu tiêu chí, phạm vi và ví dụ phù hợp rồi kiểm tra kết quả.
 
-**2. Chọn một.** Model đếm lại hai cách và cho cùng số. Có chắc thay được mọi xác minh không?
+**2. Chọn một.** Mô hình đếm lại hai cách và cho cùng số. Có chắc thay được mọi xác minh không?
 
 A. Không; đó vẫn có thể là lỗi tương quan, cần kiểm chứng phù hợp mục tiêu.
 
@@ -56,4 +56,4 @@ D. Chỉ học giới hạn ảnh trong video.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Image support](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289203), sources/vertex-lessons/289203.json. Mẫu Messages image base64/media_type/data; ví dụ đếm bi và rubric ảnh vệ tinh minh họa giá trị của hướng dẫn cụ thể. Số ảnh/MB/pixel/token formula trong video không là giới hạn universal hiện hành; mô tả fire risk không đủ thay đánh giá chuyên môn. Tách quan sát được khỏi suy đoán, kiểm tra ca khó và uncertainty. Dùng chung câu hỏi khái niệm.
+Đã đọc [Image support](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289203), sources/vertex-lessons/289203.json. Mẫu Messages image base64/media_type/data; ví dụ đếm bi và bảng tiêu chí chấm điểm ảnh vệ tinh minh họa giá trị của hướng dẫn cụ thể. Số ảnh/MB/pixel/token formula trong video không là giới hạn universal hiện hành; mô tả fire risk không đủ thay đánh giá chuyên môn. Tách quan sát được khỏi suy đoán, kiểm tra ca khó và uncertainty. Dùng chung câu hỏi khái niệm.

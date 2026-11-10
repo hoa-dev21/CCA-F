@@ -2,17 +2,17 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101/383389), sources/claude101-lessons/383389.json (đã đọc text đầy đủ). Tóm tắt và câu hỏi tự biên soạn, không phải đề thi thật. Bài nền tảng, không thay cho mục tiêu kỹ thuật của Exam Guide.
 
-## Tóm tắt
+## Nội dung bài học
 
-Claude hỗ trợ viết, phân tích, lập trình, học tập và giải quyết vấn đề theo hướng cộng tác. Người dùng cung cấp bối cảnh và chuyên môn; model không thay thế mọi kiểm chứng.
+Claude hỗ trợ viết, phân tích, lập trình, học tập và giải quyết vấn đề theo hướng cộng tác. Người dùng cung cấp bối cảnh và chuyên môn; mô hình không thay thế mọi kiểm chứng.
 
-Bài phân biệt ứng dụng hội thoại với các giao diện khác như Claude Code cho thao tác phát triển. Chọn giao diện theo công việc cần làm, không coi việc cùng mang tên Claude là có cùng quyền hoặc cách quản lý trạng thái. Chi tiết plan, model và giới hạn sản phẩm trong bài có thể thay đổi; phần ôn nhanh giữ khái niệm thay vì học thuộc con số.
+Bài phân biệt ứng dụng hội thoại với các giao diện khác như Claude Code cho thao tác phát triển. Chọn giao diện theo công việc cần làm, không coi việc cùng mang tên Claude là có cùng quyền hoặc cách quản lý trạng thái. Chi tiết plan, mô hình và giới hạn sản phẩm trong bài có thể thay đổi; phần ôn nhanh giữ khái niệm thay vì học thuộc con số.
 
 Đây là bài định hướng. Các chi tiết Constitutional AI và nội tại huấn luyện không phải trọng tâm Exam Guide Architect đã tải.
 
 ## Câu hỏi
 
-**1. Chọn một.** Cần trợ giúp lập trình có đọc/sửa file và chạy lệnh trong workflow phát triển. Giao diện nào được bài giới thiệu phù hợp?
+**1. Chọn một.** Cần trợ giúp lập trình có đọc/sửa file và chạy lệnh trong quy trình làm việc phát triển. Giao diện nào được bài giới thiệu phù hợp?
 
 A. Chỉ chat không có tích hợp dù cần thực thi.
 
@@ -20,7 +20,7 @@ B. Claude Code với cấu hình/quyền phù hợp.
 
 C. Chỉ một ảnh chụp.
 
-D. Chỉ tên model.
+D. Chỉ tên mô hình.
 
 **2. Chọn một.** Vai trò người dùng trong cộng tác là gì?
 
@@ -44,7 +44,7 @@ D. Không cần đọc mục tiêu kỹ thuật.
 
 ## Đáp án
 
-1. **B.** B đáp ứng loại công việc; A chưa có công cụ thực thi, C và D không tạo workflow.
+1. **B.** B đáp ứng loại công việc; A chưa có công cụ thực thi, C và D không tạo quy trình làm việc.
 
 2. **C.** C bổ sung điểm mạnh người; A thiếu dữ liệu, B bỏ đánh giá, D không quyết định chất lượng.
 

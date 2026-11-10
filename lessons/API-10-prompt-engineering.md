@@ -1,8 +1,8 @@
-# Prompt engineering — Cải tiến có kiểm chứng
+# Cải tiến có kiểm chứng
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287745), sources/api-lessons/287745.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
 Chu trình của bài: xác định mục tiêu → viết prompt ban đầu → đánh giá → áp dụng một kỹ thuật → đánh giá lại. Không mặc định thay đổi nào cũng làm chất lượng tăng; giữ thay đổi khi kết quả đo ủng hộ nó.
 
@@ -16,13 +16,13 @@ Từ khóa: **iterative refinement** — cải tiến lặp; **evaluation criter
 
 ## Câu hỏi
 
-**1. Chọn một.** Nhóm đổi cách diễn đạt, thêm ví dụ và thay grader cùng lúc. Vì sao khó kết luận?
+**1. Chọn một.** Nhóm đổi cách diễn đạt, thêm ví dụ và thay bộ chấm điểm cùng lúc. Vì sao khó kết luận?
 
 A. Không xác định được yếu tố nào tạo ra thay đổi điểm.
 
 B. Prompt không được chứa ví dụ.
 
-C. Grader không được đọc đầu ra.
+C. Bộ chấm điểm không được đọc đầu ra.
 
 D. Mọi điểm số đều vô nghĩa.
 
@@ -32,7 +32,7 @@ A. Chỉ tăng số lần chạy.
 
 B. Xem lỗi, sửa chỉ dẫn liên quan và đo lại.
 
-C. Đổi tên dataset.
+C. Đổi tên bộ dữ liệu.
 
 D. Gán điểm cao hơn.
 
@@ -52,9 +52,9 @@ D. Loại bỏ nhu cầu chấm điểm.
 2. **B.** A không sửa nguyên nhân; C không đổi hành vi; D làm sai số đo.
 3. **C.** A và B suy rộng quá bao phủ; D bỏ phép đo cần thiết.
 
-## Đối chiếu Bedrock: Prompt engineering
+## Đối chiếu Bedrock: Kỹ thuật viết yêu cầu cho AI
 
-Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276749) và đối chiếu khái niệm với bài chung. Cùng chu trình mục tiêu–baseline–thử kỹ thuật–đánh giá lại. Mức tăng điểm trong ví dụ không bảo đảm cho tác vụ khác. Nguồn: sources/bedrock-lessons/276749.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
+Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276749) và đối chiếu khái niệm với bài chung. Cùng chu trình mục tiêu–kết quả ban đầu để so sánh–thử kỹ thuật–đánh giá lại. Mức tăng điểm trong ví dụ không bảo đảm cho tác vụ khác. Nguồn: sources/bedrock-lessons/276749.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
 
 ## Đối chiếu Vertex
 

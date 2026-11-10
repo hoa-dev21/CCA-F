@@ -1,8 +1,8 @@
-# Defining resources — Cung cấp dữ liệu theo URI
+# Cung cấp dữ liệu theo URI
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287782), sources/api-lessons/287782.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
 Resources cho client đọc dữ liệu từ MCP server theo URI. Ví dụ của khóa hỗ trợ tính năng nhắc tài liệu bằng `@`: một resource cung cấp danh sách tài liệu để autocomplete; resource template cung cấp nội dung tài liệu cụ thể.
 
@@ -10,7 +10,7 @@ Phân biệt **URI cố định** như `docs://documents` và **URI template** n
 
 MIME type mô tả kiểu nội dung, chẳng hạn JSON cho danh sách hoặc plain text cho văn bản. Trong mẫu SDK, giá trị trả về được tuần tự hóa giúp lập trình viên không phải tự biến mọi thứ thành JSON string.
 
-Resources phù hợp công bố nội dung để ứng dụng đọc và chọn đưa vào context. Tools cung cấp giao diện thực thi chức năng. Đừng hiểu thành lệnh cấm mọi tool đọc dữ liệu: chính khóa này có tool đọc tài liệu. Cần chọn giao diện theo cách client hoặc mô hình sẽ sử dụng.
+Resources phù hợp công bố nội dung để ứng dụng đọc và chọn đưa vào ngữ cảnh. Các công cụ cung cấp giao diện thực thi chức năng. Đừng hiểu thành lệnh cấm mọi công cụ đọc dữ liệu: chính khóa này có công cụ đọc tài liệu. Cần chọn giao diện theo cách client hoặc mô hình sẽ sử dụng.
 
 ## Câu hỏi
 
@@ -20,9 +20,9 @@ A. Resource trả danh mục mà ứng dụng đọc được.
 
 B. Chờ Claude tự bịa tên tài liệu.
 
-C. Dùng tool sửa tài liệu để liệt kê.
+C. Dùng công cụ sửa tài liệu để liệt kê.
 
-D. Chỉ mô tả danh mục trong tên model.
+D. Chỉ mô tả danh mục trong tên mô hình.
 
 **2. Chọn một.** Cần đọc nội dung theo `doc_id`. Cách thiết kế trong bài?
 
@@ -32,7 +32,7 @@ B. URI template có tham số `doc_id`.
 
 C. Chỉ trả danh sách tên, không có cách đọc.
 
-D. Dùng điểm eval làm ID.
+D. Dùng điểm phép đánh giá làm ID.
 
 **3. Chọn một.** URI resource cố định có nghĩa gì?
 

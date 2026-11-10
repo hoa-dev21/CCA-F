@@ -1,12 +1,12 @@
-# Plugins — Đóng gói cấu hình cho nhóm
+# Đóng gói cấu hình cho nhóm
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-code-in-action/486939), sources/code-lessons/486939.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
-Plugin gom các thành phần như skills, subagents, hooks và cấu hình MCP thành đơn vị có thể cài và quản lý phiên bản. Marketplace giúp nhóm khám phá và phân phối chung thay vì sao chép thư mục thủ công.
+Plugin gom các thành phần như skills, các tác nhân con, hooks và cấu hình MCP thành đơn vị có thể cài và quản lý phiên bản. Marketplace giúp nhóm khám phá và phân phối chung thay vì sao chép thư mục thủ công.
 
-Cần xem toàn bộ thành phần trước khi cài. Một plugin được quảng bá nhờ skill vẫn có thể chứa hook chạy mã theo sự kiện hoặc agent với chỉ dẫn riêng. Việc đã qua review không có nghĩa mọi hành vi đều phù hợp với môi trường của bạn.
+Cần xem toàn bộ thành phần trước khi cài. Một plugin được quảng bá nhờ skill vẫn có thể chứa hook chạy mã theo sự kiện hoặc tác nhân AI với chỉ dẫn riêng. Việc đã qua kiểm tra không có nghĩa mọi hành vi đều phù hợp với môi trường của bạn.
 
 Bài nhấn mạnh hooks của plugin chạy cùng hooks của dự án, không mặc định thay thế chúng. Vì vậy phải xem tương tác của các quy tắc, không chỉ kiểm tra từng thành phần riêng lẻ.
 
@@ -20,7 +20,7 @@ Liên hệ ôn thi: dùng để hiểu phân phối cấu hình và quyền côn
 
 A. Chỉ ảnh đại diện.
 
-B. Hooks, agents, MCP configs và hành vi mã đi kèm.
+B. Hooks, các tác nhân AI, MCP configs và hành vi mã đi kèm.
 
 C. Chỉ số ký tự tên plugin.
 

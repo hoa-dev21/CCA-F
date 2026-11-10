@@ -1,24 +1,24 @@
-# Agents and tools — Công cụ có thể kết hợp
+# Công cụ có thể kết hợp
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287803), sources/api-lessons/287803.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
-Agent nhận mục tiêu và tập công cụ để tự tìm cách giải. Những khả năng đơn giản, có thể kết hợp, giúp xử lý nhiều yêu cầu mà người thiết kế không viết sẵn mọi chuỗi bước.
+Tác nhân AI nhận mục tiêu và tập công cụ để tự tìm cách giải. Những khả năng đơn giản, có thể kết hợp, giúp xử lý nhiều yêu cầu mà người thiết kế không viết sẵn mọi chuỗi bước.
 
-Ví dụ của khóa gồm lấy ngày giờ, cộng khoảng thời gian và tạo nhắc việc. Yêu cầu đơn giản chỉ cần một tool; yêu cầu khác cần kết hợp nhiều tool. Khi thiếu dữ liệu như ngày mua hàng để tính hết bảo hành, agent cần hỏi bổ sung.
+Ví dụ của khóa gồm lấy ngày giờ, cộng khoảng thời gian và tạo nhắc việc. Yêu cầu đơn giản chỉ cần một công cụ; yêu cầu khác cần kết hợp nhiều công cụ. Khi thiếu dữ liệu như ngày mua hàng để tính hết bảo hành, tác nhân AI cần hỏi bổ sung.
 
-Bài dùng công cụ file và shell để minh họa khả năng kết hợp trong lập trình. Không suy ra mọi agent nghiệp vụ nên được cấp quyền shell hoặc công cụ quá rộng: thiết kế phải phù hợp nhiệm vụ. Exam Guide cũng yêu cầu ranh giới công cụ và quyền truy cập theo vai trò.
+Bài dùng công cụ file và shell để minh họa khả năng kết hợp trong lập trình. Không suy ra mọi tác nhân AI nghiệp vụ nên được cấp quyền shell hoặc công cụ quá rộng: thiết kế phải phù hợp nhiệm vụ. Exam Guide cũng yêu cầu ranh giới công cụ và quyền truy cập theo vai trò.
 
 Trừu tượng hóa vừa đủ khác với mô tả mơ hồ. Một công cụ nên có hợp đồng rõ dù có thể được dùng trong nhiều chuỗi thao tác.
 
 ## Câu hỏi
 
-**1. Chọn một.** Muốn hỗ trợ nhiều yêu cầu về thời gian mà không viết tool riêng cho từng câu. Thiết kế sát bài?
+**1. Chọn một.** Muốn hỗ trợ nhiều yêu cầu về thời gian mà không viết công cụ riêng cho từng câu. Thiết kế sát bài?
 
 A. Một tập công cụ ngày giờ có hợp đồng rõ, kết hợp được.
 
-B. Một tool tên “làm mọi thứ” không có schema.
+B. Một công cụ tên “làm mọi thứ” không có bản mô tả cấu trúc dữ liệu.
 
 C. Hard-code một câu trả lời cho mọi yêu cầu.
 
@@ -34,15 +34,15 @@ C. Hỏi thông tin còn thiếu trước khi tính.
 
 D. Tạo kết quả ngẫu nhiên.
 
-**3. Chọn một.** Có nên cấp toàn bộ công cụ shell cho agent chỉ cần tra cứu đơn hàng vì ví dụ lập trình dùng shell?
+**3. Chọn một.** Có nên cấp toàn bộ công cụ shell cho tác nhân AI chỉ cần tra cứu đơn hàng vì ví dụ lập trình dùng shell?
 
-A. Có, mọi agent phải có cùng tools.
+A. Có, mọi tác nhân AI phải có cùng các công cụ.
 
 B. Có, càng nhiều quyền luôn càng chính xác.
 
-C. Có, schema không quan trọng.
+C. Có, bản mô tả cấu trúc dữ liệu không quan trọng.
 
-D. Không suy rộng; chọn quyền và tool phù hợp vai trò nghiệp vụ.
+D. Không suy rộng; chọn quyền và công cụ phù hợp vai trò nghiệp vụ.
 
 ## Đáp án
 
@@ -52,4 +52,4 @@ D. Không suy rộng; chọn quyền và tool phù hợp vai trò nghiệp vụ.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Agents and tools](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289243), sources/vertex-lessons/289243.json. Tool đủ tổng quát để kết hợp, nhưng mỗi tool có mô tả và ranh giới rõ. Agent hỏi ngày mua khi thiếu thông tin tính warranty. Bash đa dụng không thay quyền tối thiểu hoặc công cụ hẹp phù hợp; ví dụ post_media không trao quyền xuất bản khi người dùng chưa yêu cầu. Dùng chung câu hỏi khái niệm.
+Đã đọc [Agents and tools](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289243), sources/vertex-lessons/289243.json. Công cụ đủ tổng quát để kết hợp, nhưng mỗi công cụ có mô tả và ranh giới rõ. Tác nhân AI hỏi ngày mua khi thiếu thông tin tính warranty. Bash đa dụng không thay quyền tối thiểu hoặc công cụ hẹp phù hợp; ví dụ post_media không trao quyền xuất bản khi người dùng chưa yêu cầu. Dùng chung câu hỏi khái niệm.

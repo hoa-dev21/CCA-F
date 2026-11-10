@@ -2,7 +2,7 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/313160), sources/api-lessons/313160.json. Tóm tắt và câu hỏi tự biên soạn; chi tiết phiên bản chỉ dùng sau khi xác minh tương thích.
 
-## Tóm tắt
+## Nội dung bài học
 
 Bài giới thiệu nhận đối số công cụ theo từng phần để UI phản hồi sớm hơn. Một mảnh JSON hoặc snapshot đang sinh không nhất thiết là đối tượng hoàn chỉnh hợp lệ. Bộ xử lý phải phân biệt dữ liệu tạm để hiển thị với input đã đủ để thực thi.
 
@@ -24,7 +24,7 @@ D. Không cần parse bao giờ.
 
 **2. Chọn một.** Input chưa hoàn tất nhưng đã có trường số tiền. Có nên thực thi thanh toán ngay?
 
-A. Có, model luôn không đổi phần sau.
+A. Có, mô hình luôn không đổi phần sau.
 
 B. Có, để UI nhanh.
 

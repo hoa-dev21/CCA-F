@@ -1,10 +1,10 @@
-# Conclusion — Tích hợp bốn năng lực
+# Tích hợp bốn năng lực
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/ai-fluency-framework-foundations/291908), sources/fluency-lessons/291908.json. Bản rút gọn/chuyển ngữ từ văn bản bài học; câu hỏi tự biên soạn, không phải đề thi thật.
 
 Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025). Bản gốc và phần chuyển thể này theo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); có bổ sung ví dụ/câu hỏi.
 
-## Tóm tắt
+## Nội dung bài học
 
 Khóa tổng kết việc phân công, mô tả, đánh giá và chịu trách nhiệm trong cả automation, augmentation và agency. Fluency hình thành qua thực hành có chủ đích, không phải chỉ thuộc tên bốn năng lực.
 
@@ -26,7 +26,7 @@ D. Chưa; cần thực hành, phản hồi và đánh giá trong nhiệm vụ th
 
 A. Ranh giới dữ liệu, tiêu chí kiểm chứng và cách minh bạch phù hợp.
 
-B. Chỉ danh sách mọi model.
+B. Chỉ danh sách mọi mô hình.
 
 C. Chỉ màu tài liệu.
 

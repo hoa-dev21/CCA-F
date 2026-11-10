@@ -4,7 +4,7 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/ai-fluency
 
 Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025). Bản gốc và phần chuyển thể này theo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); có bổ sung ví dụ/câu hỏi.
 
-## Tóm tắt
+## Nội dung bài học
 
 Chọn dự án nhiều bước nhưng có phạm vi làm được. Cùng AI làm rõ hình dung kết quả, giá trị và tiêu chí thành công trước khi triển khai.
 

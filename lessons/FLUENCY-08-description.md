@@ -4,11 +4,11 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/ai-fluency
 
 Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025). Bản gốc và phần chuyển thể này theo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); có bổ sung ví dụ/câu hỏi.
 
-## Tóm tắt
+## Nội dung bài học
 
 Description có ba phần. Product mô tả sản phẩm: nội dung, đối tượng, định dạng và phong cách. Process hướng dẫn cách tiếp cận nhiệm vụ. Performance mô tả cách cộng tác: ngắn hay chi tiết, phản biện hay hỗ trợ.
 
-Ví dụ tự biên soạn: “Bảng so sánh cho kỹ sư mới” là sản phẩm/đối tượng; “đối chiếu từng yêu cầu với nguồn” là quá trình; “hỏi khi dữ liệu chưa rõ” là hành vi cộng tác. Mô tả rõ giúp giảm việc AI phải đoán ý, nhưng vẫn phải đánh giá đầu ra.
+Ví dụ để dễ hình dung: “Bảng so sánh cho kỹ sư mới” là sản phẩm/đối tượng; “đối chiếu từng yêu cầu với nguồn” là quá trình; “hỏi khi dữ liệu chưa rõ” là hành vi cộng tác. Mô tả rõ giúp giảm việc AI phải đoán ý, nhưng vẫn phải đánh giá đầu ra.
 
 ## Câu hỏi
 
@@ -34,7 +34,7 @@ D. Chỉ giấy phép.
 
 **3. Chọn một.** AI đúng nội dung nhưng giao tiếp quá dài so với nhu cầu. Cần làm rõ phần nào?
 
-A. Chỉ tên model.
+A. Chỉ tên mô hình.
 
 B. Chỉ thứ tự file.
 

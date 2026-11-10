@@ -4,7 +4,7 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/ai-fluency
 
 Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025). Bản gốc và phần chuyển thể này theo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); có bổ sung ví dụ/câu hỏi.
 
-## Tóm tắt
+## Nội dung bài học
 
 Bắt đầu từ kế hoạch và quyết định phân công. Với từng nhiệm vụ, mô tả sản phẩm/quá trình/hành vi, đánh giá đầu ra theo cả ba khía cạnh rồi đưa phản hồi có mục tiêu để chỉnh tiếp.
 
@@ -26,7 +26,7 @@ D. Nêu phần thiếu, làm rõ mô tả và đánh giá bản sửa.
 
 A. Người dùng dùng chuyên môn và chịu trách nhiệm.
 
-B. Chỉ model bất kể yêu cầu.
+B. Chỉ mô hình bất kể yêu cầu.
 
 C. Tên nền tảng.
 

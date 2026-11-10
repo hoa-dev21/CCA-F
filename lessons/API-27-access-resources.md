@@ -1,18 +1,18 @@
-# Accessing resources — Đưa tài liệu vào ngữ cảnh
+# Đưa tài liệu vào ngữ cảnh
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287783), sources/api-lessons/287783.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
-Ứng dụng có thể lấy resource trước khi gọi Claude. Khi người dùng chọn `@report.pdf`, client đọc URI tương ứng, nhận dữ liệu rồi ứng dụng chèn nội dung vào prompt. Với luồng này, mô hình không cần thêm một vòng tool call chỉ để lấy tài liệu đã được chọn.
+Ứng dụng có thể lấy resource trước khi gọi Claude. Khi người dùng chọn `@report.pdf`, client đọc URI tương ứng, nhận dữ liệu rồi ứng dụng chèn nội dung vào prompt. Với luồng này, mô hình không cần thêm một vòng công cụ call chỉ để lấy tài liệu đã được chọn.
 
-Client thực hiện đọc và phân tích phản hồi. MIME type giúp quyết định cách xử lý: JSON được parse thành cấu trúc dữ liệu; plain text giữ dạng chuỗi. Logic ứng dụng quyết định tài liệu nào được đưa vào context; client chịu trách nhiệm giao tiếp.
+Client thực hiện đọc và phân tích phản hồi. MIME type giúp quyết định cách xử lý: JSON được parse thành cấu trúc dữ liệu; plain text giữ dạng chuỗi. Logic ứng dụng quyết định tài liệu nào được đưa vào ngữ cảnh; client chịu trách nhiệm giao tiếp.
 
-Mẫu khóa học lấy phần tử đầu trong `contents`. Không nên suy rộng thành bảo đảm mọi resource thực tế chỉ có một nội dung; khi triển khai cần xử lý hợp đồng phản hồi phù hợp. Phần ôn tập ở đây nhấn mạnh luồng lấy dữ liệu và cách dùng metadata.
+Mẫu khóa học lấy phần tử đầu trong `contents`. Không nên suy rộng thành bảo đảm mọi resource thực tế chỉ có một nội dung; khi triển khai cần xử lý hợp đồng phản hồi phù hợp. Phần ôn tập ở đây nhấn mạnh luồng lấy dữ liệu và cách dùng thông tin mô tả.
 
 ## Câu hỏi
 
-**1. Chọn một.** Người dùng đã chọn tài liệu cụ thể. Ứng dụng muốn tránh vòng gọi tool lấy tài liệu sau đó. Thiết kế phù hợp bài?
+**1. Chọn một.** Người dùng đã chọn tài liệu cụ thể. Ứng dụng muốn tránh vòng gọi công cụ lấy tài liệu sau đó. Thiết kế phù hợp bài?
 
 A. Chỉ gửi tên file và yêu cầu đoán.
 
@@ -30,7 +30,7 @@ B. Xóa nội dung vì không phải plain text.
 
 C. Parse JSON theo kiểu nội dung.
 
-D. Gắn nội dung vào tên tool.
+D. Gắn nội dung vào tên công cụ.
 
 **3. Chọn một.** Phân công nào đúng?
 
@@ -44,9 +44,9 @@ D. MIME type thay thế nội dung resource.
 
 ## Đáp án
 
-1. **B.** A thiếu dữ liệu; C bỏ yêu cầu; D không đưa tài liệu vào context.
+1. **B.** A thiếu dữ liệu; C bỏ yêu cầu; D không đưa tài liệu vào ngữ cảnh.
 2. **C.** A nhầm dữ liệu với mã; B làm mất dữ liệu; D sai vị trí sử dụng.
-3. **A.** B và C gán trách nhiệm không có trong mẫu; D nhầm metadata với dữ liệu.
+3. **A.** B và C gán trách nhiệm không có trong mẫu; D nhầm thông tin mô tả với dữ liệu.
 
 ## Đối chiếu khóa MCP riêng
 
@@ -54,8 +54,8 @@ D. MIME type thay thế nội dung resource.
 
 ## Đối chiếu MCP trong khóa Bedrock
 
-Đã đọc [Accessing resources](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276797), sources/bedrock-lessons/276797.json và đối chiếu với bài chung. Cùng read_resource và parse theo MIME, ứng dụng đưa dữ liệu vào context. Giảm một vòng model tool call không có nghĩa không còn request client/server để đọc resource. Dùng chung câu hỏi khái niệm tương đương, không đếm lặp.
+Đã đọc [Accessing resources](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276797), sources/bedrock-lessons/276797.json và đối chiếu với bài chung. Cùng read_resource và parse theo MIME, ứng dụng đưa dữ liệu vào ngữ cảnh. Giảm một vòng mô hình công cụ call không có nghĩa không còn yêu cầu client/server để đọc resource. Dùng chung câu hỏi khái niệm tương đương, không đếm lặp.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Accessing resources](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289247), sources/vertex-lessons/289247.json. read_resource gửi request client/server rồi host chèn nội dung vào prompt, tiết kiệm lượt model chọn tool chứ không loại bỏ request mạng. Mẫu chỉ lấy contents[0]; client thật cần xử lý nhiều contents, text/blob/MIME và validation phù hợp. Dùng chung câu hỏi khái niệm.
+Đã đọc [Accessing resources](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289247), sources/vertex-lessons/289247.json. read_resource gửi yêu cầu client/server rồi host chèn nội dung vào prompt, tiết kiệm lượt mô hình chọn công cụ chứ không loại bỏ yêu cầu mạng. Mẫu chỉ lấy contents[0]; client thật cần xử lý nhiều contents, text/blob/MIME và validation phù hợp. Dùng chung câu hỏi khái niệm.

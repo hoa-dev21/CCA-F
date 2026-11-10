@@ -4,11 +4,11 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/ai-fluency
 
 Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025). Bản gốc và phần chuyển thể này theo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); có bổ sung ví dụ/câu hỏi.
 
-## Tóm tắt
+## Nội dung bài học
 
 Creation Diligence là cân nhắc hệ thống sử dụng, dữ liệu đưa vào và cách cộng tác. Transparency Diligence là nói rõ vai trò AI cho những người cần biết. Deployment Diligence là kiểm chứng và nhận trách nhiệm với đầu ra đem sử dụng/chia sẻ.
 
-Yêu cầu minh bạch khác nhau theo bối cảnh công việc, học thuật hoặc cá nhân. Diligence statement tốt mô tả AI hỗ trợ phần nào, quy trình review thực sự đã làm và ai chịu trách nhiệm cuối. Không tuyên bố đã xác minh nếu chưa thực hiện các bước đó.
+Yêu cầu minh bạch khác nhau theo bối cảnh công việc, học thuật hoặc cá nhân. Diligence statement tốt mô tả AI hỗ trợ phần nào, quy trình kiểm tra thực sự đã làm và ai chịu trách nhiệm cuối. Không tuyên bố đã xác minh nếu chưa thực hiện các bước đó.
 
 ## Câu hỏi
 
@@ -20,7 +20,7 @@ B. Chỉ giọng điệu.
 
 C. Creation Diligence.
 
-D. Chỉ format đầu ra.
+D. Chỉ định dạng đầu ra.
 
 **2. Chọn một.** Minh bạch về phần AI đã hỗ trợ thuộc loại nào?
 
@@ -28,7 +28,7 @@ A. Transparency Diligence.
 
 B. Chỉ Process Description.
 
-C. Chỉ confidence.
+C. Chỉ điểm tự tin.
 
 D. Không cần theo bối cảnh.
 

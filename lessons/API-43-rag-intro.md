@@ -2,19 +2,19 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287763), sources/api-lessons/287763.json. Bài bổ trợ từ khóa API; chi tiết embeddings/vector DB không thuộc phạm vi Exam Guide đã tải. Câu hỏi tự biên soạn để kiểm tra bài học, không phải đề thi thật.
 
-## Tóm tắt
+## Nội dung bài học
 
 RAG truy xuất những phần tài liệu liên quan rồi đưa vào prompt, thay vì luôn nạp toàn bộ kho. Hai giai đoạn chính là chuẩn bị/chia dữ liệu trước và truy xuất theo câu hỏi khi chạy.
 
-Lợi ích là giảm nội dung không liên quan và hỗ trợ kho lớn. Đánh đổi gồm công đoạn chuẩn bị, chất lượng tìm kiếm và nguy cơ thiếu bối cảnh. Một chunk liên quan chưa chắc chứa đủ bằng chứng trả lời. Đánh giá retrieval và câu trả lời riêng giúp tìm đúng nguồn lỗi.
+Lợi ích là giảm nội dung không liên quan và hỗ trợ kho lớn. Đánh đổi gồm công đoạn chuẩn bị, chất lượng tìm kiếm và nguy cơ thiếu bối cảnh. Một đoạn văn bản liên quan chưa chắc chứa đủ bằng chứng trả lời. Đánh giá truy xuất dữ liệu và câu trả lời riêng giúp tìm đúng nguồn lỗi.
 
 ## Câu hỏi
 
 **1. Chọn một.** Kho quá lớn để nạp toàn bộ. Ý tưởng chính của RAG?
 
-A. Truy xuất phần liên quan làm context.
+A. Truy xuất phần liên quan làm ngữ cảnh.
 
-B. Model tự đọc mọi dữ liệu không tích hợp.
+B. Mô hình tự đọc mọi dữ liệu không tích hợp.
 
 C. Xóa câu hỏi.
 
@@ -26,7 +26,7 @@ A. Chỉ màu văn bản.
 
 B. Độ đầy đủ bối cảnh của phần được truy xuất.
 
-C. Chỉ tên model.
+C. Chỉ tên mô hình.
 
 D. Không cần xem nguồn.
 
@@ -42,11 +42,11 @@ D. Không có đánh đổi.
 
 ## Đáp án
 
-1. **A.** A cung cấp context có chọn lọc; B giả định truy cập tự động, C mất mục tiêu, D không lấy dữ liệu.
+1. **A.** A cung cấp ngữ cảnh có chọn lọc; B giả định truy cập tự động, C mất mục tiêu, D không lấy dữ liệu.
 
-2. **B.** B nhắm thiếu bằng chứng; A và C không chẩn đoán retrieval, D bỏ kiểm chứng.
+2. **B.** B nhắm thiếu bằng chứng; A và C không chẩn đoán truy xuất dữ liệu, D bỏ kiểm chứng.
 
-3. **C.** C là các thành phần thêm; A và D phủ nhận, B không tạo pipeline.
+3. **C.** C là các thành phần thêm; A và D phủ nhận, B không tạo quy trình xử lý.
 
 ## Đối chiếu RAG trên Bedrock
 
@@ -54,4 +54,4 @@ D. Không có đánh đổi.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Introducing Retrieval Augmented Generation](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289191), sources/vertex-lessons/289191.json. RAG thay prompt tài liệu800trang bằng các chunk được truy hồi; tiết kiệm input nhưng có nguy cơ bỏ bối cảnh liên quan. Không có chiến lược luôn tốt nhất; đánh giá trên query/tài liệu đại diện. Dùng chung câu hỏi khái niệm.
+Đã đọc [Introducing Retrieval Augmented Generation](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289191), sources/vertex-lessons/289191.json. RAG thay prompt tài liệu800trang bằng các đoạn văn bản được truy hồi; tiết kiệm input nhưng có nguy cơ bỏ bối cảnh liên quan. Không có chiến lược luôn tốt nhất; đánh giá trên query/tài liệu đại diện. Dùng chung câu hỏi khái niệm.

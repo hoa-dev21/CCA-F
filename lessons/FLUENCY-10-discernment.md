@@ -4,7 +4,7 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/ai-fluency
 
 Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025). Bản gốc và phần chuyển thể này theo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); có bổ sung ví dụ/câu hỏi.
 
-## Tóm tắt
+## Nội dung bài học
 
 Discernment đánh giá sản phẩm, cách tiếp cận và hành vi cộng tác. Product xem độ đúng, phù hợp, mạch lạc và liên quan. Process tìm bước bỏ sót, liên hệ sai hoặc lập luận không hợp lý trong bằng chứng quan sát được. Performance xem AI đáp ứng phản hồi và giao tiếp phù hợp không.
 

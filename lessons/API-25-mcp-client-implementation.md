@@ -1,14 +1,14 @@
-# Implementing a client — Quản lý session và giao diện gọi
+# Quản lý session và giao diện gọi
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287793), sources/api-lessons/287793.json. Câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
 Bài tách lớp tiện ích MCP client khỏi **client session**, đối tượng SDK quản lý kết nối tới server. Lớp tiện ích cung cấp các phương thức dễ dùng và giúp dọn tài nguyên khi kết thúc.
 
-Hai phương thức cốt lõi là `list_tools()` lấy định nghĩa tools và `call_tool(name, input)` gửi lời gọi. Lớp ứng dụng dùng danh sách để gửi Claude; khi Claude chọn công cụ, lớp ứng dụng chuyển tên cùng đối số tới client, rồi đưa kết quả về mô hình.
+Hai phương thức cốt lõi là `list_tools()` lấy định nghĩa các công cụ và `call_tool(name, input)` gửi lời gọi. Lớp ứng dụng dùng danh sách để gửi Claude; khi Claude chọn công cụ, lớp ứng dụng chuyển tên cùng đối số tới client, rồi đưa kết quả về mô hình.
 
-Ví dụ sử dụng context manager bất đồng bộ để quản lý vòng đời. Hiểu trách nhiệm dọn kết nối quan trọng hơn học thuộc chi tiết mã Python. Bài xây cả client và server để minh họa; ứng dụng thực tế có thể chỉ cần triển khai một phía và dùng phía còn lại có sẵn.
+Ví dụ sử dụng ngữ cảnh manager bất đồng bộ để quản lý vòng đời. Hiểu trách nhiệm dọn kết nối quan trọng hơn học thuộc chi tiết mã Python. Bài xây cả client và server để minh họa; ứng dụng thực tế có thể chỉ cần triển khai một phía và dùng phía còn lại có sẵn.
 
 ## Câu hỏi
 
@@ -20,7 +20,7 @@ B. Dùng client kết nối server có sẵn và nối list/call vào ứng dụ
 
 C. Chỉ sao chép tên công cụ vào prompt, không tích hợp thực thi.
 
-D. Bỏ tool results vì server đã có sẵn.
+D. Bỏ kết quả công cụ vì server đã có sẵn.
 
 **2. Chọn một.** Ứng dụng mở session cho nhiều tác vụ nhưng không đóng. Cải thiện kiến trúc nào đúng trách nhiệm lớp client trong bài?
 
@@ -54,8 +54,8 @@ D. Chỉ in lại danh sách lần nữa.
 
 ## Đối chiếu MCP trong khóa Bedrock
 
-Đã đọc [Implementing a client](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276802), sources/bedrock-lessons/276802.json và đối chiếu với bài chung. Bản Bedrock nêu rõ MCP tool schema không trùng định dạng Converse. Helper to_bedrock_tools trong core/bedrock.py chuyển schema; cần kiểm tra adapter thay vì gửi schema MCP nguyên dạng rồi coi kết nối là đã đủ. Session vẫn cần cleanup. Dùng chung câu hỏi khái niệm tương đương, không đếm lặp.
+Đã đọc [Implementing a client](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276802), sources/bedrock-lessons/276802.json và đối chiếu với bài chung. Bản Bedrock nêu rõ MCP công cụ bản mô tả cấu trúc dữ liệu không trùng định dạng Converse. Hàm hỗ trợ to_bedrock_tools trong core/bedrock.py chuyển bản mô tả cấu trúc dữ liệu; cần kiểm tra adapter thay vì gửi bản mô tả cấu trúc dữ liệu MCP nguyên dạng rồi coi kết nối là đã đủ. Session vẫn cần cleanup. Dùng chung câu hỏi khái niệm tương đương, không đếm lặp.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Implementing a client](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289206), sources/vertex-lessons/289206.json. Wrapper quản lý ClientSession/cleanup, list_tools và call_tool; host nối model với MCP. Có thể làm cả client/server khi kiến trúc cần, bài nói thường làm một bên chỉ là bối cảnh giảng dạy. Cần chuyển schema/results đúng contract model thay vì trộn inputSchema/input_schema. Dùng chung câu hỏi khái niệm.
+Đã đọc [Implementing a client](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289206), sources/vertex-lessons/289206.json. Wrapper quản lý ClientSession/cleanup, list_tools và call_tool; host nối mô hình với MCP. Có thể làm cả client/server khi kiến trúc cần, bài nói thường làm một bên chỉ là bối cảnh giảng dạy. Cần chuyển schema/results đúng quy định về dữ liệu và hành vi mô hình thay vì trộn inputSchema/input_schema. Dùng chung câu hỏi khái niệm.

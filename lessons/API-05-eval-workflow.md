@@ -1,18 +1,18 @@
-# A typical eval workflow — Quy trình đánh giá
+# Quy trình đánh giá
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287736), bản nội dung sources/api-lessons/287736.json. Câu hỏi bên dưới tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
-Bài học tổ chức đánh giá thành năm bước: viết prompt ban đầu, tạo tập đầu vào, chạy từng đầu vào qua Claude, chấm đầu ra, rồi sửa prompt và chạy lại. Kết quả ban đầu là **baseline** — mốc so sánh.
+Bài học tổ chức đánh giá thành năm bước: viết prompt ban đầu, tạo tập đầu vào, chạy từng đầu vào qua Claude, chấm đầu ra, rồi sửa prompt và chạy lại. Kết quả ban đầu là **kết quả ban đầu để so sánh** — mốc so sánh.
 
-Tập đầu vào nên đại diện cho loại yêu cầu ứng dụng sẽ xử lý. Có thể tạo thủ công hoặc dùng mô hình hỗ trợ. Grader cần xem câu hỏi gốc cùng câu trả lời, vì đầu ra trôi chảy chưa chắc đáp ứng yêu cầu.
+Tập đầu vào nên đại diện cho loại yêu cầu ứng dụng sẽ xử lý. Có thể tạo thủ công hoặc dùng mô hình hỗ trợ. Bộ chấm điểm cần xem câu hỏi gốc cùng câu trả lời, vì đầu ra trôi chảy chưa chắc đáp ứng yêu cầu.
 
-Trong ví dụ của khóa, grader cho điểm từng trường hợp rồi tính trung bình. Điểm giúp so sánh phiên bản; nhận xét từng trường hợp giúp biết cần sửa gì. Khi thay prompt, giữ bộ kiểm thử và cách chấm nhất quán để đánh giá tác động của thay đổi.
+Trong ví dụ của khóa, bộ chấm điểm cho điểm từng trường hợp rồi tính trung bình. Điểm giúp so sánh phiên bản; nhận xét từng trường hợp giúp biết cần sửa gì. Khi thay prompt, giữ bộ kiểm thử và cách chấm nhất quán để đánh giá tác động của thay đổi.
 
-Ví dụ tự biên soạn: prompt trả lời yêu cầu hỗ trợ đạt điểm thấp ở nhóm hoàn tiền. Hãy xem các lỗi trong nhóm ấy trước khi sửa prompt, rồi đánh giá lại toàn bộ tập để phát hiện ảnh hưởng lên nhóm khác.
+Ví dụ để dễ hình dung: prompt trả lời yêu cầu hỗ trợ đạt điểm thấp ở nhóm hoàn tiền. Hãy xem các lỗi trong nhóm ấy trước khi sửa prompt, rồi đánh giá lại toàn bộ tập để phát hiện ảnh hưởng lên nhóm khác.
 
-Từ khóa: **baseline** — mốc ban đầu; **grader** — bộ chấm; **iteration** — vòng cải tiến.
+Từ khóa: **kết quả ban đầu để so sánh** — mốc ban đầu; **bộ chấm điểm** — bộ chấm; **iteration** — vòng cải tiến.
 
 ## Câu hỏi
 
@@ -26,7 +26,7 @@ C. Điểm số luôn vô dụng.
 
 D. Không cần lưu kết quả từng trường hợp.
 
-**2. Chọn một.** Grader chỉ thấy đầu ra, không thấy yêu cầu gốc. Rủi ro chính?
+**2. Chọn một.** Bộ chấm điểm chỉ thấy đầu ra, không thấy yêu cầu gốc. Rủi ro chính?
 
 A. Không thể đếm ký tự.
 
@@ -40,9 +40,9 @@ D. Claude tự xóa dữ liệu kiểm thử.
 
 A. Chỉ xem độ dài prompt.
 
-B. Chạy lại đánh giá và so kết quả với baseline.
+B. Chạy lại đánh giá và so kết quả với kết quả ban đầu để so sánh.
 
-C. Xóa baseline.
+C. Xóa kết quả ban đầu để so sánh.
 
 D. Gán điểm tối đa cho các câu đã sửa.
 
@@ -54,8 +54,8 @@ D. Gán điểm tối đa cho các câu đã sửa.
 
 ## Đối chiếu Bedrock
 
-Đã đọc và đối chiếu [A typical eval workflow](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276732), sources/bedrock-lessons/276732.json. Dùng chung bản tóm tắt và câu hỏi về phương pháp eval vì các mục tiêu chính tương đương. Mã gọi provider vẫn cần adapter Converse phù hợp; ví dụ prefill/stop sequence và tên model không được coi là hỗ trợ hiện hành đã xác minh. Không tính lại một bộ câu hỏi mới cho cùng nội dung.
+Đã đọc và đối chiếu [A typical eval workflow](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276732), sources/bedrock-lessons/276732.json. Dùng chung bản tóm tắt và câu hỏi về phương pháp phép đánh giá vì các mục tiêu chính tương đương. Mã gọi nhà cung cấp vẫn cần adapter Converse phù hợp; ví dụ prefill/stop sequence và tên mô hình không được coi là hỗ trợ hiện hành đã xác minh. Không tính lại một bộ câu hỏi mới cho cùng nội dung.
 
 ## Đối chiếu Vertex
 
-Đã đọc [A typical eval workflow](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289161), sources/vertex-lessons/289161.json. Năm bước: draft, dataset, run model, grade, đổi prompt và chạy lại. Trung bình7.66/8.7 chỉ minh họa; cần giữ điều kiện so sánh, kiểm tra từng loại lỗi và tránh tối ưu theo bộ phát triển duy nhất. Dùng chung câu hỏi khái niệm.
+Đã đọc [A typical eval workflow](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289161), sources/vertex-lessons/289161.json. Năm bước: draft, bộ dữ liệu, run mô hình, grade, đổi prompt và chạy lại. Trung bình7.66/8.7 chỉ minh họa; cần giữ điều kiện so sánh, kiểm tra từng loại lỗi và tránh tối ưu theo bộ phát triển duy nhất. Dùng chung câu hỏi khái niệm.

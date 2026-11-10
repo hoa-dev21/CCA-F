@@ -1,12 +1,12 @@
-# Project setup — CLI và server tài liệu
+# CLI và server tài liệu
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287785), sources/api-lessons/287785.json. Bản tóm tắt văn bản và câu hỏi tự biên soạn; không phải xác nhận đã chạy bài thực hành.
 
-## Tóm tắt
+## Nội dung bài học
 
 Dự án mẫu có CLI chatbot và MCP server quản lý tài liệu. Server cung cấp công cụ đọc/sửa; dữ liệu giữ trong memory để đơn giản hóa bài thực hành. Trong sản phẩm thật có thể chỉ xây client hoặc server tùy phần tích hợp cần thiết.
 
-Bài hướng dẫn lấy starter, đọc README, thiết lập môi trường, dependencies rồi chạy thử luồng cơ bản trước khi thêm MCP. Kiểm tra baseline giúp tách lỗi môi trường khỏi lỗi chức năng mới.
+Bài hướng dẫn lấy starter, đọc README, thiết lập môi trường, dependencies rồi chạy thử luồng cơ bản trước khi thêm MCP. Kiểm tra kết quả ban đầu để so sánh giúp tách lỗi môi trường khỏi lỗi chức năng mới.
 
 Bản tóm tắt dựa trên phần văn bản giải thích, chưa xác nhận đã mở mọi nội dung trong ZIP hoặc thực hiện bài tập. Memory store là lựa chọn minh họa, không bảo đảm lưu bền qua restart.
 
@@ -14,7 +14,7 @@ Bản tóm tắt dựa trên phần văn bản giải thích, chưa xác nhận 
 
 **1. Chọn một.** Starter chưa chạy được trước khi sửa MCP. Nên làm gì?
 
-A. Thêm nhiều tool ngay.
+A. Thêm nhiều công cụ ngay.
 
 B. Bỏ môi trường.
 
@@ -56,8 +56,8 @@ D. Có, không cần kiểm tra.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Project setup](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289199), sources/vertex-lessons/289199.json. Bài Vertex chuyển sang dự án CLI dùng .env ANTHROPIC_API_KEY và tài liệu in-memory. Đây là cấu hình dự án mẫu trực tiếp, không chứng minh Vertex dùng key Anthropic. Thay backend phải chỉnh client/xác thực tương ứng; filename PDF/xlsx không chứng minh parser file nhị phân thực. Dùng chung câu hỏi khái niệm.
+Đã đọc [Project setup](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289199), sources/vertex-lessons/289199.json. Bài Vertex chuyển sang dự án CLI dùng .env ANTHROPIC_API_KEY và tài liệu in-memory. Đây là cấu hình dự án mẫu trực tiếp, không chứng minh Vertex dùng key Anthropic. Thay hệ thống xử lý phía máy chủ phải chỉnh client/xác thực tương ứng; filename PDF/xlsx không chứng minh parser file nhị phân thực. Dùng chung câu hỏi khái niệm.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Project setup](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296694), sources/mcp-media/296694.json. Dự án CLI xây cả client/server để học, tài liệu giả trong memory, tools read/update. README hướng dẫn API key trong .env và dependencies; uv run main.py hoặc python main.py theo môi trường. Không giả định tên file PDF/xlsx chứng minh parser nhị phân hay memory persist sau restart. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Đã đọc toàn bộ phụ đề tiếng Anh của [Project setup](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296694), sources/mcp-media/296694.json. Dự án CLI xây cả client/server để học, tài liệu giả trong memory, các công cụ read/update. README hướng dẫn API key trong .env và dependencies; uv run main.py hoặc python main.py theo môi trường. Không giả định tên file PDF/xlsx chứng minh parser nhị phân hay memory persist sau restart. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.

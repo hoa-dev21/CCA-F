@@ -4,7 +4,7 @@ Hai lựa chọn trên web: **Học từ đầu** và **Ôn nhanh**. Xem [lộ t
 
 Hiện có **142 bài, 426 câu hỏi tự biên soạn có đáp án và giải thích**: 124 bài từ nội dung khóa học và 18 bài bổ trợ theo Exam Guide. Đã đối chiếu nội dung tóm tắt với 30/30 mục tiêu thi. Đã có bài tóm tắt/câu hỏi cho cả 282 mục nội dung trong 7 khóa; các nội dung trùng được dùng chung bài để tránh học lặp. Đối chiếu này không chứng nhận mức sẵn sàng thi.
 
-Để ôn nhanh, bắt đầu các bài EXAM bên dưới; đọc phần API về tool loop, prompting và MCP cùng phần Claude Code để củng cố. AI Fluency là nền tảng đọc nhanh. Đây là thứ tự học đề xuất, không phải cam kết đủ để thi đỗ.
+Để ôn nhanh, bắt đầu các bài EXAM bên dưới; đọc phần API về công cụ loop, prompting và MCP cùng phần Claude Code để củng cố. AI Fluency là nền tảng đọc nhanh. Đây là thứ tự học đề xuất, không phải cam kết đủ để thi đỗ.
 
 ## Nguồn và độ bao phủ
 
@@ -13,7 +13,7 @@ Hiện có **142 bài, 426 câu hỏi tự biên soạn có đáp án và giải
 - [Kiểm tra bàn giao](../COMPLETION_AUDIT.md).
 - [Tiến độ API](../COVERAGE.md), [Code](../COVERAGE-code.md), [MCP](../COVERAGE-mcp.md), [Fluency](../COVERAGE-fluency.md).
 
-Chín bài kỹ thuật của khóa Introduction to MCP đã được đọc và đối chiếu với API-21 đến API-29, dùng chung bài và câu hỏi tương đương. Không đếm lặp chín bộ câu hỏi. Các nguồn đối chiếu có trong từng bài. Nguồn được phân biệt là văn bản trang, phụ đề chính thức, ghi chú chính thức hoặc review notebook/report hiển thị trong video. Bài Vertex289173 không có track phụ đề tiếng Anh; bằng chứng review trực quan được ghi rõ trong API72 và bảng coverage.
+Chín bài kỹ thuật của khóa Introduction to MCP đã được đọc và đối chiếu với API-21 đến API-29, dùng chung bài và câu hỏi tương đương. Không đếm lặp chín bộ câu hỏi. Các nguồn đối chiếu có trong từng bài. Nguồn được phân biệt là văn bản trang, phụ đề chính thức, ghi chú chính thức hoặc kiểm tra notebook/report hiển thị trong video. Bài Vertex289173 không có track phụ đề tiếng Anh; bằng chứng kiểm tra trực quan được ghi rõ trong API72 và bảng coverage.
 
 ## Bổ trợ theo Exam Guide — ưu tiên khi ôn gấp
 
@@ -187,7 +187,7 @@ Chín bài kỹ thuật của khóa Introduction to MCP đã được đọc và
 - [Tiến độ Bedrock](../COVERAGE-bedrock.md).
 - [Tiến độ Vertex](../COVERAGE-vertex.md).
 
-Các bài cloud đã đối chiếu có dẫn nguồn ngay trong bài chung và ghi chú khác biệt provider. Không đếm các câu hỏi dùng lại thành câu mới.
+Các bài cloud đã đối chiếu có dẫn nguồn ngay trong bài chung và ghi chú khác biệt nhà cung cấp. Không đếm các câu hỏi dùng lại thành câu mới.
 
 ## Cách học
 

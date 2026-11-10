@@ -2,7 +2,7 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101/383402), sources/claude101-lessons/383402.json, đã đọc văn bản đầy đủ. Tóm tắt/câu hỏi tự biên soạn, không phải đề thi thật.
 
-## Tóm tắt
+## Nội dung bài học
 
 Claude có các giao diện bám theo môi trường làm việc: Code cho phát triển; cộng tác trong Slack; design cho prototype; tích hợp Microsoft 365 cho workbook, deck, văn bản/email; công cụ browser cho công việc trên web.
 
@@ -20,7 +20,7 @@ B. Bỏ file đang dùng.
 
 C. Tích hợp Excel phù hợp và kiểm tra thay đổi trong workbook.
 
-D. Chỉ đổi tên model.
+D. Chỉ đổi tên mô hình.
 
 **2. Chọn một.** Có quyền trong một giao diện có chứng minh mọi giao diện đều truy cập cùng dữ liệu không?
 

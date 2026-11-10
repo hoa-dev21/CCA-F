@@ -1,8 +1,8 @@
-# What’s next? — Chọn bước thực hành
+# Chọn bước thực hành
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101/385338), sources/claude101-lessons/385338.json, đã đọc văn bản gốc. Tóm tắt và câu hỏi tự biên soạn; không phải đề thi thật.
 
-## Tóm tắt
+## Nội dung bài học
 
 Bài tổng kết prompt rõ, cải tiến qua phản hồi, 4D, Projects/Skills, artifacts và nguồn kết nối. Lộ trình tiếp phụ thuộc mục tiêu: kỹ năng cộng tác, hiểu giới hạn, phát triển với Code hoặc tìm hiểu tích hợp.
 

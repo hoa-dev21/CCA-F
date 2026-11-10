@@ -2,13 +2,13 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101/383401), sources/claude101-lessons/383401.json, đã đọc văn bản gốc. Tóm tắt và câu hỏi tự biên soạn; không phải đề thi thật.
 
-## Tóm tắt
+## Nội dung bài học
 
 Bài tập hợp các ví dụ theo vai trò: báo cáo dự án và phân tích phản hồi; chuẩn bị bán hàng; phân tích chiến dịch; hỗ trợ bảng tính và memo; onboarding; tổ chức tài liệu pháp lý; nghiên cứu và kiểm tra thống kê.
 
-Đây là điểm khởi đầu chọn nhiệm vụ phù hợp, không phải chứng nhận model có thể tự đảm nhiệm mọi trách nhiệm nghề nghiệp. Lấy ví dụ sát công việc của mình, xác định nguồn, đầu ra và cách kiểm tra, rồi thử trên phạm vi nhỏ.
+Đây là điểm khởi đầu chọn nhiệm vụ phù hợp, không phải chứng nhận mô hình có thể tự đảm nhiệm mọi trách nhiệm nghề nghiệp. Lấy ví dụ sát công việc của mình, xác định nguồn, đầu ra và cách kiểm tra, rồi thử trên phạm vi nhỏ.
 
-Ví dụ tự biên soạn: dùng Claude tạo bản nháp báo cáo doanh số từ dữ liệu đã cung cấp, sau đó đối chiếu phép tính và thông tin khách hàng. Không suy ra hướng dẫn dùng một tính năng là lời khuyên chuyên môn tài chính hoặc pháp lý.
+Ví dụ để dễ hình dung: dùng Claude tạo bản nháp báo cáo doanh số từ dữ liệu đã cung cấp, sau đó đối chiếu phép tính và thông tin khách hàng. Không suy ra hướng dẫn dùng một tính năng là lời khuyên chuyên môn tài chính hoặc pháp lý.
 
 ## Câu hỏi
 
@@ -26,13 +26,13 @@ D. Không cần dữ liệu nguồn.
 
 A. AI thay mọi chuyên gia.
 
-B. Đầu ra không cần review.
+B. Đầu ra không cần kiểm tra.
 
 C. Không tự chứng minh phù hợp mọi quyết định chuyên môn; vẫn cần đánh giá theo bối cảnh.
 
 D. Mọi quyết định đều được phép tự động.
 
-**3. Chọn một.** Nhóm muốn chuẩn hóa brand review lặp lại. Tài liệu bài gợi ý hướng nào?
+**3. Chọn một.** Nhóm muốn chuẩn hóa brand kiểm tra lặp lại. Tài liệu bài gợi ý hướng nào?
 
 A. Chỉ chat mới không lưu cách làm.
 

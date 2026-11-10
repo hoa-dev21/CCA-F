@@ -11,7 +11,7 @@ test('the real course bank parses all lessons, including the first lesson’s di
   assert.equal(library[0].id,'EXAM-14-loop-decomposition.md');
   const l=lessons.get(library[0].id);assert.match(l.summary,/stop_reason/);assert.doesNotMatch(l.summaryHtml,/Đáp án|Chọn một/);
   assert.deepEqual(l.questions[0].correct,['B']);assert.deepEqual(l.questions[2].correct,['A','D']);
-  assert.equal(l.questions[2].multiple,true);assert.match(l.questions[2].explanation,/compliance/);
+  assert.equal(l.questions[2].multiple,true);assert.match(l.questions[2].explanation,/kiểm tra bắt buộc bằng chương trình/);
   const first=lessons.get('API-01-tool-use.md');assert.equal(first.questions.length,3);assert.ok(first.notesHtml.includes('Đối chiếu'));
 });
 test('rendered study text cannot inject HTML, scripts, image handlers or javascript links',()=>{

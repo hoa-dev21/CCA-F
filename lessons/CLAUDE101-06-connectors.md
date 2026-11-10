@@ -2,13 +2,13 @@
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101/383397), sources/claude101-lessons/383397.json, đã đọc văn bản gốc. Tóm tắt và câu hỏi tự biên soạn; không phải đề thi thật.
 
-## Tóm tắt
+## Nội dung bài học
 
 Connectors cho Claude truy cập công cụ và dữ liệu thật; tùy khả năng và quyền, chúng có thể đọc hoặc thực hiện hành động. Bài giới thiệu MCP là lớp chuẩn hóa kết nối. Web connectors nối dịch vụ cloud; desktop extensions phục vụ khả năng cục bộ qua ứng dụng desktop.
 
 Phải xác thực và cấp quyền phù hợp; kết nối không đồng nghĩa có toàn quyền mọi dữ liệu trong tổ chức. Chọn nguồn đúng nhu cầu, thử một yêu cầu đơn giản và kiểm tra kết quả. Quyền đọc không tự cho phép sửa, gửi thông tin hay hành động trong hệ thống.
 
-Ví dụ tự biên soạn: để tổng hợp ticket, trước hết cần nguồn ticket và quyền truy cập; chỉ nêu tên hệ thống trong prompt không tạo tích hợp. Không tự động cài hay cấp quyền từ bài học này.
+Ví dụ để dễ hình dung: để tổng hợp ticket, trước hết cần nguồn ticket và quyền truy cập; chỉ nêu tên hệ thống trong prompt không tạo tích hợp. Không tự động cài hay cấp quyền từ bài học này.
 
 ## Câu hỏi
 
@@ -38,7 +38,7 @@ A. Desktop extensions phù hợp môi trường desktop.
 
 B. Chỉ một URL không tích hợp.
 
-C. Chỉ tên model.
+C. Chỉ tên mô hình.
 
 D. Mọi web connector đều có toàn bộ file cục bộ.
 

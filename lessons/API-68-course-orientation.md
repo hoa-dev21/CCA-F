@@ -1,14 +1,14 @@
-# Welcome — Bản đồ nội dung và cách luyện thực hành
+# Bản đồ nội dung và cách luyện thực hành
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287818), phụ đề tiếng Anh từ trình phát chính thức, sources/api-media/287818.json. Bài và câu hỏi tự biên soạn.
 
-## Tóm tắt
+## Nội dung bài học
 
-Khóa đi từ lựa chọn model và truy cập API sang đánh giá prompt, cải thiện prompt, tool use, RAG, MCP, Claude Code/Computer Use và cuối cùng là workflows/agents. Đánh giá prompt xuất hiện trước kỹ thuật cải tiến để có cách đo thay đổi, thay vì chỉ chọn câu trả lời nghe hay.
+Khóa đi từ lựa chọn mô hình và truy cập API sang đánh giá prompt, cải thiện prompt, tool use, RAG, MCP, Claude Code/Computer Use và cuối cùng là workflows/agents. Đánh giá prompt xuất hiện trước kỹ thuật cải tiến để có cách đo thay đổi, thay vì chỉ chọn câu trả lời nghe hay.
 
-Yêu cầu thực hành trong phần giới thiệu là Python cơ bản, môi trường chạy notebook và quyền truy cập API phù hợp. Bản giới thiệu không thay hướng dẫn xác thực cụ thể; các khóa cloud dùng cấu hình provider riêng. Người học nên viết/chạy mã cùng bài, thử đổi notebook và áp dụng kỹ thuật vào một trường hợp mới. Có thể tăng tốc video để xem lại, nhưng chỉ xem người khác viết mã chưa chứng minh hiểu cách triển khai.
+Yêu cầu thực hành trong phần giới thiệu là Python cơ bản, môi trường chạy notebook và quyền truy cập API phù hợp. Bản giới thiệu không thay hướng dẫn xác thực cụ thể; các khóa cloud dùng cấu hình nhà cung cấp riêng. Người học nên viết/chạy mã cùng bài, thử đổi notebook và áp dụng kỹ thuật vào một trường hợp mới. Có thể tăng tốc video để xem lại, nhưng chỉ xem người khác viết mã chưa chứng minh hiểu cách triển khai.
 
-Đối với ôn Architect, dùng bản đồ này để nối các lớp: API nhận context; tool bổ sung khả năng và dữ liệu ngoài; MCP chuẩn hóa tích hợp; workflow/agent điều phối các bước. Chi tiết của từng lớp nằm ở bài tương ứng. Đây là bài định hướng, không phải một task statement độc lập trong Exam Guide.
+Đối với ôn Architect, dùng bản đồ này để nối các lớp: API nhận ngữ cảnh; công cụ bổ sung khả năng và dữ liệu ngoài; MCP chuẩn hóa tích hợp; workflow/agent điều phối các bước. Chi tiết của từng lớp nằm ở bài tương ứng. Đây là bài định hướng, không phải một task statement độc lập trong Exam Guide.
 
 ## Câu hỏi
 
@@ -20,9 +20,9 @@ B. Prompt evaluation với dữ liệu và tiêu chí thích hợp.
 
 C. Chỉ đổi tên notebook.
 
-D. Chỉ dùng model đắt nhất.
+D. Chỉ dùng mô hình đắt nhất.
 
-**2. Chọn một.** Muốn kiểm tra mình hiểu một mẫu tool loop sau khi xem video. Cách học sát lời khuyên của bài nhất?
+**2. Chọn một.** Muốn kiểm tra mình hiểu một mẫu công cụ loop sau khi xem video. Cách học sát lời khuyên của bài nhất?
 
 A. Chỉ ghi nhớ chữ cái đáp án.
 
@@ -32,13 +32,13 @@ C. Tự chạy mã, thay đổi tình huống và quan sát kết quả/lỗi.
 
 D. Giả định notebook không cần môi trường Python.
 
-**3. Chọn một.** Bài giới thiệu nhắc API, MCP và workflows. Có nên coi đây là ba tên gọi của cùng một lớp không?
+**3. Chọn một.** Bài giới thiệu nhắc API, MCP và các quy trình làm việc. Có nên coi đây là ba tên gọi của cùng một lớp không?
 
 A. Có, chỉ khác cách viết.
 
-B. Có, một schema tự triển khai mọi workflow.
+B. Có, một bản mô tả cấu trúc dữ liệu tự triển khai mọi quy trình làm việc.
 
-C. Có, cấu hình MCP thay toàn bộ việc quản lý context.
+C. Có, cấu hình MCP thay toàn bộ việc quản lý ngữ cảnh.
 
 D. Không; chúng có vai trò riêng và cần hiểu cách phối hợp qua các bài sau.
 
@@ -48,20 +48,20 @@ D. Không; chúng có vai trò riêng và cần hiểu cách phối hợp qua c�
 
 2. **C.** A/B chỉ ghi nhận việc xem; D bỏ yêu cầu môi trường thực hành.
 
-3. **D.** A xóa ranh giới kiến trúc; B nhầm mô tả với điều phối thực thi; C bỏ trách nhiệm của host/API context.
+3. **D.** A xóa ranh giới kiến trúc; B nhầm mô tả với điều phối thực thi; C bỏ trách nhiệm của host/API ngữ cảnh.
 
 ## Đối chiếu qua phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Course Wrap Up](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287802), sources/api-media/287802.json. Bài kết thúc nhấn mạnh eval thay thử tay vài lượt; prompt rõ/direct; tool use, Claude Code/Computer Use và workflow/agent trade-offs. Các hướng đọc tiếp được nêu là orchestration, agent eval/monitoring, agentic RAG và RAG/tool evaluation. Tool eval kiểm tra cả mô tả có giúp chọn đúng tool không. Đây là recap/định hướng tiếp, không bổ sung contract API mới và không tự xác nhận người học đã đạt chuẩn thi.
+Đã đọc toàn bộ phụ đề tiếng Anh của [Course Wrap Up](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287802), sources/api-media/287802.json. Bài kết thúc nhấn mạnh phép đánh giá thay thử tay vài lượt; prompt rõ/direct; tool use, Claude Code/Computer Use và workflow/agent trade-offs. Các hướng đọc tiếp được nêu là orchestration, tác nhân AI eval/monitoring, agentic RAG và RAG/tool evaluation. Công cụ phép đánh giá kiểm tra cả mô tả có giúp chọn đúng công cụ không. Đây là recap/định hướng tiếp, không bổ sung quy định về dữ liệu và hành vi API mới và không tự xác nhận người học đã đạt chuẩn thi.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Course wrap up](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276827), sources/bedrock-media/276827.json. Recap API parameters, prompting, tool/computer use, eval và các chủ đề nâng cao; nhấn mạnh không bỏ evaluation. Hướng tiếp theo là orchestration, RAG alternatives và agentic workflows. Những chủ đề được recap nhắc đến không tự chứng minh là mục tiêu thi hoặc đã có bài tương ứng trong curriculum hiện tại. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Đã đọc toàn bộ phụ đề tiếng Anh của [Course wrap up](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276827), sources/bedrock-media/276827.json. Recap API parameters, prompting, tool/computer use, phép đánh giá và các chủ đề nâng cao; nhấn mạnh không bỏ evaluation. Hướng tiếp theo là orchestration, RAG alternatives và agentic các quy trình làm việc. Những chủ đề được recap nhắc đến không đủ để chứng minh là mục tiêu thi hoặc đã có bài tương ứng trong curriculum hiện tại. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Welcome to the course](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289145), sources/vertex-media/289145.json. Lộ trình tương tự nhưng truy cập model qua Vertex, cần Google Cloud account có quyền Vertex/model Anthropic và môi trường Python/notebook. Khuyến khích tự chạy/thay đổi notebook, xem lại video và áp dụng tình huống mới. Không dùng Anthropic API key trực tiếp như điều kiện bắt buộc cho Vertex. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Đã đọc toàn bộ phụ đề tiếng Anh của [Welcome to the course](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289145), sources/vertex-media/289145.json. Lộ trình tương tự nhưng truy cập mô hình qua Vertex, cần Google Cloud account có quyền Vertex/model Anthropic và môi trường Python/notebook. Khuyến khích tự chạy/thay đổi notebook, xem lại video và áp dụng tình huống mới. Không dùng Anthropic API key trực tiếp như điều kiện bắt buộc cho Vertex. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Course Wrap Up](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289240), sources/vertex-media/289240.json. Recap nhấn mạnh eval, prompting rõ, tools và workflow/agent trade-offs; gợi ý nghiên cứu orchestration, agent eval/monitoring, agentic RAG và RAG/tool eval. Đây là định hướng tiếp, không tự mở rộng nội dung đã học thành mọi chủ đề mới. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Đã đọc toàn bộ phụ đề tiếng Anh của [Course Wrap Up](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289240), sources/vertex-media/289240.json. Recap nhấn mạnh phép đánh giá, prompting rõ, các công cụ và workflow/agent trade-offs; gợi ý nghiên cứu orchestration, tác nhân AI eval/monitoring, agentic RAG và RAG/tool phép đánh giá. Đây là định hướng tiếp, không tự mở rộng nội dung đã học thành mọi chủ đề mới. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.

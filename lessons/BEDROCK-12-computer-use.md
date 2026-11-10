@@ -1,10 +1,10 @@
-# Computer Use — Kiểm thử giao diện qua phản hồi trực quan
+# Kiểm thử giao diện qua phản hồi trực quan
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276807), sources/bedrock-lessons/276807.json. Câu hỏi tự biên soạn, không phải đề thi thật.
 
-## Tóm tắt
+## Nội dung bài học
 
-Computer Use cho phép ứng dụng thực thi yêu cầu chụp màn hình, click, gõ và cuộn để model quan sát rồi quyết định bước tiếp theo. Bài minh họa QA autocomplete: nhập @, chọn bằng Enter, rồi kiểm tra vị trí dropdown sau Backspace. Tiêu chí cụ thể giúp phân biệt thao tác thành công với giao diện thực sự đúng.
+Computer Use cho phép ứng dụng thực thi yêu cầu chụp màn hình, click, gõ và cuộn để mô hình quan sát rồi quyết định bước tiếp theo. Bài minh họa QA autocomplete: nhập @, chọn bằng Enter, rồi kiểm tra vị trí dropdown sau Backspace. Tiêu chí cụ thể giúp phân biệt thao tác thành công với giao diện thực sự đúng.
 
 Mỗi ca nên có trạng thái ban đầu rõ, các bước, kết quả mong đợi và bằng chứng quan sát. Reset trang giữa các ca khi cần tránh trạng thái trước ảnh hưởng ca sau. Ghi rõ bước nào pass/fail và giới hạn quan sát; thao tác click đã chạy không đồng nghĩa tác vụ đã thành công.
 

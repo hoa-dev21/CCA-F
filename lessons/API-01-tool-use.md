@@ -1,22 +1,65 @@
-# Introducing tool use — Kết nối Claude với dữ liệu bên ngoài
+# Kết nối Claude với dữ liệu bên ngoài
 
 Nguồn bài học: [Introducing tool use](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287747), khóa Building with the Claude API. Đã đọc nội dung sau đăng nhập. Đây là bản tóm tắt tự biên soạn; các câu hỏi bên dưới là câu luyện tập mới, không phải câu thi thật.
 
 Bản nội dung đã đọc: sources/api-lessons/287747.json.
 
-## Bài giảng khoảng 5 phút
+## Nội dung bài học
 
-Kiến thức huấn luyện của Claude không cung cấp trạng thái hiện tại của đơn hàng, thời tiết hay cơ sở dữ liệu doanh nghiệp. Muốn trả lời bằng dữ liệu mới, ứng dụng cần cung cấp một đường truy cập tới hệ thống bên ngoài.
+### 1. Vì sao Claude cần công cụ?
 
-Trong mô hình client tool của bài học, ứng dụng gửi yêu cầu người dùng cùng định nghĩa công cụ. Claude nhận ra thông tin còn thiếu và yêu cầu công cụ với tham số thích hợp. Máy chủ ứng dụng thực thi mã gọi API hoặc truy vấn cơ sở dữ liệu, rồi gửi kết quả trở lại. Claude dùng kết quả đó để trả lời.
+Hãy hình dung bạn đang làm một trợ lý chăm sóc khách hàng. Khách hỏi: “Đơn hàng DH102 của tôi đã giao chưa?”. Claude có thể hiểu câu hỏi và biết cách viết câu trả lời lịch sự. Tuy nhiên, kiến thức có được trong quá trình huấn luyện không cho Claude biết trạng thái hiện tại của đơn DH102 trong hệ thống của cửa hàng.
 
-Hãy phân biệt hai trách nhiệm: Claude chọn yêu cầu thông tin nào; ứng dụng thực thi thao tác bên ngoài. Chỉ viết tên công cụ trong prompt chưa tạo ra kết nối dữ liệu.
+Muốn trả lời, trợ lý cần lấy dữ liệu từ hệ thống quản lý đơn hàng. **Công cụ (tool)** là cách ứng dụng cho phép Claude yêu cầu thực hiện việc đó. Công cụ có thể tra cứu dữ liệu, gọi một dịch vụ bên ngoài hoặc thực hiện một thao tác được ứng dụng cho phép.
 
-Ví dụ tự biên soạn: khách hỏi đơn hàng có giao hôm nay không. Claude cần yêu cầu tra cứu đơn; ứng dụng gọi hệ thống vận chuyển; kết quả mới được chuyển lại để Claude giải thích. Nếu chưa nhận được kết quả, không có cơ sở kết luận trạng thái giao hàng hiện tại.
+Trong bài này, ta học loại công cụ do ứng dụng thực thi, thường gọi là **client tool**. Phần mềm của bạn chịu trách nhiệm chạy công cụ. Đây là điểm quan trọng để hiểu đúng các bước tiếp theo.
 
-Từ khóa: **tool use** — sử dụng công cụ; **tool request** — yêu cầu gọi công cụ; **data retrieval** — lấy dữ liệu; **external API** — API bên ngoài.
+### 2. Những thành phần tham gia
 
-Liên hệ ôn Architect: hiểu đường đi của dữ liệu và nơi thực thi công cụ là nền tảng cho thiết kế agentic loop. Bài này chưa đủ để triển khai toàn bộ vòng lặp hoặc xử lý lỗi; các bài tiếp theo sẽ bổ sung schema, message blocks và tool results.
+- **Người dùng:** đặt câu hỏi, chẳng hạn hỏi trạng thái một đơn hàng.
+- **Claude:** hiểu câu hỏi, xác định thông tin cần lấy và đề nghị gọi công cụ phù hợp.
+- **Ứng dụng của bạn:** nhận đề nghị từ Claude, chạy mã của công cụ và gửi kết quả trở lại.
+- **Hệ thống bên ngoài:** nơi có dữ liệu thật, chẳng hạn cơ sở dữ liệu đơn hàng hoặc dịch vụ thời tiết.
+
+Khi nói ứng dụng “gọi API”, ta đang nói đến việc phần mềm gửi một yêu cầu theo cách mà dịch vụ bên ngoài quy định. Ví dụ, ứng dụng gửi mã đơn hàng đến dịch vụ vận chuyển để nhận trạng thái giao hàng. Người mới chưa cần thuộc cú pháp API ở bài này; trước hết cần hiểu ai gửi yêu cầu và ai có dữ liệu.
+
+### 3. Quá trình sử dụng công cụ diễn ra thế nào?
+
+Quá trình có bốn bước chính:
+
+1. **Ứng dụng gửi câu hỏi và mô tả công cụ cho Claude.** Mô tả cho biết công cụ làm được gì và cần thông tin đầu vào nào. Chẳng hạn, công cụ tra cứu đơn hàng cần mã đơn hàng.
+2. **Claude đề nghị gọi công cụ.** Với câu hỏi về DH102, Claude đưa ra yêu cầu tra cứu mã DH102. Đây mới là đề nghị thực hiện, chưa phải dữ liệu lấy được từ hệ thống.
+3. **Ứng dụng chạy công cụ.** Mã chương trình gọi hệ thống đơn hàng, nhận kết quả rồi gửi kết quả ấy trở lại Claude.
+4. **Claude trả lời người dùng dựa trên kết quả.** Claude đọc dữ liệu vừa nhận và diễn đạt thành câu trả lời phù hợp với câu hỏi ban đầu.
+
+Bạn có thể ghi nhớ theo đường đi: **câu hỏi → đề nghị lấy dữ liệu → ứng dụng lấy dữ liệu → Claude dùng dữ liệu để trả lời**.
+
+### 4. Ví dụ đi từ đầu đến cuối
+
+Đây là ví dụ tự biên soạn, với dữ liệu giả định để minh họa:
+
+- Khách hỏi: “Đơn DH102 của tôi có giao hôm nay không?”.
+- Ứng dụng gửi câu hỏi cho Claude và cho biết có công cụ tra cứu đơn hàng.
+- Claude yêu cầu dùng công cụ với mã đơn DH102.
+- Ứng dụng tra hệ thống vận chuyển. Hệ thống trả về: “Đang giao; dự kiến giao trước 18 giờ hôm nay”.
+- Ứng dụng gửi kết quả này cho Claude.
+- Claude trả lời: “Theo trạng thái từ đơn vị vận chuyển, đơn DH102 đang được giao và dự kiến đến trước 18 giờ hôm nay”.
+
+Chữ “dự kiến” cần được giữ lại vì nguồn chỉ đưa ra thời gian dự kiến. Nếu công cụ chưa trả dữ liệu, Claude chưa có cơ sở để khẳng định đơn đang giao. Nếu dữ liệu không tìm thấy đơn hàng, câu trả lời cũng phải phản ánh tình trạng đó.
+
+### 5. Lợi ích và những điều dễ hiểu nhầm
+
+Công cụ giúp trợ lý tiếp cận dữ liệu mới, kết nối với hệ thống doanh nghiệp và trả lời dựa trên thông tin của tình huống cụ thể. Cách trao đổi có cấu trúc cũng giúp ứng dụng biết Claude muốn lấy gì và cần truyền tham số nào.
+
+Tuy nhiên, chỉ viết “hãy tra đơn hàng” trong yêu cầu không tự tạo ra kết nối đến hệ thống đơn hàng. Người xây dựng ứng dụng vẫn phải cung cấp công cụ và mã thực thi tương ứng.
+
+Tương tự, việc Claude đã yêu cầu gọi công cụ không có nghĩa công cụ đã chạy thành công. Cần phân biệt **yêu cầu gọi công cụ** với **kết quả công cụ trả về**. Dữ liệu lấy từ bên ngoài cũng có thể cũ hoặc sai; việc sử dụng công cụ không tự bảo đảm dữ liệu luôn chính xác.
+
+### 6. Tự giải thích lại trước khi làm câu hỏi
+
+Hãy thử trả lời bằng lời của bạn: “Khi khách hỏi trạng thái thanh toán mới nhất, Claude làm phần nào, ứng dụng làm phần nào?”. Nếu bạn giải thích được rằng Claude đề nghị tra cứu, ứng dụng thực sự lấy dữ liệu rồi Claude mới dựa vào đó để trả lời, bạn đã nắm được ý chính.
+
+Áp dụng khi ôn thi Architect: hiểu đường đi của dữ liệu và nơi thực thi công cụ là nền tảng cho thiết kế vòng lặp hoạt động của tác nhân AI. Bài này chưa đủ để triển khai toàn bộ vòng lặp hoặc xử lý lỗi; các bài tiếp theo sẽ bổ sung bản mô tả cấu trúc dữ liệu, các khối nội dung tin nhắn và kết quả công cụ.
 
 ## Tự kiểm tra
 
@@ -30,7 +73,7 @@ C. Yêu cầu Claude trả lời thật chắc chắn.
 
 D. Tăng độ dài câu trả lời.
 
-**Câu 2 — Chọn hai.** Với client tool trong bài học, trách nhiệm nào thuộc máy chủ ứng dụng?
+**Câu 2 — Chọn hai.** Với công cụ do ứng dụng thực thi trong bài học, trách nhiệm nào thuộc máy chủ ứng dụng?
 
 A. Thực thi mã gọi dịch vụ bên ngoài.
 
@@ -58,10 +101,10 @@ D. Không cần hệ thống đơn hàng nếu mô tả công cụ chi tiết.
 
 Nếu sai câu 2 hoặc 3, hãy vẽ lại bốn bước: yêu cầu → Claude yêu cầu công cụ → ứng dụng thực thi → Claude dùng kết quả trả lời.
 
-## Đối chiếu Bedrock: Introducing tool use
+## Đối chiếu Bedrock: sử dụng công cụ
 
-Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276756) và đối chiếu khái niệm với bài chung. Cùng luồng yêu cầu dữ liệu–ứng dụng thực thi–model dùng kết quả. Thứ tự viết các thành phần mã có thể khác thứ tự chạy. Nguồn: sources/bedrock-lessons/276756.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
+Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276756) và đối chiếu khái niệm với bài chung. Cùng luồng yêu cầu dữ liệu–ứng dụng thực thi–mô hình dùng kết quả. Thứ tự viết các thành phần mã có thể khác thứ tự chạy. Nguồn: sources/bedrock-lessons/276756.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Introducing tool use](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289172), sources/vertex-lessons/289172.json. Tool cung cấp dữ liệu ngoài qua vòng request/executor/result. Dữ liệu thời gian thực vẫn có thể cũ hoặc sai; model không tự thực thi Python chỉ nhờ khai báo tool. Dùng chung câu hỏi khái niệm.
+Đã đọc [Introducing tool use](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289172), sources/vertex-lessons/289172.json. Công cụ cung cấp dữ liệu ngoài qua vòng request/executor/result. Dữ liệu thời gian thực vẫn có thể cũ hoặc sai; mô hình không tự thực thi Python chỉ nhờ khai báo công cụ. Dùng chung câu hỏi khái niệm.
