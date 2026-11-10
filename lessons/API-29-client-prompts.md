@@ -4,13 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Client dùng `list_prompts()` để khám phá mẫu có sẵn, và `get_prompt(name, args)` để lấy messages của mẫu cụ thể sau khi thay tham số.
 
-Trong CLI của bài, người dùng chọn mẫu qua slash command, cung cấp đối số như tài liệu cần định dạng. Client lấy mẫu, ứng dụng gửi messages cho Claude, rồi Claude có thể dùng công cụ để thực hiện tác vụ.
+Client dùng `list_prompts()` để lấy danh sách mẫu hướng dẫn trên MCP server, và `get_prompt(name, args)` để lấy các tin nhắn của một mẫu sau khi điền tham số.
 
-Đối số phải khớp tên tham số server mong đợi. Một template đúng nhưng client truyền sai `doc_id` vẫn tạo ra tác vụ nhắm sai đối tượng hoặc không gọi được mẫu.
+Trong giao diện dòng lệnh của bài, người dùng chọn mẫu bằng lệnh bắt đầu với dấu gạch chéo, còn gọi là slash command, rồi cung cấp thông tin như mã tài liệu. Client lấy mẫu, ứng dụng gửi các tin nhắn cho Claude, sau đó xử lý những yêu cầu công cụ cần thiết.
 
-Phân biệt ba kết quả: danh sách mô tả các mẫu; messages của mẫu đã điền tham số; kết quả tác vụ sau khi chạy mô hình và công cụ. Ba bước này không thay thế nhau.
+Tên và giá trị tham số phải đúng với định nghĩa phía server. Ví dụ: mẫu yêu cầu `doc_id` nhưng client gửi một tên trường khác thì có thể không lấy được mẫu. Nếu gửi nhầm mã tài liệu, hướng dẫn có thể nhắm sai đối tượng.
+
+Cần phân biệt ba mốc: biết có những mẫu nào, lấy được hướng dẫn đã điền tham số và thực hiện xong nhiệm vụ. Việc lấy mẫu thành công chưa chứng minh tài liệu đã được chỉnh sửa.
 
 ## Câu hỏi
 
@@ -36,7 +37,7 @@ D. Chỉ thay giọng điệu tin nhắn của người dùng.
 
 **3. Chọn một.** `get_prompt` trả messages đúng. Để hoàn thành tác vụ, bước nào còn cần?
 
-A. Gửi messages cho Claude và xử lý các công cụ calls cần thiết.
+A. Gửi các tin nhắn cho Claude và xử lý những yêu cầu gọi công cụ cần thiết.
 
 B. Coi việc lấy template là đã sửa tài liệu.
 
@@ -52,12 +53,18 @@ D. Bỏ mọi tham số và chạy lại danh sách.
 
 ## Đối chiếu khóa MCP riêng
 
-Đã đọc và đối chiếu [Prompts in the client](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296692) trong Introduction to MCP. Các khái niệm chính của bài được tóm tắt tại đây; dùng cùng bộ câu hỏi để tránh học lặp. Nguồn đối chiếu: sources/mcp-lessons/296692.json. Hai bản diễn đạt không hoàn toàn giống nhau; không tuyên bố là bản sao nguyên văn.
+Phần kiến thức chính đã được đối chiếu với khóa Introduction to MCP và được trình bày trong bài này. Hai bản có cách diễn đạt khác nhau, không phải bản sao nguyên văn. Dùng chung câu hỏi để tránh học và đếm trùng.
+
+Nguồn đối chiếu: [Prompts in the client](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296692). Bản lưu: `sources/mcp-lessons/296692.json`.
 
 ## Đối chiếu MCP trong khóa Bedrock
 
-Đã đọc [Prompts in the client](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276795), sources/bedrock-lessons/276795.json và đối chiếu với bài chung. Cùng list_prompts/get_prompt và đối số doc_id. Giữ ranh giới giữa danh sách mẫu, messages sau điền tham số và kết quả thực thi. Dùng chung câu hỏi khái niệm tương đương, không đếm lặp.
+Bài Bedrock cùng sử dụng `list_prompts`, `get_prompt` và tham số `doc_id`. Phân biệt danh sách mẫu, tin nhắn đã điền tham số và kết quả thực thi. Các bước này không thay nhau. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Prompts in the client](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276795). Bản lưu: `sources/bedrock-lessons/276795.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Prompts in the client](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289209), sources/vertex-lessons/289209.json. list_prompts lấy danh sách; get_prompt truyền arguments để server tạo messages; client hiển thị slash command nếu hỗ trợ. Discovery không là execution, không mặc định mọi MCP client tự có slash UI. Dùng chung câu hỏi khái niệm.
+`list_prompts` lấy danh sách; `get_prompt` gửi tham số để server tạo tin nhắn. Client có thể hiển thị lệnh bắt đầu bằng dấu gạch chéo nếu hỗ trợ, nhưng không phải mọi client đều có giao diện này. Khám phá mẫu khác với chạy nhiệm vụ. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Prompts in the client](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289209). Bản lưu: `sources/vertex-lessons/289209.json`.

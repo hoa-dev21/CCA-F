@@ -4,15 +4,16 @@ Nguồn bổ trợ: Exam Guide CCAR-F v1.0, mục 4.6, trang PDF 19. Câu hỏi 
 
 ## Nội dung bài học
 
-Mô hình tự kiểm tra ngay trong ngữ cảnh đã sinh mã có thể giữ các giả định cũ và ít chất vấn quyết định của mình. Một instance độc lập không nhận lý giải của người tạo cung cấp góc nhìn mới; vẫn phải nhận yêu cầu và mã cần kiểm tra.
 
-Kiểm tra nhiều file trong một prompt lớn dễ có độ sâu không đồng đều và phát hiện mâu thuẫn. Tách lượt kiểm tra cục bộ từng file, rồi một lượt riêng kiểm tra tương tác liên file và luồng dữ liệu. Chỉ tách từng file mà bỏ bước tích hợp sẽ mất loại lỗi quan trọng khác.
+Mô hình tự rà soát ngay trong cuộc trò chuyện đã viết mã có thể tiếp tục dựa vào các giả định cũ. Một phiên kiểm tra độc lập, nhận yêu cầu và mã nhưng không nhận lời lý giải của bên viết, có thể cung cấp góc nhìn mới.
 
-Điểm tự tin của mỗi finding có thể hỗ trợ chuyển người duyệt nếu đã hiệu chỉnh; không dùng độ tự tin để thay thế bằng chứng hoặc tự động coi finding là đúng.
+Với thay đổi nhiều tệp, dồn tất cả vào một prompt lớn có thể khiến một số tệp được xem kỹ còn các tệp khác bị lướt qua. Bài đề xuất hai mức kiểm tra: rà từng tệp, rồi có một lượt riêng xem quan hệ giữa các tệp và đường đi của dữ liệu.
 
-Một verification pass có thể yêu cầu mô hình tự báo điểm tự tin kèm bằng chứng cho từng finding; routing dùng các điểm đó sau khi đối chiếu tập có nhãn. Tăng extended thinking hoặc yêu cầu “tự phản biện kỹ hơn” trong cùng phiên không tạo sự độc lập về ngữ cảnh như người kiểm tra instance riêng. Các kết luận về hiệu quả cần đo trên bài toán cụ thể, không coi một pattern tự bảo đảm bắt hết lỗi.
+Ví dụ: Một tệp đổi kiểu dữ liệu trả về, nhưng tệp gọi hàm vẫn xử lý theo kiểu cũ. Chỉ kiểm tra từng tệp có thể bỏ sót lỗi này; lượt tích hợp cần đối chiếu hai phía.
 
-Ví dụ để dễ hình dung: một file đổi kiểu trả về, file gọi vẫn dùng cách cũ. Kiểm tra từng file có thể không thấy vấn đề; lượt tích hợp cần đối chiếu hợp đồng giữa hai bên.
+Mỗi phát hiện có thể kèm bằng chứng và điểm tự tin. Muốn dùng điểm để quyết định chuyển người duyệt, phải đối chiếu và hiệu chỉnh bằng dữ liệu có nhãn trước. Điểm tự tin không thay bằng chứng và không tự chứng minh phát hiện đúng.
+
+Tăng thời gian suy luận hoặc yêu cầu “tự phản biện kỹ hơn” trong cùng phiên không tạo sự độc lập về ngữ cảnh như một phiên khác. Dù chọn cách nào, vẫn cần đo hiệu quả trên nhiệm vụ cụ thể và thực hiện các kiểm tra cần thiết; không phương pháp nào tự bảo đảm tìm hết lỗi.
 
 ## Câu hỏi tình huống
 

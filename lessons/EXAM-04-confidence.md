@@ -4,13 +4,16 @@ Nguồn bổ trợ: Exam Guide CCAR-F v1.0, mục 5.5, trang PDF 22. Câu hỏi 
 
 ## Nội dung bài học
 
-Độ chính xác tổng thể cao có thể che một loại tài liệu hoặc trường dữ liệu rất yếu. Trước khi giảm người duyệt, phân tích theo loại tài liệu và theo trường quan trọng.
 
-Điểm tự tin do mô hình tự báo chưa thể được coi là xác suất đúng đã được hiệu chỉnh. Thu thập nhãn chuẩn, đo độ đúng theo các mức điểm tự tin, rồi đặt ngưỡng chuyển người phù hợp dữ liệu xác thực. Điểm tự tin ở cấp trường giúp ưu tiên người kiểm tra vào chỗ yếu thay vì chỉ có một điểm chung cho cả tài liệu.
+Độ chính xác chung cao có thể che giấu một nhóm lỗi quan trọng. Trước khi giảm người kiểm tra, hãy xem kết quả theo từng loại tài liệu và từng trường dữ liệu, không chỉ nhìn một con số tổng hợp.
 
-Đưa trường điểm tự tin thấp và nguồn mơ hồ/mâu thuẫn tới người duyệt. Với nhóm điểm tự tin cao, vẫn lấy mẫu ngẫu nhiên phân tầng để đo lỗi và phát hiện mẫu sai mới. Chỉ xem nhóm thấp không cho biết mức lỗi thực tế của nhóm đang tự động thông qua.
+Điểm tự tin do mô hình tự báo chưa phải xác suất đúng đã được kiểm chứng. Ví dụ: điểm 0,98 không tự có nghĩa kết quả đúng 98% số lần. Cần đối chiếu với dữ liệu có đáp án chuẩn, đo tỷ lệ đúng ở từng mức điểm rồi chọn ngưỡng chuyển người kiểm tra. Quá trình này gọi là hiệu chỉnh độ tự tin.
 
-Ví dụ để dễ hình dung: hệ thống đạt 97% chung nhưng sai nhiều ở ngày đáo hạn trên một mẫu biểu hiếm. Tăng tỷ lệ tự động cho mọi mẫu biểu dựa trên 97% có thể làm lỗi quan trọng lọt qua. Cần nhìn đúng phân đoạn và đo ngưỡng kiểm tra trên nhãn thật.
+Điểm riêng cho từng trường giúp nhận ra chỗ yếu. Những trường điểm thấp, nguồn mơ hồ hoặc dữ liệu mâu thuẫn nên được chuyển người duyệt theo quy trình. Với nhóm điểm cao đang được tự động thông qua, vẫn cần kiểm tra mẫu.
+
+Lấy mẫu ngẫu nhiên phân tầng nghĩa là chia dữ liệu thành các nhóm quan trọng, chẳng hạn theo loại tài liệu, rồi chọn ngẫu nhiên trong từng nhóm. Cách này giúp phát hiện lỗi ở nhóm ít gặp thay vì chỉ thấy nhóm phổ biến.
+
+Ví dụ: Hệ thống đạt 97% chung nhưng thường sai ngày đáo hạn ở một mẫu biểu hiếm. Không nên dựa vào 97% để tăng tự động hóa cho mọi tài liệu. Cần đo đúng nhóm và trường đó, rồi kiểm chứng ngưỡng duyệt bằng dữ liệu có nhãn.
 
 ## Câu hỏi tình huống
 

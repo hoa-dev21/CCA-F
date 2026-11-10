@@ -4,15 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-cod
 
 ## Nội dung bài học
 
-Plugin gom các thành phần như skills, các tác nhân con, hooks và cấu hình MCP thành đơn vị có thể cài và quản lý phiên bản. Marketplace giúp nhóm khám phá và phân phối chung thay vì sao chép thư mục thủ công.
 
-Cần xem toàn bộ thành phần trước khi cài. Một plugin được quảng bá nhờ skill vẫn có thể chứa hook chạy mã theo sự kiện hoặc tác nhân AI với chỉ dẫn riêng. Việc đã qua kiểm tra không có nghĩa mọi hành vi đều phù hợp với môi trường của bạn.
+Plugin là gói tập hợp các thành phần như skills, tác nhân con, hooks và cấu hình kết nối MCP để cài đặt và quản lý phiên bản cùng nhau. Marketplace là nơi giúp tìm và phân phối các gói này, thay vì mỗi người tự sao chép thư mục cấu hình.
 
-Bài nhấn mạnh hooks của plugin chạy cùng hooks của dự án, không mặc định thay thế chúng. Vì vậy phải xem tương tác của các quy tắc, không chỉ kiểm tra từng thành phần riêng lẻ.
+Trước khi cài, cần xem toàn bộ thành phần. Một plugin được giới thiệu vì có skill hữu ích vẫn có thể kèm hook chạy mã theo sự kiện hoặc tác nhân con có hướng dẫn riêng. Việc plugin đã được rà soát không tự chứng minh mọi hành vi đều phù hợp với dự án của bạn.
 
-Đóng gói cấu hình đã kiểm chứng, ghi phiên bản như dependency và cập nhật có kiểm tra. Namespace giúp phân biệt thành phần từ plugin; không đồng nghĩa cô lập mọi tác động của mã hook.
+Theo bài học, hook của plugin chạy cùng hook của dự án, không mặc định thay thế chúng. Ví dụ: nếu cả hai đều kiểm tra trước khi công cụ chạy, cần thử xem các quyết định có xung đột hoặc cản trở công việc hợp lệ hay không.
 
-Liên hệ ôn thi: dùng để hiểu phân phối cấu hình và quyền công cụ; không mặc định mọi chi tiết marketplace mới đều là mục tiêu thi.
+Nên đóng gói cấu hình đã kiểm chứng, ghi rõ phiên bản như với các thư viện phụ thuộc và kiểm tra khi cập nhật. Phần tên riêng của plugin (namespace) giúp phân biệt thành phần đến từ đâu; nó không tự cô lập mọi tác động của mã hook.
+
+Khi ôn thi, dùng bài này để hiểu việc chia sẻ cấu hình và quyền công cụ. Những chi tiết mới của marketplace cần được đối chiếu riêng với phạm vi đề cương.
 
 ## Câu hỏi
 

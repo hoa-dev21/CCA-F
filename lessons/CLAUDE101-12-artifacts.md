@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101
 
 ## Nội dung bài học
 
-Artifact là đầu ra độc lập để xem, chỉnh và dùng lại, như tài liệu, deck, prototype hoặc dashboard. Khác một câu trả lời nằm trong chat, artifact có bề mặt thao tác riêng; khác file creation, nó không chỉ là một tệp tải về để mở ứng dụng khác.
 
-Nêu deliverable và người dùng cuối giúp chọn cấu trúc. Chỉnh bằng yêu cầu trong hội thoại hoặc công cụ biên tập tùy loại artifact. Khi xuất file, kiểm tra định dạng và bản cuối; không mặc định thay đổi một bản xuất sẽ tự đồng bộ ngược.
+Artifact là một sản phẩm được tạo trong không gian riêng để bạn xem, chỉnh sửa và dùng lại. Bài học đưa ra các ví dụ như tài liệu, bài trình chiếu, bản mẫu ứng dụng và bảng theo dõi số liệu (dashboard). Artifact có chỗ để thao tác riêng, thay vì chỉ là một đoạn trả lời trong cuộc trò chuyện hoặc một tệp tải về.
 
-Quyền chia sẻ cần phù hợp người xem/sửa. Dữ liệu kéo vào biểu đồ có thể là snapshot, không phải luồng cập nhật trực tiếp; khi cần số mới phải refresh và kiểm tra nguồn. Plan, beta và lựa chọn chia sẻ thay đổi theo sản phẩm, nên bản ôn tập trung khái niệm.
+Khi yêu cầu tạo artifact, hãy nói rõ sản phẩm cần làm, ai sẽ dùng, dữ liệu đầu vào và các thao tác cần hỗ trợ. Ví dụ: “Tạo bảng theo dõi doanh số cho trưởng nhóm, có bộ lọc theo tháng và biểu đồ từ bảng dữ liệu đính kèm”.
+
+Bạn có thể yêu cầu chỉnh sửa qua cuộc trò chuyện hoặc dùng công cụ biên tập phù hợp với loại artifact. Nếu xuất thành tệp, cần kiểm tra định dạng và phiên bản cuối. Việc sửa tệp đã xuất không nhất thiết cập nhật ngược lại artifact.
+
+Khi chia sẻ, chọn quyền xem hoặc sửa theo nhu cầu người nhận. Cũng cần xác định biểu đồ dùng dữ liệu được chụp lại tại một thời điểm (snapshot) hay dữ liệu cập nhật trực tiếp (live). Nếu chỉ là bản chụp dữ liệu, cần cập nhật và kiểm tra nguồn khi muốn có số mới. Các lựa chọn chia sẻ và gói hỗ trợ có thể thay đổi theo sản phẩm.
 
 ## Câu hỏi
 

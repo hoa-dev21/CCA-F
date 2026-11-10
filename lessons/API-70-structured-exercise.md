@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Yêu cầu bài tập là giữ nguyên prompt sinh ba lệnh AWS CLI, chỉ chỉnh assistant prefill và stop sequences để đầu ra có cả ba lệnh trong một khối, không giải thích/comment. Đây là bài về điều khiển định dạng, không thực thi các lệnh.
 
-Prefill chỉ có ba backticks có thể khiến phần text mới bắt đầu bằng nhãn ngôn ngữ bash. Thêm bash vào phần prefill giải quyết nhãn đó, nhưng mô hình vẫn có thể tách nhiều code blocks hoặc thêm comment shell. Video bổ sung câu dẫn trong prefill nêu cả ba lệnh ở một khối không comment, rồi mở code fence bash; stop ở fence đóng.
+Bài tập giữ nguyên yêu cầu tạo ba lệnh AWS CLI và chỉ sửa phần mở đầu câu trả lời (assistant prefill) cùng chuỗi đánh dấu dừng (stop sequences). Kết quả cần có đủ ba lệnh trong một khối mã, không có lời giải thích hoặc chú thích. Bài tập tạo văn bản lệnh, không chạy các lệnh đó.
 
-Stop marker có thể chặn ngay sau lệnh đầu nếu mô hình tạo nhiều blocks. Prefill/stop trong video là kỹ thuật theo model/phiên bản; kiểm tra khả năng hỗ trợ và validation đầu ra thực. Không coi định dạng sạch là bằng chứng lệnh đúng, an toàn hoặc được phép chạy; extraction/schema khi cần vẫn phải theo quy định về dữ liệu và hành vi được hỗ trợ.
+Nếu phần mở đầu chỉ có ba dấu backtick để mở khối mã Markdown, mô hình có thể sinh tiếp nhãn ngôn ngữ `bash`. Đưa cả nhãn này vào phần mở đầu giúp phần mới sinh bắt đầu ở nội dung lệnh.
+
+Tuy nhiên, mô hình vẫn có thể chia ba lệnh thành nhiều khối hoặc thêm chú thích shell. Video bổ sung chỉ dẫn trong prefill để yêu cầu cả ba lệnh trong một khối không chú thích, rồi dùng dấu đóng khối làm chuỗi dừng. Nếu mô hình vẫn tạo nhiều khối, dấu đóng đầu tiên có thể khiến đầu ra dừng sau một lệnh.
+
+Kỹ thuật này phụ thuộc khả năng hỗ trợ của mô hình và phiên bản. Cần kiểm tra đầu ra thực tế, không chỉ định dạng. Ba dòng lệnh sạch chưa chứng minh lệnh đúng, có quyền chạy hoặc phù hợp về tác động. Khi cần dữ liệu có cấu trúc, vẫn phải dùng và kiểm tra theo cơ chế được hỗ trợ.
 
 ## Câu hỏi
 
@@ -52,8 +55,12 @@ D. Có, stop sequence validate AWS parameters.
 
 ## Đối chiếu qua phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Structured data exercise](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276718), sources/bedrock-media/276718.json. Phụ đề xác nhận cùng bài ba AWS CLI commands với prefill/stop, nhãn bash, single block và không comment. Chỉ sinh text, không chạy lệnh. Khả năng prefill phụ thuộc model/provider; việc đạt định dạng không chứng minh correctness hoặc quyền thực thi.
+Phụ đề xác nhận cùng bài tạo ba lệnh AWS CLI trong một khối mã có nhãn bash, không chú thích, bằng prefill và chuỗi dừng. Bài chỉ tạo văn bản, không chạy lệnh. Hỗ trợ prefill tùy mô hình và nhà cung cấp; đúng định dạng chưa chứng minh lệnh đúng hoặc được phép thực thi.
+
+Nguồn đối chiếu: [Structured data exercise](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276718). Bản lưu: `sources/bedrock-media/276718.json`.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Structured data exercise](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289152), sources/vertex-media/289152.json. Đối chiếu toàn bộ phụ đề với nguồn API287729 đã đọc: trùng nguyên văn. Giữ các lưu ý về xác thực/provider và tính tương thích mô hình của bài chung. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Theo hồ sơ đối chiếu, toàn bộ phụ đề trùng nguyên văn bài API 287729. Dùng chung câu hỏi và giữ lưu ý về xác thực, nhà cung cấp, tính tương thích của mô hình.
+
+Nguồn đối chiếu: [Structured data exercise](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289152). Bản lưu: `sources/vertex-media/289152.json`.

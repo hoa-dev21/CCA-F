@@ -4,15 +4,22 @@ Nguồn bổ trợ: Exam Guide CCAR-F v1.0, mục 4.3, trang PDF 17–18. Câu h
 
 ## Nội dung bài học
 
-Trong cách tiếp cận được đề cương kiểm tra, định nghĩa công cụ trích xuất với JSON bản mô tả cấu trúc dữ liệu, rồi lấy dữ liệu từ tool-use block. Phân biệt `tool_choice`: auto cho mô hình chọn trả text hoặc gọi công cụ; any buộc gọi một công cụ trong tập; lựa chọn theo tên buộc một công cụ cụ thể.
 
-Nếu cần bước thông tin mô tả chạy trước enrichment, ép đúng công cụ thay vì chỉ nhắc trong prompt. Nếu có nhiều bản mô tả cấu trúc dữ liệu trích xuất và chưa biết loại tài liệu, any cho phép mô hình chọn trong tập mà vẫn yêu cầu gọi công cụ.
+Trong cách làm được đề cương kiểm tra, ứng dụng khai báo một công cụ trích xuất với JSON Schema — bản mô tả các trường, kiểu dữ liệu và điều kiện của đầu vào — rồi lấy dữ liệu từ khối `tool_use` mà mô hình trả về.
 
-Bản mô tả cấu trúc dữ liệu chặt giúp kiểm soát hình thức, không chứng minh dữ liệu đúng nghĩa. Tổng dòng hàng có thể sai hoặc dữ liệu bị đặt nhầm trường dù cú pháp hợp lệ. Không coi một bản mô tả cấu trúc dữ liệu khai báo thông thường là tự bảo đảm strict enforcement ở mọi model/API; khi triển khai phải cấu hình khả năng hỗ trợ tương ứng.
+Cách chọn công cụ qua `tool_choice` cần phù hợp với quy trình:
 
-Thiết kế cho dữ liệu thiếu và mơ hồ: nullable/optional theo hợp đồng, enum có unclear hoặc other kèm trường mô tả. Optional nghĩa trường có thể vắng; nullable nghĩa giá trị có thể là null — hai khái niệm không đồng nhất. Đừng ép một giá trị cụ thể khi nguồn không có.
+- `auto`: mô hình có thể trả văn bản hoặc gọi công cụ.
+- `any`: yêu cầu gọi một công cụ trong tập được cung cấp.
+- Chọn theo tên: yêu cầu gọi một công cụ cụ thể.
 
-Kết hợp bản mô tả cấu trúc dữ liệu với quy tắc chuẩn hóa định dạng, chẳng hạn quy ước ngày tháng, và validation nghiệp vụ sau trích xuất.
+Ví dụ: Quy trình phải trích thông tin mô tả tài liệu trước khi bổ sung dữ liệu khác thì nên chọn đúng công cụ cần chạy trước, thay vì chỉ nhắc bằng prompt. Nếu có nhiều công cụ trích xuất theo loại tài liệu và chưa biết loại nào phù hợp, `any` cho phép chọn trong tập mà vẫn yêu cầu gọi công cụ.
+
+Schema giúp quy định cấu trúc, chưa chứng minh dữ liệu đúng nghĩa. Hóa đơn có thể đủ trường và đúng kiểu nhưng tổng tiền sai hoặc một giá trị bị đặt nhầm trường. Việc khai báo schema thông thường cũng không tự bảo đảm kiểm tra nghiêm ngặt ở mọi mô hình/API; cần cấu hình tính năng được môi trường hỗ trợ.
+
+Thiết kế sẵn cách biểu diễn thông tin thiếu hoặc mơ hồ. Optional nghĩa trường có thể không xuất hiện; nullable nghĩa trường có thể nhận giá trị `null`. Đây là hai điều khác nhau. Với danh sách giá trị cho phép (enum), có thể cần `unclear` hoặc `other` kèm phần giải thích theo yêu cầu ứng dụng. Không ép mô hình chọn giá trị cụ thể khi nguồn không có căn cứ.
+
+Kết hợp schema với quy ước chuẩn hóa, chẳng hạn định dạng ngày, và kiểm tra nghiệp vụ sau trích xuất.
 
 ## Câu hỏi tình huống
 
@@ -54,8 +61,12 @@ D. Có giá trị unclear/other và trường chi tiết khi hợp đồng cần
 
 ## Đối chiếu bài Bedrock
 
-Đã đọc [Structured data with tools](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276765), sources/bedrock-lessons/276765.json. Mẫu Converse dùng toolSpec/inputSchema.json và toolChoice để lấy dữ liệu từ công cụ arguments. Nếu mục tiêu chỉ nhận extraction, có thể dừng ở dữ liệu đã kiểm tra thay vì thực thi một tác động ngoài hệ thống; nếu tiếp tục hội thoại công cụ loop thì phải trả kết quả theo hợp đồng. Không suy công cụ bản mô tả cấu trúc dữ liệu thông thường là strict guarantee cho mọi API/model. Dùng chung bản giải thích/câu hỏi tương đương, không tăng số câu.
+Mẫu Converse dùng `toolSpec`, `inputSchema.json` và `toolChoice` để lấy dữ liệu từ đầu vào công cụ. Nếu chỉ cần trích xuất, có thể kết thúc ở dữ liệu đã kiểm tra mà không thực hiện hành động bên ngoài giả tạo. Nếu tiếp tục hội thoại công cụ, phải trả kết quả đúng giao thức. Schema thông thường không bảo đảm kiểm tra nghiêm ngặt ở mọi mô hình, API. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Structured data with tools](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276765). Bản lưu: `sources/bedrock-lessons/276765.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Tools for structured data](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289181), sources/vertex-lessons/289181.json. Công cụ extraction lấy dữ liệu từ tool_use.input và dùng tool_choice chọn đúng công cụ khi mode hỗ trợ. Chỉ properties không làm field bắt buộc; cần required/enum/nullability theo quy định về dữ liệu và hành vi và validation. Câu guaranteed reliability trong bài không chứng minh dữ liệu đúng nguồn. Không cần thực thi hành động giả nếu chỉ dùng công cụ làm quy định về đầu ra; nếu tiếp tục conversation phải giữ đúng giao thức kết quả công cụ. Dùng chung câu hỏi khái niệm.
+Lấy dữ liệu từ `tool_use.input` và chọn đúng công cụ bằng `tool_choice` khi chế độ đó được hỗ trợ. Khai báo `properties` chưa khiến trường bắt buộc; cần `required`, giá trị cho phép, cách biểu diễn null và kiểm tra theo yêu cầu. Lời hứa “đáng tin cậy được bảo đảm” trong bài chưa chứng minh đúng nguồn. Nếu chỉ dùng công cụ để quy định đầu ra, không cần tạo hành động giả; nếu tiếp tục hội thoại, giữ đúng giao thức kết quả công cụ. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Tools for structured data](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289181). Bản lưu: `sources/vertex-lessons/289181.json`.

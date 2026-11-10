@@ -4,13 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Ứng dụng lấy đối số từ tool-use block để chạy hàm. Sau đó tạo `tool_result` trong một tin nhắn của người dùng. `tool_use_id` phải khớp ID lần gọi; `content` chứa kết quả; `is_error` biểu thị thao tác thất bại khi có lỗi.
 
-Một phản hồi có thể yêu cầu nhiều công cụ. Ghép bằng ID, không dựa vào thứ tự hoàn thành. Nếu hai phép tra cứu kết thúc đảo thứ tự, ID vẫn cho biết kết quả thuộc yêu cầu nào.
+Sau khi Claude yêu cầu gọi công cụ, ứng dụng lấy đầu vào trong khối `tool_use` và chạy hàm tương ứng. Kết quả cần được gửi lại để Claude có thể trả lời hoặc quyết định bước tiếp theo.
 
-Yêu cầu tiếp theo giữ lịch sử gốc, assistant message chứa công cụ call và tin nhắn của người dùng chứa kết quả. Mẫu của bài tiếp tục truyền định nghĩa các công cụ, giúp duy trì ngữ cảnh sử dụng công cụ.
+Trong mẫu của bài, ứng dụng tạo khối `tool_result` bên trong một tin nhắn có vai trò `user`. Đây là cách biểu diễn kết quả công cụ trong giao thức; không có nghĩa người dùng phải tự gõ kết quả đó.
 
-Điểm cần nhớ: gọi hàm thành công chưa phải kết thúc luồng. Claude cần nhận kết quả để dùng nó trong phản hồi hoặc quyết định bước tiếp theo.
+Khối kết quả có các thông tin quan trọng: `tool_use_id` khớp với mã của lần gọi ban đầu; `content` chứa dữ liệu trả về; `is_error` đánh dấu lỗi khi thao tác thất bại.
+
+Một phản hồi có thể yêu cầu nhiều công cụ. Giả sử hai phép tra cứu chạy cùng lúc nhưng kết thúc theo thứ tự khác nhau: phải ghép kết quả bằng mã định danh, không bằng thứ tự hoàn thành.
+
+Ở yêu cầu tiếp theo, giữ lịch sử trước đó, tin nhắn `assistant` chứa yêu cầu gọi công cụ và tin nhắn `user` chứa kết quả. Mẫu của bài cũng tiếp tục gửi định nghĩa công cụ. Chạy hàm thành công mới là một phần của luồng; cần gửi kết quả lại cho Claude thì mô hình mới sử dụng được dữ liệu ấy.
 
 ## Câu hỏi
 
@@ -50,10 +53,14 @@ D. Chỉ thay giọng điệu prompt.
 2. **A.** B và D sai vị trí; C xóa ngữ cảnh cần thiết.
 3. **B.** A và D không chuyển dữ liệu; C thay bằng chứng bằng dự đoán.
 
-## Đối chiếu Bedrock: Sending kết quả công cụ
+## Đối chiếu Bedrock: gửi kết quả công cụ
 
-Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276760) và đối chiếu khái niệm với bài chung. Converse thêm tất cả kết quả công cụ parts vào tin nhắn của người dùng, bảo toàn assistant công cụ requests và định nghĩa công cụ trong yêu cầu tiếp theo. Đầu ra thực thi vẫn phải có ID khớp. Nguồn: sources/bedrock-lessons/276760.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
+Converse đặt tất cả các khối kết quả công cụ vào tin nhắn vai trò `user`. Yêu cầu tiếp theo cần giữ phản hồi `assistant` chứa các lời gọi cùng định nghĩa công cụ. Mỗi kết quả phải có mã định danh khớp lần gọi tương ứng. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276760). Bản lưu: `sources/bedrock-lessons/276760.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Sending tool results](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289184), sources/vertex-lessons/289184.json. Kết quả công cụ ở user nội dung, type tool_result, tool_use_id khớp yêu cầu, nội dung và is_error. Mẫu phản hồi.nội dung[1] chỉ minh họa; cần duyệt theo type và trả đủ kết quả cho mọi yêu cầu trong lượt. Không trộn is_error với MCP isError/Converse status. Dùng chung câu hỏi khái niệm.
+Mẫu Vertex gửi khối `tool_result` trong nội dung tin nhắn `user`, gồm `tool_use_id`, nội dung và dấu lỗi `is_error`. Lấy `response.content[1]` chỉ là cách minh họa; khi triển khai cần duyệt theo loại và trả đủ kết quả của mọi lời gọi. Không trộn `is_error` với `isError` của MCP hoặc `status` của Converse. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Sending tool results](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289184). Bản lưu: `sources/vertex-lessons/289184.json`.

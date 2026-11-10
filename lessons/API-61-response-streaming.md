@@ -4,15 +4,18 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Streaming gửi các phần phản hồi khi đang sinh để UI hiển thị sớm, thay vì đợi toàn bộ message. Nhiều events có thể thuộc một yêu cầu, không phải mỗi đoạn văn bản là một lượt hội thoại riêng.
 
-Tách đường hiển thị text khỏi đường lưu final message: text stream phục vụ trải nghiệm, đối tượng hoàn chỉnh giữ blocks/metadata cho xử lý tiếp. Cần xử lý tình trạng stream gián đoạn; text đã hiện một phần chưa chứng minh phản hồi hoàn tất.
+Streaming là gửi từng phần phản hồi khi mô hình đang tạo, giúp giao diện hiển thị sớm thay vì đợi toàn bộ tin nhắn. Nhiều sự kiện nhận được có thể thuộc cùng một yêu cầu API, không phải mỗi đoạn chữ là một lượt hội thoại mới.
 
-Tên event và phương thức SDK trong khóa theo phiên bản lúc giảng. Chi tiết triển khai streaming không nằm trong phạm vi Exam Guide đã tải; nắm phân biệt dữ liệu tạm và kết quả hoàn chỉnh là đủ để đọc tiếp.
+Ứng dụng nên tách hai việc: hiển thị các phần văn bản để người dùng theo dõi và lưu đối tượng phản hồi hoàn chỉnh để xử lý tiếp. Đối tượng cuối giữ các khối nội dung và thông tin cần thiết cho lịch sử hoặc vòng gọi công cụ.
+
+Ví dụ: Giao diện đã hiện nửa câu rồi kết nối bị ngắt. Điều đó chưa chứng minh phản hồi hoàn tất. Cần kiểm tra trạng thái kết thúc hoặc lỗi và xử lý phần kết quả còn thiếu.
+
+Tên sự kiện và các phương thức thư viện trong video tùy phiên bản. Với phạm vi ôn thi đã lưu, điều chính cần phân biệt là dữ liệu đang truyền với kết quả hoàn chỉnh; không cần học sâu mọi chi tiết triển khai streaming.
 
 ## Câu hỏi
 
-**1. Chọn một.** UI nhận nhiều text các đoạn văn bản. Chúng có nhất thiết là nhiều yêu cầu API không?
+**1. Chọn một.** Giao diện nhận từng phần văn bản khi phản hồi đang được tạo. Chúng có nhất thiết đến từ nhiều yêu cầu API không?
 
 A. Có, mỗi từ là yêu cầu.
 
@@ -52,8 +55,12 @@ D. Có, tên mô hình đủ chứng minh.
 
 ## Đối chiếu Bedrock
 
-Đã đọc [Streaming](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276721), sources/bedrock-lessons/276721.json. Ví dụ dùng converse_stream, phản hồi.stream và contentBlockDelta.delta.text. Bộ xử lý thực tế phải phân biệt text/tool/reasoning/error events, tích lũy theo block và kiểm tra trạng thái kết thúc, không giả định mọi delta đều có text. Dùng chung câu hỏi khái niệm, không đếm trùng.
+Mẫu dùng `converse_stream` và lấy văn bản ở `contentBlockDelta.delta.text` trong luồng phản hồi. Bộ xử lý thực tế phải phân biệt sự kiện văn bản, công cụ, suy luận và lỗi, ghép dữ liệu theo từng khối rồi kiểm tra trạng thái kết thúc. Không giả định mọi phần dữ liệu mới đều có văn bản. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Streaming](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276721). Bản lưu: `sources/bedrock-lessons/276721.json`.
 
 ## Đối chiếu Vertex
 
-Nguồn [Response streaming](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289162), sources/vertex-lessons/289162.json. Mẫu dùng messages.create(stream=True) hoặc messages.stream/text_stream/get_final_message. Đoạn văn bản không bằng một từ; text_stream chỉ phục vụ hiển thị text, còn history/tool handling cần final nội dung và trạng thái kết thúc. MessageDelta cập nhật metadata/stop reason không nên tự được coi là toàn bộ message đã hoàn tất.
+Mẫu dùng `messages.create(stream=True)` hoặc các phương thức `messages.stream`, `text_stream` và `get_final_message`. Mỗi phần nhận được không nhất thiết là một từ. Luồng chữ phục vụ hiển thị; lịch sử và công cụ cần tin nhắn cuối đầy đủ cùng trạng thái kết thúc. `MessageDelta` có thể chỉ cập nhật thông tin hoặc lý do dừng, không tự là toàn bộ tin nhắn hoàn chỉnh.
+
+Nguồn đối chiếu: [Response streaming](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289162). Bản lưu: `sources/vertex-lessons/289162.json`.

@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài giới thiệu nhận đối số công cụ theo từng phần để UI phản hồi sớm hơn. Một mảnh JSON hoặc snapshot đang sinh không nhất thiết là đối tượng hoàn chỉnh hợp lệ. Bộ xử lý phải phân biệt dữ liệu tạm để hiển thị với input đã đủ để thực thi.
 
-Giảm buffering tạo đánh đổi về validation và cách xử lý dữ liệu chưa hoàn tất. Đừng chạy thao tác có tác động chỉ vì đã thấy một phần đối số. Kiểm tra kết thúc, parse và hợp đồng đầu vào trước bước thực thi.
+Bài học giới thiệu cách nhận đầu vào của công cụ theo từng phần khi mô hình đang tạo, gọi là streaming. Nhờ đó, giao diện có thể hiển thị tiến độ sớm hơn thay vì chờ toàn bộ nội dung.
 
-Tên event, tùy chọn fine_grained và mô tả buffering của khóa là theo phiên bản lúc giảng, cần đối chiếu API/SDK khi triển khai. Chi tiết streaming nằm ngoài phạm vi Exam Guide đã tải.
+Dữ liệu đang truyền chưa chắc đã hoàn chỉnh. Ví dụ: bạn mới nhận nửa chuỗi JSON thì việc chưa đọc được JSON không có nghĩa kết quả cuối chắc chắn lỗi. Bộ xử lý cần biết đang nhận dữ liệu tạm hay đã kết thúc.
+
+Cũng cần tách việc hiển thị với việc thực thi. Nếu công cụ chuyển tiền mới nhận được trường số tiền nhưng chưa nhận đủ đối số, không được chạy ngay. Phải đợi đầu vào hoàn chỉnh, đọc được cấu trúc và kiểm tra các điều kiện, quyền cần thiết.
+
+Nhận dữ liệu sớm hơn đòi hỏi xử lý tốt trạng thái chưa hoàn tất. Tên sự kiện, tùy chọn và cách giữ dữ liệu chờ trong video thuộc phiên bản lúc giảng; khi triển khai phải đối chiếu API và thư viện đang dùng. Chi tiết streaming nằm ngoài phạm vi đề cương thi đã lưu.
 
 ## Câu hỏi
 

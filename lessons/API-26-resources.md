@@ -4,13 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Resources cho client đọc dữ liệu từ MCP server theo URI. Ví dụ của khóa hỗ trợ tính năng nhắc tài liệu bằng `@`: một resource cung cấp danh sách tài liệu để autocomplete; resource template cung cấp nội dung tài liệu cụ thể.
 
-Phân biệt **URI cố định** như `docs://documents` và **URI template** như `docs://documents/{doc_id}`. Cố định là địa chỉ không có tham số, không đồng nghĩa nội dung không bao giờ thay đổi. Template nhận ID để tìm đúng đối tượng.
+Resource là nguồn nội dung mà MCP server cung cấp để ứng dụng đọc. Mỗi resource có một địa chỉ gọi là URI. Ứng dụng chọn nội dung cần dùng rồi đưa vào ngữ cảnh cho Claude.
 
-MIME type mô tả kiểu nội dung, chẳng hạn JSON cho danh sách hoặc plain text cho văn bản. Trong mẫu SDK, giá trị trả về được tuần tự hóa giúp lập trình viên không phải tự biến mọi thứ thành JSON string.
+Ví dụ của bài hỗ trợ chọn tài liệu bằng ký hiệu `@`. Một resource trả danh sách để giao diện gợi ý tên khi người dùng gõ; một mẫu địa chỉ khác cho phép đọc từng tài liệu.
 
-Resources phù hợp công bố nội dung để ứng dụng đọc và chọn đưa vào ngữ cảnh. Các công cụ cung cấp giao diện thực thi chức năng. Đừng hiểu thành lệnh cấm mọi công cụ đọc dữ liệu: chính khóa này có công cụ đọc tài liệu. Cần chọn giao diện theo cách client hoặc mô hình sẽ sử dụng.
+URI cố định như `docs://documents` không có tham số. URI có tham số như `docs://documents/{doc_id}` cho phép thay `doc_id` bằng mã tài liệu cần lấy. “Cố định” nói về địa chỉ, không có nghĩa nội dung không bao giờ thay đổi.
+
+MIME type cho biết loại nội dung, chẳng hạn JSON cho danh sách hoặc văn bản thuần cho tài liệu. Trong mẫu thư viện, giá trị trả về được chuyển sang dạng truyền đi phù hợp, nên không phải tự biến mọi giá trị thành chuỗi JSON.
+
+Resources công bố nội dung để ứng dụng đọc; tools cung cấp thao tác có thể gọi. Đây không phải quy tắc cấm công cụ đọc dữ liệu: bài trước đã có công cụ đọc tài liệu. Hãy chọn theo cách ứng dụng hoặc mô hình sẽ chủ động lấy thông tin.
 
 ## Câu hỏi
 
@@ -52,12 +55,18 @@ D. Chỉ dùng cho ảnh.
 
 ## Đối chiếu khóa MCP riêng
 
-Đã đọc và đối chiếu [Defining resources](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296699) trong Introduction to MCP. Các khái niệm chính của bài được tóm tắt tại đây; dùng cùng bộ câu hỏi để tránh học lặp. Nguồn đối chiếu: sources/mcp-lessons/296699.json. Hai bản diễn đạt không hoàn toàn giống nhau; không tuyên bố là bản sao nguyên văn.
+Phần kiến thức chính đã được đối chiếu với khóa Introduction to MCP và được trình bày trong bài này. Hai bản có cách diễn đạt khác nhau, không phải bản sao nguyên văn. Dùng chung câu hỏi để tránh học và đếm trùng.
+
+Nguồn đối chiếu: [Defining resources](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296699). Bản lưu: `sources/mcp-lessons/296699.json`.
 
 ## Đối chiếu MCP trong khóa Bedrock
 
-Đã đọc [Defining resources](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276799), sources/bedrock-lessons/276799.json và đối chiếu với bài chung. Cùng resource URI cố định/template, MIME và serialization. URI cố định không đồng nghĩa dữ liệu bất biến. Dùng chung câu hỏi khái niệm tương đương, không đếm lặp.
+Bài Bedrock dùng cùng khái niệm URI cố định, URI có tham số, loại nội dung MIME và cách chuyển dữ liệu sang dạng truyền đi. Địa chỉ cố định không có nghĩa nội dung bất biến. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Defining resources](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276799). Bản lưu: `sources/bedrock-lessons/276799.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Defining resources](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289248), sources/vertex-lessons/289248.json. Direct URI và URI template dùng ReadResourceRequest/Result; mimeType mô tả dữ liệu. @document/autocomplete là cách client dùng resource, không bắt buộc mọi host có cùng UI. Resource read-only theo mục đích, server vẫn phải bảo vệ quyền truy cập. Dùng chung câu hỏi khái niệm.
+Việc đọc URI trực tiếp hoặc có tham số dùng `ReadResourceRequest` và `ReadResourceResult`; `mimeType` cho biết loại dữ liệu. Chọn tài liệu bằng `@` và gợi ý tên là cách giao diện mẫu dùng resource, không bắt buộc mọi ứng dụng có cùng giao diện. Resource phục vụ đọc nhưng server vẫn phải bảo vệ quyền truy cập. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Defining resources](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289248). Bản lưu: `sources/vertex-lessons/289248.json`.

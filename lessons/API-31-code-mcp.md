@@ -4,13 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Claude Code có MCP client tích hợp để kết nối server cung cấp khả năng ngoài các công cụ sẵn có. Server có thể cung cấp các công cụ, resources và prompt templates cho một dịch vụ hoặc chức năng nội bộ.
 
-Bài minh họa server chuyển tài liệu sang Markdown. Cần có công cụ thực thi ở server và đăng ký kết nối để Claude Code dùng được, thay vì chỉ nêu tên công cụ trong yêu cầu.
+Bài học giới thiệu cách mở rộng Claude Code bằng MCP. Thành phần MCP client trong Claude Code kết nối tới server để sử dụng thêm công cụ, nguồn tài liệu (resources) và mẫu hướng dẫn (prompt templates).
 
-Chọn tích hợp theo luồng công việc: dữ liệu lỗi, yêu cầu ticket, tài liệu thiết kế hoặc dịch vụ nội bộ. Không mặc định thêm càng nhiều server càng tốt; phải biết khả năng nào phục vụ tác vụ nào. Tên các server cộng đồng trong video là ví dụ tại thời điểm giảng, cần kiểm tra riêng trước khi sử dụng.
+Ví dụ: Dự án cần chuyển một định dạng tài liệu sang Markdown. Server phải có công cụ thực hiện chuyển đổi và Claude Code phải được cấu hình kết nối tới server đó. Chỉ nhắc tên công cụ trong yêu cầu không tạo ra khả năng thực thi.
 
-Bài này nêu khả năng mở rộng. Các vấn đề phạm vi cấu hình project/user và quyền công cụ sẽ cần đối chiếu thêm với khóa Claude Code riêng cùng Exam Guide.
+Hãy chọn kết nối theo công việc thực tế: lấy thông tin lỗi, đọc yêu cầu hỗ trợ, tìm tài liệu thiết kế hoặc gọi dịch vụ nội bộ. Thêm nhiều server mà không biết chúng phục vụ việc gì có thể làm cấu hình phức tạp hơn mà chưa giúp hoàn thành nhiệm vụ.
+
+Tên các server cộng đồng trong video chỉ là ví dụ ở thời điểm giảng, cần kiểm tra trước khi sử dụng. Phạm vi cấu hình cá nhân hoặc dự án và quyền công cụ được học thêm trong nhóm Claude Code và phần liên quan của đề cương thi.
 
 ## Câu hỏi
 
@@ -52,8 +53,12 @@ D. Xác định khả năng cần cho quy trình làm việc rồi chọn tích 
 
 ## Đối chiếu Bedrock
 
-Đã đọc [Enhancements with MCP servers](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276806), sources/bedrock-lessons/276806.json. Claude Code là MCP client; ví dụ server documents chuyển PDF/Word thành Markdown. Server mở rộng tools/resources/prompts nhưng chỉ dùng capability client hỗ trợ. Danh sách server là ví dụ lịch sử, không khẳng định uy tín hay cài sẵn; quyền truy cập và cấu hình phải có phạm vi rõ. Dùng chung câu hỏi khái niệm, không đếm trùng.
+Claude Code đóng vai trò MCP client. Ví dụ server tài liệu chuyển PDF hoặc Word sang Markdown. Server có thể cung cấp tools, resources, prompts, nhưng ứng dụng chỉ dùng được khả năng client hỗ trợ. Danh sách server trong video không chứng minh chúng đã cài sẵn hoặc đáng tin; cấu hình và quyền cần phạm vi rõ. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Enhancements with MCP servers](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276806). Bản lưu: `sources/bedrock-lessons/276806.json`.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Enhancements with MCP servers](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289231), sources/vertex-media/289231.json. MCP client tích hợp nhận server documents cung cấp conversion công cụ, ví dụ claude mcp add rồi kiểm tra với fixtures PDF/Word. Danh sách Sentry/Jira/Slack là ví dụ tích hợp; quyền gửi tin và ghi dữ liệu vẫn theo nhiệm vụ được giao. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Theo hồ sơ phụ đề, mẫu thêm server tài liệu bằng `claude mcp add` rồi kiểm tra công cụ chuyển đổi với tệp PDF và Word mẫu. Sentry, Jira và Slack là ví dụ tích hợp, không tự cấp quyền gửi tin hoặc ghi dữ liệu; hành động vẫn phải phù hợp nhiệm vụ được giao. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Enhancements with MCP servers](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289231). Bản lưu: `sources/vertex-media/289231.json`.

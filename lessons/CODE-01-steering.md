@@ -4,15 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-cod
 
 ## Nội dung bài học
 
-Trước tác vụ dài, dùng plan mode để khảo sát chỉ đọc và làm rõ cách triển khai. Đọc kế hoạch, sửa phần thiếu trước khi cho thực thi sẽ ít tốn công hơn sửa một thay đổi lớn đi sai hướng.
 
-Compaction tóm tắt hội thoại để giải phóng ngữ cảnh; có nguy cơ bỏ mất thông tin quan trọng. Chỉ định điều cần giữ, như quyết định kiến trúc, yêu cầu còn lại và kết quả kiểm tra. Rewind giúp quay về checkpoint; chọn rõ cần khôi phục mã, hội thoại hay cả hai.
+Với nhiệm vụ dài, nên khảo sát dự án và làm rõ hướng triển khai trước khi sửa mã. Chế độ lập kế hoạch (plan mode) phục vụ việc đọc, phân tích và đề xuất. Bạn có thể xem kế hoạch, bổ sung yêu cầu còn thiếu rồi mới cho thực hiện.
 
-Khóa hiện tại phân biệt goal — điều kiện hoàn tất có bằng chứng quan sát được — với loop — chạy prompt lặp theo nhịp để quan sát thay đổi như CI. Không dùng “đã chạy nhiều lần” làm bằng chứng đạt mục tiêu.
+Khi cuộc trò chuyện dài, hệ thống có thể rút gọn lịch sử thành bản tóm tắt để dành chỗ cho thông tin mới. Quá trình này gọi là compaction và có thể làm mất chi tiết. Hãy nêu rõ những gì cần giữ: quyết định thiết kế, yêu cầu chưa hoàn thành và kết quả kiểm tra đã có.
 
-Khi nhiều phiên sửa cùng repo, worktrees tạo cây file riêng, giảm nguy cơ ghi đè trực tiếp. Điều này không bảo đảm các thay đổi sau khi hợp nhất tương thích nhau.
+Bài học còn giới thiệu rewind, tức quay lại một mốc đã lưu (checkpoint). Khi dùng, cần xác định muốn khôi phục mã, nội dung trò chuyện hay cả hai. Hai loại trạng thái này không nên bị nhầm với nhau.
 
-Liên hệ ôn thi: plan mode, quản lý ngữ cảnh và giữ bằng chứng thực thi là các ý chính. Goal/loop và worktree trong bài là kiến thức vận hành bổ sung, cần đối chiếu phạm vi thi riêng.
+Cần phân biệt mục tiêu (goal) với việc chạy lặp (loop). Mục tiêu có điều kiện hoàn tất kiểm chứng được, chẳng hạn các bài kiểm thử được chỉ định đã chạy thành công. Chạy lặp chỉ là thực hiện yêu cầu theo nhịp, chẳng hạn kiểm tra kết quả CI — hệ thống tự động xây dựng và kiểm thử mã. Chạy nhiều lần không chứng minh đã đạt mục tiêu.
+
+Nếu nhiều phiên cùng sửa một kho mã nguồn, Git worktrees cho mỗi phiên một cây tệp riêng để giảm việc ghi đè. Sau khi hợp nhất, vẫn phải kiểm tra các thay đổi có tương thích hay không. Khi ôn thi, ưu tiên lập kế hoạch, quản lý ngữ cảnh và bằng chứng thực thi; đối chiếu đề cương riêng cho các tính năng bổ sung.
 
 ## Câu hỏi
 

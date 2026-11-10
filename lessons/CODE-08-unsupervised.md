@@ -4,13 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-cod
 
 ## Nội dung bài học
 
-Càng ít quan sát quá trình, càng cần tái dựng bằng chứng sau khi chạy. Bắt đầu từ diff và trạng thái thật thay vì bản tóm tắt của tác nhân AI. Xem các file nằm trong kế hoạch, rồi tìm thay đổi ngoài phạm vi.
 
-Chạy test và quan sát kết quả thực tế. Hook có thể biến kiểm thử thành gate thay vì một lời hứa trong prompt. Với headless, xem cả kết quả JSON và exit code; một trong hai riêng lẻ có thể chưa đủ để xác nhận toàn bộ yêu cầu.
+Khi để AI tự chạy và ít theo dõi từng bước, bạn càng cần kiểm tra bằng chứng sau khi nó kết thúc. Bắt đầu từ trạng thái tệp thực tế và diff — phần mã đã thay đổi — thay vì chỉ đọc bản tóm tắt của AI.
 
-Kiểm tra độc lập bằng phiên mới có thể tìm lỗi mà người viết đã bỏ qua, nhưng không thay phép kiểm tra thực thi. Guardrail quyền kiểm tra hành động, không xác nhận code đúng.
+Đối chiếu các tệp đã sửa với kế hoạch, rồi tìm những thay đổi ngoài phạm vi. Sau đó chạy các kiểm thử phù hợp và xem kết quả thực tế. Nếu một kiểm tra bắt buộc phải đạt trước khi tiếp tục, có thể dùng hook hoặc mã kiểm soát để chặn khi kiểm tra chưa đạt, thay vì chỉ nhắc AI trong yêu cầu.
 
-Ví dụ để dễ hình dung: tác nhân AI báo hoàn tất refactor nhưng sửa thêm một file triển khai. Dù test unit xanh, vẫn cần xem thay đổi ngoài phạm vi và kiểm tra phù hợp trước khi chấp nhận.
+Với cách chạy không tương tác (headless), hãy xem cả kết quả JSON và mã kết thúc chương trình (exit code). Chỉ một tín hiệu riêng lẻ có thể chưa chứng minh rằng mọi yêu cầu đã được đáp ứng.
+
+Một phiên rà soát độc lập có thể phát hiện lỗi mà phiên viết mã bỏ sót, nhưng vẫn cần kiểm thử thực tế. Kiểm soát quyền chỉ xác định thao tác có được phép hay không, không chứng minh mã đúng.
+
+Ví dụ: AI được giao tổ chức lại mã nhưng còn sửa một tệp triển khai ngoài kế hoạch. Dù các kiểm thử đơn vị đã thành công, bạn vẫn cần xem thay đổi đó và thực hiện kiểm tra phù hợp trước khi chấp nhận.
 
 ## Câu hỏi
 

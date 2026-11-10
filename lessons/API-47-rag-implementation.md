@@ -4,9 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Vectơ store cần giữ đoạn văn bản gốc hoặc tham chiếu để lấy lại văn bản, không chỉ giữ vectơ. Khi tìm kiếm trả kết quả, ứng dụng cần đưa đúng nội dung liên quan vào bước sinh câu trả lời.
 
-Mẫu tách đoạn văn bản, tạo các vectơ biểu diễn, thêm cặp vectơ–nội dung và truy vấn top-k. Chọn k là quyết định thiết kế phải đánh giá; lấy nhiều hơn không luôn tốt nếu thêm nội dung nhiễu hoặc vượt ngữ cảnh. Kiểm tra dữ liệu/chunk và ánh xạ nguồn trước khi đổi prompt để sửa lỗi truy xuất dữ liệu.
+Kho vectơ (vector store) cần giữ đoạn văn bản gốc hoặc một tham chiếu để lấy lại đoạn đó. Chỉ có vectơ mà không biết nó thuộc nội dung nào thì ứng dụng không thể đưa đúng tài liệu vào câu hỏi cho mô hình.
+
+Mẫu trong bài thực hiện các bước: chia tài liệu, tạo vectơ, lưu cặp vectơ và nội dung, rồi tìm những kết quả phù hợp nhất. Việc lấy k kết quả đầu thường được gọi là truy vấn top-k.
+
+Chọn k là một quyết định cần thử trên dữ liệu thật. Lấy nhiều đoạn hơn có thể bổ sung bằng chứng, nhưng cũng có thể thêm nội dung gây nhiễu hoặc vượt lượng ngữ cảnh mô hình xử lý được. Không nên mặc định càng nhiều càng tốt.
+
+Ví dụ: Kết quả tìm kiếm trỏ nhầm đoạn văn. Trước khi sửa prompt trả lời, hãy kiểm tra cách chia dữ liệu, tạo vectơ, tìm kiếm và ánh xạ kết quả về nguồn. Đầu vào sai có thể là nguyên nhân khiến câu trả lời sai.
 
 ## Câu hỏi
 
@@ -50,8 +55,12 @@ D. Có, không cần evaluation.
 
 ## Đối chiếu RAG trên Bedrock
 
-Đã đọc [Implementing the RAG flow](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276781), sources/bedrock-lessons/276781.json và đối chiếu với bản API. Mẫu tạo các vectơ biểu diễn từng đoạn văn bản và lưu cùng nội dung. Distance hỗ trợ xếp hạng liên quan, không phải điểm tự tin đã hiệu chỉnh hoặc xác suất câu trả lời đúng. Dùng chung tóm tắt/câu hỏi khái niệm tương đương, không tăng số câu trùng.
+Mẫu Bedrock tạo vectơ cho từng đoạn và lưu cùng nội dung. Điểm khoảng cách giúp xếp mức liên quan, không phải xác suất đúng hoặc độ tự tin đã hiệu chỉnh của câu trả lời. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Implementing the RAG flow](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276781). Bản lưu: `sources/bedrock-lessons/276781.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Implementing the RAG flow](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289186), sources/vertex-lessons/289186.json. VectorIndex lưu vectơ biểu diễn kèm text hoặc source ID. generate_embedding có thể trả list vectors: cần kiểm tra shape truy vấn đơn và cardinality trước zip để không bỏ đoạn văn bản âm thầm. Distance0.71/0.72 không là điểm tự tin đáp án. Dùng chung câu hỏi khái niệm.
+`VectorIndex` lưu vectơ kèm văn bản hoặc mã nguồn tham chiếu. `generate_embedding` có thể trả danh sách vectơ, nên kiểm tra cấu trúc kết quả cho truy vấn đơn và số phần tử trước khi ghép bằng `zip`, tránh âm thầm bỏ đoạn. Các khoảng cách 0.71 và 0.72 không phải điểm tự tin của đáp án. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Implementing the RAG flow](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289186). Bản lưu: `sources/vertex-lessons/289186.json`.

@@ -4,13 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-MCP client là cầu nối giao tiếp với MCP server. Hai hoạt động quan trọng là **liệt kê công cụ** và **gọi công cụ**. Liệt kê cung cấp định nghĩa để ứng dụng đưa vào yêu cầu cho Claude; gọi công cụ yêu cầu server thực thi tên và đối số đã chọn.
 
-Luồng trong bài: người dùng hỏi → ứng dụng lấy danh sách các công cụ qua client → gửi câu hỏi và các công cụ cho Claude → nhận yêu cầu gọi công cụ → client chuyển yêu cầu sang server → server gọi dịch vụ → kết quả về ứng dụng → gửi lại Claude để tạo câu trả lời.
+MCP client là thành phần trao đổi với MCP server. Hai việc cơ bản của client là lấy danh sách công cụ và gửi yêu cầu gọi một công cụ.
 
-Lấy danh sách không thực thi công cụ. Gọi công cụ cũng chưa tự tạo câu trả lời cuối: ứng dụng vẫn cần nối kết quả vào hội thoại.
+Luồng trong bài gồm: ứng dụng lấy định nghĩa công cụ qua client, gửi câu hỏi và các định nghĩa cho Claude, rồi nhận yêu cầu gọi công cụ. Client chuyển tên và đầu vào đến server. Server thực hiện thao tác với dịch vụ phía sau, trả kết quả về ứng dụng. Cuối cùng, ứng dụng gửi dữ liệu đó lại cho Claude để tạo câu trả lời.
 
-Bài đề cập khả năng dùng nhiều phương thức giao tiếp. Phần ôn ở đây tập trung trách nhiệm của client; không dùng danh sách transport trong bài làm hướng dẫn triển khai phiên bản protocol hiện hành khi chưa xác minh.
+Lấy danh sách chỉ giúp biết công cụ nào có sẵn, chưa chạy công cụ. Tương tự, server trả được dữ liệu chưa có nghĩa Claude đã nhận dữ liệu ấy. Ứng dụng vẫn phải đưa kết quả vào lượt hội thoại tiếp theo.
+
+Bài còn nhắc đến các cách truyền thông điệp giữa client và server, gọi là transport. Ở đây cần nắm trách nhiệm của client; khi triển khai, phải kiểm tra cách kết nối phù hợp với phiên bản giao thức đang dùng.
 
 ## Câu hỏi
 
@@ -52,12 +53,18 @@ D. Đổi bản mô tả cấu trúc dữ liệu thành câu trả lời của n
 
 ## Đối chiếu khóa MCP riêng
 
-Đã đọc và đối chiếu [MCP clients](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296690) trong Introduction to MCP. Các khái niệm chính của bài được tóm tắt tại đây; dùng cùng bộ câu hỏi để tránh học lặp. Nguồn đối chiếu: sources/mcp-lessons/296690.json. Hai bản diễn đạt không hoàn toàn giống nhau; không tuyên bố là bản sao nguyên văn.
+Phần kiến thức chính đã được đối chiếu với khóa Introduction to MCP và được trình bày trong bài này. Hai bản có cách diễn đạt khác nhau, không phải bản sao nguyên văn. Dùng chung câu hỏi để tránh học và đếm trùng.
+
+Nguồn đối chiếu: [MCP clients](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296690). Bản lưu: `sources/mcp-lessons/296690.json`.
 
 ## Đối chiếu MCP trong khóa Bedrock
 
-Đã đọc [MCP clients](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276793), sources/bedrock-lessons/276793.json và đối chiếu với bài chung. Cùng list/call flow. Danh sách transport trong khóa là mô tả lúc giảng, không xác nhận mọi transport đó là chuẩn được hỗ trợ hiện hành. Dùng chung câu hỏi khái niệm tương đương, không đếm lặp.
+Bài Bedrock dùng cùng luồng lấy danh sách và gọi công cụ. Các phương thức truyền thông điệp được liệt kê trong khóa thuộc thời điểm giảng; phải kiểm tra khả năng hỗ trợ khi triển khai. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [MCP clients](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276793). Bản lưu: `sources/bedrock-lessons/276793.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [MCP clients](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289204), sources/vertex-lessons/289204.json. Mạch list_tools -> mô hình tool_use -> call_tool -> result -> mô hình. Stdio và HTTP là các lựa chọn cần theo specification/implementation; WebSocket trong lời kể không được mặc định là transport tiêu chuẩn có sẵn ở mọi client. Dùng chung câu hỏi khái niệm.
+Luồng là lấy danh sách qua `list_tools`, cho mô hình chọn, gọi `call_tool`, nhận kết quả rồi gửi lại mô hình. Cách truyền qua stdio hoặc HTTP phải theo đặc tả và cách triển khai. Không mặc định WebSocket được nhắc trong lời giảng là phương thức chuẩn có sẵn ở mọi client. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [MCP clients](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289204). Bản lưu: `sources/vertex-lessons/289204.json`.

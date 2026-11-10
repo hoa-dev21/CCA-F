@@ -4,11 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Web search trong bài là server công cụ: Anthropic thực hiện tìm kiếm, khác công cụ do ứng dụng thực thi phải có mã thực thi trong ứng dụng. Phản hồi gồm các blocks tìm kiếm, kết quả và trích dẫn nguồn cần hiển thị phù hợp.
 
-Có thể giới hạn số lần dùng và phạm vi nguồn theo khả năng bản mô tả cấu trúc dữ liệu. Giới hạn tìm kiếm là ngân sách, không phải bảo đảm đã tìm đủ mọi bằng chứng. Chọn domain có chủ đích hỗ trợ phạm vi nguồn, nhưng một domain uy tín cũng không bảo đảm claim được hỗ trợ đúng.
+Công cụ tìm kiếm web trong bài được chạy phía dịch vụ Anthropic, còn gọi là server tool. Điểm này khác với công cụ chỉnh sửa tệp do ứng dụng phải tự viết mã thực thi.
 
-Version string, điều kiện enable và field hỗ trợ trong video cần kiểm tra theo API hiện hành khi triển khai. Phần ôn tập tập trung trách nhiệm thực thi và bảo toàn nguồn, không khuyến nghị thay đổi thiết lập tài khoản từ bài này.
+Phản hồi có thể gồm các khối yêu cầu tìm kiếm, kết quả và trích dẫn nguồn. Ứng dụng cần giữ các thông tin đó và trình bày nguồn phù hợp để người dùng kiểm tra câu trả lời.
+
+Có thể đặt giới hạn số lần tìm kiếm hoặc phạm vi nguồn theo những tùy chọn công cụ hỗ trợ. Giới hạn số lần dùng chỉ kiểm soát mức sử dụng, không chứng minh đã tìm đủ bằng chứng. Tương tự, giới hạn vào một trang uy tín giúp chọn nguồn nhưng không bảo đảm mọi nhận định đều được nguồn đó chứng minh.
+
+Ví dụ: Sau khi tìm kiếm, cần xem đoạn được trích có thực sự hỗ trợ kết luận hay không. Chỉ còn câu trả lời bằng văn bản mà mất liên kết nguồn sẽ khiến người dùng khó kiểm tra.
+
+Tên phiên bản, điều kiện bật công cụ và các trường hỗ trợ trong video cần đối chiếu khi triển khai. Ý chính của bài là phân biệt nơi thực thi và giữ được bằng chứng từ nguồn.
 
 ## Câu hỏi
 
@@ -18,7 +23,7 @@ A. Cả hai tự sửa file local.
 
 B. Web search chạy phía dịch vụ; client editor vẫn cần mã ứng dụng thực thi.
 
-C. Editor bản mô tả cấu trúc dữ liệu luôn tạo hệ thống xử lý phía máy chủ.
+C. Bản mô tả công cụ chỉnh sửa luôn tự tạo mã thực thi phía máy chủ.
 
 D. Không có kết quả search.
 
@@ -52,4 +57,6 @@ D. Xóa URL để gọn.
 
 ## Đối chiếu Vertex
 
-Đã đọc [The web search tool](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289183), sources/vertex-lessons/289183.json. Ví dụ server-side search có max_uses/allowed_domains và search/citation blocks. Trái với client-side editor, search được dịch vụ thực thi khi provider/model hỗ trợ. Cần kiểm tra hỗ trợ trên Vertex đang dùng; video không đủ để chứng minh khả dụng hiện hành. Allowed domain không bảo đảm mọi claim đúng; giữ trích dẫn nguồn và kiểm chứng nguồn. Dùng chung câu hỏi khái niệm.
+Ví dụ tìm kiếm phía dịch vụ dùng `max_uses`, `allowed_domains` và các khối kết quả, trích dẫn. Khác editor do ứng dụng chạy, công cụ tìm kiếm do dịch vụ thực thi khi nhà cung cấp và mô hình hỗ trợ. Video chưa chứng minh tính năng đang có trên mọi cấu hình Vertex. Giới hạn tên miền không bảo đảm mọi nhận định đúng; giữ trích dẫn và kiểm tra nội dung nguồn. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [The web search tool](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289183). Bản lưu: `sources/vertex-lessons/289183.json`.

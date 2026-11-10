@@ -4,17 +4,16 @@ Nguồn: [Prompt evaluation](https://anthropic-partners.skilljar.com/claude-with
 
 ## Nội dung bài học
 
-**Kỹ thuật viết yêu cầu cho AI** là cách viết và tổ chức yêu cầu: ví dụ minh họa, XML và các kỹ thuật diễn đạt. **Prompt evaluation** là cách đo xem yêu cầu đó hoạt động tốt đến đâu.
 
-Một đầu ra đẹp không chứng minh prompt đáng tin cậy. Thử vài lần rồi sửa một hai trường hợp cũng có thể bỏ sót dữ liệu bất ngờ từ người dùng thật. Bài học khuyến nghị đưa prompt vào quy trình đánh giá, chấm điểm và cải tiến dựa trên kết quả đo.
+Prompt là yêu cầu hoặc hướng dẫn gửi cho AI. Kỹ thuật viết prompt giúp bạn diễn đạt rõ hơn, chẳng hạn thêm ví dụ hoặc dùng thẻ XML để tách các phần thông tin. Đánh giá prompt (prompt evaluation) là đo xem yêu cầu đó có thực sự tạo ra kết quả tốt hay không.
 
-Một quy trình đánh giá có thể so đầu ra với đáp án mong đợi, phát hiện lỗi và so sánh các phiên bản prompt. Nó cần thêm công sức và chi phí ban đầu, nhưng giúp phát hiện điểm yếu trước khi phát hành.
+Một câu trả lời hay chưa chứng minh prompt đáng tin cậy. Thử vài lần có thể bỏ sót những tình huống mà người dùng thật sẽ gặp. Vì vậy, cần chạy prompt trên một bộ đầu vào, chấm theo tiêu chí rõ và dùng kết quả để quyết định cách sửa.
 
-Ví dụ để dễ hình dung: hai prompt trích xuất dữ liệu đều làm đúng một hóa đơn mẫu. Nhóm chưa đủ bằng chứng chọn bản tốt hơn. Hãy chạy cả hai trên bộ trường hợp chung, ghi lỗi và đối chiếu tiêu chí chất lượng đã chọn. Các bài tiếp theo trong khóa sẽ đi sâu vào tập dữ liệu kiểm thử và phương pháp chấm.
+Ví dụ: Hai prompt đều lấy đúng thông tin từ một hóa đơn mẫu. Chưa thể kết luận bản nào tốt hơn. Hãy thử cả hai trên cùng bộ hóa đơn, so với kết quả mong đợi và ghi lại các lỗi. Bộ kiểm thử nên có cả những trường hợp ít gặp hoặc dễ gây lỗi, còn gọi là trường hợp biên (edge cases).
 
-Điểm cần nhớ khi làm câu hỏi tình huống: tìm **bằng chứng đo được** cho quyết định thay prompt. Không đánh đồng “prompt nghe rõ ràng hơn” với “kết quả đã tốt hơn trên các trường hợp cần xử lý”.
+Quy trình đánh giá tốn công chuẩn bị nhưng giúp phát hiện điểm yếu trước khi đưa ứng dụng vào sử dụng và so sánh các phiên bản trên cùng thước đo. Kết quả chỉ phản ánh những dữ liệu và tiêu chí đã kiểm tra, không bảo đảm mọi đầu vào mới đều được xử lý đúng.
 
-Từ khóa: **evaluation quy trình xử lý** — quy trình đánh giá; **expected answer** — đáp án kỳ vọng; **edge case** — trường hợp biên; **objective metric** — chỉ số khách quan.
+Điều cần tìm là bằng chứng từ kết quả thực tế. Một prompt nghe rõ ràng hơn chưa chắc cho đầu ra tốt hơn. Các bài tiếp theo sẽ hướng dẫn tạo dữ liệu kiểm thử, chạy đánh giá và chấm kết quả.
 
 ## Câu hỏi
 
@@ -56,8 +55,12 @@ D. Bảo đảm mọi đầu vào chưa từng thấy đều được xử lý �
 
 ## Đối chiếu Bedrock
 
-Đã đọc và đối chiếu [Prompt evaluation](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276731), sources/bedrock-lessons/276731.json. Dùng chung bản tóm tắt và câu hỏi về phương pháp phép đánh giá vì các mục tiêu chính tương đương. Mã gọi nhà cung cấp vẫn cần adapter Converse phù hợp; ví dụ prefill/stop sequence và tên mô hình không được coi là hỗ trợ hiện hành đã xác minh. Không tính lại một bộ câu hỏi mới cho cùng nội dung.
+Nội dung về phương pháp đánh giá tương đương với bài chung nên dùng chung phần giải thích và câu hỏi, không tính thêm một bộ câu hỏi mới. Khi chuyển mã sang Bedrock, cần phần chuyển đổi phù hợp với Converse. Những ví dụ dùng prefill, chuỗi dừng và tên mô hình trong khóa vẫn phải được kiểm tra khả năng hỗ trợ khi triển khai.
+
+Nguồn đối chiếu: [Prompt evaluation](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276731). Bản lưu: `sources/bedrock-lessons/276731.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Prompt evaluation](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289159), sources/vertex-lessons/289159.json. Bài phân biệt kỹ thuật prompt với đo hiệu quả; test một vài ví dụ không đủ dự đoán dữ liệu production. Phép đánh giá cung cấp bằng chứng theo dataset/rubric, không tự trở thành khách quan tuyệt đối hay bảo đảm mọi đầu vào. Dùng chung câu hỏi khái niệm.
+Bài Vertex phân biệt sửa cách viết prompt với đo hiệu quả của prompt. Thử vài ví dụ chưa đủ để dự đoán chất lượng khi dùng thực tế. Đánh giá chỉ cung cấp bằng chứng theo bộ dữ liệu và tiêu chí đã chọn, không tự trở thành thước đo tuyệt đối hay bảo đảm mọi đầu vào. Dùng chung câu hỏi khái niệm.
+
+Nguồn đối chiếu: [Prompt evaluation](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289159). Bản lưu: `sources/vertex-lessons/289159.json`.

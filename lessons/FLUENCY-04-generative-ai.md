@@ -6,11 +6,14 @@ Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025), AI Fluency: Framework
 
 ## Nội dung bài học
 
-Generative AI tạo nội dung mới như văn bản hoặc mã, khác mục tiêu chỉ phân tích dữ liệu có sẵn. Bài giới thiệu sự kết hợp giữa tiến bộ thuật toán/kiến trúc, dữ liệu huấn luyện lớn và năng lực tính toán đã hỗ trợ sự phát triển này.
 
-Các khái niệm được nêu gồm quá trình học, ngữ cảnh window và khả năng mới xuất hiện. Văn bản của trang là phần giới thiệu video, không đủ để suy ra chi tiết triển khai kiến trúc bên trong. Bản ôn này giữ mức khái niệm, không bổ sung giả định rằng đã xem toàn bộ nội dung nghe nhìn.
+AI tạo sinh (Generative AI) có thể tạo nội dung mới, chẳng hạn một đoạn văn hoặc đoạn mã, thay vì chỉ phân tích dữ liệu có sẵn. Sự phát triển của công nghệ này được hỗ trợ bởi tiến bộ trong thuật toán và cấu trúc mô hình, lượng dữ liệu huấn luyện lớn và khả năng tính toán mạnh hơn.
 
-Đối với Architect Foundations, chi tiết huấn luyện và kiến trúc nội tại mô hình nằm ngoài phạm vi Exam Guide đã tải. Đọc nhanh để hỗ trợ phán đoán khả năng, ưu tiên thời gian cho kiến trúc ứng dụng.
+Quá trình huấn luyện là giai đoạn mô hình học từ dữ liệu. Khi sử dụng mô hình, bạn cung cấp thông tin cho nhiệm vụ hiện tại, gọi là ngữ cảnh. Cửa sổ ngữ cảnh (context window) là giới hạn lượng thông tin mô hình có thể xử lý trong một lần. Vì vậy, không nên mặc định rằng mô hình luôn đọc và nhớ được toàn bộ một cuộc trò chuyện dài.
+
+Bài gốc còn giới thiệu các khả năng mới xuất hiện khi mô hình phát triển. Tuy nhiên, tài liệu văn bản hiện có chỉ là phần giới thiệu video, nên không đủ để trình bày chi tiết cấu trúc bên trong mô hình.
+
+Nếu đang ôn Architect Foundations theo đề cương đã lưu trong dự án, bạn chỉ cần nắm các khái niệm này để hiểu khả năng của AI. Hãy ưu tiên phần thiết kế ứng dụng; chi tiết huấn luyện và cấu trúc bên trong mô hình nằm ngoài phạm vi đề cương đó.
 
 ## Câu hỏi
 

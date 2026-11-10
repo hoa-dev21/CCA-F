@@ -6,11 +6,16 @@ Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025), AI Fluency: Framework
 
 ## Nội dung bài học
 
-Delegation gồm Problem Awareness, Platform Awareness và Task Delegation. Trước hết hiểu mục tiêu và công việc cần làm; tiếp theo hiểu nền tảng có thể và không thể làm gì; cuối cùng chia việc để kết hợp điểm mạnh người và AI.
 
-Không bắt đầu bằng mục tiêu tự động hóa mọi thứ. Chuyên môn lĩnh vực giúp nhận ra quyết định nào cần phán đoán, dữ liệu nào cần xác minh và đầu ra nào có thể giao AI tạo bản nháp.
+Phân công có chủ đích (Delegation) là quyết định cách chia việc giữa bạn và AI. Để chia việc hợp lý, hãy làm rõ ba điều:
 
-Ví dụ để dễ hình dung: trong nghiên cứu, AI hỗ trợ phân nhóm tài liệu, người xác minh phương pháp và quyết định kết luận được công bố. Kế hoạch tốt nêu tiêu chí thành công và phần việc mỗi bên thay vì một câu chung “AI xử lý giúp”.
+1. Hiểu công việc (Problem Awareness): Bạn muốn đạt kết quả gì? Cần làm những bước nào? Dựa vào đâu để biết đã làm tốt?
+2. Hiểu công cụ AI đang dùng (Platform Awareness): Công cụ làm được gì, có hạn chế gì và có thể truy cập những dữ liệu nào?
+3. Chia nhiệm vụ (Task Delegation): Phần nào giao AI, phần nào bạn giữ lại và phần nào cần cùng làm?
+
+Ví dụ: Khi nghiên cứu tài liệu, bạn có thể nhờ AI phân nhóm nội dung. Người có chuyên môn vẫn cần kiểm tra phương pháp nghiên cứu và quyết định kết luận nào đủ căn cứ để công bố. Nếu AI không truy cập được tài liệu nội bộ, phải tính đến hạn chế đó khi giao việc.
+
+Một kế hoạch tốt nêu rõ phần việc của mỗi bên và tiêu chí hoàn thành. Mục tiêu là tận dụng điểm mạnh của người và AI, không phải cố tự động hóa mọi bước.
 
 ## Câu hỏi
 

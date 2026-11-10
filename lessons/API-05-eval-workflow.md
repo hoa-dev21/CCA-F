@@ -4,15 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài học tổ chức đánh giá thành năm bước: viết prompt ban đầu, tạo tập đầu vào, chạy từng đầu vào qua Claude, chấm đầu ra, rồi sửa prompt và chạy lại. Kết quả ban đầu là **kết quả ban đầu để so sánh** — mốc so sánh.
 
-Tập đầu vào nên đại diện cho loại yêu cầu ứng dụng sẽ xử lý. Có thể tạo thủ công hoặc dùng mô hình hỗ trợ. Bộ chấm điểm cần xem câu hỏi gốc cùng câu trả lời, vì đầu ra trôi chảy chưa chắc đáp ứng yêu cầu.
+Quy trình đánh giá gồm năm bước: viết yêu cầu ban đầu, chuẩn bị bộ đầu vào kiểm thử, chạy từng đầu vào qua Claude, chấm kết quả, rồi sửa yêu cầu và chạy lại. Kết quả lần đầu là mốc so sánh, thường gọi là baseline.
 
-Trong ví dụ của khóa, bộ chấm điểm cho điểm từng trường hợp rồi tính trung bình. Điểm giúp so sánh phiên bản; nhận xét từng trường hợp giúp biết cần sửa gì. Khi thay prompt, giữ bộ kiểm thử và cách chấm nhất quán để đánh giá tác động của thay đổi.
+Bộ đầu vào nên đại diện cho những việc ứng dụng sẽ xử lý. Bạn có thể viết thủ công hoặc nhờ mô hình hỗ trợ tạo. Khi chấm, cần cung cấp cả yêu cầu gốc và câu trả lời để biết Claude có giải quyết đúng nhiệm vụ hay không.
 
-Ví dụ để dễ hình dung: prompt trả lời yêu cầu hỗ trợ đạt điểm thấp ở nhóm hoàn tiền. Hãy xem các lỗi trong nhóm ấy trước khi sửa prompt, rồi đánh giá lại toàn bộ tập để phát hiện ảnh hưởng lên nhóm khác.
+Trong ví dụ của khóa học, mỗi trường hợp được cho điểm rồi tính điểm trung bình. Điểm tổng hợp giúp so sánh các phiên bản; nhận xét từng trường hợp giúp xác định chỗ cần sửa. Muốn biết việc đổi prompt có tác dụng gì, phải giữ cùng bộ kiểm thử và cách chấm.
 
-Từ khóa: **kết quả ban đầu để so sánh** — mốc ban đầu; **bộ chấm điểm** — bộ chấm; **iteration** — vòng cải tiến.
+Ví dụ: Trợ lý hỗ trợ khách hàng thường trả lời sai các yêu cầu hoàn tiền. Hãy đọc những trường hợp sai để hiểu nguyên nhân, sửa hướng dẫn rồi chạy lại toàn bộ bộ kiểm thử. Cách này giúp phát hiện bản sửa có cải thiện phần hoàn tiền nhưng làm kém đi ở nhóm yêu cầu khác hay không.
+
+Mỗi lần sửa và đánh giá lại là một vòng cải tiến (iteration). Đừng xóa kết quả ban đầu hoặc chỉ đổi sang câu hỏi dễ hơn để có điểm cao hơn.
 
 ## Câu hỏi
 
@@ -54,8 +55,12 @@ D. Gán điểm tối đa cho các câu đã sửa.
 
 ## Đối chiếu Bedrock
 
-Đã đọc và đối chiếu [A typical eval workflow](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276732), sources/bedrock-lessons/276732.json. Dùng chung bản tóm tắt và câu hỏi về phương pháp phép đánh giá vì các mục tiêu chính tương đương. Mã gọi nhà cung cấp vẫn cần adapter Converse phù hợp; ví dụ prefill/stop sequence và tên mô hình không được coi là hỗ trợ hiện hành đã xác minh. Không tính lại một bộ câu hỏi mới cho cùng nội dung.
+Nội dung về phương pháp đánh giá tương đương với bài chung nên dùng chung phần giải thích và câu hỏi, không tính thêm một bộ câu hỏi mới. Khi chuyển mã sang Bedrock, cần phần chuyển đổi phù hợp với Converse. Những ví dụ dùng prefill, chuỗi dừng và tên mô hình trong khóa vẫn phải được kiểm tra khả năng hỗ trợ khi triển khai.
+
+Nguồn đối chiếu: [A typical eval workflow](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276732). Bản lưu: `sources/bedrock-lessons/276732.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [A typical eval workflow](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289161), sources/vertex-lessons/289161.json. Năm bước: draft, bộ dữ liệu, run mô hình, grade, đổi prompt và chạy lại. Trung bình7.66/8.7 chỉ minh họa; cần giữ điều kiện so sánh, kiểm tra từng loại lỗi và tránh tối ưu theo bộ phát triển duy nhất. Dùng chung câu hỏi khái niệm.
+Bài Vertex có cùng năm bước: viết bản đầu, chuẩn bị dữ liệu, chạy mô hình, chấm, rồi sửa prompt và chạy lại. Các điểm trung bình 7.66 và 8.7 chỉ thuộc ví dụ. Cần giữ điều kiện so sánh, xem từng nhóm lỗi và tránh chỉ tối ưu trên một bộ dữ liệu dùng để phát triển. Dùng chung câu hỏi khái niệm.
+
+Nguồn đối chiếu: [A typical eval workflow](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289161). Bản lưu: `sources/vertex-lessons/289161.json`.

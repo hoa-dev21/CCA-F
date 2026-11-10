@@ -4,11 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài cải thiện mô hình bộ chấm điểm bằng hai thay đổi nối tiếp. Trước hết, prompt tạo bộ dữ liệu sinh thêm solution_criteria cho từng test case ngoài task/format. Sau đó, prompt grade_by_model nhận tiêu chí của đúng test case cùng tác vụ gốc và output cần chấm.
 
-Phải tái sinh/lưu bộ dữ liệu rồi chạy lại quy trình xử lý để criteria mới thực sự đi vào bộ chấm điểm; chỉ sửa file generator mà vẫn dùng bộ dữ liệu cũ không tạo thêm ngữ cảnh. Xem kết quả từng ca và lời giải thích để biết tiêu chí được áp dụng, không chỉ nhìn điểm trung bình.
+Bài tập bổ sung tiêu chí cho từng trường hợp để mô hình chấm kết quả có căn cứ rõ hơn. Có hai thay đổi nối tiếp.
 
-Criteria sinh bằng mô hình cần kiểm tra về độ đúng, liên quan và khả năng đo. Bộ chấm điểm giải thích dài hơn hay cho điểm cao hơn không chứng minh chất lượng tăng. So sánh trên tiêu chí ổn định có nhãn/kiểm tra phù hợp và giữ tập test độc lập; tránh để output đang chấm tự quyết định bảng tiêu chí chấm điểm có lợi cho chính nó.
+Trước hết, yêu cầu chương trình tạo dữ liệu sinh thêm trường `solution_criteria`, tức tiêu chí của lời giải, bên cạnh `task` và `format`. Sau đó, hàm `grade_by_model` phải nhận tiêu chí của đúng trường hợp, cùng nhiệm vụ gốc và câu trả lời cần chấm.
+
+Cần tạo lại, lưu và dùng bộ dữ liệu mới khi chạy đánh giá. Nếu chỉ sửa mã tạo dữ liệu nhưng vẫn đọc tệp cũ, tiêu chí mới chưa thực sự đến được mô hình chấm. Hãy xem kết quả từng trường hợp và lời giải thích để biết tiêu chí được dùng ra sao.
+
+Tiêu chí do AI tạo cũng cần rà soát. Nếu nó yêu cầu một điều không có trong nhiệm vụ, cần sửa trước khi chấm. Lời giải thích dài hơn hoặc điểm cao hơn chưa chứng minh việc chấm chính xác hơn.
+
+Để so sánh đáng tin, dùng tiêu chí ổn định, đối chiếu với các mẫu đã được kiểm tra và giữ bộ kiểm thử độc lập. Không để câu trả lời đang được chấm tự tạo tiêu chí có lợi cho chính nó.
 
 ## Câu hỏi
 
@@ -52,8 +57,12 @@ D. Bộ chấm điểm có thêm ngữ cảnh; độ đúng của chấm vẫn c
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Exercise on prompt evals](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276734), sources/bedrock-media/276734.json. Bài Bedrock xác nhận hai bước: thêm solution_criteria vào từng test case, tái sinh bộ dữ liệu rồi truyền criteria của đúng ca vào grade_by_model. Điểm9/lý giải dài hơn trong demo không đủ để chứng minh bộ chấm điểm chính xác; kiểm tra bảng tiêu chí chấm điểm và kiểm tra nhãn vẫn cần thiết. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Phụ đề Bedrock xác nhận hai bước: thêm `solution_criteria` cho từng trường hợp, tạo lại bộ dữ liệu rồi truyền tiêu chí tương ứng vào `grade_by_model`. Điểm 9 hoặc lời giải thích dài hơn trong ví dụ chưa chứng minh mô hình chấm chính xác; vẫn cần kiểm tra tiêu chí và nhãn chuẩn. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Exercise on prompt evals](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276734). Bản lưu: `sources/bedrock-media/276734.json`.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Exercise on prompt evals](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289164), sources/vertex-media/289164.json. Đã đọc phụ đề đầy đủ: thêm solution_criteria cho từng test case, tái sinh bộ dữ liệu và đưa đúng criteria vào bộ chấm điểm. Không nhầm điểm/lý giải demo với bằng chứng chất lượng đã hiệu chỉnh. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Hồ sơ phụ đề Vertex cũng xác nhận tạo tiêu chí riêng cho từng trường hợp, sinh lại dữ liệu và gửi đúng tiêu chí cho bộ chấm. Điểm hoặc lời giải thích trong minh họa không phải bằng chứng chất lượng đã được hiệu chỉnh. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Exercise on prompt evals](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289164). Bản lưu: `sources/vertex-media/289164.json`.

@@ -4,11 +4,19 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-cod
 
 ## Nội dung bài học
 
-Chọn mode theo công việc và khả năng có người duyệt. Manual yêu cầu phê duyệt ngoài thao tác đọc; accept edits hỗ trợ vòng sửa có người xem; plan phục vụ khảo sát và đề xuất. Bài giới thiệu auto với classifier xem xét hành động, don't ask chỉ cho công cụ phê duyệt trước và tự từ chối phần còn lại, cùng bypass bỏ kiểm tra trong môi trường cô lập.
 
-Phân biệt **quyền/ý định hành động** với **tính đúng của kết quả**. Hành động sửa file có thể hợp phạm vi nhưng tạo mã sai. Classifier quyền không thay chạy test hoặc kiểm tra diff.
+Chế độ quyền quyết định công cụ được làm gì và khi nào cần người duyệt. Hãy chọn theo nhiệm vụ và việc có người theo dõi hay không. Bài học mô tả các chế độ sau; tên và hành vi cụ thể cần đối chiếu với phiên bản đang dùng:
 
-Với CI không có người trực, tránh cấu hình khiến job chờ một hộp thoại không ai trả lời. Phê duyệt trước tập công cụ cần thiết và có hành vi từ chối rõ cho thao tác ngoài phạm vi. Không chọn bypass chỉ để che cấu hình quyền thiếu.
+- Manual: yêu cầu phê duyệt cho các thao tác ngoài việc đọc theo phạm vi bài mô tả.
+- Accept edits: hỗ trợ quá trình sửa tệp có người theo dõi.
+- Plan: đọc và phân tích để lập kế hoạch trước khi thực hiện.
+- Auto: dùng bộ phân loại để xem xét hành động.
+- Don't ask: dùng các công cụ đã được phê duyệt trước, tự từ chối thao tác ngoài phạm vi thay vì chờ hỏi.
+- Bypass: bỏ kiểm tra quyền trong môi trường cô lập như trường hợp bài giới thiệu.
+
+Cần phân biệt “được phép làm” với “làm đúng”. AI có thể được phép sửa một tệp nhưng vẫn viết sai logic. Kiểm tra quyền không thay thế việc đọc thay đổi và chạy kiểm thử.
+
+Với CI — quy trình tự động xây dựng và kiểm thử mã — thường không có người trực để trả lời hộp thoại phê duyệt. Cần cho phép trước các công cụ cần thiết và xác định rõ cách từ chối thao tác ngoài phạm vi. Không nên dùng bypass chỉ để giải quyết việc cấu hình quyền còn thiếu.
 
 ## Câu hỏi
 

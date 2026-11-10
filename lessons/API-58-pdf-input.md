@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài minh họa gửi PDF trong document block, thay vì image block, với media type phù hợp. Có thể yêu cầu tóm tắt hoặc lấy dữ liệu từ nội dung tài liệu. PDF có thể chứa văn bản, bảng, hình và cấu trúc cần hiểu cùng nhau.
 
-Không suy từ hỗ trợ định dạng rằng mọi trang hay mọi bảng đều được hiểu đúng. Nêu trang/phần cần phân tích và kiểm tra kết quả tại nguồn. Đặc biệt phân biệt không thấy dữ liệu với dữ liệu không tồn tại trong tài liệu.
+Trong mẫu của bài, PDF được gửi bằng khối nội dung kiểu `document` với loại dữ liệu PDF phù hợp, thay vì gửi như một khối ảnh. Bạn có thể yêu cầu tóm tắt hoặc lấy thông tin từ tài liệu đó.
 
-Chi tiết vision và phân tích ảnh nằm ngoài phạm vi Exam Guide đã tải; bài này phục vụ hoàn thiện tóm tắt khóa API, không phải ưu tiên ôn sâu.
+Một PDF có thể chứa văn bản, bảng, hình và bố cục cần đọc cùng nhau. Hỗ trợ nhận tệp PDF không có nghĩa mô hình luôn đọc đúng mọi trang hoặc mọi bảng.
+
+Ví dụ: Bạn cần số liệu trong một bảng ở trang cụ thể. Hãy nêu rõ vị trí và trường cần lấy, rồi đối chiếu kết quả với tài liệu gốc. Nếu mô hình không tìm được một trường, chưa thể kết luận tài liệu không có trường đó; có thể quá trình đọc hoặc trích xuất đã bỏ sót.
+
+Bài này bổ sung kiến thức về đầu vào của API. Chi tiết xử lý hình ảnh và khả năng thị giác không phải trọng tâm của đề cương thi Architect đã lưu.
 
 ## Câu hỏi
 
@@ -52,12 +55,18 @@ D. Chỉ đánh giá văn phong.
 
 ## Đối chiếu tính năng trên Bedrock
 
-Đã đọc [PDF support](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/308839), sources/bedrock-lessons/308839.json. Mẫu Converse dùng document.format/name/source.bytes. Khả năng hỗ trợ PDF không bảo đảm mọi trang được hiểu đúng; kiểm tra nguồn và đầu ra. Dùng chung tóm tắt/câu hỏi khái niệm, không đếm câu hỏi trùng.
+Mẫu Converse dùng `document.format`, `name` và `source.bytes`. Hỗ trợ PDF chưa bảo đảm hiểu đúng mọi trang, nên cần đối chiếu nguồn và kết quả. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [PDF support](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/308839). Bản lưu: `sources/bedrock-lessons/308839.json`.
 
 ## Bổ sung từ ghi chú khóa học chính thức
 
-Mục [PDF support](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289198) được đối chiếu qua ghi chú do trang khóa cung cấp cho trợ lý của khóa, key vertex, tiêu đề “PDF Support”; nguồn [trang khóa](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api). Bản lưu: sources/official-note-lessons/vertex-289198.json. Đây là ghi chú tóm tắt chính thức, không phải bản chép video đã xem. Ghi chú chuyển image block thành document với media_type application/pdf và gửi cùng prompt; có thể phân tích text/chart/table nhưng không bảo đảm mọi thành phần đọc đúng. Ví dụ không chứng minh mọi model/provider chấp nhận cùng kích thước/cách mã hóa; giữ trích dẫn nguồn và kiểm tra trang liên quan. Dùng chung câu hỏi khái niệm.
+Hồ sơ nguồn ban đầu dùng ghi chú chính thức cho trợ lý khóa học, khóa `vertex`, tiêu đề “PDF Support”, không phải bản chép video. Mẫu đổi khối ảnh sang khối tài liệu với `media_type` là `application/pdf` rồi gửi kèm prompt. Có thể phân tích văn bản, biểu đồ, bảng nhưng vẫn cần kiểm tra. Không suy từ ví dụ rằng mọi mô hình đều nhận cùng kích thước hoặc cách mã hóa; giữ trích dẫn và đối chiếu trang liên quan. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [PDF support](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289198); [trang khóa](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api). Bản lưu: `sources/official-note-lessons/vertex-289198.json`.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [PDF support](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289198), sources/vertex-media/289198.json. Ngoài notes đã kiểm tra, phụ đề xác nhận ví dụ earth.pdf đổi image block sang document/media_type application/pdf và hỏi tóm tắt. Phân tích PDF có thể gồm text/chart/table nhưng không bảo đảm extraction đúng mọi thành phần, cần kiểm chứng theo nguồn. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Hồ sơ đọc toàn bộ phụ đề bổ sung ví dụ `earth.pdf`: đổi khối ảnh sang `document` với `media_type: application/pdf` rồi yêu cầu tóm tắt. Phân tích được các loại nội dung trong PDF không bảo đảm trích xuất đúng mọi chi tiết; vẫn cần kiểm chứng theo nguồn. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [PDF support](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289198). Bản lưu: `sources/vertex-media/289198.json`.

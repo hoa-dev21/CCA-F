@@ -4,15 +4,20 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-cod
 
 ## Nội dung bài học
 
-Hook là mã chạy tại điểm xác định trong vòng xử lý. `PreToolUse` can thiệp trước thao tác; `PostToolUse` phù hợp xử lý sau thao tác thành công; `Stop` kiểm tra điều kiện trước khi kết thúc lượt.
 
-Với điều cấm thao tác, chọn hook trước thực thi. Hook sau không thể làm cho thao tác đã xảy ra thành “chưa xảy ra”. Với định dạng/lint sau chỉnh sửa, điểm sau công cụ phù hợp hơn.
+Hook là đoạn mã chạy khi một sự kiện xác định xảy ra. Chọn đúng thời điểm là điều quan trọng:
 
-Bài hướng dẫn PreToolUse trả JSON quyết định allow/deny/ask. Khi sửa input bằng `updatedInput`, cần bảo toàn các trường còn lại theo hợp đồng vì đối tượng đầu vào bị thay. Với exit codes trong mẫu, 2 là lỗi chặn ở sự kiện hỗ trợ; 1 là lỗi không chặn. Không giả định mọi hook event đều hỗ trợ chặn giống nhau.
+- `PreToolUse`: chạy trước thao tác của công cụ, phù hợp để kiểm tra và chặn hành động chưa được phép.
+- `PostToolUse`: chạy sau khi thao tác thành công, phù hợp để định dạng mã hoặc kiểm tra lỗi sau khi sửa.
+- `Stop`: kiểm tra điều kiện trước khi kết thúc lượt làm việc.
 
-Để bổ sung ngữ cảnh sau compact, bài hiện tại dùng `SessionStart` với compact matcher, thay vì mặc định output của PostCompact được đưa vào hội thoại. Đây là chi tiết phiên bản cần kiểm tra trước triển khai.
+Ví dụ: Muốn ngăn gửi dữ liệu ra ngoài, phải kiểm tra trước khi lệnh gửi chạy. Một hook chạy sau khi gửi xong không thể làm cho dữ liệu trở thành chưa được gửi.
 
-Cơ chế quyết định là mã, nhưng độ đúng của quy tắc vẫn phụ thuộc cách viết hook và dữ liệu nó kiểm tra. “Có hook” chưa chứng minh chính sách được thực thi đúng.
+Trong mẫu của bài, `PreToolUse` có thể trả quyết định dạng JSON: `allow` là cho phép, `deny` là từ chối và `ask` là yêu cầu hỏi người dùng. Nếu dùng `updatedInput` để thay đầu vào, cần giữ đủ các trường bắt buộc trong đối tượng mới. Chỉ trả một trường đã sửa có thể làm mất các trường còn lại.
+
+Cũng trong mẫu này, mã kết thúc chương trình (exit code) 2 biểu thị lỗi chặn ở sự kiện hỗ trợ chặn; mã 1 là lỗi không chặn. Không phải mọi sự kiện hook đều có cùng khả năng chặn.
+
+Để bổ sung ngữ cảnh sau khi hội thoại được rút gọn, bài dùng `SessionStart` với điều kiện khớp sự kiện `compact`. Không mặc định đầu ra của `PostCompact` sẽ được đưa vào hội thoại. Đây là chi tiết cần kiểm tra theo phiên bản trước khi triển khai. Dù đã có hook, vẫn phải kiểm tra mã và dữ liệu đầu vào để biết quy tắc có thực sự được thực thi đúng hay không.
 
 ## Câu hỏi
 

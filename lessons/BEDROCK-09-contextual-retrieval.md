@@ -4,11 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-
 
 ## Nội dung bài học
 
-Đoạn văn bản có thể mất quan hệ với tài liệu lớn: đại từ, thời kỳ, dự án hoặc tên phần không còn rõ. Bài thêm một đoạn bối cảnh ngắn trước đoạn văn bản, tạo trong giai đoạn chuẩn bị từ tài liệu gốc và đoạn văn bản cần định vị, rồi đưa bản bổ sung vào chỉ mục tìm kiếm.
 
-Nếu tài liệu quá lớn, mẫu dùng phần đầu và các đoạn văn bản gần trước đó làm bối cảnh hạn chế. Cần biết giới hạn này: phần được cung cấp không có một sự kiện thì mô hình không được tự đoán để hoàn thiện lời giới thiệu.
+Khi tài liệu được chia nhỏ, một đoạn có thể mất thông tin ở phần trước. Ví dụ: đoạn chỉ viết “dự án này”, nhưng tên dự án nằm ngoài phần được lấy. Contextual retrieval bổ sung một lời giới thiệu ngắn dựa trên tài liệu gốc để làm rõ đoạn thuộc bối cảnh nào.
 
-Giữ riêng nguồn gốc và phần bối cảnh được sinh để tránh coi mọi câu bổ sung là trích nguyên văn. Đánh giá truy xuất dữ liệu sau thay đổi, cùng chi phí chuẩn bị và nhu cầu cập nhật khi nguồn đổi. Đây là bổ sung ngữ cảnh trước indexing, khác reranking ứng viên theo truy vấn tìm kiếm ở lúc truy vấn.
+Phần bổ sung được tạo trong giai đoạn chuẩn bị dữ liệu, rồi đưa cùng đoạn văn vào chỉ mục tìm kiếm. Nó có thể làm rõ tên dự án, thời kỳ hoặc phần tài liệu mà đoạn đang nói đến.
+
+Nếu tài liệu quá lớn, mẫu chỉ dùng phần đầu và các đoạn gần trước đó làm bối cảnh. Khi dữ liệu được cung cấp chưa có một sự kiện, mô hình không được tự đoán để viết đủ lời giới thiệu.
+
+Cần giữ riêng văn bản gốc và phần do mô hình bổ sung, tránh trình bày mọi câu như trích nguyên văn. Sau khi thêm bối cảnh, đo lại chất lượng tìm kiếm, tính cả chi phí chuẩn bị và việc cập nhật khi nguồn thay đổi.
+
+Cách này khác reranking: contextual retrieval bổ sung bối cảnh trước khi lập chỉ mục; reranking sắp lại các ứng viên theo câu hỏi sau khi tìm kiếm.
 
 ## Câu hỏi
 
@@ -50,4 +55,6 @@ D. Cả hai không cần đánh giá.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Contextual retrieval](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289187), sources/vertex-lessons/289187.json. Thêm snippet bối cảnh trước chỉ mục tìm kiếm, giữ riêng phần sinh và nguồn thật. Chọn đoạn văn bản đầu và lân cận là bối cảnh giảm, không bảo đảm đủ. Code prompt minh họa thiếu f-string và result.text cần khớp wrapper; không sao chép như mã đã chạy. Dùng chung câu hỏi khái niệm.
+Bổ sung đoạn bối cảnh trước khi lập chỉ mục và giữ riêng phần được sinh với nguồn gốc. Chỉ dùng phần đầu và các đoạn lân cận là cách giảm dữ liệu, không bảo đảm đủ bối cảnh. Mã minh họa thiếu f-string và cách dùng `result.text` phải khớp hàm hỗ trợ; không coi đoạn đó là mã đã được chạy kiểm chứng. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Contextual retrieval](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289187). Bản lưu: `sources/vertex-lessons/289187.json`.

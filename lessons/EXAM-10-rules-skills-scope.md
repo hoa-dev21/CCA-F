@@ -4,21 +4,26 @@ Nguồn bổ trợ: Exam Guide CCAR-F v1.0, mục 3.1–3.4, trang PDF 12–14. 
 
 ## Nội dung bài học
 
-Quy ước chia sẻ phải nằm ở cấu hình dự án được quản lý phiên bản, không chỉ trong `~/.claude/CLAUDE.md` cá nhân. Theo đề cương, dùng `/memory` để kiểm tra file hướng dẫn đã nạp khi chẩn đoán khác biệt phiên. Imports tổ chức tài liệu; không mặc định làm giảm ngữ cảnh nếu vẫn nạp hết.
 
-Theo mục3.1, dự án có thể dùng `CLAUDE.md` ở root hoặc `.claude/CLAUDE.md`; file `CLAUDE.md` ở thư mục con bổ sung quy ước theo phạm vi thư mục. Cú pháp `@import` trong guide chỉ việc tham chiếu file bên ngoài; ví dụ dòng `@standards/testing.md` đưa tài liệu liên quan vào hướng dẫn. Chọn imports cho từng package theo domain của maintainer, không import toàn bộ standards một cách máy móc. Có thể chia `.claude/rules/testing.md`, `api-conventions.md`, `deployment.md` thay một file khổng lồ; vẫn cần scope đúng.
+Đặt hướng dẫn theo người cần dùng và phạm vi áp dụng. Quy ước chung của nhóm phải nằm trong cấu hình dự án được quản lý phiên bản; nếu chỉ lưu ở `~/.claude/CLAUDE.md` của một người, đồng đội sẽ không nhận được. Theo đề cương, có thể dùng `/memory` để xem những tệp hướng dẫn đã được nạp khi hai phiên hoạt động khác nhau.
 
-Quy tắc theo loại file nằm trong `.claude/rules/` với YAML `paths` chứa glob. Ví dụ quy ước test rải nhiều thư mục dùng `**/*.test.tsx` phù hợp hơn chỉ đặt một CLAUDE.md ở một thư mục con. Quy tắc có scope chỉ được áp khi khớp phạm vi được định nghĩa, giảm hướng dẫn không liên quan.
+Hướng dẫn dự án có thể ở `CLAUDE.md` tại thư mục gốc hoặc `.claude/CLAUDE.md`. Tệp `CLAUDE.md` trong thư mục con bổ sung quy ước cho phạm vi đó. Có thể chia tài liệu và tham chiếu bằng dòng như `@standards/testing.md`. Cách nhập nội dung này giúp tổ chức tài liệu, nhưng nếu nạp hết thì vẫn dùng ngữ cảnh cho toàn bộ phần đã nạp.
 
-Ví dụ frontmatter theo đề cương: `paths: ["terraform/**/*"]` trong file rule giới hạn quy ước Terraform cho các đường dẫn khớp. Đặt trường này trong YAML frontmatter giữa hai dòng `---`, không chỉ nhắc glob trong phần mô tả. Không diễn giải glob rải nhiều thư mục thành quy tắc chỉ cho một package.
+Quy tắc theo loại tệp được đặt trong `.claude/rules/`, chẳng hạn `testing.md`, `api-conventions.md` hoặc `deployment.md`. Phần YAML ở đầu tệp, nằm giữa hai dòng `---`, dùng `paths` để quy định mẫu đường dẫn (glob). Ví dụ: `paths: ["terraform/**/*"]` giới hạn quy tắc vào các đường dẫn khớp mẫu Terraform.
 
-Commands dùng chung ở `.claude/commands/`, cá nhân ở `~/.claude/commands/`. Skills theo mục tiêu trong `.claude/skills/` có SKILL.md; bản cá nhân có tên riêng để không ảnh hưởng đồng đội. Đề cương phân biệt `context: fork` để tách ngữ cảnh, `allowed-tools` để giới hạn công cụ và `argument-hint` gợi ý đối số. Hint không phải validation bắt buộc bằng mã.
+Nếu kiểm thử nằm ở nhiều thư mục, mẫu `**/*.test.tsx` phù hợp hơn việc chỉ đặt hướng dẫn trong một thư mục con. Chọn quy tắc và tài liệu nhập theo nhu cầu của từng phần dự án, không tự động nạp mọi tiêu chuẩn vào mọi nơi.
 
-Skill cá nhân ở `~/.claude/skills/`; dùng tên khác bản chia sẻ để tránh vô tình thay hành vi nhóm. Quy ước áp dụng thường xuyên đặt trong CLAUDE.md, quy trình làm việc theo tác vụ đặt trong skill được gọi khi cần. `allowed-tools` giới hạn công cụ của lần chạy, không thay validation đường dẫn hay quyền hệ thống xử lý phía máy chủ. Nếu chỉ cần tạo báo cáo file, không cấp Bash tùy ý rồi coi skill tự động an toàn.
+Theo đề cương, lệnh dùng chung nằm ở `.claude/commands/`; lệnh cá nhân ở `~/.claude/commands/`. Skill dùng chung nằm ở `.claude/skills/` với tệp `SKILL.md`; skill cá nhân ở `~/.claude/skills/`. Đặt tên bản cá nhân khác bản dùng chung để tránh thay đổi hành vi ngoài ý muốn.
 
-Chọn plan mode khi thay đổi kiến trúc/nhiều file hoặc còn phương án cạnh tranh. Thay đổi nhỏ, rõ phạm vi có thể thực thi trực tiếp với kiểm tra phù hợp. Một giai đoạn Explore riêng giúp cô lập đầu ra khám phá dài.
+CLAUDE.md chứa quy ước thường xuyên áp dụng; skill đóng gói quy trình cho nhiệm vụ cụ thể. Các tùy chọn trong phần đầu skill có vai trò khác nhau:
 
-Ví dụ migration thư viện ảnh hưởng45file cần khảo sát và so sánh phương án trước khi sửa; thêm một conditional kiểm tra ngày trong một hàm đã rõ lỗi thường có thể thực thi trực tiếp. Có thể dùng plan mode để điều tra/thiết kế, sau đó chuyển sang thực thi phương án đã chọn. Explore tác nhân con trả summary hữu ích cho ngữ cảnh chính thay vì đổ mọi kết quả tìm kiếm vào đó. Đây là lựa chọn thiết kế trong đề cương, không là yêu cầu mọi thay đổi nhỏ đều phải chờ một vòng duyệt kế hoạch.
+- `context: fork` tách quá trình chạy sang ngữ cảnh riêng, hữu ích khi khám phá tạo nhiều kết quả.
+- `allowed-tools` giới hạn công cụ được dùng.
+- `argument-hint` gợi ý cách nhập tham số, không phải kiểm tra bắt buộc bằng mã.
+
+Giới hạn công cụ không thay kiểm tra đường dẫn hoặc quyền phía hệ thống. Nếu nhiệm vụ chỉ cần tạo báo cáo, không vì tiện mà cấp toàn bộ khả năng chạy Bash.
+
+Chọn chế độ lập kế hoạch khi thay đổi kiến trúc, nhiều tệp hoặc còn nhiều phương án. Ví dụ: chuyển thư viện ảnh hưởng 45 tệp cần khảo sát trước; sửa một điều kiện ngày đã rõ lỗi có thể thực hiện trực tiếp rồi kiểm tra. Tác nhân Explore có thể giữ kết quả tìm kiếm dài và trả phần tóm tắt hữu ích cho phiên chính, thay vì đưa mọi chi tiết vào đó.
 
 ## Câu hỏi tình huống
 

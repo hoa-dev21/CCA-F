@@ -6,9 +6,14 @@ Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025). Bản gốc và phầ
 
 ## Nội dung bài học
 
-Bài gợi ý kế hoạch phát triển theo 4D: tự đánh giá, chọn một hoặc hai ưu tiên, đặt hoạt động, lịch thực hành và dấu hiệu tiến bộ. Một thư viện prompt hữu ích giữ mẫu có biến đầu vào, ví dụ kết quả tốt và cách đánh giá, rồi cập nhật qua sử dụng.
 
-Các trò chơi ngôn ngữ là bài tập quan sát ràng buộc, thử nhiều cách hiểu và phản hồi chính xác; không phải mục tiêu thi Architect. Khi ôn gấp, ưu tiên kỹ thuật trong Exam Guide; dùng hoạt động bổ sung để luyện điểm yếu thực tế, không cần hoàn thành mọi trò chơi.
+Để tiến bộ, hãy tự đánh giá bốn năng lực: phân công, mô tả, đánh giá và sử dụng có trách nhiệm. Chọn một hoặc hai năng lực cần luyện trước, đặt lịch thực hành và xác định dấu hiệu cho thấy bạn đã làm tốt hơn.
+
+Ví dụ: Nếu thường viết yêu cầu thiếu thông tin, bạn có thể dành hai buổi mỗi tuần để thử lại một nhiệm vụ. Mỗi lần bổ sung mục tiêu, dữ liệu và định dạng cần có, rồi kiểm tra xem AI còn phải hỏi lại hoặc có bỏ sót yêu cầu không.
+
+Bạn cũng có thể xây một thư viện prompt, tức tập hợp các mẫu yêu cầu để dùng lại. Mỗi mẫu nên có chỗ thay dữ liệu đầu vào, một ví dụ kết quả tốt và tiêu chí kiểm tra. Hãy sửa mẫu dựa trên kết quả thực tế sau khi sử dụng.
+
+Các trò chơi ngôn ngữ trong bài giúp luyện cách đọc yêu cầu, nhận ra nhiều cách hiểu và đưa phản hồi chính xác. Nếu đang ôn thi Architect gấp, hãy coi đây là hoạt động bổ trợ; ưu tiên các nội dung kỹ thuật trong đề cương thi thay vì cố hoàn thành mọi trò chơi.
 
 ## Câu hỏi
 

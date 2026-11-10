@@ -56,8 +56,12 @@ D. Đủ nếu bỏ trích dẫn nguồn.
 
 ## Đối chiếu RAG trên Bedrock
 
-Đã đọc [Text embeddings](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276777), sources/bedrock-lessons/276777.json và đối chiếu với bản API. Mẫu dùng Bedrock invoke_model với Titan, khác SDK/provider các vectơ biểu diễn trong khóa API. Dimension/range/normalization trong video không phải thuộc tính mọi vectơ biểu diễn; truy vấn tìm kiếm và các đoạn văn bản phải dùng biểu diễn tương thích. Dùng chung tóm tắt/câu hỏi khái niệm tương đương, không tăng số câu trùng.
+Mẫu Bedrock dùng `invoke_model` với Titan, khác thư viện và nhà cung cấp embedding của khóa API. Số chiều, khoảng giá trị và cách chuẩn hóa trong video không phải thuộc tính của mọi vectơ. Câu hỏi và tài liệu cần được biểu diễn tương thích để so sánh. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Text embeddings](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276777). Bản lưu: `sources/bedrock-lessons/276777.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Text embeddings](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289188), sources/vertex-lessons/289188.json. Mẫu Vertex dùng google-genai embed_content với text-embedding-005, khác Titan trong Bedrock. Model/location trong video không được trình bày như danh mục hiện hành; khoảng[-1,1] không là đặc tính phổ quát của mọi vectơ biểu diễn. Dùng đúng model/space và quy định về dữ liệu và hành vi query/document, kiểm tra shape/dimension. Dùng chung câu hỏi khái niệm.
+Mẫu Vertex dùng `embed_content` của google-genai với `text-embedding-005`, khác Titan của Bedrock. Đây là cấu hình trong khóa, không phải danh mục mô hình hoặc vùng hiện hành. Khoảng [-1, 1] không phải đặc tính chung của mọi embedding. Kiểm tra đúng mô hình, không gian biểu diễn, cách xử lý câu hỏi và tài liệu, cùng hình dạng dữ liệu và số chiều. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Text embeddings](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289188). Bản lưu: `sources/vertex-lessons/289188.json`.

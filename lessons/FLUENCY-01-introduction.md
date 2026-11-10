@@ -6,11 +6,14 @@ Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025), AI Fluency: Framework
 
 ## Nội dung bài học
 
-AI Fluency là năng lực cộng tác với AI hiệu quả, tiết kiệm công sức, có đạo đức và an toàn. Khóa học hướng tới kỹ năng bền vững thay vì chỉ ghi nhớ mẹo cho một phiên bản sản phẩm. Bốn năng lực gồm Delegation, Description, Discernment và Diligence.
 
-Khi chọn dùng AI, cần nghĩ cả cách giao việc, mô tả kết quả, đánh giá đầu ra và chịu trách nhiệm cho việc sử dụng. Biết một lệnh hay không thay thế khả năng nhận ra kết quả sai. Bài mở đầu khuyến khích thực hành trên nhiệm vụ thật và tự nhìn lại điểm khó.
+AI Fluency là khả năng làm việc cùng AI một cách hiệu quả, tiết kiệm công sức, an toàn và có trách nhiệm. Bạn cần biết cách giao việc, kiểm tra kết quả và quyết định khi nào nên sử dụng AI.
 
-Đây là nền tảng cộng tác; không thay cho các mục tiêu kỹ thuật cụ thể của Exam Guide Architect.
+Khóa học giới thiệu bốn năng lực: phân công công việc (Delegation), mô tả yêu cầu (Description), đánh giá kết quả (Discernment) và sử dụng AI có trách nhiệm (Diligence). Những năng lực này vẫn hữu ích khi bạn đổi công cụ hoặc khi công nghệ thay đổi.
+
+Ví dụ: Khi nhờ AI viết báo cáo, bạn chọn phần AI có thể hỗ trợ, cung cấp yêu cầu và dữ liệu, kiểm tra bản viết rồi quyết định có chia sẻ hay không. Viết được một câu yêu cầu hay chưa đủ để bảo đảm báo cáo đúng.
+
+Hãy thực hành với một công việc thật và ghi lại những chỗ còn khó. Nhóm bài này giúp bạn xây nền tảng cộng tác với AI; phần kỹ thuật để ôn thi Architect cần học thêm theo đề cương thi (Exam Guide).
 
 ## Câu hỏi
 

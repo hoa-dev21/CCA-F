@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101
 
 ## Nội dung bài học
 
-Connectors cho Claude truy cập công cụ và dữ liệu thật; tùy khả năng và quyền, chúng có thể đọc hoặc thực hiện hành động. Bài giới thiệu MCP là lớp chuẩn hóa kết nối. Web connectors nối dịch vụ cloud; desktop extensions phục vụ khả năng cục bộ qua ứng dụng desktop.
 
-Phải xác thực và cấp quyền phù hợp; kết nối không đồng nghĩa có toàn quyền mọi dữ liệu trong tổ chức. Chọn nguồn đúng nhu cầu, thử một yêu cầu đơn giản và kiểm tra kết quả. Quyền đọc không tự cho phép sửa, gửi thông tin hay hành động trong hệ thống.
+Connector là kết nối giúp Claude truy cập một nguồn dữ liệu hoặc công cụ bên ngoài. Tùy khả năng và quyền được cấp, kết nối có thể chỉ đọc thông tin hoặc còn cho phép thực hiện hành động.
 
-Ví dụ để dễ hình dung: để tổng hợp ticket, trước hết cần nguồn ticket và quyền truy cập; chỉ nêu tên hệ thống trong prompt không tạo tích hợp. Không tự động cài hay cấp quyền từ bài học này.
+Bài học giới thiệu MCP như một giao thức chung để kết nối ứng dụng AI với công cụ và dữ liệu. Các kết nối web phục vụ dịch vụ trên mạng; tiện ích của ứng dụng máy tính (desktop extensions) phục vụ các khả năng cục bộ, chẳng hạn truy cập tệp trong môi trường được cho phép.
+
+Ví dụ: Muốn tổng hợp các yêu cầu hỗ trợ khách hàng, còn gọi là ticket, Claude cần kết nối tới hệ thống quản lý ticket và có quyền đọc dữ liệu. Chỉ viết tên hệ thống trong câu yêu cầu không tạo ra kết nối này.
+
+Sau khi thiết lập kết nối, cần đăng nhập hoặc xác thực, cấp quyền phù hợp rồi thử một yêu cầu đơn giản để kiểm tra dữ liệu nhận được. Quyền đọc tài liệu không đồng nghĩa với quyền sửa, gửi thông tin hoặc truy cập mọi dữ liệu của tổ chức.
 
 ## Câu hỏi
 

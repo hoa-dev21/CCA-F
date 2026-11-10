@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài giới thiệu Claude Code và computer use như các trường hợp ghép mô hình, các công cụ, nhiều bước và quan sát môi trường. Mục đích là chuẩn bị cho phần các tác nhân AI, không phải coi một tên sản phẩm đủ giải thích kiến trúc.
 
-Code gắn với file/lệnh và quy trình làm việc phát triển; computer use gắn với thao tác trên giao diện. Cả hai cần biết kết quả hành động để quyết định bước tiếp. Đối với Exam Guide hiện tại, chi tiết computer use nằm ngoài phạm vi, còn nguyên tắc agent/tool và kiểm chứng vẫn hữu ích.
+Bài học dùng Claude Code và khả năng điều khiển giao diện máy tính (computer use) để giới thiệu ứng dụng AI thực hiện nhiều bước. Điểm chung là kết hợp mô hình với công cụ, thực hiện thao tác và quan sát kết quả để chọn bước tiếp theo.
 
-Đây là phần định hướng module, không tuyên bố đã thực hiện bất kỳ thao tác desktop hoặc cài ứng dụng cho người học.
+Claude Code làm việc với tệp, lệnh và quy trình phát triển phần mềm. Computer use thao tác qua giao diện. Hai cách khác nhau ở nơi hành động, nhưng đều cần biết thao tác vừa làm có đạt kết quả mong muốn hay không.
+
+Ví dụ: Sau khi yêu cầu sửa tệp, cần xem tệp đã thay đổi đúng chưa. Sau thao tác trên giao diện, cần xem trạng thái mới thay vì chỉ giả định việc bấm nút đã thành công.
+
+Đây là bài định hướng trước phần tác nhân AI. Theo đề cương đã lưu, chi tiết computer use nằm ngoài phạm vi thi; nguyên tắc kết hợp công cụ và kiểm chứng kết quả vẫn hữu ích. Bài học mô tả cách hoạt động, không thực hiện thao tác máy tính hay cài ứng dụng thay người học.
 
 ## Câu hỏi
 
@@ -52,8 +55,12 @@ D. Có, không cần blueprint.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Agents overview](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276804), sources/bedrock-media/276804.json. Bài module các tác nhân AI mở bằng Claude Code và Computer Use, khảo sát thiết kế/thực hành rồi rút nguyên tắc tác nhân AI hiệu quả. Không có một tên sản phẩm hoặc định nghĩa duy nhất thay cho việc xác định công cụ loop, quan sát và đánh giá của hệ thống. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Theo hồ sơ phụ đề, phần tác nhân AI bắt đầu từ Claude Code và Computer Use, xem cách thiết kế và thực hành rồi rút ra nguyên tắc. Tên sản phẩm không thay việc xác định vòng công cụ, cách quan sát và đánh giá của hệ thống. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Agents overview](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276804). Bản lưu: `sources/bedrock-media/276804.json`.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Anthropic apps](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289230), sources/vertex-media/289230.json. Giới thiệu Claude Code chạy terminal và Computer Use như hai tác nhân AI mẫu để phân tích thiết kế, rồi thực hành và rút nguyên tắc tác nhân AI hiệu quả. Đây là định hướng module, không phải bằng chứng đã chạy các ứng dụng. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Bài giới thiệu Claude Code trên dòng lệnh và Computer Use làm hai ví dụ để phân tích, thực hành và rút kinh nghiệm thiết kế tác nhân. Đây là phần định hướng, không phải bằng chứng đã chạy các ứng dụng. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Anthropic apps](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289230). Bản lưu: `sources/vertex-media/289230.json`.

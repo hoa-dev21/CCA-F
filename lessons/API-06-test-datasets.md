@@ -4,15 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Trước khi tạo dữ liệu kiểm thử, xác định sản phẩm mong muốn. Trong bài học, ứng dụng sinh Python, JSON hoặc regex cho tác vụ AWS, và cần đầu ra thuần nội dung, không thêm lời giải thích.
 
-Bộ dữ liệu là danh sách các đối tượng JSON. Trường `task` mô tả yêu cầu sẽ được chèn vào prompt cần đánh giá. Có thể viết thủ công hoặc nhờ Claude sinh theo mô tả rõ phạm vi: loại đầu ra, độ phức tạp, số lượng trường hợp và cấu trúc bản ghi.
+Trước khi tạo dữ liệu kiểm thử, cần biết ứng dụng phải tạo ra kết quả gì. Trong bài, ứng dụng tạo mã Python, dữ liệu JSON hoặc biểu thức tìm mẫu văn bản (regex) cho các nhiệm vụ liên quan đến AWS. Đầu ra chỉ được chứa nội dung cần dùng, không kèm lời giải thích.
 
-Bài học lưu bộ dữ liệu ra tệp để nạp lại trong các lần đánh giá. Điều này giúp tái sử dụng cùng đầu vào khi thử các phiên bản prompt. Mẫu ba bản ghi trong bài phục vụ minh họa, không phải bằng chứng ba trường hợp đủ bao phủ một ứng dụng production.
+Bộ dữ liệu kiểm thử là danh sách các bản ghi JSON. Trong mỗi bản ghi, trường `task` mô tả nhiệm vụ sẽ đưa vào prompt. Bạn có thể tự viết các bản ghi hoặc nhờ Claude tạo theo yêu cầu rõ về loại đầu ra, độ khó, số trường hợp và cấu trúc cần có.
 
-Bài dùng một mô hình nhanh để hỗ trợ sinh dữ liệu. Mã ví dụ có prefilling và stop sequence; khả năng tương thích của kỹ thuật đó cần kiểm tra theo mô hình trước khi chạy, không phải trọng tâm cần học thuộc ở đây.
+Ví dụ: Nếu ứng dụng hỗ trợ cả JSON và regex nhưng bộ kiểm thử chỉ có yêu cầu tạo JSON, bạn chưa biết ứng dụng làm tốt với regex hay không. Cần chọn các trường hợp bao quát những nhóm công việc quan trọng.
 
-Ví dụ để dễ hình dung: nếu ứng dụng xuất cả JSON và regex, tập chỉ gồm JSON không kiểm tra được hành vi ở nhóm regex.
+Lưu bộ dữ liệu thành tệp giúp dùng lại cùng đầu vào khi so sánh các phiên bản prompt. Ba bản ghi trong bài chỉ để minh họa cách làm, chưa đủ để chứng minh chất lượng của một ứng dụng đưa vào sử dụng thực tế.
+
+Mã ví dụ dùng mô hình nhanh để hỗ trợ tạo dữ liệu, cùng kỹ thuật viết sẵn phần mở đầu câu trả lời (prefilling) và chuỗi dừng (stop sequence). Khả năng hỗ trợ các kỹ thuật này tùy mô hình; cần kiểm tra trước khi chạy. Điều chính cần nắm ở đây là cách thiết kế và lưu bộ đầu vào phù hợp.
 
 ## Câu hỏi
 
@@ -54,8 +55,12 @@ D. Không mô tả ứng dụng đích.
 
 ## Đối chiếu Bedrock
 
-Đã đọc và đối chiếu [Generating test datasets](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276733), sources/bedrock-lessons/276733.json. Dùng chung bản tóm tắt và câu hỏi về phương pháp phép đánh giá vì các mục tiêu chính tương đương. Mã gọi nhà cung cấp vẫn cần adapter Converse phù hợp; ví dụ prefill/stop sequence và tên mô hình không được coi là hỗ trợ hiện hành đã xác minh. Không tính lại một bộ câu hỏi mới cho cùng nội dung.
+Nội dung về phương pháp đánh giá tương đương với bài chung nên dùng chung phần giải thích và câu hỏi, không tính thêm một bộ câu hỏi mới. Khi chuyển mã sang Bedrock, cần phần chuyển đổi phù hợp với Converse. Những ví dụ dùng prefill, chuỗi dừng và tên mô hình trong khóa vẫn phải được kiểm tra khả năng hỗ trợ khi triển khai.
+
+Nguồn đối chiếu: [Generating test datasets](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276733). Bản lưu: `sources/bedrock-lessons/276733.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Generating test datasets](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289163), sources/vertex-lessons/289163.json. Bộ dữ liệu minh họa AWS Python/JSON/regex, có thể soạn tay hoặc sinh với mô hình rồi lưu. Ba ví dụ không đủ đại diện production; dữ liệu sinh cần kiểm tra, edge cases và tách tập kiểm tra. Prefill/stop không thay JSON/schema validation. Dùng chung câu hỏi khái niệm.
+Ví dụ tạo dữ liệu kiểm thử cho nhiệm vụ AWS có đầu ra Python, JSON hoặc regex. Có thể soạn bằng tay hoặc nhờ mô hình rồi lưu lại. Ba ví dụ chưa đại diện cho ứng dụng thực tế; dữ liệu sinh cần được kiểm tra, bổ sung trường hợp biên và có tập kiểm thử riêng. Prefill và chuỗi dừng không thay việc kiểm tra JSON hoặc schema. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Generating test datasets](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289163). Bản lưu: `sources/vertex-lessons/289163.json`.

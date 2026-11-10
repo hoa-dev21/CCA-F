@@ -4,13 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-cod
 
 ## Nội dung bài học
 
-Skill đóng gói một quy trình lặp lại. Ví dụ kiểm chứng gồm chạy test, đọc diff, kiểm tra không làm yếu test để tạo kết quả xanh, rồi báo đạt/không đạt kèm bằng chứng.
 
-Mô tả skill giúp hệ thống nhận diện khi nào quy trình liên quan. Nội dung chi tiết và tài liệu tham chiếu chỉ cần đọc khi sử dụng; script hỗ trợ có thể đặt cùng thư mục để thực thi. Giữ file hướng dẫn chính gọn, tách tài liệu sâu thành file tham chiếu có liên kết.
+Skill là bộ hướng dẫn đóng gói một quy trình để dùng lại. Ví dụ: sau mỗi lần tổ chức lại mã (refactor), một skill kiểm chứng có thể yêu cầu chạy kiểm thử, đọc phần thay đổi và báo kết quả kèm bằng chứng.
 
-Phân biệt ba bề mặt: CLAUDE.md cho quy ước thường trực; skill cho quy trình theo loại tác vụ; hook cho điều kiện phải được cưỡng chế. Skill tự kích hoạt theo mô tả vẫn dựa vào việc tuân theo hướng dẫn, không thay cơ chế chặn bằng mã nếu quy tắc tuyệt đối không được bỏ qua.
+Phần mô tả của skill giúp hệ thống nhận biết khi nào nên dùng. Hướng dẫn chi tiết và tài liệu tham khảo được đọc khi cần; mã lệnh hỗ trợ có thể đặt cùng thư mục. Nên giữ hướng dẫn chính ngắn gọn và liên kết tới tài liệu giải thích sâu hơn.
 
-Ví dụ để dễ hình dung: test xanh sau khi xóa assertion không chứng minh tính năng đúng. Cần đọc thay đổi test và xem kết quả chạy thực tế, thay vì chỉ tin câu “đã kiểm tra”.
+Ba loại cấu hình có vai trò khác nhau: CLAUDE.md chứa quy ước thường xuyên áp dụng; skill hướng dẫn quy trình cho một loại nhiệm vụ; hook chạy mã tại một sự kiện để kiểm tra hoặc chặn thao tác. Nếu một bước tuyệt đối không được bỏ qua, chỉ viết nó trong skill chưa đủ để bắt buộc thực hiện.
+
+Ví dụ: Một bài kiểm thử báo thành công sau khi AI xóa điều kiện kiểm tra quan trọng, gọi là assertion. Kết quả đó chưa chứng minh tính năng đúng. Cần xem diff — phần khác biệt giữa mã trước và sau khi sửa — để biết phép kiểm tra có bị làm yếu hay không, đồng thời xem kết quả chạy thực tế.
 
 ## Câu hỏi
 

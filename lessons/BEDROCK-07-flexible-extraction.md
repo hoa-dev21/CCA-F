@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-
 
 ## Nội dung bài học
 
-Bài dùng công cụ to_json chấp nhận cấu trúc object linh hoạt, còn prompt mô tả trường mong muốn. Ưu điểm là đổi yêu cầu nhanh ở prototype; đánh đổi là bản mô tả cấu trúc dữ liệu không cưỡng chế chặt các trường/kiểu cần cho downstream.
 
-Ép gọi đúng công cụ không đồng nghĩa mọi trường nghiệp vụ đã được kiểm tra. Với production quan trọng hoặc nested data phức tạp, dùng bản mô tả cấu trúc dữ liệu chuyên biệt và validation thích hợp. JSON hợp lệ vẫn có thể thiếu trường hoặc đặt nhầm giá trị.
+Bài dùng công cụ `to_json` có đầu vào là một đối tượng dữ liệu linh hoạt, còn các trường mong muốn được mô tả trong prompt. Cách này giúp thử nhanh khi bản mẫu ứng dụng thường xuyên đổi yêu cầu.
 
-Khóa đưa một tỷ lệ lợi ích/chất lượng dạng minh họa; bản ôn không dùng nó như kết quả benchmark được kiểm chứng. Quyết định mức linh hoạt dựa trên dữ liệu và tiêu chí của ứng dụng. Thêm trường vào prompt không tự cập nhật quy định về dữ liệu và hành vi máy đọc ở hệ thống nhận nếu bản mô tả cấu trúc dữ liệu vẫn quá rộng.
+Đổi lại, schema — bản mô tả cấu trúc dữ liệu — không bắt buộc chặt những trường và kiểu dữ liệu cụ thể. Ví dụ: bước tiếp theo cần `amount` là số, nhưng schema cho phép mọi đối tượng. Ép mô hình gọi `to_json` chưa chứng minh `amount` tồn tại và có đúng kiểu.
+
+Khi dữ liệu quan trọng hoặc có cấu trúc lồng nhau phức tạp, cần cân nhắc schema riêng cho nhiệm vụ và kiểm tra phù hợp. JSON hợp lệ vẫn có thể thiếu trường, sai giá trị hoặc không đáp ứng yêu cầu nghiệp vụ.
+
+Thêm một trường vào prompt không tự cập nhật quy định dữ liệu của hệ thống nhận. Hãy chọn mức linh hoạt dựa trên mức độ quan trọng, độ phức tạp và kết quả kiểm thử. Tỷ lệ lợi ích được nêu trong khóa chỉ là minh họa, không phải số đo có thể áp dụng chung.
 
 ## Câu hỏi
 
@@ -22,7 +25,7 @@ C. Bảo đảm chính xác mọi dữ liệu.
 
 D. Tự tạo mọi quyền hệ thống xử lý phía máy chủ.
 
-**2. Chọn một.** Downstream bắt buộc amount là số nhưng bản mô tả cấu trúc dữ liệu cho phép mọi object. Chỉ ép gọi to_json đủ chưa?
+**2. Chọn một.** Bước xử lý tiếp theo bắt buộc `amount` là số, nhưng schema cho phép mọi đối tượng dữ liệu. Chỉ ép gọi `to_json` đã đủ chưa?
 
 A. Đủ vì tên có JSON.
 
@@ -32,7 +35,7 @@ C. Chưa; cần hợp đồng/validation kiểu và ngữ nghĩa phù hợp.
 
 D. Đủ nếu không ghi log.
 
-**3. Chọn một.** Khi cần chọn generic hay dedicated bản mô tả cấu trúc dữ liệu nên dựa vào gì?
+**3. Chọn một.** Khi chọn schema linh hoạt dùng chung hay schema riêng cho một nhiệm vụ, nên dựa vào gì?
 
 A. Độ quan trọng hợp đồng, mức phức tạp và kết quả phép đánh giá thực tế.
 

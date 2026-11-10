@@ -4,11 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài chuẩn bị quyền dùng mô hình Anthropic trong Vertex Mô hình Garden, cài gcloud và thiết lập dự án cùng thông tin xác thực mặc định cho ứng dụng. Ví dụ dùng `gcloud init`, `gcloud auth login`, `gcloud config set project YOUR_PROJECT_ID` và `gcloud auth application-default login`.
 
-Phân biệt tài khoản đăng nhập CLI, dự án đang chọn và credentials mà SDK sử dụng. Đăng nhập thành công không đủ để chứng minh có quyền dùng mô hình, mô hình được bật hoặc vùng triển khai phù hợp. Với môi trường production, chọn cơ chế danh tính và quyền theo hạ tầng thay vì coi đăng nhập tương tác của notebook là công thức triển khai bắt buộc.
+Bài hướng dẫn chuẩn bị để dùng mô hình Anthropic qua Google Vertex AI: có quyền truy cập mô hình trong Model Garden, cài công cụ dòng lệnh gcloud, chọn dự án và thiết lập thông tin xác thực cho ứng dụng.
 
-Theo bài yêu cầu kế tiếp, ứng dụng dùng AnthropicVertex với project/region và Google credentials; không dùng lẫn API key của Anthropic trực tiếp chỉ vì bài lifecycle có nhắc “API Key”. Các mô hình ID, vùng và giao diện Console trong khóa cần kiểm tra khi triển khai. Bài này cung cấp bối cảnh nhà cung cấp, ưu tiên ôn các quyết định kiến trúc dùng chung cho kỳ thi.
+Các lệnh minh họa gồm `gcloud init`, `gcloud auth login`, `gcloud config set project YOUR_PROJECT_ID` và `gcloud auth application-default login`. Cần phân biệt ba việc: tài khoản đang đăng nhập công cụ dòng lệnh, dự án đang chọn và thông tin xác thực mà thư viện ứng dụng thực sự sử dụng.
+
+Ví dụ: Bạn đã đăng nhập gcloud nhưng ứng dụng vẫn báo lỗi. Đừng chỉ đổi prompt hoặc tham số sinh câu trả lời; hãy kiểm tra danh tính ứng dụng đang dùng, quyền, dự án, vùng triển khai và khả năng truy cập mô hình. Đăng nhập thành công không tự chứng minh tất cả các điều kiện đó đều đúng.
+
+Mẫu tiếp theo dùng `AnthropicVertex` với dự án, vùng và thông tin xác thực Google. Không mặc định khóa API Anthropic trực tiếp thay được thông tin xác thực Google chỉ vì cả hai đều gọi mô hình Claude.
+
+Khi chuyển từ notebook sang môi trường vận hành, chọn danh tính và quyền phù hợp với hạ tầng, không sao chép nguyên cách đăng nhập tương tác. Tên mô hình, vùng và giao diện trong khóa cần được kiểm tra khi triển khai. Khi ôn thi, ưu tiên hiểu sự khác nhau giữa các lớp xác thực và quyền truy cập.
 
 ## Câu hỏi
 

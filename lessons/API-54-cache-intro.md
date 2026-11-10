@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Caching tái sử dụng phần xử lý của nội dung đầu vào lặp lại, nhằm giảm độ trễ/chi phí ở trường hợp phù hợp. Nó không phải lưu câu trả lời cuối để trả nguyên bản và không thay trách nhiệm gửi ngữ cảnh của ứng dụng.
 
-Khóa minh họa lợi ích khi hỏi nhiều câu về cùng tài liệu hoặc dùng tool/system prompt ổn định. Cần nội dung thực sự có thể tái sử dụng và phép đo usage. Không suy ra “nội dung gần giống” luôn cache hit.
+Lưu đệm prompt (prompt caching) cho phép tái sử dụng phần xử lý của nội dung đầu vào lặp lại. Trong trường hợp phù hợp, cách này có thể giảm thời gian phản hồi và chi phí.
 
-Thời hạn một giờ và các mô tả nội bộ trong video là giản lược theo thời điểm; không xem như bảo đảm mọi model/cấu hình. Exam Guide chỉ yêu cầu biết caching tồn tại, không trọng tâm chi tiết triển khai.
+Ví dụ: Bạn đặt nhiều câu hỏi khác nhau về cùng một tài liệu dài, hoặc nhiều yêu cầu dùng chung định nghĩa công cụ và hướng dẫn hệ thống ổn định. Đây là những tình huống đáng đo lợi ích của cache.
+
+Cache không phải kho lưu câu trả lời cuối để trả nguyên bản. Nó cũng không thay thế việc gửi ngữ cảnh: ứng dụng vẫn phải tạo yêu cầu với nội dung cần thiết. Nội dung chỉ gần giống nhau chưa chắc được tính là dùng lại cache thành công, còn gọi là cache hit.
+
+Hãy kiểm tra số liệu sử dụng thực tế để biết phần nào được dùng lại. Thời hạn một giờ và cách giải thích bên trong hệ thống ở video là minh họa tại thời điểm giảng, không phải cam kết chung cho mọi mô hình và cấu hình. Theo đề cương đã lưu, chỉ cần biết cơ chế này tồn tại; chi tiết triển khai không phải trọng tâm.
 
 ## Câu hỏi
 
@@ -52,8 +55,12 @@ D. Không gửi dữ liệu.
 
 ## Đối chiếu tính năng trên Bedrock
 
-Đã đọc [Prompt caching](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276786), sources/bedrock-lessons/276786.json. Bài Bedrock nói TTL5 phút, bản API nói1 giờ; đó là ví dụ/cấu hình khác nhau, không chọn một giá trị làm bảo đảm phổ quát. Dùng cùng kiến thức về tái sử dụng xử lý input, cần xác minh TTL/ngưỡng hiện hành trước triển khai. Dùng chung tóm tắt/câu hỏi khái niệm, không đếm câu hỏi trùng.
+Ví dụ Bedrock nêu thời gian cache còn hiệu lực 5 phút, trong khi bài API nêu 1 giờ. Đây là các ví dụ hoặc cấu hình khác nhau, không nên chọn một con số làm quy tắc chung. Cùng học nguyên tắc tái sử dụng xử lý đầu vào; khi triển khai cần xác minh thời hạn và ngưỡng áp dụng. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Prompt caching](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276786). Bản lưu: `sources/bedrock-lessons/276786.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Prompt caching](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289196), sources/vertex-lessons/289196.json. Nguồn Vertex nói TTL5phút, API nói1giờ. Đây là giá trị của ví dụ khác nhau, cần kiểm tra provider/model/config khi triển khai. Cache tái sử dụng tính toán input ổn định, không là lưu sẵn câu trả lời hay semantic match. Dùng chung câu hỏi khái niệm.
+Bài Vertex cũng nêu 5 phút, khác 1 giờ trong bài API. Kiểm tra nhà cung cấp, mô hình và cấu hình thực tế trước khi dùng. Cache tái sử dụng tính toán cho đầu vào ổn định, không phải lưu sẵn câu trả lời hoặc tìm nội dung gần nghĩa. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Prompt caching](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289196). Bản lưu: `sources/vertex-lessons/289196.json`.

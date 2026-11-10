@@ -4,15 +4,16 @@ Nguồn bổ trợ: Exam Guide CCAR-F v1.0, mục 4.4, trang PDF 18. Câu hỏi 
 
 ## Nội dung bài học
 
-Khi validation thất bại, lượt sửa cần tài liệu gốc, bản trích xuất lỗi và thông báo cụ thể. “Làm lại cho đúng” cung cấp ít tín hiệu hơn “calculated_total khác stated_total ở các dòng này”. Giữ các trường tính toán và trường ghi trong nguồn riêng giúp phát hiện khác biệt thay vì ghi đè một giá trị bằng giá trị còn lại.
 
-Thử lại phù hợp với lỗi có thể sửa từ dữ liệu đã cung cấp, như nhầm trường hoặc chuẩn hóa sai định dạng. Nếu thông tin chỉ ở phụ lục chưa được đưa vào, lặp lại cùng input không tạo thêm bằng chứng. Cần lấy nguồn còn thiếu, biểu diễn missing hoặc chuyển kiểm tra phù hợp.
+Khi dữ liệu trích xuất không qua kiểm tra, yêu cầu sửa nên chứa tài liệu gốc, kết quả đang sai và lỗi cụ thể. “Làm lại cho đúng” ít hữu ích hơn việc chỉ ra trường nào sai hoặc các giá trị nào không khớp.
 
-Nếu nguồn tự mâu thuẫn, ghi nhận conflict thay vì bắt mô hình tạo một giá trị “đẹp”. Với code kiểm tra, trường detected_pattern giúp phân tích loại phát hiện thường bị người dùng bác bỏ, từ đó cải tiến prompt có mục tiêu.
+Thử lại phù hợp khi mô hình có thể sửa từ dữ liệu đã nhận, chẳng hạn đặt nhầm trường hoặc đổi sai định dạng ngày. Nếu ngày hiệu lực chỉ nằm trong phụ lục chưa được cung cấp, gửi lại cùng đầu vào nhiều lần không bổ sung bằng chứng. Cần lấy phụ lục, biểu diễn dữ liệu còn thiếu hoặc chuyển người kiểm tra theo quy trình.
 
-Có thể dùng boolean `conflict_detected` cùng `stated_total` và `calculated_total`, giữ các giá trị nguồn và quy tắc tính để người duyệt xem lệch. Phân biệt validation cấu trúc với validation ngữ nghĩa: JSON đúng/schema hợp lệ chưa chứng minh tổng đúng hoặc field được gán đúng nguồn. Cấu hình strict được hỗ trợ giúp giảm lỗi cú pháp/cấu trúc; code nghiệp vụ vẫn phải kiểm tra quan hệ giữa các giá trị.
+Phân biệt kiểm tra cấu trúc với kiểm tra ý nghĩa. JSON đúng và đủ trường chưa chứng minh tổng tiền chính xác hay từng trường lấy đúng từ nguồn. Chế độ kiểm tra nghiêm ngặt được hỗ trợ có thể giảm lỗi cấu trúc; mã nghiệp vụ vẫn phải kiểm tra quan hệ giữa các giá trị.
 
-Ví dụ để dễ hình dung: ba dòng hàng cộng thành 120 nhưng nguồn ghi tổng 125. Hệ thống cần giữ cả hai và đánh dấu lệch, không tự đổi thành 125 để vượt kiểm tra.
+Ví dụ: Các dòng hàng cộng thành 120 nhưng hóa đơn ghi tổng 125. Giữ `stated_total` là tổng ghi trên nguồn và `calculated_total` là tổng được tính, kèm `conflict_detected` để đánh dấu có xung đột. Giữ cả cách tính và nguồn để người duyệt kiểm tra; không tự sửa một số cho bằng số còn lại chỉ để vượt kiểm tra.
+
+Trong hệ thống rà soát mã, trường `detected_pattern` có thể ghi loại vấn đề phát hiện được. Phân tích những loại thường bị người dùng bác bỏ giúp sửa prompt đúng chỗ, thay vì thay đổi toàn bộ cách chấm một cách mơ hồ.
 
 ## Câu hỏi tình huống
 
@@ -20,7 +21,7 @@ Ví dụ để dễ hình dung: ba dòng hàng cộng thành 120 nhưng nguồn 
 
 A. Chỉ câu “thử lại”.
 
-B. Chỉ một điểm điểm tự tin.
+B. Chỉ một điểm tự tin.
 
 C. Tài liệu gốc, extraction lỗi và lỗi validation cụ thể.
 

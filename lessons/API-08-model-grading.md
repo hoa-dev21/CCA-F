@@ -4,15 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài phân biệt ba cách chấm: mã chương trình, mô hình và con người. Code phù hợp kiểm tra quy tắc rõ; mô hình linh hoạt với việc đáp ứng yêu cầu, độ đầy đủ và chất lượng; người chấm linh hoạt nhưng tốn thời gian.
 
-Trước khi chọn bộ chấm điểm, xác định tiêu chí. Với ứng dụng sinh mã, định dạng và cú pháp có thể kiểm tra bằng code; việc giải quyết đúng tác vụ cần đánh giá nội dung.
+Có ba cách chấm kết quả: dùng mã chương trình, dùng mô hình AI hoặc nhờ con người. Chọn cách chấm theo tiêu chí cần kiểm tra. Mã phù hợp với quy tắc rõ như cấu trúc dữ liệu; mô hình có thể hỗ trợ xem câu trả lời có đầy đủ và đúng yêu cầu không; người chấm có thể vận dụng chuyên môn nhưng cần thời gian.
 
-Mô hình bộ chấm điểm nhận **yêu cầu gốc và đầu ra cần chấm**. Bài đề xuất trả cấu trúc gồm điểm mạnh, điểm yếu, lý do và điểm số. Các thông tin giải thích giúp hiểu điểm, thay vì chỉ nhận một con số khó chẩn đoán.
+Khi dùng mô hình làm người chấm, cần cung cấp cả yêu cầu gốc và câu trả lời cần đánh giá. Bài học đề xuất kết quả chấm gồm điểm mạnh, điểm yếu, lý do và điểm số. Nhờ phần giải thích, bạn biết vì sao câu trả lời chưa đạt và nên sửa yêu cầu ở đâu.
 
-Không nên coi mô hình bộ chấm điểm là chân lý tuyệt đối: bài cũng lưu ý điểm mô hình có thể biến động. Điểm trung bình hỗ trợ so sánh, còn nhận xét và lỗi cụ thể hỗ trợ sửa prompt.
+Ví dụ: AI tạo dữ liệu JSON đúng cú pháp nhưng lọc nhầm loại đơn hàng. Chương trình đọc JSON chỉ xác nhận dữ liệu có đúng định dạng. Muốn phát hiện lỗi lọc nhầm, phải đối chiếu nội dung với yêu cầu gốc; có thể dùng mô hình hỗ trợ việc đánh giá này.
 
-Ví dụ để dễ hình dung: JSON hợp lệ nhưng lọc nhầm loại đơn hàng. Code parser xác nhận cú pháp; bộ chấm điểm đánh giá theo yêu cầu gốc mới xem xét được lỗi tác vụ.
+Điểm do mô hình chấm có thể thay đổi giữa các lần và bản thân mô hình chấm cũng có thể sai. Vì vậy, dùng điểm trung bình để hỗ trợ so sánh, đồng thời xem nhận xét và lỗi cụ thể. Không coi một điểm số cao là bằng chứng tuyệt đối rằng kết quả đúng.
 
 ## Câu hỏi
 
@@ -54,8 +53,12 @@ D. Một nhãn “đúng” gán cố định.
 
 ## Đối chiếu Bedrock
 
-Đã đọc và đối chiếu [Model based grading](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276738), sources/bedrock-lessons/276738.json. Dùng chung bản tóm tắt và câu hỏi về phương pháp phép đánh giá vì các mục tiêu chính tương đương. Mã gọi nhà cung cấp vẫn cần adapter Converse phù hợp; ví dụ prefill/stop sequence và tên mô hình không được coi là hỗ trợ hiện hành đã xác minh. Không tính lại một bộ câu hỏi mới cho cùng nội dung.
+Nội dung về phương pháp đánh giá tương đương với bài chung nên dùng chung phần giải thích và câu hỏi, không tính thêm một bộ câu hỏi mới. Khi chuyển mã sang Bedrock, cần phần chuyển đổi phù hợp với Converse. Những ví dụ dùng prefill, chuỗi dừng và tên mô hình trong khóa vẫn phải được kiểm tra khả năng hỗ trợ khi triển khai.
+
+Nguồn đối chiếu: [Model based grading](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276738). Bản lưu: `sources/bedrock-lessons/276738.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Model based grading](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289168), sources/vertex-lessons/289168.json. Chọn code/model/human bộ chấm điểm theo tiêu chí. Syntax kiểm tra được bằng code; task following cần bằng chứng hành vi/rubric, có thể kết hợp mô hình và con người. Lời giải thích của bộ chấm điểm không đủ để chứng minh điểm đúng; hiệu chỉnh với mẫu gán nhãn và xem lỗi theo nhóm thay vì chỉ trung bình. Dùng chung câu hỏi khái niệm.
+Chọn chấm bằng mã, mô hình hay con người theo tiêu chí cần đo. Mã có thể kiểm tra cú pháp; việc làm đúng nhiệm vụ cần xem hành vi và tiêu chí, có thể kết hợp AI với người đánh giá. Lời giải thích của mô hình chấm chưa chứng minh điểm đúng. Cần đối chiếu mẫu có nhãn và xem lỗi theo nhóm, không chỉ điểm trung bình. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Model based grading](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289168). Bản lưu: `sources/vertex-lessons/289168.json`.

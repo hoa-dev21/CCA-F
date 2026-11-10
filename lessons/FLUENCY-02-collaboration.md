@@ -6,11 +6,14 @@ Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025), AI Fluency: Framework
 
 ## Nội dung bài học
 
-Automation: AI làm một tác vụ cụ thể theo chỉ dẫn. Augmentation: người và AI cùng suy nghĩ, tạo và sửa kết quả. Agency: cấu hình để AI làm việc độc lập thay mặt bạn trong phạm vi đã xác định.
 
-Phân biệt theo cách phân phối công việc, không chỉ theo số câu prompt. Cùng một dự án có thể dùng cả ba cách: AI tạo bản nháp, người cùng AI cải tiến lập luận, rồi một tác vụ định kỳ chạy trong phạm vi cho phép. Mức tự chủ không làm mất nhu cầu đánh giá và trách nhiệm của người sử dụng.
+Có ba cách chính để làm việc cùng AI. Bạn chọn cách phù hợp với từng phần công việc, dựa trên mục tiêu và mức giám sát cần thiết.
 
-Ví dụ để dễ hình dung: brainstorm tương tác không giống giao một yêu cầu xuất báo cáo cố định. Chọn kiểu cộng tác theo mục tiêu và mức giám sát cần thiết.
+- Tự động hóa (Automation): giao AI một nhiệm vụ cụ thể theo chỉ dẫn, chẳng hạn tóm tắt văn bản thành năm ý chính.
+- Cùng làm và cải thiện (Augmentation): bạn và AI trao đổi để phát triển kết quả. Ví dụ: AI đề xuất ba cách viết phần mở đầu, bạn nhận xét, rồi AI chỉnh lại.
+- Giao quyền thực hiện (Agency): cho phép AI chủ động xử lý công việc thay bạn trong phạm vi đã xác định. Ví dụ: AI theo dõi một nguồn dữ liệu và tự chuẩn bị báo cáo định kỳ theo quy tắc bạn đặt ra.
+
+Điểm khác nhau nằm ở cách chia việc và mức tự chủ của AI, không chỉ ở số câu yêu cầu bạn gửi. Một dự án có thể kết hợp cả ba cách. Dù AI làm việc độc lập đến đâu, người dùng vẫn cần đánh giá kết quả và chịu trách nhiệm khi sử dụng.
 
 ## Câu hỏi
 

@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101
 
 ## Nội dung bài học
 
-Một prompt hữu ích nêu ba phần: bối cảnh/mục tiêu, nhiệm vụ cụ thể và quy tắc đầu ra. Đính kèm tài liệu liên quan giúp mô hình làm việc với dữ liệu thật thay vì đoán tình huống.
 
-Dùng follow-up và phản hồi cụ thể để cải tiến: chỉ ra đoạn cần ngắn hơn, góc phân tích còn thiếu hoặc cách diễn đạt cần đổi. Khi hội thoại lệch nhiều, có thể khởi đầu rõ hơn trong chat mới.
+Một yêu cầu gửi cho Claude, còn gọi là prompt, nên có ba phần: bối cảnh và mục tiêu, nhiệm vụ cụ thể, cùng yêu cầu về kết quả. Nếu nhiệm vụ dựa trên tài liệu, hãy cung cấp tài liệu liên quan để Claude có căn cứ trả lời.
 
-Bài đề cập memory và skills ở ứng dụng. Không suy từ memory sản phẩm rằng mỗi yêu cầu Messages API tự giữ lịch sử; ở mẫu API đã học, ứng dụng phải truyền ngữ cảnh. Giao diện cũ trong video có phần đã được khóa ghi chú là thay đổi, nên tập trung nguyên tắc giao tiếp.
+Ví dụ: “Tôi cần giới thiệu quy trình này cho nhân viên mới. Hãy tóm tắt tài liệu đính kèm thành năm bước, dùng từ dễ hiểu và giải thích các chữ viết tắt”. Yêu cầu này rõ hơn câu “Tóm tắt giúp tôi”.
+
+Sau câu trả lời đầu tiên, bạn có thể gửi yêu cầu tiếp để chỉnh sửa. Hãy chỉ rõ phần cần giữ và phần cần đổi, chẳng hạn: “Giữ năm bước trên, nhưng rút ngắn bước 2 và đổi giọng văn cho thân thiện hơn”. Nếu cuộc trò chuyện đã lệch quá xa mục tiêu, có thể mở cuộc trò chuyện mới với yêu cầu rõ hơn.
+
+Bài gốc có nhắc đến tính năng ghi nhớ (memory) và bộ hướng dẫn cho nhiệm vụ chuyên biệt (skills) trong ứng dụng. Đừng suy ra rằng các yêu cầu API gửi riêng lẻ cũng tự nhớ nhau. Trong cách dùng Messages API được học ở đây, ứng dụng cần gửi kèm ngữ cảnh liên quan. Một số thao tác giao diện trong video đã thay đổi; điều cần nắm là cách cung cấp thông tin và phản hồi.
 
 ## Câu hỏi
 

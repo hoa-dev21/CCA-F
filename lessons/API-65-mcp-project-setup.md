@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Dự án mẫu có CLI chatbot và MCP server quản lý tài liệu. Server cung cấp công cụ đọc/sửa; dữ liệu giữ trong memory để đơn giản hóa bài thực hành. Trong sản phẩm thật có thể chỉ xây client hoặc server tùy phần tích hợp cần thiết.
 
-Bài hướng dẫn lấy starter, đọc README, thiết lập môi trường, dependencies rồi chạy thử luồng cơ bản trước khi thêm MCP. Kiểm tra kết quả ban đầu để so sánh giúp tách lỗi môi trường khỏi lỗi chức năng mới.
+Dự án mẫu gồm chatbot chạy qua dòng lệnh (CLI) và MCP server quản lý tài liệu. Server có công cụ đọc, sửa tài liệu; dữ liệu được giữ trong bộ nhớ để đơn giản hóa việc học.
 
-Bản tóm tắt dựa trên phần văn bản giải thích, chưa xác nhận đã mở mọi nội dung trong ZIP hoặc thực hiện bài tập. Memory store là lựa chọn minh họa, không bảo đảm lưu bền qua restart.
+Trước khi thêm chức năng MCP, bài hướng dẫn lấy mã khởi đầu, đọc README, chuẩn bị môi trường và các thư viện cần thiết rồi chạy thử luồng cơ bản. Việc biết bản gốc chạy được giúp bạn phân biệt lỗi cài đặt với lỗi do phần mới thêm.
+
+Ví dụ: Nếu chatbot chưa khởi động được ngay từ đầu, cần kiểm tra hướng dẫn thiết lập trước khi kết luận mã MCP sai. Sau khi luồng cơ bản hoạt động, mới có mốc để so sánh thay đổi.
+
+Ứng dụng thật không bắt buộc tự xây cả client và server nếu đã có một phía phù hợp. Dữ liệu nằm trong dictionary ở bộ nhớ cũng không được bảo đảm giữ lại khi khởi động lại; nếu cần lưu bền, phải thiết kế riêng. Bản tóm tắt dựa trên văn bản bài học, không phải xác nhận đã chạy bài tập hoặc kiểm tra mọi tệp trong gói mã mẫu.
 
 ## Câu hỏi
 
@@ -52,12 +55,18 @@ D. Có, không cần kiểm tra.
 
 ## Đối chiếu MCP trong khóa Bedrock
 
-Đã đọc [Project setup](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276792), sources/bedrock-lessons/276792.json và đối chiếu với bài chung. Dự án thêm mention @document và command /name, storage trong memory; không cần viết cả client/server nếu phía còn lại đã có. Chưa mở ZIP nên không tuyên bố hoàn thành bài thực hành. Dùng chung câu hỏi khái niệm tương đương, không đếm lặp.
+Dự án thêm lựa chọn tài liệu bằng `@document` và lệnh dạng `/name`, lưu dữ liệu trong bộ nhớ. Không cần tự viết cả client và server nếu một phía đã có. Hồ sơ này chưa xác nhận mở gói ZIP hoặc hoàn thành bài thực hành. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Project setup](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276792). Bản lưu: `sources/bedrock-lessons/276792.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Project setup](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289199), sources/vertex-lessons/289199.json. Bài Vertex chuyển sang dự án CLI dùng .env ANTHROPIC_API_KEY và tài liệu in-memory. Đây là cấu hình dự án mẫu trực tiếp, không chứng minh Vertex dùng key Anthropic. Thay hệ thống xử lý phía máy chủ phải chỉnh client/xác thực tương ứng; filename PDF/xlsx không chứng minh parser file nhị phân thực. Dùng chung câu hỏi khái niệm.
+Bài chuyển sang dự án dòng lệnh mẫu dùng `ANTHROPIC_API_KEY` trong `.env` và tài liệu trong bộ nhớ. Đó là cấu hình gọi API trực tiếp của dự án mẫu, không chứng minh Vertex dùng khóa Anthropic. Đổi nhà cung cấp phải sửa client và xác thực tương ứng. Tên tài liệu có đuôi PDF hoặc xlsx chưa chứng minh có bộ đọc tệp nhị phân thật. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Project setup](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289199). Bản lưu: `sources/vertex-lessons/289199.json`.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Project setup](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296694), sources/mcp-media/296694.json. Dự án CLI xây cả client/server để học, tài liệu giả trong memory, các công cụ read/update. README hướng dẫn API key trong .env và dependencies; uv run main.py hoặc python main.py theo môi trường. Không giả định tên file PDF/xlsx chứng minh parser nhị phân hay memory persist sau restart. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Theo hồ sơ phụ đề, dự án xây cả client và server để học, dùng tài liệu giả trong bộ nhớ cùng công cụ đọc, cập nhật. README hướng dẫn khóa trong `.env`, các thư viện và chạy bằng `uv run main.py` hoặc `python main.py` theo môi trường. Không suy từ đuôi tệp rằng mẫu đã đọc được PDF, xlsx thật, hoặc dữ liệu trong bộ nhớ còn sau khởi động lại. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Project setup](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296694). Bản lưu: `sources/mcp-media/296694.json`.

@@ -4,15 +4,18 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài tách quy trình xử lý thành ba trách nhiệm. `run_prompt` ghép một test case với mẫu prompt rồi lấy đầu ra. `run_test_case` chạy trường hợp đó và chấm kết quả. `run_eval` lặp qua bộ dữ liệu, tập hợp các kết quả.
 
-Mỗi bản ghi kết quả giữ `test_case`, `output` và `score`. Lưu cả đầu vào lẫn đầu ra cho phép truy ngược nguyên nhân thay vì chỉ nhìn con số tổng hợp.
+Bài học chia chương trình đánh giá thành ba hàm, mỗi hàm có một nhiệm vụ:
 
-Trong bài, điểm `10` ban đầu là **placeholder** để kiểm tra luồng chạy; tác giả nói rõ phải thay bằng bộ chấm điểm thật. Chạy hết bộ dữ liệu mà tất cả được gán điểm cố định không chứng minh prompt đạt chất lượng.
+- `run_prompt`: ghép một trường hợp kiểm thử với mẫu yêu cầu rồi gọi Claude để lấy câu trả lời.
+- `run_test_case`: chạy một trường hợp và chấm câu trả lời nhận được.
+- `run_eval`: lần lượt xử lý toàn bộ bộ dữ liệu và tập hợp kết quả.
 
-Ví dụ để dễ hình dung: quy trình xử lý tạo 100 bản ghi thành công nhưng chưa triển khai logic chấm. Kết luận đúng là đã kiểm tra được việc điều phối yêu cầu và thu kết quả; chất lượng câu trả lời vẫn chưa được đánh giá.
+Mỗi bản ghi kết quả giữ ba phần: `test_case` là đầu vào đã thử, `output` là câu trả lời thực tế và `score` là điểm đánh giá. Lưu đủ ba phần giúp bạn tìm nguyên nhân khi điểm thấp, thay vì chỉ thấy một con số tổng hợp.
 
-Từ khóa: **test case** — trường hợp kiểm thử; **output** — đầu ra; **placeholder** — giá trị tạm.
+Trong giai đoạn đầu của ví dụ, mọi kết quả đều được gán điểm `10`. Đây chỉ là giá trị tạm (placeholder) để kiểm tra chương trình có chạy và lưu kết quả đúng hay không. Sau đó phải thay bằng cách chấm thực sự.
+
+Ví dụ: Chương trình tạo đủ 100 bản ghi nhưng bản nào cũng được gán 10 điểm cố định. Bạn mới biết luồng gửi yêu cầu và thu câu trả lời hoạt động. Chưa có bằng chứng rằng 100 câu trả lời đó đạt chất lượng.
 
 ## Câu hỏi
 
@@ -54,8 +57,12 @@ D. Hàm đọc system prompt.
 
 ## Đối chiếu Bedrock
 
-Đã đọc và đối chiếu [Running the eval](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276736), sources/bedrock-lessons/276736.json. Dùng chung bản tóm tắt và câu hỏi về phương pháp phép đánh giá vì các mục tiêu chính tương đương. Mã gọi nhà cung cấp vẫn cần adapter Converse phù hợp; ví dụ prefill/stop sequence và tên mô hình không được coi là hỗ trợ hiện hành đã xác minh. Không tính lại một bộ câu hỏi mới cho cùng nội dung.
+Nội dung về phương pháp đánh giá tương đương với bài chung nên dùng chung phần giải thích và câu hỏi, không tính thêm một bộ câu hỏi mới. Khi chuyển mã sang Bedrock, cần phần chuyển đổi phù hợp với Converse. Những ví dụ dùng prefill, chuỗi dừng và tên mô hình trong khóa vẫn phải được kiểm tra khả năng hỗ trợ khi triển khai.
+
+Nguồn đối chiếu: [Running the eval](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276736). Bản lưu: `sources/bedrock-lessons/276736.json`.
 
 ## Đối chiếu Vertex
 
-Nguồn [Running the eval](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289166), sources/vertex-lessons/289166.json. Toàn bộ mainText sau bỏ whitespace, timestamp và player timer trùng nguồn đã đọc https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287743. Đối chiếu toàn văn, không suy từ tiêu đề.
+Theo hồ sơ đối chiếu toàn văn, phần nội dung chính trùng bài API liên kết dưới đây sau khi bỏ khoảng trắng và mốc thời gian của trình phát. Việc dùng chung nội dung dựa trên bản văn, không chỉ tiêu đề.
+
+Nguồn đối chiếu: [Running the eval](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289166); [Bài đối chiếu](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287743). Bản lưu: `sources/vertex-lessons/289166.json`.

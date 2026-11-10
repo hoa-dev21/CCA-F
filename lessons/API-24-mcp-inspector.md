@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Inspector giúp thử khả năng của MCP server mà chưa phải nối toàn bộ ứng dụng với Claude. Có thể liệt kê các công cụ, chọn công cụ, nhập tham số rồi xem kết quả. Nhờ đó tách lỗi ở server khỏi lỗi điều phối hoặc lựa chọn công cụ của mô hình.
 
-Với công cụ sửa tài liệu, chỉ nhìn thông báo thực thi chưa đủ để kiểm chứng nội dung. Bài gợi ý gọi công cụ đọc sau sửa để xem thay đổi thực tế. Quy trình phát triển là sửa mã, thử từng công cụ, kiểm tra kết quả và gỡ lỗi độc lập.
+MCP Inspector giúp thử MCP server trực tiếp, trước khi tích hợp toàn bộ ứng dụng với Claude. Bạn có thể xem danh sách công cụ, chọn công cụ, nhập đầu vào và xem kết quả.
 
-Giao diện inspector và lệnh khởi chạy trong bài có thể thay đổi theo phiên bản. Phần quan trọng cho kiến trúc là **cô lập tầng lỗi** và **xác minh trạng thái sau thao tác**, không phải học thuộc cổng dịch vụ phát triển.
+Ví dụ: Chatbot không đọc được tài liệu. Hãy thử gọi công cụ đọc với một mã tài liệu đã biết trong Inspector. Nếu công cụ vẫn lỗi, cần xem server hoặc dữ liệu. Nếu công cụ chạy đúng nhưng chatbot không gọi nó, cần kiểm tra cách ứng dụng cung cấp định nghĩa công cụ và xử lý yêu cầu của Claude.
+
+Với thao tác sửa tài liệu, thông báo “success” chưa đủ để biết nội dung đã đúng. Hãy dùng công cụ đọc lại tài liệu và đối chiếu với thay đổi mong muốn. Quy trình phát triển gồm sửa mã, thử thao tác, xem trạng thái thực tế và tìm nguyên nhân lỗi.
+
+Giao diện và lệnh khởi chạy Inspector có thể thay đổi theo phiên bản. Điều chính cần học là thử riêng từng phần của hệ thống và kiểm tra kết quả sau thao tác.
 
 ## Câu hỏi
 
@@ -50,12 +53,18 @@ D. Kiểm tra công bố bản mô tả cấu trúc dữ liệu, mô tả và lu
 
 ## Đối chiếu khóa MCP riêng
 
-Đã đọc và đối chiếu [The server inspector](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296693) trong Introduction to MCP. Các khái niệm chính của bài được tóm tắt tại đây; dùng cùng bộ câu hỏi để tránh học lặp. Nguồn đối chiếu: sources/mcp-lessons/296693.json. Hai bản diễn đạt không hoàn toàn giống nhau; không tuyên bố là bản sao nguyên văn.
+Phần kiến thức chính đã được đối chiếu với khóa Introduction to MCP và được trình bày trong bài này. Hai bản có cách diễn đạt khác nhau, không phải bản sao nguyên văn. Dùng chung câu hỏi để tránh học và đếm trùng.
+
+Nguồn đối chiếu: [The server inspector](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296693). Bản lưu: `sources/mcp-lessons/296693.json`.
 
 ## Đối chiếu MCP trong khóa Bedrock
 
-Đã đọc [The server inspector](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276796), sources/bedrock-lessons/276796.json và đối chiếu với bài chung. Cùng thử công cụ độc lập rồi đọc lại để xác minh sửa. Cổng/UI inspector có thể khác theo phiên bản; không học thuộc cổng thay phương pháp kiểm tra. Dùng chung câu hỏi khái niệm tương đương, không đếm lặp.
+Bài Bedrock cũng thử riêng công cụ rồi đọc lại tài liệu để xác minh thay đổi. Cổng và giao diện Inspector có thể đổi theo phiên bản; điều cần học là phương pháp kiểm tra. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [The server inspector](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276796). Bản lưu: `sources/bedrock-lessons/276796.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [The server inspector](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289207), sources/vertex-lessons/289207.json. Inspector kiểm tra discovery, arguments, execution và đọc lại sau edit. Giao diện/port thay đổi; test trực tiếp không chứng minh mô hình chọn đúng công cụ, cần end-to-end cả lỗi/đầu vào không hợp lệ. Dùng chung câu hỏi khái niệm.
+Inspector giúp kiểm tra danh sách công cụ, tham số, thực thi và đọc lại kết quả sửa. Thử trực tiếp thành công chưa chứng minh mô hình sẽ chọn đúng công cụ. Cần kiểm tra cả luồng từ đầu đến cuối, gồm lỗi và đầu vào không hợp lệ; giao diện và cổng tùy phiên bản. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [The server inspector](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289207). Bản lưu: `sources/vertex-lessons/289207.json`.

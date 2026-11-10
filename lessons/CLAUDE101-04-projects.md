@@ -4,11 +4,18 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101
 
 ## Nội dung bài học
 
-Projects tổ chức bối cảnh dài hạn: tài liệu tham chiếu, các chat liên quan và hướng dẫn dùng trong dự án. Phù hợp công việc tiếp diễn cần tái sử dụng cùng nguồn và quy ước. Dự án description giúp người quản lý hiểu mục đích, không nên giả định nó thay dự án instructions cho mô hình.
 
-Knowledge chứa thông tin; instructions nêu cách phản hồi và yêu cầu. Giữ tài liệu cập nhật, đặt tên có nghĩa và tham chiếu đúng nguồn giúp truy xuất. Khi dữ liệu lớn, hệ thống có thể truy xuất phần liên quan thay vì tải mọi tài liệu cùng lúc.
+Projects là nơi tổ chức các cuộc trò chuyện, tài liệu tham chiếu và hướng dẫn liên quan đến cùng một công việc. Cách này phù hợp khi bạn làm việc lâu dài với một nhóm tài liệu và không muốn cung cấp lại chúng trong mỗi cuộc trò chuyện.
 
-Với cộng tác, phân quyền theo nhu cầu xem hay chỉnh sửa. Không cấp quyền sửa chỉ vì người dùng cần hỏi về tài liệu. Chi tiết quyền/gói dịch vụ phải kiểm tra khi triển khai.
+Cần phân biệt ba phần:
+
+- Mô tả dự án (description): giúp người xem hiểu dự án dùng để làm gì. Không nên mặc định phần này thay cho hướng dẫn gửi tới mô hình.
+- Tài liệu kiến thức (knowledge): chứa thông tin để Claude tham khảo, chẳng hạn quy trình công ty hoặc hướng dẫn thương hiệu.
+- Hướng dẫn dự án (instructions): quy định cách Claude trả lời, chẳng hạn dùng tiếng Việt và trình bày theo một mẫu nhất định.
+
+Ví dụ: Nhóm truyền thông có thể lưu tài liệu thương hiệu vào knowledge, rồi đặt yêu cầu về giọng văn trong instructions. Khi tài liệu thay đổi, cần cập nhật và phân biệt phiên bản để tránh dùng thông tin cũ. Đặt tên tài liệu rõ ràng cũng giúp tìm đúng nguồn. Khi có nhiều dữ liệu, hệ thống có thể tìm phần liên quan thay vì đưa tất cả tài liệu vào cùng lúc.
+
+Khi chia sẻ dự án, cấp quyền theo công việc người nhận cần làm. Người chỉ cần xem hoặc hỏi về tài liệu không nhất thiết cần quyền sửa. Chi tiết quyền và gói dịch vụ cần được kiểm tra khi triển khai.
 
 ## Câu hỏi
 

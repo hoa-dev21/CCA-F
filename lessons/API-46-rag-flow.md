@@ -4,9 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Luồng đầy đủ: chia nguồn, tạo vectơ biểu diễn, lưu vectơ cùng thông tin truy ngược nội dung; khi có truy vấn tìm kiếm, tạo biểu diễn tương thích, tìm phần liên quan và ghép văn bản với câu hỏi để mô hình trả lời.
 
-Bài dùng cosine similarity/distance minh họa cách xếp độ gần. Phân biệt score cao là gần nếu dùng độ tương đồng với distance thấp là gần theo định nghĩa tương ứng. Đây là điểm truy xuất dữ liệu, không phải điểm tự tin về độ đúng câu trả lời. Tài liệu minh họa liên quan chủ đề nhưng thiếu con số được hỏi thì hệ thống vẫn không nên tự điền con số.
+Một luồng RAG đầy đủ bắt đầu bằng việc chia tài liệu thành đoạn, tạo vectơ biểu diễn cho từng đoạn và lưu cùng nội dung hoặc thông tin để lấy lại nội dung gốc.
+
+Khi có câu hỏi, hệ thống tạo vectơ tương thích cho câu hỏi, so với các vectơ đã lưu để tìm đoạn gần nghĩa. Sau đó, ứng dụng đưa văn bản tìm được cùng câu hỏi vào prompt để mô hình trả lời. Các dãy số giúp tìm kiếm; phần văn bản gốc mới cung cấp thông tin để trả lời.
+
+Bài dùng độ tương đồng cosine (cosine similarity) và khoảng cách cosine (cosine distance) để minh họa. Với độ tương đồng, điểm cao hơn biểu thị gần hơn. Nếu khoảng cách được tính bằng 1 trừ độ tương đồng, khoảng cách thấp hơn biểu thị gần hơn.
+
+Đây là điểm phục vụ tìm kiếm, không phải mức chắc chắn rằng câu trả lời đúng. Ví dụ: tài liệu nói về cách sửa lỗi phần mềm nhưng không nêu số lỗi đã sửa. Dù tài liệu gần nghĩa với câu hỏi, hệ thống vẫn cần nói rõ thiếu bằng chứng hoặc tìm thêm nguồn, không tự điền một con số.
 
 ## Câu hỏi
 
@@ -50,8 +55,12 @@ D. Dùng distance làm số lỗi chương trình.
 
 ## Đối chiếu RAG trên Bedrock
 
-Đã đọc [The full RAG flow](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276774), sources/bedrock-lessons/276774.json và đối chiếu với bản API. Cùng quy trình xử lý và ví dụ cosine. Các trục có nhãn trong hình là mô hình tưởng tượng để giải thích, không chứng minh vectơ thật diễn giải được từng chiều. Dùng chung tóm tắt/câu hỏi khái niệm tương đương, không tăng số câu trùng.
+Bài Bedrock có cùng luồng RAG và ví dụ độ gần cosine. Các trục có nhãn trong hình chỉ giúp minh họa, không chứng minh mỗi chiều của vectơ thật đều có ý nghĩa đơn giản để gọi tên. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [The full RAG flow](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276774). Bản lưu: `sources/bedrock-lessons/276774.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [The full RAG flow](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289190), sources/vertex-lessons/289190.json. Quy trình xử lý offline chunk/embed/store và online query/embed/search/prompt. Vector2chiều có trục medicine/software là mô hình minh họa, không là nhãn thực của vectơ biểu diễn. Không tự giả định mọi API đã chuẩn hóa; truy vấn tìm kiếm hỏi số lỗi chương trình nhưng nguồn chỉ nói nỗ lực không đủ để suy con số. Dùng chung câu hỏi khái niệm.
+Giai đoạn chuẩn bị gồm chia đoạn, tạo vectơ và lưu. Khi có câu hỏi, tạo vectơ cho câu hỏi, tìm kiếm rồi ghép tài liệu vào prompt. Hình hai chiều có trục y học và phần mềm chỉ là minh họa. Không mặc định mọi API tự chuẩn hóa vectơ. Nếu nguồn chỉ nói về nỗ lực sửa lỗi mà không có số lỗi, không suy ra một con số để trả lời. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [The full RAG flow](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289190). Bản lưu: `sources/vertex-lessons/289190.json`.

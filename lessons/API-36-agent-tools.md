@@ -4,13 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Tác nhân AI nhận mục tiêu và tập công cụ để tự tìm cách giải. Những khả năng đơn giản, có thể kết hợp, giúp xử lý nhiều yêu cầu mà người thiết kế không viết sẵn mọi chuỗi bước.
 
-Ví dụ của khóa gồm lấy ngày giờ, cộng khoảng thời gian và tạo nhắc việc. Yêu cầu đơn giản chỉ cần một công cụ; yêu cầu khác cần kết hợp nhiều công cụ. Khi thiếu dữ liệu như ngày mua hàng để tính hết bảo hành, tác nhân AI cần hỏi bổ sung.
+Tác nhân AI nhận mục tiêu và một tập công cụ, rồi chọn cách kết hợp chúng để giải quyết yêu cầu. Người thiết kế không cần viết sẵn công cụ riêng cho mọi câu hỏi có thể xuất hiện.
 
-Bài dùng công cụ file và shell để minh họa khả năng kết hợp trong lập trình. Không suy ra mọi tác nhân AI nghiệp vụ nên được cấp quyền shell hoặc công cụ quá rộng: thiết kế phải phù hợp nhiệm vụ. Exam Guide cũng yêu cầu ranh giới công cụ và quyền truy cập theo vai trò.
+Ví dụ của bài có công cụ lấy ngày giờ, cộng một khoảng thời gian và tạo lời nhắc. Có yêu cầu chỉ dùng một công cụ, có yêu cầu phải dùng nhiều công cụ theo thứ tự. Nếu thiếu thông tin cần thiết, tác nhân phải hỏi thêm thay vì tự đoán. Chẳng hạn, muốn tính ngày hết bảo hành thì cần biết ngày mua và các điều kiện liên quan.
 
-Trừu tượng hóa vừa đủ khác với mô tả mơ hồ. Một công cụ nên có hợp đồng rõ dù có thể được dùng trong nhiều chuỗi thao tác.
+Công cụ nên đủ linh hoạt để dùng lại nhưng vẫn có định nghĩa rõ: làm việc gì, nhận tham số nào và trả kết quả gì. Công cụ tên “làm mọi thứ” với mô tả mơ hồ không giúp mô hình biết cách dùng đúng.
+
+Bài sử dụng công cụ tệp và dòng lệnh (shell) để minh họa công việc lập trình. Không vì thế mà cấp toàn bộ quyền shell cho tác nhân chỉ cần tra cứu đơn hàng. Theo phần liên hệ đề cương thi, công cụ và quyền truy cập phải phù hợp với vai trò, nhiệm vụ thực tế.
 
 ## Câu hỏi
 
@@ -52,4 +53,6 @@ D. Không suy rộng; chọn quyền và công cụ phù hợp vai trò nghiệp
 
 ## Đối chiếu Vertex
 
-Đã đọc [Agents and tools](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289243), sources/vertex-lessons/289243.json. Công cụ đủ tổng quát để kết hợp, nhưng mỗi công cụ có mô tả và ranh giới rõ. Tác nhân AI hỏi ngày mua khi thiếu thông tin tính warranty. Bash đa dụng không thay quyền tối thiểu hoặc công cụ hẹp phù hợp; ví dụ post_media không trao quyền xuất bản khi người dùng chưa yêu cầu. Dùng chung câu hỏi khái niệm.
+Công cụ nên dùng lại và kết hợp được nhưng phải có mô tả, phạm vi rõ. Ví dụ tính bảo hành cần hỏi ngày mua nếu chưa có. Công cụ Bash đa dụng không thay nguyên tắc chỉ cấp quyền cần thiết; công cụ hẹp có thể phù hợp hơn. Tên `post_media` trong ví dụ không tự trao quyền xuất bản khi người dùng chưa yêu cầu. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Agents and tools](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289243). Bản lưu: `sources/vertex-lessons/289243.json`.

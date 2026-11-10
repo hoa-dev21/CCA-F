@@ -4,28 +4,29 @@ Nguồn: [bài học chính thức](https://anthropic-partners.skilljar.com/clau
 
 ## Nội dung bài học
 
-Trong cách dùng Messages API của bài học, mỗi yêu cầu độc lập. API không tự nhớ cuộc trao đổi trước để trả lời yêu cầu sau. Ứng dụng chịu trách nhiệm quản lý **conversation state** — trạng thái hội thoại.
 
-Luồng cơ bản:
+Trong cách dùng Messages API của bài học, mỗi yêu cầu được gửi riêng. Claude chỉ có thể dựa vào lịch sử trò chuyện nếu ứng dụng đưa lịch sử đó vào yêu cầu. Việc lưu và gửi lại những tin nhắn cần thiết gọi là quản lý trạng thái hội thoại (conversation state).
 
-1. Thêm câu hỏi vào danh sách `messages` với role `user`.
-2. Gửi danh sách cho Claude.
-3. Thêm câu trả lời của Claude với role `assistant`.
-4. Thêm câu hỏi tiếp theo với role `user`, rồi gửi lại lịch sử cần thiết.
+Luồng cơ bản gồm bốn bước:
 
-Ví dụ: khách nêu đơn hàng A, trợ lý hỏi khách muốn đổi hay trả, khách đáp “trả”. Nếu yêu cầu cuối chỉ chứa chữ “trả”, mô hình không có căn cứ biết đó là đơn hàng nào hay câu hỏi nào đang được trả lời.
+1. Thêm câu hỏi vào danh sách `messages` với vai trò `user`, tức tin nhắn của người dùng.
+2. Gửi danh sách đó cho Claude.
+3. Lưu câu trả lời của Claude vào danh sách với vai trò `assistant`, tức tin nhắn của trợ lý.
+4. Thêm câu hỏi tiếp theo của người dùng và gửi lại phần lịch sử cần thiết.
 
-Trong ví dụ văn bản đơn giản, bài học dùng hàm thêm tin nhắn của người dùng, thêm assistant message và hàm `chat(messages)`. Tách ba trách nhiệm này giúp tránh quên lưu câu trả lời trước khi gửi lượt mới.
+Ví dụ: Khách nêu đơn hàng A, trợ lý hỏi muốn đổi hay trả, rồi khách đáp “trả”. Nếu yêu cầu cuối chỉ có chữ “trả”, Claude thiếu thông tin để biết khách đang nói đến đơn nào. Ứng dụng phải gửi cả những lượt liên quan trước đó.
 
-Điểm dễ nhầm: giữ nguyên API client không đồng nghĩa giữ lịch sử hội thoại. Lưu thông tin trong biến ở server cũng chưa đủ nếu thông tin đó không được đưa vào yêu cầu.
+Giữ nguyên đối tượng kết nối API (client) không tự giữ lịch sử cho mô hình. Ngay cả khi lịch sử đã được lưu trong cơ sở dữ liệu của ứng dụng, Claude vẫn không nhận được nếu ứng dụng chưa đưa nó vào yêu cầu.
 
 ## Bài thực hành: Chat exercise
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Chat exercise](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287727) từ trình phát chính thức, lưu ở sources/api-media/287727.json. Bài xây chatbot notebook: khởi tạo `messages` ngoài vòng lặp, lấy `input()`, thêm tin nhắn của người dùng, gọi `chat(messages)`, lưu câu trả lời thành assistant message rồi in ra và chờ lượt tiếp theo. Ví dụ “1+1”, sau đó “thêm2” kiểm tra ngữ cảnh của lượt trước có được gửi lại.
+Trong bài thực hành, chương trình tạo danh sách `messages` bên ngoài vòng lặp. Mỗi vòng, chương trình nhận câu nhập từ người dùng, lưu câu đó, gọi `chat(messages)`, lưu câu trả lời rồi hiển thị kết quả. Các hàm thêm tin nhắn người dùng, thêm tin nhắn trợ lý và gọi API được tách riêng để dễ kiểm soát từng bước.
 
-Nếu khởi tạo danh sách trong mỗi vòng hoặc chỉ in mà không lưu assistant phản hồi, chatbot có thể trả lời lượt đơn đúng nhưng mất mạch ở lượt sau. Vòng `while True` và nút interrupt là cách demo notebook, không phải tiêu chí dừng nghiệp vụ của một tác nhân AI công cụ loop. Trong ứng dụng thật, cần lệnh thoát, xử lý lỗi và chính sách ngữ cảnh phù hợp. Dùng các câu hỏi dưới đây để kiểm tra trách nhiệm lưu/gửi history của bài thực hành.
+Bạn có thể thử hỏi “1 + 1 bằng bao nhiêu?”, sau đó nói “thêm 2”. Nếu lịch sử được gửi đúng, Claude có đủ ngữ cảnh để hiểu lượt tiếp theo. Nếu tạo lại danh sách rỗng trong mỗi vòng, hoặc chỉ in câu trả lời mà không lưu, chương trình có thể mất mạch hội thoại.
 
-Liên hệ ôn thi: đây là nền tảng cho ngữ cảnh management. Việc rút gọn lịch sử dài và lưu công cụ blocks thuộc các bài tiếp theo; không mặc định hàm hỗ trợ chỉ lấy `content[0].text` phù hợp mọi loại phản hồi.
+Vòng `while True` và thao tác ngắt trong notebook chỉ phục vụ minh họa. Ứng dụng thực tế cần cách thoát, xử lý lỗi và lựa chọn lịch sử phù hợp. Với phản hồi có công cụ hoặc nhiều loại nội dung, không nên mặc định lấy `content[0].text` là đã lưu đủ câu trả lời.
+
+Nguồn bài thực hành: đã đọc phụ đề tiếng Anh của [Chat exercise](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287727), lưu tại sources/api-media/287727.json.
 
 ## Câu hỏi — làm trước khi đọc đáp án
 
@@ -67,16 +68,24 @@ D. Lịch sử tự được gắn qua đối tượng client.
 
 ## Đối chiếu Bedrock
 
-Đã đọc [bài tương ứng](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276722) và dùng chung kiến thức/câu hỏi về vai trò hoặc quản lý ngữ cảnh. Trong ví dụ Converse, nội dung là danh sách blocks. “Không nhớ yêu cầu trước” chỉ nói ngữ cảnh hội thoại không tự được nối cho lần gọi này; không phải cam kết nhà cung cấp không có logs/retention. Không dùng quy tắc luân phiên role trong ví dụ làm đặc tả phổ quát của mọi API. Nguồn: sources/bedrock-lessons/276722.json.
+Ví dụ Converse biểu diễn nội dung bằng danh sách khối. Ứng dụng vẫn phải gửi lịch sử cần thiết; việc API không tự nối các lượt không phải cam kết rằng nhà cung cấp không lưu nhật ký hoặc dữ liệu. Quy tắc luân phiên vai trò trong ví dụ không nên được áp thành quy định chung cho mọi API. Các kiến thức về vai trò và ngữ cảnh dùng chung câu hỏi.
+
+Nguồn đối chiếu: [bài tương ứng](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276722). Bản lưu: `sources/bedrock-lessons/276722.json`.
 
 ## Đối chiếu Vertex
 
-Nguồn [Multi-turn conversations](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289156), sources/vertex-lessons/289156.json. Mẫu giữ danh sách user/assistant rồi gửi lịch sử trong messages. Stateless của yêu cầu nói về ngữ cảnh suy luận, không phải cam kết dữ liệu không bao giờ được lưu ở nhà cung cấp. Với tool/multimodal cần giữ nội dung blocks phù hợp, không chỉ lấy phần text đầu tiên.
+Mẫu Vertex lưu các tin nhắn `user` và `assistant` rồi gửi lại trong `messages`. “Stateless” ở đây nói rằng mỗi yêu cầu phải có ngữ cảnh cần dùng, không có nghĩa nhà cung cấp tuyệt đối không lưu dữ liệu. Với công cụ hoặc nhiều loại nội dung, cần giữ các khối phù hợp, không chỉ lấy phần văn bản đầu tiên.
+
+Nguồn đối chiếu: [Multi-turn conversations](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289156). Bản lưu: `sources/vertex-lessons/289156.json`.
 
 ## Đối chiếu qua phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Chat bot exercise](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276725), sources/bedrock-media/276725.json. Bài chatbot Bedrock lấy user input, thêm vào messages, gọi chat, lưu assistant phản hồi rồi in. Ví dụ product description -> make it shorter -> add a color kiểm tra ngữ cảnh. Khác cách hiển thị input giữa VSCode/browser notebook không làm thay đổi trách nhiệm lưu/gửi lịch sử; không bắt buộc chỉ dùng một IDE.
+Theo hồ sơ đọc phụ đề, bài chatbot Bedrock nhận câu nhập, thêm vào lịch sử, gọi mô hình, lưu câu trả lời rồi hiển thị. Ví dụ tạo mô tả sản phẩm, yêu cầu rút ngắn, rồi thêm màu sắc kiểm tra việc giữ ngữ cảnh. Giao diện nhập khác nhau giữa VS Code và notebook trên trình duyệt không làm thay đổi trách nhiệm lưu và gửi lịch sử; không bắt buộc dùng một trình soạn thảo duy nhất.
+
+Nguồn đối chiếu: [Chat bot exercise](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276725). Bản lưu: `sources/bedrock-media/276725.json`.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Chat exercise](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289150), sources/vertex-media/289150.json. Đối chiếu toàn bộ phụ đề với nguồn API287727 đã đọc: chỉ khác built-in/built in hoặc an/and do cách chép phụ đề, không đổi nội dung bài. Không suy từ tên/duration. Giữ các lưu ý về xác thực/provider và tính tương thích mô hình của bài chung. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Hồ sơ đối chiếu toàn bộ phụ đề với bài API 287727 ghi nhận chỉ có khác biệt nhỏ như “built-in/built in” hoặc “an/and”, không đổi nội dung học. Kết luận dựa trên nội dung, không chỉ tên bài hay thời lượng. Dùng chung câu hỏi và giữ các lưu ý về xác thực, nhà cung cấp, tính tương thích của mô hình.
+
+Nguồn đối chiếu: [Chat exercise](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289150). Bản lưu: `sources/vertex-media/289150.json`.

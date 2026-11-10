@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101
 
 ## Nội dung bài học
 
-Skills đóng gói hướng dẫn, script và tài nguyên cho nhiệm vụ chuyên biệt. Skill có thể mã hóa quy trình lặp lại như phân tích định kỳ hoặc rà soát theo brand. Nội dung được nạp khi liên quan, không cần nhắc lại mọi bước trong mỗi cuộc chat.
 
-Phân biệt Projects là nơi giữ tri thức/bối cảnh với Skills là cách thực hiện. Một skill có thể dùng thông tin trong dự án; hai loại bổ sung nhau. Tạo skill từ quy trình rõ, tiêu chí đầu ra và ví dụ, rồi cải tiến qua dùng thực tế.
+Skill là một bộ hướng dẫn và tài nguyên giúp AI thực hiện một loại công việc cụ thể. Bộ này có thể chứa các bước xử lý, ví dụ, tiêu chí đầu ra và mã lệnh hỗ trợ. Trong cách dùng được bài giới thiệu, hướng dẫn được nạp khi phù hợp với nhiệm vụ, giúp bạn bớt phải nhắc lại từng bước.
 
-Vì skill có thể kèm mã thực thi, cần xem nội dung và nguồn. File được tạo từ bản upload trong Chat không mặc định sửa nguyên bản trên máy; kiểm tra đầu ra đã tạo và xuất đúng phiên bản. Chi tiết enable/availability trong bài có thể thay đổi theo sản phẩm.
+Ví dụ: Nếu tháng nào bạn cũng làm báo cáo, một skill có thể hướng dẫn cách đọc dữ liệu, tính các chỉ số và trình bày kết quả theo mẫu. Để tạo skill hữu ích, cần mô tả quy trình rõ ràng, đưa ví dụ và cải tiến sau khi thử với công việc thật.
+
+Projects và Skills có vai trò khác nhau nhưng có thể phối hợp. Project cung cấp tài liệu và bối cảnh của công việc; skill hướng dẫn cách thực hiện. Một skill viết báo cáo có thể sử dụng tài liệu đang lưu trong project.
+
+Trước khi dùng skill từ bên ngoài, hãy xem nguồn và nội dung, nhất là mã lệnh đi kèm. Khi Claude tạo tệp từ tài liệu bạn tải lên, đừng mặc định rằng tệp gốc trên máy đã được sửa. Hãy kiểm tra tệp đầu ra và lưu đúng phiên bản. Cách bật và phạm vi hỗ trợ skill có thể thay đổi theo sản phẩm.
 
 ## Câu hỏi
 

@@ -6,9 +6,19 @@ Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025). Bản gốc và phầ
 
 ## Nội dung bài học
 
-Bài giới thiệu sáu kỹ thuật: cung cấp bối cảnh, đưa ví dụ, chỉ định ràng buộc, chia nhiệm vụ phức tạp, dành bước xem xét trước khi trả lời và xác định vai trò/giọng điệu.
 
-Chọn kỹ thuật theo lỗi: đầu ra sai định dạng thì nêu định dạng và ví dụ; thiếu bối cảnh thì bổ sung dữ liệu liên quan; tác vụ nhiều yêu cầu thì chia bước. Có thể nhờ AI giúp cải thiện prompt, nhưng đánh giá kết quả thực tế vẫn cần thiết. Không coi lời yêu cầu “nghĩ trước” là bảo đảm mọi kết luận đúng hoặc là yêu cầu cung cấp toàn bộ suy nghĩ nội bộ.
+Prompt là câu yêu cầu hoặc phần hướng dẫn bạn gửi cho AI. Bài học giới thiệu sáu cách giúp yêu cầu rõ hơn:
+
+1. Cung cấp bối cảnh: cho AI biết mục tiêu, người đọc và dữ liệu liên quan.
+2. Đưa ví dụ: cho một mẫu để AI hiểu kết quả bạn mong muốn.
+3. Nêu điều kiện cần tuân thủ: chẳng hạn độ dài, định dạng hoặc những nội dung phải có.
+4. Chia nhiệm vụ phức tạp thành các bước có phạm vi rõ.
+5. Dành một bước kiểm tra dữ liệu và yêu cầu trước khi đưa ra câu trả lời.
+6. Xác định vai trò và giọng điệu phù hợp, chẳng hạn giải thích như một gia sư cho người mới học.
+
+Chọn cách sửa dựa trên lỗi thực tế. Nếu AI trả sai cấu trúc JSON, hãy nêu rõ cấu trúc và đưa mẫu. Nếu AI bỏ sót nhiều yêu cầu, hãy chia nhiệm vụ thành các bước. Nếu câu trả lời thiếu căn cứ, hãy bổ sung dữ liệu liên quan.
+
+Bạn có thể nhờ AI góp ý để cải thiện prompt, rồi thử lại và đánh giá kết quả theo tiêu chí đã đặt. Yêu cầu “hãy suy nghĩ trước khi trả lời” không bảo đảm câu trả lời đúng; điều cần kiểm tra là kết quả và căn cứ mà AI trình bày.
 
 ## Câu hỏi
 

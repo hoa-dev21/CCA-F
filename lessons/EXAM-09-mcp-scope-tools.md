@@ -4,15 +4,26 @@ Nguồn bổ trợ: Exam Guide CCAR-F v1.0, mục 2.4–2.5, trang PDF 11–12. 
 
 ## Nội dung bài học
 
-Trong cấu hình được đề cương mô tả, MCP dùng chung nhóm đặt ở dự án `.mcp.json`; server cá nhân/thử nghiệm đặt ở user scope. Dùng tham chiếu biến môi trường cho token thay vì commit giá trị bí mật. Cần kiểm tra quyền và cấu hình thực tế khi triển khai; có tên server trong tài liệu không chứng minh đã kết nối.
 
-Theo mục2.4, user scope lưu ở `~/.claude.json`; dự án scope ở `.mcp.json`. Tham chiếu như `${GITHUB_TOKEN}` được mở rộng từ môi trường theo cấu hình được hỗ trợ, còn mỗi thành viên tự cung cấp giá trị bí mật. Ở mô hình đề cương, công cụ từ các server cấu hình được discovery khi kết nối và có thể sẵn có cùng lúc; kiểm tra discovery và quyền thực thay vì cho rằng server này tự loại trừ server kia.
+Theo cấu hình trong đề cương, MCP server dùng chung cho nhóm được đặt ở `.mcp.json` của dự án. Server cá nhân hoặc thử nghiệm dùng phạm vi người dùng (user scope), được mô tả là lưu tại `~/.claude.json`.
 
-Các server được cấu hình có thể cung cấp công cụ cùng lúc. Viết description rõ khả năng và đầu ra để mô hình biết khi nên dùng MCP công cụ thay vì công cụ tìm kiếm file hạn chế hơn. Resource dạng catalog giúp khám phá danh mục nội dung mà không phải thử từng truy vấn hành động. Với tích hợp chuẩn, cân nhắc server có sẵn đã được đánh giá phù hợp trước khi tự xây toàn bộ.
+Dùng tham chiếu biến môi trường như `${GITHUB_TOKEN}` thay vì ghi khóa bí mật vào tệp chia sẻ. Mỗi thành viên cung cấp giá trị và quyền phù hợp trên máy mình. Có tên server trong cấu hình chưa chứng minh đã kết nối; cần kiểm tra danh sách công cụ thực sự được phát hiện và quyền sử dụng.
 
-Ví dụ catalog: danh sách issue kèm tóm tắt, cây tài liệu hoặc database bản mô tả cấu trúc dữ liệu. Nó cho host thấy nguồn nào tồn tại trước khi chèn ngữ cảnh; vẫn cần thao tác resource read và kiểm tra quyền. Tích hợp Jira chuẩn có thể dùng server cộng đồng đã đánh giá, còn quy trình làm việc đặc thù của nhóm mới cần server tùy chỉnh; không chọn server chỉ vì nó tồn tại. Một công cụ MCP tìm theo ngữ nghĩa nên mô tả đầu vào/đầu ra và khi nào phù hợp hơn Grep chỉ khớp nội dung file.
+Nhiều server có thể cùng cung cấp công cụ. Mô tả rõ đầu vào, đầu ra và khi nào nên dùng giúp mô hình chọn đúng. Ví dụ: công cụ MCP tìm tài liệu theo ý nghĩa cần giải thích điểm khác với Grep chỉ tìm nội dung khớp trong tệp.
 
-Grep tìm nội dung, Glob tìm đường dẫn theo mẫu, Read đọc file, Edit thay đổi có mục tiêu theo anchor, Write ghi file. Khi Edit không có anchor duy nhất, đọc file đầy đủ và chỉnh/ghi có kiểm soát thay vì thay tất cả tùy tiện. Khám phá tăng dần: tìm entry point, đọc liên kết/import rồi theo luồng; đừng nạp mọi file ngay đầu. Với hàm qua wrapper, xác định các tên export rồi tìm từng tên để tránh bỏ caller.
+Resource dạng danh mục (catalog) giúp ứng dụng biết nguồn nào có sẵn trước khi chọn nội dung: danh sách yêu cầu hỗ trợ kèm tóm tắt, cây tài liệu hoặc cấu trúc cơ sở dữ liệu. Vẫn cần thao tác đọc resource và kiểm tra quyền.
+
+Với nhu cầu phổ biến như tích hợp Jira, có thể cân nhắc server sẵn có đã được đánh giá phù hợp. Quy trình đặc thù mới có thể cần server riêng. Không chọn chỉ vì tìm thấy một server.
+
+Khi đọc và sửa kho mã, phân biệt các công cụ:
+
+- Glob tìm đường dẫn theo mẫu, chẳng hạn `**/*.test.tsx`.
+- Grep tìm nội dung trong tệp.
+- Read đọc nội dung.
+- Edit thay một phần dựa trên đoạn dùng làm mốc nhận diện (anchor).
+- Write ghi nội dung tệp.
+
+Nếu mốc của Edit xuất hiện nhiều lần và không xác định được vị trí duy nhất, hãy đọc đầy đủ rồi chỉnh hoặc ghi có kiểm soát, kiểm tra diff sau đó. Khám phá mã từng bước từ điểm bắt đầu, theo phần nhập mô-đun và luồng gọi, thay vì nạp mọi tệp cùng lúc. Nếu hàm được xuất qua lớp trung gian, tìm các tên được xuất rồi tìm từng tên để không bỏ sót nơi gọi.
 
 ## Câu hỏi tình huống
 

@@ -103,8 +103,12 @@ Nếu sai câu 2 hoặc 3, hãy vẽ lại bốn bước: yêu cầu → Claude 
 
 ## Đối chiếu Bedrock: sử dụng công cụ
 
-Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276756) và đối chiếu khái niệm với bài chung. Cùng luồng yêu cầu dữ liệu–ứng dụng thực thi–mô hình dùng kết quả. Thứ tự viết các thành phần mã có thể khác thứ tự chạy. Nguồn: sources/bedrock-lessons/276756.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
+Bài Bedrock dùng cùng luồng: mô hình yêu cầu dữ liệu, ứng dụng chạy công cụ rồi mô hình dùng kết quả để trả lời. Thứ tự viết các phần mã trong bài giảng có thể khác thứ tự chúng chạy. Vì kiến thức tương đương, bộ ôn dùng chung câu hỏi.
+
+Nguồn đối chiếu: [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276756). Bản lưu: `sources/bedrock-lessons/276756.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Introducing tool use](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289172), sources/vertex-lessons/289172.json. Công cụ cung cấp dữ liệu ngoài qua vòng request/executor/result. Dữ liệu thời gian thực vẫn có thể cũ hoặc sai; mô hình không tự thực thi Python chỉ nhờ khai báo công cụ. Dùng chung câu hỏi khái niệm.
+Bài Vertex cũng lấy dữ liệu ngoài qua ba bước: yêu cầu công cụ, thực thi và trả kết quả. Khai báo công cụ không tự chạy mã Python. Ngay cả dữ liệu vừa lấy cũng có thể cũ hoặc sai nên vẫn cần kiểm tra. Dùng chung câu hỏi khái niệm.
+
+Nguồn đối chiếu: [Introducing tool use](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289172). Bản lưu: `sources/vertex-lessons/289172.json`.

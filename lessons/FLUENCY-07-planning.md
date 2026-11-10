@@ -6,9 +6,14 @@ Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025). Bản gốc và phầ
 
 ## Nội dung bài học
 
-Chọn dự án nhiều bước nhưng có phạm vi làm được. Cùng AI làm rõ hình dung kết quả, giá trị và tiêu chí thành công trước khi triển khai.
 
-Chia thành nhiệm vụ, xác định kỹ năng/dữ liệu cần có và phần phù hợp người, AI hoặc phối hợp. Lưu kế hoạch để dùng tiếp khi thực hành Description, Discernment và Diligence. Kế hoạch có thể sửa khi phát hiện mới, không phải cam kết tự động hóa mọi bước.
+Hãy chọn một dự án có nhiều bước nhưng đủ nhỏ để bạn thực hành được. Trước khi giao việc cho AI, làm rõ kết quả cần đạt, lý do kết quả đó có ích và tiêu chí để đánh giá thành công.
+
+Sau đó chia dự án thành các nhiệm vụ. Với mỗi nhiệm vụ, ghi rõ dữ liệu và kỹ năng cần có, ai thực hiện và ai kiểm tra kết quả. Có việc phù hợp để giao AI, có việc cần bạn tự làm, và có việc nên phối hợp.
+
+Ví dụ: Để làm tài liệu hướng dẫn cho nhân viên mới, AI có thể đề xuất bố cục và viết bản nháp từ tài liệu bạn cung cấp. Người phụ trách cần kiểm tra quy trình thực tế và duyệt bản cuối.
+
+Lưu lại kế hoạch để dùng tiếp khi luyện mô tả yêu cầu (Description), đánh giá kết quả (Discernment) và sử dụng AI có trách nhiệm (Diligence). Nếu phát hiện dữ liệu thiếu hoặc nhiệm vụ cần chuyên môn khác, hãy sửa kế hoạch và phân công lại.
 
 ## Câu hỏi
 

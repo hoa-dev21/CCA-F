@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101
 
 ## Nội dung bài học
 
-Bài tổng kết prompt rõ, cải tiến qua phản hồi, 4D, Projects/Skills, artifacts và nguồn kết nối. Lộ trình tiếp phụ thuộc mục tiêu: kỹ năng cộng tác, hiểu giới hạn, phát triển với Code hoặc tìm hiểu tích hợp.
 
-Chọn một tác vụ lặp lại trong tuần, cung cấp bối cảnh thật, kiểm tra đầu ra rồi cải tiến. Không đồng nhất chứng nhận hoàn thành khóa cơ bản với chứng chỉ Architect có bài thi riêng.
+Sau khóa Claude 101, hãy chọn một công việc nhỏ mà bạn thường làm trong tuần. Cung cấp bối cảnh thật, viết yêu cầu rõ, kiểm tra câu trả lời rồi phản hồi để cải thiện. Đây là cách chuyển kiến thức về tính năng thành kỹ năng sử dụng thực tế.
 
-Đối với mục tiêu hiện tại, dùng Claude101 để hiểu giao diện và cộng tác; ưu tiên các task statements của Exam Guide cho nội dung kỹ thuật. Bài này không tạo hoặc nhận chứng nhận thay người học.
+Bạn có thể dùng bốn năng lực đã học để tự kiểm tra: phân công, mô tả yêu cầu, đánh giá và sử dụng có trách nhiệm. Tùy công việc, hãy áp dụng Projects để tổ chức tài liệu, Skills để dùng lại quy trình, Artifacts để tạo sản phẩm riêng có thể chỉnh sửa, hoặc kết nối công cụ để lấy dữ liệu cần thiết.
+
+Bước học tiếp phụ thuộc mục tiêu của bạn: luyện cộng tác, hiểu giới hạn của AI, phát triển phần mềm với Claude Code hoặc tìm hiểu cách tích hợp công cụ.
+
+Hoàn thành Claude 101 không đồng nghĩa với đạt chứng chỉ Architect, vì chứng chỉ này có phạm vi và kỳ thi riêng. Nếu đang ôn Architect, dùng đề cương thi đúng phiên bản để xác định các kỹ năng kỹ thuật cần học; Claude 101 là phần nền tảng hỗ trợ.
 
 ## Câu hỏi
 

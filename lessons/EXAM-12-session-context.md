@@ -4,21 +4,22 @@ Nguồn: Exam Guide CCAR-F v1.0, mục 1.7, 5.1 và 5.4, trang PDF 8–9, 19–2
 
 ## Nội dung bài học
 
-Resume dùng lại một phiên khi phần lớn ngữ cảnh còn đúng; báo rõ file nào đã đổi để tác nhân AI đọc lại đúng chỗ. Khi kết quả công cụ cũ đã lỗi thời nhiều, phiên mới với bản tóm tắt có cấu trúc và nguồn hiện tại có thể đáng tin hơn giữ mọi lịch sử cũ.
 
-Exam Guide mục1.7 mô tả `--resume <session-name>` để chọn đúng phiên điều tra đã đặt tên. Resume không phải chạy lại một prompt giống nhau trong phiên mới. Khi quay lại sau thay đổi code, truyền danh sách file đã sửa và yêu cầu xác minh lại phần ảnh hưởng. Đây là cú pháp theo đề cương; khi dùng thực tế cần kiểm tra giao diện phiên bản đang cài.
+Tiếp tục phiên cũ (resume) phù hợp khi phần lớn ngữ cảnh còn đúng. Theo đề cương, `--resume <session-name>` chọn một phiên đã đặt tên; việc mở phiên mới rồi gửi lại câu hỏi giống nhau không phải tiếp tục phiên đó. Cú pháp thực tế cần đối chiếu phiên bản đang dùng.
 
-Fork tạo nhánh độc lập từ kết quả ban đầu để so sánh để khám phá phương án khác. Không giả định các nhánh tự chia sẻ kết quả mới hoặc bộ nhớ. Thuật ngữ/cấu hình `fork_session` trong đề cương cần đối chiếu SDK lúc triển khai.
+Nếu mã đã thay đổi, chỉ rõ tệp nào đổi để tác nhân đọc lại phần ảnh hưởng. Khi quá nhiều kết quả cũ đã lỗi thời, phiên mới với bản tóm tắt có cấu trúc và nguồn hiện tại có thể phù hợp hơn. Tạo nhánh phiên (fork) giúp thử phương án khác từ trạng thái ban đầu, nhưng các nhánh không tự chia sẻ những kết quả mới. Cấu hình `fork_session` cũng cần kiểm tra theo thư viện triển khai.
 
-Giữ case facts riêng cho ID, số tiền, ngày, trạng thái và kỳ vọng người dùng, thay vì chỉ để trong tóm tắt tự do dễ mất độ chính xác. Lược bớt trường công cụ không cần và đưa phát hiện quan trọng lên phần đầu tổng hợp; vẫn bảo toàn nguồn/ngày và khoảng trống.
+Giữ các dữ kiện quyết định trong bản ghi riêng: mã đơn, số tiền, ngày, trạng thái và mong muốn cụ thể của khách. Với nhiều vấn đề, tổ chức theo từng vấn đề hoặc đơn hàng và đưa phần liên quan vào mỗi yêu cầu, bên cạnh lịch sử đã rút gọn.
 
-Trong phiên nhiều vấn đề, duy trì một lớp dữ liệu có cấu trúc theo từng issue/order, đưa case facts liên quan vào mỗi yêu cầu bên ngoài phần lịch sử đã nén. Nén dần có thể biến “hoàn35%, giao trước ngày12” thành “khách muốn hoàn và giao sớm”, làm mất điều kiện quyết định. Trả40field từ order lookup khi chỉ5field liên quan cũng làm ngữ cảnh phình mà ít thêm giá trị; lọc đúng trường trước khi tích lũy và giữ tham chiếu để lấy lại khi cần.
+Ví dụ: Qua nhiều lần tóm tắt, “hoàn 35%, giao trước ngày 12” có thể thành “khách muốn hoàn và giao sớm”. Điều kiện quan trọng đã mất. Ngược lại, giữ cả 40 trường từ một lần tra đơn khi chỉ 5 trường liên quan lại làm ngữ cảnh dài không cần thiết. Lọc đúng phần cần dùng, đồng thời giữ tham chiếu để lấy lại khi cần.
 
-Hiệu ứng “lost in the middle” trong đề cương nhắc rằng thông tin giữa input dài dễ bị bỏ sót hơn; đây là rủi ro thiết kế, không là bảo đảm mọi mô hình luôn đọc đúng hai đầu. Đặt key-findings summary ở đầu, chia chi tiết bằng header rõ. Sửa upstream để trả key facts, các trích dẫn nguồn, ngày/vị trí/phương pháp và relevance thay vì dồn văn bản dài cùng toàn bộ chuỗi lý giải vào downstream. Khi dùng Messages API, lịch sử/context cần thiết phải được gửi lại đúng cấu trúc, gồm công cụ blocks, không chỉ nằm trong biến server.
+Đề cương gọi việc thông tin giữa đầu vào dài dễ bị bỏ sót là “lost in the middle”. Để giảm rủi ro, đưa phát hiện chính lên đầu, chia phần bằng tiêu đề rõ và yêu cầu bước trước trả dữ kiện, nguồn, ngày, vị trí, phương pháp cùng mức liên quan. Không chuyển toàn bộ văn bản dài và mọi lời lý giải sang bước sau. Cách tổ chức này hỗ trợ đọc hiểu, không bảo đảm mô hình luôn đọc đúng hai đầu.
 
-Với khám phá repo dài, các tác nhân con giữ output tìm kiếm chi tiết, tác nhân điều phối giữ bức tranh tổng thể. Scratchpad lưu phát hiện; manifest trỏ tới state export từng tác nhân AI để phục hồi sau crash. Khi resume, tải và đưa trạng thái cần vào ngữ cảnh, không chỉ có file trên đĩa rồi mong mô hình tự biết.
+Với Messages API, ngữ cảnh cần thiết, gồm các khối công cụ, phải thực sự nằm trong yêu cầu gửi lại. Lưu ở máy chủ hoặc trên đĩa chưa đủ.
 
-Dấu hiệu ngữ cảnh suy giảm là câu trả lời đổi sang “thường hệ thống sẽ…” thay vì trỏ đúng class đã tìm, hoặc kết luận không nhất quán với findings trước. Giao câu hỏi cụ thể cho từng nhánh như tìm test files hay trace refund dependencies; ghi đường dẫn/bằng chứng vào scratchpad, tổng hợp phase hiện tại rồi đưa summary vào ngữ cảnh ban đầu của phase sau. Theo guide, `/compact` giảm ngữ cảnh discovery dài; trước khi nén vẫn giữ facts/trạng thái quan trọng có cấu trúc và kiểm tra summary không mất chúng.
+Trong khám phá dự án dài, tác nhân con có thể giữ chi tiết tìm kiếm, còn bên điều phối giữ tổng quan. Ghi phát hiện và đường dẫn vào sổ ghi chú (scratchpad). Lưu trạng thái từng tác nhân và một tệp danh mục (manifest) chỉ nơi tìm để phục hồi sau sự cố. Khi khởi động lại, phải tải và đưa phần trạng thái cần thiết vào ngữ cảnh.
+
+Nếu câu trả lời chuyển từ dẫn đúng lớp mã đã tìm sang “thường hệ thống sẽ…”, hoặc mâu thuẫn với phát hiện trước, hãy kiểm tra sự suy giảm ngữ cảnh. Giao câu hỏi cụ thể cho từng nhánh, tổng hợp theo giai đoạn và chuyển kết quả cần thiết sang giai đoạn sau. Trước khi dùng `/compact` để rút gọn, giữ dữ kiện quan trọng có cấu trúc và kiểm tra bản tóm tắt không làm mất chúng.
 
 ## Câu hỏi
 

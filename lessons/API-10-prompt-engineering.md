@@ -4,15 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Chu trình của bài: xác định mục tiêu → viết prompt ban đầu → đánh giá → áp dụng một kỹ thuật → đánh giá lại. Không mặc định thay đổi nào cũng làm chất lượng tăng; giữ thay đổi khi kết quả đo ủng hộ nó.
 
-Tiêu chí chấm cần phản ánh sản phẩm thật sự phải tạo ra. Trong ví dụ lên thực đơn, chỉ đánh giá văn phong không đủ nếu yêu cầu còn có khẩu phần và ràng buộc ăn uống. Khi chuyển sang ứng dụng của bạn, hãy xác định tiêu chí tương ứng trước khi tối ưu prompt.
+Cải thiện prompt là một quá trình thử, đo và sửa. Trước hết, xác định kết quả ứng dụng cần tạo ra. Sau đó viết yêu cầu ban đầu, đánh giá kết quả, áp dụng một cách sửa rồi đánh giá lại. Chỉ nên giữ thay đổi khi kết quả kiểm tra cho thấy nó có ích.
 
-Bài khuyến nghị thay một yếu tố mỗi lần để dễ xác định tác động. Có thể dùng tập nhỏ trong vòng phát triển nhanh, sau đó mở rộng để xác thực; vài trường hợp minh họa không chứng minh khả năng xử lý production.
+Tiêu chí đánh giá phải bám vào nhiệm vụ thật. Ví dụ: với ứng dụng lập thực đơn, văn phong dễ đọc chưa đủ. Bạn còn phải kiểm tra khẩu phần và các yêu cầu về ăn uống. Nếu bỏ những tiêu chí này, điểm cao vẫn có thể đi kèm một thực đơn không dùng được.
 
-Đọc báo cáo từng trường hợp để tìm nguyên nhân điểm thấp. Điểm tổng hợp cho biết mức thay đổi; lỗi cụ thể cho biết nên sửa phần nào.
+Bài học khuyến nghị thay một yếu tố mỗi lần để dễ biết điều gì làm kết quả thay đổi. Nếu vừa thêm ví dụ, vừa đổi cách diễn đạt, vừa đổi cách chấm, bạn khó xác định nguyên nhân điểm tăng hoặc giảm.
 
-Từ khóa: **iterative refinement** — cải tiến lặp; **evaluation criteria** — tiêu chí đánh giá.
+Có thể dùng bộ kiểm thử nhỏ để thử ý tưởng nhanh, rồi mở rộng khi đánh giá trước khi đưa vào sử dụng. Hãy đọc từng trường hợp sai: điểm trung bình cho thấy xu hướng chung, còn lỗi cụ thể cho biết phần hướng dẫn nào cần sửa. Một vài ví dụ thành công chưa chứng minh ứng dụng xử lý tốt mọi tình huống thực tế.
 
 ## Câu hỏi
 
@@ -54,8 +53,12 @@ D. Loại bỏ nhu cầu chấm điểm.
 
 ## Đối chiếu Bedrock: Kỹ thuật viết yêu cầu cho AI
 
-Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276749) và đối chiếu khái niệm với bài chung. Cùng chu trình mục tiêu–kết quả ban đầu để so sánh–thử kỹ thuật–đánh giá lại. Mức tăng điểm trong ví dụ không bảo đảm cho tác vụ khác. Nguồn: sources/bedrock-lessons/276749.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
+Bài Bedrock dùng cùng chu trình: đặt mục tiêu, đo kết quả ban đầu, thử cách sửa và đánh giá lại. Mức tăng điểm trong ví dụ không được bảo đảm cho nhiệm vụ khác. Các kiến thức tương đương dùng chung câu hỏi.
+
+Nguồn đối chiếu: [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276749). Bản lưu: `sources/bedrock-lessons/276749.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Prompt engineering](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289169), sources/vertex-lessons/289169.json. Chu trình goal/baseline/eval/thay đổi/re-eval; đọc lỗi theo nhóm. Ví dụ meal plan và concurrency1–3 là minh họa, không là benchmark hay giới hạn universal. Không phải mọi thay đổi đều tăng điểm; giữ hay bỏ dựa trên bằng chứng. Dùng chung câu hỏi khái niệm.
+Bài Vertex cũng yêu cầu đo trước và sau khi thay prompt, rồi đọc lỗi theo nhóm. Ví dụ lập thực đơn và cấu hình chạy đồng thời từ 1–3 chỉ để minh họa, không phải số đo hiệu năng chuẩn hay giới hạn chung. Thay đổi có thể tốt hơn hoặc kém hơn; quyết định giữ hay bỏ cần dựa trên bằng chứng. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Prompt engineering](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289169). Bản lưu: `sources/vertex-lessons/289169.json`.

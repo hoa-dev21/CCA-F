@@ -4,11 +4,19 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101
 
 ## Nội dung bài học
 
-Chẩn đoán theo lỗi: quá chung cần thêm ngữ cảnh; quá dài cần ràng buộc độ dài; sai định dạng cần cấu trúc hoặc ví dụ; sự kiện có thể sai cần kiểm chứng nguồn. Điểm tự tin hay văn phong không thay xác minh độc lập.
 
-Với tác vụ lặp lại, thu thập ví dụ thật, viết prompt có bối cảnh, so kết quả với tiêu chí và sửa theo lỗi. Mẫu nhỏ phục vụ làm quen hoặc phát triển; không chứng minh đầy đủ chất lượng production.
+Khi câu trả lời chưa đạt, hãy xác định cụ thể vấn đề trước khi sửa yêu cầu:
 
-Ví dụ để dễ hình dung: nếu báo cáo có đúng số nhưng kết luận thiếu ý, sửa tiêu chí đánh giá và prompt theo phần còn thiếu thay vì chỉ yêu cầu văn bản dài hơn.
+- Quá chung chung: bổ sung tình huống, người đọc và mục tiêu.
+- Quá dài: nêu độ dài hoặc số ý cần có.
+- Sai định dạng: đưa cấu trúc mong muốn và một ví dụ.
+- Có thông tin đáng ngờ: đối chiếu với nguồn phù hợp trước khi sử dụng.
+
+Ví dụ: Claude viết lời tư vấn chưa sát khách hàng. Bạn cần bổ sung khách hàng đang gặp vấn đề gì và muốn đạt kết quả nào. Chỉ yêu cầu “hãy viết tốt hơn” không cho Claude biết thông tin còn thiếu.
+
+Với công việc lặp lại, hãy chọn một số ví dụ thật, đặt tiêu chí đánh giá, thử yêu cầu rồi sửa theo lỗi quan sát được. Một vài lần thử thành công giúp bạn làm quen và cải tiến, nhưng chưa đủ để kết luận hệ thống sẽ làm tốt trong mọi tình huống thực tế.
+
+Nếu số liệu đã đúng nhưng kết luận thiếu ý, hãy chỉ ra ý cần phân tích thêm. Viết dài hơn hoặc trả lời tự tin hơn không tự làm kết quả chính xác hơn.
 
 ## Câu hỏi
 

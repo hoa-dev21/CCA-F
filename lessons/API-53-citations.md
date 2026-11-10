@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Các trích dẫn nguồn liên kết nhận định với phần văn bản hỗ trợ trong nguồn được cung cấp. Bài minh họa thông tin mô tả như document index/title, cited text và vị trí; tài liệu trang có thể dùng số trang, văn bản thuần có thể dùng vị trí ký tự.
 
-Giữ cấu trúc này qua các bước biến đổi và trình bày để người dùng mở đúng ngữ cảnh. Chỉ gom mọi link ở cuối mà không biết claim nào dựa vào nguồn nào làm mất giá trị kiểm chứng.
+Trích dẫn giúp người đọc biết một nhận định dựa vào phần nào của tài liệu. Bài minh họa các thông tin như mã hoặc số thứ tự tài liệu, tiêu đề, đoạn được dẫn và vị trí của đoạn đó. Tài liệu phân trang có thể dùng số trang; văn bản thuần có thể dùng vị trí ký tự.
 
-Trích dẫn nguồn hỗ trợ truy vết, không bảo đảm suy luận chính xác hoặc nguồn đủ cập nhật. Kiểm tra đoạn gốc thực sự hỗ trợ claim, thời điểm và giới hạn nguồn. Không đưa một trích dẫn nguồn có thật vào kết luận không được đoạn đó chứng minh.
+Ứng dụng cần giữ mối liên hệ này khi xử lý và hiển thị câu trả lời. Ví dụ: nếu báo cáo có nhiều kết luận, người dùng cần biết mỗi kết luận dẫn tới nguồn và đoạn nào. Chỉ đặt 20 đường dẫn ở cuối mà không nối với từng nhận định làm việc kiểm chứng khó hơn.
+
+Có trích dẫn không tự bảo đảm kết luận đúng. Hãy mở đoạn gốc để xem nó thực sự nói gì, còn điều kiện hoặc ngoại lệ nào không và thông tin có phù hợp về thời điểm không.
+
+Một trích dẫn có thật vẫn có thể bị gắn với kết luận mà nó không hỗ trợ. Giá trị của trích dẫn là giúp truy lại bằng chứng; việc đánh giá bằng chứng đó vẫn cần được thực hiện.
 
 ## Câu hỏi
 
@@ -52,8 +55,12 @@ D. Chỉ điểm tự tin.
 
 ## Đối chiếu tính năng trên Bedrock
 
-Đã đọc [Citations](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/308840), sources/bedrock-lessons/308840.json. Converse có các trích dẫn nguồn nội dung parts; giữ ánh xạ claim–source theo cấu trúc nhà cung cấp. Trích dẫn nguồn không làm lộ toàn bộ suy nghĩ nội bộ và không đủ để chứng minh claim được nguồn hỗ trợ đúng. Dùng chung tóm tắt/câu hỏi khái niệm, không đếm câu hỏi trùng.
+Converse trả trích dẫn trong cấu trúc nội dung của nhà cung cấp. Ứng dụng cần giữ liên kết từng nhận định với nguồn. Trích dẫn không thể hiện toàn bộ suy nghĩ bên trong và cũng chưa chứng minh nhận định được nguồn hỗ trợ đúng. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Citations](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/308840). Bản lưu: `sources/bedrock-lessons/308840.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Citations](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289202), sources/vertex-lessons/289202.json. Document các trích dẫn nguồn.enabled, title, PDF page locations hoặc text character locations giúp nối claim về nguồn. Trích dẫn nguồn không chứng minh nguồn đúng, đầy đủ hay claim được hỗ trợ; giữ index/location đúng bản tài liệu, xác minh trước hiển thị. Dùng chung câu hỏi khái niệm.
+Thiết lập trích dẫn cho tài liệu, tiêu đề, vị trí trang PDF hoặc ký tự văn bản giúp truy lại nguồn của nhận định. Giữ đúng chỉ số và vị trí theo phiên bản tài liệu, kiểm tra trước khi hiển thị. Có trích dẫn chưa chứng minh nguồn đúng, đủ hoặc thực sự hỗ trợ kết luận. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Citations](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289202). Bản lưu: `sources/vertex-lessons/289202.json`.

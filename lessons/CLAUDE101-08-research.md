@@ -4,11 +4,19 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101
 
 ## Nội dung bài học
 
-Research là quá trình điều tra nhiều bước: lập cách tìm, truy vấn nhiều nguồn, chọn hướng tiếp theo dựa trên phát hiện và tổng hợp có các trích dẫn nguồn. Nó đổi thêm thời gian xử lý lấy độ bao quát, không nên dùng mặc định cho một dữ kiện đơn giản.
 
-Bài phân biệt: web search cho tra cứu cụ thể; Research cho điều tra nhiều góc; Thinking cho suy luận không cần thêm nguồn; Enterprise Search cho tri thức tổ chức. Lựa chọn phụ thuộc dữ liệu và độ sâu cần thiết.
+Research là cách nghiên cứu một chủ đề qua nhiều bước: xác định hướng tìm, tra cứu nhiều nguồn, chọn bước tiếp theo dựa trên thông tin tìm được rồi tổng hợp báo cáo có trích dẫn. Cách này thường cần thêm thời gian để xem xét vấn đề từ nhiều góc độ.
 
-Prompt nghiên cứu nên nêu mục tiêu, phần báo cáo, phạm vi thời gian/địa lý và ràng buộc. Kết hợp dữ liệu nội bộ chỉ khi có nguồn kết nối và quyền. Kiểm tra các trích dẫn nguồn của claim quan trọng thay vì coi một báo cáo dài tự chứng minh độ đúng.
+Bài học phân biệt các nhu cầu sau:
+
+- Tra cứu web (web search): tìm một thông tin cụ thể từ nguồn trên mạng.
+- Nghiên cứu sâu (Research): tìm hiểu và so sánh nhiều khía cạnh, thường cần nhiều nguồn.
+- Suy luận (Thinking): phân tích dựa trên thông tin đã có, khi không cần tìm thêm nguồn.
+- Tìm kiếm nội bộ (Enterprise Search): tìm thông tin của tổ chức từ các nguồn đã kết nối.
+
+Khi giao nhiệm vụ nghiên cứu, hãy nêu quyết định cần hỗ trợ, tiêu chí so sánh, các phần của báo cáo và giới hạn về thời gian hoặc địa lý. Ví dụ: “So sánh ba phương án theo chi phí và thời gian triển khai, sử dụng dữ liệu trong năm vừa qua”. Nếu cần dữ liệu nội bộ, phải có kết nối và quyền truy cập phù hợp.
+
+Với một dữ kiện đơn giản, tra cứu tập trung có thể phù hợp hơn một báo cáo nghiên cứu dài. Dù dùng cách nào, vẫn cần mở nguồn để kiểm tra những nhận định quan trọng.
 
 ## Câu hỏi
 

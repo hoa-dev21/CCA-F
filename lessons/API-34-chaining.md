@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Chaining chia tác vụ thành các bước tuần tự; kết quả bước trước được dùng cho bước sau. Có thể chèn xử lý bằng mã hoặc validation giữa các lần gọi mô hình.
 
-Bài minh họa tách tạo nội dung và sửa theo các ràng buộc cụ thể. Thay vì bắt một prompt vừa sáng tác vừa kiểm tra hàng loạt yêu cầu, lượt sau tập trung rà soát và sửa đầu ra đã có.
+Chaining là chia nhiệm vụ thành các bước nối tiếp, trong đó kết quả bước trước trở thành đầu vào cho bước sau. Giữa các lần gọi mô hình, ứng dụng có thể thêm xử lý hoặc kiểm tra bằng mã.
 
-Khác parallelization, các bước không độc lập. Không chạy bước sửa trước khi có bản nháp, cũng không bỏ qua việc truyền bản nháp cho bước sửa. Chaining là lựa chọn đáng thử khi prompt dài thường bỏ sót ràng buộc, nhưng cần đo lợi ích so với độ trễ bổ sung.
+Ví dụ: Bước đầu tạo bản nháp bài viết. Bước sau nhận chính bản nháp đó để rà soát độ dài, cấu trúc và yêu cầu còn thiếu, rồi sửa lại. Mỗi bước tập trung vào một việc thay vì một prompt phải xử lý tất cả cùng lúc.
+
+Các bước này phụ thuộc nhau nên không thể chạy độc lập như các nhánh song song. Bước sửa phải chờ có bản nháp và phải thực sự nhận được nội dung bản nháp.
+
+Nếu kết quả trung gian bắt buộc đúng cấu trúc mới được chuyển tiếp, hãy kiểm tra bằng chương trình trước khi chạy bước sau. Cách chia chuỗi đáng thử khi prompt dài hay bỏ sót yêu cầu, nhưng cần đo lợi ích về chất lượng so với thời gian chờ tăng thêm.
 
 ## Câu hỏi
 
@@ -50,4 +53,6 @@ D. Tạo bản nháp rồi dùng lượt sửa tập trung vào quy tắc bị b
 
 ## Đối chiếu Vertex
 
-Đã đọc [Chaining workflows](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289239), sources/vertex-lessons/289239.json. Chuỗi bước phụ thuộc kết quả trước, có thể xen validation/non-LLM processing. Ví dụ tạo rồi sửa bài theo ràng buộc không cho phép tự đăng social media; quyền xuất bản và tác động ngoài cần theo nhiệm vụ được giao. Đánh giá thay đổi để biết lợi ích có đáng độ trễ bổ sung. Dùng chung câu hỏi khái niệm.
+Chuỗi bước dùng kết quả trước làm đầu vào sau, có thể xen kiểm tra hoặc xử lý bằng mã không dùng mô hình. Ví dụ tạo rồi sửa bài theo điều kiện không tự cho phép đăng lên mạng xã hội; việc xuất bản cần thuộc phạm vi nhiệm vụ. Đánh giá chất lượng để biết lợi ích có đáng thời gian chờ thêm hay không. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Chaining workflows](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289239). Bản lưu: `sources/vertex-lessons/289239.json`.

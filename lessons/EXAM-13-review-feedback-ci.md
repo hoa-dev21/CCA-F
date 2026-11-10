@@ -4,21 +4,24 @@ Nguồn: Exam Guide CCAR-F v1.0, mục 3.5–3.6 và 4.1–4.2, trang PDF 14–1
 
 ## Nội dung bài học
 
-“Hãy bảo thủ” hoặc “chỉ báo lỗi tự tin cao” không thay tiêu chí cụ thể. Nêu rõ cần báo bug/security nào và bỏ qua style nào. Với comment, chỉ báo khi hành vi được mô tả mâu thuẫn code, thay vì bắt mọi cách diễn đạt khác sở thích.
 
-Dùng vài ví dụ nhắm tình huống mơ hồ, gồm cả pattern hợp lệ dễ bị gắn cờ sai, severity và output như vị trí/vấn đề/cách sửa. Theo dõi nhóm false positives; có thể tạm tắt nhóm nhiễu cao trong khi cải tiến thay vì làm giảm niềm tin vào mọi finding.
+Yêu cầu “hãy bảo thủ” hoặc “chỉ báo lỗi tự tin cao” chưa cho người rà soát AI biết điều gì đáng báo. Hãy nêu rõ loại lỗi chức năng, bảo mật cần tìm và những góp ý về phong cách nên bỏ qua. Với chú thích trong mã, chỉ báo khi mô tả hành vi mâu thuẫn với mã, không báo chỉ vì khác sở thích diễn đạt.
 
-Theo mục4.1–4.2, chọn2–4 few-shot examples có chủ đích, nêu ngắn lý do chọn hành động này thay phương án có vẻ hợp lý khác. Ví dụ hợp lệ: `if (x == null) return; use(x.id);` có guard trước dereference, không gắn lỗi null chỉ vì thấy `x.id`. Ví dụ cần báo: `return user.name` ở nhánh `user` có thể null từ truy vấn, với input tái hiện; classification phải theo tác động thật. Bảng tiêu chí chấm điểm severity có thể phân biệt lộ dữ liệu tenant khác là lỗi bảo mật nghiêm trọng, null crash trên một nhánh có thể tái hiện là lỗi chương trình chức năng, còn tên biến khác sở thích thì skip. Ghi rõ file/vị trí, issue, severity, suggested fix để người kiểm tra thấy output mong đợi. Đừng dạy mô hình chỉ dò đúng đoạn mẫu: kiểm tra nó áp dụng nguyên tắc cho ca mới.
+Theo đề cương, có thể dùng 2–4 ví dụ có chủ đích, gồm cả trường hợp hợp lệ dễ bị báo nhầm và lỗi thật. Nêu ngắn lý do cùng kết quả mong muốn: tệp, vị trí, vấn đề, mức độ nghiêm trọng và cách sửa.
 
-Với extraction, few-shot nên phủ cấu trúc tài liệu khác nhau: nguồn trích ngay trong câu so với bibliography cuối tài liệu; phương pháp trong section riêng so với mô tả nhúng trong đoạn; đơn vị đo viết không trang trọng nhưng có bằng chứng để chuẩn hóa. Nếu field bắt buộc thường trả null dù nguồn có thông tin, thêm ví dụ chỉ cách tìm đúng vị trí ở các bố cục đó. Nếu nguồn thực sự không có dữ liệu, giữ missing theo quy định về dữ liệu và hành vi thay vì dạy điền một giá trị có vẻ hợp lý.
+Ví dụ: `if (x == null) return; use(x.id);` đã kiểm tra null trước khi truy cập, nên không gắn lỗi chỉ vì thấy `x.id`. Ngược lại, `return user.name` trên đường chạy mà `user` có thể null cần được xem xét với đầu vào tái hiện. Phân mức theo tác động thật: lộ dữ liệu khách hàng khác là lỗi bảo mật nghiêm trọng, lỗi null có thể tái hiện là lỗi chức năng, tên biến khác sở thích thì bỏ qua.
 
-Khi mô tả chuyển đổi không nhất quán, đưa input/output cụ thể. Với vấn đề tương tác, cung cấp chúng cùng lúc để nhìn phụ thuộc; vấn đề độc lập có thể sửa tuần tự. Interview trước triển khai giúp lộ giả định ở lĩnh vực chưa quen.
+Theo dõi cảnh báo sai theo nhóm. Nếu một nhóm quá nhiễu làm người dùng bỏ qua cả phát hiện có giá trị, có thể tạm tắt nhóm đó trong khi sửa tiêu chí và đánh giá lại. Kiểm tra mô hình áp dụng nguyên tắc cho trường hợp mới, không chỉ nhận ra đúng đoạn mã mẫu.
 
-Theo mục3.5, bắt đầu bằng2–3 cặp input/output đã kiểm tra. Ví dụ migration phải giữ `null` là `null`, không biến thành chuỗi `"null"`; đưa ca cụ thể và expected output thay vì chỉ nói “xử lý null đúng”. Chọn test trước triển khai cho hành vi, edge cases và yêu cầu hiệu năng phù hợp, rồi gửi failure có input/expected/actual để lặp sửa. Interview có thể hỏi về invalidation cache hoặc failure modes trước khi chọn giải pháp, không chỉ hỏi lại thông tin đã có. Nếu hai lỗi cùng đổi một quy trình xử lý và ảnh hưởng nhau, mô tả cùng lúc; lỗi độc lập có thể giải lần lượt.
+Với trích xuất tài liệu, ví dụ nên có nhiều bố cục: trích dẫn trong câu hoặc ở danh mục cuối, phương pháp nghiên cứu trong mục riêng hoặc lồng trong đoạn, đơn vị đo viết không trang trọng nhưng đủ căn cứ để chuẩn hóa. Nếu thông tin có thật mà mô hình thường trả null, minh họa cách tìm ở các bố cục này. Nếu nguồn không có, phải giữ trạng thái thiếu dữ liệu, không dạy mô hình đoán.
 
-CI chạy không tương tác với `-p`, dùng JSON/schema cho đầu ra máy đọc. Cung cấp ngữ cảnh dự án/test fixtures và các test đã có để giảm đề xuất trùng. Lần kiểm tra lại nhận findings cũ và chỉ báo mới hoặc chưa sửa. Khóa Code mới có chi tiết khác về tự nạp cấu hình trong headless; không dựa vào giả định tự nạp: xác minh cấu hình/context thực tế đã có khi chạy.
+Khi yêu cầu sửa mã bị hiểu không nhất quán, bắt đầu bằng 2–3 cặp đầu vào và đầu ra đã kiểm tra. Ví dụ: chuyển đổi dữ liệu phải giữ `null` là `null`, không thành chuỗi `"null"`. Chọn kiểm thử về hành vi, trường hợp biên và hiệu năng phù hợp trước khi triển khai. Khi kiểm thử thất bại, gửi đầu vào, kết quả mong đợi và kết quả thực tế.
 
-Cú pháp theo mục3.6 gồm `-p`/`--print`, `--output-format json` và `--json-schema`. Adapter CI đọc nội dung dữ liệu gửi đi có cấu trúc, validate finding có file/vị trí/nội dung hợp lệ rồi mới đăng inline PR comment theo quyền quy trình xử lý; flag JSON không tự đăng comment hoặc chứng minh finding đúng. CLAUDE.md ghi testing standards, fixtures và tiêu chí kiểm tra có ích; test hiện hữu vẫn phải được cung cấp trong ngữ cảnh phù hợp. Dùng người kiểm tra instance độc lập với ngữ cảnh tạo code để giảm thiên lệch tự xác nhận, đồng thời truyền requirements và diff cần kiểm tra.
+Các lỗi ảnh hưởng lẫn nhau nên được mô tả cùng lúc để thấy phụ thuộc; lỗi độc lập có thể giải từng việc. Khi còn lựa chọn thiết kế chưa rõ, hỏi để làm rõ, chẳng hạn khi nào xóa cache hoặc xử lý các kiểu thất bại ra sao, thay vì hỏi lại thông tin đã có.
+
+Trong CI, dùng chế độ không tương tác như `-p` hoặc `--print`. Các tùy chọn `--output-format json` và `--json-schema` hỗ trợ đầu ra cho chương trình đọc. Phần tích hợp CI vẫn phải kiểm tra nội dung, đường dẫn và vị trí phát hiện trước khi đăng nhận xét lên PR theo quyền được cấp. Có JSON hợp lệ không tự chứng minh phát hiện đúng hoặc tự tạo bình luận.
+
+Cung cấp yêu cầu, diff, tiêu chuẩn kiểm thử, dữ liệu mẫu và các kiểm thử hiện có để giảm đề xuất trùng. Khi rà lại PR, đưa phát hiện cũ và yêu cầu chỉ báo lỗi mới hoặc chưa giải quyết dựa trên mã hiện tại. Xác minh hướng dẫn dự án thực sự đã được nạp, không giả định mọi chế độ tự nạp giống nhau. Có thể dùng phiên rà soát độc lập với phiên viết mã để giảm việc bị ảnh hưởng bởi lý giải của bên tạo.
 
 ## Câu hỏi
 

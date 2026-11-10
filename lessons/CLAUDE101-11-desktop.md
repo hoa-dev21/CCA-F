@@ -4,11 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101
 
 ## Nội dung bài học
 
-Bài phân biệt ba hình dạng công việc: hội thoại từng lượt trong Chat, bàn giao nhiệm vụ nhiều bước trong Cowork và xây phần mềm với Code. Chọn theo cách làm việc, không chỉ theo tên tab.
 
-Chat phù hợp khi giá trị nằm trong trao đổi và phản hồi từng bước. Bàn giao phù hợp khi mô tả được đầu ra, cần nhiều nguồn hoặc nhiều bước và muốn xem kế hoạch/kết quả. Code phù hợp đọc, sửa và kiểm tra codebase. Mọi cách đều cần phạm vi và kiểm tra phù hợp mức tự chủ.
+Bài học phân biệt ba cách làm việc trên ứng dụng máy tính: trao đổi từng lượt trong Chat, giao nhiệm vụ nhiều bước trong Cowork và phát triển phần mềm với Code.
 
-Phân biệt công việc chạy cloud với việc cần file/môi trường cục bộ: điều kiện máy mở hay kết nối nguồn phụ thuộc nơi chạy thực tế. Không suy rằng mọi tác vụ luôn chạy được khi máy tắt. Availability và thao tác UI trong bài có thể thay đổi; chi tiết computer use không phải mục tiêu thi Architect đã tải.
+- Chat phù hợp khi bạn cần trao đổi liên tục. Ví dụ: cùng AI nghĩ ý tưởng, nhận xét từng phương án rồi đặt câu hỏi tiếp.
+- Cowork phù hợp với việc có đầu ra rõ, cần nhiều bước hoặc nhiều nguồn thông tin. Bạn giao nhiệm vụ trong phạm vi cụ thể rồi xem xét kế hoạch và kết quả.
+- Code phù hợp khi cần đọc và sửa mã trong dự án, sau đó chạy kiểm thử trong môi trường phát triển.
+
+Hãy chọn theo thao tác cần thực hiện. Với mọi cách làm, bạn vẫn cần đặt phạm vi và kiểm tra kết quả phù hợp với mức tự chủ đã giao cho AI.
+
+Cũng cần biết công việc chạy trên máy cá nhân hay trên hệ thống đám mây. Nếu nhiệm vụ phụ thuộc vào tệp chỉ có trên máy của bạn, đừng mặc định rằng nó vẫn chạy được khi máy tắt. Hãy kiểm tra nơi chạy và cách truy cập dữ liệu. Tính năng và giao diện có thể thay đổi; chi tiết thao tác điều khiển máy tính không phải trọng tâm đề cương Architect đã lưu.
 
 ## Câu hỏi
 

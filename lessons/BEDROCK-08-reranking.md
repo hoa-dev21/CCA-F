@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-
 
 ## Nội dung bài học
 
-Sau truy xuất và hợp nhất, reranker xem truy vấn tìm kiếm cùng các ứng viên để sắp lại mức liên quan. Nó có thể phân biệt đoạn thật sự trả lời câu hỏi với đoạn chỉ chứa cùng mã sự cố.
 
-Gán ID cho mỗi đoạn văn bản rồi yêu cầu trả danh sách ID theo thứ tự giúp tránh mô hình phải sao chép lại toàn bộ văn bản. Ứng dụng đối chiếu ID với tập ứng viên, giữ nội dung và provenance gốc. ID mô hình trả không tồn tại phải được xử lý như kết quả không hợp lệ.
+Reranking là xếp hạng lại các đoạn đã tìm được. Sau bước tìm kiếm và hợp nhất, bộ xếp hạng đọc câu hỏi cùng các đoạn ứng viên để chọn thứ tự phù hợp hơn.
 
-Reranking thêm chi phí và độ trễ; cần đo lợi ích trên truy vấn tìm kiếm đại diện. Nếu tài liệu đúng không có trong tập ứng viên, bước chỉ sắp lại không tự tìm được tài liệu đó. Kiểm tra cả recall ban đầu lẫn thứ tự sau xếp hạng, không coi reranker chữa mọi lỗi truy xuất dữ liệu.
+Ví dụ: Nhiều đoạn chứa cùng mã sự cố, nhưng chỉ một đoạn giải thích nguyên nhân mà người dùng hỏi. Xếp hạng lại có thể đưa đoạn thực sự trả lời câu hỏi lên trên.
+
+Bài gán mã định danh cho mỗi đoạn và yêu cầu trả danh sách mã theo thứ tự. Nhờ đó, mô hình không phải chép lại toàn bộ văn bản. Ứng dụng dùng mã để lấy đúng nội dung và thông tin nguồn gốc. Nếu nhận một mã không có trong tập ứng viên, cần xử lý như kết quả không hợp lệ, không tự tạo nội dung cho mã đó.
+
+Xếp hạng lại thêm thời gian và chi phí. Nó cũng không thể chọn tài liệu đúng nếu tài liệu đó chưa được tìm thấy trong tập đầu vào. Vì vậy, cần kiểm tra cả khả năng tìm đủ tài liệu ở bước đầu và thứ tự sau khi xếp hạng lại.
 
 ## Câu hỏi
 
@@ -50,4 +53,6 @@ D. Chỉ gắn trích dẫn nguồn tùy ý.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Reranking results](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289192), sources/vertex-lessons/289192.json. Rerank ứng viên sau kết hợp nhiều phương pháp theo truy vấn tìm kiếm, trả IDs giảm output. Validate ID thuộc tập ứng viên, số lượng/không trùng và thứ tự trước lấy nội dung. Reranker không lấy lại được tài liệu đã bị truy xuất dữ liệu bỏ; đo chi phí/latency và cải thiện thực tế. Dùng chung câu hỏi khái niệm.
+Sau tìm kiếm kết hợp, bộ xếp hạng lại đọc câu hỏi và các ứng viên, trả mã định danh để giảm đầu ra. Kiểm tra mã thuộc tập đầu vào, số lượng, việc trùng lặp và thứ tự trước khi lấy văn bản. Bộ này không tìm lại được tài liệu đã bị bỏ sót từ đầu. Đo lợi ích thực tế cùng chi phí và thời gian chờ. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Reranking results](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289192). Bản lưu: `sources/vertex-lessons/289192.json`.

@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bộ tìm kiếm tài liệu chung gửi truy vấn tìm kiếm tới các chỉ mục tìm kiếm, gom và hợp nhất kết quả. Các chỉ mục tìm kiếm giữ giao diện nhất quán giúp thay hoặc thêm phương pháp mà không buộc viết lại toàn hệ thống.
 
-Không cộng điểm số gốc tùy tiện khi các chỉ mục tìm kiếm có thang điểm khác nhau. Bài dùng Reciprocal Rank Việc hợp nhất kết quả theo thứ hạng, với đóng góp dạng 1/(k+rank), để hợp nhất. Cần xử lý định danh tài liệu nhất quán để cùng một đoạn văn bản ở hai danh sách được nhận diện đúng.
+Tìm kiếm kết hợp (hybrid search) gửi cùng câu hỏi đến nhiều cách tìm kiếm, chẳng hạn tìm theo vectơ và tìm theo từ khóa, rồi hợp nhất kết quả. Một bộ điều phối chung giúp gọi các bộ tìm kiếm qua giao diện nhất quán, thuận tiện khi thay hoặc bổ sung phương pháp.
 
-Việc hợp nhất kết quả cải thiện cách kết hợp tín hiệu, không bảo đảm mọi câu trả lời đúng. Đo truy xuất dữ liệu trên câu hỏi đại diện trước khi kết luận hệ thống kết hợp nhiều phương pháp tốt hơn cho trường hợp của mình.
+Không nên cộng trực tiếp các điểm gốc nếu chúng dùng thang đo khác nhau. Ví dụ: điểm BM25 và điểm độ gần vectơ không có cùng ý nghĩa, nên tổng của chúng có thể không phản ánh kết quả tốt hơn.
+
+Bài dùng Reciprocal Rank Fusion (RRF), tức hợp nhất theo thứ hạng. Mỗi kết quả đóng góp một giá trị dạng `1/(k + rank)`, trong đó `rank` là vị trí của kết quả trong danh sách và `k` là hằng số của công thức. Cách này dùng thứ hạng thay vì cộng các điểm gốc khác thang đo.
+
+Cần giữ mã định danh nhất quán để nhận ra cùng một đoạn xuất hiện ở nhiều danh sách, cộng tín hiệu đúng và tránh lặp kết quả. Sau khi hợp nhất, vẫn phải đo chất lượng trên các câu hỏi đại diện; kết hợp nhiều cách tìm không tự bảo đảm câu trả lời đúng.
 
 ## Câu hỏi
 
@@ -52,8 +55,12 @@ D. Chỉ tên dự án.
 
 ## Đối chiếu RAG trên Bedrock
 
-Đã đọc [A multi-search RAG pipeline](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276779), sources/bedrock-lessons/276779.json và đối chiếu với bản API. Cùng Bộ tìm kiếm tài liệu và RRF theo thứ hạng; không cộng điểm số gốc khác thang. Đoạn code rút gọn trong trang là skeleton, không xác nhận đã thực thi quy trình xử lý hoàn chỉnh. Dùng chung tóm tắt/câu hỏi khái niệm tương đương, không tăng số câu trùng.
+Bài Bedrock kết hợp các cách tìm kiếm bằng RRF theo thứ hạng, không cộng điểm gốc khác thang đo. Mã rút gọn trên trang mới là khung minh họa, không phải bằng chứng toàn bộ quy trình đã chạy hoàn chỉnh. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [A multi-search RAG pipeline](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276779). Bản lưu: `sources/bedrock-lessons/276779.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [A Multi-index RAG pipeline](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289193), sources/vertex-lessons/289193.json. Bộ tìm kiếm tài liệu hợp nhất vector/BM25 bằng reciprocal rank việc hợp nhất kết quả, không cộng raw cosine/BM25 scores. k_rrf và top-k là tham số khác nhau. Mẫu list comprehension thực thi tuần tự; kiến trúc có thể song song khi host triển khai. Dùng chung câu hỏi khái niệm.
+Bộ tìm kiếm hợp nhất kết quả vectơ và BM25 bằng Reciprocal Rank Fusion. `k_rrf` trong công thức khác với số kết quả lấy ra ở top-k. Cách tạo danh sách bằng list comprehension trong mẫu chạy tuần tự; muốn chạy song song, ứng dụng phải triển khai cơ chế tương ứng. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [A Multi-index RAG pipeline](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289193). Bản lưu: `sources/vertex-lessons/289193.json`.

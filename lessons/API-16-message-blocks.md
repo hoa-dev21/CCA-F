@@ -4,13 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Phản hồi có công cụ không chỉ là một chuỗi văn bản. `content` là danh sách block: có thể chứa `text` và `tool_use`. Tool-use block có ID, tên công cụ và đầu vào.
 
-Nếu hàm hỗ trợ chỉ trả `content[0].text`, ứng dụng có thể đánh mất yêu cầu gọi công cụ. Cần giữ toàn bộ `response.content` trong assistant message của lịch sử, rồi xử lý từng block theo loại.
+Phản hồi của Claude có thể gồm nhiều khối nội dung, gọi là block, thay vì chỉ một chuỗi văn bản. Trường `content` chứa danh sách các khối này. Trong bài, hai loại cần phân biệt là `text` để chứa lời trả lời và `tool_use` để yêu cầu gọi công cụ.
 
-Để Claude có công cụ để chọn, yêu cầu truyền danh sách định nghĩa qua `tools`. Sau phản hồi, ứng dụng đọc tool-use block, thực thi công cụ và gửi kết quả cùng lịch sử đầy đủ.
+Khối `tool_use` có mã định danh lần gọi, tên công cụ và đầu vào cần truyền. Ứng dụng dùng các thông tin này để thực hiện thao tác. Một câu như “Tôi sẽ kiểm tra đơn hàng” chỉ là lời diễn đạt, chưa phải yêu cầu gọi công cụ có cấu trúc.
 
-Lưu ý thực hành bổ sung: không nên giả định công cụ luôn ở vị trí thứ hai chỉ vì ví dụ hiển thị như vậy. Ý nghĩa của `type` mới cho biết block cần xử lý. Text giải thích như “tôi sẽ tra cứu” không thay thế tool-use block.
+Khi gửi yêu cầu, ứng dụng khai báo các công cụ cho Claude qua danh sách `tools`. Khi nhận phản hồi, cần lưu toàn bộ `response.content` vào tin nhắn có vai trò `assistant`, rồi duyệt từng khối theo trường `type`.
+
+Nếu chỉ lấy `content[0].text`, bạn có thể làm mất các khối yêu cầu công cụ. Cũng không nên mặc định công cụ luôn nằm ở vị trí thứ hai chỉ vì một ví dụ có thứ tự như vậy. Sau khi xử lý yêu cầu công cụ, ứng dụng gửi kết quả cùng lịch sử cần thiết để Claude tiếp tục.
 
 ## Câu hỏi
 
@@ -52,8 +53,12 @@ D. Có, mọi text đều là công cụ call.
 
 ## Đối chiếu Bedrock: Handling tool use responses
 
-Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276764) và đối chiếu khái niệm với bài chung. Converse dùng toolUse với toolUseId/name/input; phản hồi có stopReason. Giữ mọi nội dung parts thay vì giả định block đầu luôn text. toolChoice trong ví dụ phân biệt auto/any/tool theo adapter nhà cung cấp. Nguồn: sources/bedrock-lessons/276764.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
+Converse dùng `toolUse` với các trường `toolUseId`, `name`, `input` và có `stopReason` trong phản hồi. Giữ mọi khối nội dung, không giả định khối đầu luôn là văn bản. Cách chọn `auto`, `any` hoặc công cụ theo tên qua `toolChoice` phải theo giao diện nhà cung cấp. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276764). Bản lưu: `sources/bedrock-lessons/276764.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Handling message blocks](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289179), sources/vertex-lessons/289179.json. Giữ toàn bộ assistant phản hồi.nội dung gồm text/tool_use và ID/input/name. Không giả định một text block hoặc vị trí cố định cho tool_use. Dùng chung câu hỏi khái niệm.
+Giữ toàn bộ nội dung phản hồi của trợ lý, gồm `text`, `tool_use` và các trường ID, tên, đầu vào. Không giả định chỉ có một khối văn bản hoặc `tool_use` luôn ở vị trí cố định. Dùng chung câu hỏi khái niệm.
+
+Nguồn đối chiếu: [Handling message blocks](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289179). Bản lưu: `sources/vertex-lessons/289179.json`.

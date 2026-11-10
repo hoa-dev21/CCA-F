@@ -4,11 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-
 
 ## Nội dung bài học
 
-Bài rút ra các đặc điểm từ Claude Code và Computer Use: bộ công cụ có mục đích rõ, vòng lặp có giới hạn, thu thập trạng thái môi trường và đánh giá liên tục. Tác nhân AI cần đọc code hoặc quan sát giao diện trước khi sửa; không thể biết trạng thái riêng của hệ thống chỉ từ kiến thức huấn luyện.
 
-Phản hồi công cụ giúp chọn bước tiếp theo và kiểm tra kết quả. Chạy test vừa là hành động vừa cung cấp bằng chứng, không đơn giản chỉ là đọc dữ liệu. Định nghĩa success, error và iteration limit trước khi chạy; chất lượng phải đo trên tình huống đại diện gồm thất bại và hồi phục.
+Từ Claude Code và Computer Use, bài rút ra các yếu tố của một tác nhân AI hoạt động tốt: công cụ có mục đích rõ, vòng xử lý có giới hạn, khả năng quan sát môi trường và kiểm tra kết quả liên tục.
 
-Chi phí lỗi phụ thuộc quyền và tác động của tác vụ. Ví dụ sửa code có kiểm tra khác với tự triển khai production hoặc click thanh toán. Không áp dụng nhận định “Computer Use luôn ít rủi ro” của ví dụ cho mọi môi trường. Chọn mức tự chủ theo khả năng đảo ngược, kiểm chứng và chuyển người xử lý khi cần. Liên hệ thi: tác nhân AI loop, công cụ scope, phép đánh giá và chuyển vấn đề cho người có thẩm quyền.
+Trước khi sửa mã, cần đọc mã đang có. Trước khi thao tác giao diện, cần quan sát trạng thái hiện tại. Kiến thức huấn luyện không tự cho mô hình biết nội dung riêng của dự án hoặc màn hình của bạn.
+
+Phản hồi công cụ giúp chọn bước tiếp và kiểm chứng kết quả. Chạy kiểm thử vừa thực hiện một hành động vừa tạo bằng chứng về hành vi. Trước khi cho tác nhân chạy, cần định nghĩa thế nào là thành công, lỗi và hết số lượt; đánh giá cả tình huống thất bại và cách khôi phục.
+
+Mức tự chủ còn phụ thuộc tác động của nhiệm vụ. Thử giao diện trên môi trường kiểm thử khác với bấm thanh toán bằng tài khoản thật; sửa mã để con người duyệt khác với tự triển khai lên hệ thống vận hành.
+
+Vì vậy, không chọn quyền chỉ dựa trên tên công cụ. Hãy xét khả năng kiểm chứng, đảo ngược thao tác và chuyển cho người có thẩm quyền khi cần.
 
 ## Câu hỏi
 

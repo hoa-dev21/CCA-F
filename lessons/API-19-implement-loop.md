@@ -4,17 +4,22 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Vòng lặp gửi yêu cầu cùng các công cụ, lưu assistant message, kiểm tra `stop_reason`, thực thi các tool-use block và thêm kết quả vào tin nhắn của người dùng kế tiếp.
 
-Lọc block bằng `type == "tool_use"`, không giả định chỉ có một công cụ hoặc một vị trí cố định. Mỗi yêu cầu cần kết quả với `tool_use_id` khớp ID gốc. Dùng hàm router ánh xạ tên công cụ sang hàm thực thi giúp thêm công cụ mà không viết lại vòng lặp.
+Một vòng xử lý công cụ cần thực hiện đầy đủ các bước: gửi yêu cầu kèm định nghĩa công cụ, lưu phản hồi của Claude, đọc lý do dừng và xử lý các yêu cầu công cụ trước khi gửi kết quả trở lại.
 
-Nếu hàm bị lỗi, vẫn trả tool-result block cho lần gọi đó và đặt `is_error=true`. Bỏ qua kết quả lỗi khiến lịch sử thiếu thông tin mà Claude cần để quyết định bước tiếp theo.
+Duyệt các khối có `type == "tool_use"`. Không giả định chỉ có một công cụ hoặc công cụ nằm ở vị trí cố định. Với mỗi khối, lấy tên và đầu vào, chạy hàm tương ứng rồi tạo kết quả có `tool_use_id` khớp mã ban đầu. Có thể dùng một bộ điều phối (router) để ánh xạ tên công cụ sang hàm thực thi.
 
-Ví dụ của khóa kết thúc khi stop reason khác `tool_use`. Đối với ôn thi và triển khai, cần phân biệt kỹ hơn: `end_turn` là kết thúc lượt; một lý do như hết giới hạn đầu ra chưa chứng minh nhiệm vụ thành công. Exam Guide mục 1.1 nhấn mạnh việc phân biệt `tool_use` và `end_turn`.
+Nếu hàm phát sinh lỗi, vẫn trả kết quả cho đúng lần gọi và đặt `is_error=true`. Ví dụ: hai công cụ tra cứu, một thành công và một lỗi kết nối. Không gán lỗi cho lần gọi thành công và không đổi lỗi kết nối thành “không tìm thấy dữ liệu”.
 
-Điều kiện dừng nghiệp vụ phải theo giao thức: tiếp tục khi `tool_use`, kết thúc lượt khi `end_turn`, xử lý riêng các lý do khác. Không parse câu “tôi đã xong”, không dùng việc có text hoặc đạt một số vòng cố định để báo thành công. Giới hạn vòng/thời gian chỉ là hàng rào vận hành; chạm giới hạn nghĩa cần dừng có trạng thái chưa hoàn tất hoặc chuyển xử lý, không tự biến thành thành công. Trong tác nhân AI loop, mô hình chọn công cụ kế tiếp theo ngữ cảnh mới; host thực thi và áp quyền, khác một decision tree có thứ tự công cụ được mã hóa sẵn.
+Mẫu đơn giản trong khóa dừng khi `stop_reason` khác `tool_use`. Khi triển khai và ôn thi, cần phân biệt kỹ hơn:
 
-Ví dụ để dễ hình dung: hai công cụ tra cứu chạy, một thành công, một lỗi. Không gắn lỗi vào lần tra cứu thành công và không tự biến lỗi thành “không tìm thấy”. Trả kết quả đúng từng ID.
+- `tool_use`: tiếp tục xử lý công cụ.
+- `end_turn`: mô hình đã kết thúc lượt trả lời.
+- Lý do khác, chẳng hạn chạm giới hạn đầu ra: xử lý theo trạng thái đó, không tự coi là hoàn tất nhiệm vụ.
+
+Không dò câu “tôi đã xong” để quyết định trạng thái. Giới hạn số vòng hoặc thời gian giúp kiểm soát tài nguyên; chạm giới hạn chỉ có nghĩa phải dừng hoặc chuyển xử lý, chưa chứng minh thành công.
+
+Trong vòng lặp của tác nhân AI, mô hình chọn công cụ tiếp theo dựa trên thông tin vừa nhận. Ứng dụng chịu trách nhiệm chạy công cụ và áp dụng quyền. Cách này khác quy trình có toàn bộ thứ tự công cụ được lập trình sẵn từ đầu.
 
 ## Câu hỏi
 
@@ -54,10 +59,14 @@ D. Không; phải phân biệt kết thúc lượt và tình trạng phản hồ
 2. **C.** A và B bỏ yêu cầu; D thay dữ liệu thực bằng suy đoán.
 3. **D.** A suy rộng sai điều kiện dừng trong ví dụ; B nhầm text với hoàn tất; C đặt số lần gọi làm tiêu chí thành công.
 
-## Đối chiếu Bedrock: Running công cụ functions
+## Đối chiếu Bedrock: chạy hàm thực thi công cụ
 
-Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276762) và đối chiếu khái niệm với bài chung. Converse trả toolResult, toolUseId, nội dung blocks và status success/error. Không nhầm status của nhà cung cấp với is_error trong API hoặc isError của MCP. Mỗi yêu cầu gọi công cụ cần kết quả liên kết đúng ID kể cả lỗi. Nguồn: sources/bedrock-lessons/276762.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
+Converse trả `toolResult`, `toolUseId`, các khối nội dung và `status` thành công hoặc lỗi. Đây là giao diện khác `is_error` của Messages API và `isError` của MCP. Mỗi lời gọi đều cần kết quả khớp mã, kể cả khi xảy ra lỗi. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276762). Bản lưu: `sources/bedrock-lessons/276762.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Implementing multiple turns](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289182), sources/vertex-lessons/289182.json. Duyệt mọi tool_use, route công cụ theo danh sách được phép, serialize result và báo is_error khi lỗi. stop_reason khác tool_use chưa đủ kết luận thành công: max_tokens/refusal/error cần xử lý riêng. Vòng while mẫu cần iteration/time limits. Dùng chung câu hỏi khái niệm.
+Duyệt mọi khối `tool_use`, chỉ chuyển tới công cụ được phép, chuyển kết quả sang dạng có thể gửi và đánh dấu `is_error` khi lỗi. Không coi mọi `stop_reason` khác `tool_use` là thành công: hết đầu ra, từ chối hoặc lỗi cần xử lý riêng. Vòng lặp mẫu cũng cần giới hạn số lần và thời gian khi triển khai. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Implementing multiple turns](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289182). Bản lưu: `sources/vertex-lessons/289182.json`.

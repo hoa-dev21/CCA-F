@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài giải quyết đầu ra JSON bị bao bởi Markdown và lời giải thích. Ví dụ lịch sử dùng assistant prefill mở code fence và stop sequence ở dấu đóng, rồi parse chuỗi nhận được.
 
-Đây là kỹ thuật định hướng định dạng trong mẫu model/SDK của khóa, không phải bảo đảm bản mô tả cấu trúc dữ liệu hoặc độ đúng nghiệp vụ. Không mặc định mô hình hiện tại hỗ trợ prefill hay phối hợp với mọi tính năng. Bản này mô tả bài đã học, không khuyến nghị chạy mã ví dụ chưa kiểm tra tương thích.
+Bài học xử lý tình huống cần JSON nhưng mô hình trả thêm lời giải thích hoặc khung định dạng Markdown. Ví dụ ở thời điểm khóa học dùng assistant prefill, tức viết sẵn phần mở đầu câu trả lời, để mở khung mã; sau đó dùng stop sequence, tức chuỗi đánh dấu dừng, ở dấu đóng khung.
 
-Để ôn Architect, đọc thêm EXAM-05 về tool_choice/schema và EXAM-06 về validation. Parser JSON thành công chưa chứng minh đủ trường, đúng giá trị hoặc nguồn có thông tin. Stop sequence cũng có thể làm đầu ra dừng không như mong muốn nếu thiết kế sai.
+Mục đích là hướng câu trả lời về dạng dễ đọc bằng chương trình. Đây không phải cơ chế bảo đảm dữ liệu đúng mọi yêu cầu. JSON đọc được vẫn có thể thiếu trường, chứa giá trị sai hoặc đưa thông tin không có trong nguồn.
+
+Ví dụ dùng kỹ thuật phụ thuộc mô hình và phiên bản. Trước khi chạy lại trên môi trường khác, phải kiểm tra khả năng hỗ trợ prefill và sự tương thích với các tính năng khác. Chuỗi dừng đặt không phù hợp cũng có thể cắt câu trả lời sớm.
+
+Khi ôn Architect, đọc thêm EXAM-05 về cấu trúc đầu ra và `tool_choice`, cùng EXAM-06 về kiểm tra dữ liệu. Cần phân biệt việc làm sạch định dạng với việc kiểm tra cấu trúc và ý nghĩa của kết quả.
 
 ## Câu hỏi
 
@@ -52,8 +55,12 @@ D. Chỉ đổi màu UI.
 
 ## Đối chiếu bài Bedrock
 
-Đã đọc [Structured data](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276724), sources/bedrock-lessons/276724.json. Cùng ví dụ prefill mở code fence và stop marker để bỏ phần bao Markdown. Chỉ mô tả kỹ thuật lịch sử; cần kiểm tra mô hình tương thích và validation, không coi parse được là đúng nghiệp vụ. Dùng chung bản giải thích/câu hỏi tương đương, không tăng số câu.
+Ví dụ dùng phần mở đầu câu trả lời để mở khối mã và chuỗi dừng để bỏ phần bao Markdown. Đây là kỹ thuật trong phiên bản của khóa; cần kiểm tra tương thích và dữ liệu đầu ra. Đọc được JSON chưa chứng minh đúng nghiệp vụ. Dùng chung phần giải thích và câu hỏi.
+
+Nguồn đối chiếu: [Structured data](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276724). Bản lưu: `sources/bedrock-lessons/276724.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Structured data](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289158), sources/vertex-lessons/289158.json. Mẫu ghép assistant prefill ```json với stop sequence ``` rồi json.loads. Đây là kỹ thuật lịch sử trong video, không bảo đảm schema/giá trị đúng và không mặc định tương thích mọi model/thinking mode. Ưu tiên quy định về đầu ra được hỗ trợ cùng validation. Dùng chung câu hỏi khái niệm.
+Mẫu điền trước dấu mở khối mã JSON, đặt chuỗi dừng ở dấu đóng rồi đọc dữ liệu bằng `json.loads`. Cách này không bảo đảm đúng schema hoặc giá trị, cũng không mặc định dùng được với mọi mô hình hay chế độ suy luận. Chọn cơ chế đầu ra được hỗ trợ và kiểm tra kết quả. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Structured data](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289158). Bản lưu: `sources/vertex-lessons/289158.json`.

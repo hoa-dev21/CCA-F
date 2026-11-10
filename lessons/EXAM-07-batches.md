@@ -4,15 +4,16 @@ Nguồn bổ trợ: Exam Guide CCAR-F v1.0, mục 4.5, trang PDF 18–19. Các c
 
 ## Nội dung bài học
 
-Đề cương mô tả Message Batches có ưu đãi chi phí nhưng thời gian xử lý có thể tới 24 giờ và không có bảo đảm độ trễ ngắn. Phù hợp báo cáo qua đêm hoặc kiểm toán tuần, không phù hợp gate chặn merge mà kỹ sư đang chờ.
 
-Con số ưu đãi trong Exam Guide là50%; đây là dữ kiện của bản đề cương, không phải báo giá hiện hành đã xác minh. Khi giải tình huống thi, ưu tiên ràng buộc độ trễ và khả năng tương tác trước lợi ích giảm giá.
+Message Batches xử lý một nhóm yêu cầu theo cách bất đồng bộ: gửi trước và nhận kết quả sau. Đề cương đang dùng nêu mức giảm chi phí 50% và thời gian xử lý có thể tới 24 giờ, không bảo đảm trả nhanh. Đây là dữ kiện của bản đề cương, không phải báo giá hoặc cam kết dịch vụ hiện hành đã được xác minh.
 
-Dùng `custom_id` để ghép yêu cầu và phản hồi; không giả định thứ tự đầu ra khớp thứ tự gửi. Khi một số tài liệu thất bại, sửa nguyên nhân rồi gửi lại phần lỗi, không chạy lại toàn bộ tập đã thành công. Tối ưu prompt trên mẫu trước đợt lớn giảm chi phí lặp.
+Hãy chọn theo hạn hoàn thành trước khi xét giảm giá. Báo cáo qua đêm hoặc kiểm toán tuần có thể chấp nhận chờ. Một bước kiểm tra bắt buộc trước khi hợp nhất mã, khi kỹ sư đang chờ, cần cách xử lý đáp ứng thời gian ngắn hơn.
 
-Batch không tự chạy một vòng tương tác nhiều lượt gọi công cụ trong cùng yêu cầu: nếu phải nhận yêu cầu gọi công cụ, thực thi bên ngoài rồi gửi kết quả, cần điều phối các bước riêng.
+Dùng `custom_id` để liên kết kết quả với yêu cầu ban đầu; không giả định thứ tự kết quả giống thứ tự gửi. Nếu 8 trong 500 tài liệu lỗi, tìm đúng 8 mục, sửa nguyên nhân rồi gửi lại phần lỗi thay vì chạy lại cả phần đã thành công. Tối ưu prompt trên mẫu trước khi chạy lô lớn cũng giúp giảm chi phí sửa lại.
 
-Khi tính hạn hoàn tất, tính cả thời gian chờ gom batch và thời gian xử lý. Theo ví dụ biên trong đề cương, giới hạn 30 giờ với xử lý tối đa 24 giờ còn tối đa 6 giờ cho chờ gom nếu không xét chi phí khác; lịch 4 giờ có thêm khoảng đệm. Production cần tính cả thử lại và overhead, không coi con số lý thuyết là SLA được dịch vụ cam kết.
+Một yêu cầu trong batch không tự thực hiện toàn bộ vòng gọi công cụ bên ngoài. Nếu mô hình yêu cầu công cụ, ứng dụng phải chạy công cụ rồi gửi kết quả trở lại qua các bước điều phối phù hợp.
+
+Khi tính hạn, cộng cả thời gian chờ gom lô và xử lý. Theo ví dụ lý thuyết, hạn 30 giờ với xử lý tối đa 24 giờ chỉ còn 6 giờ để chờ gom nếu bỏ qua chi phí khác; lịch gom 4 giờ có thêm khoảng đệm. Vận hành thực tế còn phải tính thử lại và thời gian phụ, không coi phép tính này là cam kết dịch vụ.
 
 ## Câu hỏi tình huống
 

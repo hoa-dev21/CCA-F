@@ -4,11 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-
 
 ## Nội dung bài học
 
-Computer Use dựa trên cùng vòng tool use: gửi yêu cầu và khai báo công cụ, nhận yêu cầu gọi công cụ, ứng dụng thực thi thao tác trong môi trường desktop, trả kết quả rồi mô hình quyết định tiếp. Bản mô tả cấu trúc dữ liệu có sẵn mô tả khả năng; nó không tự cung cấp desktop hay thực thi lệnh.
 
-Reference implementation trong bài dùng Docker, Firefox và mã mô phỏng chuột/bàn phím. AWS profile là phần cấu hình của mẫu Bedrock, không phải một yêu cầu phổ quát của mọi triển khai Computer Use. Trước triển khai phải xác minh phiên bản tool/model/provider tương thích.
+Computer Use dùng cùng nguyên tắc vòng gọi công cụ: gửi mục tiêu và định nghĩa công cụ cho mô hình, nhận yêu cầu thao tác, để ứng dụng thực hiện trong môi trường máy tính rồi gửi kết quả trở lại. Mô hình quan sát kết quả để quyết định bước tiếp theo.
 
-Giữ liên kết giữa yêu cầu và kết quả công cụ, báo lỗi thực thi rõ ràng và quan sát lại màn hình sau hành động. Đặt giới hạn bước/thời gian, điều kiện thành công, đường thoát khi lỗi và phạm vi quyền. Không lặp click vô hạn khi trang không thay đổi; cần chẩn đoán hoặc chuyển xử lý phù hợp.
+Bản mô tả công cụ chỉ cho biết khả năng và đầu vào. Nó không tự tạo môi trường máy tính hoặc chạy chuột, bàn phím. Mẫu triển khai trong bài dùng Docker, Firefox và mã điều khiển các thao tác này.
+
+AWS profile là cấu hình của mẫu dùng Bedrock, không phải yêu cầu chung cho mọi cách triển khai Computer Use. Trước khi thực hành, cần kiểm tra mô hình, công cụ và nhà cung cấp có tương thích với nhau không.
+
+Giữ mã liên kết giữa lời gọi và kết quả, báo rõ lỗi thực thi và quan sát lại màn hình sau thao tác. Ví dụ: nếu bộ thực thi không tìm được màn hình, phải gửi lỗi để có thể xử lý tiếp, không giả vờ đã bấm thành công.
+
+Đặt giới hạn số bước, thời gian, điều kiện thành công và cách thoát hoặc chuyển xử lý khi lỗi. Lặp lại thao tác bấm mà trang không đổi cần được chẩn đoán, không tiếp tục vô hạn.
 
 ## Câu hỏi
 
@@ -52,4 +57,6 @@ D. Bản mô tả cấu trúc dữ liệu tự cài Docker.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [How computer use works](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289234), sources/vertex-media/289234.json. Computer Use dùng công cụ schema/request/result như tool use; host phải cung cấp môi trường mô phỏng chuột/bàn phím và phản hồi. Reference Docker là implementation mẫu, không phải bản mô tả cấu trúc dữ liệu tự tạo desktop hay đảm bảo an toàn tuyệt đối. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Computer Use dùng định nghĩa, yêu cầu và kết quả công cụ theo cùng nguyên tắc tool use. Ứng dụng phải cung cấp môi trường thao tác chuột, bàn phím và trả phản hồi. Mẫu Docker là một cách triển khai; schema không tự tạo môi trường máy tính hoặc bảo đảm an toàn tuyệt đối. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [How computer use works](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289234). Bản lưu: `sources/vertex-media/289234.json`.

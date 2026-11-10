@@ -4,13 +4,19 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Khi đã có vòng lặp và bộ xử lý kết quả công cụ, thêm một công cụ gồm bốn phần: viết hàm, định nghĩa bản mô tả cấu trúc dữ liệu, đưa bản mô tả cấu trúc dữ liệu vào danh sách `tools`, thêm ánh xạ trong router.
 
-Hai nửa tích hợp đều cần thiết. Bản mô tả cấu trúc dữ liệu giúp Claude biết khả năng; router giúp ứng dụng thực thi. Có bản mô tả cấu trúc dữ liệu nhưng không có route thì yêu cầu không chạy được. Có hàm nhưng không quảng bá bản mô tả cấu trúc dữ liệu thì Claude không được thông báo về công cụ đó trong yêu cầu.
+Khi đã có vòng xử lý công cụ dùng chung, thêm một công cụ mới cần bốn việc:
 
-Bài minh họa hệ thống nhắc việc gồm lấy thời gian, cộng khoảng thời gian và đặt nhắc việc. Một công cụ có thể phụ thuộc kết quả của công cụ trước; vì vậy không mặc định chạy mọi công cụ đồng thời. Ví dụ để dễ hình dung: phải xác định đúng ngày trước khi tạo nhắc việc ở ngày đó.
+1. Viết hàm thực hiện thao tác.
+2. Viết bản mô tả công cụ và cấu trúc đầu vào (schema).
+3. Đưa bản mô tả vào danh sách `tools` gửi cho Claude.
+4. Thêm ánh xạ từ tên công cụ đến hàm trong bộ điều phối (router).
 
-Giữ lịch sử đầy đủ để Claude dùng kết quả trung gian. Việc thêm công cụ không đòi hỏi viết một nhánh hội thoại riêng cho mọi chuỗi thao tác nếu vòng lặp chung đã xử lý đúng blocks và kết quả.
+Hai phía đều phải được kết nối. Nếu có mô tả nhưng router không nhận ra tên, ứng dụng không chạy được yêu cầu của Claude. Nếu chỉ có hàm trong mã mà không gửi định nghĩa trong `tools`, Claude chưa được thông báo rằng công cụ đó có thể sử dụng.
+
+Ví dụ của bài là hệ thống nhắc việc có công cụ lấy thời gian, tính thời điểm và tạo lời nhắc. Muốn nhắc vào một ngày được tính từ hôm nay, phải lấy kết quả tính ngày trước rồi mới tạo lời nhắc. Không thể mặc định mọi công cụ đều chạy đồng thời.
+
+Giữ đầy đủ lịch sử và kết quả trung gian để Claude biết đã làm đến đâu. Nếu vòng xử lý chung đã quản lý đúng các khối nội dung và kết quả, bạn không cần viết riêng một nhánh hội thoại cho mọi chuỗi công cụ có thể xuất hiện.
 
 ## Câu hỏi
 
@@ -50,10 +56,14 @@ D. Bỏ kết quả trung gian.
 2. **B.** A và C không suy ra từ dữ kiện; D giả định cơ chế tự quảng bá không có.
 3. **C.** A đoán tham số; B đảo phụ thuộc; D mất dữ liệu đầu vào cần thiết.
 
-## Đối chiếu Bedrock: Adding multiple các công cụ
+## Đối chiếu Bedrock: thêm nhiều công cụ
 
-Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276761) và đối chiếu khái niệm với bài chung. Converse thêm schemas và router theo cùng nguyên tắc. Bài nói rõ set_reminder mẫu chỉ in output; nó chưa chứng minh có lời nhắc việc thật tồn tại trong lịch/backend. Muốn triển khai phải có tích hợp và kiểm chứng trạng thái thực. Nguồn: sources/bedrock-lessons/276761.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
+Converse thêm schema và ánh xạ tên công cụ tới hàm theo cùng nguyên tắc. Trong bài, `set_reminder` chỉ in nội dung, chưa tạo lời nhắc thật trong lịch hoặc hệ thống phía sau. Muốn dùng thực tế phải tích hợp và kiểm tra trạng thái sau thao tác. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276761). Bản lưu: `sources/bedrock-lessons/276761.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Using multiple tools](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289185), sources/vertex-lessons/289185.json. Thêm công cụ bằng bản mô tả cấu trúc dữ liệu+dispatcher+implementation. set_reminder được bài xác nhận là placeholder print, không đặt lời nhắc việc hệ thống. Chuỗi công cụ phụ thuộc kết quả trước không thể chạy song song mù quáng. Dùng chung câu hỏi khái niệm.
+Thêm công cụ cần bản mô tả, bộ điều phối và mã thực thi. Bài xác nhận `set_reminder` chỉ là hàm tạm để in kết quả, không tạo lời nhắc hệ thống. Các công cụ phụ thuộc kết quả trước phải chạy đúng thứ tự, không tự động chạy song song cả nhóm. Dùng chung câu hỏi khái niệm.
+
+Nguồn đối chiếu: [Using multiple tools](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289185). Bản lưu: `sources/vertex-lessons/289185.json`.

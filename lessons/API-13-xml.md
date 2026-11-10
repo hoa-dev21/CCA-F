@@ -4,13 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Khi prompt trộn yêu cầu, tài liệu và mã nguồn, mô hình có thể khó phân biệt phần nào phục vụ mục đích nào. Các cặp thẻ như `<source_code>...</source_code>` và `<reference_docs>...</reference_docs>` tạo ranh giới rõ.
 
-Không cần một bộ tên thẻ chuẩn. Chọn tên mô tả nội dung, dùng nhất quán và đóng thẻ rõ ràng. `<sales_records>` truyền đạt ý nghĩa cụ thể hơn `<data>` khi có nhiều loại dữ liệu trong cùng prompt.
+Khi một prompt chứa cả yêu cầu, mã nguồn và tài liệu tham khảo, cần giúp Claude nhận ra từng phần. Bạn có thể đặt nội dung trong các cặp thẻ theo kiểu XML, gồm thẻ mở và thẻ đóng.
 
-Bài đặc biệt khuyến nghị cách này với ngữ cảnh dài, nhiều loại nội dung hoặc nhiều biến được chèn vào template. Lợi ích chính là tổ chức thông tin, không phải thay thế dữ liệu còn thiếu.
+Ví dụ: đặt mã trong `<source_code>...</source_code>` và tài liệu trong `<reference_docs>...</reference_docs>`. Sau đó yêu cầu Claude đối chiếu mã với tài liệu. Nhờ tên thẻ, vai trò của từng đoạn rõ hơn so với việc ghép mọi thứ thành một khối văn bản.
 
-Ví dụ để dễ hình dung: tách log lỗi và đoạn cấu hình thành hai vùng rồi yêu cầu đối chiếu chúng. Việc có ranh giới giúp biết lỗi nằm trong log hay trong cấu hình, thay vì coi toàn bộ là một khối văn bản.
+Không có bộ tên thẻ bắt buộc cho cách tổ chức prompt này. Hãy chọn tên mô tả đúng nội dung, dùng nhất quán và đóng thẻ đầy đủ. Nếu có nhiều loại dữ liệu, tên `<sales_records>` cho biết đây là dữ liệu bán hàng rõ hơn tên chung `<data>`.
+
+Cách này hữu ích khi nội dung dài, có nhiều nguồn hoặc dùng mẫu prompt chứa các phần được thay vào mỗi lần chạy. Nó giúp tổ chức thông tin; không tự bổ sung dữ liệu thiếu, kết nối cơ sở dữ liệu hay bảo đảm mọi kết luận đúng.
 
 ## Câu hỏi
 
@@ -52,8 +53,12 @@ D. Tăng dung lượng ngữ cảnh vô hạn.
 
 ## Đối chiếu Bedrock: Structure with XML tags
 
-Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276744) và đối chiếu khái niệm với bài chung. Cùng phân vùng mã/tài liệu và dữ liệu đầu vào bằng tags có nghĩa. Tags là tổ chức ngữ cảnh, không tự là cơ chế bảo mật dữ liệu. Nguồn: sources/bedrock-lessons/276744.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
+Bài Bedrock dùng thẻ có tên rõ để tách mã, tài liệu và dữ liệu đầu vào. Thẻ giúp tổ chức ngữ cảnh, không tự tạo cơ chế bảo mật. Dùng chung câu hỏi khái niệm.
+
+Nguồn đối chiếu: [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276744). Bản lưu: `sources/bedrock-lessons/276744.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Structure with XML tags](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289171), sources/vertex-lessons/289171.json. XML phân ranh instructions/data/code/docs và tên tag mô tả vai trò. Delimiter tăng rõ ràng nhưng không tạo ranh giới bảo mật tự động; nội dung bên trong vẫn là dữ liệu chưa tin cậy theo nguồn. Dùng chung câu hỏi khái niệm.
+Thẻ XML giúp phân biệt hướng dẫn, dữ liệu, mã và tài liệu. Tên thẻ nên nói rõ vai trò. Dấu phân cách làm cấu trúc dễ hiểu hơn nhưng không tự biến nội dung bên trong thành dữ liệu đáng tin cậy hoặc thành chỉ dẫn được phép thực hiện. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Structure with XML tags](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289171). Bản lưu: `sources/vertex-lessons/289171.json`.

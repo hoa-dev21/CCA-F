@@ -4,11 +4,16 @@ Nguồn: Exam Guide CCAR-F v1.0 July2026, mục2.1–2.5, trang PDF9–11. Bài 
 
 ## Nội dung bài học
 
-Mô tả công cụ phải phân biệt được mục đích, input/output và trường hợp biên; sửa description cùng quy tắc system prompt gây liên kết từ khóa sai. Công cụ có bản mô tả cấu trúc dữ liệu chặt nhưng tên/mô tả mơ hồ vẫn có thể bị chọn nhầm.
 
-Công cụ selection, thực thi và quyền là ba phần riêng. `any` yêu cầu dùng công cụ nhưng không ép đúng công cụ cụ thể; forced selection theo tên cần phối hợp với mã host và các lượt tiếp theo để thực hiện đúng thứ tự. Cấp công cụ theo vai trò và thay capability rộng bằng công cụ hẹp có validation thật.
+Một công cụ có schema chặt vẫn có thể bị chọn nhầm nếu tên và mô tả không rõ. Cần mô tả mục đích, đầu vào, đầu ra, trường hợp dễ nhầm và sửa cả quy tắc chọn công cụ theo từ khóa sai trong hướng dẫn hệ thống.
 
-Lỗi MCP cần `isError` cùng thông tin mô tả ứng dụng đủ để chọn cách phục hồi. Một nội dung dữ liệu gửi đi chỉ nói “failed” không phân biệt được lỗi quá thời gian chờ với chính sách cấm. Truy vấn thành công nhưng không có dữ liệu phải giữ nghĩa rỗng hợp lệ. Với codebase có wrappers, tìm tên export rồi tìm cả các tên đó để theo caller, không chỉ grep tên hàm gốc một lần.
+Phân biệt ba việc: mô hình chọn công cụ nào, ứng dụng có quyền thực hiện hay không và ứng dụng thực hiện thế nào. `tool_choice="any"` yêu cầu gọi một công cụ nhưng không ép một tên cụ thể.
+
+Ví dụ: Bước bổ sung dữ liệu chỉ được chạy sau khi thông tin mô tả đã kiểm tra. Hãy ép công cụ trích thông tin mô tả ở lượt đầu, để ứng dụng chạy và xác minh kết quả, gửi kết quả lại rồi mới cho phép bước tiếp theo. Mã điều phối phải thực hiện thứ tự này; cấu hình chọn công cụ không tự bảo đảm toàn quy trình.
+
+Lỗi MCP cần được đánh dấu bằng `isError` và có nội dung đủ để chọn cách xử lý: loại lỗi, có thể thử lại không và mô tả cụ thể. Lỗi hết thời gian chờ có thể thử lại trong giới hạn; hoàn tiền bị chính sách cấm cần giải thích hoặc chuyển cấp. Kết quả tìm kiếm thành công nhưng rỗng vẫn phải được phân biệt với lỗi truy cập.
+
+Cấp công cụ phù hợp vai trò và thu hẹp khả năng bằng kiểm tra thật. Khi tìm nơi gọi hàm trong mã có lớp trung gian (wrapper), xác định cả các tên xuất ra hoặc bí danh rồi tìm từng tên. Chỉ tìm tên hàm gốc một lần có thể bỏ sót nơi gọi qua tên khác.
 
 ## Câu hỏi
 

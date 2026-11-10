@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101
 
 ## Nội dung bài học
 
-Claude có các giao diện bám theo môi trường làm việc: Code cho phát triển; cộng tác trong Slack; design cho prototype; tích hợp Microsoft 365 cho workbook, deck, văn bản/email; công cụ browser cho công việc trên web.
 
-Lựa chọn theo nơi dữ liệu và thao tác thực sự diễn ra. Nếu cần sửa workbook đang mở và giữ liên kết công thức, tích hợp trong Excel khác tạo một file mới từ Chat. Nếu cần sửa repo và chạy kiểm thử, Code khác chỉ viết hướng dẫn trong hội thoại.
+Bài học giới thiệu các cách dùng Claude trong những môi trường làm việc khác nhau: phát triển phần mềm với Code, trao đổi trong Slack, tạo bản mẫu thiết kế, làm việc với tài liệu Microsoft 365 và thực hiện tác vụ trên trình duyệt.
 
-Mỗi giao diện có quyền, khả năng và availability riêng. Không giả định dữ liệu, trạng thái hay quyền truy cập của một giao diện tự chuyển sang mọi giao diện khác. Đối với Architect, lấy đây làm định hướng, ưu tiên chi tiết kỹ thuật của Exam Guide thay vì học thuộc mọi tên sản phẩm mới.
+Để chọn công cụ, hãy trả lời ba câu hỏi: Dữ liệu đang ở đâu? Bạn cần thực hiện thao tác gì? Công cụ có quyền và khả năng kiểm tra kết quả hay không?
+
+Ví dụ: Sửa một sổ làm việc Excel đang mở, có các công thức phụ thuộc lẫn nhau, khác với tạo một tệp bảng tính mới từ cuộc trò chuyện. Tương tự, sửa mã trong kho mã nguồn và chạy kiểm thử cần môi trường thực thi; một câu trả lời mô tả cách sửa chưa thực hiện những việc đó.
+
+Mỗi giao diện có khả năng, quyền truy cập và điều kiện sử dụng riêng. Không nên mặc định dữ liệu hoặc quyền ở một nơi tự chuyển sang mọi nơi khác. Khi ôn Architect, dùng bài này để hiểu cách chọn môi trường làm việc, rồi học các nội dung kỹ thuật theo đề cương thi thay vì học thuộc mọi tên sản phẩm.
 
 ## Câu hỏi
 

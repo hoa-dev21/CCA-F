@@ -4,11 +4,16 @@ Nguồn: Exam Guide CCAR-F v1.0 July2026, mục5.1–5.6, trang PDF19–23. Câu
 
 ## Nội dung bài học
 
-Tóm tắt lịch sử cần giữ facts quyết định dưới dạng có cấu trúc: order ID, số tiền, ngày, trạng thái và kỳ vọng cụ thể. Bản ghi nằm trên đĩa hoặc server chưa đủ; request/agent khởi động lại phải nhận ngữ cảnh liên quan. Cô lập khám phá dài và đưa key findings lên đầu bản tổng hợp giúp giảm bỏ sót.
 
-Khi nguồn bất đồng, giữ từng claim cùng nguồn, thời gian và phương pháp; tác nhân điều phối đối chiếu trước synthesis. Lỗi truy cập phải báo là lỗi/khoảng trống chứ không biến thành truy vấn thành công rỗng. Dữ liệu thiếu không được lấp bằng suy đoán chỉ để báo cáo có vẻ đầy đủ.
+Khi rút gọn lịch sử, giữ riêng những dữ kiện quyết định dưới dạng có cấu trúc: mã đơn, số tiền, ngày, trạng thái và mong muốn cụ thể. Ví dụ: “hoàn 35% đơn A trước ngày 12” không được biến thành “khách muốn hoàn sớm”.
 
-Điểm tự tin cần hiệu chỉnh với nhãn thật ở cấp field/document type. Kiểm tra các ca yếu/mơ hồ và vẫn chọn mẫu ngẫu nhiên phân tầng ở nhóm điểm tự tin cao để đo lỗi đang lọt. Một điểm độ chính xác tổng thể không đủ cho quyết định tự động hóa mọi phân đoạn.
+Bản ghi lưu trên đĩa hoặc máy chủ chưa đủ. Mỗi yêu cầu hoặc tác nhân được khởi động lại cần thực sự nhận phần dữ kiện liên quan. Tách kết quả khám phá dài khỏi phiên chính và đặt phát hiện quan trọng ở đầu bản tổng hợp giúp giảm bỏ sót.
+
+Khi nguồn bất đồng, chuyển cả các giá trị cùng nguồn, thời gian và phương pháp cho bên điều phối đối chiếu trước khi tổng hợp. Hai giá trị đo ở hai thời kỳ khác nhau chưa chắc mâu thuẫn. Không xóa một nguồn hoặc đoán thêm dữ liệu để báo cáo có vẻ đầy đủ.
+
+Lỗi truy cập phải được báo là lỗi hoặc khoảng trống thông tin. Không biến nó thành một lần tìm kiếm thành công nhưng không có kết quả.
+
+Trước khi giảm người kiểm tra, đo độ chính xác theo trường dữ liệu và loại tài liệu, rồi hiệu chỉnh điểm tự tin bằng dữ liệu có nhãn. Chuyển các trường hợp yếu hoặc mơ hồ cho người duyệt, đồng thời vẫn chọn mẫu ngẫu nhiên trong từng nhóm điểm cao để phát hiện lỗi đang lọt. Một tỷ lệ đúng chung, chẳng hạn 97%, chưa đủ để tự động thông qua mọi nhóm dữ liệu.
 
 ## Câu hỏi
 

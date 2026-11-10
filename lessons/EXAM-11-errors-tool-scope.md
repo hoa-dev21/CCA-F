@@ -4,19 +4,25 @@ Nguồn: Exam Guide CCAR-F v1.0, mục 2.1–2.3, trang PDF 9–11. Bài bổ tr
 
 ## Nội dung bài học
 
-Công cụ có ranh giới mơ hồ dễ bị chọn nhầm. Description cần làm rõ đầu vào, đầu ra, lúc dùng, trường hợp biên và khác biệt với công cụ tương tự. Nếu vẫn misroute, kiểm tra cả system prompt có liên kết từ khóa quá rộng không. Có thể tách công cụ tổng quát thành các chức năng có hợp đồng rõ.
 
-Ví dụ theo mục2.1: đổi `analyze_content` mơ hồ thành `extract_web_results`, mô tả rõ nó nhận kết quả web và trả dữ liệu trích xuất, khác công cụ xử lý tài liệu. Công cụ `analyze_document` ôm nhiều việc có thể tách thành `extract_data_points`, `summarize_content`, `verify_claim_against_source`. Thêm định dạng input và ví dụ truy vấn giúp xác định ranh giới; nếu system prompt nói “có chữ analysis thì dùng analyze_content”, phải sửa quy tắc từ khóa đó cùng với description.
+Nếu các công cụ có tên hoặc mô tả mơ hồ, mô hình dễ chọn nhầm. Mô tả cần nêu đầu vào, đầu ra, lúc dùng, trường hợp dễ nhầm và điểm khác với công cụ gần giống. Đồng thời kiểm tra hướng dẫn hệ thống, vì một quy tắc chọn theo từ khóa quá rộng có thể làm mô hình tiếp tục chọn sai.
 
-Lỗi cần phân loại: transient có thể phục hồi, validation cần sửa input, permission cần xử lý quyền và business cần giải thích chính sách. Thông tin mô tả lỗi nên có loại, khả năng thử lại và mô tả hữu ích. `isError` trong MCP và `is_error` của tool-result ở API là hai giao diện khác nhau; không mặc định mọi tên trường là chuẩn chung cho mọi SDK.
+Ví dụ: Đổi `analyze_content` thành `extract_web_results` và nói rõ công cụ nhận kết quả web để trích dữ liệu. Một công cụ tài liệu ôm quá nhiều việc có thể tách thành `extract_data_points`, `summarize_content` và `verify_claim_against_source`. Nếu hướng dẫn cũ nói cứ thấy chữ “analysis” là chọn công cụ phân tích chung, phải sửa cả hướng dẫn đó.
 
-Ví dụ nội dung dữ liệu gửi đi lỗi do ứng dụng thiết kế trong MCP result có `isError: true`, phần nội dung chứa `errorCategory: "business"`, `isRetryable: false`, mã `REFUND_LIMIT_EXCEEDED` và mô tả dễ hiểu cho khách. Nếu hợp đồng dùng tên `retriable: false` như một ví dụ trong guide, adapter phải ánh xạ nhất quán; các tên thông tin mô tả này không tự là field bắt buộc của MCP. Không trả một câu “Operation failed” cho mọi lỗi: lỗi quá thời gian chờ có thể thử lại giới hạn, validation cần sửa input, permission cần xử lý quyền, business cần luồng được phép. Kết quả tìm kiếm hợp lệ không có bản ghi phải biểu diễn thành công rỗng, khác lỗi không truy cập được nguồn.
+Lỗi cần cho biết cách xử lý tiếp:
 
-Đừng thử lại một vi phạm chính sách chỉ vì đổi lời nhắc. Truy vấn thành công không có kết quả khác lỗi truy cập. Tác nhân con thử phục hồi cục bộ hợp lý trước khi gửi tác nhân điều phối lỗi còn lại và kết quả một phần.
+- Lỗi tạm thời (transient), như hết thời gian chờ: có thể thử lại trong giới hạn.
+- Lỗi đầu vào (validation): sửa tham số.
+- Lỗi quyền (permission): xử lý quyền phù hợp.
+- Lỗi nghiệp vụ (business): giải thích chính sách hoặc chuyển sang luồng được phép.
 
-Mỗi tác nhân AI nhận công cụ phù hợp vai trò. Nếu tổng hợp thường cần kiểm tra fact đơn giản, cấp công cụ hẹp cho nhu cầu đó có thể giảm roundtrip; điều tra phức tạp vẫn đi qua tác nhân điều phối. Không vì tiện mà cấp toàn bộ công cụ tìm kiếm/sửa cho mọi tác nhân AI.
+Trong MCP, `isError` đánh dấu lỗi; trong kết quả công cụ của API được học, tên trường là `is_error`. Không trộn hai giao diện. Một kết quả MCP có thể dùng `isError: true`, còn phần nội dung do ứng dụng thiết kế chứa `errorCategory: "business"`, `isRetryable: false`, mã `REFUND_LIMIT_EXCEEDED` và giải thích dễ hiểu. Nếu dùng tên `retriable` theo một ví dụ khác, phần chuyển đổi phải thống nhất. Các trường phân loại này không tự là trường bắt buộc chung của MCP.
 
-Thay `fetch_url` tùy ý bằng `load_document` kiểm tra URL thuộc kho tài liệu được phép là cách thu hẹp capability, không chỉ đổi tên. Nhiều công cụ ngoài chuyên môn làm tăng lựa chọn sai; các con số18 và4–5 trong guide là ví dụ, không phải một ngưỡng tối ưu phổ quát. Với `tool_choice`, `auto` cho mô hình quyết định có dùng công cụ; `any` buộc dùng một công cụ nhưng không chọn đúng tên thay bạn; `{"type":"tool","name":"extract_metadata"}` chọn công cụ cụ thể khi mode hỗ trợ. Thực thi và xác minh thông tin mô tả, trả result rồi mới mở bước enrichment ở lượt sau; ép một công cụ ở lượt đầu không tự cưỡng chế toàn quy trình xử lý nếu host vẫn cho vượt bước.
+Không trả cùng câu “Operation failed” cho mọi lỗi. Cũng không đổi lỗi truy cập thành danh sách rỗng: tìm kiếm thành công không có bản ghi khác với chưa truy cập được nguồn. Tác nhân con thử khắc phục cục bộ khi hợp lý, rồi báo lỗi còn lại và kết quả một phần cho bên điều phối.
+
+Cấp công cụ theo vai trò. Tác nhân tổng hợp có thể được dùng công cụ hẹp để kiểm tra một dữ kiện đơn giản, còn điều tra sâu vẫn qua bên điều phối. Thay `fetch_url` tùy ý bằng `load_document` có kiểm tra URL thuộc kho được phép là thu hẹp khả năng thật, không chỉ đổi tên. Các con số 18 và 4–5 công cụ trong đề cương là ví dụ, không phải ngưỡng tối ưu cho mọi ứng dụng.
+
+Với `tool_choice`, `auto` cho phép mô hình quyết định có gọi công cụ; `any` yêu cầu gọi một công cụ nhưng không ép tên cụ thể. Cấu hình `{"type":"tool","name":"extract_metadata"}` chọn công cụ cụ thể khi được hỗ trợ. Nếu phải trích thông tin mô tả trước khi bổ sung dữ liệu, ứng dụng cần thực thi, kiểm tra, trả kết quả rồi mới mở bước tiếp theo. Ép công cụ ở lượt đầu chưa đủ nếu mã điều phối vẫn cho bỏ qua điều kiện.
 
 ## Câu hỏi
 

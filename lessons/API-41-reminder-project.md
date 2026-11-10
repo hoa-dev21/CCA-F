@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài dùng tác vụ nhắc việc để chỉ ra khoảng cách giữa câu trả lời và hành động thật. Cần ba khả năng: lấy thời gian hiện tại, tính mốc thời gian và ghi nhắc việc vào hệ thống.
 
-Mô hình có thể diễn đạt một lời hứa, nhưng lời hứa không tạo bản ghi. Nếu ngày tính toán cần dữ liệu thời gian hiện tại, kết quả bước trước phải được dùng cho bước sau. Tách các khả năng có hợp đồng rõ giúp phối hợp và kiểm tra từng phần.
+Ví dụ nhắc việc giúp phân biệt một câu trả lời với một hành động đã thực hiện. Để tạo lời nhắc, hệ thống cần lấy thời gian hiện tại, tính thời điểm cần nhắc và ghi lời nhắc vào nơi quản lý.
 
-Ví dụ để dễ hình dung: khách muốn nhắc sau một số ngày; hệ thống cần mốc chính xác và xác nhận thao tác tạo lời nhắc việc. Quy ước timezone/ngày mơ hồ là điều cần làm rõ theo hợp đồng ứng dụng, không mặc định mô hình tự có mọi trạng thái môi trường.
+Claude nói “Tôi sẽ nhắc bạn” chưa tạo ra bản ghi nào. Ứng dụng phải thực hiện thao tác và kiểm tra kết quả trước khi xác nhận với người dùng.
+
+Ví dụ: Người dùng muốn được nhắc sau ba ngày. Nếu cách tính cần mốc hiện tại, hệ thống phải lấy mốc đó trước, chuyển nó cho bước tính toán, rồi dùng thời điểm đã tính để tạo lời nhắc. Công cụ tính thời gian giúp thực hiện phép tính chuyên biệt thay vì chỉ dựa vào câu trả lời tự do của mô hình.
+
+Các công cụ cần có đầu vào và kết quả rõ để phối hợp và kiểm tra từng bước. Những điểm như múi giờ hoặc cách hiểu một ngày mơ hồ cần được quy định hoặc hỏi lại theo yêu cầu ứng dụng; không nên mặc định mô hình tự biết mọi trạng thái môi trường.
 
 ## Câu hỏi
 
@@ -52,4 +55,6 @@ D. Chỉ thêm lời giải thích.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Project overview](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289175), sources/vertex-lessons/289175.json. Dự án chia lấy thời gian, cộng thời lượng và tạo lời nhắc việc. Phải xét timezone/độ mơ hồ; lời giới thiệu nói scheduled notification nhưng implementation ở289185 chỉ là placeholder print. Không khẳng định đã hẹn nhắc thật. Dùng chung câu hỏi khái niệm.
+Dự án chia thành lấy thời gian, cộng khoảng thời gian và tạo lời nhắc; cần làm rõ múi giờ và các cách hiểu mơ hồ. Phần giới thiệu nói tới thông báo theo lịch, nhưng mã ở bài 289185 chỉ in kết quả để minh họa. Vì vậy chưa thể khẳng định lời nhắc thật đã được tạo. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Project overview](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289175). Bản lưu: `sources/vertex-lessons/289175.json`.

@@ -4,13 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-**One-shot** dùng một ví dụ; **multi-shot** dùng nhiều ví dụ. Mỗi ví dụ cho thấy đầu vào và đầu ra mong muốn, hữu ích với định dạng phức tạp, giọng điệu và trường hợp mơ hồ.
 
-Bài minh họa lỗi phân loại sắc thái châm biếm: từ ngữ có vẻ tích cực nhưng ý nghĩa thực tế tiêu cực. Thêm nhiều câu tích cực đơn giản không thể hiện được ranh giới khó; ví dụ châm biếm có nhãn đúng minh họa điều hệ thống cần học.
+Bạn có thể đưa ví dụ vào prompt để Claude hiểu rõ kết quả mong muốn. Dùng một ví dụ gọi là one-shot; dùng nhiều ví dụ gọi là multi-shot. Mỗi ví dụ nên phân biệt rõ đầu vào mẫu và đầu ra đạt yêu cầu.
 
-Đặt tên rõ phần đầu vào, phần đầu ra mẫu; có thể dùng XML để phân vùng. Giải thích vì sao đầu ra là tốt giúp làm rõ yêu cầu tinh tế. Dùng lỗi thường gặp và đầu ra đạt chất lượng trong phép đánh giá để chọn ví dụ phù hợp tác vụ.
+Ví dụ đặc biệt hữu ích khi định dạng phức tạp, giọng văn khó mô tả hoặc dữ liệu có nhiều cách hiểu. Có thể dùng các thẻ XML để tách đầu vào và đầu ra, kèm lời giải thích ngắn về điểm cần học từ mẫu.
 
-Ví dụ để dễ hình dung: bộ trích xuất hay điền ngày thiếu bằng cách đoán. Một ví dụ đầu vào không có ngày, cùng đầu ra thể hiện cách xử lý dữ liệu thiếu theo hợp đồng, hữu ích hơn nhiều ví dụ chỉ chứa đầy đủ dữ liệu.
+Trong bài, hệ thống phân loại sai câu châm biếm: câu dùng từ tích cực nhưng thực chất thể hiện thái độ tiêu cực. Một ví dụ châm biếm có nhãn đúng giúp làm rõ trường hợp này hơn việc thêm nhiều câu khen đơn giản.
+
+Hãy chọn ví dụ dựa trên lỗi thường gặp. Nếu ứng dụng hay tự đoán ngày khi tài liệu không có ngày, hãy đưa một mẫu thiếu ngày cùng đầu ra xử lý đúng theo quy định. Khi có nhiều kiểu lỗi, dùng các mẫu phù hợp với từng kiểu thay vì lặp lại một mẫu dễ.
 
 ## Câu hỏi
 
@@ -52,8 +53,12 @@ D. Không nêu định dạng đầu ra.
 
 ## Đối chiếu Bedrock: Providing examples
 
-Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276747) và đối chiếu khái niệm với bài chung. Cùng ví dụ châm biếm, few-shot và lựa chọn ví dụ từ phép đánh giá. Tập ví dụ tốt không loại bỏ yêu cầu đánh giá trên trường hợp mới. Nguồn: sources/bedrock-lessons/276747.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
+Bài Bedrock cũng dùng ví dụ châm biếm và cách chọn một vài mẫu từ kết quả đánh giá. Ví dụ tốt trong prompt vẫn cần được kiểm tra trên trường hợp mới. Dùng chung câu hỏi khái niệm.
+
+Nguồn đối chiếu: [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276747). Bản lưu: `sources/bedrock-lessons/276747.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Providing examples](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289177), sources/vertex-lessons/289177.json. Input/output mẫu giúp định dạng và ca khó như sarcasm; chọn ví dụ phát triển đã kiểm tra và giữ test holdout riêng. Điểm10 từ mô hình bộ chấm điểm chưa đủ chứng minh mẫu hoàn hảo; tránh đưa test đang chấm vào prompt rồi báo điểm như bằng chứng khái quát hóa. Dùng chung câu hỏi khái niệm.
+Cặp đầu vào và đầu ra mẫu giúp làm rõ định dạng và trường hợp khó như châm biếm. Chọn mẫu đã kiểm tra để phát triển prompt và giữ tập kiểm thử riêng. Điểm 10 do mô hình chấm chưa chứng minh mẫu hoàn hảo. Không đưa chính câu kiểm thử vào prompt rồi coi điểm đạt được là bằng chứng làm tốt với dữ liệu mới. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Providing examples](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289177). Bản lưu: `sources/vertex-lessons/289177.json`.

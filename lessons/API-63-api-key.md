@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài hướng dẫn người học tạo khóa trong console, chọn workspace/tên và giữ secret để dùng ở bài yêu cầu tiếp theo. Đây là bước chuẩn bị thực hành, không phải kiến thức cần ưu tiên cho Exam Guide Architect.
 
-Bản tóm tắt không thực hiện tạo, xóa hay sao chép khóa thay người học. Giao diện console và lựa chọn xác thực có thể thay đổi; dùng hướng dẫn chính thức của môi trường thực tế khi cần.
+Khóa API là thông tin bí mật dùng khi ứng dụng truy cập dịch vụ theo cơ chế trong bài. Bài hướng dẫn tạo khóa trên trang quản lý, chọn không gian làm việc (workspace), đặt tên và giữ giá trị khóa để dùng cho bài thực hành tiếp theo.
 
-Tên khóa giúp quản lý mục đích, không thay cho kiểm soát quyền và giữ bí mật. Không đặt giá trị secret trong repo, câu hỏi luyện tập hoặc tài liệu chia sẻ. Việc học khái niệm không yêu cầu bạn cung cấp secret cho trợ giảng.
+Tên khóa giúp bạn nhớ nó phục vụ mục đích gì. Đặt tên “course” không tự giới hạn quyền hoặc bảo vệ khóa; vẫn cần cấu hình quyền và nơi lưu phù hợp.
+
+Không đưa giá trị khóa vào kho mã nguồn, câu hỏi luyện tập hoặc tài liệu chia sẻ. Bạn không cần cung cấp khóa thật cho trợ giảng để học khái niệm hay làm câu hỏi của bài.
+
+Giao diện quản lý và các lựa chọn xác thực có thể thay đổi. Khi thực hành, dựa vào hướng dẫn chính thức của môi trường đang dùng. Đây là bước chuẩn bị thực hành, không phải nội dung ưu tiên của đề cương Architect; việc đọc bản tóm tắt cũng chưa tạo khóa thay bạn.
 
 ## Câu hỏi
 

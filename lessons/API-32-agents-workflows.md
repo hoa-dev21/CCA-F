@@ -4,13 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Quy trình làm việc phù hợp khi có thể xác định trước các bước, hoặc giao diện chỉ cho phép một tập tác vụ rõ. Tác nhân AI phù hợp khi mục tiêu hoặc đường giải quyết thay đổi, cần mô hình tự chọn bước và công cụ theo thông tin mới.
 
-Đừng đồng nhất “nhiều lần gọi mô hình” với tác nhân AI: một chuỗi gọi cố định vẫn là quy trình làm việc. Ngược lại, một tác nhân AI có thể giải một yêu cầu đơn giản bằng rất ít bước.
+Có hai cách tổ chức ứng dụng AI cần phân biệt: quy trình định sẵn (workflow) và tác nhân AI (agent).
 
-Bài giới thiệu evaluator–optimizer: một thành phần tạo đầu ra, thành phần khác đánh giá theo tiêu chí, phản hồi được đưa lại để sửa. Việc đặt tên pattern chưa tạo hệ thống; vẫn cần mã điều phối và tiêu chí chấp nhận.
+Với workflow, chương trình quy định trước các bước và đường đi chính, phù hợp khi nhiệm vụ có trình tự rõ. Với agent, mô hình chọn bước và công cụ tiếp theo dựa trên mục tiêu cùng thông tin vừa nhận, phù hợp khi chưa biết trước toàn bộ cách giải.
 
-Ví dụ để dễ hình dung: chuẩn hóa báo cáo theo một chuỗi bước cố định phù hợp quy trình làm việc; điều tra nguyên nhân lỗi chưa biết trước cần cách làm thích ứng. Chọn theo bản chất tác vụ thay vì coi tác nhân AI là cấp độ cao hơn trong mọi trường hợp.
+Số lần gọi mô hình không quyết định hệ thống thuộc loại nào. Năm lần gọi theo thứ tự cố định vẫn có thể là workflow. Một agent có thể giải yêu cầu đơn giản bằng ít bước. Câu hỏi quan trọng là ai quyết định bước tiếp theo.
+
+Bài còn giới thiệu cách tạo rồi đánh giá và sửa kết quả (evaluator–optimizer). Một thành phần tạo bản đầu, thành phần khác đánh giá theo tiêu chí, rồi phản hồi được dùng để sửa. Vẫn phải có mã điều phối và điều kiện chấp nhận kết quả.
+
+Ví dụ: Chuẩn hóa báo cáo theo các bước đã biết có thể dùng workflow. Điều tra lỗi chưa rõ nguyên nhân có thể cần agent chọn hướng khảo sát theo phát hiện mới. Hãy chọn theo nhiệm vụ, không mặc định agent luôn tốt hơn.
 
 ## Câu hỏi
 
@@ -52,4 +55,6 @@ D. Parse một chuỗi JSON duy nhất.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Agents and workflows](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289244), sources/vertex-lessons/289244.json. Mẫu Image-to-CAD dùng mô tả -> CadQuery -> render -> chấm và sửa: evaluator-optimizer có flow xác định trước, không mặc định là tác nhân AI chỉ vì gọi nhiều lần. Host phải triển khai flow, acceptance và giới hạn lỗi/vòng lặp. Dùng chung câu hỏi khái niệm.
+Ví dụ Image-to-CAD đi từ mô tả sang mã CadQuery, dựng hình rồi chấm và sửa. Đây là quy trình tạo–đánh giá–cải thiện có các bước định trước, không tự trở thành agent chỉ vì gọi mô hình nhiều lần. Ứng dụng phải điều phối, đặt điều kiện chấp nhận và giới hạn lỗi hoặc số vòng. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Agents and workflows](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289244). Bản lưu: `sources/vertex-lessons/289244.json`.

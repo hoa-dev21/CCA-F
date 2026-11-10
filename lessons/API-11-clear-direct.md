@@ -4,13 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Mở đầu prompt bằng việc Claude cần thực hiện. Dùng ngôn ngữ đơn giản, động từ hành động và mô tả sản phẩm mong muốn, thay vì kể dài về chủ đề rồi để mô hình đoán nhiệm vụ.
 
-“Tạo bản tóm tắt ba đoạn về tài liệu sau” rõ hơn “Tài liệu này khá thú vị, tôi đang muốn hiểu thêm”. Câu đầu chỉ định hành động, đầu ra và phạm vi. Câu sau mới nêu sự quan tâm.
+Hãy mở đầu yêu cầu bằng việc bạn muốn Claude thực hiện. Nêu hành động, kết quả cần nhận và phạm vi công việc bằng ngôn ngữ đơn giản.
 
-Bài minh họa bằng việc thay câu hỏi mơ hồ về ăn uống thành yêu cầu tạo thực đơn một ngày, có đối tượng và ràng buộc. Mức tăng điểm trong ví dụ là kết quả của ví dụ ấy, không phải mức tăng được bảo đảm cho ứng dụng khác.
+Ví dụ: “Tóm tắt báo cáo thành ba gạch đầu dòng và nêu rủi ro chính” cho biết rõ cần làm gì. Câu “Báo cáo này khá thú vị, tôi muốn hiểu thêm” chỉ nêu sự quan tâm và để Claude tự đoán bạn muốn tóm tắt, giải thích hay phân tích.
 
-Đây là kỹ thuật diễn đạt nhiệm vụ, không phải quy định mọi câu hỏi đều sai. Với prompt dùng trong ứng dụng, mục tiêu là giảm cách hiểu khác nhau và kiểm chứng bằng phép đánh giá.
+Trong ví dụ của bài, một câu hỏi chung về ăn uống được đổi thành yêu cầu tạo thực đơn một ngày, có đối tượng sử dụng và các điều kiện cần đáp ứng. Kết quả đánh giá tăng trong ví dụ đó, nhưng mức tăng này không phải lời bảo đảm cho mọi ứng dụng.
+
+Bạn vẫn có thể viết yêu cầu dưới dạng câu hỏi. Điều cần kiểm tra là người đọc có hiểu chính xác nhiệm vụ và đầu ra mong muốn hay không. Sau khi sửa cách diễn đạt, hãy thử với dữ liệu của mình để biết kết quả có tốt hơn.
 
 ## Câu hỏi
 
@@ -52,8 +53,12 @@ D. Mọi prompt ngắn đều tốt.
 
 ## Đối chiếu Bedrock: Being clear and direct
 
-Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276743) và đối chiếu khái niệm với bài chung. Cùng nguyên tắc giao nhiệm vụ rõ bằng hành động và đầu ra. Không biến “dùng mệnh lệnh” thành quy định mọi câu hỏi đều kém. Nguồn: sources/bedrock-lessons/276743.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
+Bài Bedrock cùng nhấn mạnh nêu rõ hành động và đầu ra. Việc khuyên viết trực tiếp không có nghĩa mọi yêu cầu dạng câu hỏi đều kém. Dùng chung câu hỏi cho các kiến thức tương đương.
+
+Nguồn đối chiếu: [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276743). Bản lưu: `sources/bedrock-lessons/276743.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Being clear and direct](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289170), sources/vertex-lessons/289170.json. Nêu hành động, đối tượng và ràng buộc trực tiếp ở đầu prompt. Các mức điểm2.32/3.92 thuộc ví dụ khóa, không bảo đảm tăng chất lượng cho mọi bài toán. Dùng chung câu hỏi khái niệm.
+Nêu rõ hành động, đối tượng và điều kiện ngay đầu prompt. Các điểm 2.32 và 3.92 là kết quả của ví dụ, không bảo đảm mức cải thiện cho mọi nhiệm vụ. Dùng chung câu hỏi khái niệm.
+
+Nguồn đối chiếu: [Being clear and direct](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289170). Bản lưu: `sources/vertex-lessons/289170.json`.

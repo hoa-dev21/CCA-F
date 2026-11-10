@@ -4,13 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-MCP prompts là các mẫu hướng dẫn có thể tái sử dụng, trả về danh sách messages để client dùng với mô hình. Tác giả server có thể đóng gói hướng dẫn chuyên môn đã kiểm thử thay cho yêu cầu ngắn, mơ hồ của từng người dùng.
 
-Ví dụ của khóa là mẫu định dạng tài liệu sang Markdown: nhận `doc_id`, chèn vào chỉ dẫn, nêu yêu cầu cấu trúc và sử dụng công cụ chỉnh sửa. Prompt trả hướng dẫn, không đủ để chứng minh tài liệu đã được chỉnh sửa.
+MCP prompts là các mẫu hướng dẫn được lưu trên server để dùng lại. Khi client yêu cầu một mẫu và cung cấp tham số, server trả về danh sách tin nhắn (messages) đã điền thông tin cần thiết. Ứng dụng dùng danh sách này để làm việc với mô hình.
 
-Kiểm tra bằng inspector giúp nhìn thấy messages được tạo sau khi thay tham số. Cần kiểm tra đúng ID, nội dung hướng dẫn và cấu trúc message. Chất lượng prompt còn cần đánh giá khi chạy trên dữ liệu thực tế; việc template tạo được chuỗi chưa đủ.
+Ví dụ: Mẫu chuyển tài liệu sang Markdown nhận `doc_id`, đưa mã tài liệu vào hướng dẫn, nêu cấu trúc cần có và cách dùng công cụ chỉnh sửa. Người dùng không phải tự viết lại toàn bộ quy trình mỗi lần.
 
-Chọn tác vụ liên quan trực tiếp tới server, đặt mô tả rõ và thiết kế phù hợp tools/resources có sẵn.
+Lấy được mẫu mới là lấy được hướng dẫn, chưa phải sửa xong tài liệu. Ứng dụng còn phải gửi hướng dẫn cho Claude và xử lý các thao tác cần thiết.
+
+Dùng Inspector để thử mẫu với tham số cụ thể và xem các tin nhắn được tạo ra. Kiểm tra mã tài liệu, nội dung hướng dẫn và cấu trúc tin nhắn, rồi thử trên dữ liệu thực tế để biết chất lượng kết quả. Mẫu hữu ích cần gắn với nhiệm vụ của server, có mô tả rõ và dùng được các công cụ, tài liệu sẵn có.
 
 ## Câu hỏi
 
@@ -52,12 +53,18 @@ D. Thể hiện hướng dẫn chuyên môn cụ thể, liên quan và đã ki�
 
 ## Đối chiếu khóa MCP riêng
 
-Đã đọc và đối chiếu [Defining prompts](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296698) trong Introduction to MCP. Các khái niệm chính của bài được tóm tắt tại đây; dùng cùng bộ câu hỏi để tránh học lặp. Nguồn đối chiếu: sources/mcp-lessons/296698.json. Hai bản diễn đạt không hoàn toàn giống nhau; không tuyên bố là bản sao nguyên văn.
+Phần kiến thức chính đã được đối chiếu với khóa Introduction to MCP và được trình bày trong bài này. Hai bản có cách diễn đạt khác nhau, không phải bản sao nguyên văn. Dùng chung câu hỏi để tránh học và đếm trùng.
+
+Nguồn đối chiếu: [Defining prompts](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296698). Bản lưu: `sources/mcp-lessons/296698.json`.
 
 ## Đối chiếu MCP trong khóa Bedrock
 
-Đã đọc [Defining prompts](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276801), sources/bedrock-lessons/276801.json và đối chiếu với bài chung. Cùng prompt trả messages và interpolation; import path SDK trong bài cần kiểm tra theo bản đang dùng. Template tạo đúng không chứng minh thao tác sửa tài liệu đã chạy. Dùng chung câu hỏi khái niệm tương đương, không đếm lặp.
+Mẫu hướng dẫn trả về tin nhắn sau khi điền tham số. Đường dẫn nhập thành phần thư viện trong mã cần đối chiếu với phiên bản đang dùng. Tạo đúng mẫu chưa chứng minh thao tác sửa tài liệu đã chạy. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Defining prompts](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276801). Bản lưu: `sources/bedrock-lessons/276801.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Defining prompts](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289249), sources/vertex-lessons/289249.json. Decorator prompt trả danh sách messages với tham số doc_id. Template tái sử dụng không tự thực hiện edit; model/host phải chạy vòng các công cụ đúng quyền. Tuyên bố reliable every time chỉ là lợi ích mong muốn, không bảo đảm chất lượng mọi input. Dùng chung câu hỏi khái niệm.
+Decorator đăng ký prompt trả danh sách tin nhắn với tham số `doc_id`. Mẫu dùng lại không tự sửa tài liệu; mô hình và ứng dụng phải thực hiện vòng công cụ theo quyền. Nhận định “đáng tin cậy mọi lần” là lợi ích mong muốn, không phải bảo đảm cho mọi đầu vào. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Defining prompts](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289249). Bản lưu: `sources/vertex-lessons/289249.json`.

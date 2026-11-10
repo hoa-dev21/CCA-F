@@ -4,13 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Quy trình làm việc chia một quy trình biết trước thành các bước cụ thể, dễ kiểm thử và quan sát. Đổi lại, nó ít linh hoạt với yêu cầu ngoài phạm vi hoặc đường xử lý chưa dự kiến.
 
-Tác nhân AI tự xây cách giải từ mục tiêu và các công cụ, thích hợp yêu cầu thay đổi hoặc cần hỏi thêm thông tin. Đánh đổi là hành vi khó dự đoán và không gian thực thi lớn hơn, nên đo chất lượng và theo dõi lỗi khó hơn.
+Workflow và agent có điểm mạnh, hạn chế khác nhau. Lựa chọn nên dựa trên nhiệm vụ và kết quả đánh giá, không chỉ dựa vào tên công nghệ.
 
-Bài khuyến nghị ưu tiên cách giải đáng tin cậy cho bài toán; dùng quy trình làm việc khi phù hợp và thêm tự chủ khi thật sự cần. Không suy ra mọi quy trình làm việc luôn tốt hơn mọi tác nhân AI: cần xem yêu cầu, dữ liệu và kết quả đánh giá của hệ thống cụ thể.
+Workflow quy định các bước từ trước. Bạn dễ kiểm thử từng bước và theo dõi dữ liệu, nhưng khó xử lý yêu cầu nằm ngoài những đường đã thiết kế.
 
-Ví dụ để dễ hình dung: trích xuất dữ liệu theo bản mô tả cấu trúc dữ liệu cố định có thể dùng quy trình xử lý kiểm tra rõ; điều tra nguyên nhân lỗi chưa biết cần đường khảo sát thích ứng. Một hệ thống có thể phối hợp cả hai ở các phần khác nhau.
+Agent cho mô hình chọn hướng giải quyết từ mục tiêu và công cụ được cấp. Cách này hữu ích khi cần đổi hướng theo phát hiện mới hoặc hỏi thêm dữ liệu. Đổi lại, nhiều chuỗi hành động có thể xảy ra, khiến việc dự đoán, đánh giá và tìm lỗi khó hơn.
+
+Ví dụ: Trích xuất dữ liệu theo cấu trúc cố định có thể dùng workflow với kiểm tra ở từng bước. Điều tra một sự cố chưa rõ nguyên nhân có thể cần agent khảo sát và chọn bước tiếp theo. Một ứng dụng có thể dùng cả hai cho những phần việc khác nhau.
+
+Hãy bắt đầu bằng cách giải quyết đủ tin cậy cho bài toán và thêm quyền tự chủ khi có nhu cầu rõ. Không thể kết luận mọi workflow tốt hơn agent, hoặc ngược lại, nếu chưa xét yêu cầu và dữ liệu cụ thể.
 
 ## Câu hỏi
 
@@ -52,4 +55,6 @@ D. Tác nhân AI luôn không có mục tiêu.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Workflows vs agents](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289245), sources/vertex-lessons/289245.json. Quy trình làm việc dự đoán/đánh giá dễ hơn nhưng kém linh hoạt; tác nhân AI thích ứng nhưng chi phí/độ tin cậy khó kiểm soát. Chọn theo yêu cầu và phép đánh giá; lời so sánh lower completion rate trong video không là benchmark phổ quát, và không hệ thống nào được bảo đảm100% chỉ nhờ chọn quy trình làm việc. Dùng chung câu hỏi khái niệm.
+Workflow thường dễ dự đoán và đánh giá hơn nhưng ít linh hoạt; agent thích ứng tốt hơn nhưng khó kiểm soát chi phí và độ tin cậy hơn. Chọn theo yêu cầu và kết quả đo. Nhận định trong video về tỷ lệ hoàn thành thấp hơn không phải số đo chung cho mọi hệ thống; chọn workflow cũng không tự bảo đảm thành công 100%. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Workflows vs agents](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289245). Bản lưu: `sources/vertex-lessons/289245.json`.

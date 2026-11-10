@@ -4,9 +4,19 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Đoạn văn bản theo kích thước dễ áp dụng nhưng có thể cắt câu hoặc tách tiêu đề khỏi nội dung. Overlap giữ phần lân cận, đổi lại tăng dữ liệu trùng. Đoạn văn bản theo cấu trúc phù hợp khi định dạng tài liệu đủ ổn định. Theo câu là phương án trung gian; theo ngữ nghĩa thêm độ phức tạp xử lý.
 
-Không có một kích thước hay phương pháp tốt cho mọi kho. Thử trên câu hỏi thật, kiểm tra có giữ được đơn vị ý nghĩa và nguồn. Không suy rằng phương pháp phức tạp nhất luôn đáng chi phí.
+Chunking là chia tài liệu thành các đoạn nhỏ để lưu và tìm kiếm. Cách chia ảnh hưởng trực tiếp đến việc hệ thống có lấy được đủ ngữ cảnh hay không.
+
+Có vài hướng thường gặp trong bài:
+
+- Chia theo kích thước: dễ áp dụng nhưng có thể cắt giữa câu hoặc tách tiêu đề khỏi nội dung.
+- Cho các đoạn chồng lên nhau một phần (overlap): giữ thông tin lân cận ở ranh giới, đổi lại có thêm dữ liệu trùng và lượng lưu trữ.
+- Chia theo cấu trúc như phần hoặc tiêu đề: phù hợp khi tài liệu có định dạng nhất quán.
+- Chia theo câu hoặc ý nghĩa: có thể giữ nội dung liền mạch hơn; cách dựa trên ý nghĩa cần thêm xử lý.
+
+Ví dụ: Quy tắc nằm ở cuối đoạn, còn ngoại lệ nằm ở đầu đoạn tiếp theo. Nếu chỉ tìm được đoạn đầu, AI có thể trả lời thiếu điều kiện. Cần xem lại ranh giới chia hoặc phần chồng lặp rồi thử với câu hỏi thực tế.
+
+Không có kích thước hay phương pháp tốt nhất cho mọi kho. Hãy kiểm tra đoạn được lấy có giữ đủ ý nghĩa và truy được về nguồn không; cách phức tạp nhất chưa chắc đáng với công sức thêm vào.
 
 ## Câu hỏi
 
@@ -50,8 +60,12 @@ D. Thay thế mọi đánh giá.
 
 ## Đối chiếu RAG trên Bedrock
 
-Đã đọc [Text chunking strategies](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276782), sources/bedrock-lessons/276782.json và đối chiếu với bản API. Cùng so sánh size/structure/semantic và overlap; lựa chọn cần đánh giá trên tài liệu thật, không mặc định một cách luôn tốt nhất. Dùng chung tóm tắt/câu hỏi khái niệm tương đương, không tăng số câu trùng.
+Bài Bedrock so sánh chia theo kích thước, cấu trúc, ý nghĩa và việc cho các đoạn chồng nhau một phần. Cần đánh giá trên tài liệu thật, không mặc định một cách luôn tốt nhất. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Text chunking strategies](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276782). Bản lưu: `sources/bedrock-lessons/276782.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Text chunking strategies](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289208), sources/vertex-lessons/289208.json. So sánh size/structure/semantic và overlap. Hai vòng đoạn văn bản mẫu cần bảo đảm0<=overlap<size để tiến triển; câu character-based luôn đáng tin nhất cho code không là quy tắc phổ quát. Giữ header/metadata và đo chất lượng truy xuất dữ liệu. Dùng chung câu hỏi khái niệm.
+Mẫu chia đoạn cần bảo đảm `0 <= overlap < size` để vòng lặp tiếp tục tiến lên. Nhận định chia theo ký tự luôn đáng tin nhất cho mã không phải quy tắc chung. Hãy giữ tiêu đề và thông tin nguồn, rồi đo chất lượng tìm kiếm khi so sánh các cách chia. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Text chunking strategies](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289208). Bản lưu: `sources/vertex-lessons/289208.json`.

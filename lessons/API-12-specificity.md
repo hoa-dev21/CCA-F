@@ -4,13 +4,17 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài phân biệt hai loại hướng dẫn: **đặc tính đầu ra** và **các bước xử lý**. Đặc tính đầu ra gồm độ dài, cấu trúc, nội dung phải có và giọng điệu. Các bước xử lý định hướng cách khảo sát vấn đề trước khi đưa kết quả.
 
-Ví dụ để dễ hình dung: “Phân tích nguyên nhân doanh số giảm” có thể dẫn tới câu trả lời chỉ xem một yếu tố. Có thể yêu cầu xem dữ liệu thị trường, thay đổi nội bộ và phản hồi khách hàng, rồi tổng hợp các giả thuyết kèm căn cứ. Đồng thời xác định đầu ra cần có: giả thuyết, bằng chứng và thông tin còn thiếu.
+Một yêu cầu cụ thể có thể làm rõ hai điều khác nhau:
 
-Chọn mức chi tiết phù hợp. Tác vụ đơn giản có thể chỉ cần hợp đồng đầu ra rõ. Vấn đề nhiều yếu tố hưởng lợi từ các bước khảo sát. Mục đích là tăng bao phủ và tính nhất quán, không phải kéo dài prompt vô hạn.
+- Kết quả cần có: độ dài, cấu trúc, nội dung bắt buộc và giọng văn.
+- Cách thực hiện: những bước cần xem xét để đi đến kết quả.
 
-Điểm cần phân biệt: “báo cáo chất lượng cao” là mong muốn chung; “mỗi kết luận gắn một bằng chứng và một hạn chế” là tiêu chí cụ thể có thể kiểm tra.
+Ví dụ: Nếu chỉ yêu cầu “Phân tích vì sao doanh số giảm”, AI có thể chỉ xét một nguyên nhân. Bạn có thể yêu cầu xem lần lượt tình hình thị trường, thay đổi nội bộ và phản hồi khách hàng. Đây là hướng dẫn về cách thực hiện.
+
+Sau đó, yêu cầu “Trình bày bảng gồm giả thuyết, bằng chứng và thông tin còn thiếu”. Đây là mô tả kết quả cần có. Hai loại hướng dẫn bổ sung cho nhau: một loại giúp tránh bỏ sót khi phân tích, loại còn lại giúp bạn kiểm tra báo cáo cuối.
+
+Không phải nhiệm vụ nào cũng cần hướng dẫn dài. Với việc đơn giản, chỉ cần nêu rõ kết quả. Với vấn đề nhiều yếu tố, các bước khảo sát có thể hữu ích. “Viết báo cáo chất lượng cao” là mong muốn chung; “mỗi kết luận phải có bằng chứng và nêu hạn chế” là tiêu chí cụ thể hơn.
 
 ## Câu hỏi
 
@@ -52,8 +56,12 @@ D. Là một bản mô tả cấu trúc dữ liệu bắt buộc.
 
 ## Đối chiếu Bedrock: Being specific
 
-Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276745) và đối chiếu khái niệm với bài chung. Cùng phân biệt quality guidelines và process steps; có thêm điểm minh họa theo từng cách, không phải kết quả áp dụng phổ quát. Nguồn: sources/bedrock-lessons/276745.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
+Bài Bedrock cũng tách tiêu chí của kết quả khỏi các bước thực hiện. Điểm số minh họa cho từng cách không phải kết quả có thể áp dụng chung. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276745). Bản lưu: `sources/bedrock-lessons/276745.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Being specific](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289165), sources/vertex-lessons/289165.json. Tách thuộc tính đầu ra với bước xử lý; ràng buộc lượng/định dạng/nội dung cần đo được. Bước cân nhắc không đồng nghĩa yêu cầu lộ toàn bộ suy nghĩ nội bộ. Điểm3.92/7.86 chỉ là ví dụ. Dùng chung câu hỏi khái niệm.
+Bài Vertex phân biệt yêu cầu về đầu ra với hướng dẫn cách xử lý. Điều kiện về lượng, định dạng và nội dung cần kiểm tra được. Yêu cầu cân nhắc trước khi trả lời không đồng nghĩa yêu cầu hiển thị toàn bộ suy nghĩ bên trong. Các điểm 3.92 và 7.86 chỉ là minh họa; dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Being specific](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289165). Bản lưu: `sources/vertex-lessons/289165.json`.

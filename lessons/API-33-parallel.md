@@ -4,13 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Chia một quyết định nhiều tiêu chí thành các phân tích độc lập, chạy đồng thời rồi tổng hợp. Mỗi nhánh có thể có prompt hoặc tiêu chí chuyên biệt. Lợi ích là tập trung chú ý và tối ưu từng nhánh riêng, thay vì dồn mọi yêu cầu vào một prompt dài.
 
-Điều kiện quan trọng là độc lập: nhánh B không cần chờ kết quả A mới có đầu vào hợp lệ. Nếu phụ thuộc, cần giữ thứ tự hoặc tách phần thực sự độc lập.
+Xử lý song song (parallelization) là chia một việc thành các phần độc lập, chạy đồng thời rồi tổng hợp. Mỗi phần có thể dùng yêu cầu hoặc tiêu chí riêng để tập trung vào một khía cạnh.
 
-Kết quả riêng lẻ chưa phải kết luận cuối. Bước tổng hợp cần so sánh các phân tích và giải thích lựa chọn theo mục tiêu chung.
+Ví dụ: Cùng một tài liệu được đánh giá riêng về khả năng bảo trì, mức dễ sử dụng và việc tuân thủ định dạng. Các nhánh đọc cùng tài liệu nhưng không cần kết quả của nhau, nên có thể chạy đồng thời.
 
-Ví dụ để dễ hình dung: các nhóm kiểm tra khả năng bảo trì, khả năng sử dụng và tuân thủ định dạng có thể đánh giá cùng một tài liệu độc lập, rồi đưa phát hiện về một bước tổng hợp. Việc đánh giá chất lượng cần đo thực tế, không giả định chia nhánh luôn tốt hơn.
+Điều kiện quan trọng là đầu vào của mỗi nhánh đã sẵn sàng. Nếu B cần kết quả tính toán của A thì B phải chờ A; không nên đưa giá trị đoán vào B chỉ để chạy nhanh hơn.
+
+Khi các nhánh hoàn tất, vẫn cần bước tổng hợp: đối chiếu phát hiện, giải quyết điểm khác nhau và đưa kết luận theo mục tiêu chung. Không mặc định chọn kết quả dài nhất hoặc bỏ những kết quả không đồng ý với nhau.
+
+Chia nhánh giúp tập trung và cải thiện từng phần riêng, nhưng chất lượng cuối vẫn cần đánh giá. Không phải mọi nhiệm vụ đều tốt hơn khi chạy song song.
 
 ## Câu hỏi
 
@@ -52,4 +55,6 @@ D. Chọn kết quả dài nhất mặc định.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Parallelization workflows](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289236), sources/vertex-lessons/289236.json. Tách phân tích vật liệu theo các nhánh độc lập, cùng ảnh và tiêu chí riêng rồi tổng hợp. Thời gian thường thấp hơn nhưng phụ thuộc concurrency/rate limits và độ trễ tổng hợp; chuyên môn hóa không bảo đảm khuyến nghị kỹ thuật đúng. Dùng chung câu hỏi khái niệm.
+Ví dụ phân tích vật liệu chia thành các nhánh độc lập, cùng nhận ảnh nhưng có tiêu chí riêng, rồi tổng hợp. Chạy song song có thể giảm thời gian nhưng còn phụ thuộc số tác vụ chạy đồng thời, giới hạn tốc độ và thời gian tổng hợp. Chia chuyên môn không tự bảo đảm kết luận kỹ thuật đúng. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Parallelization workflows](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289236). Bản lưu: `sources/vertex-lessons/289236.json`.

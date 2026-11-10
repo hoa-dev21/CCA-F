@@ -4,11 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-
 
 ## Nội dung bài học
 
-Nhiều phiên Claude Code cùng sửa một thư mục dễ ghi đè hoặc đọc trạng thái chưa hoàn chỉnh của nhau. Bài dùng Git worktrees: mỗi nhánh có thư mục làm việc riêng, giao nhiệm vụ có ranh giới rồi tích hợp thay đổi sau khi hoàn thành. Worktree chia sẻ kho Git, không phải bản sao độc lập hoàn toàn.
 
-Trước khi chạy, xác định phạm vi file và tiêu chí nghiệm thu. Dependencies được symlink vẫn có thể là trạng thái dùng chung; database, cổng dịch vụ, secrets và dịch vụ bên ngoài cũng không tự cô lập nhờ worktree. Khi tích hợp, kiểm tra diff, giải quyết xung đột theo ý nghĩa và chạy kiểm thử tương tác giữa các thay đổi.
+Nhiều phiên Claude Code cùng sửa một thư mục có thể ghi đè hoặc đọc phải thay đổi chưa hoàn chỉnh của nhau. Bài dùng Git worktrees để mỗi nhánh có một thư mục làm việc riêng, rồi tích hợp kết quả sau khi hoàn thành. Các worktree vẫn dùng chung kho Git, không phải những bản sao hoàn toàn độc lập.
 
-Video minh họa custom slash command trong .claude/commands và $ARGUMENTS. Đây là mẫu tự động hóa quy trình, không phải lý do bỏ bước kiểm tra khi merge. Cú pháp và cơ chế commands/skills cần theo phiên bản đang dùng. Liên hệ thi: chia nhỏ nhiệm vụ, giới hạn phạm vi, xác minh kết quả trước tích hợp.
+Trước khi chia việc, nêu rõ nhiệm vụ, phạm vi tệp và điều kiện chấp nhận kết quả. Thư mục riêng chưa cô lập mọi thứ: thư viện được nối bằng liên kết tượng trưng (symlink), cơ sở dữ liệu kiểm thử, cổng dịch vụ, khóa bí mật và dịch vụ bên ngoài vẫn có thể dùng chung.
+
+Ví dụ: Hai phiên chạy kiểm thử trên cùng cơ sở dữ liệu có thể ảnh hưởng nhau dù ở hai worktree. Cần xử lý trạng thái dùng chung theo nhu cầu kiểm thử.
+
+Khi hợp nhất, đọc các thay đổi, giải quyết xung đột theo ý nghĩa và kiểm tra hành vi kết hợp. Hai nhánh đều qua kiểm thử riêng và không xung đột văn bản chưa chứng minh chúng tương thích.
+
+Video còn minh họa lệnh tùy chỉnh ở `.claude/commands` và `$ARGUMENTS`. Đây là cách tự động hóa quy trình theo phiên bản lúc giảng, không thay việc kiểm tra khi hợp nhất mã.
 
 ## Câu hỏi
 
@@ -52,4 +57,6 @@ D. Kiểm tra thay đổi kết hợp và kiểm thử hành vi liên quan.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Parallelizing Claude Code](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289241), sources/vertex-media/289241.json. Phụ đề mô tả worktree riêng, custom commands/$ARGUMENTS tạo và merge nhánh, kiểm tra commit và xử lý conflict. Worktree không cô lập dịch vụ hay dependencies symlink dùng chung; merge không xung đột text vẫn cần kiểm thử tích hợp. Không nhân số instance vô hạn theo lời quảng bá productivity. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Phụ đề mô tả worktree riêng, lệnh tùy chỉnh và `$ARGUMENTS` để tạo, hợp nhất nhánh, kiểm tra commit và xử lý xung đột. Worktree không cô lập dịch vụ hoặc thư viện dùng chung qua symlink. Hợp nhất không xung đột văn bản vẫn cần kiểm thử tích hợp. Không tăng số phiên vô hạn chỉ vì lời giới thiệu lợi ích năng suất. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Parallelizing Claude Code](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289241). Bản lưu: `sources/vertex-media/289241.json`.

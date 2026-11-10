@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Công cụ function là mã ứng dụng thực thi khi nhận yêu cầu công cụ. Khóa dùng hàm thời gian để minh họa: tham số có tên rõ, được kiểm tra và trả lỗi có ý nghĩa nếu không hợp lệ.
 
-Phân biệt ba việc: viết hàm nghiệp vụ, mô tả bằng bản mô tả cấu trúc dữ liệu và nối vào router/vòng hội thoại. Chỉ có hàm chưa giúp mô hình biết khi dùng; chỉ có bản mô tả cấu trúc dữ liệu chưa chạy thao tác thật.
+Hàm thực thi công cụ là đoạn mã ứng dụng chạy khi nhận yêu cầu gọi công cụ. Trong bài, các hàm xử lý thời gian có tham số được đặt tên rõ, kiểm tra giá trị và trả lỗi có ý nghĩa khi đầu vào không hợp lệ.
 
-Thông báo lỗi như tham số bị rỗng giúp mô hình sửa lời gọi. Nhưng không mặc định lỗi nào cũng thử lại được: quy tắc nghiệp vụ hoặc thiếu quyền cần xử lý khác. Việc mô hình sử dụng phản hồi lỗi trong ngữ cảnh không có nghĩa trọng số mô hình được huấn luyện lại sau mỗi lỗi.
+Cần làm đủ ba việc: viết hàm thực hiện nhiệm vụ, mô tả công cụ và đầu vào bằng schema, rồi nối tên công cụ với hàm trong bộ điều phối của vòng hội thoại. Chỉ có hàm thì Claude chưa biết cách dùng; chỉ có schema thì thao tác chưa thể chạy.
+
+Ví dụ: Một tham số bắt buộc bị rỗng. Thông báo rõ tham số nào thiếu và điều kiện cần đáp ứng sẽ giúp Claude sửa yêu cầu tốt hơn câu “Có lỗi”.
+
+Không phải lỗi nào cũng xử lý bằng cách gọi lại. Thiếu quyền hoặc vi phạm quy tắc nghiệp vụ cần cách xử lý phù hợp với loại lỗi đó. Khi Claude sửa đầu vào sau khi đọc lỗi, nó đang sử dụng thông tin mới trong cuộc trò chuyện; điều đó không có nghĩa mô hình được huấn luyện lại sau mỗi lần gọi.
 
 ## Câu hỏi
 
@@ -52,8 +55,12 @@ D. Không cần validation nữa.
 
 ## Đối chiếu Bedrock: Công cụ functions
 
-Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276757) và đối chiếu khái niệm với bài chung. Cùng mẫu công cụ thời gian/reminder và hợp đồng đầu vào. Không coi việc mô hình có thể thử lại là bảo đảm mọi lỗi phải thử lại. Nguồn: sources/bedrock-lessons/276757.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
+Bài Bedrock dùng cùng ví dụ công cụ thời gian và nhắc việc với quy định đầu vào rõ. Việc mô hình có thể thử lại không có nghĩa mọi lỗi đều cần hoặc được phép thử lại. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276757). Bản lưu: `sources/bedrock-lessons/276757.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Tool functions](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289176), sources/vertex-lessons/289176.json. Tên/arguments rõ, validate đầu vào, lỗi có thể sửa. datetime.now() trong mẫu dùng giờ môi trường và chưa gắn timezone; tự động thực thi là trách nhiệm host, không của mô hình. Không lộ lỗi/secrets nhạy cảm nguyên văn. Dùng chung câu hỏi khái niệm.
+Đặt tên và tham số rõ, kiểm tra đầu vào, trả lỗi giúp người gọi sửa được. `datetime.now()` trong mẫu dùng giờ của môi trường và chưa gắn múi giờ. Ứng dụng chịu trách nhiệm thực thi, không phải mô hình tự chạy hàm. Không trả nguyên thông tin lỗi chứa dữ liệu nhạy cảm hoặc khóa bí mật. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Tool functions](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289176). Bản lưu: `sources/vertex-lessons/289176.json`.

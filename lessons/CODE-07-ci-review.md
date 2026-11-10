@@ -4,13 +4,16 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-cod
 
 ## Nội dung bài học
 
-Bài phân biệt dịch vụ kiểm tra được quản lý với GitHub Action tùy biến. Dịch vụ phân tích thay đổi trong ngữ cảnh codebase, đăng phát hiện trên PR, xếp mức độ và giảm trùng lặp. Theo phạm vi dịch vụ được bài mô tả, nó không tự phê duyệt/chặn PR và không tự sửa mã; quyết định vẫn thuộc con người.
 
-Action phù hợp khi cần tác vụ ngoài kiểm tra như thực thi thay đổi theo yêu cầu hoặc tạo báo cáo theo lịch. Quy trình làm việc quy định sự kiện kích hoạt, prompt và tùy chọn CLI.
+Bài học so sánh dịch vụ rà soát mã được quản lý sẵn với quy trình tùy biến bằng GitHub Actions. Chọn theo việc bạn cần hệ thống thực hiện.
 
-Trong job unattended, chọn quyền không làm quy trình xử lý chờ người phê duyệt; chỉ cấp công cụ cần cho tác vụ. Báo cáo chỉ đọc không cần quyền sửa mã. Giới hạn lượt là rào chắn tài nguyên, không phải bằng chứng công việc hoàn thành.
+Theo phạm vi dịch vụ được mô tả trong bài, dịch vụ rà soát phân tích thay đổi trong bối cảnh dự án, đăng nhận xét lên yêu cầu hợp nhất mã (pull request, viết tắt là PR), xếp mức độ nghiêm trọng và giảm nhận xét trùng lặp. Dịch vụ này không tự sửa mã hay tự phê duyệt hoặc chặn PR; con người vẫn quyết định cách xử lý.
 
-Điểm kiến trúc: chọn nơi chạy và hành vi đúng yêu cầu trước, rồi mới cấu hình tích hợp. Có comment kiểm tra không đồng nghĩa PR đã đạt mọi gate.
+GitHub Actions phù hợp khi bạn cần xây một quy trình riêng, chẳng hạn sửa mã theo yêu cầu trong bình luận hoặc tạo báo cáo theo lịch. Quy trình phải nêu sự kiện kích hoạt, yêu cầu gửi AI và các tùy chọn dòng lệnh cần dùng.
+
+Nếu quy trình chạy không có người theo dõi, hãy cấu hình quyền để nó không bị treo khi chờ phê duyệt. Chỉ cấp công cụ phục vụ nhiệm vụ; một báo cáo chỉ đọc dữ liệu không cần quyền sửa mã.
+
+Giới hạn số lượt giúp kiểm soát tài nguyên. Khi chạm giới hạn, chỉ có thể kết luận tác vụ đã dừng vì hết lượt, chưa thể kết luận công việc hoàn tất. Tương tự, có nhận xét rà soát trên PR không có nghĩa mọi kiểm thử và điều kiện chấp nhận đã đạt.
 
 ## Câu hỏi
 

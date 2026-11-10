@@ -4,13 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Một yêu cầu người dùng có thể cần nhiều vòng mô hình–công cụ. Trong bài, xác định một ngày tương lai cần lấy ngày hiện tại trước, rồi mới tính thời gian cộng thêm. Không thể mặc định một lượt công cụ luôn đủ.
 
-Hàm hỗ trợ chat cần nhận danh sách các công cụ và trả đối tượng message đầy đủ. Hàm hỗ trợ thêm lịch sử phải chấp nhận chuỗi, danh sách block hoặc nội dung message. Hàm trích xuất text riêng chỉ dùng khi cần hiển thị, không thay thế đối tượng phản hồi trong luồng xử lý.
+Một câu hỏi có thể cần nhiều lần trao đổi giữa Claude và công cụ. Ví dụ: để xác định một ngày trong tương lai, Claude có thể cần công cụ lấy ngày hiện tại, rồi dùng kết quả đó để tính ngày sau một khoảng thời gian. Vì vậy, không nên dừng chỉ vì đã gọi một công cụ.
 
-Vòng hội thoại gửi yêu cầu, lưu phản hồi, thực thi công cụ nếu được yêu cầu, đưa kết quả vào lịch sử và tiếp tục. Khi không còn cần công cụ, hệ thống có thể trả câu trả lời cuối.
+Hàm gửi yêu cầu cần nhận danh sách công cụ và trả về đối tượng phản hồi đầy đủ. Phần lưu lịch sử phải giữ được các dạng nội dung mà chương trình sử dụng, như chuỗi văn bản, danh sách khối hoặc nội dung của tin nhắn. Có thể viết hàm riêng để lấy văn bản hiển thị, nhưng không dùng phần văn bản đó thay cho toàn bộ phản hồi trong luồng xử lý.
 
-Bổ sung từ Exam Guide, mục 1.1: điều khiển vòng lặp bằng `stop_reason`; `tool_use` yêu cầu tiếp tục xử lý công cụ, `end_turn` kết thúc lượt. Không dùng việc xuất hiện text làm dấu hiệu hoàn tất, vì một phản hồi vẫn có thể chứa cả text và tool-use block.
+Vòng xử lý gồm: gửi yêu cầu, lưu phản hồi, thực hiện các công cụ được yêu cầu, thêm kết quả vào lịch sử rồi gọi Claude tiếp. Claude dùng kết quả mới để trả lời hoặc yêu cầu công cụ khác.
+
+Phần liên hệ với đề cương thi nhấn mạnh trường `stop_reason`, tức lý do mô hình dừng phản hồi. Giá trị `tool_use` cho biết cần xử lý yêu cầu công cụ; `end_turn` cho biết mô hình kết thúc lượt. Có văn bản trong phản hồi chưa đủ để kết luận đã xong, vì cùng phản hồi đó vẫn có thể chứa khối `tool_use`.
 
 ## Câu hỏi
 
@@ -50,10 +51,14 @@ D. Phải bỏ qua kết quả công cụ.
 2. **A.** B và C phá luồng công cụ; D nhầm việc trích text với thực thi hệ thống xử lý phía máy chủ.
 3. **B.** A dùng sai tín hiệu kết thúc; C nhầm yêu cầu với thực thi; D loại bỏ dữ liệu cần cho bước tiếp.
 
-## Đối chiếu Bedrock: Multi-Turn conversations with các công cụ
+## Đối chiếu Bedrock: hội thoại nhiều lượt có công cụ
 
-Đã đọc [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276759) và đối chiếu khái niệm với bài chung. Đọc stopReason rồi ánh xạ sang trạng thái loop. Ví dụ dừng khi khác tool_use không chứng minh mọi lý do khác là thành công; max_tokens cần xử lý đầu ra bị cắt. Không thêm tin nhắn của người dùng kết quả rỗng khi mô hình không yêu cầu công cụ. Nguồn: sources/bedrock-lessons/276759.json. Dùng chung câu hỏi kiến thức tương đương, không đếm thành bộ câu mới.
+Đọc `stopReason` để chọn nhánh của vòng xử lý. Ví dụ dừng khi giá trị khác `tool_use` không có nghĩa mọi lý do còn lại đều là thành công; trường hợp `max_tokens` cần kiểm tra nội dung bị cắt. Nếu mô hình không yêu cầu công cụ, không thêm một tin nhắn kết quả công cụ rỗng. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [bài Bedrock](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276759). Bản lưu: `sources/bedrock-lessons/276759.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Multi-turn conversations with tools](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289178), sources/vertex-lessons/289178.json. Ví dụ lấy ngày rồi cộng103ngày thể hiện dependency phải tuần tự. Wrapper giữ full blocks/message và các công cụ; text_from_message chỉ dành hiển thị. Không dùng mutable default list trong mã production sao chép từ video. Dùng chung câu hỏi khái niệm.
+Ví dụ lấy ngày rồi cộng 103 ngày thể hiện hai bước phụ thuộc nhau, cần chạy theo thứ tự. Hàm hỗ trợ giữ tin nhắn và các khối đầy đủ, còn `text_from_message` chỉ dùng hiển thị. Không sao chép cách dùng danh sách mặc định có thể bị sửa đổi giữa các lần gọi vào mã vận hành. Dùng chung câu hỏi khái niệm.
+
+Nguồn đối chiếu: [Multi-turn conversations with tools](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289178). Bản lưu: `sources/vertex-lessons/289178.json`.

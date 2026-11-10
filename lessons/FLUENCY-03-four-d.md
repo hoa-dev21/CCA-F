@@ -6,11 +6,17 @@ Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025), AI Fluency: Framework
 
 ## Nội dung bài học
 
-Delegation quyết định phần nào do người làm, phần nào phối hợp và phần nào giao AI. Description truyền đạt nhiệm vụ, bối cảnh và tiêu chí. Discernment đánh giá đầu ra và cách AI hoạt động bằng phán đoán có căn cứ. Diligence bảo đảm việc sử dụng AI có trách nhiệm.
 
-Bốn năng lực hỗ trợ nhau. Đánh giá phát hiện lỗi có thể khiến bạn mô tả lại yêu cầu hoặc đổi phần được giao AI. Không coi chúng là bốn hộp phải làm đúng một lần theo thứ tự cố định.
+Bốn năng lực dưới đây giúp bạn làm việc với AI từ lúc giao nhiệm vụ đến lúc sử dụng kết quả:
 
-Ví dụ để dễ hình dung: AI soạn phân tích dữ liệu; người xác minh nguồn và quyết định công bố. Nếu dữ liệu không phù hợp để đưa vào hệ thống, cần xem lại việc giao nhiệm vụ từ đầu, không chỉ sửa câu prompt.
+- Phân công (Delegation): quyết định phần nào bạn tự làm, phần nào giao AI và phần nào hai bên cùng làm.
+- Mô tả (Description): nói rõ nhiệm vụ, thông tin liên quan và tiêu chí của kết quả mong muốn.
+- Đánh giá (Discernment): kiểm tra kết quả và cách AI thực hiện nhiệm vụ dựa trên bằng chứng, kiến thức và kinh nghiệm của bạn.
+- Sử dụng có trách nhiệm (Diligence): cân nhắc dữ liệu đưa vào, nói rõ vai trò của AI khi cần và chịu trách nhiệm về kết quả đem sử dụng.
+
+Bạn có thể quay lại điều chỉnh bất kỳ bước nào. Ví dụ: khi kiểm tra báo cáo, bạn phát hiện AI thiếu dữ liệu. Bạn có thể bổ sung yêu cầu hoặc giao phần phân tích đó cho một chuyên gia.
+
+Nếu dữ liệu không phù hợp để đưa vào hệ thống AI, cần xem lại quyết định giao việc ngay từ đầu. Chỉ sửa cách viết câu yêu cầu sẽ không giải quyết được vấn đề này.
 
 ## Câu hỏi
 

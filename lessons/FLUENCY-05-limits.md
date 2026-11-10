@@ -6,11 +6,15 @@ Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025), AI Fluency: Framework
 
 ## Nội dung bài học
 
-Generative AI linh hoạt với nhiều tác vụ ngôn ngữ, có thể theo dõi hội thoại khi được cung cấp ngữ cảnh và kết nối công cụ để dùng thông tin bên ngoài. Khả năng này đi cùng hạn chế: kiến thức có mốc thời gian, có thể tạo thông tin sai, ngữ cảnh hữu hạn và các bài toán suy luận khó.
+AI tạo sinh (Generative AI) có thể giúp bạn viết, tóm tắt, dịch và trả lời câu hỏi. AI cũng có thể trả lời tiếp dựa trên nội dung trò chuyện trước đó, nếu được cung cấp nội dung này. Khi kết nối với công cụ hoặc nguồn dữ liệu bên ngoài, AI có thể tra cứu thêm thông tin để trả lời.
 
-Câu trả lời trôi chảy không đủ để chứng minh độ đúng. Chọn ứng dụng dựa trên khả năng thực tế và cách kiểm chứng, không dựa vào một ví dụ thành công đơn lẻ. Con người bổ sung chuyên môn, phán đoán và trách nhiệm.
+Tuy nhiên, AI vẫn có thể trả lời sai, kể cả khi câu trả lời nghe rất tự tin và hợp lý. Kiến thức có sẵn của AI có thể đã cũ. AI cũng có thể bỏ sót thông tin trong cuộc trò chuyện dài hoặc gặp khó khăn với những bài toán cần suy luận nhiều bước.
 
-Ví dụ để dễ hình dung: báo cáo về trạng thái đơn hàng hiện tại cần nguồn dữ liệu mới hoặc công cụ tích hợp; không nên chỉ dựa vào tri thức huấn luyện. Trong API, ứng dụng vẫn phải quản lý lịch sử/context phù hợp, không suy từ trải nghiệm chat rằng yêu cầu độc lập tự nhớ nhau.
+Vì vậy, đừng vội tin chỉ vì AI trả lời trôi chảy, và đừng cho rằng AI luôn làm tốt chỉ sau vài lần thử thành công. Hãy chọn công việc phù hợp với khả năng của AI và kiểm tra kết quả trước khi sử dụng. Con người vẫn cần dùng kiến thức và kinh nghiệm của mình để đánh giá, quyết định và chịu trách nhiệm.
+
+Ví dụ: Nếu bạn hỏi “Đơn hàng của tôi đang ở đâu?”, AI cần tra cứu hệ thống đơn hàng để biết tình trạng mới nhất. Chỉ dựa vào kiến thức có sẵn thì AI không thể biết đơn hàng hiện đang ở đâu.
+
+Khi xây dựng ứng dụng dùng API: Ứng dụng cần gửi kèm những phần liên quan của cuộc trò chuyện trước đó để AI hiểu câu hỏi tiếp theo. Đừng mặc định rằng AI tự nhớ các yêu cầu đã gửi riêng lẻ.
 
 ## Câu hỏi
 

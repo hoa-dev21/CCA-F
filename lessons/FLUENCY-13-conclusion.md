@@ -6,9 +6,12 @@ Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025). Bản gốc và phầ
 
 ## Nội dung bài học
 
-Khóa tổng kết việc phân công, mô tả, đánh giá và chịu trách nhiệm trong cả automation, augmentation và agency. Fluency hình thành qua thực hành có chủ đích, không phải chỉ thuộc tên bốn năng lực.
 
-Bài tập kết luận xây chính sách AI cá nhân: khi nào dùng, ranh giới dữ liệu, kiểm soát chất lượng và cách thông báo đóng góp AI. Dùng framework để xem lại một công việc đã làm, tìm năng lực yếu rồi lựa chọn hoạt động cải thiện cụ thể.
+Bốn năng lực cần được dùng cùng nhau: phân công, mô tả yêu cầu, đánh giá kết quả và sử dụng AI có trách nhiệm. Chúng đều cần thiết dù bạn giao AI làm một nhiệm vụ cụ thể (automation), cùng AI phát triển kết quả (augmentation), hay cho AI chủ động làm việc trong phạm vi cho phép (agency).
+
+Để áp dụng vào thực tế, hãy viết một bộ quy tắc dùng AI cho bản thân. Ghi rõ khi nào bạn sẽ dùng AI, dữ liệu nào được phép đưa vào, kết quả cần kiểm tra ra sao và khi nào cần nói rõ vai trò của AI.
+
+Sau một công việc, hãy tự nhìn lại: Bạn đã chia việc hợp lý chưa? Yêu cầu có rõ không? Đã kiểm tra đủ chưa? Đã chịu trách nhiệm với kết quả chưa? Chọn một điểm còn yếu và đặt bài tập cụ thể để cải thiện. Khả năng cộng tác hình thành từ việc thực hành và rút kinh nghiệm, không chỉ từ việc nhớ tên bốn năng lực.
 
 ## Câu hỏi
 

@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Files API trong bài cho phép upload và tham chiếu file bằng ID thay vì nhúng lại toàn bộ bytes mỗi lần. Code execution là server công cụ; ứng dụng vẫn quản lý đầu vào, kết quả và file sinh ra.
 
-Luồng mẫu: upload CSV, đưa tham chiếu phù hợp vào môi trường thực thi, yêu cầu phân tích, đọc code/results và lấy output file theo ID. Không nhầm file ID với việc nội dung chắc chắn đã được đưa vào đúng container hoặc đã phân tích thành công.
+Files API trong bài cho phép tải tệp lên và nhận mã định danh tệp. Các bước sau có thể tham chiếu bằng mã đó thay vì gửi lại toàn bộ dữ liệu của tệp mỗi lần.
 
-Giới hạn network, loại runtime và bản mô tả cấu trúc dữ liệu version trong video là thuộc tính phiên bản, phải kiểm tra trước triển khai. Với phân tích dữ liệu, kiểm tra phép tính và sản phẩm sinh ra chứ không chỉ chấp nhận lời tóm tắt.
+Công cụ chạy mã (code execution) được thực hiện phía dịch vụ. Ứng dụng không phải tự xây môi trường chạy của công cụ trong mẫu, nhưng vẫn phải quản lý tệp đầu vào, phản hồi và các tệp kết quả.
+
+Ví dụ: Tải tệp CSV lên, đưa tham chiếu tệp vào môi trường thực thi theo cách được hỗ trợ, yêu cầu phân tích, xem mã và kết quả, rồi tải tệp đầu ra bằng mã định danh. Nhận được mã tệp sau khi tải lên chưa chứng minh tệp đã được đưa đúng vào môi trường chạy hoặc đã phân tích xong.
+
+Nếu kết quả là biểu đồ, hãy mở biểu đồ và đối chiếu với dữ liệu, không chỉ đọc lời tóm tắt. Các giới hạn mạng, môi trường chạy và phiên bản công cụ trong video cần được kiểm tra lại trước khi triển khai.
 
 ## Câu hỏi
 

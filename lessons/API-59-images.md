@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Ảnh được đưa vào message cùng text hướng dẫn để yêu cầu mô tả, so sánh hoặc phân tích. Bài khuyến khích tiêu chí rõ, ví dụ và chia nhiệm vụ thay vì một câu quá mơ hồ.
 
-Việc đếm vật thể hay đọc chi tiết vẫn có thể sai; mô hình tự kiểm tra bằng cách khác không tự là bằng chứng độc lập. Tác vụ quan trọng cần phương pháp kiểm chứng phù hợp. Các con số giới hạn ảnh/dimensions/token trong video phụ thuộc phiên bản, không coi là thông số hiện tại đã kiểm tra.
+Có thể đưa ảnh vào tin nhắn cùng hướng dẫn bằng văn bản để yêu cầu AI mô tả, so sánh hoặc phân tích. Câu hỏi nên nêu rõ cần xem phần nào và đánh giá theo tiêu chí gì.
 
-Vision nằm ngoài phạm vi Exam Guide Architect đã tải. Không dùng ví dụ đánh giá hình ảnh trong khóa để suy ra có thể thay mọi thẩm định chuyên môn chỉ bằng một ảnh.
+Ví dụ: Với một ảnh phức tạp, yêu cầu “phân tích ảnh này” có thể quá rộng. Hãy chỉ rõ đối tượng cần quan sát, thông tin cần lấy và định dạng kết quả. Có thể thêm ví dụ hoặc chia nhiệm vụ thành các bước nếu cần.
+
+AI vẫn có thể đếm sai vật thể hoặc đọc nhầm chi tiết. Việc nó tự kiểm tra bằng hai cách rồi ra cùng đáp án chưa tạo ra hai bằng chứng độc lập: cả hai cách có thể mắc cùng lỗi. Tác vụ quan trọng cần cách kiểm chứng phù hợp.
+
+Các giới hạn về số ảnh, kích thước và token trong video phụ thuộc phiên bản. Khả năng thị giác (vision) là phần bổ trợ, nằm ngoài phạm vi đề cương Architect đã lưu; một ảnh cũng không đủ để thay mọi đánh giá chuyên môn.
 
 ## Câu hỏi
 
@@ -52,8 +55,12 @@ D. Chỉ học giới hạn ảnh trong video.
 
 ## Đối chiếu tính năng trên Bedrock
 
-Đã đọc [Image support](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276789), sources/bedrock-lessons/276789.json. Mẫu dùng image.format/source.bytes, khác image base64 block của Messages API. Giới hạn ảnh trong hai khóa khác nhau và phụ thuộc provider/model/phiên bản; không dùng chúng làm thông số hiện hành mặc định. Dùng chung tóm tắt/câu hỏi khái niệm, không đếm câu hỏi trùng.
+Mẫu Bedrock dùng `image.format` và `source.bytes`, khác khối ảnh base64 của Messages API. Các giới hạn ảnh trong hai khóa khác nhau và phụ thuộc nhà cung cấp, mô hình, phiên bản; không lấy làm thông số hiện hành mặc định. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Image support](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276789). Bản lưu: `sources/bedrock-lessons/276789.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Image support](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289203), sources/vertex-lessons/289203.json. Mẫu Messages image base64/media_type/data; ví dụ đếm bi và bảng tiêu chí chấm điểm ảnh vệ tinh minh họa giá trị của hướng dẫn cụ thể. Số ảnh/MB/pixel/token formula trong video không là giới hạn universal hiện hành; mô tả fire risk không đủ thay đánh giá chuyên môn. Tách quan sát được khỏi suy đoán, kiểm tra ca khó và uncertainty. Dùng chung câu hỏi khái niệm.
+Mẫu Messages dùng base64, `media_type` và `data` cho ảnh. Ví dụ đếm viên bi và chấm ảnh vệ tinh minh họa ích lợi của yêu cầu cụ thể. Số ảnh, dung lượng, kích thước và công thức tính token trong video không là giới hạn chung hiện hành. Mô tả nguy cơ cháy không thay đánh giá chuyên môn; tách điều quan sát được khỏi suy đoán và kiểm tra trường hợp khó, chưa chắc chắn. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Image support](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289203). Bản lưu: `sources/vertex-lessons/289203.json`.

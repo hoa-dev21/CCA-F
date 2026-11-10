@@ -4,19 +4,25 @@ Nguồn bổ trợ: Exam Guide CCAR-F v1.0, mục 1.4–1.5 và 5.2, trang PDF 7
 
 ## Nội dung bài học
 
-Nếu một thao tác tài chính yêu cầu xác minh trước, mã phải chặn thao tác khi tiền điều kiện chưa đạt. Prompt “luôn xác minh trước” không tạo bảo đảm cưỡng chế. Hook trước thao tác có thể áp chính sách như giới hạn hoàn tiền; hook sau kết quả có thể chuẩn hóa timestamps và trạng thái trước khi mô hình dùng.
 
-Theo ví dụ mục1.5, PostToolUse chuẩn hóa Unix timestamps và ISO8601 về biểu diễn thời gian thống nhất có timezone; numeric status codes được ánh xạ về trạng thái có nghĩa theo hợp đồng từng công cụ. Giữ giá trị gốc và nguồn để truy vết, không đoán khi đơn vị hoặc ý nghĩa mã chưa rõ. Hook trước thực thi chặn khoản hoàn vượt ngưỡng chính sách và chuyển sang người có thẩm quyền; hook sau kết quả không thể ngăn một khoản tiền đã được gửi.
+Khi một thao tác chỉ được phép sau khi đạt điều kiện bắt buộc, chương trình phải kiểm tra và chặn nếu điều kiện chưa đạt. Ví dụ: hoàn tiền cần có định danh khách hàng đã xác minh. Chỉ viết “luôn xác minh trước” trong prompt chưa tạo cơ chế bắt buộc.
 
-Chuyển vấn đề cho người có thẩm quyền có tiêu chí rõ: người dùng yêu cầu con người, chính sách thiếu hoặc mơ hồ, hoặc tác nhân AI không thể tiến triển có ý nghĩa. Khách bực bội chưa đồng nghĩa bắt buộc chuyển ngay nếu họ chưa yêu cầu người và vấn đề vẫn giải quyết được. Ngược lại, yêu cầu rõ được gặp người phải được tôn trọng ngay, không bắt họ đi thêm một vòng điều tra.
+Hook trước thao tác có thể kiểm tra ngưỡng hoàn tiền và chuyển khoản vượt thẩm quyền cho người phụ trách. Hook sau thao tác có vai trò khác, chẳng hạn chuẩn hóa kết quả để mô hình đọc. Nó không thể ngăn khoản tiền đã được chuyển.
 
-System prompt có thể kèm few-shot đối chiếu: “Tôi rất bực, đơn bị trễ” nhưng chưa yêu cầu nhân viên → thừa nhận bực bội và đề nghị giải quyết nếu trong khả năng; “Đừng xử lý tự động nữa, chuyển nhân viên” → chuyển ngay với thông tin đã có. Không dùng sentiment hoặc điểm điểm tự tin tự báo làm proxy duy nhất cho độ phức tạp/chuyển cấp. Nếu khách nhắc lại mong muốn gặp người, tôn trọng thay vì tiếp tục thuyết phục họ qua thêm bước tự động.
+Theo ví dụ của đề cương, `PostToolUse` có thể chuyển thời gian dạng Unix timestamp và ISO 8601 về cùng cách biểu diễn có múi giờ, hoặc đổi mã trạng thái dạng số thành ý nghĩa tương ứng của từng công cụ. Giữ giá trị gốc và nguồn để truy lại; không tự đoán khi chưa rõ đơn vị thời gian hoặc ý nghĩa mã.
 
-Nhiều kết quả khách hàng trùng tên cần thêm định danh, không chọn theo phỏng đoán. Chính sách chỉ nói điều chỉnh giá của chính cửa hàng không tự cho phép áp điều chỉnh theo giá đối thủ.
+Cần chuyển cho người có thẩm quyền khi người dùng yêu cầu gặp người, chính sách thiếu hoặc mơ hồ, hay tác nhân không thể tiến triển có ý nghĩa. Phân biệt hai tình huống:
 
-Handoff cần customer ID đã xác minh, từng vấn đề, nguyên nhân đã biết, dữ liệu giao dịch, những gì đã thử và hành động đề xuất. Người tiếp nhận có thể không đọc được transcript, nên câu “khách cần hỗ trợ” là không đủ.
+- “Tôi rất bực vì đơn giao trễ”: ghi nhận sự bực bội và đề nghị giải quyết nếu còn trong khả năng.
+- “Đừng xử lý tự động nữa, chuyển tôi cho nhân viên”: chuyển ngay với thông tin đã có, không bắt khách qua thêm một vòng tự động.
 
-Một yêu cầu có nhiều vấn đề cần tách thành các hạng mục riêng, chia sẻ facts khách hàng đã xác minh, điều tra các nhánh độc lập song song rồi tổng hợp một phương án thống nhất. Handoff nên nêu rõ số tiền hoàn đề xuất, căn cứ và điều kiện chưa đạt; không chỉ gửi transcript dài hay một kết luận thiếu dữ liệu.
+Có thể đưa các cặp ví dụ như vậy vào hướng dẫn hệ thống. Không dùng cảm xúc hoặc điểm tự tin do mô hình tự báo làm căn cứ duy nhất để quyết định chuyển cấp.
+
+Nếu có nhiều khách cùng tên, hỏi thêm thông tin định danh thay vì chọn theo phỏng đoán. Nếu chính sách chỉ cho điều chỉnh theo giá của cửa hàng, không tự suy ra được phép áp giá đối thủ.
+
+Thông tin bàn giao cần có mã khách đã xác minh, từng vấn đề, giao dịch liên quan, nguyên nhân đã biết, việc đã thử và hành động đề xuất. Với đề xuất hoàn tiền, nêu số tiền, căn cứ và điều kiện còn thiếu. Người nhận có thể không đọc được lịch sử chat, nên câu “khách cần hỗ trợ” hoặc một đoạn chat dài không được tổng hợp là chưa đủ.
+
+Nếu khách có nhiều vấn đề, tách thành các hạng mục, dùng chung dữ kiện đã xác minh, xử lý song song những nhánh độc lập rồi đưa ra một phương án thống nhất.
 
 ## Câu hỏi tình huống
 

@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Tác nhân AI cần biết trạng thái hiện tại và kết quả thao tác để quyết định bước tiếp theo. Gửi lệnh không chứng minh trạng thái mong muốn đã đạt.
 
-Trước khi sửa file, đọc nội dung để hiểu cấu trúc. Sau khi gọi API, xem dữ liệu trả về và kiểm tra điều kiện cần thiết. Khi tạo sản phẩm, đối chiếu kết quả với yêu cầu. Vòng quan sát này giúp phát hiện lỗi, theo dõi tiến độ và thích ứng thay vì tiếp tục theo giả định cũ.
+Tác nhân AI cần biết trạng thái hiện tại và kết quả thao tác để quyết định bước tiếp theo. Gửi một lệnh chỉ chứng minh đã yêu cầu thực hiện, chưa chứng minh đạt được thay đổi mong muốn.
 
-Câu hỏi thiết kế quan trọng: “Tác nhân AI sẽ biết hành động này thành công bằng cách nào?” Công cụ thực thi cần đi cùng khả năng quan sát phù hợp. Bài có ví dụ UI/video, nhưng chi tiết computer use và vision nằm ngoài phạm vi Exam Guide đã tải; phần ôn thi ở đây tập trung nguyên tắc kiểm chứng trạng thái.
+Ví dụ: Trước khi sửa tệp cấu hình, cần đọc tệp và các phần liên quan để hiểu dự án. Sau khi gọi API, cần xem phản hồi có thành công và có dữ liệu cần thiết không. Sau khi tạo sản phẩm, cần đối chiếu sản phẩm với yêu cầu.
+
+Quá trình quan sát, hành động rồi kiểm tra giúp tác nhân phát hiện lỗi và điều chỉnh. Nếu API trả lỗi nhưng tác nhân vẫn tiếp tục như đã nhận dữ liệu, các bước sau có thể dựa vào giả định sai.
+
+Khi thiết kế công cụ, hãy hỏi: “Tác nhân sẽ biết thao tác này thành công bằng cách nào?”. Công cụ thực hiện cần đi cùng cách đọc kết quả hoặc kiểm tra trạng thái. Ví dụ giao diện và video trong bài minh họa nguyên tắc này; chi tiết điều khiển máy tính và xử lý hình ảnh nằm ngoài phạm vi đề cương đã lưu.
 
 ## Câu hỏi
 
@@ -50,4 +53,6 @@ D. Có, miễn tác nhân AI không hỏi thêm.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Environment inspection](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289237), sources/vertex-lessons/289237.json. Đọc trạng thái trước sửa, quan sát sau thao tác; ví dụ captions/timing/screenshots/file định dạng giúp kiểm chứng video. Không mặc định mọi Computer Use bộ thực thi tự trả ảnh sau mỗi action; host phải cung cấp quan sát phù hợp. Mức kiểm tra theo kết quả và tác động, không cần lặp kiểm tra vô ích sau mỗi bước nhỏ. Dùng chung câu hỏi khái niệm.
+Đọc trạng thái trước khi sửa và quan sát kết quả sau thao tác. Ví dụ kiểm tra phụ đề, mốc thời gian, ảnh chụp và định dạng tệp giúp xác minh sản phẩm video. Không mặc định mọi bộ thực thi Computer Use đều tự trả ảnh sau mỗi hành động; ứng dụng cần cung cấp quan sát phù hợp. Mức kiểm tra nên dựa trên kết quả và tác động, tránh lặp kiểm tra vô ích sau mỗi bước nhỏ. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Environment inspection](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289237). Bản lưu: `sources/vertex-lessons/289237.json`.

@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài yêu cầu tạo hàm Python kiểm tra ký tự trùng trong một chuỗi. Đầu ra ban đầu có nhiều code, comment và giải thích. Người học thêm system prompt gán vai trò kỹ sư Python viết code súc tích rồi so sánh kết quả, giữ nguyên yêu cầu chức năng.
 
-Điểm cần hiểu là hướng dẫn thường trực về vai trò/phong cách có thể ảnh hưởng cách trả lời. “Súc tích hơn” không đủ để chứng minh code đúng hoặc tốt hơn ở mọi tiêu chí: vẫn kiểm tra hành vi với chuỗi rỗng, ký tự lặp, phân biệt hoa/thường và yêu cầu thực của ứng dụng. Không tối ưu số dòng bằng cách bỏ validation hay đổi semantics.
+Bài tập yêu cầu tạo hàm Python kiểm tra ký tự trùng trong một chuỗi. Câu trả lời ban đầu có nhiều mã, chú thích và giải thích. Sau đó, người học thêm hướng dẫn hệ thống yêu cầu đóng vai kỹ sư Python viết mã súc tích, nhưng giữ nguyên nhiệm vụ cần giải quyết.
 
-Liên hệ Architect: chọn nơi đặt hướng dẫn và đo hiệu quả; role prompt là hướng dẫn cho mô hình, không là cơ chế cưỡng chế code thực thi. Không suy một lần demo ngắn hơn thành bảo đảm đầu ra luôn có đúng định dạng.
+Mục tiêu là quan sát tác động của hướng dẫn chung về vai trò và phong cách. Nếu muốn áp dụng phong cách qua nhiều lượt, trong mẫu này cần truyền system prompt qua hàm gửi yêu cầu.
+
+Mã ngắn hơn chưa chắc đúng hơn. Vẫn cần thử các trường hợp phù hợp như chuỗi rỗng, ký tự lặp và cách phân biệt chữ hoa, chữ thường. Ví dụ: nếu bản rút gọn tự coi “A” và “a” là cùng ký tự trong khi yêu cầu chưa nói vậy, cần làm rõ và kiểm thử thay vì chấp nhận vì ít dòng hơn.
+
+Không nên rút ngắn bằng cách bỏ kiểm tra cần thiết hoặc âm thầm đổi hành vi. System prompt hướng dẫn mô hình, không phải cơ chế cưỡng chế mã chạy đúng; một lần minh họa thành công cũng không bảo đảm mọi lần đều cùng định dạng.
 
 ## Câu hỏi
 
@@ -52,8 +55,12 @@ D. Làm rõ semantics và kiểm thử; thay đổi phong cách không được 
 
 ## Đối chiếu qua phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [System prompt exercise](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276717), sources/bedrock-media/276717.json. Cùng nhiệm vụ giảm preamble/comments của hàm kiểm tra ký tự trùng bằng system role concise Python engineer. Wrapper nhà cung cấp phải truyền system đúng cấu trúc; output súc tích hơn vẫn cần test chức năng. Không khái quát demo thành role prompt luôn tốt hơn mọi cách viết yêu cầu khác.
+Bài Bedrock cùng yêu cầu giảm lời dẫn và chú thích của hàm kiểm tra ký tự trùng bằng vai trò kỹ sư Python viết súc tích. Hàm gửi yêu cầu phải truyền hướng dẫn hệ thống đúng cấu trúc nhà cung cấp. Mã ngắn hơn vẫn cần kiểm thử; ví dụ không chứng minh đặt vai trò luôn tốt hơn mọi cách viết yêu cầu khác.
+
+Nguồn đối chiếu: [System prompt exercise](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276717). Bản lưu: `sources/bedrock-media/276717.json`.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [System prompts exercise](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289157), sources/vertex-media/289157.json. Đối chiếu toàn bộ phụ đề với nguồn API287724 đã đọc: chỉ khác built-in/built in hoặc an/and do cách chép phụ đề, không đổi nội dung bài. Không suy từ tên/duration. Giữ các lưu ý về xác thực/provider và tính tương thích mô hình của bài chung. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Hồ sơ đối chiếu toàn bộ phụ đề với bài API 287724 ghi nhận chỉ khác nhỏ như “built-in/built in” hoặc “an/and”, không đổi nội dung. Kết luận không chỉ dựa vào tên hay thời lượng. Giữ các lưu ý xác thực, nhà cung cấp và tương thích mô hình; dùng chung câu hỏi.
+
+Nguồn đối chiếu: [System prompts exercise](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289157). Bản lưu: `sources/vertex-media/289157.json`.

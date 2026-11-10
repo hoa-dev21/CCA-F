@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101
 
 ## Nội dung bài học
 
-Enterprise Search phục vụ tìm và tổng hợp tri thức nội bộ qua các nguồn tổ chức đã kết nối. Nó phù hợp câu hỏi về chính sách, dự án, quyết định hoặc tài liệu nằm rải rác nhiều công cụ.
 
-Bài mô tả hai tầng thiết lập: quản trị viên cấu hình nguồn/chức năng cho tổ chức; người dùng xác thực với dịch vụ theo quyền của mình. Thiết lập chung không tự cấp cho mọi người quyền xem mọi tài liệu.
+Enterprise Search là tính năng tìm kiếm và tổng hợp thông tin nội bộ từ những nguồn tổ chức đã kết nối. Nó hữu ích khi tài liệu và trao đổi về một việc nằm rải rác ở nhiều nơi.
 
-Khi dùng kết quả tổng hợp, mở trích dẫn nguồn để kiểm tra bối cảnh, phiên bản và thời điểm. Một câu trả lời có nguồn thuận tiện hơn để xác minh, không phải bảo đảm mọi suy luận đều đúng. Availability, cách thiết lập và mô hình lưu trữ là thông tin sản phẩm cần kiểm tra lại khi triển khai, không học thuộc thay mục tiêu Architect.
+Ví dụ: Bạn muốn biết vì sao nhóm đổi lịch ra mắt sản phẩm. Thông tin có thể nằm trong tài liệu dự án và các cuộc trao đổi nội bộ. Tìm kiếm trên các nguồn được kết nối giúp tập hợp những bằng chứng liên quan.
+
+Bài học mô tả hai phần thiết lập: quản trị viên cấu hình nguồn và tính năng cho tổ chức; người dùng đăng nhập hoặc xác thực với dịch vụ theo quyền của mình. Việc quản trị viên đã thêm nguồn không có nghĩa mọi người đều được xem mọi tài liệu trong nguồn đó.
+
+Khi nhận câu trả lời, hãy mở các trích dẫn để kiểm tra nội dung gốc, bối cảnh, phiên bản và thời điểm. Có trích dẫn giúp bạn kiểm chứng dễ hơn, nhưng không bảo đảm mọi kết luận của AI đều đúng. Khả năng cung cấp tính năng, cách thiết lập và cách lưu trữ dữ liệu cần được kiểm tra lại khi triển khai.
 
 ## Câu hỏi
 

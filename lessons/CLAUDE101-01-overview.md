@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101
 
 ## Nội dung bài học
 
-Claude hỗ trợ viết, phân tích, lập trình, học tập và giải quyết vấn đề theo hướng cộng tác. Người dùng cung cấp bối cảnh và chuyên môn; mô hình không thay thế mọi kiểm chứng.
 
-Bài phân biệt ứng dụng hội thoại với các giao diện khác như Claude Code cho thao tác phát triển. Chọn giao diện theo công việc cần làm, không coi việc cùng mang tên Claude là có cùng quyền hoặc cách quản lý trạng thái. Chi tiết plan, mô hình và giới hạn sản phẩm trong bài có thể thay đổi; phần ôn nhanh giữ khái niệm thay vì học thuộc con số.
+Claude có thể hỗ trợ viết, phân tích, lập trình, học tập và giải quyết vấn đề. Để nhận kết quả hữu ích, bạn cần cung cấp thông tin liên quan, nói rõ yêu cầu và dùng kiến thức của mình để kiểm tra câu trả lời.
 
-Đây là bài định hướng. Các chi tiết Constitutional AI và nội tại huấn luyện không phải trọng tâm Exam Guide Architect đã tải.
+Bài học giới thiệu nhiều cách sử dụng Claude. Ứng dụng trò chuyện phù hợp để hỏi đáp và cùng chỉnh sửa ý tưởng. Claude Code phục vụ công việc phát triển phần mềm, như đọc và sửa tệp hoặc chạy lệnh khi có môi trường và quyền phù hợp.
+
+Ví dụ: Nếu chỉ cần giải thích một đoạn mã, bạn có thể trao đổi trong chat. Nếu cần sửa mã trong một dự án và chạy kiểm thử, bạn cần công cụ có khả năng truy cập dự án và thực hiện các thao tác đó. Cùng mang tên Claude không có nghĩa mọi giao diện đều có quyền và khả năng như nhau.
+
+Đây là bài định hướng. Tên mô hình, gói dịch vụ và giới hạn sản phẩm có thể thay đổi, nên cần kiểm tra khi sử dụng. Khi ôn Architect theo đề cương đã lưu, hãy ưu tiên thiết kế ứng dụng; các chi tiết về cách huấn luyện mô hình và Constitutional AI không phải trọng tâm của đề cương đó.
 
 ## Câu hỏi
 

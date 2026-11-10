@@ -4,11 +4,16 @@ Nguồn: Exam Guide CCAR-F v1.0 July2026, mục3.1–3.6, trang PDF12–15. Câu
 
 ## Nội dung bài học
 
-Chọn nơi đặt cấu hình theo người cần nhận quy ước và thời điểm áp dụng. CLAUDE.md giữ chuẩn chung; path-scoped rules giới hạn quy ước cho file khớp glob; skill đóng gói quy trình làm việc khi cần. Imports giúp modular hóa nhưng không miễn chi phí ngữ cảnh nếu vẫn nạp toàn bộ.
 
-Với tác vụ nhiều phương án hoặc nhiều phụ thuộc, khảo sát/lập kế hoạch rồi thực thi. Với thay đổi nhỏ đã hiểu, có thể sửa trực tiếp và kiểm chứng. Cụ thể hóa yêu cầu bằng input/output và test failure; dùng interview khi cần làm rõ các lựa chọn thiết kế chưa biết.
+Chọn nơi đặt hướng dẫn theo người cần dùng và thời điểm áp dụng. CLAUDE.md chứa quy ước chung; quy tắc theo đường dẫn (path-scoped rules) áp dụng cho tệp khớp mẫu; skill đóng gói quy trình gọi khi cần. Chia tài liệu bằng imports giúp tổ chức, nhưng phần được nạp vẫn chiếm ngữ cảnh.
 
-CI cần chế độ không tương tác, quy định về đầu ra và ngữ cảnh dự án. Không biến một JSON envelope hợp lệ thành bằng chứng rằng kiểm tra đúng hoặc test có giá trị; kiểm tra nội dung dữ liệu gửi đi, vị trí và bằng chứng trước khi downstream xử lý.
+Ví dụ: Quy ước kiểm thử của cả nhóm không nên chỉ nằm trong `~/.claude/CLAUDE.md` cá nhân. Có thể đặt quy tắc trong `.claude/rules/` của dự án, khai báo YAML `paths` khớp `**/*.test.tsx`, quản lý phiên bản và kiểm tra quy tắc đã được nạp.
+
+Nhiệm vụ nhiều phương án hoặc phụ thuộc cần khảo sát, lập kế hoạch rồi mới thực hiện. Thay đổi nhỏ đã rõ có thể sửa trực tiếp và kiểm chứng. Nếu còn giả định thiết kế chưa biết, hỏi để làm rõ trước khi chọn phương án.
+
+Khi mô tả bị hiểu khác nhau, đưa đầu vào và đầu ra cụ thể. Ví dụ: “xử lý giá trị trống” cần các mẫu phân biệt `null` với chuỗi rỗng, kèm kết quả kiểm thử mong đợi và thực tế. Hai hoặc ba cặp mẫu đã kiểm tra có ích hơn yêu cầu chung “sửa cho đúng”.
+
+Trong CI, dùng chế độ không tương tác, cấu trúc đầu ra rõ và đủ ngữ cảnh dự án. Phản hồi JSON hợp lệ chưa chứng minh nhận xét đúng hoặc kiểm thử có giá trị; cần kiểm tra nội dung, vị trí và bằng chứng trước khi chuyển sang bước sau. Phiên rà soát độc lập nên nhận yêu cầu, diff, tiêu chí và các phát hiện cũ nếu đang kiểm tra lại.
 
 ## Câu hỏi
 
@@ -48,4 +53,4 @@ D. Dùng instance kiểm tra độc lập với requirements, diff, tiêu chí v
 
 2. **C.** A không xác định semantics; B thiếu tình huống để tái hiện; D làm yếu bằng chứng thay vì sửa.
 
-3. **A, D.** B không giải quyết non-interactive CI; C tăng thiên lệch tự xác nhận. Output bản mô tả cấu trúc dữ liệu vẫn cần validation và kiểm tra chất lượng.
+3. **A, D.** B không giúp CI chạy mà không cần người nhập liệu; C làm tăng nguy cơ tiếp tục tin vào lập luận của chính phiên viết mã. Dù đầu ra có schema, vẫn cần kiểm tra dữ liệu và chất lượng nhận xét.

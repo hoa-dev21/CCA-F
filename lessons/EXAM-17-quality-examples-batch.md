@@ -4,11 +4,16 @@ Nguồn: Exam Guide CCAR-F v1.0 July2026, mục4.1–4.6, trang PDF16–19. Câu
 
 ## Nội dung bài học
 
-Few-shot hữu ích khi hướng dẫn dài vẫn tạo phán đoán hoặc định dạng không nhất quán. Chọn ví dụ khó, gồm ca hợp lệ dễ bị gắn cờ sai và ca thật cần báo, với lý do và quy định về đầu ra. Với extraction, thay đổi bố cục tài liệu cần ví dụ cho thấy thông tin có thể nằm ở đâu; không dùng ví dụ để lấp dữ liệu vắng mặt.
 
-Theo dõi false positives theo category/pattern thay vì chỉ điểm trung bình. Có thể tạm vô hiệu hóa nhóm quá nhiễu trong khi sửa prompt/eval để giữ niềm tin vào nhóm phát hiện có giá trị.
+Một vài ví dụ có chủ đích (few-shot) giúp làm rõ những trường hợp mà hướng dẫn bằng lời vẫn dễ bị hiểu khác nhau. Chọn cả trường hợp hợp lệ dễ bị cảnh báo sai và trường hợp thực sự cần báo, kèm lý do cùng định dạng kết quả.
 
-Batch phù hợp workload chấp nhận chờ; tính cả thời gian gom và xử lý. Theo số liệu tình huống guide, nếu cho phép30giờ và processing có thể24giờ, chu kỳ gom4giờ còn2giờ đệm lý thuyết. Đó không là bảo đảm production khi còn thử lại và overhead.
+Với trích xuất tài liệu, ví dụ nên cho thấy cùng thông tin có thể nằm ở các vị trí khác nhau. Chẳng hạn, tài liệu không có mục “Methodology” nhưng phương pháp nghiên cứu nằm trong phần mở đầu. Có thể minh họa cách tìm và đánh giá lại trên tài liệu mới. Không dùng ví dụ để dạy tự điền khi nguồn thật sự không có thông tin.
+
+Theo dõi cảnh báo sai (false positives) theo nhóm hoặc kiểu lỗi, không chỉ xem điểm trung bình. Nếu nhóm góp ý phong cách quá nhiễu làm kỹ sư bỏ qua cả lỗi bảo mật, có thể tạm tắt nhóm đó, làm rõ tiêu chí báo hoặc bỏ qua rồi kiểm tra trước khi bật lại.
+
+Khi chọn xử lý theo lô (batch), phải xét tổng thời gian chờ gom và thời gian xử lý. Theo tình huống trong đề cương, hạn 30 giờ với xử lý tối đa 24 giờ và chu kỳ gom 4 giờ tạo thời gian tối đa lý thuyết là 28 giờ, còn 2 giờ đệm.
+
+Đây là phép tính chưa gồm thử lại và thời gian phụ. Nó không phải bảo đảm cho hệ thống vận hành thực tế. Batch phù hợp với công việc chấp nhận chờ, không chỉ vì có lợi về chi phí.
 
 ## Câu hỏi
 
@@ -32,15 +37,15 @@ C. Bỏ mọi category kiểm tra vĩnh viễn.
 
 D. Đổi nhãn mọi finding thành critical.
 
-**3. Chọn một.** Dùng mô hình thời gian của guide: xử lý tối đa24giờ, SLA từ lúc tài liệu đến là30giờ, chưa xét retry/overhead. Chu kỳ gom nào dưới đây còn khoảng đệm?
+**3. Chọn một.** Theo tình huống trong đề cương: xử lý tối đa 24 giờ, hạn hoàn thành là 30 giờ từ lúc tài liệu đến, chưa tính thử lại và thời gian phụ. Chu kỳ gom nào dưới đây còn khoảng đệm?
 
-A. Mỗi8giờ vì24<30.
+A. Mỗi 8 giờ vì 24 < 30.
 
-B. Mỗi12giờ vì batch giảm giá.
+B. Mỗi 12 giờ vì xử lý theo lô được giảm giá.
 
-C. Mỗi24giờ vì tên là daily batch.
+C. Mỗi 24 giờ vì gọi là xử lý theo lô hằng ngày.
 
-D. Mỗi4giờ: chờ tối đa4+24=28giờ, còn2giờ lý thuyết.
+D. Mỗi 4 giờ: chờ tối đa 4 + 24 = 28 giờ, còn 2 giờ đệm theo lý thuyết.
 
 ## Đáp án
 
@@ -48,4 +53,4 @@ D. Mỗi4giờ: chờ tối đa4+24=28giờ, còn2giờ lý thuyết.
 
 2. **B.** A tăng nhiễu; C bỏ cả nhóm hữu ích; D làm severity mất nghĩa. Cần đo precision/recall theo category khi cải thiện.
 
-3. **D.** A/B/C lần lượt có thể chờ8+24=32,12+24=36,24+24=48giờ, đều vượt30. Đệm2giờ chưa tính rủi ro vận hành.
+3. **D.** A, B, C lần lượt có thể mất 8 + 24 = 32 giờ, 12 + 24 = 36 giờ và 24 + 24 = 48 giờ, đều vượt hạn 30 giờ. Khoảng đệm 2 giờ của D chưa tính thử lại hoặc các chậm trễ khác khi vận hành.

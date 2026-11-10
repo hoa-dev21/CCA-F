@@ -125,7 +125,7 @@ Chín bài kỹ thuật của khóa Introduction to MCP đã được đọc và
 
 ## Introduction to MCP — phần riêng
 
-- [MCP review — Ai kiểm soát từng primitive?](MCP-01-control-patterns.md) — 3 câu.
+- [MCP review — Ai chủ động chọn công cụ, nguồn nội dung và mẫu hướng dẫn?](MCP-01-control-patterns.md) — 3 câu.
 
 ## AI Fluency — nền tảng
 

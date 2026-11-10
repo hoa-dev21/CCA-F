@@ -4,13 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài dùng Python SDK và decorator để khai báo công cụ đọc, sửa tài liệu. Type hints cùng mô tả tham số giúp SDK tạo bản mô tả cấu trúc dữ liệu, giảm phần mã khai báo lặp lại.
 
-Tên và description nêu chức năng. Tham số `doc_id` xác định tài liệu; với thao tác thay chuỗi, cần mô tả rõ chuỗi cũ phải khớp chính xác, kể cả khoảng trắng. Hợp đồng chi tiết giúp mô hình tạo lời gọi phù hợp.
+Bài học dùng bộ thư viện Python cho MCP để tạo công cụ đọc và sửa tài liệu. Một decorator — phần đánh dấu đặt trên hàm — đăng ký hàm đó thành công cụ. Chú thích kiểu dữ liệu (type hints) và mô tả tham số giúp thư viện tạo bản mô tả đầu vào, giảm việc khai báo lặp.
 
-SDK hỗ trợ lớp protocol và validation tham số; logic nghiệp vụ vẫn thuộc hàm của ứng dụng. Nếu tài liệu không tồn tại, mẫu trả lỗi mô tả thay vì bịa nội dung. Kiểm tra kiểu tham số không thay thế kiểm tra tài liệu tồn tại.
+Cần mô tả rõ công cụ làm gì và từng tham số có nghĩa gì. Ví dụ: `doc_id` xác định tài liệu cần xử lý. Với công cụ thay chuỗi, phải nói rõ chuỗi cũ cần khớp chính xác, kể cả khoảng trắng, để Claude biết cách tạo yêu cầu phù hợp.
 
-Ví dụ dùng dictionary trong bộ nhớ để minh họa, không phải thiết kế lưu trữ production. Cần hiểu kiến trúc và hợp đồng, không học thuộc toàn bộ cú pháp SDK.
+Thư viện hỗ trợ giao tiếp theo MCP và kiểm tra tham số. Hàm của bạn vẫn phải thực hiện việc đọc hoặc sửa tài liệu. Một `doc_id` đúng kiểu chuỗi vẫn có thể chỉ tới tài liệu không tồn tại. Mẫu của bài trả lỗi có mô tả trong trường hợp này, thay vì bịa nội dung.
+
+Ví dụ lưu tài liệu trong một dictionary trong bộ nhớ chỉ để minh họa; không nên coi đó là thiết kế lưu trữ hoàn chỉnh cho ứng dụng thực tế.
 
 ## Câu hỏi
 
@@ -52,12 +53,18 @@ D. Đọc tài liệu bất kỳ khác.
 
 ## Đối chiếu khóa MCP riêng
 
-Đã đọc và đối chiếu [Defining tools with MCP](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296697) trong Introduction to MCP. Các khái niệm chính của bài được tóm tắt tại đây; dùng cùng bộ câu hỏi để tránh học lặp. Nguồn đối chiếu: sources/mcp-lessons/296697.json. Hai bản diễn đạt không hoàn toàn giống nhau; không tuyên bố là bản sao nguyên văn.
+Phần kiến thức chính đã được đối chiếu với khóa Introduction to MCP và được trình bày trong bài này. Hai bản có cách diễn đạt khác nhau, không phải bản sao nguyên văn. Dùng chung câu hỏi để tránh học và đếm trùng.
+
+Nguồn đối chiếu: [Defining tools with MCP](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296697). Bản lưu: `sources/mcp-lessons/296697.json`.
 
 ## Đối chiếu MCP trong khóa Bedrock
 
-Đã đọc [Defining tools with MCP](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276800), sources/bedrock-lessons/276800.json và đối chiếu với bài chung. Cùng decorator, type hints và Field tạo bản mô tả cấu trúc dữ liệu đọc/sửa tài liệu. Python replace trong ví dụ là thao tác đơn giản, không chứng minh uniqueness hay hợp đồng production. Dùng chung câu hỏi khái niệm tương đương, không đếm lặp.
+Mẫu dùng decorator, chú thích kiểu và `Field` để tạo schema cho công cụ đọc, sửa tài liệu. Phép thay chuỗi Python trong ví dụ chỉ là cách làm đơn giản, chưa chứng minh nó bảo đảm đúng một vị trí khớp hoặc đáp ứng đầy đủ yêu cầu vận hành. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Defining tools with MCP](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276800). Bản lưu: `sources/bedrock-lessons/276800.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Defining tools with MCP](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289235), sources/vertex-lessons/289235.json. FastMCP decorator và typed arguments sinh bản mô tả cấu trúc dữ liệu; vẫn cần domain validation/authorization. edit_document dùng str.replace có thể thay mọi lần khớp, không báo khi old_str vắng; thêm guard nếu quy định về dữ liệu và hành vi đòi một lần khớp duy nhất. Mẫu add_ints thiếu kiểu tham số không nên coi là bản mô tả cấu trúc dữ liệu đầy đủ đã kiểm thử. Dùng chung câu hỏi khái niệm.
+Decorator FastMCP và tham số có kiểu giúp tạo schema; ứng dụng vẫn cần kiểm tra nghiệp vụ và quyền. Hàm `edit_document` dùng `str.replace` có thể thay mọi lần khớp và không tự báo lỗi khi thiếu `old_str`. Nếu chỉ được sửa một vị trí, cần thêm kiểm tra tương ứng. Mẫu `add_ints` thiếu kiểu tham số không phải schema hoàn chỉnh đã kiểm thử. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Defining tools with MCP](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289235). Bản lưu: `sources/vertex-lessons/289235.json`.

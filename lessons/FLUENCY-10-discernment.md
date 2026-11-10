@@ -6,9 +6,16 @@ Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025). Bản gốc và phầ
 
 ## Nội dung bài học
 
-Discernment đánh giá sản phẩm, cách tiếp cận và hành vi cộng tác. Product xem độ đúng, phù hợp, mạch lạc và liên quan. Process tìm bước bỏ sót, liên hệ sai hoặc lập luận không hợp lý trong bằng chứng quan sát được. Performance xem AI đáp ứng phản hồi và giao tiếp phù hợp không.
 
-Chuyên môn người dùng giúp nhận ra điểm mạnh/yếu mà người mới dễ bỏ qua. Phản hồi tốt nêu cụ thể chỗ đúng, chỗ sai và yêu cầu sửa, thay vì chỉ nói “không hay”. Một kết quả có giọng chuyên nghiệp chưa chứng minh sự kiện chính xác.
+Đánh giá (Discernment) là dùng kiến thức, kinh nghiệm và bằng chứng để xem kết quả của AI có đáng sử dụng hay không. Hãy kiểm tra ba khía cạnh:
+
+- Chất lượng kết quả (Product Discernment): thông tin có đúng không, có liên quan đến yêu cầu và có dễ hiểu với người đọc không?
+- Cách thực hiện (Process Discernment): trong các bước và căn cứ AI trình bày, có bước nào bị bỏ sót, có mối liên hệ sai hoặc kết luận thiếu cơ sở không?
+- Cách tương tác (Performance Discernment): AI có tiếp thu phản hồi, trả lời đúng mức chi tiết và phối hợp phù hợp với bạn không?
+
+Ví dụ: Một bảng so sánh có thể trình bày đẹp nhưng dùng sai số liệu. Đó là vấn đề về chất lượng kết quả. Nếu phần phân tích bỏ qua chi phí vận hành, bạn cần xem lại cách thực hiện và yêu cầu bổ sung yếu tố này.
+
+Phản hồi nên chỉ rõ vấn đề và cách sửa, chẳng hạn: “Phần so sánh còn thiếu chi phí vận hành. Hãy bổ sung số liệu có nguồn và nêu rõ chỗ chưa đủ dữ liệu”. Chỉ nói “không hay” sẽ khiến AI khó biết cần sửa gì.
 
 ## Câu hỏi
 

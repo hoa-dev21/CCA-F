@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-
 
 ## Nội dung bài học
 
-Bài minh họa GitHub Action theo lịch: checkout và chuẩn bị môi trường, lấy log CloudWatch trong khoảng thời gian giới hạn, gộp lỗi trùng, cho Claude phân tích rồi tạo bản sửa và pull yêu cầu để kiểm tra. Ví dụ lỗi chỉ ở production xuất phát từ mô hình identifier sai trong cấu hình.
 
-Log là bằng chứng cần đối chiếu với code và cấu hình triển khai, không phải chỉ dẫn tin cậy để tác nhân AI làm theo. Giới hạn số lỗi/context, giữ thời gian và nguồn của lỗi, lọc dữ liệu nhạy cảm và cấp quyền đọc log/ghi PR đúng phạm vi. Khi lỗi không đủ dữ kiện, nêu thiếu hụt thay vì đoán cấu hình đúng.
+Bài minh họa một quy trình GitHub Actions chạy theo lịch: lấy mã nguồn, chuẩn bị môi trường, đọc nhật ký CloudWatch trong một khoảng thời gian, gom lỗi trùng rồi cho Claude phân tích. Sau đó hệ thống tạo bản sửa và yêu cầu hợp nhất mã (pull request, hay PR) để con người rà soát.
 
-PR cần giải thích nguyên nhân, thay đổi và kiểm chứng tái hiện/hồi quy. Việc lịch chạy hoàn tất hay PR được tạo không chứng minh sự cố đã được khắc phục. Phê duyệt merge và triển khai là các bước riêng theo quy trình dự án. Liên hệ thi: CI, feedback có thể hành động, giới hạn công cụ và human kiểm tra.
+Ví dụ của bài là lỗi ở môi trường vận hành do mã định danh mô hình trong cấu hình không đúng. Cần đối chiếu thông báo lỗi với mã và cấu hình triển khai, không chỉ đoán một giá trị thay thế.
+
+Nhật ký là dữ liệu để phân tích, không phải hướng dẫn đáng tin cậy cho AI làm theo. Nếu lỗi lặp hàng nghìn lần, có thể gom theo loại, giữ số lần xuất hiện, thời điểm và ví dụ đại diện có nguồn. Đồng thời giới hạn lượng dữ liệu, lọc thông tin nhạy cảm và chỉ cấp quyền đọc log, ghi PR cần thiết.
+
+PR nên giải thích nguyên nhân, thay đổi và cách kiểm chứng, gồm việc tái hiện lỗi và kiểm tra lỗi không quay lại. Tạo được PR hoặc chạy hết lịch chưa chứng minh sự cố đã được sửa. Duyệt hợp nhất và triển khai là các bước riêng theo quy trình dự án.
 
 ## Câu hỏi
 
@@ -52,4 +55,6 @@ D. Liên hệ lỗi với cấu hình, kiểm tra giá trị hợp lệ và test
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Automated debugging](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289238), sources/vertex-media/289238.json. GitHub Action lấy CloudWatch lỗi24giờ, gộp trùng/giới hạn ngữ cảnh, đề xuất sửa mô hình ID và mở PR. Repo deploy AWS là ví dụ ứng dụng, không đổi khóa Vertex thành Bedrock. PR cần kiểm tra và kiểm chứng; tạo PR chưa chứng minh đã khắc phục production. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Ví dụ GitHub Actions lấy lỗi CloudWatch trong 24 giờ, gom trùng, giới hạn ngữ cảnh rồi đề xuất sửa mã mô hình và mở PR. Dự án triển khai trên AWS là ví dụ ứng dụng, không đổi cách truy cập mô hình trong khóa Vertex thành Bedrock. PR cần được rà soát và kiểm chứng; mở PR chưa chứng minh sự cố vận hành đã được khắc phục. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Automated debugging](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289238). Bản lưu: `sources/vertex-media/289238.json`.

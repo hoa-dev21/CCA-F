@@ -4,15 +4,18 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bản mô tả cấu trúc dữ liệu công cụ editor do Anthropic định nghĩa không có nghĩa máy chủ tự đọc/sửa file của bạn. Trong mẫu công cụ do ứng dụng thực thi, ứng dụng vẫn triển khai các thao tác và trả kết quả.
 
-Bài minh họa xem file/thư mục, phạm vi dòng, thay hoặc tạo nội dung. Tập lệnh và bản mô tả cấu trúc dữ liệu version tùy mô hình, không lấy danh sách undo hoặc tên version cũ làm bảo đảm mọi mô hình hiện tại đều có.
+Bài học giới thiệu công cụ chỉnh sửa văn bản có cấu trúc do Anthropic định nghĩa. Có bản mô tả công cụ không có nghĩa máy chủ Anthropic tự đọc hoặc sửa tệp trên máy bạn. Với loại công cụ do ứng dụng thực thi trong mẫu, ứng dụng vẫn phải viết mã xử lý và trả kết quả.
 
-Đọc trạng thái trước khi sửa, thực thi đúng thao tác hợp lệ và xem kết quả/diff sau sửa. Một tool-use block chỉ là yêu cầu, không chứng minh filesystem đã thay đổi. Phạm vi file và quyền vẫn thuộc thiết kế ứng dụng.
+Các thao tác minh họa gồm xem tệp hoặc thư mục, đọc một phạm vi dòng, thay nội dung và tạo nội dung. Danh sách lệnh cùng phiên bản định nghĩa công cụ tùy mô hình; không nên lấy tính năng hoàn tác hoặc tên phiên bản cũ làm cam kết cho mọi mô hình hiện tại.
+
+Trước khi sửa tệp có sẵn, đọc nội dung liên quan để biết trạng thái thật. Sau khi chạy thao tác hợp lệ, xem kết quả và phần khác biệt trước, sau khi sửa (diff).
+
+Một khối `tool_use` mới thể hiện yêu cầu sửa, chưa chứng minh tệp đã thay đổi. Ứng dụng chịu trách nhiệm giới hạn tệp được truy cập, kiểm tra quyền, thực thi và xác minh kết quả.
 
 ## Câu hỏi
 
-**1. Chọn một.** Đã gửi editor bản mô tả cấu trúc dữ liệu nhưng chưa có mã thao tác file. Còn thiếu gì?
+**1. Chọn một.** Đã gửi bản mô tả công cụ chỉnh sửa văn bản nhưng chưa có mã đọc, ghi tệp. Còn thiếu gì?
 
 A. Không thiếu gì.
 
@@ -52,8 +55,12 @@ D. Tên version thay kết quả chạy.
 
 ## Đối chiếu Bedrock
 
-Đã đọc [The text editor tool](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276767), sources/bedrock-lessons/276767.json. Bản mô tả cấu trúc dữ liệu text editor do nhà cung cấp định nghĩa; ứng dụng vẫn phải triển khai đọc/ghi file và giới hạn đường dẫn. IDs và undo trong video phụ thuộc phiên bản, không phải mọi phiên bản editor đều hỗ trợ cùng lệnh. Dùng chung câu hỏi khái niệm, không đếm trùng.
+Nhà cung cấp định nghĩa cấu trúc công cụ chỉnh sửa, nhưng ứng dụng vẫn phải thực hiện đọc, ghi và giới hạn đường dẫn. Mã phiên bản và khả năng hoàn tác trong video không áp dụng cho mọi phiên bản editor. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [The text editor tool](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276767). Bản lưu: `sources/bedrock-lessons/276767.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [The text edit tool](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289180), sources/vertex-lessons/289180.json. Bản mô tả cấu trúc dữ liệu editor có sẵn nhưng ứng dụng triển khai bộ thực thi và giới hạn đường dẫn. Mã model-prefix/version/undo trong video phụ thuộc mô hình; không khẳng định mọi phiên bản hỗ trợ cùng tập lệnh. Dùng chung câu hỏi khái niệm.
+Dù có sẵn định nghĩa editor, ứng dụng vẫn cần bộ thực thi và phạm vi tệp được phép. Tiền tố mã mô hình, phiên bản và lệnh hoàn tác trong ví dụ phụ thuộc mô hình; cần kiểm tra thay vì giả định cùng tập lệnh ở mọi nơi. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [The text edit tool](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289180). Bản lưu: `sources/vertex-lessons/289180.json`.

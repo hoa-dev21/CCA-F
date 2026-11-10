@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài giới thiệu quá trình chọn token từ phân phối xác suất và temperature điều chỉnh mức tập trung của lựa chọn. Mức thấp thiên về đầu ra ít biến thiên hơn; mức cao mở rộng độ đa dạng, hữu ích khi tìm nhiều ý tưởng.
 
-Đây không phải thước đo độ đúng. Hạ temperature không sửa dữ liệu thiếu hoặc bảo đảm factual độ chính xác, và không nên coi temperature 0 là cam kết đầu ra y hệt ở mọi lần chạy. Ví dụ minh họa trong khóa đơn giản hóa quá trình sampling.
+Khi tạo câu trả lời, mô hình chọn các token tiếp theo dựa trên phân bố xác suất. Tham số `temperature` điều chỉnh mức độ tập trung của lựa chọn này. Trong cách giải thích đơn giản của bài, giá trị thấp thường làm đầu ra ít biến đổi hơn; giá trị cao có thể tạo nhiều cách diễn đạt hoặc ý tưởng đa dạng hơn.
 
-Khả năng hỗ trợ tham số, phạm vi giá trị và phối hợp với thinking phụ thuộc model/API. Bản ôn này không xác nhận cú pháp hiện hành cho mọi mô hình. Khi triển khai, đối chiếu tài liệu phiên bản rồi đánh giá trên dữ liệu tác vụ.
+`temperature` không phải thước đo độ đúng. Hạ giá trị này không bổ sung dữ liệu còn thiếu và không sửa được một nguồn thông tin sai. Cũng không nên hứa rằng đặt bằng 0 sẽ luôn cho kết quả giống hệt ở mọi hệ thống và mọi lần chạy.
+
+Ví dụ: Nếu muốn tìm nhiều ý tưởng, bạn có thể so sánh những cấu hình được mô hình hỗ trợ trên cùng yêu cầu. Nếu cần trạng thái đơn hàng mới nhất, điều cần bổ sung là dữ liệu từ hệ thống đơn hàng, không phải chỉ thay `temperature`.
+
+Mô hình và API có thể khác nhau về việc hỗ trợ tham số, khoảng giá trị và cách dùng cùng chế độ suy luận (thinking). Khi triển khai, hãy đối chiếu phiên bản và đánh giá trên công việc thực tế.
 
 ## Câu hỏi
 
@@ -52,8 +55,12 @@ D. Có, bất kể dữ liệu đầu vào thay đổi.
 
 ## Đối chiếu Bedrock
 
-Đã đọc [Temperature](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276720), sources/bedrock-lessons/276720.json. Ví dụ Converse đặt inferenceConfig.temperature. Temperature thấp có thể giảm độ biến thiên, không bảo đảm kết quả đúng hoặc lặp lại tuyệt đối; các khoảng và default trong video không được dùng như cấu hình hiện hành cho mọi mô hình. Dùng chung câu hỏi khái niệm, không đếm trùng.
+Mẫu Converse đặt tham số ở `inferenceConfig.temperature`. Giá trị thấp có thể giảm độ biến đổi, không bảo đảm thông tin đúng hoặc kết quả giống hệt mọi lần. Khoảng giá trị và mặc định trong video cần kiểm tra trước khi dùng với mô hình khác. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Temperature](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276720). Bản lưu: `sources/bedrock-lessons/276720.json`.
 
 ## Đối chiếu Vertex
 
-Nguồn [Temperature](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289154), sources/vertex-lessons/289154.json. Mẫu `messages.create` đặt `temperature` trực tiếp, khác `inferenceConfig` của Bedrock Converse. Việc lấy mẫu theo xác suất không bảo đảm mỗi lần chạy đều cho kết quả khác nhau. `temperature` thấp cũng không bảo đảm thông tin chính xác hoặc câu trả lời lặp lại hoàn toàn giống nhau.
+Mẫu `messages.create` đặt `temperature` trực tiếp, khác `inferenceConfig` của Bedrock Converse. Chọn theo xác suất không có nghĩa mỗi lần nhất thiết ra kết quả khác. Giá trị thấp cũng không bảo đảm câu trả lời đúng hoặc luôn lặp lại hoàn toàn giống nhau.
+
+Nguồn đối chiếu: [Temperature](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289154). Bản lưu: `sources/vertex-lessons/289154.json`.

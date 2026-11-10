@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài dùng một đoạn văn từ bài nghiên cứu làm input nội dung, yêu cầu trích các chủ đề thành JSON array of strings. Người học chạy kết quả ban đầu để so sánh, xem report.html và tìm nhóm lỗi; trong ví dụ, output không đúng cấu trúc mong muốn là nguyên nhân rõ đầu tiên.
 
-Sửa prompt bằng câu đầu trực tiếp nêu hành động, nguồn và định dạng; bọc nội dung bằng XML tags để phân ranh; thêm các bước xác định chủ đề, đưa vào array và chỉ trả array. Few-shot có thể bổ sung nếu ca khó cần minh họa. Các điểm2.8/9.5 trong video thuộc dataset/rubric demo, không là benchmark hay bằng chứng sẵn sàng production.
+Bài tập dùng một đoạn trong bài nghiên cứu và yêu cầu lấy các chủ đề được đề cập thành một mảng JSON gồm các chuỗi. Người học chạy phiên bản ban đầu, mở `report.html` và xem nhóm lỗi. Trong ví dụ, vấn đề đầu tiên là đầu ra không đúng cấu trúc yêu cầu.
 
-Ngoài JSON parse/type validation, cần kiểm tra coverage và đối chiếu dữ liệu nguồn: topic phải có trong nguồn, không thêm chủ đề chỉ vì liên tưởng; cũng không bỏ chủ đề quan trọng dù định dạng hợp lệ. XML giúp tổ chức prompt nhưng không tự tạo ranh giới tin cậy. Đo lại trên dữ liệu mới/holdout để tránh chỉ học theo bộ phát triển.
+Cách sửa gồm: nêu ngay hành động, nguồn và định dạng cần nhận; đặt văn bản nguồn trong thẻ XML; chỉ rõ các bước nhận diện chủ đề, đưa vào mảng và chỉ trả mảng đó. Có thể bổ sung vài ví dụ nếu gặp trường hợp khó.
+
+Đọc được JSON và đúng kiểu mảng vẫn chưa đủ. Cần đối chiếu từng chủ đề với đoạn gốc: không thêm chủ đề chỉ vì liên tưởng và không bỏ sót chủ đề quan trọng. Thẻ XML giúp tách các phần, nhưng không tự biến nội dung nguồn thành chỉ dẫn đáng tin cậy để ứng dụng làm theo.
+
+Các điểm 2.8 và 9.5 trong video chỉ thuộc bộ dữ liệu và tiêu chí của ví dụ. Trước khi kết luận phương pháp có hiệu quả rộng hơn, cần xem lỗi theo nhóm và đánh giá trên dữ liệu mới, gồm tập giữ riêng không dùng để chỉnh prompt (holdout).
 
 ## Câu hỏi
 
@@ -52,8 +55,14 @@ D. Kiểm tra lỗi theo nhóm và đánh giá dữ liệu mới với bảng ti
 
 ## Đối chiếu bài Vertex qua nội dung hiển thị
 
-[Exercise on prompting trên Vertex](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289173) không cung cấp track phụ đề tiếng Anh ở trình phát tại lúc đọc. Đã kiểm tra các khung hình của video gốc trải từ đầu tới cuối: notebook yêu cầu trích topics từ đoạn học thuật thành JSON array of strings; report kết quả ban đầu để so sánh báo lỗi định dạng; prompt được sửa cho trực tiếp, thêm text XML tags và bước xử lý; tiêu chí cuối yêu cầu array chứa các topics, không commentary. Bản ghi bằng chứng: sources/vertex-media/289173-visual-review.json và các frame được ghi trong đó. Đây là kiểm tra trực quan nội dung notebook, không phải phụ đề chính thức hay tuyên bố đã nghe/chép nguyên văn toàn bộ audio. Phần tóm tắt và câu hỏi về output contract/grounding/eval ở trên áp dụng cho bài thực hành này.
+Tại thời điểm đọc, trình phát không cung cấp phụ đề tiếng Anh. Hồ sơ kiểm tra các khung hình từ đầu tới cuối ghi nhận: notebook trích chủ đề từ đoạn học thuật thành mảng JSON các chuỗi; báo cáo ban đầu có lỗi định dạng; prompt được sửa để nêu trực tiếp yêu cầu, dùng thẻ XML và chỉ rõ các bước. Kết quả cuối cần mảng chủ đề, không kèm lời bình.
+
+Đây là kiểm tra trực quan nội dung notebook, không phải phụ đề chính thức hoặc xác nhận đã nghe, chép toàn bộ âm thanh. Tệp bằng chứng bên dưới ghi các khung hình đã dùng. Phần bài học và câu hỏi về cấu trúc đầu ra, căn cứ từ nguồn và đánh giá áp dụng cho ví dụ này.
+
+Nguồn đối chiếu: [Exercise on prompting trên Vertex](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289173). Bản lưu: `sources/vertex-media/289173-visual-review.json`.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Exercise on prompting](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276746), sources/bedrock-media/276746.json. Cùng bài trích topics của đoạn học thuật thành JSON array of strings: xem report tìm lỗi, câu mở đầu trực tiếp, XML text tags và bước xử lý cụ thể. Các điểm2.8/9.5 là demo; vẫn cần kiểm tra đối chiếu dữ liệu nguồn, coverage và holdout. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Phụ đề Bedrock cùng bài trích chủ đề thành mảng JSON: xem báo cáo tìm lỗi, sửa câu mở đầu, dùng thẻ XML và các bước cụ thể. Các điểm 2.8 và 9.5 chỉ là minh họa. Vẫn cần đối chiếu từng chủ đề với nguồn, kiểm tra độ đầy đủ và dùng tập kiểm thử riêng. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Exercise on prompting](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276746). Bản lưu: `sources/bedrock-media/276746.json`.

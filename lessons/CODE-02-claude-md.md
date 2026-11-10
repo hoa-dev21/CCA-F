@@ -4,13 +4,21 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-cod
 
 ## Nội dung bài học
 
-CLAUDE.md là hướng dẫn mô hình đọc, không phải cơ chế cưỡng chế mọi thao tác. Quy ước như cách đặt tên hoặc vị trí file phù hợp ở đây; hành động không được phép xảy ra cần hook hoặc kiểm soát bằng mã.
 
-Bài phân biệt managed policy cấp tổ chức, user cho sở thích qua các dự án, dự án chia sẻ trong repo và local cho ghi chú cá nhân của repo đó. Chọn phạm vi theo người cần chịu ảnh hưởng. Không đặt quyết định riêng của một nhánh vào quy tắc dùng chung nếu không muốn ảnh hưởng cả nhóm.
+CLAUDE.md là tệp hướng dẫn để mô hình đọc, thường dùng cho quy ước của dự án như cách đặt tên hoặc nơi đặt tệp. Đây không phải cơ chế tự động chặn mọi thao tác sai. Nếu một hành động bắt buộc phải bị ngăn, cần có kiểm soát bằng chương trình, chẳng hạn hook chạy trước thao tác.
 
-Imports giúp chia file theo chủ đề, nhưng nội dung được mở rộng vào ngữ cảnh. Chia thành nhiều file rồi import toàn bộ không tự giảm token cần đọc.
+Bài học phân biệt các phạm vi hướng dẫn:
 
-Quy tắc tốt phải cụ thể, kiểm tra được và nói rõ hành vi thay thế. “Đặt API handler trong thư mục X, mỗi file một handler” rõ hơn “làm theo best practices”. Giữ file gọn và sửa những quy tắc gây hiểu nhầm thay vì cứ nối thêm các chỉ dẫn trùng hoặc mâu thuẫn.
+- Chính sách tổ chức (managed policy): áp dụng theo quản lý của tổ chức.
+- Hướng dẫn người dùng (user): sở thích cá nhân dùng qua nhiều dự án.
+- Hướng dẫn dự án: quy ước được lưu trong kho mã nguồn và chia sẻ với nhóm.
+- Hướng dẫn cục bộ (local): ghi chú cá nhân chỉ dành cho dự án đó.
+
+Chọn phạm vi theo người và công việc cần chịu ảnh hưởng. Ví dụ: một ghi chú thử nghiệm riêng trên nhánh của bạn thường không nên trở thành quy tắc chung cho cả nhóm.
+
+Bạn có thể dùng imports để đưa nội dung từ tệp khác vào hướng dẫn. Cách này giúp tổ chức tài liệu, nhưng toàn bộ phần được đưa vào vẫn chiếm ngữ cảnh. Chia một tệp thành ba tệp rồi nạp cả ba không tự giảm lượng thông tin mô hình phải đọc.
+
+Viết quy tắc cụ thể và nêu rõ cần làm gì. “Đặt mã xử lý API trong thư mục X, mỗi tệp một phần xử lý” dễ thực hiện hơn “làm theo cách tốt nhất”. Khi quy tắc gây hiểu nhầm, hãy sửa nó thay vì liên tục thêm chỉ dẫn trùng lặp hoặc mâu thuẫn.
 
 ## Câu hỏi
 

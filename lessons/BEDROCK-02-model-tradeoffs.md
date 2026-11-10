@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-
 
 ## Nội dung bài học
 
-Bài giới thiệu các phân khúc mô hình theo năng lực, tốc độ và chi phí, và khả năng dùng mô hình khác nhau cho các phần của ứng dụng. Quyết định nên dựa trên yêu cầu và đánh giá chứ không mặc định luôn dùng lựa chọn mạnh nhất hoặc rẻ nhất.
 
-Tên mô hình, ID, vùng triển khai, giá và khả năng thinking được trang khóa mô tả là thông tin thay đổi theo phiên bản. Bản ôn này không xác nhận danh mục mô hình hiện hành, không khuyến nghị sao chép ID từ video và không suy rằng mọi mô hình của một họ có cùng khả năng.
+Các mô hình có thể khác nhau về năng lực xử lý, tốc độ và chi phí. Chọn mô hình cần dựa trên yêu cầu công việc và kết quả đánh giá, không mặc định luôn dùng loại mạnh nhất hoặc rẻ nhất.
 
-Có thể dùng một cấu hình đáp ứng tương tác nhanh và một cấu hình cho phần phân tích khó nếu phép đo cho thấy lợi ích. Đưa thêm router chỉ khi lợi ích đủ bù độ phức tạp. Benchmark/model comparison chi tiết không thuộc trọng tâm Exam Guide đã tải.
+Ví dụ: Bước trả lời nhanh một câu đơn giản và bước phân tích một vấn đề khó có nhu cầu khác nhau. Bạn có thể thử mô hình phù hợp cho từng bước, đo chất lượng và thời gian phản hồi, rồi xem lợi ích có bù được công sức quản lý nhiều cấu hình hay không.
+
+Nếu thêm bộ điều phối để chọn mô hình theo yêu cầu, hệ thống cũng phức tạp hơn. Chỉ nên thêm khi có lợi ích rõ từ kết quả đo.
+
+Tên và mã mô hình, vùng hỗ trợ, giá và khả năng suy luận thêm trong khóa thuộc thời điểm giảng. Không nên sao chép mã mô hình rồi mặc định nó dùng được ở mọi vùng, hoặc cho rằng mọi mô hình trong cùng một họ đều có tính năng giống nhau. Chi tiết so sánh hiệu năng mô hình không phải trọng tâm đề cương thi đã lưu.
 
 ## Câu hỏi
 
@@ -54,12 +57,18 @@ D. Có, không cần test.
 
 ## Bổ sung từ ghi chú khóa học chính thức
 
-Mục [Overview of Claude models](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287722) được đối chiếu qua ghi chú do trang khóa cung cấp cho trợ lý của khóa, key 1p, tiêu đề “Overview of Claude Models”; nguồn [trang khóa](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api). Bản lưu: sources/official-note-lessons/api-287722.json. Đây là ghi chú tóm tắt chính thức, không phải bản chép video đã xem. Ghi chú giới thiệu Opus/Sonnet/Haiku theo đánh đổi intelligence/speed/cost và phân mô hình theo bước. Các câu về thinking hoặc làm việc nhiều giờ là mô tả theo thời điểm, không là giới hạn/bảo đảm hiện hành; giữ nguyên tắc chọn qua phép đánh giá. Dùng chung câu hỏi khái niệm.
+Hồ sơ ban đầu dùng ghi chú chính thức cho trợ lý khóa học, khóa `1p`, tiêu đề “Overview of Claude Models”, không phải bản chép video. Ghi chú giới thiệu Opus, Sonnet, Haiku theo năng lực, tốc độ, chi phí và gợi ý chọn mô hình theo từng bước. Nhận định về suy luận hoặc làm việc nhiều giờ thuộc thời điểm nguồn, không phải giới hạn hay cam kết hiện hành. Dùng đánh giá thực tế để lựa chọn; dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Overview of Claude models](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287722); [trang khóa](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api). Bản lưu: `sources/official-note-lessons/api-287722.json`.
 
 ## Bổ sung từ ghi chú khóa học chính thức
 
-Mục [Overview of Claude models](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289146) được đối chiếu qua ghi chú do trang khóa cung cấp cho trợ lý của khóa, key vertex, tiêu đề “Overview of Claude Models”; nguồn [trang khóa](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api). Bản lưu: sources/official-note-lessons/vertex-289146.json. Đây là ghi chú tóm tắt chính thức, không phải bản chép video đã xem. Ghi chú Vertex cũng phân mô hình theo yêu cầu và gợi ý dùng nhiều mô hình. Không học thuộc tuyên bố Haiku không có reasoning như quy tắc hiện hành cho mọi phiên bản. Chọn theo số đo của tác vụ và hỗ trợ của dự án. Dùng chung câu hỏi khái niệm.
+Nguồn là ghi chú chính thức cho trợ lý, khóa `vertex`, tiêu đề “Overview of Claude Models”, khác bản chép video. Ghi chú cũng chọn mô hình theo yêu cầu và gợi ý kết hợp nhiều mô hình. Không học thuộc câu “Haiku không có suy luận” như quy tắc hiện hành cho mọi phiên bản. Chọn theo số đo nhiệm vụ và khả năng hỗ trợ của dự án. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Overview of Claude models](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289146); [trang khóa](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api). Bản lưu: `sources/official-note-lessons/vertex-289146.json`.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Overview of Claude models](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289146), sources/vertex-media/289146.json. Đối chiếu toàn bộ phụ đề với nguồn API287722 đã đọc: trùng nguyên văn. Giữ các lưu ý về xác thực/provider và tính tương thích mô hình của bài chung. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Hồ sơ đọc toàn bộ phụ đề ghi nhận bản Vertex trùng nguyên văn nguồn API 287722. Dùng chung câu hỏi, đồng thời giữ lưu ý về xác thực, nhà cung cấp và tương thích mô hình.
+
+Nguồn đối chiếu: [Overview of Claude models](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289146). Bản lưu: `sources/vertex-media/289146.json`.

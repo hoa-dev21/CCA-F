@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-
 
 ## Nội dung bài học
 
-Trong mẫu, trình duyệt gửi câu hỏi tới hệ thống xử lý phía máy chủ; hệ thống xử lý phía máy chủ dùng Bedrock client với định danh mô hình; Bedrock trả assistant message; hệ thống xử lý phía máy chủ đưa kết quả về UI. Việc chọn cloud nhà cung cấp thay lớp tích hợp, không bỏ trách nhiệm quản lý dữ liệu và hội thoại của ứng dụng.
 
-Để chẩn đoán lỗi, phân biệt client/backend, lớp SDK/provider và xử lý phản hồi. Không coi việc gửi yêu cầu thành công là bằng chứng mô hình đã tạo đầu ra đúng nhiệm vụ.
+Trong ví dụ trò chuyện trên web, yêu cầu đi qua bốn chặng: người dùng nhập câu hỏi trên trình duyệt; máy chủ ứng dụng dùng Bedrock client để gọi mô hình; Bedrock trả tin nhắn của trợ lý; máy chủ chuyển kết quả về giao diện.
 
-Bài ngắn giải thích luồng tổng thể, không mô tả đầy đủ IAM, cấu hình vùng hay bảo đảm dữ liệu. Các chi tiết cloud configuration nằm ngoài phạm vi Exam Guide đã tải; không suy chính sách bảo mật chỉ từ sơ đồ luồng.
+Dùng nhà cung cấp đám mây thay đổi cách kết nối tới mô hình. Ứng dụng vẫn chịu trách nhiệm gửi dữ liệu phù hợp, quản lý lịch sử hội thoại và xử lý phản hồi.
+
+Ví dụ: Giao diện không hiện câu trả lời. Cần xác định câu hỏi đã tới máy chủ chưa, lời gọi Bedrock có thành công không và mã xử lý có đọc đúng phản hồi không. Chỉ thay prompt có thể không giải quyết lỗi nằm ở một chặng khác.
+
+Gửi yêu cầu thành công cũng chưa chứng minh câu trả lời đúng nhiệm vụ. Sơ đồ này chỉ mô tả luồng tổng thể, không đủ để kết luận về quyền truy cập, vùng triển khai hoặc chính sách lưu dữ liệu. Các chi tiết đó cần tài liệu và cấu hình của môi trường thực tế.
 
 ## Câu hỏi
 

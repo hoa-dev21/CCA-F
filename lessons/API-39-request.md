@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Trong mẫu Python của khóa, client.messages.create nhận mô hình, max_tokens và messages. max_tokens là trần sinh đầu ra, không phải độ dài bắt buộc phải đạt. Messages ghi role và nội dung; phản hồi là đối tượng có nội dung cùng thông tin mô tả.
 
-Ví dụ cơ bản chỉ lấy nội dung[0].text vì giả định đầu ra văn bản đơn giản. Khi mở rộng sang các công cụ, không dùng cách lấy text này làm toàn bộ luồng: cần giữ các blocks và stop_reason.
+Trong mẫu Python của khóa, ứng dụng gọi `client.messages.create` và truyền tên mô hình, `max_tokens` cùng danh sách `messages`. Mỗi tin nhắn ghi vai trò người nói (role) và nội dung.
 
-Bài đề cập cấu hình khóa trong môi trường và không commit .env. Mã mô hình minh họa là mã lúc khóa được ghi, không mặc định còn phù hợp hiện tại. Authentication và quản lý tài khoản không thuộc trọng tâm Exam Guide đã tải.
+`max_tokens` là giới hạn trên cho lượng đầu ra mô hình được sinh, không phải độ dài bắt buộc. Ví dụ: đặt 1000 không có nghĩa câu trả lời luôn phải dùng đủ 1000 token. Token là đơn vị mà mô hình dùng để xử lý văn bản, không nhất thiết tương ứng với một từ.
+
+Phản hồi là một đối tượng chứa nội dung và các thông tin khác. Ví dụ cơ bản chỉ lấy `content[0].text` vì giả định câu trả lời là văn bản đơn giản. Khi bổ sung công cụ, cần giữ các khối nội dung và `stop_reason` để xử lý đúng luồng, thay vì chỉ lấy phần chữ đầu tiên.
+
+Bài cũng đề cập đặt khóa API trong cấu hình môi trường và không đưa tệp `.env` chứa thông tin bí mật vào kho mã nguồn. Tên mô hình trong notebook là ví dụ tại thời điểm giảng, cần kiểm tra khả năng hỗ trợ khi triển khai. Xác thực và quản lý tài khoản không phải trọng tâm đề cương thi đã lưu.
 
 ## Câu hỏi
 
@@ -52,4 +55,6 @@ D. Không cần kiểm tra API hỗ trợ.
 
 ## Đối chiếu Vertex
 
-Nguồn [Making a request](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289155), sources/vertex-lessons/289155.json. Bài dùng AnthropicVertex(region, project_id), client.messages.create và mô hình ID có dạng riêng của Vertex. SDK extra [vertex], region global và mô hình ID trong mẫu là chi tiết khóa học, không phải bảo đảm khả dụng cho mọi project/model. max_tokens là trần, không là mục tiêu; nội dung[0].text chỉ phù hợp ví dụ text đơn giản.
+Mẫu dùng `AnthropicVertex(region, project_id)`, `client.messages.create` và mã mô hình theo Vertex. Phần cài thư viện bổ sung `[vertex]`, vùng `global` và mã mô hình trong khóa không bảo đảm dùng được với mọi dự án. `max_tokens` là giới hạn trên, không phải độ dài mục tiêu. Lấy `content[0].text` chỉ phù hợp với ví dụ văn bản đơn giản.
+
+Nguồn đối chiếu: [Making a request](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289155). Bản lưu: `sources/vertex-lessons/289155.json`.

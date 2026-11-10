@@ -4,15 +4,16 @@ Nguồn: [bài học chính thức](https://anthropic-partners.skilljar.com/clau
 
 ## Nội dung bài học
 
-**System prompt** hướng dẫn vai trò, giọng điệu và phương pháp phản hồi. Trong ví dụ của khóa học, chatbot gia sư cần gợi ý từng bước thay vì lập tức đưa đáp số. Chỉ yêu cầu giải toán ở tin nhắn của người dùng chưa mô tả đầy đủ cách dạy mong muốn.
 
-Trong Messages API, truyền hướng dẫn qua tham số `system` của lời gọi tạo message. Nội dung hội thoại nằm trong `messages`. Hàm chat có thể nhận `system` làm đối số để tái sử dụng cùng cơ chế gửi yêu cầu cho nhiều vai trò.
+System prompt là phần hướng dẫn chung về vai trò, giọng điệu và cách trả lời của AI. Ví dụ: với một gia sư, bạn có thể yêu cầu gợi ý từng bước và để người học tự làm trước khi đưa lời giải. Chỉ gửi một bài toán chưa nói rõ cách dạy mong muốn này.
 
-Ví dụ để dễ hình dung: gia sư hỏi người học muốn thực hiện phép biến đổi nào trước, sau đó phản hồi theo câu trả lời của họ. Khi kiểm thử, cần kiểm tra cả cách hướng dẫn, không chỉ đáp số cuối cùng.
+Trong mẫu Messages API của bài, hướng dẫn chung được truyền qua tham số `system`. Các tin nhắn trao đổi nằm trong `messages`. Hàm gửi yêu cầu có thể nhận `system` làm đầu vào, nhờ đó cùng một hàm có thể dùng cho gia sư hoặc trợ lý biên tập bằng cách thay hướng dẫn.
 
-Lưu ý theo ví dụ trong bài: khi không cung cấp system prompt, hàm hỗ trợ bỏ tham số `system` thay vì truyền `None`. Đây là chi tiết của mẫu triển khai, không cần học thuộc mã Python để hiểu vai trò của system prompt.
+Ví dụ: Gia sư hỏi người học muốn thực hiện phép biến đổi nào trước, rồi phản hồi theo câu trả lời của họ. Khi đánh giá chatbot, cần kiểm tra cả cách hướng dẫn này. Đáp số đúng chưa đủ nếu chatbot luôn đưa ngay lời giải, trái phương pháp đã yêu cầu.
 
-Liên hệ Exam Guide: hướng dẫn bằng prompt định hướng hành vi; các yêu cầu tuân thủ bắt buộc vẫn cần cơ chế kiểm soát bằng chương trình. Phân biệt này được bổ sung từ Exam Guide, không phải cam kết rằng system prompt bảo đảm tuyệt đối.
+Trong mã minh họa, khi không có hướng dẫn hệ thống, hàm bỏ tham số `system` thay vì truyền `None`. Đây là cách xử lý của mẫu mã, không phải phần cần học thuộc để hiểu khái niệm.
+
+Theo phần liên hệ với đề cương thi, prompt giúp định hướng hành vi nhưng không bảo đảm AI luôn tuân thủ. Các điều kiện bắt buộc vẫn cần kiểm tra hoặc chặn bằng chương trình.
 
 ## Câu hỏi
 
@@ -54,8 +55,12 @@ D. Có bỏ toàn bộ lịch sử không.
 
 ## Đối chiếu Bedrock
 
-Đã đọc [bài tương ứng](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276726) và dùng chung kiến thức/câu hỏi về vai trò hoặc quản lý ngữ cảnh. Mẫu Converse truyền system dạng danh sách các khối văn bản, khác chuỗi trong mẫu Messages API. Vai trò hướng dẫn hành vi không phải bảo đảm tuân thủ tuyệt đối. Khẳng định thay system giữa hội thoại trong video cần kiểm tra theo API, không coi là giới hạn bất biến. Nguồn: sources/bedrock-lessons/276726.json.
+Mẫu Converse truyền hướng dẫn hệ thống dưới dạng danh sách khối văn bản, khác chuỗi trong mẫu Messages API. Vai trò giúp định hướng hành vi, không bảo đảm tuân thủ tuyệt đối. Nhận định trong video về việc thay hướng dẫn hệ thống giữa cuộc trò chuyện cần được kiểm tra theo API đang dùng. Các kiến thức tương đương dùng chung câu hỏi.
+
+Nguồn đối chiếu: [bài tương ứng](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276726). Bản lưu: `sources/bedrock-lessons/276726.json`.
 
 ## Đối chiếu Vertex
 
-Nguồn [System prompts](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289153), sources/vertex-lessons/289153.json. Toàn bộ mainText sau bỏ whitespace, timestamp và player timer trùng nguồn đã đọc https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287733. Đối chiếu toàn văn, không suy từ tiêu đề.
+Theo hồ sơ đối chiếu, phần văn bản chính trùng bài API liên kết dưới đây sau khi bỏ khoảng trắng và mốc thời gian của trình phát. Đây là kết quả đối chiếu toàn văn, không phải suy ra từ tiêu đề.
+
+Nguồn đối chiếu: [System prompts](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289153); [Bài đối chiếu](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287733). Bản lưu: `sources/vertex-lessons/289153.json`.

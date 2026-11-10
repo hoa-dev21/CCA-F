@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Routing phân loại đầu vào rồi chọn quy trình xử lý phù hợp. Các nhóm yêu cầu có thể cần prompt, công cụ hoặc quy trình khác nhau. Trong mẫu của bài, mỗi yêu cầu đi vào một nhánh được chọn, thay vì chạy tất cả nhánh.
 
-Pattern phù hợp khi các nhóm đủ rõ, phân loại đáng tin và lợi ích chuyên biệt hóa xứng đáng với bước điều phối thêm. Nếu router phân loại sai, quy trình xử lý tốt vẫn có thể trả lời không phù hợp vì nhận nhầm loại tác vụ.
+Routing là phân loại yêu cầu rồi chuyển tới cách xử lý phù hợp. Mỗi nhóm có thể dùng prompt, công cụ hoặc quy trình khác nhau. Trong mẫu của bài, một yêu cầu đi vào nhánh được chọn, thay vì chạy tất cả các nhánh.
 
-Ví dụ để dễ hình dung: hỗ trợ kỹ thuật và yêu cầu thay đổi hóa đơn có hướng xử lý khác. Phân biệt lỗi chọn nhánh với lỗi bên trong nhánh để sửa đúng phần hệ thống.
+Ví dụ: Câu hỏi về lỗi phần mềm cần quy trình hỗ trợ kỹ thuật; yêu cầu sửa hóa đơn cần quy trình thanh toán. Bước phân loại quyết định chuyển câu hỏi tới đâu.
+
+Cách này có ích khi các nhóm yêu cầu đủ rõ để phân loại đáng tin cậy, và mỗi nhóm được lợi từ cách xử lý chuyên biệt. Nếu mọi yêu cầu cần cùng cách làm, thêm bộ chuyển nhánh có thể không mang lại lợi ích tương xứng.
+
+Khi kết quả sai, cần phân biệt lỗi chọn nhánh với lỗi bên trong nhánh. Quy trình kỹ thuật có thể hoạt động tốt nhưng vẫn trả lời không phù hợp nếu được giao nhầm yêu cầu về hóa đơn. Khi đó, cần xem bước phân loại trước khi sửa quy trình kỹ thuật.
 
 ## Câu hỏi
 
@@ -50,4 +53,6 @@ D. Không có khác biệt xử lý giữa các nhóm.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Routing workflows](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289242), sources/vertex-lessons/289242.json. Router phân loại rồi chọn quy trình xử lý chuyên biệt, không chạy mọi nhánh. Ví dụ3–10categories là hướng dẫn minh họa; cần xử lý input mơ hồ/không thuộc nhóm và đo lỗi router. Không mặc định mọi đề tài programming/surfing luôn có cùng ý định. Dùng chung câu hỏi khái niệm.
+Bộ điều phối phân loại rồi chọn một quy trình chuyên biệt, không chạy mọi nhánh. Gợi ý 3–10 nhóm trong bài là minh họa; cần xử lý đầu vào mơ hồ hoặc không thuộc nhóm nào và đo lỗi phân loại. Cùng chủ đề như lập trình hoặc lướt sóng vẫn có thể chứa nhiều ý định khác nhau. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Routing workflows](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289242). Bản lưu: `sources/vertex-lessons/289242.json`.

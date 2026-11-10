@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-
 
 ## Nội dung bài học
 
-Computer Use cho phép ứng dụng thực thi yêu cầu chụp màn hình, click, gõ và cuộn để mô hình quan sát rồi quyết định bước tiếp theo. Bài minh họa QA autocomplete: nhập @, chọn bằng Enter, rồi kiểm tra vị trí dropdown sau Backspace. Tiêu chí cụ thể giúp phân biệt thao tác thành công với giao diện thực sự đúng.
 
-Mỗi ca nên có trạng thái ban đầu rõ, các bước, kết quả mong đợi và bằng chứng quan sát. Reset trang giữa các ca khi cần tránh trạng thái trước ảnh hưởng ca sau. Ghi rõ bước nào pass/fail và giới hạn quan sát; thao tác click đã chạy không đồng nghĩa tác vụ đã thành công.
+Computer Use là cách để mô hình quan sát giao diện và yêu cầu ứng dụng thực hiện thao tác như chụp màn hình, bấm chuột, gõ hoặc cuộn. Sau mỗi thao tác, mô hình dùng trạng thái mới để chọn bước tiếp theo.
 
-Mẫu chạy desktop trong container. Cô lập làm giảm phạm vi ảnh hưởng nhưng không tự loại bỏ rủi ro dữ liệu, mạng, tài khoản hay thao tác có hậu quả. Chỉ cấp tài nguyên cần thiết, xác minh trước hành động khó đảo ngược. Các nhận định “không có rủi ro” trong bài không được dùng làm bảo đảm kiến trúc.
+Ví dụ kiểm thử trong bài là tính năng gợi ý tên tài liệu: gõ `@`, chọn bằng Enter, rồi dùng Backspace và xem vị trí danh sách gợi ý. Danh sách xuất hiện chưa đủ để kết luận đúng nếu nó che mất ô nhập.
+
+Mỗi trường hợp kiểm thử cần trạng thái ban đầu, các bước, kết quả mong đợi và bằng chứng quan sát. Khi cần, tải lại trang hoặc chuẩn bị lại dữ liệu giữa các trường hợp để tránh ảnh hưởng lẫn nhau. Ghi rõ bước đạt, bước không đạt và phần chưa quan sát được.
+
+Mẫu chạy môi trường máy tính trong container. Điều này giúp giới hạn phạm vi ảnh hưởng nhưng không tự loại bỏ rủi ro từ dữ liệu, mạng, tài khoản thật hoặc thao tác có hậu quả. Vẫn cần giới hạn tài nguyên và xác minh trước hành động khó đảo ngược; không coi nhận định “không có rủi ro” trong ví dụ là bảo đảm chung.
 
 ## Câu hỏi
 
@@ -52,4 +55,6 @@ D. Vẫn cần giới hạn tài nguyên và kiểm soát hành động có hậ
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Computer use](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289233), sources/vertex-media/289233.json. Demo QA autocomplete @, Enter và Backspace, quan sát dropdown lệch vị trí; cần báo cáo pass/fail theo tiêu chí rõ. Browser trong Docker không loại bỏ mọi tác động ra ngoài qua tài khoản/dịch vụ. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Ví dụ kiểm thử gợi ý tài liệu dùng `@`, Enter và Backspace rồi quan sát danh sách gợi ý lệch vị trí. Báo đạt hoặc không đạt phải theo tiêu chí cụ thể. Trình duyệt trong Docker vẫn có thể tác động bên ngoài qua tài khoản và dịch vụ, nên không coi là loại bỏ mọi rủi ro. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Computer use](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289233). Bản lưu: `sources/vertex-media/289233.json`.

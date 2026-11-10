@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-
 
 ## Nội dung bài học
 
-Assistant prefill trong ví dụ cung cấp phần mở đầu để mô hình tiếp tục. Kết quả trả về không nhất thiết lặp phần đã điền; ứng dụng cần ghép đúng khi hiển thị hoặc xử lý. Stop sequence kết thúc khi gặp marker được chỉ định; marker không phải bằng chứng nội dung đã hoàn thành đúng yêu cầu.
 
-Prefill có thể làm lệch hướng lập luận theo phần mở đầu được chọn. Đừng coi việc mô hình tiếp tục một kết luận có sẵn là xác nhận khách quan kết luận đó. Dấu dừng quá rộng có thể cắt nhầm dữ liệu quan trọng.
+Assistant prefill là phần mở đầu câu trả lời được ứng dụng cung cấp sẵn để mô hình viết tiếp. Phản hồi mới không nhất thiết lặp lại phần đã điền, nên ứng dụng cần ghép đúng nếu muốn hiển thị hoặc xử lý toàn bộ câu trả lời.
 
-Converse trong mẫu dùng inferenceConfig/stopSequences. Khả năng prefill và cấu hình phối hợp tùy model/provider; không coi ví dụ cũ là hỗ trợ hiện hành đã xác minh. Với structured extraction, xem [schema/tool_choice](EXAM-05-structured-output.md) và validation thay vì chỉ cắt Markdown.
+Stop sequence là chuỗi đánh dấu yêu cầu dừng sinh nội dung khi gặp. Gặp dấu dừng chỉ cho biết điều kiện dừng đã xảy ra, chưa chứng minh nội dung đáp ứng đủ yêu cầu. Một dấu dừng quá rộng có thể cắt giữa dữ liệu quan trọng, chẳng hạn giữa một đoạn JSON.
+
+Phần mở đầu cũng có thể định hướng câu trả lời. Nếu bạn viết sẵn một quan điểm rồi mô hình tiếp tục bảo vệ nó, đó chưa phải đánh giá độc lập rằng quan điểm ấy đúng. Cần xem bằng chứng riêng.
+
+Mẫu Converse dùng `inferenceConfig` và `stopSequences`. Khả năng hỗ trợ prefill và cách phối hợp tùy mô hình, nhà cung cấp, phiên bản. Với việc trích xuất dữ liệu có cấu trúc, xem thêm [schema và tool_choice](EXAM-05-structured-output.md) cùng kiểm tra dữ liệu, thay vì chỉ cắt bỏ định dạng Markdown.
 
 ## Câu hỏi
 
@@ -50,4 +53,6 @@ D. Chỉ sửa giọng điệu.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Controlling model output](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289160), sources/vertex-lessons/289160.json. Ví dụ Vertex dùng assistant message prefill và stop_sequences ở wrapper Messages, khác cấu trúc Converse. Prefix không tự lặp vào phần text mới; stop marker chặn sinh tiếp nhưng có thể làm dữ liệu chưa hoàn chỉnh. Khả năng hỗ trợ phụ thuộc mô hình. Dùng chung câu hỏi khái niệm.
+Mẫu Vertex dùng phần mở đầu tin nhắn assistant và `stop_sequences` trong hàm gọi Messages, khác cấu trúc Converse. Phần đã điền không tự lặp trong văn bản mới. Chuỗi dừng có thể cắt khi dữ liệu chưa hoàn chỉnh; khả năng hỗ trợ phụ thuộc mô hình. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Controlling model output](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289160). Bản lưu: `sources/vertex-lessons/289160.json`.

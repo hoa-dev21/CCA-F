@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-101
 
 ## Nội dung bài học
 
-Bài tập hợp các ví dụ theo vai trò: báo cáo dự án và phân tích phản hồi; chuẩn bị bán hàng; phân tích chiến dịch; hỗ trợ bảng tính và memo; onboarding; tổ chức tài liệu pháp lý; nghiên cứu và kiểm tra thống kê.
 
-Đây là điểm khởi đầu chọn nhiệm vụ phù hợp, không phải chứng nhận mô hình có thể tự đảm nhiệm mọi trách nhiệm nghề nghiệp. Lấy ví dụ sát công việc của mình, xác định nguồn, đầu ra và cách kiểm tra, rồi thử trên phạm vi nhỏ.
+Bài học đưa ra ví dụ dùng Claude trong nhiều công việc: viết báo cáo dự án, phân tích phản hồi khách hàng, chuẩn bị bán hàng, đánh giá chiến dịch, hỗ trợ bảng tính, viết bản ghi nhớ, hướng dẫn nhân viên mới, sắp xếp tài liệu pháp lý và hỗ trợ nghiên cứu.
 
-Ví dụ để dễ hình dung: dùng Claude tạo bản nháp báo cáo doanh số từ dữ liệu đã cung cấp, sau đó đối chiếu phép tính và thông tin khách hàng. Không suy ra hướng dẫn dùng một tính năng là lời khuyên chuyên môn tài chính hoặc pháp lý.
+Hãy chọn một nhiệm vụ thật, có phạm vi nhỏ và có cách kiểm tra kết quả. Trước khi thử, xác định dữ liệu sẽ dùng, đầu ra cần nhận và tiêu chí để biết kết quả đạt yêu cầu.
+
+Ví dụ: Bạn cung cấp bảng doanh số và nhờ Claude viết bản nháp báo cáo. Sau đó, bạn đối chiếu phép tính, tên khách hàng và các kết luận với dữ liệu gốc. Việc có ví dụ ứng dụng trong tài chính hay pháp lý không chứng minh AI có thể tự đảm nhiệm mọi quyết định chuyên môn.
+
+Nếu một quy trình được lặp lại thường xuyên, chẳng hạn kiểm tra bài viết theo hướng dẫn thương hiệu, có thể đóng gói các bước và tiêu chí thành skill để dùng lại. Kết quả mỗi lần chạy vẫn cần được kiểm tra.
 
 ## Câu hỏi
 

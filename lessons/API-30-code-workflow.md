@@ -4,15 +4,14 @@ Nguồn: [bài chính thức trong khóa API](https://anthropic-partners.skillja
 
 ## Nội dung bài học
 
-Claude Code hỗ trợ nhiều giai đoạn phát triển, không chỉ sinh đoạn mã. Bài đề xuất đưa các file liên quan vào ngữ cảnh, yêu cầu lập kế hoạch trước khi sửa, rồi triển khai khi cách làm đã rõ.
 
-`CLAUDE.md` lưu thông tin dự án như lệnh build, quy ước và kiến trúc. Cần phân biệt cấu hình dùng chung với ghi chú cá nhân và hướng dẫn dùng qua nhiều dự án. Không lưu mọi chi tiết của một cuộc trao đổi như thể đều là quy tắc lâu dài.
+Claude Code có thể hỗ trợ từ việc tìm hiểu dự án đến lập kế hoạch, sửa mã và kiểm tra. Trước khi triển khai, hãy cho Claude đọc các tệp và quy ước liên quan. Khi hiểu cấu trúc đang có, Claude có cơ sở dùng lại mã thay vì tạo thêm chức năng trùng lặp.
 
-Một luồng khác là xác định test case, viết các kiểm thử có ý nghĩa rồi triển khai để đáp ứng chúng. Tiêu chí kiểm tra rõ giúp xác minh hành vi thay vì chỉ tin lời mô tả “đã xong”.
+Tệp `CLAUDE.md` có thể lưu thông tin ổn định như lệnh xây dựng ứng dụng, quy ước viết mã và kiến trúc. Quy tắc dùng chung cho nhóm nên đặt ở cấu hình dự án; ghi chú cá nhân cần phạm vi riêng. Không nên biến mọi chi tiết của một cuộc trò chuyện thành quy tắc lâu dài.
 
-Ví dụ để dễ hình dung: thêm công cụ chuyển đổi tài liệu vào dự án có sẵn. Trước hết đọc module xử lý tài liệu và cách đăng ký MCP các công cụ, sau đó lập kế hoạch tái sử dụng mã, xác định trường hợp file thiếu, rồi triển khai và kiểm tra.
+Bài còn giới thiệu cách phát triển dựa trên kiểm thử: xác định các trường hợp cần xử lý, viết kiểm thử có ý nghĩa, rồi triển khai và kiểm tra. Cách này tạo bằng chứng cụ thể thay vì chỉ tin lời báo “đã xong”.
 
-Bài có nhắc các lệnh giao diện của phiên bản lúc giảng. Bản ôn này tập trung quy trình; không coi toàn bộ shortcut cũ trong video là cú pháp hiện hành.
+Ví dụ: Khi thêm công cụ chuyển đổi tài liệu, trước hết đọc phần xử lý tài liệu và cách đăng ký công cụ MCP. Sau đó lập kế hoạch dùng lại mã, xác định cách xử lý tệp không tồn tại, rồi triển khai và kiểm thử. Các lệnh và phím tắt trong video thuộc phiên bản lúc giảng; điều chính cần nắm là quy trình.
 
 ## Câu hỏi
 
@@ -54,8 +53,12 @@ D. Chỉ đổi tên hàm để coi là hoàn thành.
 
 ## Đối chiếu Bedrock
 
-Đã đọc [Claude Code in action](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276811), sources/bedrock-lessons/276811.json. Nguồn Bedrock cũng trình bày đọc code, lập kế hoạch rồi triển khai; TDD chọn test phù hợp trước khi viết code. /init và CLAUDE.md phục vụ ngữ cảnh dự án; phím # và cú pháp giao diện cũ trong video cần kiểm tra trước khi dùng. Không tự stage/commit chỉ vì bài có ví dụ. Dùng chung câu hỏi khái niệm, không đếm trùng.
+Bài Bedrock cùng trình bày đọc mã, lập kế hoạch rồi triển khai. Cách làm dựa trên kiểm thử chọn trường hợp kiểm tra trước khi viết mã. `/init` và CLAUDE.md phục vụ ngữ cảnh dự án; phím `#` và cú pháp cũ cần được kiểm tra trước khi dùng. Có ví dụ trong video không tự cho phép đưa thay đổi vào vùng chờ Git hoặc tạo commit. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Claude Code in action](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276811). Bản lưu: `sources/bedrock-lessons/276811.json`.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Claude Code in action](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289246), sources/vertex-media/289246.json. Đã đọc đầy đủ thực hành document-path-to-Markdown: đọc README/setup, /init và project/local/user memory; đọc công cụ mẫu cùng hàm conversion trước lập kế hoạch rồi triển khai. Quy trình làm việc khác chọn test cases phù hợp trước implementation; /clear ở demo tách ngữ cảnh để không dùng lại lời giải trước. Phím #/cú pháp video theo phiên bản; không tự commit/stash/deploy chỉ vì video có ví dụ. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Theo hồ sơ đọc đầy đủ phụ đề, ví dụ chuyển tài liệu sang Markdown bắt đầu từ README, thiết lập môi trường và các phạm vi hướng dẫn dự án, cục bộ, cá nhân. Người học đọc công cụ mẫu và hàm chuyển đổi trước khi lập kế hoạch, triển khai. Một luồng khác chọn kiểm thử trước; `/clear` trong minh họa tách ngữ cảnh khỏi lời giải cũ. Lệnh, phím tắt tùy phiên bản; ví dụ không tự cấp quyền commit, cất thay đổi bằng stash hoặc triển khai. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Claude Code in action](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289246). Bản lưu: `sources/vertex-media/289246.json`.

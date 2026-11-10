@@ -4,15 +4,16 @@ Nguồn bổ trợ: Exam Guide CCAR-F v1.0 July 2026, mục 1.2–1.3, trang PDF
 
 ## Nội dung bài học
 
-Trong mô hình hub-and-spoke của đề cương, tác nhân điều phối phân tích yêu cầu, chia phạm vi, chọn các tác nhân con cần thiết, gom kết quả và xử lý lỗi. Không bắt mọi yêu cầu đi qua toàn bộ quy trình xử lý nếu chỉ cần một nhánh.
 
-Chia nhiệm vụ theo chủ đề hoặc loại nguồn để hạn chế trùng lặp; nhưng đừng chia hẹp đến mức bỏ sót phạm vi lớn. Sau tổng hợp, kiểm tra khoảng trống và giao lại truy vấn có mục tiêu, thay vì luôn lặp toàn bộ nghiên cứu.
+Trong mô hình hub-and-spoke của đề cương, một tác nhân điều phối đứng ở trung tâm: phân tích yêu cầu, chia việc, chọn tác nhân con, nhận kết quả và xử lý lỗi. Không phải yêu cầu nào cũng cần gọi mọi tác nhân. Một câu hỏi đơn giản có thể chỉ cần một nhánh.
 
-Tác nhân con có ngữ cảnh riêng. Không giả định nó tự biết lịch sử tác nhân điều phối hoặc kết quả tác nhân AI trước. Prompt bàn giao cần mục tiêu, tiêu chí chất lượng, dữ liệu liên quan và nguồn. Tách nội dung phát hiện khỏi thông tin mô tả như URL, trang, ngày và tên tài liệu để giữ việc ghi rõ nguồn.
+Chia việc theo chủ đề hoặc nguồn dữ liệu để hạn chế làm trùng. Tuy nhiên, cần kiểm tra tổng thể để việc chia quá nhỏ không bỏ sót phạm vi quan trọng. Sau khi tổng hợp, nếu thiếu một góc nhìn, giao thêm nhiệm vụ cụ thể cho phần thiếu thay vì chạy lại toàn bộ nghiên cứu.
 
-Theo giao diện được Exam Guide mô tả, tác nhân điều phối cần Task trong allowedTools để gọi các tác nhân con; AgentDefinition khai báo mô tả, system prompt và giới hạn công cụ. Các tác vụ độc lập có thể được yêu cầu trong cùng lượt để chạy song song. Tên API thực tế cần kiểm tra theo SDK đang dùng, không trộn cú pháp của bản khác với đề cương.
+Tác nhân con có ngữ cảnh riêng, không tự biết toàn bộ cuộc trò chuyện của tác nhân điều phối. Khi giao việc, cần gửi mục tiêu, phạm vi, tiêu chí chất lượng, dữ liệu và kết quả trước đó có liên quan. Kết quả bàn giao nên tách phát hiện khỏi thông tin nguồn như URL, tên tài liệu, trang và ngày để không mất căn cứ khi tổng hợp.
 
-Ví dụ để dễ hình dung: nghiên cứu một thị trường có nhánh tài liệu pháp lý và nhánh dữ liệu khách hàng. Tác nhân điều phối gửi tiêu chí và phạm vi khác nhau, nhận bảng phát hiện có nguồn, rồi giao một truy vấn bổ sung nếu tổng hợp thiếu thông tin theo thời kỳ.
+Theo giao diện trong đề cương, tác nhân điều phối cần `Task` trong `allowedTools` để gọi tác nhân con. `AgentDefinition` khai báo mô tả, hướng dẫn hệ thống và giới hạn công cụ. Các nhiệm vụ độc lập có thể được yêu cầu trong cùng lượt để chạy song song. Đây là tên giao diện theo đề cương; khi triển khai phải đối chiếu thư viện đang dùng.
+
+Ví dụ: Nghiên cứu thị trường có một nhánh đọc quy định và một nhánh đọc dữ liệu khách hàng. Tác nhân điều phối giao phạm vi riêng, nhận kết quả có nguồn rồi kiểm tra xem có thiếu dữ liệu của một thời kỳ nào không. Nếu thiếu, nó giao truy vấn bổ sung và chuyển phát hiện mới vào bước tổng hợp.
 
 ## Câu hỏi tình huống
 

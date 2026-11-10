@@ -6,9 +6,16 @@ Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025). Bản gốc và phầ
 
 ## Nội dung bài học
 
-Creation Diligence là cân nhắc hệ thống sử dụng, dữ liệu đưa vào và cách cộng tác. Transparency Diligence là nói rõ vai trò AI cho những người cần biết. Deployment Diligence là kiểm chứng và nhận trách nhiệm với đầu ra đem sử dụng/chia sẻ.
 
-Yêu cầu minh bạch khác nhau theo bối cảnh công việc, học thuật hoặc cá nhân. Diligence statement tốt mô tả AI hỗ trợ phần nào, quy trình kiểm tra thực sự đã làm và ai chịu trách nhiệm cuối. Không tuyên bố đã xác minh nếu chưa thực hiện các bước đó.
+Sử dụng AI có trách nhiệm (Diligence) bao gồm việc cân nhắc trước khi dùng, minh bạch trong quá trình làm và kiểm tra trước khi chia sẻ kết quả. Bài học chia thành ba phần:
+
+- Trách nhiệm khi tạo nội dung (Creation Diligence): chọn hệ thống phù hợp, cân nhắc dữ liệu nào được đưa vào và cách phối hợp với AI.
+- Minh bạch về việc dùng AI (Transparency Diligence): nói rõ AI đã hỗ trợ phần nào cho những người cần biết.
+- Trách nhiệm khi đưa kết quả vào sử dụng (Deployment Diligence): kiểm chứng đầu ra và nhận trách nhiệm về nội dung mình sử dụng hoặc chia sẻ.
+
+Mức độ cần thông báo việc dùng AI phụ thuộc vào bối cảnh công việc, học tập hoặc cá nhân. Một bản ghi về việc sử dụng AI nên nêu AI đã làm gì, bạn thực sự đã kiểm tra những gì và ai chịu trách nhiệm cuối cùng.
+
+Ví dụ: “Tôi dùng AI để đề xuất bố cục và soạn bản nháp. Tôi đã đối chiếu số liệu với báo cáo gốc và chịu trách nhiệm về bản gửi đi”. Chỉ viết như vậy nếu bạn đã thực hiện các bước kiểm tra đó. Việc ghi tên AI không thay thế cho việc xác minh nội dung.
 
 ## Câu hỏi
 

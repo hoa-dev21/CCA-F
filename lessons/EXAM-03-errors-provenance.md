@@ -4,17 +4,18 @@ Nguồn bổ trợ: Exam Guide CCAR-F v1.0, mục 5.3 và 5.6, trang PDF 21, 23.
 
 ## Nội dung bài học
 
-Phân biệt truy vấn thành công không có kết quả với không truy cập được nguồn. Trả lỗi quá thời gian chờ thành danh sách rỗng “thành công” khiến tác nhân điều phối tưởng đã kiểm tra và không thấy gì.
 
-Tác nhân con xử lý lỗi tạm thời trong phạm vi cho phép; khi không khắc phục được, gửi loại lỗi, truy vấn đã thử, kết quả một phần và phương án khác. Trạng thái chung “không hoạt động” thiếu dữ liệu để quyết định phục hồi. Cũng không nên hủy toàn bộ nghiên cứu chỉ vì một nguồn thất bại nếu còn cách hoàn thành một phần có chú thích.
+Cần phân biệt tìm kiếm thành công nhưng không có kết quả với việc không truy cập được nguồn. Nếu yêu cầu hết thời gian chờ mà ứng dụng trả danh sách rỗng như một lần tìm thành công, tác nhân điều phối có thể hiểu nhầm rằng nguồn đã được kiểm tra và không có thông tin.
 
-Mỗi phát hiện giữ ánh xạ claim–source: kết luận, nguồn, vị trí hoặc trích đoạn liên quan, ngày công bố/thu thập và bối cảnh phương pháp. Bước tóm tắt phải bảo toàn ánh xạ thay vì gom một danh sách URL tách khỏi các nhận định.
+Tác nhân con nên thử xử lý lỗi tạm thời trong phạm vi cho phép. Nếu vẫn thất bại, báo rõ loại lỗi, truy vấn và các lần đã thử, dữ liệu lấy được một phần cùng phương án khác. Một câu “không hoạt động” không đủ để chọn cách khôi phục. Cũng không nhất thiết hủy toàn bộ nghiên cứu khi chỉ một nguồn lỗi; có thể hoàn thành phần có căn cứ và ghi rõ phần còn thiếu.
 
-Hai số liệu khác nhau từ nguồn đáng tin có thể khác thời kỳ hoặc phương pháp. Giữ cả giá trị, gắn nguồn và chú thích xung đột; không chọn giá trị thuận mắt hoặc lấy trung bình vô căn cứ. Báo cáo phân biệt phát hiện chắc chắn, tranh luận và khoảng trống do nguồn không truy cập được.
+Mỗi phát hiện cần liên kết nhận định với nguồn, thường gọi là ánh xạ claim–source. Nên giữ nội dung nhận định, URL hoặc tên tài liệu, đoạn hay vị trí liên quan, ngày công bố hoặc thu thập và bối cảnh phương pháp. Bản tóm tắt phải giữ được liên kết đó, không chỉ gom một danh sách URL ở cuối.
 
-Document-analysis tác nhân AI hoàn tất phần phân tích với các giá trị xung đột được chú thích, rồi tác nhân điều phối quyết định cách đối chiếu trước khi chuyển synthesis; không tự xóa một giá trị ở upstream. Dạng structured finding có thể giữ claim, source URL/document name, relevant excerpt/location, publication/collection date, methodological ngữ cảnh và trạng thái contested/established/gap. Synthesis ghép các mapping này, giữ nguyên cách nguồn mô tả giới hạn phương pháp.
+Ví dụ: Hai nguồn đáng tin đưa tỷ lệ khác nhau nhưng đo ở hai năm khác nhau. Hãy giữ cả giá trị, thời điểm và phương pháp trước khi kết luận chúng mâu thuẫn. Không chọn số thuận mắt hoặc lấy trung bình khi chưa có cơ sở.
 
-Chọn dạng trình bày theo dữ liệu: bảng cho số liệu tài chính cần so sánh, văn xuôi cho diễn biến tin tức, danh sách có cấu trúc cho phát hiện kỹ thuật. Không ép mọi nội dung về một đoạn summary đồng dạng khiến mất quan hệ claim–source hay mốc thời gian. Coverage annotations nêu rõ chủ đề được hỗ trợ và chủ đề còn trống do nguồn không sẵn có.
+Nếu dữ liệu thực sự xung đột, tác nhân phân tích tài liệu hoàn tất phần của mình với chú thích rõ, rồi để tác nhân điều phối quyết định cách đối chiếu trước khi tổng hợp. Không tự xóa một giá trị ngay ở bước phân tích.
+
+Kết quả có cấu trúc nên phân biệt phát hiện có căn cứ, còn tranh luận và chưa đủ dữ liệu. Giữ nguyên các hạn chế về phương pháp mà nguồn đã nêu. Chọn cách trình bày phù hợp: bảng cho số liệu cần so sánh, văn xuôi cho diễn biến, danh sách có cấu trúc cho phát hiện kỹ thuật. Nêu rõ chủ đề nào có bằng chứng và chủ đề nào còn trống do chưa truy cập được nguồn.
 
 ## Câu hỏi tình huống
 

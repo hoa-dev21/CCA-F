@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Luồng ứng dụng trong bài gồm client gửi yêu cầu tới server, server gọi API, nhận phản hồi rồi trả nội dung cho client. Hệ thống xử lý phía máy chủ giữ secret thay vì nhúng API key lâu dài vào mã giao diện người dùng công khai.
 
-Phản hồi có nội dung, usage và stop reason. Cần đọc trạng thái kết thúc để phân biệt hoàn tất, giới hạn đầu ra và các bước xử lý tiếp; chỉ thấy text chưa chứng minh tác vụ thành công.
+Trong ứng dụng web của bài, giao diện người dùng gửi yêu cầu tới máy chủ ứng dụng. Máy chủ gọi API của mô hình, nhận phản hồi rồi trả kết quả cho giao diện. Phân biệt các chặng này giúp tìm đúng nơi xảy ra lỗi.
 
-Mô tả token/embedding nội bộ trong video là giản lược để làm quen, không phải đặc tả đầy đủ kiến trúc mô hình. Danh sách SDK và mô hình minh họa thay đổi theo thời điểm. Authentication/account management nằm ngoài trọng tâm Exam Guide đã tải.
+Khóa API bí mật được giữ ở phía máy chủ. Nếu nhúng khóa lâu dài vào mã giao diện công khai, người dùng có thể lấy khóa và sử dụng ngoài dự định của bạn.
+
+Phản hồi từ API có nội dung, số liệu sử dụng (usage) và lý do dừng (stop reason). Cần đọc lý do dừng để biết mô hình đã kết thúc lượt, bị giới hạn đầu ra hay cần xử lý tiếp. Nếu dừng vì `max_tokens`, phải xem nội dung có bị cắt và quyết định cách tiếp tục phù hợp. Chỉ thấy văn bản chưa đủ để kết luận thành công.
+
+Phần giải thích token và embedding trong video được đơn giản hóa để làm quen, không phải mô tả đầy đủ cấu trúc bên trong mô hình. Danh sách thư viện, mô hình và cách xác thực cần được đối chiếu khi thực hành; quản lý tài khoản không phải trọng tâm đề cương đã lưu.
 
 ## Câu hỏi
 
@@ -52,4 +55,6 @@ D. Bỏ log lỗi hoàn toàn.
 
 ## Đối chiếu Vertex
 
-Nguồn [Accessing the API](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289151), sources/vertex-lessons/289151.json. Yêu cầu đi qua hệ thống xử lý phía máy chủ và Vertex rồi trả response/usage/stop reason. Cụm API Key trong bài lifecycle không nên được chép thành yêu cầu dùng Anthropic API key cho Vertex: bài setup307525 và request289155 sử dụng thông tin xác thực Google/ADC cùng project/region. Không để credential bí mật trong giao diện người dùng.
+Yêu cầu đi qua máy chủ ứng dụng và Vertex rồi trả nội dung, số liệu sử dụng và lý do dừng. Cụm “API Key” trong bài tổng quan không có nghĩa phải dùng khóa Anthropic trực tiếp cho Vertex. Bài thiết lập 307525 và bài gọi API 289155 dùng thông tin xác thực Google/ADC cùng dự án, vùng. Không để thông tin xác thực bí mật trong mã giao diện.
+
+Nguồn đối chiếu: [Accessing the API](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289151). Bản lưu: `sources/vertex-lessons/289151.json`.

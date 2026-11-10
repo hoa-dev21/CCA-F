@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Claude Code cung cấp công cụ tìm/đọc/sửa file, chạy lệnh và nối MCP để mở rộng khả năng. Bài minh họa quy trình cài CLI và đăng nhập trước khi làm việc trên dự án.
 
-Lệnh npm và danh sách hệ điều hành trong video là theo thời điểm ghi, không phải khẳng định đó là đường cài hiện hành duy nhất. Bản tóm tắt không cài thêm CLI hay đăng nhập thay người học; cần kiểm tra tài liệu cài đặt chính thức khi thực hành.
+Bài giới thiệu Claude Code như công cụ hỗ trợ tìm, đọc, sửa tệp và chạy lệnh trong quá trình phát triển phần mềm. Kết nối MCP cho phép bổ sung công cụ hoặc dữ liệu chuyên biệt.
 
-Sau setup, xác minh công cụ thực sự chạy được trong đúng môi trường và phạm vi dự án. Cài thành công chưa chứng minh code sinh ra đúng; vẫn cần kế hoạch, kiểm tra và test ở các bài tiếp theo.
+Trước khi dùng với dự án, cần cài công cụ dòng lệnh (CLI), đăng nhập theo cách phù hợp và kiểm tra nó chạy được trong đúng môi trường. Khi thực hành, hãy đối chiếu hướng dẫn chính thức, vì lệnh npm và danh sách hệ điều hành trong video thuộc thời điểm ghi hình, không phải cách cài duy nhất cho mọi phiên bản.
+
+Sau khi thiết lập, xác định đúng thư mục dự án và phạm vi làm việc. Cài đặt thành công chỉ chứng minh công cụ đã sẵn sàng sử dụng, chưa chứng minh mã do nó tạo sẽ đúng.
+
+Các bước đọc dự án, lập kế hoạch, sửa mã và kiểm thử được học tiếp ở các bài sau. Bản tóm tắt này mô tả việc chuẩn bị, không phải xác nhận đã cài hoặc đăng nhập trên máy của người học.
 
 ## Câu hỏi
 
@@ -52,8 +55,12 @@ D. Không cần cấu hình tích hợp.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Claude Code setup](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276809), sources/bedrock-media/276809.json. Video mô tả Claude Code chạy terminal, tìm/đọc/sửa file, dùng lệnh và làm MCP client. Khác direct API: cần cấu hình nhà cung cấp Bedrock cùng AWS credentials/quyền mô hình, không chỉ login Anthropic. Phụ đề nói ba biến môi trường nhưng không ghi tên hiện trên slide; không tự bịa tên hoặc coi lệnh npm cũ là cách cài duy nhất hiện nay. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Theo phụ đề, Claude Code làm việc trên dòng lệnh, tìm, đọc, sửa tệp, chạy lệnh và kết nối MCP. Dùng Bedrock cần cấu hình nhà cung cấp, thông tin xác thực AWS và quyền mô hình, không chỉ đăng nhập Anthropic. Phụ đề nhắc ba biến môi trường nhưng không đọc tên trên slide, nên không tự đoán tên. Lệnh npm cũ cũng không phải cách cài duy nhất hiện nay. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Claude Code setup](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276809). Bản lưu: `sources/bedrock-media/276809.json`.
 
 ## Đối chiếu phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [Claude Code setup](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289232), sources/vertex-media/289232.json. Bài mô tả CLI, công cụ tìm/đọc/sửa file, web/terminal và MCP client, rồi cài và thiết lập ba biến môi trường trên slide. Phụ đề không đọc tên các biến: không tự chép tên suy đoán. Setup nhà cung cấp Vertex phải theo project/region/credentials tương ứng, không dùng cấu hình direct API hay Bedrock lẫn nhau. Dùng chung câu hỏi phù hợp nội dung, không đếm trùng.
+Bài giới thiệu công cụ dòng lệnh, thao tác tệp, web, terminal và MCP, rồi cài đặt với ba biến môi trường trên slide. Phụ đề không nêu tên biến nên không sao chép tên suy đoán. Cấu hình Vertex phải đúng dự án, vùng và thông tin xác thực, không trộn với cấu hình API trực tiếp hoặc Bedrock. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Claude Code setup](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289232). Bản lưu: `sources/vertex-media/289232.json`.

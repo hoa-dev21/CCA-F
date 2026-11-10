@@ -4,15 +4,20 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Code bộ chấm điểm phù hợp với các điều kiện kiểm tra được bằng chương trình. Trong bài, JSON được parse bằng `json.loads`, Python được kiểm tra cú pháp qua `ast.parse`, regex được biên dịch bằng `re.compile`.
 
-Bộ dữ liệu có trường `format` để chọn đúng validator. Đầu ra JSON phải được kiểm tra như JSON; một chuỗi hợp lệ ở định dạng khác không đáp ứng hợp đồng đầu ra.
+Chấm bằng mã chương trình phù hợp với những điều kiện có thể kiểm tra rõ ràng. Ví dụ của bài sử dụng ba cách kiểm tra trong Python:
 
-Điểm mấu chốt: **parse được không đồng nghĩa làm đúng tác vụ**. Python đúng cú pháp có thể thực hiện phép tính sai; regex biên dịch được có thể khớp nhầm chuỗi. Bài kết hợp code bộ chấm điểm với mô hình bộ chấm điểm để kiểm tra cả hình thức và nội dung.
+- `json.loads`: đọc dữ liệu để kiểm tra cú pháp JSON.
+- `ast.parse`: phân tích cú pháp mã Python mà không cần thực thi đoạn mã đó.
+- `re.compile`: biên dịch biểu thức tìm mẫu (regex) để kiểm tra nó có hợp lệ về cú pháp hay không.
 
-Mẫu tính trung bình hai điểm là một lựa chọn minh họa. Trọng số có thể điều chỉnh theo yêu cầu ứng dụng; không mặc định điểm trung bình cao khiến một lỗi cú pháp bắt buộc được chấp nhận.
+Bộ dữ liệu có trường `format` để chọn bộ kiểm tra tương ứng, còn gọi là validator. Nếu yêu cầu đầu ra là JSON thì phải kiểm tra như JSON; hợp lệ ở một định dạng khác không đáp ứng yêu cầu.
 
-Ví dụ để dễ hình dung: hệ thống nhận regex phải lọc mã hợp lệ. Cần phân biệt kiểm tra biên dịch regex và kiểm tra nó chấp nhận, từ chối đúng các mẫu dữ liệu.
+Đúng cú pháp chưa có nghĩa làm đúng nhiệm vụ. Mã Python có thể không mắc lỗi cú pháp nhưng tính sai. Regex có thể biên dịch được nhưng nhận cả những chuỗi lẽ ra phải bị từ chối. Vì vậy, bài kết hợp kiểm tra bằng mã với chấm bằng mô hình để xem cả định dạng và nội dung.
+
+Ví dụ: Một regex được yêu cầu nhận đúng mã đơn hàng. Ngoài kiểm tra biên dịch, cần thử các mã hợp lệ và không hợp lệ để biết nó phân biệt đúng hay chưa.
+
+Mẫu lấy trung bình hai điểm chỉ là một cách minh họa. Có thể chọn trọng số theo yêu cầu ứng dụng. Nếu đúng cú pháp là điều kiện bắt buộc, điểm trung bình cao không đủ để bỏ qua lỗi cú pháp.
 
 ## Câu hỏi
 
@@ -54,8 +59,12 @@ D. Mọi trường hợp phải đạt 10.
 
 ## Đối chiếu Bedrock
 
-Đã đọc và đối chiếu [Code based grading](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276735), sources/bedrock-lessons/276735.json. Dùng chung bản tóm tắt và câu hỏi về phương pháp phép đánh giá vì các mục tiêu chính tương đương. Mã gọi nhà cung cấp vẫn cần adapter Converse phù hợp; ví dụ prefill/stop sequence và tên mô hình không được coi là hỗ trợ hiện hành đã xác minh. Không tính lại một bộ câu hỏi mới cho cùng nội dung.
+Nội dung về phương pháp đánh giá tương đương với bài chung nên dùng chung phần giải thích và câu hỏi, không tính thêm một bộ câu hỏi mới. Khi chuyển mã sang Bedrock, cần phần chuyển đổi phù hợp với Converse. Những ví dụ dùng prefill, chuỗi dừng và tên mô hình trong khóa vẫn phải được kiểm tra khả năng hỗ trợ khi triển khai.
+
+Nguồn đối chiếu: [Code based grading](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276735). Bản lưu: `sources/bedrock-lessons/276735.json`.
 
 ## Đối chiếu Vertex
 
-Nguồn [Code based grading](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289167), sources/vertex-lessons/289167.json. Đã so sánh toàn văn chuẩn hóa với nguồn API287737: chỉ khác cách diễn đạt upfront/ahead of time và average/take the average. Dùng chung kiến thức code-based việc chấm điểm, không đếm câu hỏi trùng.
+Hồ sơ đối chiếu toàn văn với bài API 287737 chỉ ghi nhận khác cách diễn đạt như “upfront/ahead of time” và “average/take the average”. Kiến thức chấm bằng mã không đổi, nên dùng chung câu hỏi thay vì đếm thành bộ mới.
+
+Nguồn đối chiếu: [Code based grading](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289167). Bản lưu: `sources/vertex-lessons/289167.json`.

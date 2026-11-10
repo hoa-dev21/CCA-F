@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Bài giới thiệu dành thêm xử lý suy luận cho tác vụ khó, đổi lại chi phí, độ trễ và cấu trúc phản hồi phức tạp hơn. Dùng phép đánh giá để biết lợi ích thực tế thay vì mặc định bật cho mọi yêu cầu.
 
-Phản hồi có thể có các blocks thinking hoặc dạng không đọc được; ứng dụng phải giữ và truyền lại theo hợp đồng model/SDK, không tự sửa dữ liệu bảo toàn như signature. Không coi phần được hiển thị là toàn bộ chuỗi suy nghĩ nội bộ hay là chứng minh kết luận đúng.
+Chế độ suy luận thêm (thinking) dành thêm xử lý cho những nhiệm vụ khó. Đổi lại, yêu cầu có thể tốn thêm thời gian, chi phí và trả về cấu trúc phức tạp hơn. Hãy đánh giá trên các nhiệm vụ đại diện để biết lợi ích có đáng hay không, thay vì mặc định bật cho mọi câu hỏi.
 
-Budget, kiểu cấu hình và tương thích temperature/prefill khác theo mô hình. Mã minh họa trong khóa không phải hướng dẫn hiện hành cho mọi mô hình. More thinking không thay kết quả công cụ, dữ liệu thiếu hoặc kiểm tra độc lập.
+Phản hồi có thể chứa khối thinking hoặc nội dung không đọc trực tiếp được. Ứng dụng cần giữ và gửi lại các khối theo quy định của mô hình và thư viện đang dùng, đặc biệt không tự sửa thông tin cần bảo toàn như `signature`.
+
+Phần hiển thị cho người dùng không nhất thiết là toàn bộ quá trình suy nghĩ bên trong. Nó cũng không chứng minh kết luận đúng.
+
+Ví dụ: Nếu câu hỏi cần dữ liệu đơn hàng hiện tại, thêm suy luận không tự lấy được dữ liệu ấy. Vẫn phải tra nguồn phù hợp và kiểm tra kết quả. Ngân sách xử lý, cách cấu hình và việc kết hợp với `temperature` hoặc prefill cần được xác minh theo từng mô hình.
 
 ## Câu hỏi
 
@@ -52,8 +55,12 @@ D. Thay mọi nội dung bằng text trống.
 
 ## Đối chiếu tính năng trên Bedrock
 
-Đã đọc [Extended thinking](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276788), sources/bedrock-lessons/276788.json. Mẫu Converse dùng reasoning content/signature/redactedContent và cấu hình model-specific. Không coi phần hiển thị là toàn bộ suy nghĩ nội bộ hay bằng chứng correctness; giữ blocks theo hợp đồng. Budget/tính tương thích phải kiểm tra khi triển khai. Dùng chung tóm tắt/câu hỏi khái niệm, không đếm câu hỏi trùng.
+Mẫu Converse dùng nội dung suy luận, `signature` và `redactedContent` với cấu hình theo mô hình. Phần nhìn thấy không phải toàn bộ suy nghĩ bên trong hoặc bằng chứng đáp án đúng. Giữ các khối theo giao thức; kiểm tra ngân sách và khả năng kết hợp tính năng trước khi triển khai. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Extended thinking](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276788). Bản lưu: `sources/bedrock-lessons/276788.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [Extended thinking](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289197), sources/vertex-lessons/289197.json. Bài minh họa thinking/signature/redacted_thinking và trade-off latency/token; so sánh phép đánh giá trước khi bật. Phần hiển thị không là toàn bộ suy nghĩ nội bộ hay bằng chứng correctness. Budget/cú pháp budget trong video và tương thích temperature/prefill cần kiểm tra theo SDK/model, không sao chép như quy định về dữ liệu và hành vi hiện hành. Giữ blocks/signatures theo giao thức. Dùng chung câu hỏi khái niệm.
+Mẫu có `thinking`, `signature`, `redacted_thinking` và minh họa đánh đổi thời gian, token. Cần so sánh chất lượng trước khi bật. Phần hiển thị không chứng minh kết luận đúng. Cách đặt ngân sách và việc dùng cùng temperature hoặc prefill cần theo mô hình, thư viện thực tế. Bảo toàn khối nội dung và chữ ký theo giao thức. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [Extended thinking](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289197). Bản lưu: `sources/vertex-lessons/289197.json`.

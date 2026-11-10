@@ -4,15 +4,18 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-
 
 ## Nội dung bài học
 
-Bài dùng boto3 Bedrock Runtime và Converse. Message có role, nội dung là danh sách blocks; phản hồi mẫu nằm trong output.message. Không sao chép tên trường của Anthropic Messages API sang Converse mà không có adapter.
 
-Mô hình availability và định danh phụ thuộc môi trường/vùng. Inference profile trong bài hỗ trợ định tuyến theo cấu hình được phép, không có nghĩa bỏ qua mọi ràng buộc vùng, quyền hay residency. Cần kiểm tra model/profile đúng vùng và tài khoản thay vì chỉ sửa prompt khi lỗi dịch vụ báo không tìm thấy mô hình.
+Mẫu Python dùng thư viện boto3 để gọi Bedrock Runtime qua Converse. Tin nhắn có vai trò người nói (role), còn nội dung là danh sách các khối (blocks). Trong phản hồi mẫu, tin nhắn kết quả nằm ở `output.message`.
 
-Ví dụ cơ bản lấy text block đầu để hiển thị. Khi dùng các công cụ hoặc nhiều loại nội dung, giữ message đầy đủ cho logic và lịch sử. Định danh, region và SDK trong video phải xác minh trước khi chạy hiện tại.
+Cấu trúc này khác Anthropic Messages API. Khi chuyển nhà cung cấp, cần sửa phần chuyển đổi yêu cầu và phản hồi, còn gọi là adapter; không sao chép tên trường của API khác rồi kỳ vọng đọc được dữ liệu.
+
+Mã mô hình và khả năng truy cập phụ thuộc môi trường, vùng và tài khoản. Nếu dịch vụ báo không tìm thấy mô hình, hãy kiểm tra mã mô hình hoặc inference profile, vùng hỗ trợ và quyền truy cập trước khi sửa prompt. Inference profile trong bài hỗ trợ định tuyến theo cấu hình được phép, không tự bỏ các ràng buộc về vùng hoặc nơi dữ liệu được xử lý.
+
+Ví dụ đơn giản lấy khối văn bản đầu tiên để hiển thị. Khi dùng công cụ hoặc nhiều loại nội dung, cần giữ tin nhắn đầy đủ cho lịch sử và xử lý tiếp. Các mã định danh, vùng và phiên bản thư viện trong video cần được kiểm tra khi thực hành.
 
 ## Câu hỏi
 
-**1. Chọn một.** Đã chuyển sang Converse nhưng vẫn đọc phản hồi.nội dung như API khác và lỗi. Sửa gì?
+**1. Chọn một.** Đã chuyển sang Converse nhưng mã vẫn đọc phản hồi theo cấu trúc của API cũ nên bị lỗi. Cần sửa gì?
 
 A. Chỉ tăng temperature.
 

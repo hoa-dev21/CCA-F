@@ -4,9 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-wit
 
 ## Nội dung bài học
 
-Semantic search tốt với cách diễn đạt gần nghĩa nhưng có thể bỏ sót mã sự cố hoặc thuật ngữ chính xác. Lexical search như BM25 bổ sung tín hiệu từ từ khóa, phù hợp trường hợp cần khớp tên/ID.
 
-Bài giới thiệu trọng số từ xuất hiện phổ biến/hiếm và kết hợp hai cách truy xuất. Đây là giải thích khái niệm, không phải công thức BM25 đầy đủ. Không coi “có từ khóa” là chứng minh đoạn đủ trả lời; vẫn cần ngữ cảnh và kiểm chứng nguồn. Chi tiết thuật toán tìm kiếm là phần bổ trợ đọc nhanh cho mục tiêu thi hiện tại.
+Tìm kiếm theo ý nghĩa (semantic search) có thể tìm đoạn liên quan dù cách dùng từ khác câu hỏi. Tuy nhiên, nó có thể bỏ sót một mã sự cố hoặc thuật ngữ cần khớp chính xác.
+
+Tìm kiếm theo từ khóa (lexical search), chẳng hạn BM25, bổ sung khả năng tìm theo những từ hoặc mã cụ thể. Bài giới thiệu cách tính đến việc một từ xuất hiện phổ biến hay hiếm trong kho để hỗ trợ xếp hạng kết quả; đây chỉ là giải thích khái niệm, không phải toàn bộ công thức BM25.
+
+Ví dụ: Bạn hỏi nguyên nhân của sự cố có mã INC-204. Tìm kiếm theo ý nghĩa có thể trả các bài cùng chủ đề nhưng không nói về đúng sự cố. Tìm theo mã INC-204 giúp bổ sung kết quả cần khớp chính xác.
+
+Hai cách tìm kiếm có thể kết hợp. Tuy vậy, một đoạn chứa đúng mã vẫn chưa chắc nói rõ nguyên nhân sự cố. Cần đọc nội dung và bối cảnh để xác định có đủ bằng chứng trả lời không. Chi tiết thuật toán là phần bổ trợ cho mục tiêu thi hiện tại.
 
 ## Câu hỏi
 
@@ -50,8 +55,12 @@ D. Chắc chắn, BM25 thay mọi validation.
 
 ## Đối chiếu RAG trên Bedrock
 
-Đã đọc [BM25 lexical search](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276776), sources/bedrock-lessons/276776.json và đối chiếu với bản API. Cùng ví dụ incident ID và bổ sung lexical với semantic search. Giải thích term-frequency/rarity trong khóa chưa phải toàn bộ công thức BM25. Dùng chung tóm tắt/câu hỏi khái niệm tương đương, không tăng số câu trùng.
+Bài Bedrock dùng mã sự cố để minh họa việc tìm theo từ khóa bổ sung cho tìm theo ý nghĩa. Giải thích về tần suất và độ hiếm của từ trong khóa chưa phải toàn bộ công thức BM25. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [BM25 lexical search](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276776). Bản lưu: `sources/bedrock-lessons/276776.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [BM25 lexical search](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289195), sources/vertex-lessons/289195.json. ID incident hiếm cần lexical match bổ sung semantic. BM25 dùng term frequency/rarity cùng chuẩn hóa độ dài, không chỉ đếm từ. Kiểm tra tokenizer cho identifier có dấu; không bảo đảm mọi exact match được xếp đúng nếu nội dung không trả lời truy vấn tìm kiếm. Dùng chung câu hỏi khái niệm.
+Mã sự cố hiếm cần khả năng khớp từ cụ thể bên cạnh tìm gần nghĩa. BM25 xét tần suất, độ hiếm và chuẩn hóa độ dài, không chỉ đếm từ. Kiểm tra cách tách từ với mã có dấu hoặc ký hiệu. Khớp đúng mã chưa chứng minh đoạn đó trả lời câu hỏi hay được xếp hạng đúng. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [BM25 lexical search](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289195). Bản lưu: `sources/vertex-lessons/289195.json`.

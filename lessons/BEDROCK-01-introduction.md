@@ -4,9 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-
 
 ## Nội dung bài học
 
-Bài mở đầu giới thiệu cấu trúc, lộ trình và đối tượng khóa học. Đây là phần định hướng chuẩn bị, không phải bằng chứng đã hoàn thành nội dung hoặc đạt kỹ năng triển khai.
 
-Khi theo khóa cloud để ôn Architect, dùng curriculum làm danh sách nguồn, còn Exam Guide xác định ưu tiên thi. Những phần nền tảng giống API có thể dùng chung tóm tắt sau khi đã đối chiếu nội dung; khác biệt về adapter và môi trường cần ghi riêng. Trang mở đầu ngắn không đủ để suy ra chi tiết kỹ thuật của các bài sau.
+Bài mở đầu giới thiệu khóa học dành cho ai, học những gì và theo thứ tự nào. Đây là phần giúp bạn chuẩn bị, chưa phải bằng chứng rằng đã hoàn thành khóa hoặc biết triển khai ứng dụng.
+
+Nếu dùng khóa Bedrock để ôn Architect, hãy phân biệt hai tài liệu: chương trình khóa học cho biết các bài và nguồn cần đọc; đề cương thi (Exam Guide) cho biết nội dung nào cần ưu tiên cho đúng chứng chỉ.
+
+Một số kiến thức giống nhóm Claude API có thể dùng chung bài tóm tắt sau khi đã đối chiếu. Những điểm khác về cách gọi dịch vụ, chuyển đổi dữ liệu và môi trường chạy cần được ghi riêng.
+
+Trang mở đầu ngắn không đủ để suy ra chi tiết kỹ thuật của các bài sau. Hãy dùng nó như bản đồ học tập rồi đọc bài tương ứng cho từng chủ đề.
 
 ## Câu hỏi
 

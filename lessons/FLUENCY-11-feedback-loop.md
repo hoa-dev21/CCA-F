@@ -6,9 +6,14 @@ Ghi công: Rick Dakan, Joseph Feller và Anthropic (2025). Bản gốc và phầ
 
 ## Nội dung bài học
 
-Bắt đầu từ kế hoạch và quyết định phân công. Với từng nhiệm vụ, mô tả sản phẩm/quá trình/hành vi, đánh giá đầu ra theo cả ba khía cạnh rồi đưa phản hồi có mục tiêu để chỉnh tiếp.
 
-Đây là vòng lặp, không phải chỉ một prompt cố định. Thông tin mới có thể khiến bạn sửa mô tả hoặc kế hoạch; chuyên môn và quyết định cuối vẫn thuộc người dùng. Giữ tiêu chí ổn định khi so sánh cải tiến, đồng thời ghi rõ khi yêu cầu thực tế thay đổi.
+Làm việc với AI thường cần nhiều lượt: mô tả yêu cầu, kiểm tra kết quả, phản hồi rồi kiểm tra bản sửa. Đây là vòng lặp giữa mô tả (Description) và đánh giá (Discernment).
+
+Bắt đầu từ kế hoạch và phần việc đã giao cho AI. Nêu rõ kết quả cần tạo, cách thực hiện và cách tương tác mong muốn. Khi nhận câu trả lời, đối chiếu với những yêu cầu đó và chỉ ra phần cần sửa.
+
+Ví dụ: Bạn yêu cầu bảng so sánh có chi phí nhưng AI bỏ sót cột này. Hãy nói rõ cột còn thiếu và dữ liệu cần dùng, rồi kiểm tra xem bản sửa đã đáp ứng chưa. Lặp nguyên yêu cầu mà không chỉ ra vấn đề thường không giúp bạn biết vì sao kết quả chưa đạt.
+
+Khi so sánh các bản sửa, hãy dùng cùng tiêu chí để biết kết quả có tốt hơn không. Nếu có thông tin mới làm thay đổi yêu cầu, ghi lại thay đổi và điều chỉnh kế hoạch. Bạn vẫn là người quyết định giữ, sửa hay bỏ kết quả cuối cùng.
 
 ## Câu hỏi
 

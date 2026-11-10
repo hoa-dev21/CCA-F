@@ -4,11 +4,14 @@ Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/claude-in-
 
 ## Nội dung bài học
 
-Bài tạo một batch_tool nhận danh sách tên công cụ và đối số để gom nhiều yêu cầu vào một lần mô hình gọi công cụ. Chỉ dùng với các thao tác độc lập hoặc một bộ điều phối hiểu đúng phụ thuộc.
 
-Điểm phải đọc kỹ trong mã: ví dụ run_batch dùng vòng for và gọi run_tool lần lượt. Gom sub-invocations trong một message có thể giảm lượt qua mô hình, nhưng mã đó không tự thực thi đồng thời. Muốn concurrency thật cần cơ chế thực thi phù hợp, quản lý lỗi và tương quan kết quả.
+Bài tạo công cụ `batch_tool` nhận một danh sách các lời gọi, mỗi lời gọi có tên công cụ và đầu vào. Claude có thể gửi cả nhóm trong một lần yêu cầu, giúp giảm số lượt trao đổi với mô hình.
 
-Đừng nhầm batch_tool tùy biến với Message Batches API xử lý yêu cầu bất đồng bộ trong đề cương. Hai cơ chế có mục tiêu và vòng đời khác nhau. Mỗi invocation vẫn cần kiểm tra công cụ được phép, đối số và kết quả. Không tự thực thi nhiều hành động có tác động nếu chưa có quyền/phụ thuộc rõ.
+Gom lời gọi không đồng nghĩa chạy đồng thời. Trong mã mẫu, `run_batch` dùng vòng `for` và gọi `run_tool` lần lượt. Muốn chạy song song thật sự, ứng dụng phải có cách thực thi tương ứng, quản lý lỗi và ghép kết quả đúng với từng lời gọi.
+
+Chỉ chạy đồng thời các thao tác độc lập. Nếu B cần kết quả của A, phải thực hiện A trước hoặc dùng bộ điều phối hiểu rõ quan hệ phụ thuộc đó. Việc hai lời gọi nằm trong cùng danh sách không làm mất phụ thuộc dữ liệu.
+
+`batch_tool` tự viết trong bài khác Message Batches API xử lý các yêu cầu theo lô bất đồng bộ. Hai cơ chế có mục đích và vòng đời riêng. Với mỗi thao tác trong nhóm, vẫn cần kiểm tra công cụ được phép dùng, đầu vào, quyền và kết quả.
 
 ## Câu hỏi
 
@@ -50,4 +53,6 @@ D. Có, tên là đủ quyết định.
 
 ## Đối chiếu Vertex
 
-Đã đọc [The batch tool](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289189), sources/vertex-lessons/289189.json. Mẫu Vertex cũng dùng vòng for đồng bộ, không tạo concurrency thật và không phải Message Batches API. Bản mô tả cấu trúc dữ liệu arguments khai báo object nhưng mã json.loads(invocation.arguments) đòi string: phải thống nhất quy định về dữ liệu và hành vi trước chạy. Giới hạn batch, validate từng invocation, quyền và lỗi từng phần; không cho batch tự lồng vô hạn. Dùng chung câu hỏi khái niệm.
+Mẫu Vertex cũng chạy vòng `for` tuần tự, chưa thực thi đồng thời và không phải Message Batches API. Schema khai báo `arguments` là đối tượng nhưng mã `json.loads(invocation.arguments)` cần chuỗi: phải thống nhất trước khi chạy. Giới hạn kích thước nhóm, kiểm tra từng lời gọi, quyền và lỗi một phần; không cho các batch tự lồng vô hạn. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [The batch tool](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289189). Bản lưu: `sources/vertex-lessons/289189.json`.

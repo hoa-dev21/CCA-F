@@ -1,20 +1,23 @@
-# Ai kiểm soát từng primitive?
+# Ai chủ động chọn công cụ, nguồn nội dung và mẫu hướng dẫn?
 
 Nguồn: [bài chính thức](https://anthropic-partners.skilljar.com/introduction-to-model-context-protocol/296691), sources/mcp-lessons/296691.json. Câu hỏi tự biên soạn.
 
 ## Nội dung bài học
 
-Khóa tổng kết ba primitive qua chủ thể kiểm soát trong mô hình ứng dụng:
 
-| Primitive | Chủ thể lựa chọn trong pattern | Ví dụ |
-|---|---|---|
-| Các công cụ | Mô hình chọn khả năng cần dùng | Tra cứu khi cần dữ liệu để trả lời |
-| Resources | Ứng dụng quyết định đọc và đưa vào context/UI | Danh mục autocomplete, tài liệu được chọn |
-| Prompts | Người dùng chọn mẫu công việc | Slash command định dạng tài liệu |
+MCP có ba loại thành phần cơ bản, thường gọi là primitives: công cụ (tools), nguồn nội dung (resources) và mẫu hướng dẫn (prompts). Bài phân biệt chúng theo bên chủ động lựa chọn trong cách thiết kế ứng dụng.
 
-Đây là cách phân vai thiết kế, không có nghĩa mô hình được vượt qua quyền của ứng dụng. Công cụ call vẫn phải được client/server thực thi theo kiểm soát đã thiết kế.
+| Thành phần | Ai chủ động chọn? | Ví dụ |
+| --- | --- | --- |
+| Tools | Mô hình chọn công cụ cần dùng để xử lý yêu cầu. | Claude yêu cầu tra cứu đơn hàng khi cần trạng thái mới. |
+| Resources | Ứng dụng chọn đọc dữ liệu để hiển thị hoặc đưa vào ngữ cảnh. | Giao diện đọc danh mục tài liệu để gợi ý tên. |
+| Prompts | Người dùng chọn mẫu nhiệm vụ muốn thực hiện. | Chọn mẫu “định dạng tài liệu” rồi cung cấp mã tài liệu. |
 
-Chọn primitive theo trải nghiệm mong muốn. Nếu UI cần danh sách tài liệu trước khi hỏi mô hình, resource phù hợp hơn bắt mô hình thực hiện một công cụ call chỉ để render danh sách. Nếu người dùng chọn một quy trình có mẫu hướng dẫn, prompt cung cấp messages; nó chưa phải kết quả thực thi. Nếu muốn Claude tự quyết định khi cần chức năng, cung cấp công cụ rõ hợp đồng.
+Đây là cách phân vai, không phải trao quyền không giới hạn cho mô hình. Claude chọn yêu cầu gọi công cụ; ứng dụng và server vẫn kiểm tra quyền, thực hiện thao tác và trả kết quả theo quy định.
+
+Hãy chọn thành phần theo trải nghiệm cần tạo. Nếu giao diện cần danh sách tài liệu ngay khi mở bộ chọn, ứng dụng có thể đọc resource mà không chờ mô hình quyết định gọi công cụ. Nếu người dùng muốn một quy trình có sẵn, prompt trả các tin nhắn hướng dẫn để ứng dụng sử dụng. Nếu cần Claude tự chọn thời điểm thực hiện một chức năng, hãy cung cấp tool có mô tả và đầu vào rõ.
+
+Lấy được mẫu hướng dẫn chưa có nghĩa nhiệm vụ đã hoàn thành. Sau bước lấy mẫu, ứng dụng còn phải gọi mô hình và xử lý các công cụ cần thiết.
 
 ## Câu hỏi tình huống
 
@@ -56,12 +59,18 @@ D. Không cần trả kết quả công cụ cho mô hình.
 
 ## Đối chiếu MCP trong khóa Bedrock
 
-Đã đọc [MCP review](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276794), sources/bedrock-lessons/276794.json và đối chiếu với bài chung. Cùng tools/model, resources/application, prompts/user. Model-controlled là chọn lời gọi trong pattern, không phải vượt qua quyền ứng dụng hoặc hệ thống xử lý phía máy chủ. Dùng chung câu hỏi khái niệm tương đương, không đếm lặp.
+Cách phân vai giống bài chung: mô hình chọn công cụ, ứng dụng chọn nguồn nội dung, người dùng chọn mẫu hướng dẫn. Mô hình chủ động chọn lời gọi không có nghĩa vượt qua quyền ứng dụng hoặc máy chủ. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [MCP review](https://anthropic-partners.skilljar.com/claude-in-amazon-bedrock/276794). Bản lưu: `sources/bedrock-lessons/276794.json`.
 
 ## Đối chiếu Vertex
 
-Đã đọc [MCP review](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289205), sources/vertex-lessons/289205.json. Các công cụ model-controlled, resources app-controlled, prompts user-controlled là hướng thiết kế. Host vẫn thực thi quyền và có thể chặn công cụ call; entirely controlled by Claude trong lời kể không bỏ host authorization. UI ví dụ không chứng minh mọi nút chat tương ứng một MCP server thực. Dùng chung câu hỏi khái niệm.
+Phân vai model-controlled, app-controlled, user-controlled là hướng thiết kế. Ứng dụng vẫn kiểm tra quyền và có thể chặn lời gọi; cách diễn đạt “Claude kiểm soát hoàn toàn” không xóa trách nhiệm đó. Giao diện minh họa cũng không chứng minh mỗi nút trò chuyện đều tương ứng một MCP server thật. Dùng chung câu hỏi.
+
+Nguồn đối chiếu: [MCP review](https://anthropic-partners.skilljar.com/claude-with-google-vertex/289205). Bản lưu: `sources/vertex-lessons/289205.json`.
 
 ## Đối chiếu qua phụ đề chính thức
 
-Đã đọc toàn bộ phụ đề tiếng Anh của [MCP review](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287790), sources/api-media/287790.json. Phụ đề tổng kết các công cụ model-controlled, resources app-controlled và prompts user-controlled; ví dụ UI chỉ minh họa một cách triển khai có thể dùng MCP, không chứng minh mọi nút Claude.ai thực sự gọi MCP. Host vẫn thực thi quyền và có thể chặn yêu cầu gọi công cụ. Dùng chung câu hỏi phân biệt ba primitives.
+Phụ đề tổng kết ba thành phần và chủ thể chủ động lựa chọn. Giao diện chỉ minh họa một cách có thể dùng MCP, không chứng minh mọi nút Claude.ai thực sự gọi MCP. Ứng dụng vẫn thực thi quyền và có thể chặn yêu cầu công cụ. Dùng chung câu hỏi phân biệt ba thành phần.
+
+Nguồn đối chiếu: [MCP review](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287790). Bản lưu: `sources/api-media/287790.json`.
