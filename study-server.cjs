@@ -10,7 +10,9 @@ const {createBridge}=require('./study-web/codex-bridge.cjs');
 if(fs.existsSync(path.join(ROOT,'.env')))process.loadEnvFile(path.join(ROOT,'.env'));
 const sync=require('./study-web/turso-sync.cjs').createSync();
 const PORT=Number(process.env.STUDY_PORT||43130),HOST='127.0.0.1';
-const token=crypto.randomBytes(24).toString('hex');
+const token=hosted&&process.env.TURSO_AUTH_TOKEN
+  ?crypto.createHmac('sha256',process.env.TURSO_AUTH_TOKEN).update(`study-request-v1:${sync.profile}`).digest('hex')
+  :crypto.randomBytes(24).toString('hex');
 const bridge=hosted?{status:async()=>({ready:false,code:'LOCAL_ONLY',message:'Gia sư chỉ khả dụng khi chạy ứng dụng trên máy cá nhân.'}),close(){}}:createBridge(ROOT),sessions=new Map();
 const allowedHosts=new Set([`${HOST}:${PORT}`,`localhost:${PORT}`]);
 const allowedOrigins=new Set([`http://${HOST}:${PORT}`,`http://localhost:${PORT}`]);
@@ -31,10 +33,11 @@ const server=http.createServer(async(req,res)=>{
     if(req.method==='GET'&&url.pathname==='/api/library')return json(res,200,{lessons:library,groups:GROUPS,recommended,learningPaths,totalQuestions:[...lessons.values()].reduce((n,l)=>n+l.questions.length,0),questionRevisions:Object.fromEntries([...lessons.values()].flatMap(l=>l.questions.map(q=>[q.id,q.revision]))),token});
     if(req.method==='GET'&&url.pathname==='/api/lesson'){const l=lessons.get(url.searchParams.get('id'));if(!l)return json(res,404,{error:'Không tìm thấy bài học.'});const {raw,...visible}=l;return json(res,200,visible);}
     if(req.method==='GET'&&url.pathname==='/api/chat/status')return json(res,200,await bridge.status());
-    if(req.method==='GET'&&url.pathname==='/api/sync/status')return json(res,200,{enabled:!hosted&&sync.enabled,profile:sync.profile});
+    if(req.method==='GET'&&url.pathname==='/api/sync/status')return json(res,200,{enabled:sync.enabled,profile:sync.profile});
     if(req.method==='POST'){
-      if(hosted)return json(res,403,{error:'Gia sư và đồng bộ cá nhân chỉ khả dụng trên máy local. Tiến độ vẫn được lưu trong trình duyệt.'});
-      if(!allowedOrigins.has(req.headers.origin)||req.headers['x-study-token']!==token)return json(res,403,{error:'Yêu cầu phải được gửi từ trang học local.'});
+      if(hosted&&url.pathname!=='/api/sync')return json(res,403,{error:'Gia sư chỉ khả dụng trên máy local.'});
+      const originAllowed=hosted?req.headers.origin===`https://${req.headers.host}`:allowedOrigins.has(req.headers.origin);
+      if(!originAllowed||req.headers['x-study-token']!==token)return json(res,403,{error:'Yêu cầu phải được gửi từ trang học.'});
       if(!req.headers['content-type']?.startsWith('application/json'))return json(res,415,{error:'Định dạng không được hỗ trợ.'});
       const data=await body(req,url.pathname==='/api/sync'?1024*1024:65000);
       if(url.pathname==='/api/sync'){
