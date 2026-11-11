@@ -3,13 +3,15 @@ const fs=require('node:fs');
 const path=require('node:path');
 const crypto=require('node:crypto');
 const {spawn}=require('node:child_process');
-const {ROOT,GROUPS,lessons,library,recommended,learningPaths,chatContext}=require('./study-web/library.cjs');
+const ROOT=__dirname;
+const hosted=process.env.VERCEL==='1';
+const {GROUPS,lessons,library,recommended,learningPaths,chatContext}=require('./study-web/library.cjs');
 const {createBridge}=require('./study-web/codex-bridge.cjs');
 if(fs.existsSync(path.join(ROOT,'.env')))process.loadEnvFile(path.join(ROOT,'.env'));
 const sync=require('./study-web/turso-sync.cjs').createSync();
 const PORT=Number(process.env.STUDY_PORT||43130),HOST='127.0.0.1';
 const token=crypto.randomBytes(24).toString('hex');
-const bridge=createBridge(ROOT),sessions=new Map();
+const bridge=hosted?{status:async()=>({ready:false,code:'LOCAL_ONLY',message:'Gia sư chỉ khả dụng khi chạy ứng dụng trên máy cá nhân.'}),close(){}}:createBridge(ROOT),sessions=new Map();
 const allowedHosts=new Set([`${HOST}:${PORT}`,`localhost:${PORT}`]);
 const allowedOrigins=new Set([`http://${HOST}:${PORT}`,`http://localhost:${PORT}`]);
 const assets={'/':'index.html','/app.js':'app.js','/marked.js':'../node_modules/marked/lib/marked.umd.js','/styles.css':'styles.css','/favicon.svg':'favicon.svg','/fonts/NotoSerif-Variable.ttf':'fonts/NotoSerif-Variable.ttf','/fonts/NotoSans-Variable.ttf':'fonts/NotoSans-Variable.ttf'};
@@ -22,15 +24,16 @@ function errorMessage(e){if(e.code==='LOGIN_REQUIRED'||e.code==='CHATGPT_LOGIN_R
 const server=http.createServer(async(req,res)=>{
   res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','no-referrer');
   res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
-  if(!allowedHosts.has(req.headers.host))return json(res,403,{error:'Host không được phép.'});
+  if(!hosted&&!allowedHosts.has(req.headers.host))return json(res,403,{error:'Host không được phép.'});
   const url=new URL(req.url,`http://${HOST}:${PORT}`);
   try{
     if(req.method==='GET'&&assets[url.pathname]){const file=assets[url.pathname];res.writeHead(200,{'Content-Type':mime[path.extname(file)],'Cache-Control':'no-cache'});return res.end(fs.readFileSync(path.join(ROOT,'study-web',file)));}
     if(req.method==='GET'&&url.pathname==='/api/library')return json(res,200,{lessons:library,groups:GROUPS,recommended,learningPaths,totalQuestions:[...lessons.values()].reduce((n,l)=>n+l.questions.length,0),questionRevisions:Object.fromEntries([...lessons.values()].flatMap(l=>l.questions.map(q=>[q.id,q.revision]))),token});
     if(req.method==='GET'&&url.pathname==='/api/lesson'){const l=lessons.get(url.searchParams.get('id'));if(!l)return json(res,404,{error:'Không tìm thấy bài học.'});const {raw,...visible}=l;return json(res,200,visible);}
     if(req.method==='GET'&&url.pathname==='/api/chat/status')return json(res,200,await bridge.status());
-    if(req.method==='GET'&&url.pathname==='/api/sync/status')return json(res,200,{enabled:sync.enabled,profile:sync.profile});
+    if(req.method==='GET'&&url.pathname==='/api/sync/status')return json(res,200,{enabled:!hosted&&sync.enabled,profile:sync.profile});
     if(req.method==='POST'){
+      if(hosted)return json(res,403,{error:'Gia sư và đồng bộ cá nhân chỉ khả dụng trên máy local. Tiến độ vẫn được lưu trong trình duyệt.'});
       if(!allowedOrigins.has(req.headers.origin)||req.headers['x-study-token']!==token)return json(res,403,{error:'Yêu cầu phải được gửi từ trang học local.'});
       if(!req.headers['content-type']?.startsWith('application/json'))return json(res,415,{error:'Định dạng không được hỗ trợ.'});
       const data=await body(req,url.pathname==='/api/sync'?1024*1024:65000);
@@ -64,6 +67,8 @@ const server=http.createServer(async(req,res)=>{
     return json(res,404,{error:'Không tìm thấy trang.'});
   }catch(e){if(!res.headersSent)json(res,e.status||503,{error:e.status?e.message:errorMessage(e)});else res.end();}
 });
+module.exports=server.listeners('request')[0];
+if(require.main===module){
 server.listen(PORT,HOST,()=>{
   const url=`http://${HOST}:${PORT}`;console.log(`Architect Study → ${url}`);
   if(process.argv.includes('--open')){if(process.platform==='win32')spawn('explorer.exe',[url],{windowsHide:true,stdio:'ignore'}).unref();else if(process.platform==='darwin')spawn('open',[url],{stdio:'ignore'}).unref();}
@@ -71,3 +76,4 @@ server.listen(PORT,HOST,()=>{
 server.on('error',e=>{console.error(e.code==='EADDRINUSE'?`Cổng ${PORT} đang được dùng. Mở http://${HOST}:${PORT} hoặc đặt STUDY_PORT khác.`:'Không mở được web local.');bridge.close();process.exitCode=1;});
 function shutdown(){bridge.close();sync.close();server.close(()=>process.exit(0));setTimeout(()=>process.exit(0),1500).unref();}
 process.on('SIGINT',shutdown);process.on('SIGTERM',shutdown);
+}

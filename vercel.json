@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "",
+  "outputDirectory": ".vercel-public",
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "{lessons/**,study-web/**,node_modules/marked/lib/marked.umd.js}"
+    }
+  },
+  "rewrites": [{ "source": "/(.*)", "destination": "/api/index" }]
+}
