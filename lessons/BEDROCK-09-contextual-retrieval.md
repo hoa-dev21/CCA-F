@@ -17,55 +17,55 @@ Cách này khác reranking: contextual retrieval bổ sung bối cảnh trước
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Đoạn “dự án này giảm 18% chi phí” bị tìm nhầm giữa nhiều dự án. Tên dự án nằm ở đầu tài liệu. Muốn cải thiện tìm kiếm trước khi có truy vấn, nên làm gì?
+**Question 1 — Choose one.** “This project reduced costs by 18%” is retrieved for the wrong project; its name appears at the document's start. What preprocessing helps?
 
-A. Đợi có truy vấn rồi chỉ xếp hạng lại các đoạn không có tên dự án.
+A. Only rerank ambiguous passages at query time.
 
-B. Đổi tên trường chứa đoạn thành tên dự án nhưng giữ chỉ mục cũ.
+B. Rename the storage field without updating the index.
 
-C. Dùng mô hình trả lời suy đoán dự án từ con số 18%.
+C. Infer the project from 18%.
 
-D. Tạo phần ngữ cảnh ngắn có căn cứ và lập chỉ mục cùng đoạn.
+D. Generate grounded contextual text and index it with the passage.
 
-**Câu 2 — Chọn hai.** Pipeline thêm lời giới thiệu do mô hình viết vào từng chunk. Báo cáo sau đó trích cả lời giới thiệu như nguyên văn tài liệu. Hai sửa đổi nào cần thiết?
+**Question 2 — Choose two.** Generated chunk introductions are quoted as original source text. Which TWO corrections are needed?
 
-A. Giữ liên kết nguồn và dùng phần gốc để đối chiếu trích dẫn.
+A. Keep source links and verify quotations against original text.
 
-B. Lưu tách phần gốc và phần ngữ cảnh được tạo thêm.
+B. Store original text separately from generated context.
 
-C. Bỏ liên kết nguồn vì ngữ cảnh mới đã diễn đạt đầy đủ hơn.
+C. Remove sources because the new text is clearer.
 
-D. Gộp lời giới thiệu vào nguồn và gắn ngày tài liệu gốc cho toàn bộ.
+D. Merge generated context into the source under its original date.
 
-**Câu 3 — Chọn một.** Tài liệu quá dài nên bộ tạo ngữ cảnh chỉ thấy phần mở đầu và hai đoạn trước chunk. Không phần nào xác định năm của số liệu. Hành vi nào đúng?
+**Question 3 — Choose one.** The context generator cannot see evidence identifying a figure's year. What should it do?
 
-A. Chọn năm hiện tại rồi gắn nhãn là ngữ cảnh suy luận.
+A. Use the current year as inferred context.
 
-B. Giữ năm là chưa biết; tìm nguồn để xác định nếu cần.
+B. Leave the year unknown and obtain evidence if needed.
 
-C. Dùng năm xuất bản của tài liệu làm năm đo số liệu.
+C. Use publication year as measurement year.
 
-D. Lấy năm phổ biến trong các tài liệu cùng dự án.
+D. Use the most common year for the project.
 
-**Câu 4 — Chọn hai.** Nguồn sửa tên sản phẩm và phạm vi triển khai, nhưng văn bản chunk gần như không đổi. Hai việc nào phù hợp khi duy trì contextual retrieval?
+**Question 4 — Choose two.** A source changes product names and deployment scope while chunk text barely changes. Which TWO maintenance actions are appropriate?
 
-A. Chỉ sửa prompt trả lời để mô hình tự sửa mọi ngữ cảnh lỗi.
+A. Change generation prompts only.
 
-B. Giữ ngữ cảnh cũ vì hash của riêng chunk chưa thay đổi.
+B. Keep context because the chunk hash is unchanged.
 
-C. Đo lại chất lượng tìm kiếm cùng chi phí chuẩn bị/cập nhật.
+C. Reevaluate retrieval quality and preparation or update costs.
 
-D. Đánh giá lại phần ngữ cảnh sinh thêm và cập nhật chỉ mục liên quan.
+D. Review generated context and update relevant indexes.
 
-**Câu 5 — Chọn một.** Nhóm muốn vừa tìm đúng chunk có đại từ mơ hồ, vừa chọn tốt nhất trong 40 ứng viên theo câu hỏi. Kiến trúc nào phân vai đúng?
+**Question 5 — Choose one.** The system needs better retrieval of ambiguous pronouns and query-specific selection among 40 candidates. Which division is correct?
 
-A. Xếp hạng mọi chunk một lần khi nhập kho; dùng thứ tự đó cho mọi câu hỏi.
+A. Rank every chunk once during ingestion for all future questions.
 
-B. Chỉ bổ sung ngữ cảnh sau khi đã cắt top-3 rồi coi đó là cải thiện recall.
+B. Add context only after selecting three and claim higher recall.
 
-C. Dùng lời giới thiệu sinh thêm thay toàn bộ chunk và bỏ văn bản gốc.
+C. Replace originals with generated introductions.
 
-D. Bổ sung bối cảnh lúc chuẩn bị chỉ mục; xếp hạng ứng viên sau truy xuất.
+D. Add context during indexing, then rerank candidates after retrieval.
 
 ## Đáp án và giải thích
 

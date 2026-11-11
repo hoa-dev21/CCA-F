@@ -17,55 +17,55 @@ Ví dụ: Nghiên cứu thị trường có một nhánh đọc quy định và 
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Tác nhân tìm kiếm đọc 40 tài liệu; tác nhân tổng hợp chỉ nhận tên chủ đề. Báo cáo thiếu bằng chứng dù coordinator có đầy đủ lịch sử. Thay đổi nào giải quyết đúng nguyên nhân với ít ngữ cảnh thừa nhất?
+**Question 1 — Choose one.** A research agent reads 40 documents, but the synthesis agent receives only the topic. Its report lacks evidence even though the coordinator has the full history. Which change addresses the cause with the least unnecessary context?
 
-A. Cho tổng hợp đọc lại cả 40 tài liệu để tự dựng lịch sử.
+A. Have the synthesis agent reread all 40 documents.
 
-B. Bàn giao phát hiện, vị trí nguồn và giới hạn cho tổng hợp.
+B. Pass the findings, source locations, and limitations to the synthesis agent.
 
-C. Gắn chung session ID cho hai tác nhân rồi giữ nguyên prompt.
+C. Give both agents the same session ID without changing their prompts.
 
-D. Tăng ngân sách token của tổng hợp để nó tự suy ra phần lịch sử thiếu.
+D. Increase the synthesis agent's token budget so it can infer the missing history.
 
-**Câu 2 — Chọn hai.** Hệ nghiên cứu dùng bốn chuyên gia cho mọi yêu cầu. Với câu hỏi tra một ngày công bố, độ trễ tăng nhưng độ đúng không đổi. Hai thay đổi nào giữ khả năng xử lý nghiên cứu phức tạp mà giảm công việc thừa?
+**Question 2 — Choose two.** A research system invokes four specialists for every request. Looking up a publication date becomes slower without improving accuracy. Which TWO changes reduce unnecessary work while preserving support for complex research?
 
-A. Coordinator định tuyến theo nhu cầu thực tế của yêu cầu.
+A. Have the coordinator route requests according to their actual needs.
 
-B. Mỗi chuyên gia tự gọi tất cả chuyên gia còn lại khi thấy thiếu thông tin.
+B. Let every specialist invoke all the other specialists whenever information is missing.
 
-C. Phân phạm vi và đầu ra riêng cho các nhánh thật sự cần chạy.
+C. Assign distinct scopes and deliverables to the branches that are actually needed.
 
-D. Luôn gọi đủ bốn nhánh nhưng chỉ giữ kết quả nhánh trả lời sớm nhất.
+D. Always run all four branches but keep only the fastest result.
 
-**Câu 3 — Chọn một.** Hai tác nhân đều đề xuất một giải pháp, nhưng cùng dẫn lại một bài blog gốc. Coordinator muốn gọi đây là xác nhận độc lập. Quyết định nào tốt nhất?
+**Question 3 — Choose one.** Two agents recommend the same solution, but both cite the same original blog post. The coordinator wants to call this independent confirmation. What should it do?
 
-A. Coi là hai bằng chứng vì hai lần suy luận được thực hiện độc lập.
+A. Count two pieces of evidence because the reasoning runs were independent.
 
-B. Cho tác nhân thứ ba đọc hai kết luận và bỏ phiếu.
+B. Ask a third agent to read both conclusions and vote.
 
-C. Lấy giao của hai kết luận làm kết luận chắc chắn.
+C. Treat the overlap between the conclusions as certain.
 
-D. Truy nguồn gốc; ghi nhận một nguồn, bổ sung khi rủi ro đòi hỏi.
+D. Trace the evidence to its origin, count it as one source, and seek more evidence when the risk warrants it.
 
-**Câu 4 — Chọn một.** Bản tổng hợp tốt về chi phí nhưng thiếu ràng buộc lưu trữ dữ liệu, một tiêu chí bắt buộc. Còn đủ ngân sách cho một nhánh nghiên cứu. Bước tiếp theo nào phù hợp?
+**Question 4 — Choose one.** A synthesis covers costs but omits a mandatory data retention requirement. There is enough budget for one more research branch. What is the best next step?
 
-A. Giao truy vấn có mục tiêu về ràng buộc lưu trữ, rồi đưa phát hiện có nguồn vào lượt tổng hợp mới.
+A. Research the missing retention requirement, then resynthesize using the sourced findings.
 
-B. Chạy lại toàn bộ chuyên gia với prompt ban đầu để tăng cơ hội tìm được.
+B. Rerun every specialist with the original prompt.
 
-C. Yêu cầu tổng hợp tự thêm một đoạn lưu trữ dựa vào kiến thức chung.
+C. Ask the synthesis agent to fill the gap using general knowledge.
 
-D. Gửi báo cáo hiện tại và đánh dấu phần thiếu là vấn đề trình bày.
+D. Submit the report and classify the omission as a presentation issue.
 
-**Câu 5 — Chọn hai.** Một nhánh hết thời gian và chỉ có ba nguồn trong sáu nguồn dự kiến. Hai thông tin nào cần bàn giao để coordinator quyết định dùng kết quả một phần hay bổ sung nghiên cứu?
+**Question 5 — Choose two.** A research branch times out after reviewing three of six planned sources. Which TWO items should it hand off so the coordinator can decide whether to use the partial result or continue research?
 
-A. Điểm tự tin tổng hợp thay cho danh sách nguồn còn thiếu.
+A. An overall confidence score instead of the missing-source list.
 
-B. Các phát hiện đã có kèm nguồn, phạm vi đã kiểm tra.
+B. The available findings, their sources, and the scope already checked.
 
-C. Kết luận hoàn thành vì nhánh đã tiêu hết ngân sách được cấp.
+C. A completion claim because the allocated budget has been exhausted.
 
-D. Những phần chưa kiểm tra và lý do dừng hoặc lỗi đã gặp.
+D. The unchecked areas and the reason for stopping or any errors encountered.
 
 ## Đáp án và giải thích
 

@@ -15,55 +15,55 @@ Ví dụ: Sau khi yêu cầu sửa tệp, cần xem tệp đã thay đổi đún
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Tác nhân bấm nút lưu trên desktop rồi báo hoàn tất, nhưng hộp thoại xác nhận vẫn mở. Bước thiết kế nào thiếu trong vòng tác nhân?
+**Question 1 — Choose one.** An agent clicks Save and claims completion while a confirmation dialog remains open. What is missing?
 
-A. Đổi công cụ sang CLI dù ứng dụng không có giao diện lệnh cho tác vụ.
+A. Switch to a nonexistent CLI interface.
 
-B. Một prompt dài hơn mô tả rằng nút lưu thường hoạt động.
+B. A longer prompt explaining that Save usually works.
 
-C. Một lần bấm thứ hai tại cùng tọa độ dù giao diện đã thay đổi.
+C. Click the same coordinates again despite the changed UI.
 
-D. Quan sát kết quả rồi kiểm tra đã đạt trạng thái đích chưa.
+D. Observe the result and verify the target state.
 
-**Câu 2 — Chọn hai.** Một agent sửa tệp qua công cụ, agent khác thao tác qua UI. Hai nguyên tắc kiến trúc nào áp dụng cho cả hai?
+**Question 2 — Choose two.** Which TWO principles apply to both file-tool agents and UI agents?
 
-A. Chọn bước tiếp theo theo kết quả thực tế và xử lý lỗi trong phạm vi quyền.
+A. Choose next steps from actual results and handle errors within permissions.
 
-B. Xem tên công cụ được gọi là bằng chứng hành động đã đạt mục tiêu.
+B. Treat a tool name as proof of task success.
 
-C. Dùng cùng tọa độ cho UI và đường dẫn file để thống nhất executor.
+C. Use coordinates and file paths interchangeably.
 
-D. Định nghĩa trạng thái đích và kiểm tra bằng chứng sau hành động.
+D. Define target states and verify post-action evidence.
 
-**Câu 3 — Chọn một.** Sau khi xem demo Code và computer use, nhóm muốn dùng số lần gọi tool làm tỷ lệ hoàn thành nhiệm vụ. Chỉ số bổ sung nào cần nhất?
+**Question 3 — Choose one.** A team measures task completion by tool-call count after watching demos. What additional measure is essential?
 
-A. Số loại công cụ agent đã dùng trong phiên.
+A. The number of tool types used.
 
-B. Tỷ lệ tool trả về không có lỗi cú pháp.
+B. The proportion of syntactically valid tool results.
 
-C. Độ dài phần giải thích của agent sau mỗi lần gọi.
+C. Explanation length after each call.
 
-D. Tiêu chí thành công theo mục tiêu, gắn với trạng thái cuối được kiểm chứng.
+D. Objective-based success criteria tied to verified final state.
 
-**Câu 4 — Chọn một.** Cần sửa nhiều file và chạy test trong repo có công cụ file/shell đầy đủ. Nhóm đề xuất chuyển sang UI automation chỉ vì demo computer use ấn tượng. Quyết định nào phù hợp nhất?
+**Question 4 — Choose one.** A repository has suitable file and shell tools for edits and tests. Should the team switch to UI automation because a demo looked impressive?
 
-A. Dùng luồng file/lệnh đã đáp ứng tác vụ và kiểm chứng được.
+A. Use the existing verifiable file-and-command workflow.
 
-B. Chọn UI vì quan sát ảnh tự chứng minh mọi thay đổi code đúng.
+B. Use UI screenshots as proof that all code changes are correct.
 
-C. Chọn theo sản phẩm được nhắc sau cùng trong bài giới thiệu.
+C. Choose whichever product appeared last in the introduction.
 
-D. Dùng cả hai song song sửa cùng file để tăng độ tin cậy.
+D. Have both methods edit the same files simultaneously.
 
-**Câu 5 — Chọn hai.** Theo đề cương đã lưu của bộ học, computer use là phần định hướng ngoài chi tiết trọng tâm thi. Hai cách sử dụng bài này vẫn có giá trị khi ôn Architect?
+**Question 5 — Choose two.** Under the stored study blueprint, computer use is orientation material outside detailed exam priorities. Which TWO uses remain valuable?
 
-A. Rút ra nguyên tắc điều phối tool, quan sát và kiểm chứng kết quả.
+A. Learn orchestration, observation, and verification principles.
 
-B. Dành phần lớn thời gian thuộc tọa độ nút của demo vì đó là bằng chứng thực hành.
+B. Spend most study time memorizing demo button coordinates.
 
-C. Dùng đề cương để phân bổ thời gian, không coi mọi tính năng trong demo có cùng trọng số.
+C. Allocate time by the blueprint rather than weighting every demo feature equally.
 
-D. Xem hai demo thành công là chứng cứ đã hoàn thành bài thực hành của bản thân.
+D. Treat watching two successful demos as completing your own exercises.
 
 ## Đáp án và giải thích
 

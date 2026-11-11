@@ -21,55 +21,55 @@ Bài còn nhắc đến chế độ khởi chạy tối giản (bare) và các t
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Một tác vụ cần truy cập dữ liệu chỉ có trong mạng nội bộ và phải dùng logic điều phối riêng. Hạ tầng routine cloud hiện không có kết nối tới dữ liệu đó. Lựa chọn triển khai phù hợp nhất?
+**Question 1 — Choose one.** A job needs internal-network data and custom orchestration unavailable to the cloud routine infrastructure. What deployment fits?
 
-A. Dùng routine cloud rồi thêm tên máy nội bộ vào prompt.
+A. Put the internal hostname in a cloud prompt.
 
-B. Chạy headless trong môi trường nhóm quản lý có quyền truy cập nguồn.
+B. Run headlessly in a team-managed environment with source access.
 
-C. Dùng UI tương tác trong CI và chờ người đăng nhập mỗi lần.
+C. Use interactive CI and wait for login each run.
 
-D. Chuyển toàn bộ dữ liệu ra ngoài trước, không cần đánh giá điều kiện truy cập.
+D. Export all data without reviewing access constraints.
 
-**Câu 2 — Chọn một.** CLI trả JSON envelope chứa metadata phiên và structured_output theo schema nghiệp vụ. Adapter cần kiểm tra findings để quyết định bước sau. Cách xử lý đúng nhất?
+**Question 2 — Choose one.** A CLI JSON envelope contains session metadata and `structured_output`. How should an adapter validate findings for downstream decisions?
 
-A. Đọc trạng thái chạy; validate findings từ structured_output.
+A. Check execution status and validate findings inside `structured_output`.
 
-B. Validate toàn bộ envelope như thể mọi trường đều thuộc schema findings.
+B. Validate the entire envelope as the findings schema.
 
-C. Lấy dòng văn bản cuối stdout vì đó thường là tóm tắt kết quả.
+C. Take the last stdout line.
 
-D. Dùng session ID làm tín hiệu thành công và bỏ kiểm tra findings.
+D. Treat a session ID as proof of success.
 
-**Câu 3 — Chọn hai.** Workflow nhiều giai đoạn muốn tiếp tục cùng phiên để tận dụng ngữ cảnh, nhưng repo có thể đổi giữa hai lần chạy. Hai việc nào cần làm?
+**Question 3 — Choose two.** A multistage workflow resumes sessions while code may change between runs. Which TWO actions are needed?
 
-A. Chỉ lưu bản tóm tắt cuối, bỏ session ID vì có thể suy lại.
+A. Save only the final summary and infer session identity.
 
-B. Lưu session ID/trạng thái cần thiết để tiếp tục đúng phiên.
+B. Preserve session ID and state for correct resumption.
 
-C. Tin mọi kết quả công cụ cũ nếu session ID không đổi.
+C. Trust every old tool result if the ID is unchanged.
 
-D. Xác minh lại dữ liệu nguồn đã thay đổi trước khi dựa vào kết luận cũ.
+D. Revalidate changed source data before relying on old conclusions.
 
-**Câu 4 — Chọn một.** Sản phẩm TypeScript cần tích hợp vòng điều phối tác nhân, xử lý sự kiện và logic nghiệp vụ trong ứng dụng. Theo các lựa chọn của bài, hướng nào sát nhu cầu nhất?
+**Question 4 — Choose one.** A TypeScript application needs integrated agent orchestration, event handling, and business logic. Which option fits?
 
-A. Đóng gói thêm các lệnh shell rời rạc và để UI tự ghép log.
+A. Separate shell commands whose logs the UI combines.
 
-B. Dùng routine không truy cập được runtime của sản phẩm.
+B. A routine without access to the application runtime.
 
-C. Dùng Agent SDK để tích hợp luồng tác nhân vào mã ứng dụng.
+C. An Agent SDK integrated into application code.
 
-D. Dùng chế độ tương tác và parse câu trả lời văn xuôi làm giao thức.
+D. An interactive session with prose parsed as a protocol.
 
-**Câu 5 — Chọn hai.** Hai lần chạy cùng cấu hình khởi động tối giản cho đầu ra hơi khác nhau. Hai kết luận nào hợp lý?
+**Question 5 — Choose two.** Two identically configured minimal-startup runs differ slightly. Which TWO conclusions are reasonable?
 
-A. Cấu hình môi trường nhất quán không bảo đảm đầu ra mô hình giống hệt.
+A. Consistent setup does not guarantee identical model output.
 
-B. Sai khác đầu ra chứng minh cấu hình khởi động đã không được áp dụng.
+B. Variation proves startup settings were ignored.
 
-C. Không cần đo chất lượng nếu các lần chạy cùng command line.
+C. Identical command lines remove the need for quality evaluation.
 
-D. Vẫn cần kiểm thử hành vi và kiểm tra hợp đồng/cấu hình theo phiên bản.
+D. Behavior tests and version-specific contract checks remain necessary.
 
 ## Đáp án và giải thích
 

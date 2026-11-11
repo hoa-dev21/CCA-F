@@ -26,55 +26,55 @@ Với `tool_choice`, `auto` cho phép mô hình quyết định có gọi công 
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Công cụ hoàn tiền trả lỗi policy_denied, retryable=false. Bot thấy người dùng rất bức xúc và muốn thử tham số khác. Cách xử lý đúng?
+**Question 1 — Choose one.** A refund tool returns `policy_denied` and `retryable=false`. The customer is upset, and the bot wants to try different arguments. What should it do?
 
-A. Retry cùng giao dịch với số tiền chia nhỏ để vượt qua gate.
+A. Split the refund into smaller amounts to bypass the check.
 
-B. Đổi tên công cụ trong prompt để mô hình chọn lại.
+B. Rename the tool in the prompt so the model selects it again.
 
-C. Giải thích giới hạn và chuyển sang luồng được phép/người có thẩm quyền.
+C. Explain the restriction and follow an allowed escalation or authorized-human process.
 
-D. Retry một lần như mọi lỗi mạng để chắc chắn kết quả.
+D. Retry once as if this were a network error.
 
-**Câu 2 — Chọn một.** Tác nhân tổng hợp thường cần xác minh một ngày; điều tra nhiều nguồn chỉ chiếm ít yêu cầu. Thiết kế nào cân bằng công cụ hẹp và điều phối sâu?
+**Question 2 — Choose one.** A synthesis agent often needs to verify one date; only a few requests require extensive research. Which design balances narrow tools with deeper orchestration?
 
-A. Cho tổng hợp mọi công cụ nghiên cứu để không cần coordinator.
+A. Give the synthesis agent every research tool so no coordinator is needed.
 
-B. verify_fact cho việc hẹp; coordinator điều phối việc sâu.
+B. Provide `verify_fact` for narrow checks and use the coordinator for deeper research.
 
-C. Luôn khởi chạy cả nhóm nghiên cứu dù chỉ cần một ngày.
+C. Always launch the full research team, even for one date.
 
-D. Bắt tổng hợp suy luận ngày từ context để tránh chi phí công cụ.
+D. Have the agent infer dates from context to avoid tool costs.
 
-**Câu 3 — Chọn hai.** Hai công cụ có schema khác nhau nhưng mô tả đều “lấy thông tin khách hàng”. Mô hình hay chọn công cụ ghi thay cho công cụ đọc. Hai cải thiện nào nhắm đúng lỗi?
+**Question 3 — Choose two.** Two tools have different schemas but both say “get customer information.” The model often chooses the write tool instead of the read tool. Which TWO changes address this?
 
-A. Đổi tên/mô tả để nêu rõ mục đích, tác động và lúc không nên dùng.
+A. Clarify names, purposes, effects, and when each tool should not be used.
 
-B. Rà hướng dẫn định tuyến trong system prompt để bỏ chỉ dẫn mâu thuẫn.
+B. Remove conflicting routing instructions from the system prompt.
 
-C. Tăng token đầu ra nhưng giữ nguyên tên/mô tả.
+C. Increase output tokens without changing names or descriptions.
 
-D. Chỉ sửa thông báo lỗi sau khi ghi sai đã xảy ra.
+D. Improve error messages only after an incorrect write occurs.
 
-**Câu 4 — Chọn một.** Cùng thông báo “Operation failed” đang dùng cho timeout và vi phạm chính sách. Adapter nên bổ sung gì để orchestrator phục hồi đúng?
+**Question 4 — Choose one.** An adapter uses “Operation failed” for both timeouts and policy violations. What should it add for appropriate recovery?
 
-A. Một câu xin lỗi thống nhất dài hơn.
+A. A longer, standardized apology.
 
-B. Mã HTTP duy nhất để giảm nhánh xử lý.
+B. One shared HTTP status to reduce branches.
 
-C. Điểm confidence do mô hình tự chấm.
+C. A model-generated confidence score.
 
-D. Loại lỗi, retryability, ngữ cảnh và hướng phục hồi hợp lệ.
+D. The error category, retryability, relevant context, and permitted recovery options.
 
-**Câu 5 — Chọn hai.** Công cụ đọc dữ liệu timeout; công cụ ghi giao dịch timeout sau khi gửi yêu cầu, chưa biết bên đích đã thực hiện chưa. Hai quyết định nào hợp lý?
+**Question 5 — Choose two.** A read tool times out. A write tool also times out after submission, leaving its execution status unknown. Which TWO decisions are appropriate?
 
-A. Retry cả hai vô điều kiện vì đều là timeout.
+A. Retry both unconditionally because both timed out.
 
-B. Retry có giới hạn với thao tác đọc khi phù hợp.
+B. Use bounded retries for the read when appropriate.
 
-C. Tra trạng thái hoặc dùng cơ chế chống lặp của giao dịch trước khi quyết định retry ghi.
+C. Check transaction status or use idempotency controls before retrying the write.
 
-D. Coi timeout ghi là bằng chứng chưa có tác động bên ngoài.
+D. Treat the write timeout as proof that no external action occurred.
 
 ## Đáp án và giải thích
 

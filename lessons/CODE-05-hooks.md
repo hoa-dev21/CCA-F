@@ -21,55 +21,55 @@ Cũng trong mẫu này, mã kết thúc chương trình (exit code) 2 biểu th�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Quy định cấm gửi dữ liệu nhạy cảm ra ngoài. Hook PostToolUse phát hiện vi phạm và log cảnh báo sau lệnh upload. Thiết kế nào đáp ứng yêu cầu ngăn gửi?
+**Question 1 — Choose one.** PostToolUse detects sensitive-data upload after it occurs. Which design prevents prohibited transmission?
 
-A. Giữ PostToolUse nhưng tăng mức cảnh báo thành critical.
+A. Raise the post-action alert to critical.
 
-B. Chặn upload vi phạm bằng PreToolUse trước thực thi.
+B. Block violating uploads in PreToolUse before execution.
 
-C. Dùng Stop hook sau khi tác nhân hoàn tất toàn bộ nhiệm vụ.
+C. Use a Stop hook after the whole task.
 
-D. Dùng PostToolUse xóa file nguồn khi phát hiện upload không hợp lệ.
+D. Delete the source after upload.
 
-**Câu 2 — Chọn một.** Theo hợp đồng mẫu của bài, exit code 1 là lỗi không chặn và 2 là lỗi chặn ở sự kiện hỗ trợ. Hook trả 1 và in “DENIED”, nhưng lệnh vẫn chạy. Cần sửa điều gì?
+**Question 2 — Choose one.** Under the sample contract, exit code 1 is nonblocking and 2 blocks supported events. A hook prints “DENIED” and exits 1, but the command runs. What should change?
 
-A. Cho wrapper đọc “DENIED” từ log và đánh dấu thất bại khi công cụ trả kết quả.
+A. Mark failure from logs only after execution.
 
-B. Thêm nhiều dòng stderr để lỗi rõ hơn.
+B. Print more stderr lines.
 
-C. Dùng cơ chế chặn đúng event; thử xem lệnh còn chạy không.
+C. Use the event's proper blocking mechanism and verify execution is prevented.
 
-D. Di chuyển cùng hook sang sự kiện bất kỳ sau công cụ.
+D. Move the same hook to any post-tool event.
 
-**Câu 3 — Chọn hai.** Hook thay command bằng updatedInput, nhưng tool còn yêu cầu workdir và timeout. Hai thao tác nào tránh làm sai lời gọi?
+**Question 3 — Choose two.** A hook replaces `command` through `updatedInput`, while `workdir` and `timeout` are also required. Which TWO actions preserve a valid call?
 
-A. Giữ các trường cần thiết khi xây đối tượng đầu vào thay thế.
+A. Retain required fields in the replacement input.
 
-B. Chỉ trả command vì các trường còn lại luôn tự được trộn theo ý muốn.
+B. Return only command and assume automatic merging.
 
-C. Kiểm tra đối tượng thay thế theo hợp đồng và thử trường hợp có đủ tham số.
+C. Validate the replacement contract and test fully populated calls.
 
-D. Để mô hình bổ sung các trường bị mất sau khi tool đã chạy.
+D. Let the model restore lost fields after execution.
 
-**Câu 4 — Chọn một.** Nhóm muốn khôi phục ngữ cảnh sau compact bằng hook, nhưng không biết sự kiện nào đưa đầu ra vào hội thoại ở phiên bản đang dùng. Quyết định nào tốt nhất?
+**Question 4 — Choose one.** The team wants post-compaction context restoration but is unsure which installed-version event injects output. What is best?
 
-A. Dựa vào tên PostCompact để mặc định mọi stdout được đưa vào context.
+A. Assume PostCompact injects all stdout based on its name.
 
-B. Ghi ngữ cảnh ra stderr vì lỗi luôn được thêm vào hội thoại.
+B. Use stderr because all errors enter conversation.
 
-C. Chuyển toàn bộ nội dung sang hook sau công cụ cho dễ gọi.
+C. Move everything to an arbitrary post-tool hook.
 
-D. Xác minh hợp đồng phiên bản bằng một lượt compact có kiểm tra context.
+D. Verify the version's contract with an actual compaction and context check.
 
-**Câu 5 — Chọn hai.** Hook bảo vệ một thao tác nhạy cảm đã được viết. Hai kiểm thử nào cần để biết nó thực thi đúng chính sách?
+**Question 5 — Choose two.** Which TWO tests establish a sensitive-action hook's policy enforcement?
 
-A. Yêu cầu vi phạm bị chặn trước khi có tác động bên ngoài.
+A. Violations are blocked before external effects.
 
-B. Yêu cầu hợp lệ vẫn chạy với đầu vào bắt buộc được giữ đủ.
+B. Valid requests still run with required inputs preserved.
 
-C. Chỉ unit-test mã trả về của hook, chưa chạy lời gọi công cụ qua host.
+C. Only unit-test exit codes without invoking through the host.
 
-D. Chỉ kiểm tra file hook tồn tại ở đường dẫn cấu hình.
+D. Only check the hook file exists.
 
 ## Đáp án và giải thích
 

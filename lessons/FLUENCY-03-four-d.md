@@ -20,55 +20,55 @@ Nếu dữ liệu không phù hợp để đưa vào hệ thống AI, cần xem 
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** AI tạo phân tích đúng theo prompt nhưng nguồn nội bộ dùng trong prompt không được phép đưa lên hệ thống đó. Thay đổi nào xử lý đúng nguyên nhân?
+**Question 1 — Choose one.** AI follows the prompt correctly, but the internal source was not permitted on that platform. What addresses the cause?
 
-A. Viết lại yêu cầu không nhắc tên nguồn.
+A. Remove the source name from the wording.
 
-B. Thêm cảnh báo dữ liệu nhạy cảm ở cuối đầu ra.
+B. Add a sensitive-data warning to the answer.
 
-C. Yêu cầu AI không ghi nhớ nội dung sau khi trả lời.
+C. Ask AI to forget afterward.
 
-D. Rà hệ thống, dữ liệu và phân công trước khi làm tiếp.
+D. Review the system, permitted data, and division of work before continuing.
 
-**Câu 2 — Chọn một.** AI bỏ sót chi phí vận hành vì nhiệm vụ chỉ nói “so sánh hai phương án”. Nhóm phát hiện lỗi khi đọc báo cáo. Chuỗi điều chỉnh nào phù hợp nhất?
+**Question 2 — Choose one.** A comparison omits operating costs because the prompt only says “compare.” What is the appropriate improvement loop?
 
-A. Discernment tìm lỗi; sửa Description rồi kiểm tra bản mới.
+A. Use Discernment to identify the omission, revise Description, and check again.
 
-B. Lặp lại prompt cũ vì Delegation đã hoàn tất nên không nên đổi yêu cầu.
+B. Repeat unchanged instructions because Delegation is finished.
 
-C. Chuyển sang mô hình lớn hơn và bỏ bước kiểm tra lần sau.
+C. Use a larger model and skip future review.
 
-D. Thêm tuyên bố dùng AI để người đọc tự xử lý phần thiếu.
+D. Disclose AI use and let readers fix the omission.
 
-**Câu 3 — Chọn hai.** Một nhóm chuẩn bị công bố nghiên cứu AI hỗ trợ. Hai quyết định nào thuộc các năng lực khác nhau nhưng cần phối hợp?
+**Question 3 — Choose two.** Which TWO decisions should be coordinated when publishing AI-assisted research?
 
-A. Giao chuyên gia đánh giá phương pháp vì đó là phần cần phán đoán chuyên môn.
+A. Assign methodological assessment to a qualified expert.
 
-B. Cho AI chọn luôn tiêu chí thành công sau khi đã thấy kết quả.
+B. Let AI select success criteria after seeing results.
 
-C. Kiểm tra kết luận theo nguồn và nêu rõ phần AI đã hỗ trợ theo bối cảnh công bố.
+C. Check conclusions against sources and disclose assistance appropriately.
 
-D. Coi việc dùng đúng định dạng trích dẫn là đủ cho toàn bộ trách nhiệm sử dụng.
+D. Treat citation formatting as the whole responsibility.
 
-**Câu 4 — Chọn một.** AI đã làm đúng các yêu cầu được mô tả, nhưng khi kiểm tra nhóm thấy nhiệm vụ cần dữ liệu và chuyên môn khác. Bước nào phù hợp?
+**Question 4 — Choose one.** AI meets the described requirements, but review reveals the task needs different data and expertise. What should happen?
 
-A. Chỉ sửa Performance để AI trình bày ít tự tin hơn.
+A. Only make its tone less confident.
 
-B. Đổi phân công/nguồn theo kế hoạch rồi mô tả lại yêu cầu.
+B. Revise allocation and sources, then describe the task again.
 
-C. Giữ phân công ban đầu để kết quả các lượt có thể so sánh.
+C. Freeze allocation to preserve comparisons.
 
-D. Đánh dấu nhiệm vụ thất bại vĩnh viễn vì Description không sửa được.
+D. Declare permanent failure because Description cannot change.
 
-**Câu 5 — Chọn hai.** Khi duyệt thiết kế một quy trình AI, hai dấu hiệu nào cho thấy nhóm không chỉ tập trung vào kỹ thuật prompt?
+**Question 5 — Choose two.** Which TWO design features show attention beyond prompt technique?
 
-A. Prompt liệt kê nhiều tính từ mô tả giọng văn.
+A. Many tone adjectives.
 
-B. Workflow tách rõ phần AI làm, phần người quyết định và tiêu chí hoàn tất.
+B. Clear AI duties, human decisions, and completion criteria.
 
-C. Có bước kiểm tra dữ liệu được phép đưa vào và xác minh trước khi chia sẻ.
+C. Checks on permitted data and verification before sharing.
 
-D. Mọi trường hợp lỗi đều được xử lý bằng cách thêm ví dụ vào prompt.
+D. Every failure handled only by adding examples.
 
 ## Đáp án và giải thích
 

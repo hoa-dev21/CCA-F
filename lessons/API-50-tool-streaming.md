@@ -15,55 +15,55 @@ Nhận dữ liệu sớm hơn đòi hỏi xử lý tốt trạng thái chưa ho�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Stream công cụ chuyển tiền đã có amount=500 nhưng chưa nhận tài khoản đích. UI muốn phản hồi nhanh. Thiết kế nào đúng?
+**Question 1 — Choose one.** A transfer stream contains `amount=500` but no destination account yet. How can the UI remain responsive safely?
 
-A. Thực thi trước với tài khoản gần nhất trong hội thoại rồi sửa nếu cần.
+A. Execute using the latest account and revise later.
 
-B. Thực thi khi chuỗi đầu tiên parse được dù stream chưa kết thúc.
+B. Execute as soon as any JSON prefix parses.
 
-C. Cho mô hình xác nhận giao dịch trong lúc chờ phần còn lại.
+C. Confirm the transfer while awaiting remaining data.
 
-D. Báo tiến độ; đủ đối số và qua kiểm tra mới thực thi.
+D. Show progress, then execute only after arguments are complete and validated.
 
-**Câu 2 — Chọn một.** Parser báo lỗi khi mới nhận nửa chuỗi JSON từ stream. Kết luận hợp lý nhất là gì?
+**Question 2 — Choose one.** A parser errors on half a streamed JSON string. What is the best interpretation?
 
-A. Chèn dấu đóng JSON rồi dùng đối số đã vá để thực thi.
+A. Add closing braces and execute repaired arguments.
 
-B. Bỏ kiểm tra cấu trúc vì streaming vốn không parse được.
+B. Remove structural validation.
 
-C. Đó còn là dữ liệu tạm; phải xét trạng thái cuối.
+C. The data is provisional; inspect the final stream state.
 
-D. Coi toàn bộ yêu cầu thất bại và chạy lại công cụ ngay.
+D. Immediately rerun the tool as a failed request.
 
-**Câu 3 — Chọn hai.** Bộ xử lý streaming đã ghép đủ đối số của một thao tác ghi. Hai gate nào còn cần trước tác động?
+**Question 3 — Choose two.** Arguments for a write have been assembled from a stream. Which TWO checks still precede the side effect?
 
-A. Bỏ validation vì dữ liệu do mô hình sinh có schema mô tả.
+A. Skip validation because the model received a schema.
 
-B. Xác nhận đầu vào hoàn tất và đúng cấu trúc theo hợp đồng.
+B. Confirm complete, structurally valid inputs.
 
-C. Kiểm tra quyền và điều kiện nghiệp vụ của thao tác.
+C. Check permissions and business preconditions.
 
-D. Coi việc UI hiện đủ văn bản là quyền phê duyệt.
+D. Treat fully displayed text as approval.
 
-**Câu 4 — Chọn một.** Ứng dụng dùng tên sự kiện từ video cũ, không nhận biết kết thúc ở SDK mới. Bước sửa đúng là gì?
+**Question 4 — Choose one.** Old event names prevent recognizing completion with a new SDK. What should be done?
 
-A. Đếm số dấu ngoặc để thay hoàn toàn trạng thái stream.
+A. Replace state handling with brace counting.
 
-B. Dùng một timeout ngắn làm dấu kết thúc cho mọi yêu cầu.
+B. Use one short timeout for all requests.
 
-C. Đối chiếu sự kiện và cách hoàn tất của phiên bản đang dùng.
+C. Verify events and completion semantics for the installed version.
 
-D. Thực thi mỗi lần có một delta vì mỗi delta là lời gọi riêng.
+D. Execute on every delta as a separate call.
 
-**Câu 5 — Chọn hai.** Đo hiệu quả tool streaming so với trả một lần. Hai tiêu chí nào cần tách?
+**Question 5 — Choose two.** Which TWO timing measures should be distinguished when evaluating tool streaming?
 
-A. Coi số delta nhiều hơn là chất lượng nghiệp vụ cao hơn.
+A. Delta count as business quality.
 
-B. Thời điểm người dùng thấy tiến độ đầu tiên.
+B. Time until the user first sees progress.
 
-C. Coi token đầu tiên là thời điểm công cụ hoàn thành.
+C. First token time as tool-completion time.
 
-D. Thời điểm đối số hợp lệ sẵn sàng để thực thi an toàn.
+D. Time until complete validated arguments are safe to execute.
 
 ## Đáp án và giải thích
 

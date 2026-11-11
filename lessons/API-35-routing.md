@@ -15,55 +15,55 @@ Khi kết quả sai, cần phân biệt lỗi chọn nhánh với lỗi bên tro
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Yêu cầu sửa hóa đơn bị chuyển sang nhánh kỹ thuật; nhánh kỹ thuật vốn xử lý đúng các ticket phần mềm. Sửa thành phần nào trước?
+**Question 1 — Choose one.** An invoice correction is routed to a software-support branch that handles software issues correctly. What should be fixed first?
 
-A. Prompt của nhánh kỹ thuật để nó cũng sửa hóa đơn.
+A. Make the software branch handle invoices too.
 
-B. Router và tiêu chí phân loại ở ranh giới hai nhóm.
+B. The router and classification boundary between categories.
 
-C. Tăng tool của mọi nhánh để xử lý được mọi loại yêu cầu.
+C. Give every branch every tool.
 
-D. Chạy thêm lần nữa cùng nhánh kỹ thuật rồi lấy đa số.
+D. Repeat the same route and vote.
 
-**Câu 2 — Chọn một.** Mọi yêu cầu trong một sản phẩm hiện dùng cùng quy trình, cùng công cụ và rubric. Nhóm muốn thêm router với bốn nhãn. Quyết định hợp lý nhất?
+**Question 2 — Choose one.** Every request currently uses identical tools, workflow, and rubric. Should a four-label router be added?
 
-A. Thêm router vì phân loại luôn cải thiện độ đúng.
+A. Yes; classification always improves accuracy.
 
-B. Dùng bốn nhãn nhưng chạy cùng handler để chứng minh kiến trúc mở rộng.
+B. Use four labels with the same handler to demonstrate scalability.
 
-C. Chỉ thêm khi chuyên biệt hóa tạo lợi ích đo được.
+C. Add routing only when specialization offers measurable benefit.
 
-D. Chạy cả bốn nhãn song song rồi dùng nhãn có confidence cao nhất.
+D. Run all labels in parallel and select by confidence.
 
-**Câu 3 — Chọn hai.** Ticket vừa báo lỗi phần mềm vừa tranh chấp hóa đơn, trong khi router hiện chỉ có hai nhãn đơn. Hai thay đổi nào giúp xử lý ranh giới này?
+**Question 3 — Choose two.** A ticket contains both a software defect and a billing dispute, but routing supports only single labels. Which TWO improvements help?
 
-A. Định nghĩa quy tắc ưu tiên/chuyển cấp hoặc luồng cho yêu cầu nhiều ý định.
+A. Define priority, escalation, or a multi-intent handling path.
 
-B. Bắt chọn nhãn đầu tiên xuất hiện trong câu để luôn xác định được.
+B. Choose whichever intent appears first.
 
-C. Đưa ví dụ ranh giới và đánh giá lỗi định tuyến trên tập riêng.
+C. Add boundary examples and evaluate routing errors separately.
 
-D. Gán ngẫu nhiên một nhãn để tránh bias về một nhánh.
+D. Choose a random label to avoid bias.
 
-**Câu 4 — Chọn một.** Router báo nhãn đúng, nhưng câu trả lời cuối vẫn sai do nhánh chuyên biệt lấy nhầm dữ liệu. Cách đo nào phân biệt được vấn đề?
+**Question 4 — Choose one.** Routing is correct, but the specialist retrieves incorrect data. Which evaluation distinguishes the causes?
 
-A. Chỉ đo độ đúng nhãn vì một nhánh chuyên biệt đã được kiểm thử trước đó.
+A. Measure labels only because specialists were tested before.
 
-B. Đo latency toàn luồng và tỷ lệ request HTTP thành công theo từng nhánh.
+B. Measure only latency and HTTP success by branch.
 
-C. Dùng confidence định tuyến để quyết định câu trả lời cuối có cần review.
+C. Use routing confidence to decide whether the answer needs review.
 
-D. Đo router, chất lượng nhánh và kết quả toàn luồng.
+D. Measure router accuracy, branch quality, and end-to-end outcomes separately.
 
-**Câu 5 — Chọn hai.** Hệ routing chọn một nhánh xử lý cho mỗi yêu cầu đã phân loại rõ. Hai đặc điểm nào cần giữ khi tối ưu?
+**Question 5 — Choose two.** Which TWO properties should a routing system preserve when each clear request needs one branch?
 
-A. Chỉ gọi nhánh được chọn khi các nhánh khác không cần cho yêu cầu.
+A. Invoke only the selected branch when others are unnecessary.
 
-B. Luôn gọi mọi nhánh để mỗi nhánh biết router đang hoạt động.
+B. Invoke every branch to prove routing is active.
 
-C. Các handler nhận đủ context và quyền phù hợp nhiệm vụ riêng.
+C. Give each handler the context and permissions appropriate to its task.
 
-D. Dùng cùng prompt chung cho mọi nhánh dù nhu cầu khác nhau.
+D. Use the same generic prompt regardless of branch needs.
 
 ## Đáp án và giải thích
 

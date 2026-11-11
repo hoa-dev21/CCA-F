@@ -15,55 +15,55 @@ Nếu kết quả trung gian bắt buộc đúng cấu trúc mới được chuy
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Một prompt vừa trích dữ liệu vừa viết báo cáo thường bỏ sót trường. Nhóm chia thành trích xuất rồi viết, nhưng không truyền kết quả trích xuất vào lượt viết. Điều gì cần sửa trước?
+**Question 1 — Choose one.** Extraction and report writing are split into two calls, but extracted data never reaches the writing call. What should be fixed first?
 
-A. Tăng độ dài đầu ra của lượt viết.
+A. Increase report output length.
 
-B. Truyền bản trích xuất đã kiểm tra vào lượt viết.
+B. Pass validated extraction results into the writing step.
 
-C. Đổi tên hai prompt để mô hình nhận ra chúng thuộc cùng tác vụ.
+C. Rename prompts to show they belong together.
 
-D. Dùng cùng model ID để hai lượt tự chia sẻ kết quả.
+D. Use the same model ID to share results automatically.
 
-**Câu 2 — Chọn một.** Đầu ra bước A phải có order_id hợp lệ trước khi B cập nhật đơn hàng. Cách đặt gate nào phù hợp?
+**Question 2 — Choose one.** Step A must produce a valid `order_id` before B updates an order. Where should validation occur?
 
-A. Yêu cầu A tự nói “đã hợp lệ” ở cuối.
+A. Ask A to declare validity in prose.
 
-B. Cho B kiểm tra sau khi cập nhật vì đã có dữ liệu đầy đủ.
+B. Have B check only after updating.
 
-C. Host kiểm tra cấu trúc/nghiệp vụ trước bước B.
+C. Have the host check structure and business validity before B.
 
-D. Gộp A/B thành một prompt để không cần kiểm tra trung gian.
+D. Merge both steps into one prompt to remove checks.
 
-**Câu 3 — Chọn hai.** Chuỗi tạo nháp rồi sửa cần đảm bảo lượt sửa thực sự đánh giá bản vừa tạo. Hai dữ liệu nào nên được truyền?
+**Question 3 — Choose two.** Which TWO inputs ensure a revision step evaluates the intended draft?
 
-A. Bản nháp đúng phiên bản cần sửa.
+A. The actual draft at the correct revision.
 
-B. Chỉ yêu cầu gốc để lượt sửa tự tái tạo bản nháp.
+B. Only the original request, letting revision recreate the draft.
 
-C. Rubric/ràng buộc của đầu ra cuối và phản hồi kiểm tra liên quan.
+C. Final-output criteria and relevant validation feedback.
 
-D. Chỉ một câu “hãy cải thiện bản trước” không kèm nội dung.
+D. Only “improve the previous version” without content.
 
-**Câu 4 — Chọn một.** Chain năm bước tăng độ đúng rất ít nhưng vượt SLA latency. Nhóm nên làm gì?
+**Question 4 — Choose one.** A five-step chain offers little accuracy gain and violates latency requirements. What should the team do?
 
-A. Giữ chain vì mỗi bước đã có mục tiêu riêng.
+A. Keep it because every step has a purpose.
 
-B. Tăng timeout cho người dùng rồi coi SLA đã đạt.
+B. Raise the timeout and declare the SLA met.
 
-C. Bỏ toàn bộ validation để giảm số bước.
+C. Remove every validation step.
 
-D. Đo từng bước; giảm bước ít giá trị, giữ gate bắt buộc.
+D. Measure individual steps, remove low-value work, and retain mandatory checks.
 
-**Câu 5 — Chọn hai.** Một chain thất bại ở bước cuối do trường trung gian bị hiểu sai. Hai dữ liệu quan sát nào giúp tìm đúng nơi lỗi phát sinh?
+**Question 5 — Choose two.** An intermediate field is misinterpreted, causing final failure. Which TWO observations locate the cause?
 
-A. Input/output và trạng thái kiểm tra ở các ranh giới bước liên quan.
+A. Inputs, outputs, and validation status at relevant step boundaries.
 
-B. Chỉ tổng số token toàn chain.
+B. Only total chain tokens.
 
-C. Liên kết phiên bản kết quả trung gian với yêu cầu và bước tiêu thụ nó.
+C. Links between intermediate result versions, requests, and consuming steps.
 
-D. Chỉ câu trả lời cuối và confidence chung.
+D. Only the final answer and overall confidence.
 
 ## Đáp án và giải thích
 

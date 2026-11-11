@@ -15,55 +15,55 @@ Ví dụ: Nếu chỉ cần giải thích một đoạn mã, bạn có thể tra
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Nhóm cần sửa lỗi trong repository và chứng minh test đạt. Chat đã đề xuất patch hợp lý nhưng không truy cập được repository. Cách bàn giao nào đáp ứng yêu cầu?
+**Question 1 — Choose one.** A chat proposes a plausible patch but cannot access the repository. The task requires fixing a bug and proving tests pass. What meets the requirement?
 
-A. Đưa lời giải thích patch vào báo cáo và ghi nhận rằng lỗi đã được sửa.
+A. Describe the patch and mark the bug fixed.
 
-B. Yêu cầu cùng phiên chat tự đánh giá test dựa trên đoạn mã được dán.
+B. Ask the same chat to infer test results from pasted code.
 
-C. Đổi sang giao diện khác mang tên Claude rồi mặc định quyền truy cập đã có.
+C. Switch to any interface named Claude and assume access.
 
-D. Dùng công cụ có quyền sửa dự án, chạy test và kiểm tra kết quả.
+D. Use authorized project tools to apply changes, run tests, and inspect results.
 
-**Câu 2 — Chọn hai.** Một trợ lý phân tích báo cáo riêng của doanh nghiệp. Hai điều nào cần được thiết kế thay vì mặc định từ năng lực ngôn ngữ của mô hình?
+**Question 2 — Choose two.** Which TWO elements must be designed for an assistant analyzing private company reports?
 
-A. Tiêu chí đối chiếu kết luận với tài liệu và mục tiêu sử dụng.
+A. Criteria checking conclusions against documents and intended use.
 
-B. Cách cung cấp dữ liệu liên quan và quyền truy cập phù hợp.
+B. Relevant data provisioning and appropriate access.
 
-C. Coi việc diễn đạt chuyên nghiệp là bằng chứng đã hiểu đúng số liệu.
+C. Professional writing as proof of accurate interpretation.
 
-D. Coi kiến thức huấn luyện là bản sao cập nhật của mọi tài liệu nội bộ.
+D. Training knowledge as a current copy of all internal documents.
 
-**Câu 3 — Chọn một.** Bạn chỉ cần giải thích một đoạn mã đã được cung cấp, không cần chỉnh sửa hoặc thực thi. Phương án nào đáp ứng nhu cầu với phạm vi truy cập nhỏ nhất?
+**Question 3 — Choose one.** You only need an explanation of supplied code, without edits or execution. What requires the least access?
 
-A. Cấp quyền triển khai để kiểm tra lời giải thích trên hệ thống thật.
+A. Grant deployment access to test explanations live.
 
-B. Trao đổi trên mã đã có và nêu phần chưa kiểm chứng.
+B. Discuss the supplied code and identify unverified claims.
 
-C. Cấp toàn bộ repository và quyền chạy lệnh trước khi đặt câu hỏi.
+C. Grant the full repository and shell access first.
 
-D. Thiết lập tác nhân tự sửa mã rồi dùng diff để giải thích.
+D. Launch an editing agent and explain its diff.
 
-**Câu 4 — Chọn hai.** Một đề xuất triển khai dựa trên video cũ về gói dịch vụ. Hai bước nào giúp chọn giải pháp có căn cứ?
+**Question 4 — Choose two.** A deployment proposal relies on an old service-plan video. Which TWO checks support a sound choice?
 
-A. Dùng giới hạn của một gói cũ làm cam kết năng lực cho khách hàng.
+A. Promise customers the old plan's limits.
 
-B. Chọn giao diện giống ảnh video vì tên tính năng không đổi.
+B. Choose the interface matching the screenshot.
 
-C. Đối chiếu các thao tác cần thực hiện với quyền và dữ liệu thực tế.
+C. Match required operations with actual data and permissions.
 
-D. Xác minh khả năng và giới hạn của môi trường dự định dùng.
+D. Verify capabilities and limits in the intended environment.
 
-**Câu 5 — Chọn một.** Sau bản thử thành công, quản lý muốn coi trợ lý là nguồn quyết định cuối cho mọi báo cáo. Thiết kế nào phù hợp với vai trò người dùng trong bài?
+**Question 5 — Choose one.** After one successful trial, management wants AI to make final decisions on all reports. What is appropriate?
 
-A. Mở rộng tự động vì cùng một mô hình đã làm đúng lần thử.
+A. Expand automatically because one trial succeeded.
 
-B. Bỏ phần nguồn để báo cáo dễ đọc và giao toàn quyền kết luận cho AI.
+B. Remove sources and delegate every conclusion.
 
-C. Chỉ yêu cầu AI trả lời thận trọng hơn rồi bỏ khâu kiểm tra.
+C. Ask for cautious wording and remove review.
 
-D. Xác định phạm vi và kiểm chứng trước khi dùng kết luận.
+D. Define scope and verify conclusions before use.
 
 ## Đáp án và giải thích
 

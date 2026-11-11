@@ -15,55 +15,55 @@ Một trích dẫn có thật vẫn có thể bị gắn với kết luận mà 
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Báo cáo có 20 liên kết cuối trang nhưng không biết số liệu nào dựa vào tài liệu nào. Cải thiện trực tiếp nhất?
+**Question 1 — Choose one.** A report has 20 end links but no mapping from figures to documents. What directly improves it?
 
-A. Dùng một trích dẫn chung cho toàn bộ báo cáo.
+A. Use one citation for the whole report.
 
-B. Tăng số liên kết để mỗi chủ đề đều có nguồn gần giống.
+B. Add more broadly related links.
 
-C. Nối từng nhận định với nguồn và vị trí chứng minh.
+C. Link each claim to its supporting source and location.
 
-D. Sắp liên kết theo tên miền để trông có hệ thống hơn.
+D. Sort links by domain name.
 
-**Câu 2 — Chọn một.** Trích dẫn đúng trang nhưng đoạn chỉ nói “có thể”, câu trả lời nói “luôn luôn”. Đánh giá nào đúng?
+**Question 2 — Choose one.** A cited passage says “may,” but the answer says “always.” What is the assessment?
 
-A. Hợp lệ vì người dùng có thể tự đọc và sửa hiểu nhầm.
+A. Valid because users can correct the interpretation themselves.
 
-B. Chỉ lỗi hiển thị URL, không phải lỗi ngữ nghĩa.
+B. Only a URL-display error.
 
-C. Trích dẫn chưa hỗ trợ mức khẳng định đang dùng.
+C. The source does not support the strength of the claim.
 
-D. Hợp lệ nếu tiêu đề tài liệu cùng chủ đề.
+D. Valid if the title shares the topic.
 
-**Câu 3 — Chọn hai.** Ứng dụng nhận citation cho cả PDF và văn bản thuần. Hai thông tin nào cần giữ để dẫn đúng vị trí?
+**Question 3 — Choose two.** Which TWO details preserve citation locations for PDF and plain text?
 
-A. Vị trí theo loại tài liệu như trang hoặc khoảng ký tự.
+A. Type-appropriate locations such as pages or character ranges.
 
-B. Dùng thứ tự citation trong câu trả lời làm số trang.
+B. Use citation order as page number.
 
-C. Ép mọi vị trí thành số trang kể cả văn bản không phân trang.
+C. Force all locations into page numbers.
 
-D. Định danh tài liệu tương ứng với nguồn đã dùng.
+D. The identifier of the corresponding source document.
 
-**Câu 4 — Chọn một.** Sau nén tài liệu, một đoạn trích vẫn giữ offsets của bản gốc nhưng UI mở bản đã biến đổi. Người dùng đến sai chỗ. Cần sửa gì?
+**Question 4 — Choose one.** Offsets refer to the original document, but the UI opens a compressed version and navigates incorrectly. What is needed?
 
-A. Giữ bản nguồn tương ứng hoặc ánh xạ vị trí qua phép biến đổi.
+A. The corresponding source version or a mapping through the transformation.
 
-B. Đổi offsets thành chỉ số câu trong câu trả lời.
+B. Offsets replaced by answer-sentence indices.
 
-C. Coi trích dẫn vẫn đúng vì cùng tên tài liệu.
+C. Assume the same filename guarantees correctness.
 
-D. Chỉ giữ tiêu đề vì offsets không còn tiện dùng.
+D. Keep only the title because offsets are inconvenient.
 
-**Câu 5 — Chọn hai.** Hai claim cùng trích một tài liệu đáng tin. Hai kiểm tra nào vẫn cần?
+**Question 5 — Choose two.** Two claims cite a credible document. Which TWO checks remain necessary?
 
-A. Chỉ kiểm tra domain và bỏ qua nội dung đã có citation.
+A. Check the domain only.
 
-B. Điều kiện, ngoại lệ và thời điểm nguồn có phù hợp không.
+B. Verify applicability, exceptions, and timing.
 
-C. Mỗi claim có được đoạn cụ thể hỗ trợ không.
+C. Verify specific passages support each claim.
 
-D. Coi citation do mô hình sinh là bằng chứng đã được kiểm toán độc lập.
+D. Treat generated citations as an independent audit.
 
 ## Đáp án và giải thích
 

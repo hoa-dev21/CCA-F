@@ -19,55 +19,55 @@ Ví dụ: Chương trình tạo đủ 100 bản ghi nhưng bản nào cũng đư
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Pipeline chạy đủ 200 ca, lưu output và luôn gán score=10. Nhóm muốn dùng báo cáo để duyệt phát hành. Kết luận nào đúng?
+**Question 1 — Choose one.** A pipeline runs 200 cases, stores outputs, and assigns every case `score=10`. Can its report support release?
 
-A. Có thể dùng độ phân tán điểm bằng không để xác nhận độ ổn định model.
+A. Zero score variance proves model stability.
 
-B. Pipeline đã kiểm tra luồng chạy, chưa có phép đo chất lượng đầu ra.
+B. It verifies pipeline execution but does not measure output quality.
 
-C. Chỉ cần tăng số ca để điểm cố định trở thành đáng tin cậy.
+C. More cases will make the fixed score reliable.
 
-D. Chất lượng đã đạt tối đa vì mọi ca đều có đầu ra và điểm.
+D. Every case has an output and score, so quality is maximal.
 
-**Câu 2 — Chọn hai.** Một ca có điểm thấp nhưng dashboard không cho biết nguyên nhân. Hai trường nào phải đi cùng score để điều tra theo cấu trúc của bài?
+**Question 2 — Choose two.** A low-scoring case has no diagnostic details. Which TWO fields should accompany `score`?
 
-A. output thay bằng câu trả lời lý tưởng do người viết mong muốn.
+A. `output` replaced with the author's ideal answer.
 
-B. output chứa câu trả lời thực tế.
+B. `output` containing the actual response.
 
-C. test_case chứa đầu vào thực tế.
+C. `test_case` containing the actual input.
 
-D. test_case thay bằng số thứ tự trong một tập có thể thay đổi.
+D. `test_case` replaced with an index in a changing dataset.
 
-**Câu 3 — Chọn một.** Nhóm muốn thay cách chấm mà giữ cách ghép prompt và vòng duyệt tập. Trách nhiệm nào là điểm tích hợp hợp lý nhất?
+**Question 3 — Choose one.** The team wants to replace grading while retaining prompt construction and dataset iteration. Where should grading integrate?
 
-A. Giao bộ chấm tự duyệt tập rồi bỏ bản ghi test_case.
+A. Have the grader iterate the set and discard test-case records.
 
-B. run_prompt tự đổi toàn bộ tập để phù hợp bộ chấm mới.
+B. Have `run_prompt` rewrite the dataset for the new grader.
 
-C. run_eval viết lại mọi output trước khi bộ chấm nhận chúng.
+C. Have `run_eval` rewrite every output before grading.
 
-D. run_test_case chấm output do run_prompt trả về.
+D. Have `run_test_case` grade the output returned by `run_prompt`.
 
-**Câu 4 — Chọn hai.** Sau refactor, run_eval trả điểm chung tốt nhưng thiếu 12 output do lỗi gọi API. Hai cách xử lý nào giúp báo cáo không gây hiểu lầm?
+**Question 4 — Choose two.** After refactoring, `run_eval` reports good scores but 12 API failures have no outputs. Which TWO reporting choices avoid misleading readers?
 
-A. Ghi nhận rõ các ca không chạy thành công và nguyên nhân.
+A. Record failed cases and their causes explicitly.
 
-B. Gán điểm tối đa cho ca lỗi để không phạt chất lượng prompt.
+B. Assign maximum scores to failures to avoid penalizing the prompt.
 
-C. Tách số ca được chấm khỏi tổng số ca dự kiến khi tổng hợp.
+C. Distinguish graded cases from the total planned cases.
 
-D. Loại ca lỗi khỏi báo cáo và vẫn ghi rằng đã chạy đủ tập.
+D. Omit failures while claiming the whole set ran successfully.
 
-**Câu 5 — Chọn một.** Hai phiên bản run_prompt trả khác nhau nhưng log chỉ giữ score. Nhóm muốn xác định lỗi ghép prompt hay lỗi bộ chấm. Cải tiến nào trực tiếp nhất?
+**Question 5 — Choose one.** Two `run_prompt` versions differ, but logs retain only scores. What helps distinguish prompt-construction errors from grading errors?
 
-A. Chỉ lưu điểm trung bình của mỗi phiên bản để giảm nhiễu.
+A. Store only each version's average.
 
-B. Chỉ lưu output có điểm cao làm chuẩn cho lần chạy sau.
+B. Store only high-scoring outputs.
 
-C. Lưu từng test_case, output và score trong cùng bản ghi.
+C. Store each test case, actual output, and score together.
 
-D. Lưu riêng ba danh sách và ghép theo thứ tự hoàn thành bất đồng bộ.
+D. Store separate lists and join by asynchronous completion order.
 
 ## Đáp án và giải thích
 

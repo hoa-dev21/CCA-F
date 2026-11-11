@@ -15,55 +15,55 @@ Các công cụ cần có đầu vào và kết quả rõ để phối hợp và
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Người dùng yêu cầu “nhắc sau ba ngày”. Công cụ tính ngày chạy song song với công cụ tạo lời nhắc; bước tạo dùng giờ hiện tại vì kết quả tính chưa về. Cách sửa phù hợp?
+**Question 1 — Choose one.** Date calculation and reminder creation run concurrently; creation uses the current time before calculation finishes. What is the correct fix?
 
-A. Giữ chạy song song và sửa lời nhắc sau khi xác nhận với người dùng.
+A. Keep parallel execution and revise after confirmation.
 
-B. Chờ mốc đã tính, kiểm tra nó rồi truyền sang thao tác tạo.
+B. Wait for the calculated target, validate it, and pass it to creation.
 
-C. Cho mô hình ước tính mốc để công cụ tính chỉ dùng đối chiếu.
+C. Guess the target and use calculation only for comparison.
 
-D. Lặp cả hai công cụ để tăng xác suất hai kết quả trùng nhau.
+D. Repeat both calls until their results coincide.
 
-**Câu 2 — Chọn một.** Backend ghi lời nhắc báo lỗi. Claude đã sinh câu “đã tạo lời nhắc” trước khi nhận kết quả. Ứng dụng nên làm gì?
+**Question 2 — Choose one.** Reminder storage fails after Claude has already said “created.” What should the application do?
 
-A. Coi lời hứa trong hội thoại là một lời nhắc dự phòng.
+A. Treat the promise as a backup reminder.
 
-B. Ghi log lỗi nội bộ nhưng báo thành công để tránh lặp yêu cầu.
+B. Log the failure but report success.
 
-C. Thông báo ghi thất bại và xử lý theo lỗi backend.
+C. Report the write failure and handle the backend error.
 
-D. Giữ câu đã sinh vì thời điểm tính toán vẫn đúng.
+D. Keep the claim because the calculated time was correct.
 
-**Câu 3 — Chọn hai.** Yêu cầu “nhắc sáng thứ Hai” đến từ người đi công tác, chưa rõ múi giờ. Hai bước nào cần làm trước khi xác nhận?
+**Question 3 — Choose two.** A traveling user asks for Monday-morning delivery without specifying a timezone. Which TWO steps are needed before confirmation?
 
-A. Dùng quy ước múi giờ đã được ứng dụng xác lập hoặc hỏi lại nếu chưa có.
+A. Use an established application timezone rule or ask if none exists.
 
-B. Mặc định múi giờ máy chủ vì backend là nơi thực thi.
+B. Always use the server's timezone.
 
-C. Chọn múi giờ dựa trên ngôn ngữ người dùng và tránh hỏi lại.
+C. Infer timezone from the user's language.
 
-D. Xác nhận kết quả tạo từ nơi quản lý lời nhắc.
+D. Confirm creation through the reminder system.
 
-**Câu 4 — Chọn một.** Có ba công cụ lấy giờ hiện tại, tính thời điểm và ghi lời nhắc. Kiểm thử nào phát hiện lỗi phối hợp mà test từng hàm có thể bỏ sót?
+**Question 4 — Choose one.** Which test catches coordination errors missed by separate time, arithmetic, and storage unit tests?
 
-A. Kiểm tra mô hình giải thích được công dụng từng công cụ.
+A. Ask the model to explain all tools.
 
-B. Kiểm tra tên công cụ đều có trong prompt hệ thống.
+B. Check that all names appear in the system prompt.
 
-C. Thử luồng tính mốc → ghi → xác nhận theo kết quả ghi.
+C. Test calculation, writing, and confirmation based on the actual write result.
 
-D. Kiểm tra ba hàm đều trả giá trị không rỗng khi gọi riêng.
+D. Verify each function separately returns something.
 
-**Câu 5 — Chọn hai.** Sau khi tính lịch, dữ liệu ghi nhận sai một ngày. Hai bằng chứng nào hữu ích nhất để xác định khâu lỗi?
+**Question 5 — Choose two.** A saved reminder is one day wrong. Which TWO evidence sets best locate the failure?
 
-A. Chỉ câu xác nhận cuối cùng của Claude.
+A. Only Claude's final confirmation.
 
-B. Chỉ tổng số token dùng trong hội thoại.
+B. Only total token usage.
 
-C. Mốc kết quả tính và giá trị thực tế đã ghi trong backend.
+C. The calculated target and the value actually stored.
 
-D. Mốc hiện tại, múi giờ và đối số đã truyền vào công cụ tính.
+D. Current time, timezone, and arguments passed to calculation.
 
 ## Đáp án và giải thích
 

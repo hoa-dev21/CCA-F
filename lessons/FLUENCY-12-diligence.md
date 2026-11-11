@@ -19,55 +19,55 @@ Ví dụ: “Tôi dùng AI để đề xuất bố cục và soạn bản nháp.
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Nhóm chuẩn bị dùng AI soạn báo cáo từ hồ sơ khách hàng. Trước khi đưa dữ liệu vào công cụ, quyết định nào thuộc Creation Diligence và có giá trị trực tiếp nhất?
+**Question 1 — Choose one.** Before uploading customer records for AI report drafting, which decision most directly demonstrates Creation Diligence?
 
-A. Chọn hệ thống và dữ liệu được phép theo bối cảnh tổ chức.
+A. Select a system and data permitted by the organizational context.
 
-B. Soạn câu ghi công AI để chèn vào báo cáo cuối.
+B. Draft the final AI disclosure.
 
-C. Đặt bước duyệt báo cáo trước khi gửi khách và dùng bước đó thay cho việc xét hệ thống nào được nhận hồ sơ.
+C. Use final review instead of deciding which systems may receive records.
 
-D. Giao AI tự quyết dữ liệu nào cần thiết sau khi tải toàn bộ hồ sơ lên.
+D. Upload everything and let AI decide relevance.
 
-**Câu 2 — Chọn một.** Bạn dùng AI lập bố cục và viết nháp, sau đó chỉ kiểm tra tên khách hàng; chưa đối chiếu số liệu. Câu minh bạch nào phản ánh đúng công việc đã làm?
+**Question 2 — Choose one.** AI creates an outline and draft; you check customer names but not figures. Which disclosure is accurate?
 
-A. “AI hỗ trợ bản nháp; toàn bộ báo cáo đã được xác minh.”
+A. “AI assisted; the entire report was verified.”
 
-B. “Báo cáo do AI tạo nên không cần xác định người chịu trách nhiệm.”
+B. “AI created it, so nobody needs responsibility.”
 
-C. “AI dựng bố cục, viết nháp; tôi kiểm tên, chưa xác minh số liệu.”
+C. “AI outlined and drafted; I checked names but have not verified figures.”
 
-D. “AI chỉ làm bố cục”, vì bạn đã sửa lại một số câu chữ.
+D. “AI only outlined it,” because some sentences were edited.
 
-**Câu 3 — Chọn hai.** Một báo cáo đã ghi rõ AI hỗ trợ, nhưng reviewer phát hiện số liệu sai trước khi gửi khách. Hai hành động nào đáp ứng Deployment Diligence?
+**Question 3 — Choose two.** A disclosed AI-assisted report has incorrect figures before delivery. Which TWO actions demonstrate Deployment Diligence?
 
-A. Xác định người chịu trách nhiệm về bản cuối và ghi đúng những kiểm tra thực sự đã làm.
+A. Assign final responsibility and accurately record checks performed.
 
-B. Chỉ thêm câu “AI có thể sai” để người đọc tự kiểm tra sau.
+B. Only add “AI may be wrong.”
 
-C. Đối chiếu nguồn và sửa/xử lý phần chưa xác minh trước khi chia sẻ.
+C. Check sources and resolve or handle unverified content before sharing.
 
-D. Giữ số liệu vì dòng ghi công đã thông báo rủi ro cho người đọc.
+D. Keep figures because disclosure transfers the risk.
 
-**Câu 4 — Chọn một.** Một nhân viên muốn dùng cùng một dòng disclosure cho ghi chú cá nhân, bài nộp học tập và báo cáo khách hàng. Cách tiếp cận nào phù hợp nhất?
+**Question 4 — Choose one.** Should personal notes, academic submissions, and client reports use identical disclosure wording?
 
-A. Chỉ công khai khi AI viết hơn một nửa số từ.
+A. Disclose only when AI writes most words.
 
-B. Theo bối cảnh, nêu đúng hỗ trợ AI và kiểm chứng đã làm.
+B. Adapt to context and accurately describe assistance and verification.
 
-C. Luôn ghi cùng mức chi tiết vì minh bạch không phụ thuộc đối tượng.
+C. Always use identical detail regardless of audience.
 
-D. Chỉ ghi tên công cụ, không cần mô tả phần việc đã làm.
+D. Only name the tool.
 
-**Câu 5 — Chọn hai.** Sau khi gửi báo cáo, bạn phát hiện lỗi do AI tạo và chính bạn đã bỏ qua khi kiểm tra. Hai việc nào phù hợp với trách nhiệm sử dụng?
+**Question 5 — Choose two.** After sending a report, you discover an AI error missed in review. Which TWO actions reflect responsible use?
 
-A. Sửa và thông báo cho người nhận theo mức tác động của sai sót.
+A. Correct it and notify recipients according to impact.
 
-B. Chỉ cập nhật prompt cho lần sau, giữ bản đã gửi vì có ghi công AI.
+B. Only update future prompts because AI use was disclosed.
 
-C. Rà nguyên nhân kiểm tra bỏ sót và điều chỉnh quy trình trước lần sử dụng tiếp theo.
+C. Investigate the review failure and improve the process.
 
-D. Chuyển toàn bộ trách nhiệm cho nhà cung cấp vì họ tạo mô hình.
+D. Transfer all responsibility to the model provider.
 
 ## Đáp án và giải thích
 

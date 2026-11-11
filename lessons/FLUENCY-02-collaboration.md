@@ -17,55 +17,55 @@ Có ba cách chính để làm việc cùng AI. Bạn chọn cách phù hợp v�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Một dự án gồm tóm tắt theo mẫu, cùng biên tập thông điệp và theo dõi nguồn để tự chuẩn bị báo cáo định kỳ. Cách phân loại nào phản ánh đúng sự khác biệt?
+**Question 1 — Choose one.** A project includes fixed-template summaries, collaborative message editing, and autonomous source monitoring for periodic reports. How should these be classified?
 
-A. Cả ba là agency vì đều dùng chung một mô hình.
+A. All are agency because one model is used.
 
-B. Automation, augmentation, agency: xét nhiệm vụ và mức tự chủ.
+B. Automation, augmentation, and agency, according to task allocation and autonomy.
 
-C. Cả ba là augmentation nếu người dùng xem kết quả cuối.
+C. All are augmentation if users see the final result.
 
-D. Phân loại theo số lượt chat: một lượt automation, nhiều lượt agency.
+D. Classify by chat-turn count alone.
 
-**Câu 2 — Chọn một.** Nhóm muốn AI theo dõi nguồn và soạn báo cáo định kỳ, nhưng mọi thông báo ra khách hàng phải có người duyệt. Thiết kế nào giữ đúng phạm vi agency?
+**Question 2 — Choose one.** AI should monitor sources and draft reports, but customer notifications need human approval. What preserves appropriate agency scope?
 
-A. Cho AI theo dõi và soạn, đặt bước duyệt trước khi gửi ra ngoài.
+A. Allow monitoring and drafting, with approval before external sending.
 
-B. Cho AI tự gửi khi báo cáo có cùng cấu trúc mẫu đã duyệt.
+B. Auto-send any report matching an approved structure.
 
-C. Giữ quyền gửi cho AI nhưng yêu cầu xin lỗi nếu nội dung sai.
+C. Keep send authority and apologize for errors afterward.
 
-D. Chuyển mọi hoạt động thành chat thủ công vì agency không thể có giám sát.
+D. Use only manual chat because agency cannot include supervision.
 
-**Câu 3 — Chọn hai.** Trong cùng dự án, hai tình huống nào thể hiện augmentation rõ nhất?
+**Question 3 — Choose two.** Which TWO situations most clearly demonstrate augmentation?
 
-A. AI nhận lệnh chuyển 100 bản ghi sang một định dạng cố định rồi trả kết quả.
+A. Convert 100 records to one fixed format on command.
 
-B. Người chọn một trong ba hướng AI đề xuất, nêu phản hồi để cùng phát triển bản tiếp theo.
+B. A person selects an AI suggestion and gives feedback to develop it together.
 
-C. AI tự theo dõi một nguồn và lập báo cáo theo lịch đã đặt.
+C. AI independently monitors a source on schedule.
 
-D. Người và AI lần lượt thử cách giải thích, kiểm tra với mục tiêu và điều chỉnh lập luận.
+D. Person and AI iteratively test explanations against objectives and revise reasoning.
 
-**Câu 4 — Chọn một.** Một workflow gọi AI năm lần tự động theo các bước cố định, không cho AI chọn thêm nhiệm vụ. Vì sao chưa thể gọi đó là agency chỉ từ số lần gọi?
+**Question 4 — Choose one.** A workflow makes five fixed AI calls without model-chosen tasks. Why does call count alone not establish agency?
 
-A. Vì agency bắt buộc phải dùng nhiều mô hình khác nhau.
+A. Agency requires several models.
 
-B. Vì mỗi lần gọi phải có con người nhập prompt mới.
+B. Every call requires a manually typed prompt.
 
-C. Kiểu cộng tác do phân công và mức chủ động quyết định.
+C. Collaboration type depends on responsibility and decision autonomy.
 
-D. Vì automation chỉ được dùng cho nhiệm vụ viết văn bản.
+D. Automation applies only to writing.
 
-**Câu 5 — Chọn hai.** Nhóm tăng mức tự chủ của AI trong công việc nội bộ. Hai việc nào vẫn phải được duy trì?
+**Question 5 — Choose two.** Which TWO requirements remain when increasing AI autonomy?
 
-A. Bỏ tiêu chí kiểm tra để AI có không gian tự chủ.
+A. Remove evaluation to enable freedom.
 
-B. Xác định phạm vi và điều kiện chuyển cho người khi vượt phạm vi.
+B. Define boundaries and escalation conditions.
 
-C. Đánh giá kết quả và xác định trách nhiệm sử dụng của con người.
+C. Evaluate outcomes and retain human responsibility for use.
 
-D. Chuyển trách nhiệm cuối cho AI vì nó tự chọn bước thực hiện.
+D. Transfer final accountability to AI.
 
 ## Đáp án và giải thích
 

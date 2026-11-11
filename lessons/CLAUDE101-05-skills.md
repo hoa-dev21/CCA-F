@@ -15,55 +15,55 @@ Trước khi dùng skill từ bên ngoài, hãy xem nguồn và nội dung, nh�
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Mỗi tháng nhóm tạo báo cáo theo cùng quy trình nhưng dữ liệu và khách hàng khác nhau. Thành phần nào nên nằm trong skill?
+**Question 1 — Choose one.** Monthly reports follow one process but use different customers and data. What belongs in a skill?
 
-A. Bản báo cáo tháng đầu cố định, thay thế mọi bước bằng việc chép lại văn bản đó.
+A. The first report copied forever.
 
-B. Quyền truy cập mọi nguồn khách hàng để skill tự tìm mà không cần cấu hình.
+B. Automatic access to every customer source.
 
-C. Một lời nhắc “viết tốt” và toàn bộ lịch sử các cuộc trò chuyện trước.
+C. “Write well” plus all past chats.
 
-D. Đóng gói quy trình, tiêu chí và ví dụ; cung cấp dữ liệu khi chạy.
+D. Reusable procedures, criteria, and examples, with data supplied at runtime.
 
-**Câu 2 — Chọn hai.** Một skill bên ngoài có script gửi dữ liệu tới dịch vụ lạ. Hai bước nào phù hợp trước khi dùng cho tài liệu công ty?
+**Question 2 — Choose two.** An external skill sends data to an unfamiliar service. Which TWO actions precede company use?
 
-A. Đánh giá dữ liệu và quyền cần cấp theo phạm vi công việc thực tế.
+A. Assess required data and permissions against task scope.
 
-B. Kiểm tra nguồn, nội dung hướng dẫn và hành vi của mã hỗ trợ.
+B. Inspect provenance, instructions, and supporting-code behavior.
 
-C. Chạy ngay trên dữ liệu thật để xem có báo lỗi hay không.
+C. Run it immediately on real data.
 
-D. Chấp thuận nếu báo cáo mẫu đạt yêu cầu, dùng chất lượng đầu ra thay cho việc kiểm tra luồng gửi dữ liệu.
+D. Use attractive sample reports instead of checking data transmission.
 
-**Câu 3 — Chọn một.** Skill tạo file báo cáo từ bảng tính được tải lên. Người dùng mở file gốc trên máy và không thấy thay đổi. Cách giải thích và xử lý đúng?
+**Question 3 — Choose one.** A skill produces a report file, but the user's original local file is unchanged. What is correct?
 
-A. Tải lại file nguồn với cùng tên và coi đó là thao tác ghi đè nội dung mới vào bản local.
+A. Reupload the original and assume local overwrite.
 
-B. Kiểm tra artifact và bước lưu: tạo bản mới chưa phải sửa bản gốc.
+B. Inspect the artifact and save step; a new file does not necessarily update the original.
 
-C. Lưu file đầu ra vào một thư mục khác rồi đánh dấu bản local đã cập nhật vì nội dung đã được tạo.
+C. Save elsewhere and mark the original updated.
 
-D. Dùng tên file giống nhau làm khóa để coi artifact mới và file local là hai bản đã đồng bộ.
+D. Assume identical filenames imply synchronization.
 
-**Câu 4 — Chọn hai.** Nhóm dùng Project cho tài liệu khách hàng và skill cho báo cáo. Hai vai trò nào được phân chia đúng?
+**Question 4 — Choose two.** Which TWO roles correctly divide Projects and reporting skills?
 
-A. Project description thay thế mọi bước tính toán trong skill.
+A. Project descriptions replace calculations.
 
-B. Skill tự trở thành nguồn dữ liệu mới nhất của mọi khách hàng.
+B. Skills automatically contain every customer's latest data.
 
-C. Skill hướng dẫn quy trình xử lý và tiêu chí trình bày dùng lại.
+C. Skills provide reusable processing and presentation procedures.
 
-D. Project cung cấp tài liệu và bối cảnh liên quan của công việc.
+D. Projects provide relevant documents and context.
 
-**Câu 5 — Chọn một.** Skill chạy đúng trên một ví dụ đẹp nhưng sai khi thiếu một cột đầu vào. Bước cải tiến phù hợp nhất?
+**Question 5 — Choose one.** A skill works on a complete example but fails when a column is missing. What improves it?
 
-A. Bổ sung ví dụ đầu vào đầy đủ hơn nhưng giữ nguyên cách xử lý khi thiếu cột.
+A. Add more complete examples without defining missing-data handling.
 
-B. Cho tự tạo cột bị thiếu bằng giá trị phổ biến để đầu ra luôn khớp mẫu đẹp.
+B. Invent common values for absent columns.
 
-C. Thêm retry với nguyên đầu vào để mô hình có cơ hội xử lý tốt hơn ở lần sau.
+C. Retry unchanged inputs.
 
-D. Quy định xử lý dữ liệu thiếu và kiểm thử trên ca biên thực tế.
+D. Define missing-data behavior and test realistic boundary cases.
 
 ## Đáp án và giải thích
 

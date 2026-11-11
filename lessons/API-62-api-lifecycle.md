@@ -15,55 +15,55 @@ Phần giải thích token và embedding trong video được đơn giản hóa 
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** UI báo “không có kết quả” nhưng chưa rõ lỗi ở browser, backend hay API mô hình. Cách điều tra nào tiết kiệm suy đoán nhất?
+**Question 1 — Choose one.** The UI says “no result,” with an unknown browser, backend, or model API failure. What investigation minimizes guessing?
 
-A. Đổi prompt trước vì mọi lỗi AI thường bắt nguồn từ câu hỏi.
+A. Change the prompt first.
 
-B. Tăng timeout UI mà không kiểm tra backend có nhận yêu cầu chưa.
+B. Raise UI timeouts without checking backend receipt.
 
-C. Theo dấu request/response và schema qua từng ranh giới.
+C. Trace requests, responses, and schemas across each boundary.
 
-D. Gọi API trực tiếp từ browser bằng khóa dài hạn để bỏ backend.
+D. Call directly from the browser with a long-lived key.
 
-**Câu 2 — Chọn hai.** API trả text có vẻ hợp lý nhưng stop_reason là max_tokens. Hai hành động nào cần trước khi báo hoàn tất?
+**Question 2 — Choose two.** An answer looks plausible but stops with `max_tokens`. Which TWO actions precede declaring completion?
 
-A. Coi response HTTP thành công là chứng minh nhiệm vụ đã xong.
+A. Treat HTTP success as task completion.
 
-B. Tự nối phần kết dựa vào mẫu phổ biến mà không gọi hoặc xác minh thêm.
+B. Invent the ending without verification.
 
-C. Quyết định tiếp tục hoặc báo chưa hoàn tất theo hợp đồng ứng dụng.
+C. Continue or report incompleteness according to the application contract.
 
-D. Kiểm tra nội dung có bị cắt và có đủ yêu cầu/định dạng cần thiết không.
+D. Check truncation and required content or format completeness.
 
-**Câu 3 — Chọn một.** Nhóm nhúng khóa API dài hạn vào bundle JavaScript và chỉ ẩn nút gọi API khỏi người chưa đăng nhập. Đánh giá nào đúng?
+**Question 3 — Choose one.** A long-lived API key is bundled in JavaScript, with the call button hidden from unauthenticated users. What is correct?
 
-A. Đổi tên biến khóa thành tên khó đoán là đủ.
+A. An obscure variable name is sufficient protection.
 
-B. Khóa an toàn vì người dùng không thấy ô nhập khóa.
+B. The key is safe because no key input appears.
 
-C. Chỉ cần HTTPS vì đường truyền mã hóa ngăn chính browser đọc khóa.
+C. HTTPS prevents the browser itself from reading the key.
 
-D. Khóa vẫn có thể bị lấy từ bundle; giữ bí mật ở backend và kiểm soát truy cập phía máy chủ.
+D. The bundle exposes the key; keep secrets server-side and enforce server-side access control.
 
-**Câu 4 — Chọn hai.** Backend lưu text trả lời nhưng bỏ usage và stop reason; nhóm cần đo vận hành và điều phối công cụ. Hai thay đổi nào hữu ích?
+**Question 4 — Choose two.** The backend retains text but drops usage and stop reasons. Which TWO changes support monitoring and orchestration?
 
-A. Ước lượng stop reason từ việc câu cuối có dấu chấm hay không.
+A. Infer stopping from final punctuation.
 
-B. Lưu usage thích hợp để theo dõi tài nguyên của yêu cầu.
+B. Retain appropriate usage data for resource monitoring.
 
-C. Đếm ký tự UI thay cho tất cả metadata sử dụng và kết thúc.
+C. Replace all metadata with UI character counts.
 
-D. Đọc stop reason và các block liên quan để quyết định hoàn tất, giới hạn hay tool loop.
+D. Inspect stop reasons and relevant blocks for completion, limits, or tool handling.
 
-**Câu 5 — Chọn một.** Một mẫu gọi API trực tiếp chạy được, nhưng khi đưa vào app, backend đọc sai trường response và UI trắng. Thay đổi nào giải quyết đúng nguyên nhân?
+**Question 5 — Choose one.** A direct API sample works, but the application's adapter reads the wrong response field and the UI is blank. What fixes the cause?
 
-A. Sửa adapter theo response thực rồi thử đường tới UI.
+A. Correct the adapter against actual responses and test the path to the UI.
 
-B. Tăng max_tokens để chắc chắn trường bị thiếu được tạo ra.
+B. Increase tokens so the missing field is generated.
 
-C. Bỏ backend và lưu khóa ở browser để nhận raw response.
+C. Put the key in the browser to receive raw responses.
 
-D. Nâng mô hình để nó sinh câu trả lời dễ render hơn.
+D. Use a larger model for easier rendering.
 
 ## Đáp án và giải thích
 

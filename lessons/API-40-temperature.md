@@ -15,55 +15,55 @@ Mô hình và API có thể khác nhau về việc hỗ trợ tham số, khoản
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Bot trả sai trạng thái đơn hàng dù temperature thấp và câu trả lời ổn định. Log cho thấy chưa tra hệ thống đơn hàng. Ưu tiên sửa gì?
+**Question 1 — Choose one.** An order bot gives stable but incorrect answers at low temperature; no order lookup occurs. What is the priority?
 
-A. Hạ thêm temperature để buộc mô hình chọn trạng thái có xác suất cao nhất.
+A. Lower temperature further.
 
-B. Tăng temperature để có cơ hội đoán trúng trạng thái khác.
+B. Raise temperature to guess another status.
 
-C. Bổ sung nguồn trạng thái hiện tại và kiểm chứng kết quả tra cứu.
+C. Provide current order evidence and verify lookup results.
 
-D. Lấy đa số từ nhiều lần chạy cùng prompt rồi báo kết quả.
+D. Vote across repeated identical prompts.
 
-**Câu 2 — Chọn một.** Hai cấu hình brainstorm khác temperature được chấm trên hai bộ yêu cầu khác nhau. Cấu hình cao có điểm đa dạng tốt hơn. Kết luận nào hợp lý nhất?
+**Question 2 — Choose one.** Two brainstorming temperatures are evaluated on different requests. The higher one scores better for diversity. What is justified?
 
-A. Chỉ cần so độ dài đầu ra để loại ảnh hưởng của đề bài.
+A. Compare lengths to eliminate task differences.
 
-B. Cần so sampling trên cùng yêu cầu và tiêu chí chấm.
+B. Compare sampling settings on identical requests and criteria.
 
-C. Có thể triển khai cấu hình cao cho mọi nhiệm vụ vì điểm đa dạng tốt hơn.
+C. Deploy the higher setting for all tasks.
 
-D. Cấu hình thấp không phù hợp brainstorm trong mọi trường hợp.
+D. Low temperature is never suitable for brainstorming.
 
-**Câu 3 — Chọn hai.** Nhóm cần dịch vụ ổn định và có thể kiểm toán. Hai phát biểu nào nên đưa vào tiêu chí vận hành?
+**Question 3 — Choose two.** Which TWO statements belong in auditable operational criteria?
 
-A. Temperature thấp có thể giảm biến thiên nhưng không bảo đảm đầu ra bất biến.
+A. Low temperature may reduce variation without guaranteeing identical outputs.
 
-B. Vẫn cần bộ đánh giá và kiểm tra bằng chứng cho độ đúng.
+B. Correctness still requires evaluation and evidence checks.
 
-C. Temperature bằng 0 thay được kiểm thử hồi quy vì kết quả sẽ giống nhau.
+C. Temperature zero replaces regression tests.
 
-D. Câu trả lời lặp lại nhiều lần được coi là đã xác minh sự thật.
+D. Repeated answers count as verified facts.
 
-**Câu 4 — Chọn một.** Sau khi đổi mô hình, cấu hình sampling cũ bị từ chối khi bật chế độ suy luận. Bước nào phù hợp nhất?
+**Question 4 — Choose one.** Old sampling parameters are rejected after switching models and enabling reasoning. What should happen?
 
-A. Kiểm tra tổ hợp tham số được model/API mới hỗ trợ.
+A. Check supported parameter combinations for the target model and API.
 
-B. Thử nhiều giá trị ngẫu nhiên cho tới khi một yêu cầu không lỗi.
+B. Try random values until a request succeeds.
 
-C. Suy luận rằng mô hình mới kém hơn vì không nhận tham số cũ.
+C. Conclude the model is worse.
 
-D. Tắt kiểm tra lỗi và dùng đầu ra cuối cùng được cache.
+D. Ignore errors and return a cached answer.
 
-**Câu 5 — Chọn hai.** Một prompt có dữ liệu nguồn mâu thuẫn. Nhóm muốn đo tác động temperature mà không nhầm với xử lý dữ liệu. Hai việc nào cần tách biệt?
+**Question 5 — Choose two.** Sources conflict, and the team wants to measure temperature effects. Which TWO concerns should be separated?
 
-A. Chọn cấu hình luôn bỏ qua một nguồn để đạt tính nhất quán.
+A. Choose a setting that always ignores one source.
 
-B. Đánh giá cách phản ánh xung đột nguồn bằng tiêu chí riêng.
+B. Evaluate faithful reporting of source conflicts separately.
 
-C. Đo biến thiên câu trả lời qua nhiều lần chạy cùng cấu hình và đầu vào.
+C. Measure output variation across runs with identical inputs and settings.
 
-D. Dùng điểm tự tin do mô hình báo làm temperature mục tiêu.
+D. Use self-reported confidence as the target temperature.
 
 ## Đáp án và giải thích
 

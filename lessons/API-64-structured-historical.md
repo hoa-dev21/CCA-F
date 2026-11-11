@@ -15,55 +15,55 @@ Khi ôn Architect, đọc thêm EXAM-05 về cấu trúc đầu ra và `tool_cho
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Prefill và stop marker đã loại được Markdown. JSON parse thành công nhưng thiếu mã đơn bắt buộc. Thay đổi nào giải quyết đúng lớp lỗi còn lại?
+**Question 1 — Choose one.** Prefill and stop markers remove Markdown, but valid JSON omits a required order ID. What addresses the remaining error?
 
-A. Chỉ yêu cầu prefill dài hơn để JSON luôn có vẻ hoàn chỉnh.
+A. Make prefill longer so JSON looks complete.
 
-B. Thêm một stop marker nữa sau dấu ngoặc đóng JSON.
+B. Add another stop marker after the closing brace.
 
-C. Bỏ mọi whitespace trước khi parse rồi nhận kết quả.
+C. Strip whitespace and accept.
 
-D. Validate trường/kiểu và xử lý mã thiếu theo hợp đồng.
+D. Validate required fields and types, handling missing IDs under the contract.
 
-**Câu 2 — Chọn hai.** Nhóm chuyển notebook có assistant prefill sang mô hình và chế độ suy luận khác. Hai việc nào cần trước khi coi workflow tương đương?
+**Question 2 — Choose two.** A prefill notebook moves to another model and reasoning mode. Which TWO checks establish equivalent behavior?
 
-A. Chỉ so sánh câu trả lời đầu tiên có cùng kiểu thụt dòng.
+A. Only compare indentation in the first response.
 
-B. Kiểm tra hỗ trợ và khả năng kết hợp các tính năng trên model/API đích.
+B. Verify feature support and combinations on the target model and API.
 
-C. Giữ nguyên cấu hình nếu SDK có cùng tên hàm gửi request.
+C. Keep settings because the SDK uses the same request method.
 
-D. Chạy bộ ca gồm đầu ra đúng, thiếu trường và bị dừng sớm; kiểm tra cả trạng thái kết thúc.
+D. Test valid, missing-field, and early-stop cases, including terminal states.
 
-**Câu 3 — Chọn một.** JSON bị cắt ngay khi một giá trị chuỗi chứa đoạn trùng stop sequence. Tăng max_tokens vẫn không giúp. Cách chẩn đoán nào đúng nhất?
+**Question 3 — Choose one.** JSON stops when a string contains the stop sequence; raising `max_tokens` does not help. What is the correct diagnosis?
 
-A. Chuyển dữ liệu chuỗi thành số để stop sequence không xuất hiện.
+A. Convert all strings to numbers.
 
-B. Tăng timeout mạng để chờ phần JSON còn lại.
+B. Raise network timeouts.
 
-C. Tự thêm dấu ngoặc đóng rồi coi các trường trước đó là đầy đủ.
+C. Add closing braces and assume earlier fields are complete.
 
-D. Kiểm tra stop reason và marker, sửa rồi thử lại ca bị cắt.
+D. Inspect the stop reason and marker, revise them, and retest the truncated case.
 
-**Câu 4 — Chọn một.** Đầu ra JSON đúng schema chứa tổng hóa đơn 1.000, trong khi cộng các dòng được 950. Nhóm muốn sửa prefill để loại lỗi. Quyết định kiến trúc nào phù hợp hơn?
+**Question 4 — Choose one.** Schema-valid JSON states an invoice total of 1,000, but items sum to 950. What is better than changing prefill alone?
 
-A. Chấp nhận vì schema xác nhận amount là số.
+A. Accept because `amount` is numeric.
 
-B. Bổ sung validation ngữ nghĩa, giữ cả hai giá trị và xử lý xung đột theo hợp đồng.
+B. Add semantic validation, preserve both values, and handle the conflict under the contract.
 
-C. Chọn tổng ở trường cuối vì nó được sinh sau nên đã tổng hợp đủ dữ liệu.
+C. Trust the last field because it was generated later.
 
-D. Thêm tổng 950 vào prefill để mô hình luôn lặp lại giá trị mong muốn.
+D. Prefill 950 so the model always repeats it.
 
-**Câu 5 — Chọn hai.** Hệ thống muốn đưa JSON từ mô hình thẳng vào bước cập nhật hồ sơ. Hai kiểm soát nào nằm ngoài khả năng bảo đảm của việc bỏ code fence bằng prefill/stop?
+**Question 5 — Choose two.** Which TWO controls are not guaranteed by removing code fences with prefill and stop sequences before record updates?
 
-A. Kiểm tra giá trị với nguồn và quy tắc nghiệp vụ.
+A. Checking values against evidence and business rules.
 
-B. Kiểm tra đã bỏ code fence rồi coi đó là bằng chứng được phép ghi.
+B. Treating code-fence removal as write authorization.
 
-C. Kiểm tra quyền và tiền điều kiện trước khi cập nhật hồ sơ.
+C. Checking permissions and update preconditions.
 
-D. Dùng tên trường giống cơ sở dữ liệu để thay cho kiểm tra tính hợp lệ.
+D. Using database field names instead of validation.
 
 ## Đáp án và giải thích
 

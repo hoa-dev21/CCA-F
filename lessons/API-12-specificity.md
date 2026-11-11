@@ -18,55 +18,55 @@ Không phải nhiệm vụ nào cũng cần hướng dẫn dài. Với việc đ
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Phân tích doanh số luôn xét thị trường nhưng bỏ thay đổi nội bộ. Đội đã quy định đầu ra là bảng rất chi tiết. Sửa nào nhắm đúng phần còn thiếu?
+**Question 1 — Choose one.** Sales analysis considers market changes but ignores internal changes, despite a detailed table format. Which revision addresses the gap?
 
-A. Đổi giọng văn sang phản biện nhưng không nêu phạm vi nguyên nhân.
+A. Use a more critical tone without specifying causal scope.
 
-B. Xem riêng thị trường, nội bộ và phản hồi khách hàng.
+B. Examine market factors, internal changes, and customer feedback separately.
 
-C. Thêm cột tác động và mức ưu tiên, giữ nguyên phạm vi nguyên nhân cần phân tích.
+C. Add impact and priority columns without changing analytical scope.
 
-D. Tăng số dòng tối thiểu của phần phân tích.
+D. Require more rows.
 
-**Câu 2 — Chọn hai.** Muốn phân biệt đặc tính đầu ra với bước xử lý, hai chỉ dẫn nào mô tả sản phẩm bàn giao?
+**Question 2 — Choose two.** Which TWO instructions specify deliverable characteristics rather than processing steps?
 
-A. Giới hạn phần kết luận ở ba gạch đầu dòng cho lãnh đạo.
+A. Limit the executive conclusion to three bullet points.
 
-B. Đối chiếu số liệu từng tháng trước khi xác định xu hướng.
+B. Compare monthly figures before identifying trends.
 
-C. Xem thay đổi nội bộ trước khi loại trừ nguyên nhân vận hành.
+C. Examine internal changes before excluding operational causes.
 
-D. Trả bảng gồm giả thuyết, bằng chứng và hạn chế.
+D. Return a table of hypotheses, evidence, and limitations.
 
-**Câu 3 — Chọn một.** Prompt yêu cầu “viết thật hay và đầy đủ”. Hai người duyệt cho điểm trái ngược. Điều chỉnh nào tạo cơ sở chấm nhất quán?
+**Question 3 — Choose one.** “Write a great and complete answer” leads reviewers to disagree. What provides consistent scoring criteria?
 
-A. Dùng điểm model tự chấm thay người duyệt.
+A. Replace reviewers with model self-scores.
 
-B. Dùng độ dài lớn nhất trong hai câu trả lời làm chuẩn chất lượng.
+B. Use the longest answer as the quality standard.
 
-C. Quy định nội dung, cấu trúc và giới hạn bằng chứng.
+C. Specify required content, structure, and evidence limits.
 
-D. Thêm nhiều tính từ như sâu sắc, xuất sắc và chuyên nghiệp.
+D. Add adjectives such as excellent and professional.
 
-**Câu 4 — Chọn hai.** Đội yêu cầu phân tích nhiều nhóm nguyên nhân và xuất bảng chứng cứ. Hai kiểm tra nào giúp phát hiện “đúng mẫu nhưng phân tích thiếu”?
+**Question 4 — Choose two.** Which TWO checks detect analysis that follows the table format but omits required reasoning?
 
-A. Chỉ xác nhận bảng có đúng số cột.
+A. Check only the column count.
 
-B. Kiểm tra bằng chứng có thực sự hỗ trợ giả thuyết được nêu.
+B. Verify that evidence supports each hypothesis.
 
-C. Chỉ xác nhận câu trả lời dùng đúng giọng văn trang trọng.
+C. Check only formal tone.
 
-D. Kiểm tra mỗi nhóm nguyên nhân bắt buộc đã được xem xét.
+D. Verify that every required cause category was considered.
 
-**Câu 5 — Chọn một.** Prompt cố định chuỗi bước có bước “chọn nguyên nhân chính”, nhưng dữ liệu hiện có mâu thuẫn. Cách cụ thể hóa nào hợp lý nhất?
+**Question 5 — Choose one.** A fixed workflow requires choosing the main cause, but evidence conflicts. What is a better specification?
 
-A. Thêm bước viết kết luận mạnh hơn sau khi hoàn thành bảng.
+A. Add a stronger conclusion after the table.
 
-B. Buộc chọn một nguyên nhân cuối cùng.
+B. Force one final cause.
 
-C. Cho phép nêu giả thuyết và dữ liệu còn thiếu.
+C. Allow hypotheses and explicit missing-data statements.
 
-D. Cho phép bỏ mọi bằng chứng mâu thuẫn để bảng nhất quán.
+D. Discard conflicting evidence for consistency.
 
 ## Đáp án và giải thích
 

@@ -17,55 +17,55 @@ Mỗi lần sửa và đánh giá lại là một vòng cải tiến (iteration)
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Đánh giá vòng đầu dùng 100 ca; vòng sau dùng 100 ca khác dễ hơn. Nhóm muốn chứng minh sửa prompt có ích. Bước tiếp theo nào trực tiếp nhất?
+**Question 1 — Choose one.** The first evaluation uses 100 cases; the next uses 100 easier cases. How should the team test whether its prompt change helped?
 
-A. Tăng số lần chạy bản mới trên tập dễ cho điểm ổn định.
+A. Repeat the new version on the easier set.
 
-B. Chỉ so các ca mà bản mới đạt điểm tối đa.
+B. Compare only cases where the new version scores perfectly.
 
-C. So hai phiên bản trên cùng tập và cùng bộ chấm.
+C. Run both versions on the same set with the same grader.
 
-D. Tính trung bình cộng hai điểm để giảm sai số lấy mẫu.
+D. Average the two evaluations' scores.
 
-**Câu 2 — Chọn hai.** Bộ chấm mô hình nhận mỗi đầu ra rồi cho điểm “đúng yêu cầu”. Hai thành phần nào cần thêm để phép chấm có căn cứ?
+**Question 2 — Choose two.** A model grader receives only an output and scores whether it meets requirements. Which TWO inputs are missing?
 
-A. Yêu cầu gốc tương ứng với đầu ra.
+A. The original request corresponding to that output.
 
-B. Chỉ tên model đã sinh đầu ra để suy ra năng lực.
+B. Only the generating model's name.
 
-C. Điểm của prompt đang được kỳ vọng thắng để định hướng người chấm.
+C. The expected winning prompt's score.
 
-D. Tiêu chí đánh giá thống nhất cho nhiệm vụ đó.
+D. Consistent evaluation criteria for the task.
 
-**Câu 3 — Chọn một.** Sau khi sửa prompt để khắc phục một ca thiếu trường, ca đó đã đạt. Nhóm định bỏ bước chạy lại toàn tập. Rủi ro nào cần xử lý?
+**Question 3 — Choose one.** A prompt fix resolves one missing-field case. What risk requires rerunning the full set?
 
-A. Cần so với baseline để phát hiện hồi quy ở các ca khác.
+A. Regressions in other cases must be checked against the baseline.
 
-B. Cần tạo một thước đo mới để bảo đảm thay đổi có điểm cao hơn.
+B. A new metric is needed to guarantee a higher score.
 
-C. Bỏ baseline của prompt cũ khỏi so sánh.
+C. The old baseline must be discarded.
 
-D. Điểm ca vừa sửa không thể sử dụng vì mọi lần chạy lại đều mất giá trị.
+D. Every rerun makes the fixed case's score unusable.
 
-**Câu 4 — Chọn hai.** Muốn tái hiện một lần đánh giá có điểm giảm, nhóm cần lưu những gì ngoài điểm tổng?
+**Question 4 — Choose two.** Besides the aggregate score, which TWO items are needed to reproduce an evaluation regression?
 
-A. Đầu ra từng ca cùng kết quả chấm của ca đó.
+A. Each actual output and its grading result.
 
-B. Phiên bản prompt và tập đầu vào đã chạy.
+B. The prompt version and input dataset used.
 
-C. Chỉ ca tốt nhất để kiểm tra model có từng thành công.
+C. Only the best case as evidence the model once succeeded.
 
-D. Chỉ thời lượng chạy tổng để xác định lỗi nội dung.
+D. Only total runtime to diagnose content errors.
 
-**Câu 5 — Chọn một.** Quy trình đã viết prompt, tạo tập và sinh câu trả lời; nhóm gọi đó là đánh giá hoàn tất dù chưa có chấm điểm. Phần còn thiếu là gì?
+**Question 5 — Choose one.** The team has written a prompt, built a dataset, and generated answers, but has not scored them. What remains?
 
-A. Chấm theo rubric, lưu baseline rồi sửa và đánh giá lại.
+A. Score against a rubric, record a baseline, then revise and reevaluate.
 
-B. Viết prompt mới trước để tránh bị baseline ảnh hưởng.
+B. Write another prompt before observing the baseline.
 
-C. Đưa cùng đầu ra trở lại model để model xác nhận mình đã làm đúng.
+C. Ask the generating model to confirm its own outputs are correct.
 
-D. Tăng kích thước tập nhưng vẫn chỉ lưu câu trả lời.
+D. Increase dataset size while still storing only answers.
 
 ## Đáp án và giải thích
 

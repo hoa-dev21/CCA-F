@@ -15,55 +15,55 @@ Mẫu chạy môi trường máy tính trong container. Điều này giúp giớ
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Computer Use nhập @ và thấy danh sách gợi ý. Ảnh cho thấy danh sách che ô nhập, nhưng tác nhân ghi test đạt. Thiếu tiêu chí nào?
+**Question 1 — Choose one.** Typing `@` opens suggestions that obscure the input, but the agent marks the UI test passed. What criterion is missing?
 
-A. Kiểm tra chọn gợi ý và vị trí popup theo yêu cầu.
+A. Suggestion selection and popup placement against requirements.
 
-B. Kiểm tra có bất kỳ pixel nào thay đổi sau khi nhập @.
+B. Any changed pixels after typing.
 
-C. Xác nhận lệnh gõ ký tự trả thành công từ bộ thực thi.
+C. A successful keyboard-tool result.
 
-D. Xác nhận mô hình đã gọi đúng tên công cụ bàn phím.
+D. The correct keyboard-tool name.
 
-**Câu 2 — Chọn hai.** Ca kiểm thử Backspace thất bại chỉ khi chạy sau ca Enter. Hai việc nào giúp xác định lỗi giao diện hay lỗi bố trí test?
+**Question 2 — Choose two.** Backspace fails only after an Enter test. Which TWO actions distinguish application defects from test setup problems?
 
-A. Ghi trạng thái ban đầu và chuẩn bị lại dữ liệu giữa các ca.
+A. Record initial state and reset data between cases.
 
-B. Chỉ chạy ca thành công cuối cùng rồi thay kết quả thất bại bằng kết quả đó.
+B. Replace failures with the last successful run.
 
-C. Tăng số lần bấm Backspace đến khi giao diện giống ảnh mong đợi.
+C. Press Backspace repeatedly until the screenshot matches.
 
-D. Lưu các bước, kết quả mong đợi và bằng chứng quan sát của từng ca.
+D. Record actions, expected results, and observed evidence per case.
 
-**Câu 3 — Chọn một.** Container kiểm thử đăng nhập tài khoản thật và có thể gửi email ra ngoài. Hệ thống được mô tả là sandbox. Kết luận phù hợp?
+**Question 3 — Choose one.** A test container uses a real account and can send external email. What follows despite its sandbox label?
 
-A. Chỉ cần xóa container sau test để đảo ngược email đã gửi.
+A. Deleting the container reverses sent messages.
 
-B. Có thể bỏ xác minh người nhận nếu ảnh giao diện trông giống môi trường test.
+B. A test-like screenshot removes recipient checks.
 
-C. Vẫn phải giới hạn tài khoản, mạng và thao tác có hậu quả theo nhiệm vụ.
+C. Accounts, network access, and consequential actions still need task-appropriate limits.
 
-D. Có thể cho gửi thật vì container đã cô lập mọi hậu quả bên ngoài.
+D. The container isolates every external consequence.
 
-**Câu 4 — Chọn hai.** Tác nhân kiểm thử biểu mẫu, nhưng màn hình cuối bị che bởi hộp thoại và chưa quan sát được dữ liệu lưu. Hai cách báo cáo nào phù hợp?
+**Question 4 — Choose two.** A dialog obscures the final form state, so saved data is unverified. Which TWO reports are appropriate?
 
-A. Đánh dấu thành công vì lệnh bấm nút gửi không báo lỗi.
+A. Declare success because clicking Submit did not fail.
 
-B. Lưu bằng chứng hộp thoại rồi xác định bước kiểm tra tiếp trong phạm vi cho phép.
+B. Preserve dialog evidence and identify the next permitted verification step.
 
-C. Nêu rõ bước gửi đã thực hiện và việc lưu dữ liệu còn chưa kiểm chứng.
+C. Distinguish submission attempted from storage not yet verified.
 
-D. Đánh dấu thất bại dữ liệu vì không nhìn thấy bản ghi dưới hộp thoại.
+D. Declare data loss solely because the record is hidden.
 
-**Câu 5 — Chọn một.** Kịch bản cần gõ @, chọn Enter, xóa bằng Backspace và kiểm tra vị trí popup. Phương án nào cho bằng chứng có thể tái hiện?
+**Question 5 — Choose one.** Which plan makes an `@`, Enter, Backspace, and popup-placement test reproducible?
 
-A. Lưu trạng thái đầu, thao tác và bằng chứng tại các điểm kiểm tra.
+A. Record initial state, actions, and checkpoint evidence.
 
-B. Chỉ lưu ảnh cuối vì nó đại diện toàn bộ quá trình.
+B. Keep only the final screenshot.
 
-C. Chỉ lưu số lần gọi công cụ vì các thao tác đều xác định được.
+C. Keep only tool-call counts.
 
-D. Lưu lời nhận xét “hoạt động bình thường” của tác nhân sau mỗi lần chạy.
+D. Record only “works normally.”
 
 ## Đáp án và giải thích
 

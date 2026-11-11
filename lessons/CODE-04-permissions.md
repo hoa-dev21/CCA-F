@@ -20,55 +20,55 @@ Với CI — quy trình tự động xây dựng và kiểm thử mã — thư�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Job được phép sửa file và chạy test nhưng test thất bại. Nhóm cho rằng qua permission check nghĩa là đã an toàn để merge. Cách giải thích đúng?
+**Question 1 — Choose one.** An agent may edit and test, but tests fail. Does passing permission checks justify merging?
 
-A. Quyền được cấp chứng minh tác nhân sẽ chọn hành động đúng.
+A. Permissions prove the agent chooses correct actions.
 
-B. Permission check thất bại ngầm nên cần cấp thêm quyền.
+B. It means hidden permission failure requires more access.
 
-C. Quyền giới hạn thao tác; gate riêng kiểm chứng chất lượng.
+C. Permissions limit actions; separate gates verify quality.
 
-D. Chỉ cần đổi mode để cùng code trở thành hợp lệ.
+D. Changing modes makes unchanged code correct.
 
-**Câu 2 — Chọn một.** CI không có người trực nhưng đang chờ prompt phê duyệt. Thiết kế nào giữ giới hạn thao tác và tránh treo?
+**Question 2 — Choose one.** Unattended CI waits for approval input. Which design avoids hanging while preserving limits?
 
-A. Chạy không tương tác với allowlist; ngoài phạm vi thì từ chối.
+A. Run non-interactively with an allowlist and deny out-of-scope actions.
 
-B. Tự trả lời yes cho mọi prompt để bảo đảm tiến độ.
+B. Answer yes to every prompt.
 
-C. Tăng timeout CI vì sớm muộn người dùng sẽ trả lời.
+C. Increase timeouts indefinitely.
 
-D. Bỏ kiểm tra quyền cho job đầu tiên, bổ sung lại sau.
+D. Disable permissions for the first run.
 
-**Câu 3 — Chọn hai.** Nhóm muốn đánh giá hai phương án kiến trúc trước khi cho phép sửa mã. Hai điều nào phù hợp với giai đoạn này?
+**Question 3 — Choose two.** The team wants to compare architectures before allowing edits. Which TWO choices fit?
 
-A. Chọn chế độ lập kế hoạch và nêu rõ đầu ra cần so sánh.
+A. Use planning mode and define comparison deliverables.
 
-B. Cho tác nhân sửa cả hai phương án trong cùng thư mục để dễ minh họa.
+B. Implement both in the same directory immediately.
 
-C. Đưa ràng buộc, dữ liệu cần đọc và tiêu chí quyết định.
+C. Provide constraints, sources to read, and decision criteria.
 
-D. Coi việc cho phép lập kế hoạch là phê duyệt triển khai phương án tác nhân thích.
+D. Treat planning authorization as deployment approval.
 
-**Câu 4 — Chọn một.** Lệnh test cần ghi cache trong thư mục được phép nhưng bị từ chối. Tác nhân đề xuất vô hiệu mọi kiểm soát filesystem. Cách xử lý tối thiểu phù hợp?
+**Question 4 — Choose one.** A test needs cache writes in a permitted directory but is denied. What is the minimal appropriate response?
 
-A. Cấp toàn bộ quyền filesystem vì test là thao tác đáng tin.
+A. Grant unrestricted filesystem access.
 
-B. Xác minh nhu cầu cache; chỉ cho ghi đúng phạm vi cần thiết.
+B. Verify the need and allow only the required write scope.
 
-C. Bỏ chạy test và dùng suy luận thay kết quả.
+C. Replace tests with reasoning.
 
-D. Đổi tên lệnh test để vượt quy tắc chặn.
+D. Rename the command to evade checks.
 
-**Câu 5 — Chọn hai.** Một tác vụ chỉ cần đọc diff và xuất findings nhưng được cấp quyền ghi và mạng rộng. Hai thay đổi nào giảm quyền thừa?
+**Question 5 — Choose two.** A read-only diff-review job has broad write and network access. Which TWO changes reduce excess authority?
 
-A. Hạn chế công cụ/quyền theo nhiệm vụ review chỉ đọc.
+A. Restrict tools and permissions to read-only review.
 
-B. Giữ toàn bộ quyền nhưng thêm câu “cẩn thận” ở cuối prompt.
+B. Keep access and append “be careful.”
 
-C. Định nghĩa cách báo khi cần thao tác ngoài phạm vi thay vì tự mở rộng.
+C. Define how to report needs outside scope rather than self-expanding authority.
 
-D. Cho quyền rộng vì mô hình đã có thành tích tốt trong các lần trước.
+D. Keep broad access because previous runs performed well.
 
 ## Đáp án và giải thích
 

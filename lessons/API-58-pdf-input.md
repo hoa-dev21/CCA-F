@@ -15,55 +15,55 @@ Bài này bổ sung kiến thức về đầu vào của API. Chi tiết xử l�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Adapter đang gửi PDF bằng khối image và nhận lỗi kiểu nội dung. Theo mẫu của bài, thay đổi đầu tiên cần làm là gì?
+**Question 1 — Choose one.** A PDF sent as an image block receives a content-type error. What is the first correction under the lesson's pattern?
 
-A. Tăng độ phân giải PDF trong khi giữ nguyên loại nội dung.
+A. Increase PDF resolution without changing the type.
 
-B. Giữ khối image nhưng đổi phần mở rộng tên tệp thành .pdf.
+B. Keep the image block and rename the extension.
 
-C. Nới validator phía ứng dụng để chấp nhận response lỗi là nội dung tài liệu.
+C. Accept error responses as document content.
 
-D. Gửi document block với kiểu PDF theo giao thức đích.
+D. Send a PDF document block using the target protocol.
 
-**Câu 2 — Chọn hai.** Bảng ở trang 17 có hai cột số giống nhau nhưng khác đơn vị. Mô hình trích đúng hình thức JSON mà chọn nhầm cột. Hai cải thiện nào nhắm trực tiếp lỗi này?
+**Question 2 — Choose two.** A table has similar numeric columns with different units. Extraction produces valid JSON from the wrong column. Which TWO improvements address this?
 
-A. Chấp nhận kết quả vì schema đã kiểm tra trường là số.
+A. Accept it because the field is numeric.
 
-B. Lấy trung bình hai cột để giảm ảnh hưởng lựa chọn sai.
+B. Average both columns.
 
-C. Đối chiếu kết quả với bảng gốc, gồm tiêu đề cột và chú thích liên quan.
+C. Compare with the original table, headers, and relevant notes.
 
-D. Chỉ rõ trang, tên bảng, trường và đơn vị cần lấy trong yêu cầu.
+D. Specify page, table, field, and required unit.
 
-**Câu 3 — Chọn một.** Mô hình trả “không tìm thấy mã hợp đồng” trong PDF 40 trang. Workflow định đánh dấu hợp đồng không có mã. Bước xử lý nào có căn cứ nhất?
+**Question 3 — Choose one.** The model cannot find a contract ID in a 40-page PDF. What should precede declaring the ID absent?
 
-A. Chạy lại cùng prompt và coi hai câu trả lời giống nhau là chứng minh vắng mặt.
+A. Repeat the prompt and treat agreement as proof of absence.
 
-B. Suy ra mã từ tên file để điền trường bắt buộc.
+B. Infer the ID from the filename.
 
-C. Đánh dấu thiếu vĩnh viễn vì provider đã chấp nhận toàn bộ PDF.
+C. Declare permanent absence because the provider accepted the PDF.
 
-D. Phân biệt chưa trích được với xác nhận vắng mặt; kiểm tra vùng liên quan hoặc chuyển review theo yêu cầu.
+D. Distinguish failed extraction from verified absence; inspect relevant regions or obtain review.
 
-**Câu 4 — Chọn hai.** Một PDF chứa số liệu trong bảng, ý nghĩa đơn vị trong chú thích và điều kiện áp dụng ở đoạn văn bên cạnh. Hai yêu cầu nào giúp tránh trích số đúng nhưng diễn giải sai?
+**Question 4 — Choose two.** A PDF's values, units, and applicability conditions occur in a table, note, and adjacent paragraph. Which TWO requirements prevent misinterpretation?
 
-A. Đọc số liệu cùng tiêu đề, chú thích và điều kiện liên quan.
+A. Read values with relevant headers, notes, and conditions.
 
-B. Chỉ lấy chuỗi số có định dạng hợp lệ để loại nhiễu từ văn bản.
+B. Extract only syntactically valid numbers.
 
-C. Chuẩn hóa tất cả đơn vị theo giá trị thường gặp của tài liệu cùng loại.
+C. Substitute common units for this document type.
 
-D. Giữ vị trí nguồn cùng giá trị và đơn vị trong kết quả cần kiểm chứng.
+D. Preserve source locations, values, and units for verification.
 
-**Câu 5 — Chọn một.** Đội đã chạy thành công một PDF văn bản và định triển khai cho cả bản scan, bảng phức tạp và bố cục nhiều cột. Bằng chứng nào còn thiếu trước khi khẳng định chất lượng?
+**Question 5 — Choose one.** One text PDF succeeds. What evidence is missing before claiming quality on scans, complex tables, and multicolumn layouts?
 
-A. Một ví dụ có câu trả lời rất dài giải thích từng bước đọc.
+A. One very long explanation of reading steps.
 
-B. Đo lỗi theo trường và bố cục trên tài liệu đại diện.
+B. Field- and layout-level error measurements on representative documents.
 
-C. Việc dùng cùng phần mở rộng nên có thể tái dùng nguyên mức chính xác.
+C. The shared extension proves identical accuracy.
 
-D. Thông báo upload thành công cho từng định dạng tệp .pdf.
+D. Successful uploads for every PDF.
 
 ## Đáp án và giải thích
 

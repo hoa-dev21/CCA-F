@@ -15,55 +15,55 @@ Chỉ chạy đồng thời các thao tác độc lập. Nếu B cần kết qu�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** batch_tool nhận bốn invocation; run_batch dùng for và chờ run_tool từng mục. Log cho thấy chỉ một tool chạy mỗi thời điểm. Kết luận đúng?
+**Question 1 — Choose one.** `batch_tool` receives four calls, but `run_batch` awaits `run_tool` inside a loop. Logs show one active call. What is correct?
 
-A. Đã song song vì mô hình gửi một mảng.
+A. An input array proves parallel execution.
 
-B. Gom request, nhưng executor vẫn chạy tuần tự.
+B. Requests are grouped, but execution remains sequential.
 
-C. Batch API của provider đang tự hạn chế concurrency.
+C. The provider's batch API is limiting concurrency.
 
-D. Phải đổi prompt vì executor không liên quan tốc độ.
+D. Only prompts affect execution speed.
 
-**Câu 2 — Chọn một.** Hai tra cứu độc lập và một cập nhật cần kết quả cả hai được đặt trong cùng danh sách. Điều phối nào phù hợp?
+**Question 2 — Choose one.** Two independent lookups and an update depending on both appear in one list. How should they run?
 
-A. Chạy cả ba cùng lúc vì cùng một batch.
+A. All together because they form one batch.
 
-B. Chạy cập nhật trước để tận dụng thời gian tra cứu.
+B. Update first while lookups run.
 
-C. Song song tra cứu; đợi/kiểm tra dữ liệu rồi cập nhật.
+C. Parallelize lookups, then validate results before updating.
 
-D. Đưa giá trị dự đoán vào cập nhật, dùng tra cứu kiểm tra sau.
+D. Update with predictions and check afterward.
 
-**Câu 3 — Chọn hai.** Muốn executor chạy song song các invocation độc lập, hai cơ chế nào cần bên cạnh việc khởi chạy đồng thời?
+**Question 3 — Choose two.** Which TWO mechanisms are needed besides concurrent launch of independent calls?
 
-A. Liên kết kết quả/lỗi với từng invocation một cách ổn định.
+A. Stable result and error correlation per invocation.
 
-B. Coi thứ tự hoàn tất luôn trùng thứ tự đầu vào.
+B. Assume completion order equals input order.
 
-C. Kiểm tra quyền/đầu vào và xử lý lỗi riêng theo mỗi thao tác.
+C. Per-action permission and input checks with separate error handling.
 
-D. Nếu một mục lỗi, đánh dấu mọi mục còn lại thành công để batch có kết quả.
+D. Mark remaining calls successful if one fails.
 
-**Câu 4 — Chọn một.** Nhóm nghe “batch_tool” và muốn áp luôn vòng đời polling của Message Batches API vào hàm cục bộ. Cách đánh giá đúng?
+**Question 4 — Choose one.** A team applies Message Batches API polling semantics to a local `batch_tool`. What distinction matters?
 
-A. Hai cơ chế có cùng từ batch nên dùng chung vòng đời.
+A. Both share the word batch, so lifecycles match.
 
-B. Mọi batch_tool đều là wrapper chính thức của Message Batches API.
+B. Every local batch tool is an official API wrapper.
 
-C. Chỉ khác tên SDK, quy tắc thực thi giống nhau.
+C. Only SDK names differ.
 
-D. Tool gom invocation khác API batch yêu cầu bất đồng bộ.
+D. A grouped-invocation tool differs from an asynchronous request-batch API.
 
-**Câu 5 — Chọn hai.** Một batch chứa hai tra cứu thành công và một ghi dữ liệu timeout chưa rõ đã thực thi chưa. Hai hành động nào hợp lý?
+**Question 5 — Choose two.** Two batch lookups succeed, but a write times out with unknown status. Which TWO actions are appropriate?
 
-A. Giữ kết quả hai tra cứu và trạng thái chưa xác định của thao tác ghi.
+A. Preserve successful lookups and the write's unknown state.
 
-B. Chạy lại toàn bộ batch vô điều kiện cho nhất quán.
+B. Retry everything unconditionally.
 
-C. Xác minh trạng thái hoặc dùng quy tắc chống lặp trước khi retry ghi.
+C. Check status or idempotency before retrying the write.
 
-D. Báo cả batch thất bại hoàn toàn và xóa mọi kết quả đã có.
+D. Delete all results and declare complete failure.
 
 ## Đáp án và giải thích
 

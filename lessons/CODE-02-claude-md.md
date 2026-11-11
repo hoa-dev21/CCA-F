@@ -22,55 +22,55 @@ Viết quy tắc cụ thể và nêu rõ cần làm gì. “Đặt mã xử lý 
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** CLAUDE.md ghi “không push nhánh bảo vệ”, nhưng tác nhân vẫn có công cụ shell với quyền push. Yêu cầu là thao tác đó phải bị ngăn trước khi xảy ra. Kiểm soát nào phù hợp nhất?
+**Question 1 — Choose one.** CLAUDE.md forbids pushing to a protected branch, but shell access still permits it. Which control prevents the action before execution?
 
-A. Tăng ưu tiên của lời cấm trong CLAUDE.md, thêm ví dụ từ chối push để mô hình áp dụng cho mọi lệnh shell.
+A. Emphasize the instruction with more refusal examples.
 
-B. Dùng kiểm soát quyền/hook chặn thao tác tại điểm thực thi.
+B. Enforce permissions or a blocking hook at execution.
 
-C. Yêu cầu tác nhân ghi lý do trước mọi lần push.
+C. Require a written explanation before pushes.
 
-D. Kiểm tra lịch sử Git sau mỗi lượt rồi revert nếu vi phạm.
+D. Inspect Git history and revert afterward.
 
-**Câu 2 — Chọn một.** Nhóm chia CLAUDE.md dài thành ba file và import cả ba trong mọi phiên. Kết luận nào đúng?
+**Question 2 — Choose one.** A long CLAUDE.md is split into three files, all imported in every session. What follows?
 
-A. Context giảm xấp xỉ còn một phần ba do có ba file.
+A. Context usage falls to one third.
 
-B. Mỗi import tạo một phiên con nên không chiếm context chính.
+B. Each import creates a separate agent context.
 
-C. Dễ quản lý hơn; nội dung được nạp vẫn chiếm context.
+C. Maintenance improves, but loaded content still uses context.
 
-D. Các phần import chỉ là đường dẫn, tác nhân không đọc nội dung.
+D. Imports remain unread paths only.
 
-**Câu 3 — Chọn hai.** Một quy ước bắt buộc cho nhóm và một ghi chú thử nghiệm cá nhân chỉ cho repo này cần lưu khác phạm vi. Hai lựa chọn nào phù hợp?
+**Question 3 — Choose two.** Which TWO storage choices suit a shared mandatory convention and a personal experiment limited to one repository?
 
-A. Quy ước nhóm đặt trong cấu hình dự án được quản lý phiên bản.
+A. Version the shared convention in project configuration.
 
-B. Ghi chú cá nhân đặt vào cấu hình toàn cục để mọi repo áp dụng.
+B. Apply the personal experiment globally.
 
-C. Ghi chú thử nghiệm đặt ở phạm vi local của repo theo cơ chế hỗ trợ.
+C. Use the supported repository-local scope for personal notes.
 
-D. Quy ước nhóm đặt trong user config riêng của người tạo dự án.
+D. Keep shared rules only in the author's user configuration.
 
-**Câu 4 — Chọn một.** Tác nhân làm đúng trên máy tác giả nhưng bỏ quy ước trên CI sạch. Cấu hình chỉ tồn tại trong thư mục cá nhân tác giả. Cách điều tra/sửa trực tiếp nhất?
+**Question 4 — Choose one.** Rules work on the author's machine but not fresh CI because they exist only in a personal directory. What is the direct fix?
 
-A. Dán lịch sử chat của tác giả vào thông báo lỗi CI.
+A. Paste the author's chat into CI errors.
 
-B. Tăng ngân sách suy luận trong CI để tác nhân tự tìm quy ước.
+B. Increase reasoning budget to rediscover rules.
 
-C. Giữ cấu hình cũ và chỉ kiểm tra kết quả cuối nhiều hơn.
+C. Keep configuration and inspect final results more often.
 
-D. Đặt rule trong dự án; xác minh CI thực sự nạp rule.
+D. Put the rule in the project and verify CI actually loads it.
 
-**Câu 5 — Chọn hai.** Nhóm muốn CLAUDE.md hữu ích mà không biến thành tài liệu khổng lồ khó tuân thủ. Hai nội dung nào đáng ưu tiên?
+**Question 5 — Choose two.** Which TWO contents deserve priority in a useful, manageable CLAUDE.md?
 
-A. Quy tắc dự án cụ thể, các lệnh kiểm tra và ràng buộc khó suy ra từ code.
+A. Project-specific rules, check commands, and constraints difficult to infer from code.
 
-B. Bản sao đầy đủ của mọi API reference dù không liên quan công việc thường gặp.
+B. Every API reference regardless of relevance.
 
-C. Chỉ dẫn tìm nguồn chi tiết khi cần và phạm vi áp dụng rõ.
+C. Directions to detailed sources and clear applicability scope.
 
-D. Mọi ghi chú cá nhân tạm thời để tất cả phiên đều đọc được.
+D. Every temporary personal note for all sessions.
 
 ## Đáp án và giải thích
 

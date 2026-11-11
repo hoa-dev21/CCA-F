@@ -15,55 +15,55 @@ Tên sự kiện và các phương thức thư viện trong video tùy phiên b�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** UI đã hiển thị nửa câu rồi kết nối streaming bị ngắt. Backend hiện đánh dấu thành công khi nhận chunk đầu tiên. Cách sửa nào đúng?
+**Question 1 — Choose one.** A stream disconnects after half a sentence, but the backend marks success on the first chunk. What should change?
 
-A. Chờ thêm thời gian cố định rồi báo thành công nếu không có chunk mới.
+A. Wait a fixed interval and report success if no chunks arrive.
 
-B. Chỉ xác nhận hoàn tất khi nhận kết thúc hợp lệ, không chỉ delta.
+B. Confirm completion only after a valid terminal event.
 
-C. Ghép dấu chấm vào cuối phần text để biến thành câu trả lời hoàn chỉnh.
+C. Append a period to complete the answer.
 
-D. Coi thành công nếu phần đã nhận tạo thành câu có nghĩa.
+D. Accept any meaningful partial sentence.
 
-**Câu 2 — Chọn hai.** Ứng dụng cần vừa hiển thị sớm vừa dùng phản hồi cho vòng công cụ tiếp theo. Hai luồng xử lý nào nên được tách rõ?
+**Question 2 — Choose two.** Which TWO processing paths support early display and later tool-loop use?
 
-A. Cập nhật UI từ các delta phù hợp để người dùng thấy tiến trình.
+A. Update the UI from suitable deltas.
 
-B. Chỉ lưu text đã render vì mọi metadata có thể suy ra từ câu chữ.
+B. Store only rendered text and infer metadata later.
 
-C. Biến mỗi delta thành một assistant message độc lập trong lịch sử.
+C. Make every delta a separate assistant message.
 
-D. Tích lũy phản hồi đầy đủ gồm các content block và metadata cần cho bước sau.
+D. Accumulate the complete response with required content blocks and metadata.
 
-**Câu 3 — Chọn một.** Một phản hồi streaming gồm 80 sự kiện. Bộ đo chi phí nội bộ tính đó là 80 lượt gọi mô hình. Điều chỉnh nào phù hợp?
+**Question 3 — Choose one.** One streamed response contains 80 events, counted internally as 80 model calls. What is correct?
 
-A. Chia số sự kiện cho độ dài câu trung bình để suy ra số lượt.
+A. Divide events by average sentence length.
 
-B. Đếm request và usage của nó, không đếm chunk stream.
+B. Count the request and its usage, not individual stream chunks.
 
-C. Dùng số dòng UI hiển thị để đo số tin nhắn mô hình.
+C. Count displayed UI lines as model messages.
 
-D. Đếm mỗi sự kiện có chữ là một lượt, bỏ các sự kiện metadata.
+D. Count text-bearing events only.
 
-**Câu 4 — Chọn hai.** Mã mẫu streaming chạy được với SDK cũ; nhóm đổi SDK và giữ adapter bằng cách đoán tên event. Hai hành động nào giảm lỗi tích hợp?
+**Question 4 — Choose two.** Which TWO actions reduce integration errors when upgrading a streaming SDK?
 
-A. Đối chiếu event/method với hợp đồng của SDK đang dùng.
+A. Check event names and methods against the installed SDK contract.
 
-B. Chỉ thử một câu trả lời thuần text ngắn rồi suy rộng sang tool loop.
+B. Test one short text response and assume tool loops work.
 
-C. Bỏ event không biết và vẫn báo hoàn tất khi socket đóng.
+C. Ignore unknown events and report completion on socket closure.
 
-D. Kiểm thử hoàn tất, lỗi giữa chừng và phản hồi có nhiều loại content block.
+D. Test valid completion, midstream errors, and mixed content blocks.
 
-**Câu 5 — Chọn một.** UI nối các delta text đúng, nhưng lượt công cụ sau thiếu ID cần liên kết. Lỗi thiết kế có khả năng nhất là gì?
+**Question 5 — Choose one.** Displayed deltas are correct, but the next tool turn lacks required IDs. What is the likely design flaw?
 
-A. Cần coi mọi delta là user message để mô hình khôi phục ID.
+A. All deltas need the user role to restore IDs.
 
-B. Streaming tự động tạo ID mới sau mỗi delta nên không thể giữ liên kết.
+B. Streaming necessarily changes IDs on every delta.
 
-C. Ứng dụng dùng chuỗi đã render thay cho đối tượng phản hồi đầy đủ khi lưu lịch sử.
+C. Rendered text was stored instead of the full response object.
 
-D. Phản hồi text dài làm ID công cụ hết hiệu lực.
+D. Long text makes tool IDs expire.
 
 ## Đáp án và giải thích
 

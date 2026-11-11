@@ -15,55 +15,55 @@ Thêm một trường vào prompt không tự cập nhật quy định dữ li�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Prototype dùng to_json với schema object linh hoạt. Downstream mới yêu cầu amount là số bắt buộc. Chỉ thêm “amount phải là số” vào prompt có đủ cưỡng chế hợp đồng không?
+**Question 1 — Choose one.** A prototype's `to_json` has a flexible object schema. A new consumer requires numeric `amount`. Does a prompt instruction enforce this?
 
-A. Có, vì tool_choice đã buộc gọi đúng tool.
+A. Yes, because tool choice forces the tool.
 
-B. Có, nếu JSON parse được ở mọi ví dụ demo.
+B. Yes, if demo JSON parses.
 
-C. Chưa; cần schema và validation cho hợp đồng cụ thể.
+C. No; the specific contract needs schema enforcement and validation.
 
-D. Chưa, chỉ cần tăng temperature để mô hình thử nhiều kiểu hơn.
+D. No; only higher temperature is needed.
 
-**Câu 2 — Chọn hai.** Nhóm thử nhiều cấu trúc đầu ra trong prototype, chưa có consumer cố định. Hai nhận định nào đúng về schema linh hoạt?
+**Question 2 — Choose two.** Which TWO statements describe a flexible prototype schema before a fixed consumer exists?
 
-A. Giảm công sửa schema khi thử trường mới.
+A. It reduces schema edits while trying new fields.
 
-B. Cưỡng chế mọi trường/kiểu chỉ từ tên to_json.
+B. The name `to_json` enforces all fields and types.
 
-C. Đổi lấy kiểm soát yếu hơn và vẫn cần kiểm tra theo mục tiêu thử nghiệm.
+C. It provides weaker control and still requires goal-specific checks.
 
-D. Cho phép bỏ đánh giá vì JSON object luôn có ích.
+D. Evaluation is unnecessary because any object is useful.
 
-**Câu 3 — Chọn một.** Hóa đơn tài chính có cấu trúc lồng nhau và lỗi số tiền gây tác động lớn. Nhóm muốn giữ schema generic vì nhanh viết prompt. Lựa chọn phù hợp nhất?
+**Question 3 — Choose one.** Financial extraction has nested structures and high-impact amount errors. What is better than retaining a generic schema for convenience?
 
-A. Giữ schema generic, chuyển các bản confidence thấp sang người duyệt.
+A. Review only low-confidence results under the generic schema.
 
-B. Schema nhiệm vụ, validation và eval ca khó.
+B. Use a task-specific schema, validation, and difficult-case evaluation.
 
-C. Giữ schema generic, thêm few-shot đúng cấu trúc rồi chỉ kiểm tra parse.
+C. Add examples and check parsing only.
 
-D. Bỏ trường khó trước khi gửi để consumer dùng mặc định theo hợp đồng cũ.
+D. Drop difficult fields and let the consumer use old defaults.
 
-**Câu 4 — Chọn một.** Prompt được thêm trường currency, nhưng consumer vẫn chỉ nhận amount và tự dùng tiền tệ mặc định. Cần làm gì trước rollout?
+**Question 4 — Choose one.** A prompt adds `currency`, but the consumer still reads only `amount` and assumes a default currency. What must happen before rollout?
 
-A. Coi prompt là nguồn cập nhật mọi thành phần tự động.
+A. Assume prompt changes update all components.
 
-B. Cho consumer bỏ currency để giữ tương thích mã cũ.
+B. Have the consumer ignore currency.
 
-C. Gửi trường mới, để consumer tự hiểu.
+C. Send the field and let the consumer infer its meaning.
 
-D. Cập nhật hợp đồng/adapter và kiểm thử tiền tệ.
+D. Update the contract and adapter and test currency handling.
 
-**Câu 5 — Chọn hai.** Đầu ra to_json parse được, đủ trường, nhưng tổng các dòng khác tổng hóa đơn. Hai bước nào phù hợp?
+**Question 5 — Choose two.** `to_json` returns all fields, but invoice totals conflict. Which TWO actions are appropriate?
 
-A. Phân biệt lỗi ngữ nghĩa với thành công parse/cấu trúc.
+A. Distinguish semantic failure from parsing and structural success.
 
-B. Chấp nhận vì nhiệm vụ của tool chỉ là tạo object.
+B. Accept because the tool only generates objects.
 
-C. Giữ bằng chứng nguồn và kiểm tra/đánh dấu xung đột theo hợp đồng.
+C. Preserve source evidence and validate or flag the conflict.
 
-D. Sửa các dòng tự động để luôn bằng tổng mà không lưu dấu vết.
+D. Silently adjust line items to match the total.
 
 ## Đáp án và giải thích
 

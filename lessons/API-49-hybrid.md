@@ -15,55 +15,55 @@ Cần giữ mã định danh nhất quán để nhận ra cùng một đoạn xu
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Nhóm cộng trực tiếp điểm BM25 khoảng hàng chục với cosine khoảng dưới một. Kết quả nghiêng gần hết về BM25. Sửa nào phù hợp bài học?
+**Question 1 — Choose one.** Adding BM25 scores in the tens directly to cosine scores below one makes BM25 dominate. What is appropriate?
 
-A. Tăng số chữ số thập phân của cosine rồi cộng như cũ.
+A. Add more decimal places to cosine.
 
-B. Bỏ semantic search vì điểm số nhỏ chứng minh yếu hơn.
+B. Discard semantic search because smaller scores mean weaker quality.
 
-C. Thử RRF theo thứ hạng và đánh giá trên bộ truy vấn.
+C. Test rank-based reciprocal rank fusion on representative queries.
 
-D. Chọn nguồn có điểm số lớn nhất để phản ánh độ tự tin cao nhất.
+D. Choose whichever retriever has the largest raw score.
 
-**Câu 2 — Chọn một.** Cùng một đoạn có ID khác nhau ở hai bộ tìm kiếm, RRF trả hai bản sao thay vì gộp tín hiệu. Cần sửa gì?
+**Question 2 — Choose one.** The same chunk has different IDs in two retrievers, so RRF returns duplicates. What should change?
 
-A. Chuẩn hóa định danh chunk giữa các nguồn trước hợp nhất.
+A. Normalize chunk identities before fusion.
 
-B. Tăng hằng số k của RRF để hai bản sao tự nhập thành một.
+B. Increase the RRF constant to merge duplicates automatically.
 
-C. Xóa mọi mục xuất hiện trong cả hai danh sách.
+C. Delete every result present in both lists.
 
-D. Dùng thứ hạng làm ID chung giữa các bộ tìm kiếm.
+D. Use rank as a common ID.
 
-**Câu 3 — Chọn hai.** Với RRF theo dạng 1/(k+rank), hai phát biểu nào đúng?
+**Question 3 — Choose two.** For RRF contributions of `1/(k+rank)`, which TWO statements are correct?
 
-A. Hằng số k trong công thức luôn là số đoạn lấy cho prompt.
+A. The constant k always equals the prompt chunk count.
 
-B. Cùng chunk xuất hiện ở nhiều danh sách cần được nhận diện để gộp đóng góp.
+B. Shared chunks must be recognized to combine contributions.
 
-C. Thứ hạng tốt hơn đóng góp lớn hơn khi k giữ nguyên.
+C. Better ranks contribute more when k is fixed.
 
-D. Điểm RRF là xác suất câu trả lời cuối đúng.
+D. RRF scores are answer-correctness probabilities.
 
-**Câu 4 — Chọn một.** Một retriever mới được thêm vào hybrid nhưng giao diện trả dữ liệu thiếu ID nguồn. Điều chỉnh kiến trúc ưu tiên là gì?
+**Question 4 — Choose one.** A new retriever returns no source IDs. What architectural change is the priority?
 
-A. Dùng tên retriever làm ID cho tất cả đoạn nó trả.
+A. Use its name as every chunk's ID.
 
-B. Giữ retriever mới riêng và cộng raw score cuối cùng.
+B. Keep it separate and add raw scores afterward.
 
-C. Thống nhất ID, nội dung và thứ hạng trong hợp đồng trả về.
+C. Standardize IDs, content, and rank in the result contract.
 
-D. Cho mô hình sinh tự đoán hai kết quả có trùng hay không.
+D. Have the generation model guess duplicates.
 
-**Câu 5 — Chọn hai.** Hybrid tăng recall nhưng làm một số câu trả lời kém đi. Hai kiểm tra nào giúp quyết định giữ thay đổi?
+**Question 5 — Choose two.** Hybrid search improves recall but harms some answers. Which TWO checks guide the decision?
 
-A. Đánh giá câu trả lời theo nhóm truy vấn đại diện.
+A. Evaluate answers by representative query category.
 
-B. Chỉ báo điểm hợp nhất trung bình tăng.
+B. Report only average fused-score gains.
 
-C. Chấp nhận vì hai phương pháp luôn tốt hơn một phương pháp.
+C. Accept because two methods always beat one.
 
-D. Đo bằng chứng sau hợp nhất có đủ và có bị nhiễu/trùng không.
+D. Check evidence sufficiency, noise, and duplicates after fusion.
 
 ## Đáp án và giải thích
 

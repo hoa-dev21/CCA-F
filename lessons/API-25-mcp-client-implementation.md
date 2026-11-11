@@ -17,55 +17,55 @@ Khóa học xây cả client lẫn server để minh họa. Nếu đã có serve
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Client khám phá đúng hai tool, nhưng chatbot chỉ trả tên tool mà không có dữ liệu nghiệp vụ. Log không thấy call_tool. Chỉnh sửa nào nhắm đúng đoạn còn thiếu?
+**Question 1 — Choose one.** Discovery returns two tools, but the chatbot gives only their names and logs show no `call_tool`. What is missing?
 
-A. Tăng độ chi tiết description của hai tool.
+A. More detailed descriptions.
 
-B. Nối tool_use tới call_tool rồi trả kết quả cho Claude.
+B. Connect `tool_use` to `call_tool` and return the result to Claude.
 
-C. Cho list_tools chạy sau mỗi token để cập nhật công cụ.
+C. Run discovery after every token.
 
-D. Đưa tên hai tool vào system prompt thay cho danh sách schema.
+D. Replace schemas with tool names in the system prompt.
 
-**Câu 2 — Chọn hai.** Một dịch vụ mở MCP session cho từng job; khi job lỗi, socket không được đóng. Hai thay đổi nào giải quyết đúng vòng đời?
+**Question 2 — Choose two.** A service opens an MCP session per job but leaks sockets on failure. Which TWO changes fix lifecycle management?
 
-A. Đặt quyền sở hữu mở/đóng session rõ trong lớp tiện ích.
+A. Assign explicit ownership for opening and closing sessions.
 
-B. Dùng context manager hoặc finally để cleanup cả khi xảy ra ngoại lệ.
+B. Use a context manager or `finally` for cleanup on exceptions.
 
-C. Cho garbage collector tự quyết định thời điểm đóng mọi tài nguyên.
+C. Leave all cleanup timing to garbage collection.
 
-D. Retry job trong session cũ trước khi xử lý tài nguyên rò rỉ.
+D. Retry jobs in leaked sessions before cleanup.
 
-**Câu 3 — Chọn một.** Server MCP của nhà cung cấp đã có tool đúng chức năng. Nhóm muốn thêm vào chatbot nội bộ với ít mã trùng lặp. Phương án nào phù hợp?
+**Question 3 — Choose one.** A vendor already provides the required MCP tool. How can an internal chatbot reuse it with minimal duplicated code?
 
-A. Viết lại server để mọi tool được định nghĩa trong cùng repository.
+A. Rewrite the server in the chatbot repository.
 
-B. Chuyển toàn bộ logic chatbot sang server của nhà cung cấp.
+B. Move all chatbot logic to the vendor's server.
 
-C. Tích hợp client với server qua vòng list–call–result.
+C. Integrate a client through discovery, invocation, and result handling.
 
-D. Gắn URL server vào prompt để mô hình tự kết nối.
+D. Put the URL in the prompt and let the model connect.
 
-**Câu 4 — Chọn hai.** Unit test list_tools đã xanh. Hai kiểm thử nào bổ sung bằng chứng đầu-cuối quan trọng nhất?
+**Question 4 — Choose two.** `list_tools` unit tests pass. Which TWO tests provide important end-to-end evidence?
 
-A. Tên và input yêu cầu được chuyển đúng tới tool được chọn.
+A. Requested names and inputs reach the selected tool correctly.
 
-B. Chạy thêm snapshot test cho danh sách tên và schema tool được khám phá.
+B. Add only another snapshot of discovered schemas.
 
-C. Kết quả hoặc lỗi tool được trả lại đúng lượt hội thoại của Claude.
+C. Tool results or errors return to Claude's correct conversation turn.
 
-D. Kiểm tra server trả HTTP thành công mà không quan sát nội dung kết quả chuyển cho mô hình.
+D. Check only HTTP success without inspecting model-bound results.
 
-**Câu 5 — Chọn một.** Hai yêu cầu đồng thời dùng hai session khác nhau. Adapter gom kết quả theo thứ tự hoàn tất rồi gán theo thứ tự gửi, gây lẫn dữ liệu. Thiết kế nào sửa trực tiếp?
+**Question 5 — Choose one.** Concurrent requests use different sessions, but an adapter assigns results by completion order to submission-order requests. What directly fixes data mixing?
 
-A. Nhóm kết quả theo tên tool rồi gán từng kết quả cho yêu cầu chờ lâu nhất của tool đó.
+A. Group by tool name and assign to the oldest waiting request.
 
-B. Gắn session ID vào log để điều tra nhưng tiếp tục gán kết quả theo thứ tự hàng đợi chung.
+B. Log session IDs but keep queue-based assignment.
 
-C. Giữ một hàng đợi phản hồi chung, chờ tất cả xong rồi ghép theo thứ tự nhận phản hồi.
+C. Wait for all results and join by arrival order.
 
-D. Giữ ánh xạ yêu cầu–session–kết quả và trả đúng ngữ cảnh gọi.
+D. Preserve request-session-result mappings and return data to the originating context.
 
 ## Đáp án và giải thích
 

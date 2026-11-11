@@ -19,55 +19,55 @@ Kết quả có cấu trúc nên phân biệt phát hiện có căn cứ, còn t
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Tìm kiếm hết thời gian sau hai lần thử; đã đọc được một nguồn. Coordinator phải quyết định nghiên cứu tiếp hay dùng kết quả có điều kiện. Bàn giao nào hỗ trợ quyết định tốt nhất?
+**Question 1 — Choose one.** Search times out after two attempts, but one source has been read. The coordinator must decide whether to continue research or use a qualified result. Which handoff best supports that decision?
 
-A. “Không có kết quả”, để coordinator chuyển sang nguồn khác.
+A. Report no results so the coordinator switches sources.
 
-B. Lỗi, truy vấn, số lần thử, nguồn đã đọc và phạm vi chưa kiểm tra.
+B. Include the error, query, attempt count, reviewed source, and unchecked scope.
 
-C. Kết luận từ nguồn đã đọc, bỏ chi tiết lỗi để tránh nhiễu.
+C. Include only the source's conclusion to avoid distracting error details.
 
-D. “Nghiên cứu chưa chắc chắn” cùng điểm tự tin chung của tác nhân.
+D. Provide a general uncertainty statement and an overall confidence score.
 
-**Câu 2 — Chọn một.** Hai báo cáo đáng tin đưa ra 12% và 17%, nhưng khác năm và định nghĩa mẫu. Cách tổng hợp phù hợp nhất trước khi đưa ra xu hướng?
+**Question 2 — Choose one.** Two credible reports give figures of 12% and 17%, using different years and sample definitions. What should happen before inferring a trend?
 
-A. Lấy trung bình vì cả hai nguồn đều đáng tin.
+A. Average the figures because both sources are credible.
 
-B. Chọn số mới hơn và loại số cũ khỏi bằng chứng.
+B. Keep only the newer figure.
 
-C. Giữ kỳ đo/phương pháp; kiểm tra tính so sánh trước suy luận.
+C. Preserve measurement periods and methods, then assess comparability.
 
-D. Gắn nhãn mâu thuẫn và chuyển toàn bộ việc phân tích cho người dùng.
+D. Label the figures contradictory and delegate all analysis to the user.
 
-**Câu 3 — Chọn hai.** Để giảm context, tác nhân nén 30 trang bằng chứng thành 2 trang. Hai thành phần nào phải giữ để kết luận vẫn kiểm tra lại được?
+**Question 3 — Choose two.** An agent compresses 30 pages of evidence into two pages. Which TWO elements must remain so the conclusions can be checked?
 
-A. Ánh xạ từng nhận định quan trọng với nguồn và vị trí liên quan.
+A. A mapping from each important claim to its source and location.
 
-B. Toàn bộ suy nghĩ nội bộ đã dẫn tới việc chọn mỗi nhận định.
+B. All internal reasoning used to select each claim.
 
-C. Ngày, phạm vi đo và ghi chú thiếu dữ liệu hoặc xung đột.
+C. Dates, measurement scope, and notes about missing or conflicting evidence.
 
-D. Một danh sách URL cuối báo cáo, không cần nối URL với từng nhận định.
+D. A final URL list with no mapping between claims and sources.
 
-**Câu 4 — Chọn một.** Một nguồn gốc được ba website đăng lại. Báo cáo yêu cầu “ít nhất hai nguồn độc lập” cho kết luận rủi ro cao. Cách xử lý nào đúng?
+**Question 4 — Choose one.** Three websites reproduce one original source. A high-risk conclusion requires at least two independent sources. What should the report do?
 
-A. Đếm ba tên miền là ba nguồn để đáp ứng quy tắc.
+A. Count the three domains as three sources.
 
-B. Chọn hai bản có cách viết khác nhau nhất làm bằng chứng độc lập.
+B. Choose the two copies with the most different wording.
 
-C. Dùng điểm uy tín của tên miền để bù thiếu nguồn độc lập.
+C. Use domain reputation to compensate for missing independence.
 
-D. Tính một nguồn gốc; tìm nguồn độc lập hoặc nêu thiếu hụt.
+D. Count one original source and find independent evidence or disclose the shortfall.
 
-**Câu 5 — Chọn hai.** API tìm kiếm trả lỗi 503; một truy vấn khác thành công nhưng không thấy tài liệu phù hợp. Hai trạng thái nào cần được phân biệt trong đầu ra?
+**Question 5 — Choose two.** A search API returns HTTP 503 for one query. Another query succeeds but finds no relevant documents. Which TWO output states should remain distinct?
 
-A. Truy vấn lỗi được ghi là chưa xác định kết quả do lỗi truy cập.
+A. The failed query has an unknown result because access failed.
 
-B. Truy vấn thành công được ghi là không tìm thấy trong phạm vi đã kiểm tra.
+B. The successful query found nothing within the scope searched.
 
-C. Cả hai được ghi là không có bằng chứng tồn tại ở mọi nguồn.
+C. Both queries prove that no evidence exists anywhere.
 
-D. Truy vấn lỗi được ghi là tài liệu không tồn tại để downstream dùng cùng schema.
+D. The failed query proves the document does not exist, allowing one shared output schema.
 
 ## Đáp án và giải thích
 

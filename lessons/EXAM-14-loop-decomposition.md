@@ -74,55 +74,55 @@ Bạn cần giải thích được ba quyết định: chương trình dựa và
 
 ## Câu hỏi
 
-**1. Chọn một.** Claude viết “tôi đã hoàn thành” nhưng phản hồi có `stop_reason="tool_use"` và yêu cầu đọc tệp cấu hình. Ứng dụng điều khiển vòng lặp nên làm gì?
+**Question 1 — Choose one.** Claude says “I have finished,” but the response has `stop_reason="tool_use"` and requests a configuration file. What should the application controlling the loop do?
 
-A. Ghi nhận hoàn thành theo text, chuyển yêu cầu đọc cấu hình sang tác vụ nền để bổ sung sau.
+A. Declare completion from the text and read the configuration in the background.
 
-B. Thực thi yêu cầu công cụ hợp lệ, trả kết quả đúng ID và tiếp tục vòng lặp.
+B. Execute the valid tool request, return its result with the matching ID, and continue the loop.
 
-C. Gửi lại câu hỏi người dùng với kết quả đọc cấu hình, bỏ phản hồi yêu cầu công cụ để rút ngắn lịch sử.
+C. Send the user question again with the file contents, omitting the tool request to shorten history.
 
-D. Khi đã hết ngân sách vòng lặp, dùng câu “đã hoàn thành” làm kết quả thành công thay vì chạy công cụ.
+D. When the loop budget is exhausted, treat the completion statement as success.
 
-**2. Chọn một.** Bạn nhận yêu cầu “bổ sung kiểm thử toàn diện cho hệ thống mã nguồn cũ”, nhưng chưa biết cấu trúc hệ thống. Cách chia việc nào phù hợp nhất?
+**Question 2 — Choose one.** You are asked to add comprehensive tests to an unfamiliar legacy system. Which task decomposition is most appropriate?
 
-A. Phân công số lượng test bằng nhau cho từng thư mục, dùng tỷ lệ file có test để quyết định đã kiểm tra đủ.
+A. Assign equal test counts per directory and measure completion by the proportion of files with tests.
 
-B. Ưu tiên các hàm có độ phức tạp cao, cố định danh sách đó để giữ tiến độ dù phát hiện thêm phụ thuộc nghiệp vụ.
+B. Select complex functions and keep that list fixed despite new business dependencies.
 
-C. Lập bản đồ, chọn hành vi/rủi ro quan trọng, ưu tiên test và điều chỉnh kế hoạch theo phụ thuộc mới.
+C. Map the system, identify important behaviors and risks, prioritize tests, and adjust for newly discovered dependencies.
 
-D. Hoàn tất toàn bộ test đơn vị theo cấu trúc file trước, sau đó mới khảo sát các luồng nghiệp vụ xuyên mô-đun.
+D. Finish all file-level unit tests before investigating cross-module business flows.
 
-**3. Chọn hai.** Công cụ A trả thời gian dạng Unix, công cụ B trả thời gian dạng ISO 8601. Quy định không cho trợ lý tự hoàn tiền quá 500 USD. Hai lựa chọn nào đặt bước xử lý đúng thời điểm?
+**Question 3 — Choose two.** Tool A returns Unix timestamps; tool B returns ISO 8601 timestamps. Policy forbids autonomous refunds above USD 500. Which TWO choices put processing at the appropriate point?
 
-A. Chuẩn hóa thời gian sau công cụ theo quy định về dữ liệu và hành vi và giữ nguồn/giá trị gốc.
+A. Normalize tool results according to the data contract while preserving original values and sources.
 
-B. Kiểm tra ngưỡng trong bước chọn công cụ của mô hình, rồi cho bộ thực thi tin mọi yêu cầu đã qua bước này.
+B. Check the amount only during model tool selection, then trust every request at the executor.
 
-C. Dùng PostToolUse phát hiện giao dịch vượt ngưỡng và tạo giao dịch bù, coi đó là cơ chế ngăn hoàn tiền.
+C. Use PostToolUse to detect excess refunds and issue compensating transactions as the prevention mechanism.
 
-D. Chặn yêu cầu vi phạm trước khi thực thi và trả đường chuyển cấp phù hợp.
+D. Block policy violations before execution and provide the appropriate escalation path.
 
-**4. Chọn một.** Vòng lặp đã dùng hết ngân sách thực thi. Phản hồi cuối vẫn yêu cầu một công cụ hợp lệ, nhưng chưa có kết quả của công cụ đó. Trạng thái nào nên trả cho hệ thống gọi?
+**Question 4 — Choose one.** The execution budget is exhausted. The final response still requests a valid tool, but no result exists for it. Which status should be returned to the calling system?
 
-A. Thành công với phần văn bản cuối vì yêu cầu công cụ còn lại đã hợp lệ.
+A. Success, using the last text because the remaining tool request is valid.
 
-B. Chưa hoàn tất do hết ngân sách, kèm trạng thái để người vận hành quyết định tiếp tục.
+B. Incomplete due to budget exhaustion, with state for an operator to decide whether to continue.
 
-C. Thành công một phần và coi yêu cầu công cụ chưa chạy là đã chạy nhưng không có dữ liệu.
+C. Partial success, treating the unexecuted request as executed with no data.
 
-D. Tiếp tục thực thi vì `tool_use` có độ ưu tiên cao hơn giới hạn ngân sách do ứng dụng đặt.
+D. Continue execution because `tool_use` overrides the application's budget.
 
-**5. Chọn hai.** Hai công cụ trả thời gian: A trả `1710000000`, B trả chuỗi ISO có độ lệch múi giờ. Nhóm muốn chuẩn hóa trước khi chuyển cho Claude. Hai yêu cầu nào cần có trong thiết kế?
+**Question 5 — Choose two.** Tool A returns `1710000000`; tool B returns an ISO timestamp with a UTC offset. Which TWO requirements are needed before normalizing the results for Claude?
 
-A. Xác định đơn vị của A và quy tắc xử lý múi giờ của B trước khi chuyển đổi.
+A. Determine A's unit and B's timezone conversion rules.
 
-B. Giữ cả giá trị gốc và nguồn để kiểm tra lại khi hai kết quả không khớp.
+B. Preserve original values and sources for investigating discrepancies.
 
-C. Diễn giải cả hai theo múi giờ máy chủ để mọi giá trị được xử lý bằng cùng một quy tắc.
+C. Interpret both timestamps in the server's timezone for consistency.
 
-D. Dùng thời gian hiện tại cho giá trị không phân tích được để đầu ra luôn đáp ứng định dạng chung.
+D. Replace unparseable timestamps with the current time to ensure valid formatting.
 
 ## Đáp án
 

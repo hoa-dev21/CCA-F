@@ -17,55 +17,55 @@ Video còn minh họa lệnh tùy chỉnh ở `.claude/commands` và `$ARGUMENTS
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Hai phiên sửa code trong hai worktree nhưng kiểm thử làm mất dữ liệu của nhau. Diff không giao nhau. Cần kiểm tra gì trước?
+**Question 1 — Choose one.** Tests in separate worktrees overwrite each other's data despite non-overlapping diffs. What should be checked first?
 
-A. Tên nhánh vì hai nhánh khác nhau phải cô lập mọi tài nguyên.
+A. Branch names, which must isolate all resources.
 
-B. Prompt của phiên thứ hai vì worktree đã bảo đảm cô lập môi trường.
+B. The second prompt because worktrees guarantee environment isolation.
 
-C. Tài nguyên dùng chung ngoài worktree: database, cổng, dịch vụ.
+C. Shared databases, ports, and services outside the worktrees.
 
-D. Xung đột văn bản trong file nguồn của hai worktree.
+D. Text conflicts in source files.
 
-**Câu 2 — Chọn hai.** Bạn chuẩn bị giao hai tác nhân sửa hai module phụ thuộc nhau. Hai bước nào giảm lỗi phối hợp ngay từ đầu?
+**Question 2 — Choose two.** Which TWO preparations reduce coordination errors between agents editing dependent modules?
 
-A. Cho cả hai tự sửa interface dùng chung rồi chọn bản có diff ngắn hơn.
+A. Let both change interfaces and pick the shorter diff.
 
-B. Bố trí thư mục riêng và xử lý các tài nguyên kiểm thử dùng chung.
+B. Use separate directories and manage shared test resources.
 
-C. Nêu phạm vi file, hợp đồng giữa module và tiêu chí chấp nhận.
+C. Define file scope, module contracts, and acceptance criteria.
 
-D. Coi kiểm thử từng nhánh là đủ nên bỏ kiểm tra sau tích hợp.
+D. Skip integration checks if branch tests pass.
 
-**Câu 3 — Chọn một.** Nhánh A đổi đơn vị timeout sang mili giây, nhánh B bổ sung caller vẫn truyền giây. Git hợp nhất không xung đột, test riêng đều đạt. Quyết định phù hợp?
+**Question 3 — Choose one.** One branch changes timeout units to milliseconds; another adds a caller using seconds. Git merges cleanly and isolated tests pass. What is appropriate?
 
-A. Đối chiếu đơn vị và test hành vi sau khi kết hợp thay đổi.
+A. Check unit contracts and test the combined behavior.
 
-B. Chấp nhận vì Git không tìm thấy xung đột trên cùng dòng.
+B. Accept because no lines conflict.
 
-C. Chấp nhận nhánh có thời gian chạy test nhanh hơn.
+C. Choose the branch with faster tests.
 
-D. Chạy lại test A nguyên trạng mà không nạp thay đổi B.
+D. Rerun only unchanged branch-A tests.
 
-**Câu 4 — Chọn hai.** Thư mục dependency ở hai worktree trỏ symlink về cùng nơi. Một tác nhân cập nhật thư viện trong lúc tác nhân kia chạy test. Hai nhận định nào đúng?
+**Question 4 — Choose two.** Two worktrees symlink dependencies to one location while an agent updates them. Which TWO statements are correct?
 
-A. Thư mục riêng chưa cô lập dependency qua symlink.
+A. Separate directories do not isolate shared symlinked dependencies.
 
-B. Lockfile giống nhau đủ chứng minh dependency đang chạy được cô lập, dù thư mục cài đặt vẫn dùng chung.
+B. Identical lockfiles prove runtime isolation.
 
-C. Các worktree có kho Git chung nên mọi file nguồn luôn giống nhau.
+C. A shared Git store makes all source files identical.
 
-D. Kết quả test cần được đánh giá trong môi trường dependency xác định.
+D. Test results need assessment in a defined dependency environment.
 
-**Câu 5 — Chọn một.** Sau khi hai tác nhân hoàn tất, một lệnh tùy chỉnh tự cherry-pick và in “done”. Điều kiện nào đủ hơn để tuyên bố việc tích hợp hoàn tất?
+**Question 5 — Choose one.** A custom command cherry-picks both agents' work and prints “done.” What better establishes integration completion?
 
-A. Từng tác nhân đã nói nhiệm vụ của mình hoàn thành.
+A. Both agents said they finished.
 
-B. Hai nhánh có số lượng file sửa giống với kế hoạch ban đầu.
+B. Changed file counts match the plan.
 
-C. Đã review diff, xử lý xung đột và test phần kết hợp.
+C. The combined diff is reviewed, conflicts resolved, and integrated behavior tested.
 
-D. Lệnh tùy chỉnh trả exit code 0 và tạo được commit.
+D. The command exits zero and creates a commit.
 
 ## Đáp án và giải thích
 

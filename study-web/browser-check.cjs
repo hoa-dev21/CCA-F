@@ -3,19 +3,34 @@ const fs=require('node:fs');
 const {chromium}=require('playwright');
 (async()=>{
  const origin=process.env.STUDY_TEST_ORIGIN||'http://127.0.0.1:43130';
+ const syncStatus=await(await fetch(origin+'/api/sync/status')).json();
+ assert.equal(syncStatus.enabled,false,'Browser checks require an isolated server with Turso sync disabled.');
  fs.mkdirSync('.study-test',{recursive:true});
  const browser=await chromium.launch({channel:'msedge',headless:true});
  try{
   const context=await browser.newContext({viewport:{width:1440,height:1000}});
   const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.addInitScript(()=>{Object.defineProperty(navigator,'clipboard',{value:{writeText:async text=>{window.__copiedStudyText=text;}}});});
-  await page.goto(origin);await page.waitForSelector('#lesson-article h2');
+  await page.goto(origin+'/#lesson=EXAM-14-loop-decomposition.md');await page.waitForSelector('#lesson-article h2');
   assert.match(await page.locator('#lesson-title').innerText(),/Điều kiện dừng/);
   await page.click('#mark-read');assert.equal(await page.locator('.quiz-card').count(),5);
+  assert.equal(await page.locator('.question-prompt').first().getAttribute('lang'),'en');
+  assert.match(await page.locator('.question-prompt').first().innerText(),/Claude says/);
+  assert.match(await page.locator('.question-overline').first().innerText(),/CHOOSE ONE ANSWER/);
+  assert.match(await page.locator('.question-overline').nth(2).innerText(),/CHOOSE TWO ANSWERS/);
+  assert.equal(await page.locator('.quiz-card [role="group"]').first().getAttribute('lang'),'en');
   await page.locator('.quiz-card').nth(0).locator('[data-option="A"]').click();await page.locator('.quiz-card').nth(0).locator('[data-check]').click();
   assert.match(await page.locator('.quiz-card').nth(0).locator('.answer-feedback').innerText(),/Đáp án: B/);
   await page.locator('.quiz-card').nth(2).locator('[data-option="A"]').click();assert.equal(await page.locator('.quiz-card').nth(2).locator('[data-check]').isDisabled(),true);
   await page.locator('.quiz-card').nth(2).locator('[data-option="D"]').click();await page.locator('.quiz-card').nth(2).locator('[data-check]').click();assert.match(await page.locator('.quiz-card').nth(2).locator('.feedback-title').innerText(),/Đúng rồi/);
+  await page.locator('.quiz-card').first().locator('[data-ask]').click();await page.click('#copy-question');
+  const questionCopy=await page.evaluate(()=>window.__copiedStudyText);assert.match(questionCopy,/Claude says/);assert.ok(!questionCopy.includes('Đáp án tham chiếu'));
+  await page.screenshot({path:'.study-test/english-quiz-desktop.png',fullPage:true});
+  await page.setViewportSize({width:390,height:844});
+  await page.click('#mobile-tutor');
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),true);
+  await page.screenshot({path:'.study-test/english-quiz-mobile.png',fullPage:true});
+  await page.setViewportSize({width:1440,height:1000});
   await page.reload();await page.waitForSelector('#lesson-article h2');assert.match(await page.locator('#progress-label').innerText(),/^1 \/ 142/);assert.equal(await page.locator('#wrong-count').innerText(),'1');
   await page.click('#review-wrong');assert.equal(await page.locator('.quiz-card').count(),1);assert.equal(await page.locator('#wrong-count').innerText(),'1'); // opening review preserves the queue
   assert.equal(await page.locator('.answer-feedback').count(),0);
@@ -50,7 +65,7 @@ const {chromium}=require('playwright');
     [current.id]:{selected:current.correct,checked:true,correct:true,revision:current.revision}
    }}));
   },{lesson});
-  const migrated=await migration.newPage();await migrated.goto(origin);await migrated.waitForSelector('#lesson-article h2');await migrated.click('#tab-quiz');
+  const migrated=await migration.newPage();await migrated.goto(origin+'/#lesson=EXAM-14-loop-decomposition.md');await migrated.waitForSelector('#lesson-article h2');await migrated.click('#tab-quiz');
   assert.equal(await migrated.locator('#wrong-count').innerText(),'0');
   assert.match(await migrated.locator('#progress-label').innerText(),/^1 \/ 142/);
   assert.equal(await migrated.locator('.answer-feedback').count(),1);

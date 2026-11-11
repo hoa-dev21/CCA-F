@@ -18,55 +18,55 @@ Khi xây dựng ứng dụng dùng API: Ứng dụng cần gửi kèm những ph
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Trợ lý trả vị trí hiện tại của đơn hàng rất cụ thể dù chỉ nhận mã đơn và không có kết nối hệ thống. Sửa nào nhắm đúng nguồn thiếu thông tin?
+**Question 1 — Choose one.** An assistant gives precise current order locations with only an order ID and no system connection. What addresses the information gap?
 
-A. Yêu cầu trả lời ít chắc chắn hơn nhưng giữ quy trình hiện tại.
+A. Use less confident wording without changing the flow.
 
-B. Thêm ví dụ trạng thái đơn hàng vào prompt rồi dùng ví dụ gần nhất.
+B. Choose the nearest example status.
 
-C. Đưa nguồn hiện tại được phép vào luồng rồi kiểm chứng.
+C. Provide an authorized current source and verify the lookup.
 
-D. Chạy cùng câu hỏi nhiều lần rồi lấy trạng thái được nhắc nhiều nhất.
+D. Repeat the question and vote.
 
-**Câu 2 — Chọn một.** Năm demo đều đúng, nhưng dữ liệu thực tế đa dạng hơn và có tác vụ cần nhiều bước suy luận. Quyết định triển khai nào phù hợp?
+**Question 2 — Choose one.** Five demos succeed, but real inputs are varied and need multistep reasoning. What deployment decision fits?
 
-A. Coi năm lần đúng là chứng minh đủ khả năng tổng quát.
+A. Treat five successes as proof of general capability.
 
-B. Đo trên mẫu đại diện/ca khó, kiểm chứng theo rủi ro.
+B. Evaluate representative and difficult cases with risk-based verification.
 
-C. Chỉ kiểm tra ngữ pháp vì sai nội dung sẽ làm câu trả lời thiếu trôi chảy.
+C. Check grammar only.
 
-D. Tăng độ tự tin trong prompt để mô hình không do dự khi gặp trường hợp mới.
+D. Demand more confidence on unfamiliar cases.
 
-**Câu 3 — Chọn hai.** Ứng dụng gọi API riêng cho từng lượt, nhưng câu “đổi phương án thứ hai thành rẻ hơn” không kèm lịch sử. Hai việc nào giúp giải quyết thiếu ngữ cảnh?
+**Question 3 — Choose two.** Standalone API calls omit history for “make the second option cheaper.” Which TWO changes address this?
 
-A. Gửi các phương án trước cùng yêu cầu mới trong đầu vào liên quan.
+A. Send previous options with the new request.
 
-B. Tăng số lần retry nguyên yêu cầu vì context có thể được nhớ lại.
+B. Retry unchanged until memory returns.
 
-C. Xác định rõ đối tượng “phương án thứ hai” và các ràng buộc cần giữ.
+C. Identify the second option and constraints to preserve.
 
-D. Dựa vào việc cùng API key để suy ra mô hình có chung trí nhớ hội thoại.
+D. Assume one API key shares conversational memory.
 
-**Câu 4 — Chọn một.** AI vừa tra cứu một nguồn nhưng dữ liệu nguồn được cập nhật từ tháng trước. Người dùng cần trạng thái hôm nay. Kết luận nào đúng?
+**Question 4 — Choose one.** A lookup fetches last month's source, but the user needs today's status. What is correct?
 
-A. Có công cụ là đủ để bảo đảm thông tin mới.
+A. Tool access guarantees freshness.
 
-B. Thời điểm gọi công cụ có thể dùng thay thời điểm cập nhật nguồn.
+B. Use retrieval time as the source-update time.
 
-C. Kết quả tra cứu luôn đáng tin hơn mọi dữ liệu người dùng đưa.
+C. Tool output always outweighs user evidence.
 
-D. Kiểm tra độ mới/phạm vi nguồn, không chỉ lúc lấy về.
+D. Check source freshness and scope, not just retrieval time.
 
-**Câu 5 — Chọn hai.** Sau nhiều lượt, AI bỏ quên một ràng buộc và đưa số liệu tự tin nhưng không có căn cứ. Hai bước nào giải quyết hai giới hạn này?
+**Question 5 — Choose two.** The model forgets a constraint and states unsupported figures confidently. Which TWO actions address these limits?
 
-A. Nạp lại ràng buộc quan trọng vào ngữ cảnh đang dùng.
+A. Reload important constraints into active context.
 
-B. Chỉ yêu cầu dùng giọng khiêm tốn hơn cho toàn câu trả lời.
+B. Only request a humble tone.
 
-C. Đối chiếu số liệu với nguồn và biểu diễn phần chưa xác minh.
+C. Verify figures against sources and identify unverified information.
 
-D. Giữ câu trả lời vì tính nhất quán về văn phong cho thấy mô hình hiểu nhiệm vụ.
+D. Accept because consistent style proves understanding.
 
 ## Đáp án và giải thích
 

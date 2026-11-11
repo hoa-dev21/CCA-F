@@ -15,55 +15,55 @@ Bài cũng đề cập đặt khóa API trong cấu hình môi trường và kh�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Wrapper chỉ trả content[0].text. Sau khi thêm client tools, giao diện vẫn hiện lời “đang tra cứu” nhưng không có dữ liệu. Sửa nào tác động đúng nguyên nhân?
+**Question 1 — Choose one.** A wrapper returns only `content[0].text`. After adding client tools, the UI says “looking up” without data. What addresses the cause?
 
-A. Tăng max_tokens để mô hình đủ chỗ viết dữ liệu tra cứu.
+A. Increase output tokens.
 
-B. Ghép mọi block thành chuỗi và tìm tên công cụ bằng regex.
+B. Flatten blocks and find tool names with regex.
 
-C. Thay lời dẫn bằng thông báo hoàn tất khi text không rỗng.
+C. Replace nonempty text with a completion message.
 
-D. Chuyển content blocks và stop_reason cho bộ điều phối.
+D. Pass content blocks and `stop_reason` to orchestration.
 
-**Câu 2 — Chọn một.** Đặt max_tokens=1000, phản hồi kết thúc bình thường ở 180 token và đáp ứng yêu cầu. Cách diễn giải nào đúng?
+**Question 2 — Choose one.** With `max_tokens=1000`, a satisfactory response ends normally after 180 tokens. What does this mean?
 
-A. Cần nối thêm phần giải thích để sử dụng đủ token đã đặt.
+A. Add explanation to use the full allowance.
 
-B. 180 token chứng minh chỉ 18% yêu cầu được xử lý.
+B. Only 18% of the request was processed.
 
-C. API đã bỏ qua tham số vì đầu ra chưa đạt 1000 token.
+C. The API ignored the parameter.
 
-D. Hợp lệ: max_tokens đặt trần, không ấn định độ dài.
+D. The limit is a ceiling, not a required output length.
 
-**Câu 3 — Chọn hai.** Nhóm chuyển notebook mẫu thành dịch vụ. Hai thành phần nào cần bảo toàn để mở rộng từ trả lời văn bản sang tool use?
+**Question 3 — Choose two.** Which TWO elements must survive when converting a notebook into a service supporting tool use?
 
-A. Vai trò và nội dung có cấu trúc của các tin nhắn trong lịch sử.
+A. Roles and structured message content in history.
 
-B. Metadata điều khiển cùng các block phản hồi cần cho vòng gọi.
+B. Control metadata and response blocks required by the loop.
 
-C. Chỉ bản text đã hiển thị vì người dùng không nhìn các block còn lại.
+C. Only displayed text, because users cannot see other blocks.
 
-D. Tên mô hình trong notebook như một cam kết hỗ trợ lâu dài.
+D. The notebook's model name as a permanent support guarantee.
 
-**Câu 4 — Chọn một.** Một nhóm dùng số từ để kiểm tra max_tokens và báo lỗi vì câu trả lời 400 từ có hơn 400 token. Điều chỉnh nào đúng?
+**Question 4 — Choose one.** A team equates words with tokens and flags a 400-word answer exceeding 400 tokens. What is correct?
 
-A. Bỏ qua lý do dừng nếu đầu ra chưa vượt số từ dự kiến.
+A. Ignore stop reasons while word count is below the target.
 
-B. Tính mỗi dấu cách là một token để thống nhất các ngôn ngữ.
+B. Count every space as one token across languages.
 
-C. Đo token bằng cơ chế phù hợp, không đồng nhất token với từ.
+C. Use appropriate token measurement rather than equating tokens with words.
 
-D. Giảm mọi yêu cầu xuống cùng số từ với max_tokens.
+D. Force word counts to equal `max_tokens`.
 
-**Câu 5 — Chọn hai.** Đưa API vào backend triển khai mới, hai việc nào cần làm với cấu hình từ notebook?
+**Question 5 — Choose two.** Which TWO notebook configuration checks are needed for a new backend deployment?
 
-A. Sao chép nguyên tên mô hình để kết quả chắc chắn tái lập.
+A. Copy the model name unchanged to guarantee reproducibility.
 
-B. Giữ khóa trong cấu hình bí mật và loại .env thật khỏi kho mã.
+B. Store keys as secrets and exclude real `.env` files from version control.
 
-C. Commit .env rồi dựa vào tên nhánh private để bảo vệ khóa.
+C. Commit secrets on a private branch.
 
-D. Kiểm tra model ID và khả năng hỗ trợ của môi trường đích.
+D. Check model IDs and supported capabilities in the target environment.
 
 ## Đáp án và giải thích
 

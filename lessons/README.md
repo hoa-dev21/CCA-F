@@ -191,4 +191,6 @@ Các bài cloud đã đối chiếu có dẫn nguồn ngay trong bài chung và 
 
 ## Cách học
 
+Đề câu hỏi, các lựa chọn và hướng dẫn **Choose one / Choose two** dùng tiếng Anh để luyện đọc khi ôn thi. Tóm tắt bài học và giải thích đáp án giữ tiếng Việt.
+
 Đọc tóm tắt, làm câu hỏi trước khi mở đáp án, rồi ghi nguyên nhân câu sai. Câu hỏi được biên soạn cho việc học; không phải câu thi thật hay bộ mô phỏng đã được chuẩn hóa tâm trắc. Các bài AI Fluency có ghi công và giấy phép CC BY-NC-SA 4.0 trong từng file.

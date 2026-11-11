@@ -15,55 +15,55 @@ Ví dụ lưu tài liệu trong một dictionary trong bộ nhớ chỉ để mi
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Decorator đăng ký hàm và type hints sinh input schema chính xác, nhưng thân hàm chỉ trả “success”. Test nào bác bỏ việc công cụ đã hoàn thiện?
+**Question 1 — Choose one.** A decorator registers a function and generates the right schema, but the function only returns “success.” Which test disproves completion?
 
-A. Gọi sửa rồi đọc lại để xác minh trạng thái tài liệu.
+A. Edit a document and read it back to verify its state.
 
-B. Kiểm tra JSON của schema có đúng dấu ngoặc.
+B. Check schema JSON brackets.
 
-C. Xác nhận tên hàm xuất hiện trong danh sách tools.
+C. Confirm the tool name is listed.
 
-D. Kiểm tra doc_id được chú thích là chuỗi.
+D. Confirm `doc_id` is annotated as a string.
 
-**Câu 2 — Chọn hai.** Công cụ thay chuỗi yêu cầu old_text khớp chính xác cả khoảng trắng. Hai thiết kế nào giúp tránh sửa sai hoặc gọi mù?
+**Question 2 — Choose two.** Replacement requires `old_text` to match whitespace exactly. Which TWO design choices reduce incorrect or blind edits?
 
-A. Trả lỗi có ý nghĩa khi không tìm thấy chuỗi hoặc tài liệu.
+A. Return meaningful missing-document or missing-text errors.
 
-B. Mô tả rõ quy tắc khớp trong tham số old_text.
+B. Describe exact matching in the `old_text` parameter.
 
-C. Báo thành công khi không có gì thay đổi để model tiếp tục.
+C. Report success when nothing changes.
 
-D. Tự xóa khoảng trắng trước khi so khớp dù hợp đồng yêu cầu chính xác.
+D. Strip whitespace despite the exact-match contract.
 
-**Câu 3 — Chọn một.** doc_id đúng kiểu string nhưng không tồn tại trong kho. Schema đã validate. Hành vi nào phù hợp?
+**Question 3 — Choose one.** `doc_id` is a valid string but identifies no document. What should happen?
 
-A. Chọn tài liệu đầu tiên vì mọi ID đều đã qua schema.
+A. Select the first document because schema validation passed.
 
-B. Trả kết quả thành công rỗng vì string là kiểu hợp lệ.
+B. Return empty success because the type is valid.
 
-C. Hàm kiểm tra dữ liệu và trả lỗi mô tả tài liệu không tồn tại.
+C. Check the store and return a descriptive missing-document error.
 
-D. Tạo tự động một tài liệu rỗng dù công cụ được mô tả chỉ để sửa.
+D. Create an empty document although the tool is edit-only.
 
-**Câu 4 — Chọn hai.** Nhóm muốn giảm khai báo lặp nhưng vẫn duyệt được hợp đồng công cụ. Hai việc nào nên làm?
+**Question 4 — Choose two.** Which TWO actions reduce duplicate schema declarations while preserving reviewability?
 
-A. Dùng type hints và mô tả để SDK tạo schema.
+A. Generate schemas from type hints and descriptions.
 
-B. Coi schema tự sinh là bằng chứng đầy đủ về quyền sửa tài liệu.
+B. Treat generated schemas as proof of edit authorization.
 
-C. Bỏ mọi thông báo lỗi vì kiểu dữ liệu đã chặn hết đầu vào sai.
+C. Remove errors because types prevent all invalid inputs.
 
-D. Đối chiếu schema tạo ra với logic và giới hạn thật của hàm.
+D. Compare generated schemas with actual function logic and limits.
 
-**Câu 5 — Chọn một.** Hai tham số old_text và new_text đều là string; model hay đảo chúng. Chỉnh sửa nào trực tiếp nhất?
+**Question 5 — Choose one.** The model swaps `old_text` and `new_text`, both strings. What is the direct improvement?
 
-A. Thử cả hai chiều thay thế rồi lấy chiều khớp.
+A. Try both replacement directions and use whichever matches.
 
-B. Thêm một tham số optional không liên quan để schema rõ hơn.
+B. Add an unrelated optional parameter.
 
-C. Nêu vai trò tham số và yêu cầu old_text khớp nguồn.
+C. Explain each parameter's role and require `old_text` to match the source.
 
-D. Đổi cả hai kiểu thành string dài hơn trong tài liệu.
+D. Describe both as longer strings.
 
 ## Đáp án và giải thích
 

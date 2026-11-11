@@ -17,55 +17,55 @@ Giới hạn số lượt giúp kiểm soát tài nguyên. Khi chạm giới h�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Nhóm cần bot sửa mã theo comment PR. Dịch vụ review được mô tả trong bài chỉ đưa findings, không tự sửa. Thiết kế nào đáp ứng nhu cầu?
+**Question 1 — Choose one.** A review service reports findings but does not edit. The team needs code fixes from PR comments. Which design meets the need?
 
-A. Thêm nhãn auto-fix và coi dịch vụ review đã có chức năng sửa.
+A. Add an `auto-fix` label and assume editing exists.
 
-B. Tăng severity để dịch vụ review tự chuyển sang chế độ ghi.
+B. Raise severity to enable writes.
 
-C. Action tùy biến, giới hạn quyền và có bước kiểm chứng.
+C. Use a custom action with bounded permissions and verification.
 
-D. Bỏ bước kiểm thử vì sửa theo comment đã là yêu cầu được phê duyệt.
+D. Skip tests because comments authorize the fix.
 
-**Câu 2 — Chọn một.** Job định kỳ chỉ tổng hợp báo cáo từ repo nhưng được cấp quyền sửa và deploy. Thay đổi nào phù hợp nhất?
+**Question 2 — Choose one.** A scheduled reporting job has edit and deployment permissions. What is appropriate?
 
-A. Giới hạn quyền vào đọc dữ liệu và xuất báo cáo.
+A. Restrict access to reading and report generation.
 
-B. Giữ quyền rộng để job không bao giờ phải từ chối.
+B. Keep broad permissions to avoid refusals.
 
-C. Thêm câu “không deploy” nhưng giữ nguyên mọi quyền.
+C. Add “do not deploy” without restricting access.
 
-D. Chỉ tắt log của công cụ ghi để báo cáo ít nhiễu.
+D. Hide write-tool logs.
 
-**Câu 3 — Chọn hai.** Action dừng vì đạt giới hạn lượt và đã có một số nhận xét trên PR. Hai điều nào cần kiểm tra trước khi coi review hoàn tất?
+**Question 3 — Choose two.** An action reaches its turn limit after posting some PR comments. Which TWO checks precede declaring review complete?
 
-A. Chỉ số lượt đã dùng bằng giới hạn nên mức độ bao phủ đã đủ.
+A. Using the limit proves full coverage.
 
-B. Trạng thái chạy cùng phạm vi thực sự đã được kiểm tra.
+B. Execution status and actual reviewed scope.
 
-C. Các gate/tiêu chí chấp nhận và bằng chứng còn thiếu.
+C. Acceptance gates and missing evidence.
 
-D. Sự tồn tại của ít nhất một comment là bằng chứng mọi file đã được review.
+D. One comment proves all files were reviewed.
 
-**Câu 4 — Chọn một.** Workflow CI không có người trực đôi khi yêu cầu xác nhận quyền và treo đến timeout. Sửa nào bảo đảm xử lý tự động trong giới hạn đã định?
+**Question 4 — Choose one.** Unattended CI occasionally waits for permission until timeout. What fixes automation within predefined limits?
 
-A. Tăng timeout để chờ người duyệt lâu hơn.
+A. Raise the timeout.
 
-B. Tự trả lời đồng ý mọi prompt vì code nằm trong repo nội bộ.
+B. Approve everything because the repository is internal.
 
-C. Chạy lại job nhiều lần cho tới lúc mô hình không hỏi.
+C. Retry until the model stops asking.
 
-D. Chạy không tương tác; cấp quyền cần dùng, từ chối ngoài phạm vi.
+D. Run non-interactively with required permissions and deny outside scope.
 
-**Câu 5 — Chọn hai.** Nhóm vừa cập nhật prompt bot review và muốn triển khai an toàn. Hai bằng chứng nào hữu ích nhất?
+**Question 5 — Choose two.** Which TWO evidence types support rolling out an updated review prompt?
 
-A. Đánh giá findings trên PR đại diện, gồm lỗi thật và pattern hợp lệ.
+A. Evaluate findings on representative PRs containing real defects and valid patterns.
 
-B. Xác minh quyền, trigger và xử lý đầu ra phù hợp workflow dự kiến.
+B. Verify permissions, triggers, and output handling for the intended workflow.
 
-C. Chỉ kiểm tra bot có đăng được comment.
+C. Only verify comment posting.
 
-D. Chỉ xem câu trả lời có giọng văn chuyên nghiệp.
+D. Only check professional tone.
 
 ## Đáp án và giải thích
 

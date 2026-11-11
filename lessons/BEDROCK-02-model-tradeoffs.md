@@ -15,55 +15,55 @@ Tên và mã mô hình, vùng hỗ trợ, giá và khả năng suy luận thêm 
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Một hệ có bước phân loại đơn giản cần phản hồi nhanh và bước phân tích khó chạy ít lần. Nhóm muốn chọn mô hình với chi phí hợp lý. Thiết kế nào nên đánh giá?
+**Question 1 — Choose one.** A system combines fast simple classification with occasional difficult analysis. Which model-selection approach should be evaluated?
 
-A. Dùng mô hình lớn nhất cho cả hai để bỏ mọi phép đo.
+A. Use the largest model everywhere without measurement.
 
-B. Đo từng bước và tính cả chi phí điều phối model.
+B. Measure each step and include model-orchestration costs.
 
-C. Dùng mô hình rẻ nhất cho cả hai vì phân tích chạy ít.
+C. Use the cheapest model everywhere because analysis is infrequent.
 
-D. Chia đều tải cho hai model khác nhau.
+D. Split traffic equally between two models.
 
-**Câu 2 — Chọn hai.** Router chọn mô hình giúp tiết kiệm tiền gọi API nhưng tăng lỗi phân loại và vận hành. Hai loại số liệu nào cần trước khi giữ router?
+**Question 2 — Choose two.** A model router reduces API spending but increases classification and operational errors. Which TWO measurements are needed?
 
-A. Chi phí toàn luồng gồm router, retry và tác vụ chính.
+A. End-to-end cost including routing, retries, and main tasks.
 
-B. Chỉ giá mỗi token của mô hình rẻ hơn.
+B. Only the cheaper model's token price.
 
-C. Chất lượng end-to-end và độ trễ theo các nhóm tác vụ.
+C. End-to-end quality and latency by task category.
 
-D. Tên model được dùng phổ biến trong cộng đồng.
+D. Community model popularity.
 
-**Câu 3 — Chọn một.** Mã model trong video báo không khả dụng tại vùng production. Bước tiếp theo nên là gì?
+**Question 3 — Choose one.** A video's model ID is unavailable in the production region. What should happen next?
 
-A. Giữ ID từ video, đổi sang vùng cũ rồi mặc định quyền tài khoản cũng giống nhau.
+A. Use the old region and assume account permissions match.
 
-B. Chọn model cùng họ có tên gần nhất, giữ nguyên mọi cấu hình và quyền.
+B. Select the closest family name without checking configuration.
 
-C. Kiểm tra ID/profile, vùng và quyền môi trường đích.
+C. Verify target model ID or profile, region, and permissions.
 
-D. Retry cùng ID đến khi provisioning tự hoàn tất.
+D. Retry until provisioning completes automatically.
 
-**Câu 4 — Chọn một.** Mô hình đắt hơn đạt benchmark chung cao nhưng trên mẫu trích xuất của nhóm vẫn sai trường hiếm. Quyết định nào có cơ sở?
+**Question 4 — Choose one.** A pricier model leads general benchmarks but fails rare extraction fields locally. What should guide selection?
 
-A. Ưu tiên benchmark chung hơn tập nội bộ.
+A. General benchmarks over internal data.
 
-B. Đánh giá workload thật, gồm lỗi trường hiếm.
+B. Real workload evaluation including rare-field failures.
 
-C. Coi mức giá cao như tín hiệu confidence cho mọi đầu ra.
+C. Price as confidence in every result.
 
-D. Giữ prompt hiện tại và bỏ review vì mô hình có năng lực cao hơn.
+D. Remove review because the model is more capable.
 
-**Câu 5 — Chọn hai.** Hai model cùng một họ được cân nhắc thay thế cho nhau. Hai điều nào cần kiểm tra thay vì suy từ tên họ?
+**Question 5 — Choose two.** Which TWO checks precede replacing a model with another in the same family?
 
-A. Các tính năng/request mà workload cần có được hỗ trợ trên model đích.
+A. Support for the workload's required features and requests.
 
-B. Cấu hình vùng/tài khoản có quyền truy cập model đích.
+B. Target-region and account access permissions.
 
-C. Có cùng tiền tố tên nghĩa là mọi giới hạn giống nhau.
+C. A shared name prefix guarantees identical limits.
 
-D. Model ra sau tự động giữ nguyên mọi hành vi của model cũ.
+D. A newer model preserves every old behavior automatically.
 
 ## Đáp án và giải thích
 

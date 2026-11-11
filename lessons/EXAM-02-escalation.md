@@ -26,55 +26,55 @@ Nếu khách có nhiều vấn đề, tách thành các hạng mục, dùng chun
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Bot có quy định phải xác minh danh tính trước hoàn tiền. Trong kiểm thử, lời nhắc được tuân thủ 99% nhưng vẫn có giao dịch bỏ bước. Kiểm soát nào đáp ứng yêu cầu không được hoàn khi chưa xác minh?
+**Question 1 — Choose one.** A refund bot must verify identity before issuing a refund. Prompt compliance is 99%, but some refunds still skip verification. Which control enforces the requirement?
 
-A. Thêm ba ví dụ từ chối vào system prompt và giảm temperature.
+A. Add three refusal examples to the system prompt and lower temperature.
 
-B. Yêu cầu mô hình ghi lý do xác minh trước khi gọi công cụ.
+B. Ask the model to explain verification before calling the tool.
 
-C. Gate ở executor kiểm tra xác minh đúng khách/giao dịch.
+C. Have the executor verify identity for the specific customer and transaction before execution.
 
-D. Dùng bộ kiểm tra sau giao dịch để hoàn tác những lần thiếu xác minh.
+D. Check after the transaction and reverse refunds that skipped verification.
 
-**Câu 2 — Chọn một.** Khách yêu cầu rõ “chuyển tôi cho nhân viên”. Bot đã có đủ dữ liệu và dự đoán tự xử lý chỉ mất 20 giây. Chính sách yêu cầu tôn trọng đề nghị chuyển người. Bước phù hợp nhất?
+**Question 2 — Choose one.** A customer explicitly asks to speak to an employee. The bot could probably solve the issue in 20 seconds, but policy requires honoring transfer requests. What should it do?
 
-A. Chuyển theo yêu cầu, bàn giao vấn đề và dữ liệu đã xác minh.
+A. Transfer the case with the issue summary and verified information.
 
-B. Thử giải quyết trong 20 giây rồi chỉ chuyển nếu thất bại.
+B. Try solving it first and transfer only if that fails.
 
-C. Hỏi lại lý do muốn gặp người trước khi tạo yêu cầu chuyển.
+C. Require the customer to explain why they want an employee.
 
-D. Đề nghị khách xác nhận thêm lần nữa vì hệ thống có thể tự xử lý.
+D. Ask for another confirmation because automation is available.
 
-**Câu 3 — Chọn hai.** Tra cứu trả hai khách cùng tên. Yêu cầu hoàn tiền còn thuộc ngoại lệ chính sách chưa mô tả. Hai bước nào giải quyết hai loại bất định mà không đoán?
+**Question 3 — Choose two.** A lookup returns two customers with the same name. The refund request also involves an exception not covered by policy. Which TWO actions address these uncertainties without guessing?
 
-A. Chọn hồ sơ có giao dịch gần nhất rồi nhờ người duyệt ngoại lệ.
+A. Select the customer with the most recent transaction and escalate the exception.
 
-B. Hỏi định danh bổ sung được phép để phân biệt đúng khách.
+B. Request an allowed additional identifier to distinguish the customers.
 
-C. Áp dụng trường hợp tương tự nhất trong chính sách để tránh chờ.
+C. Apply the closest existing policy provision to avoid waiting.
 
-D. Chuyển ngoại lệ cho người có thẩm quyền, kèm thông tin và điểm chưa rõ.
+D. Refer the exception to an authorized person with the relevant facts and unresolved issues.
 
-**Câu 4 — Chọn một.** Hồ sơ chuyển cấp chứa toàn bộ transcript nhưng nhân viên vẫn hỏi lại mã đơn, số tiền và điều đã thử. Cải thiện nào hữu ích nhất?
+**Question 4 — Choose one.** A handoff includes the full conversation, but the employee still asks for the order ID, amount, and previous attempts. Which improvement is most useful?
 
-A. Tăng giới hạn độ dài transcript để không cắt mất thông tin.
+A. Increase the transcript length limit.
 
-B. Thêm đánh giá cảm xúc khách hàng ở đầu transcript.
+B. Add a customer sentiment assessment at the top.
 
-C. Để mô hình viết lại toàn bộ hội thoại thành văn xuôi trôi chảy.
+C. Rewrite the entire conversation as polished prose.
 
-D. Bàn giao case state: định danh, facts, bước đã thử, quyết định còn mở.
+D. Provide structured case state: identifiers, verified facts, attempted steps, and pending decisions.
 
-**Câu 5 — Chọn hai.** Khách đã xác minh cho đơn A, sau đó đổi sang đơn B và tăng số tiền hoàn. Hai điều kiện nào gate cần đánh giá lại trước khi thực thi?
+**Question 5 — Choose two.** A customer was verified for order A, then switches to order B and increases the refund amount. Which TWO conditions must be checked again before execution?
 
-A. Sự gắn kết giữa người được xác minh, đối tượng giao dịch và quyền thực hiện.
+A. The relationship between the verified person, the transaction, and the authority to act.
 
-B. Giới hạn chính sách với số tiền và trạng thái giao dịch hiện tại.
+B. Policy limits for the new amount and current transaction status.
 
-C. Độ lịch sự của câu trả lời chấp thuận mà mô hình đã soạn.
+C. The politeness of the model's approval message.
 
-D. Việc mô hình từng gọi thành công công cụ hoàn tiền trong cùng phiên.
+D. Whether a refund tool call succeeded earlier in the session.
 
 ## Đáp án và giải thích
 

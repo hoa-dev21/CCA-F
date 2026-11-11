@@ -15,55 +15,55 @@ Bài còn nhắc đến các cách truyền thông điệp giữa client và ser
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Host kết nối MCP server thành công nhưng tools gửi Claude vẫn là danh sách rỗng. Bước nào đang thiếu trong cầu nối?
+**Question 1 — Choose one.** The host connects to an MCP server, but sends Claude an empty tools list. What bridge step is missing?
 
-A. Gọi thử mọi tool để model tự khám phá.
+A. Invoke all tools so the model discovers them.
 
-B. Chèn thông báo “MCP đã kết nối” vào system thay danh sách tools.
+B. Replace tool definitions with “MCP connected” in the system prompt.
 
-C. Yêu cầu server sinh câu trả lời cuối để bỏ bước công bố khả năng.
+C. Have the server generate the final answer.
 
-D. Lấy tools từ server và công bố định nghĩa cho model.
+D. Discover server tools and expose their definitions to the model.
 
-**Câu 2 — Chọn hai.** Claude đã trả tool_use cho một công cụ MCP. Hai bước nào host cần phối hợp tiếp?
+**Question 2 — Choose two.** Claude requests an MCP tool. Which TWO steps must the host coordinate next?
 
-A. Chuyển tên và đối số sang client để gọi server.
+A. Pass its name and arguments to the client for server invocation.
 
-B. Chỉ lưu kết quả server trong log vận hành rồi kết thúc.
+B. Store the result only in operational logs and stop.
 
-C. Đổi tên công cụ dựa trên vị trí của nó trong danh sách khám phá.
+C. Rename the tool according to discovery-list position.
 
-D. Gửi kết quả server vào lượt hội thoại tiếp theo cho Claude.
+D. Return the server result in Claude's next conversation turn.
 
-**Câu 3 — Chọn một.** Server trả kết quả đọc tài liệu đúng trong log client nhưng model nói chưa có tài liệu. Kiểm tra đầu tiên nên nhắm đâu?
+**Question 3 — Choose one.** Client logs show correct document data, but the model says no document is available. What should be checked first?
 
-A. Độ dài tên tài liệu trong giao diện autocomplete.
+A. The filename length in autocomplete.
 
-B. Cài thêm server khác để model có nhiều lựa chọn.
+B. Install another server.
 
-C. Cầu nối từ kết quả client sang request model kế tiếp.
+C. The bridge from client results to the next model request.
 
-D. Mô tả công cụ trên server, vì mọi lỗi sau gọi đều do description.
+D. The server description, because all post-call failures originate there.
 
-**Câu 4 — Chọn hai.** Một client wrapper được đánh giá để dùng cho nhiều MCP server. Hai hành vi nào là cốt lõi của luồng trong bài?
+**Question 4 — Choose two.** Which TWO client-wrapper behaviors are central to the lesson's MCP flow?
 
-A. Gọi công cụ theo tên và đối số đã chọn.
+A. Invoke a selected tool by name and arguments.
 
-B. Suy diễn lại kết quả dịch vụ bằng model trước khi host nhận dữ liệu.
+B. Use a model to reinterpret results before returning them to the host.
 
-C. Tự trộn lịch sử mọi host thành một hội thoại chung.
+C. Merge every host's conversation history.
 
-D. Liệt kê công cụ để host biết định nghĩa khả dụng.
+D. List tools so the host can discover available definitions.
 
-**Câu 5 — Chọn một.** Server đổi schema một tham số từ document sang doc_id, host vẫn gửi schema cũ cho Claude. Model tiếp tục tạo đối số cũ. Sửa bền vững nhất là gì?
+**Question 5 — Choose one.** A server changes a parameter from `document` to `doc_id`, but the host exposes the old schema. What is the durable fix?
 
-A. Chỉ sửa câu lỗi hiển thị cho người dùng cho dễ hiểu.
+A. Improve only the user-facing error wording.
 
-B. Cập nhật định nghĩa tool mà host công bố cho model.
+B. Update the tool definition advertised to the model.
 
-C. Giữ schema cũ nhưng coi mọi lỗi tham số là “không tìm thấy tài liệu”.
+C. Treat argument errors as document-not-found results.
 
-D. Để Claude đoán tên mới sau mỗi lỗi.
+D. Let Claude guess the new name after each failure.
 
 ## Đáp án và giải thích
 

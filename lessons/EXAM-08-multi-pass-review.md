@@ -17,55 +17,55 @@ Tăng thời gian suy luận hoặc yêu cầu “tự phản biện kỹ hơn�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Reviewer đọc PR 20 file trong một lượt; thường soi kỹ file đầu nhưng bỏ lỗi ở file cuối. Thiết kế nào tăng độ bao phủ mà vẫn kiểm tra tương tác liên file?
+**Question 1 — Choose one.** A reviewer examines a 20-file PR in one pass and often misses errors in later files. Which design improves coverage while checking cross-file interactions?
 
-A. Review cục bộ rồi thêm lượt tích hợp hợp đồng/luồng dữ liệu.
+A. Review local changes, then perform an integration pass over contracts and data flow.
 
-B. Đảo thứ tự file mỗi lần và lấy kết quả đầu tiên.
+B. Shuffle file order and keep the first result.
 
-C. Cho mỗi file một reviewer rồi nối nguyên các findings.
+C. Assign a reviewer per file and concatenate their findings unchanged.
 
-D. Tăng độ dài câu trả lời tối đa của một lượt review.
+D. Increase the maximum response length of the single review pass.
 
-**Câu 2 — Chọn hai.** Tác nhân vừa viết code tự review và lặp lại lý do thiết kế thay vì tìm lỗi. Hai thay đổi nào giúp giảm thiên lệch xác nhận?
+**Question 2 — Choose two.** An agent reviewing its own code repeats its design rationale instead of finding defects. Which TWO changes reduce confirmation bias?
 
-A. Bắt tác nhân viết dài hơn phần tự phản biện trong cùng context.
+A. Require a longer self-critique in the same context.
 
-B. Dùng phiên review độc lập nhận yêu cầu và diff hiện tại.
+B. Use an independent review session with requirements and the current diff.
 
-C. Đưa tiêu chí lỗi, ví dụ report/skip và bằng chứng cần có cho reviewer.
+C. Provide defect criteria, report-or-skip examples, and evidence requirements.
 
-D. Chỉ đưa giải thích của tác giả, giấu diff để reviewer không bị chi phối bởi cách cài đặt.
+D. Hide the diff and provide only the author's explanation.
 
-**Câu 3 — Chọn một.** Review từng file đều đạt, nhưng caller vẫn gửi mili giây cho hàm vừa đổi sang giây. Lượt bổ sung nào có giá trị nhất?
+**Question 3 — Choose one.** File-level reviews pass, but a caller still sends milliseconds to a function changed to accept seconds. Which additional review is most valuable?
 
-A. Chạy lại review từng file với mô hình lớn hơn.
+A. Repeat file-level reviews with a larger model.
 
-B. Yêu cầu mỗi reviewer xác nhận chính mình đã hiểu đơn vị.
+B. Ask each reviewer to confirm it understood the units.
 
-C. Chạy format toàn dự án để đồng nhất cách đặt tên.
+C. Format the whole project consistently.
 
-D. Review caller, hợp đồng và luồng dữ liệu liên mô-đun.
+D. Review callers, contracts, and cross-module data flow.
 
-**Câu 4 — Chọn một.** Hai reviewer báo cùng một lỗi ở hai vị trí; một reviewer khác báo lỗi độc lập có cùng tiêu đề. Cách tổng hợp nào tránh cả trùng lặp lẫn mất lỗi?
+**Question 4 — Choose one.** Two reviewers report the same defect at different locations, while another reports an unrelated defect with the same title. How should findings be consolidated?
 
-A. Khử trùng theo tiêu đề finding.
+A. Deduplicate by title.
 
-B. Giữ nguyên mọi finding để không bỏ sót.
+B. Keep every finding unchanged.
 
-C. Đối chiếu nguyên nhân, đường thực thi và vị trí trước khi gộp.
+C. Compare causes, execution paths, and locations before merging findings.
 
-D. Chỉ giữ finding có severity cao nhất trong mỗi file.
+D. Keep only the highest-severity finding per file.
 
-**Câu 5 — Chọn hai.** PR được cập nhật sau lượt review. Hai loại ngữ cảnh nào cần cho lượt review lại?
+**Question 5 — Choose two.** A PR changes after review. Which TWO kinds of context are needed for another review?
 
-A. Diff/mã hiện tại tại revision mới.
+A. The current diff and code at the new revision.
 
-B. Kết luận “đã sửa hết” của tác giả thay cho kiểm tra lại.
+B. The author's statement that everything is fixed instead of verification.
 
-C. Findings cũ với vị trí/nguyên nhân để phân biệt đã sửa, còn mở và phát sinh mới.
+C. Previous findings with locations and causes to distinguish fixed, open, and new issues.
 
-D. Chỉ diff cũ để tránh thay đổi phạm vi review.
+D. Only the old diff to keep the review scope unchanged.
 
 ## Đáp án và giải thích
 

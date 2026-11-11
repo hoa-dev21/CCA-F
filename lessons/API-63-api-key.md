@@ -15,55 +15,55 @@ Giao diện quản lý và các lựa chọn xác thực có thể thay đổi. 
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Ứng dụng thử nghiệm dùng khóa tên “course” trong workspace sản xuất. Nhóm cho rằng tên này đã giới hạn khóa cho bài học. Trước khi chạy workload mới, cần kiểm tra gì trực tiếp nhất?
+**Question 1 — Choose one.** A test application uses a production-workspace key named “course.” What must be checked before a new workload?
 
-A. Giới hạn độ dài prompt để khóa chỉ dùng được cho nội dung khóa học.
+A. Prompt length as a course-only restriction.
 
-B. Workspace, quyền thực tế và nơi cấp/lưu khóa đang dùng.
+B. The effective workspace, permissions, and key provisioning and storage.
 
-C. Thử một request nhỏ thành công rồi coi mọi quyền đã phù hợp.
+C. One small successful request as proof of suitable permissions.
 
-D. Đổi tên thành “read-only-course” rồi giữ nguyên mọi cấu hình.
+D. Rename the key “read-only-course” without changing settings.
 
-**Câu 2 — Chọn hai.** Bạn cần nhờ đồng đội chẩn đoán lỗi xác thực nhưng không cần họ thực hiện yêu cầu thay bạn. Hai thông tin nào phù hợp để chia sẻ?
+**Question 2 — Choose two.** A teammate needs to diagnose authentication without using your credentials. Which TWO items can be shared appropriately?
 
-A. Khóa thật trong ảnh chụp console vì ảnh không phải mã nguồn.
+A. A screenshot containing the actual key.
 
-B. File .env đầy đủ qua issue riêng để thông tin dễ tái hiện.
+B. The full `.env` in a private issue.
 
-C. Cách ứng dụng nạp credential và workspace dự kiến, không kèm giá trị khóa.
+C. Credential-loading logic and intended workspace without secret values.
 
-D. Mã lỗi đã che dữ liệu nhạy cảm cùng cấu hình môi trường liên quan.
+D. Sanitized error codes and relevant environment configuration.
 
-**Câu 3 — Chọn một.** Một khóa được lưu trong biến môi trường, nhưng script debug in toàn bộ môi trường vào artifact CI. Nhận định nào chính xác nhất?
+**Question 3 — Choose one.** A debug script prints environment variables into a CI artifact containing an API key. What is correct?
 
-A. Khóa đã ở biến môi trường nên artifact chỉ chứa tên biến.
+A. Environment-variable storage means only names are logged.
 
-B. Artifact CI là nội bộ nên không cần kiểm tra những người có thể đọc.
+B. Internal artifacts need no access review.
 
-C. Log vẫn có thể lộ khóa; phải giới hạn hoặc che giá trị.
+C. Logs can expose secrets; restrict or redact values.
 
-D. Đổi tên khóa trong console sẽ làm giá trị đã ghi ra log không còn hữu ích.
+D. Renaming the key invalidates already logged values.
 
-**Câu 4 — Chọn một.** Console hiện tại khác video, có nhiều workspace và các lựa chọn quyền mới. Bạn muốn tạo credential cho môi trường học riêng. Bước nào có cơ sở nhất?
+**Question 4 — Choose one.** The console differs from an old video and offers new workspaces and permissions. How should a learning credential be created?
 
-A. Dùng khóa sản xuất đang hoạt động để loại vấn đề giao diện mới.
+A. Use the working production key.
 
-B. Tạo khóa ở workspace đang chọn, chỉ xem lại phạm vi nếu gọi thử bị lỗi.
+B. Create it in the current workspace and check scope only after failure.
 
-C. Xác minh workspace, quyền và quy trình console hiện hành.
+C. Verify the workspace, permissions, and current console workflow.
 
-D. Chọn các quyền rộng nhất để tránh lỗi trong quá trình làm bài.
+D. Grant maximum permissions to avoid exercise errors.
 
-**Câu 5 — Chọn hai.** Hai ứng dụng có tên khóa gần giống nhau; một ứng dụng đang gửi request bằng credential của môi trường khác. Hai bước nào giúp xác định đúng nguyên nhân mà không đoán theo nhãn?
+**Question 5 — Choose two.** An application loads credentials for the wrong environment, and keys have similar names. Which TWO checks identify the cause?
 
-A. So sánh chất lượng câu trả lời để suy ra khóa nào đang được dùng.
+A. Infer the key from answer quality.
 
-B. Đổi tên cả hai khóa theo tên ứng dụng rồi coi lỗi đã sửa.
+B. Rename keys and assume routing is fixed.
 
-C. Đối chiếu workspace/quyền của credential hiệu lực với môi trường dự kiến.
+C. Compare the effective credential's workspace and permissions with the intended environment.
 
-D. Theo dõi nguồn cấu hình thực sự được runtime nạp và thứ tự ưu tiên.
+D. Trace actual runtime configuration sources and precedence.
 
 ## Đáp án và giải thích
 

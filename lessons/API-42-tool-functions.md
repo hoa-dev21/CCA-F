@@ -15,55 +15,55 @@ Không phải lỗi nào cũng xử lý bằng cách gọi lại. Thiếu quyề
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Schema công cụ hợp lệ, nhưng gọi tên calculate_time luôn thất bại vì dispatcher không có ánh xạ. Sửa nào đủ đúng tầng lỗi?
+**Question 1 — Choose one.** `calculate_time` has a valid schema but no dispatcher mapping. What fixes the failing layer?
 
-A. Đổi kiểu của tham số thành chuỗi để giảm lỗi parse.
+A. Change arguments to strings.
 
-B. Bổ sung dispatch từ tên tool sang hàm và kiểm tra kết quả.
+B. Register dispatch to the implementation and verify its result.
 
-C. Gửi kết quả dự đoán từ mô hình thay cho tool_result.
+C. Return model predictions as tool results.
 
-D. Thêm ví dụ tính thời gian vào mô tả công cụ.
+D. Add calculation examples to the description.
 
-**Câu 2 — Chọn một.** Đối số start_time rỗng. Bộ thực thi trả “Operation failed” và mô hình lặp lại cùng đầu vào. Thay đổi nào có ích nhất?
+**Question 2 — Choose one.** An empty `start_time` yields only “Operation failed,” and the model repeats it. What improves recovery?
 
-A. Trả lỗi chỉ rõ start_time bắt buộc và dạng giá trị hợp lệ.
+A. Explain that `start_time` is required and specify its accepted format.
 
-B. Tăng số lần retry để mô hình tự tìm giá trị phù hợp.
+B. Increase retries.
 
-C. Đổi thông báo thành “hãy suy nghĩ kỹ hơn rồi thử lại”.
+C. Say “think harder and retry.”
 
-D. Cho phép start_time rỗng và dùng giờ máy chủ trong mọi trường hợp.
+D. Always substitute server time.
 
-**Câu 3 — Chọn hai.** Hai lời gọi thất bại: một thiếu tham số, một bị từ chối quyền ghi. Hai phản ứng nào phù hợp?
+**Question 3 — Choose two.** One call lacks a parameter; another lacks write permission. Which TWO responses are appropriate?
 
-A. Đổi mô tả công cụ để mô hình gọi lại quyền ghi nhiều lần.
+A. Change descriptions to encourage repeated write attempts.
 
-B. Sửa tham số theo lỗi validation khi có thông tin cần thiết.
+B. Correct invalid arguments when the needed information is available.
 
-C. Dùng luồng được phép hoặc chuyển xử lý khi thiếu quyền.
+C. Use an authorized path or escalate permission failures.
 
-D. Coi mọi lỗi là tạm thời và dùng cùng chính sách retry.
+D. Treat all failures as transient.
 
-**Câu 4 — Chọn một.** Sau một tool_result báo định dạng sai, mô hình sửa đối số thành công. Kết luận nào được bằng chứng này hỗ trợ?
+**Question 4 — Choose one.** After a format-error result, the model repairs its arguments successfully. What does this demonstrate?
 
-A. Hàm công cụ đã huấn luyện lại mô hình sau lần lỗi.
+A. The tool retrained the model.
 
-B. Phản hồi lỗi trong context giúp sửa lời gọi hiện tại.
+B. Error feedback in context helped repair the current call.
 
-C. Mô hình sẽ nhớ quy tắc đó trong mọi phiên mới.
+C. Every future session will remember the rule.
 
-D. Schema đã tự động cập nhật theo lỗi của backend.
+D. The backend automatically updated the schema.
 
-**Câu 5 — Chọn hai.** Nhóm viết hàm cộng ngày rồi muốn cung cấp cho Claude. Hai điều kiện tích hợp nào còn cần bên cạnh mã hàm?
+**Question 5 — Choose two.** Besides a date-addition function, which TWO integration elements are needed?
 
-A. Bộ điều phối chạy hàm, kiểm tra đầu vào và trả kết quả/lỗi đúng vòng gọi.
+A. An orchestrator that validates, executes, and returns correctly linked results or errors.
 
-B. Mô tả công cụ và schema đối số đủ rõ cho mô hình tạo yêu cầu.
+B. A clear tool description and argument schema.
 
-C. Đưa toàn bộ mã hàm vào câu trả lời người dùng.
+C. The full implementation displayed to the user.
 
-D. Đổi tên hàm thành một động từ dễ hiểu là đủ để API tự tìm hàm.
+D. Only an understandable function name for automatic API discovery.
 
 ## Đáp án và giải thích
 

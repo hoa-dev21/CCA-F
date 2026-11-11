@@ -34,7 +34,7 @@ function parseLesson(file) {
   const title = raw.match(/^# (.+)$/m)?.[1] || file;
   const answerAt = raw.search(/^## Đáp án/m);
   const body = raw.slice(0, answerAt);
-  const heads = [...body.matchAll(/^\*\*(?:Câu )?(\d+)[. —]*Chọn (một|hai)[^*]*\*\*\s*(.*)$/gm)];
+  const heads = [...body.matchAll(/^\*\*(?:(?:Câu|Question) )?(\d+)[. —]*(?:Chọn|Choose) (một|hai|one|two)[^*]*\*\*\s*(.*)$/gm)];
   const answerBody = raw.slice(answerAt);
   const answerHeads = [...answerBody.matchAll(/^\s*(\d+)\.\s+\*\*([ABCD](?:\s*,\s*[ABCD])*)\.?\*\*/gm)];
   const questions = heads.map((h, i) => {
@@ -44,7 +44,7 @@ function parseLesson(file) {
     const next = answerHeads[answerHeads.indexOf(a) + 1];
     let explanation = answerBody.slice(a.index + a[0].length, next?.index ?? answerBody.length);
     explanation = explanation.split(/^## /m)[0].trim();
-    return { id: `${id}:${h[1]}`, number: +h[1], multiple: h[2] === 'hai',
+    return { id: `${id}:${h[1]}`, number: +h[1], multiple: ['hai','two'].includes(h[2]), language: ['one','two'].includes(h[2]) ? 'en' : 'vi',
       prompt: h[3] + block.slice(0, options[0]?.index ?? 0),
       promptHtml: render(h[3] + block.slice(0, options[0]?.index ?? 0)),
       options: options.map(o => ({ key: o[1], text: o[2], html: inline(o[2]) })),

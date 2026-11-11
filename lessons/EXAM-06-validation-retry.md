@@ -17,55 +17,55 @@ Trong hệ thống rà soát mã, trường `detected_pattern` có thể ghi lo�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Kết quả trích xuất đặt ngày ký vào trường ngày hiệu lực. Cả hai đều có trên tài liệu. Retry nào nhắm đúng lỗi với ít mơ hồ nhất?
+**Question 1 — Choose one.** Extraction puts the signing date into the effective-date field, although both dates appear in the document. Which retry request most directly addresses the error?
 
-A. “Hãy cẩn thận hơn” cùng schema đã dùng.
+A. Send the same schema with “be more careful.”
 
-B. Chỉ gửi JSON lỗi và yêu cầu đổi ngày.
+B. Send only the incorrect JSON and ask for a different date.
 
-C. Gửi nguồn, JSON lỗi và quy tắc phân biệt ngày bị nhầm.
+C. Send the source, incorrect JSON, and the rule distinguishing the two dates.
 
-D. Tăng số lần retry với nguyên prompt để lấy đa số kết quả.
+D. Repeat the original prompt more often and use the majority result.
 
-**Câu 2 — Chọn một.** Ngày hiệu lực được dẫn chiếu sang phụ lục chưa cung cấp. Ba lần retry trả ba ngày khác nhau. Bước tiếp theo phù hợp nhất?
+**Question 2 — Choose one.** The effective date is defined in a missing appendix. Three retries produce three different dates. What is the best next step?
 
-A. Lấy ngày xuất hiện nhiều lần nhất trong ba đáp án.
+A. Choose the most frequently returned date.
 
-B. Lấy phụ lục hoặc trả trạng thái thiếu dữ liệu/review theo hợp đồng.
+B. Obtain the appendix or return the contract-defined missing-data or review state.
 
-C. Chọn ngày ký vì là mốc có trong tài liệu gốc.
+C. Use the signing date because it appears in the available document.
 
-D. Giữ retry tới khi confidence vượt ngưỡng chấp nhận.
+D. Keep retrying until confidence exceeds the threshold.
 
-**Câu 3 — Chọn hai.** Tổng hóa đơn ghi 1.000 nhưng cộng các dòng được 950; chưa biết do thiếu dòng hay lỗi nguồn. Hai dữ liệu nào cần giữ cho xử lý tiếp theo?
+**Question 3 — Choose two.** An invoice states a total of 1,000, but its line items sum to 950. It is unclear whether a line is missing or the source is wrong. Which TWO items should be preserved?
 
-A. Giá trị khai báo và giá trị tính lại, phân biệt trường.
+A. The stated and calculated totals in distinct fields.
 
-B. Giá trị 950 thay cho 1.000 vì phép cộng là xác định.
+B. Only 950 because arithmetic is deterministic.
 
-C. Trạng thái xung đột cùng nguồn/vị trí liên quan.
+C. The conflict status and relevant source locations.
 
-D. Giá trị 975 làm trung gian đến khi có bản mới.
+D. 975 as a temporary compromise.
 
-**Câu 4 — Chọn một.** Validator báo cùng lỗi nghiệp vụ sau mỗi lần retry; lần nào mô hình cũng trả JSON hợp lệ nhưng giữ nguyên giá trị. Thiết kế nào tránh vòng lặp vô hạn và hỗ trợ điều tra?
+**Question 4 — Choose one.** Every retry produces valid JSON with the same business-rule violation. Which design prevents infinite retries and supports investigation?
 
-A. Bỏ validator sau lần thứ ba vì lỗi có thể do quy tắc quá nghiêm.
+A. Disable the validator after the third failure.
 
-B. Đặt timeout rồi báo thành công với JSON cuối.
+B. Set a timeout and report success with the final JSON.
 
-C. Chuyển tự động mọi giá trị lỗi sang null dù schema không định nghĩa.
+C. Replace every invalid value with `null`, even when the schema does not allow it.
 
-D. Giới hạn retry; giữ chẩn đoán, lấy nguồn hoặc chuyển review.
+D. Limit retries, retain diagnostics, and obtain more evidence or escalate for review.
 
-**Câu 5 — Chọn hai.** Validator phát hiện một tài liệu vừa thiếu số đơn vừa có tổng nguồn mâu thuẫn. Hai yêu cầu nào giúp retry có ích mà không khuyến khích sửa bằng chứng?
+**Question 5 — Choose two.** A validator finds a missing order number and conflicting invoice totals. Which TWO retry instructions help without encouraging changes to the evidence?
 
-A. Yêu cầu tạo số đơn theo mẫu phổ biến của nhà cung cấp.
+A. Generate an order number using the supplier's usual pattern.
 
-B. Nêu rõ trường thiếu, nguồn hiện có và cho phép trạng thái thiếu theo hợp đồng.
+B. Identify the missing field, include available sources, and allow the contract-defined missing state.
 
-C. Yêu cầu điều chỉnh các dòng sao cho khớp tổng được ghi.
+C. Adjust line items until they match the stated total.
 
-D. Yêu cầu giữ cả tổng nguồn và tổng tính, đánh dấu xung đột chưa giải quyết.
+D. Preserve the stated and calculated totals and flag the unresolved conflict.
 
 ## Đáp án và giải thích
 

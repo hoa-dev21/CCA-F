@@ -15,55 +15,55 @@ Gửi yêu cầu thành công cũng chưa chứng minh câu trả lời đúng n
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** UI không hiện trả lời; log backend cho thấy provider đã trả HTTP thành công nhưng chưa biết adapter đọc gì. Bước điều tra trực tiếp nhất?
+**Question 1 — Choose one.** The provider returns HTTP success, but the UI is blank and adapter behavior is unknown. What should be inspected first?
 
-A. Viết lại system prompt để mô hình trả lời ngắn hơn.
+A. Shorten the system prompt.
 
-B. Kiểm tra payload qua adapter backend đến UI.
+B. The payload through the backend adapter to the UI.
 
-C. Đổi model mặc định để tránh lỗi hiển thị.
+C. Replace the model.
 
-D. Tăng retry ở trình duyệt bất kể backend đã có kết quả.
+D. Retry in the browser regardless of existing results.
 
-**Câu 2 — Chọn hai.** Ứng dụng chuyển từ API trực tiếp sang Bedrock. Hai trách nhiệm nào vẫn thuộc ứng dụng?
+**Question 2 — Choose two.** Which TWO responsibilities remain with the application when moving from direct API access to Bedrock?
 
-A. Quản lý lịch sử hội thoại và gửi ngữ cảnh cần thiết.
+A. Maintain conversation history and send necessary context.
 
-B. Mặc định provider giữ đầy đủ mọi hội thoại theo ID người dùng.
+B. Assume the provider stores all conversations by user ID.
 
-C. Xử lý đúng phản hồi và chuyển dữ liệu phù hợp về giao diện.
+C. Handle responses correctly and transmit suitable data to the UI.
 
-D. Để trình duyệt suy từ tên model ra cấu trúc phản hồi.
+D. Let browsers infer response schemas from model names.
 
-**Câu 3 — Chọn một.** Backend ghi “request succeeded”; người dùng nói câu trả lời thiếu một điều kiện quan trọng. Cách hiểu đúng?
+**Question 3 — Choose one.** The backend logs “request succeeded,” but the answer omits a required condition. What is correct?
 
-A. Truyền tải thành công chưa chứng minh chất lượng tác vụ.
+A. Transport success does not establish task quality.
 
-B. Provider trả thành công nên yêu cầu người dùng chắc chắn đã được đáp ứng.
+B. Provider success proves the user requirement was met.
 
-C. Đây luôn là lỗi trình duyệt vì backend đã hoàn tất.
+C. This must be a browser defect.
 
-D. Cần tăng quyền tài khoản cloud để mô hình hiểu thêm điều kiện.
+D. More cloud permissions will improve comprehension.
 
-**Câu 4 — Chọn một.** Một sơ đồ có browser → backend → Bedrock → backend → browser. Nhóm dùng sơ đồ để cam kết dữ liệu không bao giờ được lưu ở provider. Kết luận nào đúng?
+**Question 4 — Choose one.** A browser-backend-Bedrock diagram is used to promise the provider never stores data. What is actually needed?
 
-A. Dùng sơ đồ đã được nhóm backend duyệt làm bằng chứng cho toàn bộ vòng đời dữ liệu.
+A. Backend approval of the diagram as full lifecycle evidence.
 
-B. Coi backend trung gian là nơi duy nhất lưu dữ liệu vì browser chỉ gọi backend.
+B. Assume only the backend stores data.
 
-C. Dùng bằng chứng mã hóa đường truyền để xác nhận dữ liệu không được lưu ở provider.
+C. Transport encryption as proof of no retention.
 
-D. Đối chiếu chính sách và cấu hình lưu trữ thực tế.
+D. Verification of actual retention policies and configuration.
 
-**Câu 5 — Chọn hai.** Để phân biệt lỗi browser, backend và provider, hai thông tin quan sát nào hữu ích nhất?
+**Question 5 — Choose two.** Which TWO observations help distinguish browser, backend, and provider failures?
 
-A. Trạng thái và định danh liên kết yêu cầu qua từng chặng.
+A. Statuses and correlation IDs across boundaries.
 
-B. Chỉ thời lượng tổng cùng câu “thất bại”.
+B. Only total duration and “failed.”
 
-C. Dạng dữ liệu vào/ra được kiểm tra tại ranh giới adapter mà không lộ bí mật.
+C. Validated adapter inputs and outputs without exposing secrets.
 
-D. Chỉ confidence do mô hình tự chấm.
+D. Only model confidence.
 
 ## Đáp án và giải thích
 

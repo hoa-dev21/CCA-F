@@ -17,55 +17,55 @@ Resources công bố nội dung để ứng dụng đọc; tools cung cấp thao
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Autocomplete tài liệu phải hiện khi người dùng gõ @, trước khi gọi mô hình. Thiết kế nào đáp ứng đúng quyền chủ động của UI?
+**Question 1 — Choose one.** Document autocomplete must appear on `@`, before any model call. Which design gives the UI control?
 
-A. Công bố resource danh mục để ứng dụng đọc trực tiếp.
+A. Expose a catalog resource the application reads directly.
 
-B. Yêu cầu Claude gọi tool liệt kê sau mỗi ký tự người dùng nhập.
+B. Ask Claude to list documents after every keystroke.
 
-C. Chỉ cung cấp prompt mô tả tên tài liệu thường gặp.
+C. Provide only a prompt with common document names.
 
-D. Đưa tất cả tài liệu vào system prompt ngay khi mở ứng dụng.
+D. Load all documents into the system prompt at startup.
 
-**Câu 2 — Chọn hai.** Server có docs://documents cho danh mục và docs://documents/{doc_id} cho nội dung. Hai nhận định nào đúng?
+**Question 2 — Choose two.** A server exposes `docs://documents` and `docs://documents/{doc_id}`. Which TWO statements are correct?
 
-A. Địa chỉ danh mục cố định nên ứng dụng có thể coi nội dung không đổi.
+A. A fixed catalog URI means its contents never change.
 
-B. Template cho phép đọc đối tượng cụ thể bằng tham số định danh.
+B. The template identifies a specific document through a parameter.
 
-C. Nội dung tại URI cố định vẫn có thể đổi khi kho tài liệu đổi.
+C. Contents at the fixed URI can change as the store changes.
 
-D. Template tự bảo đảm mọi doc_id người dùng gửi đều được phép đọc.
+D. The template automatically authorizes every document ID.
 
-**Câu 3 — Chọn một.** Resource danh mục trả JSON, resource chi tiết trả văn bản. Client đang nối mọi phản hồi vào một chuỗi và UI không đọc được danh sách. Sửa nào phù hợp nhất?
+**Question 3 — Choose one.** The catalog returns JSON and document details return text. Flattening both into a string breaks the UI. What is the fix?
 
-A. Đổi mọi resource sang MIME text/plain.
+A. Change all MIME types to `text/plain`.
 
-B. Yêu cầu người dùng chọn tài liệu bằng vị trí ký tự trong chuỗi.
+B. Select documents by character offsets in the string.
 
-C. Bỏ resource danh mục và dùng tên tài liệu trong prompt mẫu.
+C. Remove the catalog and use prompt examples.
 
-D. Parse JSON danh mục; giữ text theo MIME/hợp đồng.
+D. Parse catalog JSON and preserve text according to each resource contract and MIME type.
 
-**Câu 4 — Chọn hai.** Một server đã có tool đọc tài liệu; nhóm muốn thêm resource đọc tài liệu đã chọn từ UI. Hai kết luận nào phù hợp?
+**Question 4 — Choose two.** A server has a read tool and adds a resource for UI-selected documents. Which TWO conclusions are appropriate?
 
-A. Hai cách có thể cùng tồn tại vì quyền chủ động sử dụng khác nhau.
+A. Both can coexist because different parties initiate their use.
 
-B. Tool đọc dữ liệu phải bị xóa vì resources độc quyền mọi thao tác đọc.
+B. Delete the tool because resources exclusively own reads.
 
-C. Chọn primitive theo luồng ứng dụng/mô hình và hợp đồng dữ liệu.
+C. Choose the primitive according to application or model control and the data contract.
 
-D. Resource chỉ hợp lệ nếu mô hình chủ động yêu cầu mỗi lần đọc.
+D. A resource is valid only when the model requests every read.
 
-**Câu 5 — Chọn một.** UI đã cache danh mục từ URI cố định. Một tài liệu mới xuất hiện trên server nhưng không hiện ở UI. Nguyên nhân nào nên kiểm tra trước?
+**Question 5 — Choose one.** A cached catalog from a fixed URI omits a newly added document. What should be checked first?
 
-A. URI cố định không hỗ trợ bổ sung mục nên phải đổi toàn bộ scheme.
+A. Fixed URIs cannot support additions; replace the URI scheme.
 
-B. Dữ liệu resource hiện tại và chính sách cache của app.
+B. Current resource data and the application's cache policy.
 
-C. Độ dài tối đa câu trả lời của Claude khi gợi ý tài liệu.
+C. Claude's maximum answer length.
 
-D. Đổi danh mục sang URI template có tham số.
+D. Replace the catalog with a parameterized URI template.
 
 ## Đáp án và giải thích
 

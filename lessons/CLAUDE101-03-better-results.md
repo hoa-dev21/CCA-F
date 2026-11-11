@@ -20,55 +20,55 @@ Nếu số liệu đã đúng nhưng kết luận thiếu ý, hãy chỉ ra ý c
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Email tư vấn đúng ngữ pháp nhưng đề xuất sản phẩm vượt ngân sách khách hàng. Prompt chỉ ghi “viết email chuyên nghiệp”. Thay đổi nào ưu tiên?
+**Question 1 — Choose one.** A professional email recommends products above the customer's budget. What should the prompt add first?
 
-A. Yêu cầu mô hình thể hiện sự tự tin của chuyên gia bán hàng.
+A. More salesperson confidence.
 
-B. Bổ sung nhu cầu, ngân sách và tiêu chí của khách hàng.
+B. Customer needs, budget, and selection criteria.
 
-C. Đưa thêm ví dụ lời chào và chữ ký theo thương hiệu.
+C. Branded greetings and signatures.
 
-D. Giảm số từ để email súc tích hơn.
+D. A shorter word limit.
 
-**Câu 2 — Chọn hai.** Một quy trình tạo báo cáo sẽ dùng hàng tuần. Hai bước nào tạo cơ sở cải tiến đáng tin hơn việc chọn bản văn hay nhất?
+**Question 2 — Choose two.** Which TWO practices support reliable improvement of weekly report generation?
 
-A. So sánh độ tự tin trong lời kết luận thay cho đối chiếu dữ liệu.
+A. Compare confident wording instead of data.
 
-B. Chỉ dùng mẫu đã sửa thành công để chứng minh độ ổn định.
+B. Use only previously fixed examples.
 
-C. Ghi lỗi quan sát được, sửa yêu cầu và kiểm tra lại theo cùng tiêu chí.
+C. Record observed errors, revise instructions, and retest with the same criteria.
 
-D. Đặt tiêu chí rõ và thử trên các ví dụ thật có đặc điểm khác nhau.
+D. Define clear criteria and test varied real examples.
 
-**Câu 3 — Chọn một.** JSON đầu ra thường có đủ thông tin nhưng sai tên trường, làm hệ thống nhận dữ liệu từ chối. Cách sửa prompt trực tiếp nhất?
+**Question 3 — Choose one.** JSON uses wrong field names and consumers reject it. Which prompt change is most direct?
 
-A. Bổ sung thêm dữ liệu nền về chủ đề cần phân tích.
+A. Add subject background.
 
-B. Yêu cầu phản hồi ngắn hơn để giảm số token.
+B. Request shorter responses.
 
-C. Yêu cầu suy nghĩ kỹ hơn nhưng không nêu hợp đồng đầu ra.
+C. Say “think carefully” without specifying the contract.
 
-D. Nêu cấu trúc trường và một ví dụ đầu ra hợp lệ.
+D. Specify field structure and a valid example.
 
-**Câu 4 — Chọn hai.** Báo cáo có số liệu đúng nhưng kết luận bỏ qua chi phí vận hành. Hai phản hồi nào hữu ích?
+**Question 4 — Choose two.** Correct figures lead to a conclusion ignoring operating costs. Which TWO feedback choices help?
 
-A. Cung cấp nguồn chi phí liên quan và yêu cầu ghi rõ chỗ còn thiếu dữ liệu.
+A. Provide cost sources and require explicit missing-data statements.
 
-B. Chỉ ra yếu tố bị thiếu và yêu cầu phân tích ảnh hưởng của nó tới kết luận.
+B. Identify the omitted factor and request analysis of its impact.
 
-C. Yêu cầu giữ nguyên kết luận và thêm lời khẳng định chắc chắn.
+C. Keep the conclusion and sound more certain.
 
-D. Yêu cầu thêm ba đoạn văn bất kỳ để kết luận sâu hơn.
+D. Add three arbitrary paragraphs.
 
-**Câu 5 — Chọn một.** Prompt mới đạt 5/5 ví dụ demo do người viết tự chọn. Nhóm định bỏ kiểm tra đầu ra. Kết luận hợp lý nhất?
+**Question 5 — Choose one.** A new prompt passes five author-selected demos. Can output checking stop?
 
-A. Tăng số lần chạy cùng một ví dụ dễ để thay thế đánh giá các dạng đầu vào khác.
+A. Repeat one easy example instead of testing other inputs.
 
-B. Có tín hiệu tốt; cần thử thêm trên mẫu đại diện và ca khó.
+B. This is promising, but representative and difficult cases remain necessary.
 
-C. Năm mẫu đúng đủ chứng minh prompt xử lý mọi đầu vào cùng chủ đề.
+C. Five successes prove every same-topic input works.
 
-D. Chỉ cần hỏi mô hình độ tin cậy rồi dùng điểm tự báo cáo để quyết định.
+D. Use model self-confidence as the only release criterion.
 
 ## Đáp án và giải thích
 

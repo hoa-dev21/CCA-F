@@ -15,55 +15,55 @@ Một khối `tool_use` mới thể hiện yêu cầu sửa, chưa chứng minh 
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** API trả tool_use yêu cầu sửa tệp, nhưng tệp local vẫn nguyên. Nhóm nghĩ dịch vụ đã tự sửa máy của mình. Thành phần nào còn thiếu?
+**Question 1 — Choose one.** An API requests a file edit, but the local file remains unchanged. What is missing?
 
-A. Cho UI hiển thị tool_use như bằng chứng diff.
+A. Display `tool_use` as proof of a diff.
 
-B. Host cần chạy yêu cầu sửa và trả kết quả thực thi.
+B. The host must execute the edit and return its actual result.
 
-C. Tăng max_tokens để tool_use chứa cả tệp đã chỉnh.
+C. Increase tokens so the request contains the edited file.
 
-D. Một prompt yêu cầu mô hình khẳng định đã sửa.
+D. Prompt the model to claim the edit succeeded.
 
-**Câu 2 — Chọn một.** Agent định thay một đoạn văn đã đọc từ đầu phiên, nhưng người dùng vừa sửa tệp. Quy trình nào giảm ghi đè sai?
+**Question 2 — Choose one.** An agent plans to replace text read earlier, but the user has since changed the file. What reduces accidental overwrites?
 
-A. Thay toàn bộ tệp bằng bản mô hình nhớ để tránh anchor lỗi.
+A. Replace the whole file from model memory.
 
-B. Đọc lại phần liên quan, sửa rồi đối chiếu diff.
+B. Reread relevant content, edit, and inspect the diff.
 
-C. Chỉ kiểm tra mã thoát của lệnh ghi.
+C. Check only the write command's exit code.
 
-D. Dùng bản cũ để giữ tính nhất quán với kế hoạch đã lập.
+D. Use the old version to preserve the original plan.
 
-**Câu 3 — Chọn hai.** Ứng dụng triển khai text editor client tool. Hai trách nhiệm nào thuộc host?
+**Question 3 — Choose two.** Which TWO responsibilities belong to a text-editor client-tool host?
 
-A. Giả định mọi phiên bản công cụ có cùng khả năng undo.
+A. Assume undo works identically in every tool version.
 
-B. Ủy thác quyền ghi cho mô hình vì schema do nhà cung cấp định nghĩa.
+B. Delegate write authorization to the model because the provider defined the schema.
 
-C. Giới hạn đường dẫn và quyền truy cập trước thực thi.
+C. Restrict paths and access before execution.
 
-D. Đọc kết quả và kiểm tra thay đổi sau thao tác.
+D. Inspect execution results and verify changes afterward.
 
-**Câu 4 — Chọn một.** Một tích hợp dựa vào undo của phiên bản mẫu, nhưng phiên bản đích không công bố thao tác đó. Cách thiết kế đúng?
+**Question 4 — Choose one.** The sample supports undo, but the target version does not advertise it. What is correct?
 
-A. Xác minh lệnh được hỗ trợ và thiết kế phục hồi phù hợp môi trường đích.
+A. Verify supported commands and design recovery for the target environment.
 
-B. Gửi tên lệnh undo cũ và coi lỗi là đã hoàn tác.
+B. Send the old undo command and interpret errors as rollback.
 
-C. Yêu cầu mô hình mô phỏng undo chỉ bằng lời xác nhận.
+C. Ask the model to simulate undo with confirmation text.
 
-D. Dùng prompt ghi nhớ tệp thay cho mọi cơ chế đọc/kiểm tra.
+D. Replace file reads with prompt memory.
 
-**Câu 5 — Chọn hai.** Công cụ báo sửa thành công nhưng người dùng thấy hành vi sai. Hai kiểm tra nào phân biệt thành công kỹ thuật với thành công nhiệm vụ?
+**Question 5 — Choose two.** The edit tool reports success, but behavior is wrong. Which TWO checks distinguish execution success from task success?
 
-A. Chỉ xem tool_use có tên lệnh được hỗ trợ không.
+A. Only the requested command name is supported.
 
-B. Diff có đúng tệp, đúng phạm vi và giữ phần không liên quan không.
+B. The diff affects the right file and scope while preserving unrelated content.
 
-C. Hành vi sau sửa có đáp ứng yêu cầu ban đầu không.
+C. Post-edit behavior meets the original requirements.
 
-D. Chỉ xem câu trả lời cuối có nêu đường dẫn tệp không.
+D. Only the final answer mentions the file path.
 
 ## Đáp án và giải thích
 

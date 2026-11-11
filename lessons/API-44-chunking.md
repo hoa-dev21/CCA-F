@@ -20,55 +20,55 @@ Không có kích thước hay phương pháp tốt nhất cho mọi kho. Hãy ki
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Một chính sách có quy tắc cuối mục và ngoại lệ đầu mục kế. Chunk theo độ dài làm hai phần tách nhau; câu hỏi về ngoại lệ thường sai. Thử nghiệm nào nhắm đúng nguyên nhân?
+**Question 1 — Choose one.** Fixed-size chunks separate a rule from its exception, causing failures. Which experiment addresses this?
 
-A. Tăng số ví dụ định dạng JSON cho mô hình trả lời.
+A. Add JSON-format examples.
 
-B. Giảm kích thước mọi chunk xuống nhỏ nhất để tăng độ chính xác.
+B. Minimize every chunk's size.
 
-C. Thử ranh giới/overlap mới trên ca cần quy tắc và ngoại lệ.
+C. Test new boundaries or overlap on questions needing both rule and exception.
 
-D. Giữ chunk hiện tại và loại ngoại lệ khỏi tiêu chí đánh giá.
+D. Remove exceptions from scoring criteria.
 
-**Câu 2 — Chọn một.** Kho Markdown có tiêu đề nhất quán nhưng mục dài ngắn rất khác nhau. Phương án khởi đầu hợp lý nhất?
+**Question 2 — Choose one.** Markdown headings are consistent, but sections vary greatly in length. What is a reasonable starting approach?
 
-A. Coi mỗi tiêu đề là một chunk độc lập không kèm nội dung.
+A. Index headings without their content.
 
-B. Dùng một độ dài cố định làm chuẩn và bỏ thông tin tiêu đề.
+B. Use fixed lengths and discard headings.
 
-C. Gộp cả kho thành một chunk vì cấu trúc đã rõ.
+C. Make the entire corpus one chunk.
 
-D. Chia theo mục, tách mục dài và đo độ đủ ngữ cảnh.
+D. Split by section, subdivide long sections, and measure context sufficiency.
 
-**Câu 3 — Chọn hai.** Tăng overlap giúp một số câu đúng hơn nhưng chi phí tăng. Hai chỉ số nào cần xem cùng nhau?
+**Question 3 — Choose two.** Overlap improves some answers but raises cost. Which TWO measures should be considered together?
 
-A. Chỉ tốc độ tạo embedding lần đầu, bỏ qua lúc truy vấn.
+A. Only initial embedding speed.
 
-B. Lượng nội dung trùng được lưu và đưa vào ngữ cảnh.
+B. Duplicated content stored and supplied to the model.
 
-C. Tỷ lệ lấy đủ bằng chứng ở câu hỏi có thông tin qua ranh giới.
+C. Evidence coverage on questions spanning boundaries.
 
-D. Số chunk tăng được coi trực tiếp là chất lượng cao hơn.
+D. Chunk count as a direct quality score.
 
-**Câu 4 — Chọn một.** Nhóm đổi sang semantic chunking phức tạp; chất lượng trên bộ hỏi không đổi còn xử lý chậm hơn. Quyết định nào phù hợp?
+**Question 4 — Choose one.** Complex semantic chunking gives unchanged quality and slower processing. What is appropriate?
 
-A. Giữ cách mới vì tên “semantic” bảo đảm hiểu tài liệu sâu hơn.
+A. Keep it because “semantic” guarantees deeper understanding.
 
-B. Giữ phương án đơn giản nếu nó đáp ứng tiêu chí với chi phí tốt hơn.
+B. Prefer the simpler approach if it meets criteria at lower cost.
 
-C. Tăng độ phức tạp tiếp trước khi phân tích các lỗi còn lại.
+C. Add more complexity before investigating failures.
 
-D. Chỉ đánh giá trên các ca từng cải thiện để chứng minh cách mới.
+D. Evaluate only improved cases.
 
-**Câu 5 — Chọn hai.** Một chunk trả lời tốt nhưng không truy lại được đoạn nguồn sau khi tài liệu cập nhật. Hai yêu cầu nào nên bổ sung?
+**Question 5 — Choose two.** After source updates, a useful chunk cannot be traced back. Which TWO requirements help?
 
-A. Giữ tham chiếu nguồn và vị trí hoặc phiên bản phù hợp khi chia đoạn.
+A. Preserve source references and suitable locations or versions.
 
-B. Dùng thứ tự chunk trong kết quả tìm kiếm làm vị trí nguồn cố định.
+B. Use retrieval rank as a permanent source location.
 
-C. Kiểm tra tính toàn vẹn ngữ nghĩa lẫn khả năng đối chiếu sau chia.
+C. Check both semantic integrity and traceability after splitting.
 
-D. Chỉ lưu embedding vì nó đại diện đầy đủ văn bản.
+D. Retain embeddings alone as complete text representations.
 
 ## Đáp án và giải thích
 

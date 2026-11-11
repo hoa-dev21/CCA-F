@@ -15,55 +15,55 @@ Dùng Inspector để thử mẫu với tham số cụ thể và xem các tin nh
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Inspector lấy mẫu chuyển đổi tài liệu và hiển thị messages đúng doc_id. Nhóm đánh dấu tác vụ chuyển đổi đã hoàn tất. Nhận định nào chính xác hơn?
+**Question 1 — Choose one.** Inspector retrieves a conversion prompt with the correct `doc_id`. Has document conversion finished?
 
-A. Prompt được lấy thành công nên server đã chạy tool chuyển đổi.
+A. Yes; successful prompt retrieval executes conversion.
 
-B. Mới sinh hướng dẫn; còn chạy model/tool và kiểm chứng.
+B. No; instructions were generated, but model/tool execution and verification remain.
 
-C. Messages đúng doc_id chứng minh chất lượng Markdown đạt yêu cầu.
+C. Correct messages prove Markdown quality.
 
-D. Lưu messages làm tài liệu đã chuyển đổi.
+D. Save the prompt messages as the converted document.
 
-**Câu 2 — Chọn hai.** Mẫu nhận doc_id nhưng nội dung messages luôn dùng một ID hard-code. Hai kiểm thử nào tìm và ngăn lỗi này?
+**Question 2 — Choose two.** A template accepts `doc_id` but hard-codes one ID in its messages. Which TWO tests expose and prevent this?
 
-A. Gọi mẫu với ít nhất hai ID khác nhau và đối chiếu messages.
+A. Call it with at least two IDs and compare messages.
 
-B. Chỉ kiểm tra list_prompts có tên mẫu.
+B. Check only that `list_prompts` contains its name.
 
-C. Kiểm tra tác vụ thực tế tác động đúng tài liệu được yêu cầu.
+C. Verify execution affects the requested document.
 
-D. Đếm số messages để suy ra tham số đã được nội suy.
+D. Count messages to infer parameter interpolation.
 
-**Câu 3 — Chọn một.** Một prompt chuyển đổi yêu cầu công cụ edit_document, nhưng server triển khai chỉ read_document. Lựa chọn nào phù hợp nhất trước khi cung cấp cho người dùng?
+**Question 3 — Choose one.** A conversion prompt requires `edit_document`, but the server only implements `read_document`. What should happen before release?
 
-A. Giữ prompt vì mô hình có thể suy ra cách sửa từ tool đọc.
+A. Keep it because the model can infer edits from reads.
 
-B. Đổi tên tool đọc trong prompt thành tool sửa.
+B. Rename the read tool in the prompt.
 
-C. Đánh dấu prompt đã kiểm thử vì Inspector trả messages.
+C. Declare it tested because Inspector returns messages.
 
-D. Khớp prompt với năng lực thực, bổ sung tool nếu cần.
+D. Align the prompt with actual capabilities, adding a tool if needed.
 
-**Câu 4 — Chọn hai.** Nhóm muốn prompt dùng lại có giá trị hơn một câu “hãy xử lý tài liệu”. Hai thành phần nào nên có?
+**Question 4 — Choose two.** Which TWO elements make a reusable prompt more useful than “process this document”?
 
-A. Tiêu chí đầu ra và các bước chuyên môn gắn nhiệm vụ server.
+A. Task-specific output criteria and domain steps.
 
-B. Tên người dùng cố định để giảm số tham số.
+B. A hard-coded username to reduce parameters.
 
-C. Tham số đối tượng rõ và cách dùng resources/tools sẵn có.
+C. Clear object parameters and use of available resources and tools.
 
-D. Toàn bộ lịch sử hội thoại của tác giả mẫu.
+D. The template author's complete conversation history.
 
-**Câu 5 — Chọn một.** Prompt đã được sửa để thêm một tiêu chí định dạng. Inspector trả cấu trúc messages hợp lệ. Bằng chứng nào còn cần để chấp nhận thay đổi?
+**Question 5 — Choose one.** A new formatting criterion is added and Inspector returns valid messages. What evidence is still needed?
 
-A. So độ dài prompt mới và cũ, dài hơn thì đầy đủ hơn.
+A. Longer prompt length than before.
 
-B. Kiểm tra chỉ tên mẫu trong danh mục sau cập nhật.
+B. Only the prompt name in discovery.
 
-C. Đo tiêu chí mới và hồi quy trên tài liệu đại diện.
+C. Evaluation of the new criterion and regressions on representative documents.
 
-D. Đảm bảo mọi messages đều dùng cùng role để thống nhất.
+D. Identical roles for every message.
 
 ## Đáp án và giải thích
 

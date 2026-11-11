@@ -17,55 +17,55 @@ Giữ mã liên kết giữa lời gọi và kết quả, báo rõ lỗi thực 
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Ứng dụng đã gửi schema công cụ chuột nhưng chưa có tiến trình điều khiển máy tính. Mô hình trả yêu cầu bấm nút. Phần nào còn thiếu để hoàn thành vòng xử lý?
+**Question 1 — Choose one.** The application advertises a mouse tool but has no computer-control process. The model requests a click. What is missing?
 
-A. Một mô tả công cụ chi tiết hơn để mô hình tự thực thi cú bấm.
+A. A longer description enabling model-side execution.
 
-B. AWS profile ở mọi nhà cung cấp để schema trở thành công cụ đang chạy.
+B. An AWS profile for every provider.
 
-C. Một câu assistant xác nhận đã bấm để mô hình chuyển bước.
+C. An assistant confirmation that the click occurred.
 
-D. Executor chạy thao tác, trả kết quả và quan sát cho mô hình.
+D. An executor performing actions and returning results and observations.
 
-**Câu 2 — Chọn hai.** Hai thao tác liên tiếp là bấm Lưu và chụp màn hình. Bộ thực thi trả kết quả chụp cho ID của thao tác bấm. Hai điều cần sửa?
+**Question 2 — Choose two.** A Save click and screenshot have separate IDs, but the screenshot is returned under the click ID. Which TWO corrections are needed?
 
-A. Quan sát trạng thái sau thao tác trước khi suy ra việc lưu thành công.
+A. Observe post-action state before inferring save success.
 
-B. Giữ đúng mã liên kết giữa từng lời gọi và kết quả tương ứng.
+B. Preserve each call's correct result correlation.
 
-C. Gắn mọi kết quả vào thao tác cuối để giảm kích thước lịch sử.
+C. Attach all results to the last call.
 
-D. Bỏ ID vì thứ tự mảng đã đủ khi hệ thống chạy bất đồng bộ.
+D. Discard IDs because array order suffices asynchronously.
 
-**Câu 3 — Chọn một.** Sau ba lần bấm cùng tọa độ, màn hình không thay đổi. Chính sách cho phép tối đa mười bước. Bước tiếp theo hợp lý nhất?
+**Question 3 — Choose one.** Three clicks at the same coordinates change nothing; ten steps are permitted. What should happen next?
 
-A. Đổi ngẫu nhiên tọa độ đến khi có thay đổi trên màn hình.
+A. Randomize coordinates until something changes.
 
-B. Kiểm tra trạng thái, lỗi tool và mục tiêu trước khi thử lại.
+B. Inspect state, tool errors, and the objective before retrying.
 
-C. Bấm thêm bảy lần rồi báo thành công vì đã dùng hết ngân sách.
+C. Click seven more times and claim success after budget exhaustion.
 
-D. Tăng ngân sách tự động vì thao tác hợp lệ theo schema.
+D. Automatically expand the budget because the schema is valid.
 
-**Câu 4 — Chọn hai.** Bạn chuyển mẫu Computer Use từ Bedrock sang nhà cung cấp khác. Hai kiểm tra nào cần làm trước khi chạy?
+**Question 4 — Choose two.** Which TWO checks precede moving a computer-use sample from Bedrock to another provider?
 
-A. Chỉ thay URL endpoint vì cấu trúc công cụ luôn giống nhau ở mọi nơi.
+A. Change only the endpoint because tool contracts are universal.
 
-B. Giữ AWS profile làm điều kiện bắt buộc của mọi triển khai mới.
+B. Require an AWS profile everywhere.
 
-C. Xác nhận bộ thực thi, môi trường quan sát và cơ chế báo lỗi hoạt động.
+C. Verify executor, observation environment, and error reporting.
 
-D. Kiểm tra mô hình và giao diện công cụ có tương thích với nhà cung cấp mới.
+D. Verify model and tool-interface compatibility with the new provider.
 
-**Câu 5 — Chọn một.** Bộ thực thi không tìm được màn hình để chụp sau khi bấm. Host cần phản hồi ra sao?
+**Question 5 — Choose one.** The executor cannot capture a screen after a click. How should the host respond?
 
-A. Trả ảnh cũ và đánh dấu thành công để không làm gián đoạn kế hoạch.
+A. Return an old screenshot as successful.
 
-B. Bỏ kết quả lỗi rồi yêu cầu mô hình tiếp tục từ bước kế tiếp.
+B. Omit the failure and continue.
 
-C. Trả ảnh trống như ảnh thật vì định dạng vẫn hợp lệ.
+C. Return a blank image as a genuine observation.
 
-D. Trả lỗi đúng lời gọi để vòng xử lý quyết định phục hồi/dừng.
+D. Return a correctly linked error for recovery or stopping.
 
 ## Đáp án và giải thích
 

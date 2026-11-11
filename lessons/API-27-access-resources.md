@@ -15,55 +15,55 @@ Mẫu của khóa chỉ lấy phần tử đầu tiên trong `contents`. Không 
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Người dùng đã chọn chính xác report-42 trước khi gửi câu hỏi. Nhóm muốn giảm một vòng tool chỉ để lấy tài liệu đó. Thiết kế nào phù hợp?
+**Question 1 — Choose one.** A user selects `report-42` before asking a question. How can the application avoid a model tool round trip just to fetch it?
 
-A. Đọc resource đã chọn, xử lý nội dung rồi đưa vào yêu cầu ban đầu.
+A. Read the selected resource, process it, and include it in the initial request.
 
-B. Đưa chỉ tên report-42 vào prompt và giả định mô hình đã biết nội dung.
+B. Send only its name and assume the model knows the contents.
 
-C. Gọi mô hình để chọn lại tài liệu dù người dùng đã chọn.
+C. Ask the model to select the document again.
 
-D. Tải mọi report để tránh phải truyền định danh cụ thể.
+D. Download every report.
 
-**Câu 2 — Chọn hai.** Resource trả ba phần contents: metadata JSON và hai đoạn văn bản. Mẫu client chỉ đọc contents[0]. Hai thay đổi nào cần cho triển khai này?
+**Question 2 — Choose two.** A resource returns JSON metadata and two text parts, but the client reads only `contents[0]`. Which TWO changes are needed?
 
-A. Xử lý đầy đủ các phần cần theo hợp đồng resource.
+A. Handle all required parts under the resource contract.
 
-B. Giữ phần đầu vì MCP luôn đặt nội dung nghiệp vụ đầy đủ ở đó.
+B. Keep only the first part because it always contains all business content.
 
-C. Dùng MIME của từng phần để chọn parser/biểu diễn tương ứng.
+C. Select parsing and representation using each part's MIME type.
 
-D. Ép cả ba phần qua JSON.parse bất kể loại nội dung.
+D. Apply `JSON.parse` to every part regardless of type.
 
-**Câu 3 — Chọn một.** Client nhận application/json nhưng parse thất bại do payload lỗi. UI vẫn đưa chuỗi đó vào prompt như thể là danh mục hợp lệ. Cách xử lý tốt hơn?
+**Question 3 — Choose one.** A malformed JSON resource fails parsing, but the UI sends it as a valid catalog. What is better?
 
-A. Đổi MIME thành text/plain ngay ở client rồi tiếp tục.
+A. Relabel it `text/plain` and continue.
 
-B. Để Claude sửa rồi coi dữ liệu hợp lệ.
+B. Ask Claude to repair it and assume validity.
 
-C. Báo lỗi resource và phục hồi theo hợp đồng.
+C. Report the resource error and recover according to the contract.
 
-D. Lấy mọi từ giữa dấu ngoặc kép làm tên tài liệu.
+D. Treat every quoted fragment as a document name.
 
-**Câu 4 — Chọn hai.** Một client thư viện đang tự đọc toàn bộ tài liệu server và đưa vào mọi câu hỏi. Người dùng chỉ chọn một tài liệu. Hai trách nhiệm nên tách ra là gì?
+**Question 4 — Choose two.** A client loads all server documents into every question although the user selects one. Which TWO responsibilities should be separated?
 
-A. Client giao tiếp server và trả dữ liệu theo giao thức.
+A. The client handles protocol communication and returns server data.
 
-B. Client luôn quyết định phạm vi nội dung thay cho ứng dụng.
+B. The client always decides relevance instead of the application.
 
-C. Ứng dụng chọn dữ liệu liên quan và cách đưa vào prompt.
+C. The application selects relevant data and how to include it in prompts.
 
-D. Mô hình tự loại mọi tài liệu ngoài ý muốn sau khi đã nhận chúng.
+D. The model removes unwanted documents after receiving everything.
 
-**Câu 5 — Chọn một.** Hai người dùng chọn cùng tên report.pdf nhưng có định danh và quyền khác nhau. Adapter cache chỉ theo tên hiển thị. Sửa nào giữ đúng tài liệu được chọn?
+**Question 5 — Choose one.** Two users select different authorized resources both named `report.pdf`. A cache keyed only by display name mixes them. What fixes this?
 
-A. Dùng độ dài file để phân biệt các bản có cùng tên.
+A. Use file length to distinguish them.
 
-B. Nối tên file với câu hỏi tự nhiên làm cache key.
+B. Combine display name with the natural-language question.
 
-C. Trả bản tải gần nhất vì cả hai cùng tên.
+C. Return the most recently fetched document.
 
-D. Dùng định danh resource cùng phạm vi truy cập.
+D. Key by resource identity and access scope.
 
 ## Đáp án và giải thích
 

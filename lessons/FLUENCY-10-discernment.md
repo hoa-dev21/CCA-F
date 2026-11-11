@@ -19,55 +19,55 @@ Phản hồi nên chỉ rõ vấn đề và cách sửa, chẳng hạn: “Phầ
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Bảng so sánh rất dễ đọc, trích nguồn đầy đủ, nhưng số tiền trong bảng không khớp nguồn. Phản hồi nào nhắm lỗi chính?
+**Question 1 — Choose one.** A clear, fully cited comparison contains amounts that contradict sources. Which feedback addresses the main error?
 
-A. Yêu cầu dùng thêm nguồn nhưng giữ nguyên các số để bảo toàn định dạng.
+A. Add sources but keep numbers to preserve format.
 
-B. Chuyển sang biểu đồ để người đọc dễ phát hiện xu hướng.
+B. Convert to a chart.
 
-C. Khen bố cục và chỉ yêu cầu giọng văn thận trọng hơn.
+C. Praise layout and request cautious wording only.
 
-D. Đối chiếu số với nguồn; sửa sai, đánh dấu phần chưa xác minh.
+D. Check numbers against sources, correct errors, and flag unverified values.
 
-**Câu 2 — Chọn hai.** Phương án được khuyến nghị có chi phí đầu tư thấp nhất, nhưng phân tích đã bỏ qua vận hành và chi phí chuyển đổi. Hai việc nào thể hiện Process Discernment?
+**Question 2 — Choose two.** A recommendation minimizes upfront cost but ignores operating and transition costs. Which TWO actions demonstrate Process Discernment?
 
-A. Yêu cầu bổ sung các yếu tố thiếu bằng căn cứ rồi xem lại kết luận.
+A. Add evidence-based missing factors and reconsider the conclusion.
 
-B. Đổi tiêu đề báo cáo để bớt thiên vị phương án được chọn.
+B. Change only the title.
 
-C. Kiểm tra những yếu tố và giả định đã bị loại khỏi cách so sánh.
+C. Inspect excluded factors and assumptions.
 
-D. Chấp nhận kết luận vì phép cộng chi phí đầu tư không sai.
+D. Accept because upfront arithmetic is correct.
 
-**Câu 3 — Chọn một.** AI sửa số liệu đúng sau phản hồi nhưng tiếp tục trả lời dài và bỏ qua yêu cầu hỏi lại khi mơ hồ. Đánh giá nào chính xác nhất?
+**Question 3 — Choose one.** AI fixes figures but remains verbose and fails to ask about ambiguity. What is the best assessment?
 
-A. Product tốt hơn; Performance vẫn chưa đạt yêu cầu.
+A. Product improved; Performance still misses requirements.
 
-B. Khi số liệu đúng, toàn bộ ba khía cạnh đều đạt.
+B. Correct figures mean all three aspects pass.
 
-C. Đây chỉ là lỗi Product vì mọi hành vi đều xuất hiện trong đầu ra.
+C. Only Product can fail because all behavior appears in output.
 
-D. Cần thay dữ liệu nguồn vì phản hồi dài chứng minh nguồn không phù hợp.
+D. Long answers prove sources are unsuitable.
 
-**Câu 4 — Chọn một.** Một reviewer chỉ nói “bản này chưa đủ tốt”. AI sửa văn phong nhiều lần nhưng vẫn thiếu chi phí vận hành. Phản hồi nào tạo vòng sửa hữu ích nhất?
+**Question 4 — Choose one.** “Not good enough” feedback causes stylistic revisions but still omits operating costs. Which feedback helps?
 
-A. “Hãy hành động như chuyên gia giàu kinh nghiệm hơn.”
+A. “Act like a more experienced expert.”
 
-B. “Thêm chi phí vận hành có nguồn; nêu dữ liệu thiếu.”
+B. “Add sourced operating costs and identify missing data.”
 
-C. “Chấm lại bài của bạn và chỉ gửi bản điểm cao nhất.”
+C. “Self-score and send only the highest result.”
 
-D. “Viết thêm hai trang để phân tích toàn diện hơn.”
+D. “Write two more pages.”
 
-**Câu 5 — Chọn hai.** Hai bản phân tích có cùng kết luận, một bản trình bày mạch lạc hơn. Trước khi chọn bản đó để sử dụng, hai kiểm tra nào có giá trị nhất?
+**Question 5 — Choose two.** Two analyses agree, and one reads better. Which TWO checks should precede selecting it?
 
-A. Dùng độ trôi chảy làm bằng chứng tác giả hiểu đầy đủ vấn đề.
+A. Use fluency as proof of understanding.
 
-B. Lấy sự đồng ý giữa hai bản làm xác nhận độc lập cho mọi số liệu.
+B. Treat agreement as independent confirmation of every figure.
 
-C. Đối chiếu độ đúng, mức liên quan và khả năng hiểu của người đọc mục tiêu.
+C. Check accuracy, relevance, and target-reader comprehensibility.
 
-D. Kiểm tra các bước/căn cứ trình bày có hỗ trợ kết luận và có bỏ sót yếu tố quan trọng không.
+D. Check whether reasoning and evidence support conclusions without omitting key factors.
 
 ## Đáp án và giải thích
 

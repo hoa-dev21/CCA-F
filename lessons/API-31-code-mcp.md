@@ -15,55 +15,55 @@ Tên các server cộng đồng trong video chỉ là ví dụ ở thời điể
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Claude Code được yêu cầu chuyển tài liệu sang Markdown và đã biết tên công cụ từ README, nhưng không gọi được. Repo chưa cấu hình server chuyển đổi. Cách sửa đúng tầng nào?
+**Question 1 — Choose one.** Claude knows a conversion tool's name from README but cannot call it; no MCP server is configured. What addresses the missing layer?
 
-A. Thêm ví dụ gọi công cụ vào prompt rồi giữ nguyên môi trường.
+A. Add invocation examples without changing the environment.
 
-B. Cấu hình MCP tới server thực có tool rồi thử kết nối.
+B. Configure the actual MCP server and test its connection.
 
-C. Tăng số lượt tác nhân để nó tự tìm implementation từ tên.
+C. Increase agent turns to infer implementation from the name.
 
-D. Đổi yêu cầu sang prompt template cùng tên.
+D. Replace it with a prompt template of the same name.
 
-**Câu 2 — Chọn hai.** Nhóm muốn kết nối ba server cho dự án hỗ trợ khách hàng. Hai tiêu chí nào nên quyết định server nào được thêm?
+**Question 2 — Choose two.** Which TWO criteria should determine which MCP servers a customer-support project adds?
 
-A. Có tác vụ cụ thể cần khả năng mà server cung cấp.
+A. A concrete task needs the server's capabilities.
 
-B. Server có nhiều công cụ hơn các lựa chọn còn lại.
+B. It has more tools than alternatives.
 
-C. Phạm vi quyền, cấu hình và khả năng truy cập phù hợp môi trường dự án.
+C. Its permissions, configuration, and connectivity suit the project environment.
 
-D. Tên server từng xuất hiện trong video khóa học.
+D. Its name appeared in a course video.
 
-**Câu 3 — Chọn một.** Server đã kết nối và liệt kê tool cập nhật ticket. Người dùng chỉ yêu cầu đọc trạng thái. Thiết kế nào phù hợp nhất?
+**Question 3 — Choose one.** A connected server exposes ticket updates, but the user requests only status. Which design is appropriate?
 
-A. Cho mọi tool vì đã xác thực kết nối.
+A. Enable every tool because authentication succeeded.
 
-B. Dùng tool cập nhật với payload rỗng để tận dụng cùng endpoint.
+B. Invoke the update endpoint with an empty payload.
 
-C. Yêu cầu mô hình tự hứa không thay đổi rồi giữ quyền ghi rộng.
+C. Keep broad write access and ask the model to promise not to edit.
 
-D. Cấp khả năng đọc và kiểm quyền tại executor.
+D. Provide read capability and enforce permissions at the executor.
 
-**Câu 4 — Chọn một.** Một kết nối MCP dùng tốt ở máy tác giả nhưng mất khi clone repo trên máy đồng đội. Chẩn đoán nào nên được kiểm tra trước?
+**Question 4 — Choose one.** An MCP connection works for the author but disappears on a teammate's clone. What should be checked first?
 
-A. README và prompt mà đồng đội dùng, vì có cùng tên server là đủ cho discovery.
+A. README wording, assuming the shared name guarantees discovery.
 
-B. Danh sách tools cache từ máy tác giả, trước khi xác minh client trên máy mới kết nối được.
+B. The author's cached tools before checking the new connection.
 
-C. Scope cấu hình, credential và kết nối trên máy mới.
+C. Configuration scope, credentials, and connectivity on the new machine.
 
-D. Đổi tên tool để tránh trùng namespace.
+D. Rename the tool to avoid namespace collisions.
 
-**Câu 5 — Chọn hai.** Team muốn dùng MCP vừa lấy tài liệu thiết kế vừa gọi dịch vụ nội bộ. Hai nhận định nào đúng khi đánh giá tích hợp?
+**Question 5 — Choose two.** Which TWO statements apply when using MCP for design documents and internal services?
 
-A. MCP client có thể tiếp cận các loại thành phần server cung cấp như tools/resources/prompts.
+A. Clients can access server-provided tools, resources, and prompts.
 
-B. Có MCP nghĩa là mọi server có cùng các tool và quyền mặc định.
+B. Every server exposes identical tools and default permissions.
 
-C. Công cụ được liệt kê tự động thực thi khi người dùng mở phiên.
+C. Discovered tools execute automatically when a session opens.
 
-D. Khả năng sử dụng phụ thuộc những thành phần server thật sự triển khai và cấu hình cho phép.
+D. Usability depends on actual server capabilities and permitted configuration.
 
 ## Đáp án và giải thích
 

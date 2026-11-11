@@ -17,55 +17,55 @@ Trong CI, dùng chế độ không tương tác, cấu trúc đầu ra rõ và �
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Rule test đang ở file CLAUDE.md trong thư mục cấu hình cá nhân của tác giả; đồng đội không nhận được. Chỉ test .test.tsx ở mọi package cần rule. Thiết kế nào sát cả yêu cầu chia sẻ lẫn phạm vi?
+**Question 1 — Choose one.** A test rule exists only in the author's personal CLAUDE.md. Teammates need it, but only `.test.tsx` files across packages should be affected. Which design meets both requirements?
 
-A. Version project rule có paths phù hợp; thử nạp trên máy mới.
+A. Version a project rule with suitable `paths` and verify loading in a fresh environment.
 
-B. Dán nguyên user config của tác giả vào mọi máy để đồng nhất toàn bộ thiết lập.
+B. Copy the author's entire user configuration to every machine.
 
-C. Đặt rule trong README có tên test để công cụ tự suy ra phạm vi.
+C. Put the rule in a README whose name includes “test” and rely on inferred scope.
 
-D. Chuyển rule sang system prompt của một phiên rồi chia sẻ session ID.
+D. Put it in one session's system prompt and share the session ID.
 
-**Câu 2 — Chọn một.** Tác nhân hiểu “xử lý giá trị trống” lúc là null, lúc là chuỗi rỗng. Phản hồi nào giúp sửa đúng với ít vòng lặp hơn?
+**Question 2 — Choose one.** An agent interprets “empty values” inconsistently as `null` or an empty string. Which feedback supports a precise fix with fewer iterations?
 
-A. “Làm chặt chẽ hơn, đừng bỏ edge case.”
+A. “Be more rigorous and handle edge cases.”
 
-B. Tăng test ngẫu nhiên nhưng không định nghĩa kết quả mong đợi.
+B. Add random tests without defining expected behavior.
 
-C. Ví dụ null/rỗng/whitespace cùng expected/actual của test lỗi.
+C. Provide `null`, empty-string, and whitespace examples with expected and actual failing-test results.
 
-D. Gửi toàn bộ log build và yêu cầu tự đoán ý nghĩa giá trị trống.
+D. Send all build logs and ask the agent to infer the intended meaning.
 
-**Câu 3 — Chọn hai.** CI review đang treo chờ nhập liệu và reviewer dùng nguyên context của tác nhân viết code. Hai thay đổi nào nhắm hai nguyên nhân?
+**Question 3 — Choose two.** A CI review waits for interactive input, and its reviewer reuses the coding agent's entire context. Which TWO changes address these causes?
 
-A. Cho CI tự bấm đồng ý mọi prompt để không bị treo.
+A. Automatically approve every prompt in CI.
 
-B. Chạy headless với quyền định trước và xử lý từ chối rõ ràng.
+B. Run non-interactively with predefined permissions and explicit denial handling.
 
-C. Tạo reviewer độc lập nhận requirements, diff và tiêu chí kiểm tra.
+C. Use an independent reviewer with requirements, the diff, and review criteria.
 
-D. Tăng thời gian chờ CI và yêu cầu tác nhân hiện tại tự phản biện.
+D. Increase the timeout and ask the coding agent to criticize itself.
 
-**Câu 4 — Chọn một.** CLI trả envelope JSON chứa kết quả có cấu trúc. Adapter đưa toàn bộ stdout vào parser schema của findings và bị lỗi. Sửa nào đúng?
+**Question 4 — Choose one.** A CLI returns a JSON envelope containing structured results. An adapter passes all stdout directly to the findings-schema parser and fails. What is the correct fix?
 
-A. Chỉ lấy dòng cuối stdout vì thường là câu trả lời.
+A. Take only the last stdout line because it is usually the answer.
 
-B. Nới schema để chấp nhận mọi object rồi coi parse được là hợp lệ.
+B. Accept any object and treat successful parsing as validation.
 
-C. Yêu cầu mô hình không dùng markdown nhưng giữ nguyên adapter.
+C. Ask the model to avoid Markdown without changing the adapter.
 
-D. Đọc envelope; validate kết quả cấu trúc và trạng thái chạy.
+D. Parse the envelope, then validate the structured result and execution status.
 
-**Câu 5 — Chọn hai.** Sau thay đổi rule, nhóm muốn biết nó đã tác động đúng lên test mà không ảnh hưởng file khác. Hai bằng chứng nào có giá trị?
+**Question 5 — Choose two.** After updating a rule, the team wants evidence that it applies to tests without affecting unrelated files. Which TWO checks are valuable?
 
-A. Kiểm tra rule được nạp ở đường dẫn test đại diện trong nhiều package.
+A. Verify rule loading for representative test paths across packages.
 
-B. Dựa vào việc file cấu hình commit thành công.
+B. Confirm that the configuration file was committed successfully.
 
-C. Thử đường dẫn ngoài phạm vi để xác nhận không áp dụng ngoài ý muốn.
+C. Try paths outside the intended scope to verify non-application.
 
-D. Chỉ đọc tên rule để suy ra glob đã đúng.
+D. Infer the glob behavior from the rule's name alone.
 
 ## Đáp án và giải thích
 

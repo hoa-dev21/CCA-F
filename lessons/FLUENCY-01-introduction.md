@@ -17,55 +17,55 @@ Hãy thực hành với một công việc thật và ghi lại những chỗ c�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Nhóm viết được prompt chi tiết, báo cáo đúng định dạng và tiết kiệm 40% thời gian soạn. Tuy nhiên, ba báo cáo đã gửi chứa số liệu không có nguồn. Can thiệp nào nhắm đúng khoảng trống năng lực?
+**Question 1 — Choose one.** Detailed prompts produce well-formatted reports 40% faster, but three sent reports contain unsourced figures. What addresses the missing capability?
 
-A. Chuẩn hóa thêm ví dụ văn phong trong thư viện prompt.
+A. Add more style examples.
 
-B. Đối chiếu số liệu, xác định người duyệt trước khi gửi.
+B. Verify figures and assign a reviewer before sending.
 
-C. Tăng số vòng yêu cầu AI tự xác nhận độ chính xác.
+C. Ask AI to confirm itself more often.
 
-D. Chỉ cho dùng một mẫu prompt đã từng tạo báo cáo đúng.
+D. Allow only one previously successful prompt.
 
-**Câu 2 — Chọn một.** Một công cụ AI mới tạo bản nháp tốt hơn công cụ cũ nhưng chưa rõ quyền truy cập tài liệu và cách xử lý dữ liệu nội bộ. Quyết định chuyển đổi nào thể hiện năng lực bền vững?
+**Question 2 — Choose one.** A new tool drafts better, but internal-data access and handling are unclear. What is a sustainable adoption decision?
 
-A. Chuyển ngay vì điểm chất lượng bản nháp đã cao hơn.
+A. Switch immediately based on draft quality.
 
-B. Giữ công cụ cũ vĩnh viễn để tránh phải học lại cách giao tiếp.
+B. Keep the old tool forever.
 
-C. Đánh giá khả năng, dữ liệu, phân công và kiểm chứng trên việc thật.
+C. Evaluate capabilities, data, division of work, and verification on real tasks.
 
-D. Sao chép nguyên prompt cũ rồi xem mọi khác biệt đầu ra là lỗi công cụ mới.
+D. Copy old prompts unchanged and treat every difference as a defect.
 
-**Câu 3 — Chọn hai.** Trưởng nhóm muốn chứng minh khóa huấn luyện đã giúp cộng tác với AI tốt hơn. Hai bằng chứng nào có giá trị hơn việc thuộc tên bốn năng lực?
+**Question 3 — Choose two.** Which TWO outcomes demonstrate improved AI collaboration beyond naming the four competencies?
 
-A. Nhân viên giải thích được vì sao giao một phần nhiệm vụ cho AI và giữ phần khác cho chuyên gia.
+A. Staff explain why AI receives some tasks while experts retain others.
 
-B. Nhân viên dùng được nhiều từ khóa prompt hơn trước.
+B. Staff use more prompting keywords.
 
-C. Nhân viên phát hiện lỗi có nguồn, sửa quy trình và xác định người duyệt kết quả cuối.
+C. Staff identify sourced errors, improve the process, and assign final reviewers.
 
-D. Nhân viên nhận được câu trả lời dài hơn với cùng dữ liệu.
+D. Staff receive longer responses.
 
-**Câu 4 — Chọn một.** AI soạn báo cáo từ tài liệu được phép sử dụng, nhưng phát hiện phần kết luận đòi hỏi chuyên môn mà nhóm chưa có. Hành động nào phù hợp nhất?
+**Question 4 — Choose one.** An authorized-source report requires specialist conclusions beyond the team's expertise. What should happen?
 
-A. Yêu cầu AI đóng vai chuyên gia rồi dùng kết luận đó.
+A. Assign AI an expert role and accept its conclusion.
 
-B. Giữ toàn bộ báo cáo và thêm nhãn “do AI hỗ trợ”.
+B. Keep everything with an AI-assisted label.
 
-C. Bỏ cả dự án vì AI không làm được mọi bước.
+C. Abandon the project because AI cannot do every step.
 
-D. Giữ phần kiểm chứng được; để chuyên gia kết luận.
+D. Retain verifiable work and obtain expert conclusions.
 
-**Câu 5 — Chọn hai.** Nhóm rút thời gian tạo nội dung nhưng thời gian sửa lỗi tăng mạnh. Hai thay đổi nào giúp đánh giá hiệu quả cộng tác đầy đủ hơn?
+**Question 5 — Choose two.** Drafting becomes faster, but correction time rises sharply. Which TWO changes assess collaboration more fully?
 
-A. Đo cả thời gian soạn, kiểm tra, sửa và hậu quả lỗi.
+A. Measure drafting, review, corrections, and error consequences.
 
-B. Chỉ đo tốc độ tạo bản nháp vì đó là phần AI thực hiện.
+B. Measure first-draft speed only.
 
-C. Đánh giá độ phù hợp, chính xác và trách nhiệm sử dụng cùng với tốc độ.
+C. Evaluate suitability, accuracy, and responsible use alongside speed.
 
-D. Tính số nhiệm vụ giao AI làm thước đo chất lượng chính.
+D. Use delegated-task count as the main quality measure.
 
 ## Đáp án và giải thích
 

@@ -17,55 +17,55 @@ Khi so sánh các bản sửa, hãy dùng cùng tiêu chí để biết kết qu
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** AI bỏ cột chi phí đã được yêu cầu trong bảng so sánh. Bạn gửi lại nguyên prompt ba lần nhưng lỗi lặp lại. Bước nào cải thiện vòng Description–Discernment?
+**Question 1 — Choose one.** AI omits a requested cost column despite three unchanged retries. What improves the Description–Discernment loop?
 
-A. Đổi sang dạng văn xuôi để không phải có cột chi phí.
+A. Switch to prose to avoid the column.
 
-B. Tăng độ dài prompt bằng cách lặp yêu cầu nhiều hơn.
+B. Repeat the requirement more often.
 
-C. Nêu cột thiếu và nguồn chi phí; kiểm tra lại bản sửa.
+C. Identify the missing column, provide cost sources, and verify the revision.
 
-D. Chấp nhận bảng nếu các cột còn lại đều tốt.
+D. Accept the remaining columns.
 
-**Câu 2 — Chọn một.** Nhóm sửa prompt và đồng thời đổi bộ tiêu chí chấm theo những điểm bản mới làm tốt. Bản mới có điểm cao hơn. Kết luận nào có cơ sở?
+**Question 2 — Choose one.** The team changes both prompt and grading criteria to favor the new output. Scores rise. What is justified?
 
-A. Chỉ cần lấy trung bình điểm cũ và mới để có chất lượng thực.
+A. Average old and new scores for true quality.
 
-B. Cần cùng tiêu chí hoặc tách tác động do đổi mục tiêu.
+B. Use shared criteria or separate the effect of changed objectives.
 
-C. Prompt mới kém hơn vì tiêu chí đã thay đổi.
+C. The prompt must be worse because criteria changed.
 
-D. Có thể khẳng định prompt mới tốt hơn vì điểm đã tăng.
+D. Higher scores prove a better prompt.
 
-**Câu 3 — Chọn hai.** Trong lúc sửa đề xuất, dữ liệu mới cho thấy deadline cũ không còn khả thi. Hai hành động nào phù hợp?
+**Question 3 — Choose two.** New evidence makes the old deadline infeasible. Which TWO actions fit the feedback process?
 
-A. Giữ deadline cũ để các lượt sửa có cùng tiêu chí hình thức.
+A. Keep the old deadline for cosmetic consistency.
 
-B. Làm rõ yêu cầu cập nhật và đánh giá bản tiếp theo theo tiêu chí mới đã thống nhất.
+B. Clarify updated requirements and evaluate against agreed new criteria.
 
-C. Xóa dữ liệu mới khỏi context vì nó làm khó việc hoàn tất.
+C. Remove new evidence because it complicates completion.
 
-D. Ghi lại thông tin mới và điều chỉnh kế hoạch/phân công nếu cần.
+D. Record the information and adjust planning or allocation if needed.
 
-**Câu 4 — Chọn một.** AI sửa đúng lỗi bạn nêu nhưng vô tình làm mất một phần đã đúng ở bản trước. Cách đánh giá bản sửa nào thích hợp nhất?
+**Question 4 — Choose one.** AI fixes the reported issue but loses previously correct content. How should the revision be evaluated?
 
-A. Chấp nhận nếu AI xác nhận chỉ sửa một chỗ.
+A. Trust the claim that only one thing changed.
 
-B. Chỉ kiểm tra lỗi vừa yêu cầu sửa vì phần cũ từng đạt.
+B. Check only the reported fix.
 
-C. Kiểm tra lỗi đã sửa và các yêu cầu cần giữ từ bản cũ.
+C. Check both the fix and requirements that must remain satisfied.
 
-D. Yêu cầu quay lại toàn bộ bản cũ mà không xem lỗi ban đầu.
+D. Restore the entire old version without inspecting the original error.
 
-**Câu 5 — Chọn hai.** Sau nhiều lượt, AI đề nghị chốt bản cuối. Hai căn cứ nào nên chi phối quyết định giữ/sửa/bỏ của người dùng?
+**Question 5 — Choose two.** Which TWO factors should govern accepting, revising, or rejecting a proposed final version?
 
-A. Độ tự tin trong câu kết luận của AI sau lượt cuối.
+A. AI confidence in the last sentence.
 
-B. Kết quả đã đáp ứng các tiêu chí chấp nhận và bằng chứng cần thiết.
+B. Evidence that acceptance criteria are satisfied.
 
-C. Số lượt đã đạt kế hoạch nên công việc được coi là hoàn tất.
+C. The planned number of iterations was reached.
 
-D. Các giới hạn còn lại và tác động của chúng đối với mục đích sử dụng.
+D. Remaining limitations and their impact on intended use.
 
 ## Đáp án và giải thích
 

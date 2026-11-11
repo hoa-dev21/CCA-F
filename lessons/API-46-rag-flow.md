@@ -15,55 +15,55 @@ Bài dùng độ tương đồng cosine (cosine similarity) và khoảng cách c
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Vector search trả đúng ID chunk nhưng prompt chỉ chứa dãy số vectơ. Câu trả lời thiếu thông tin. Bước nào bị bỏ sót?
+**Question 1 — Choose one.** Vector search returns the correct chunk IDs, but the prompt contains only vectors. What step is missing?
 
-A. Tăng độ chính xác số thập phân của vectơ trong prompt.
+A. Increase vector decimal precision.
 
-B. Tạo thêm embedding cho câu trả lời dự kiến.
+B. Embed an anticipated answer.
 
-C. Lookup văn bản từ ID và gửi kèm câu hỏi vào prompt.
+C. Look up source text by ID and send it with the question.
 
-D. Yêu cầu mô hình tự giải mã vectơ thành tài liệu.
+D. Ask the model to decode vectors into documents.
 
-**Câu 2 — Chọn một.** Sau cập nhật tài liệu, câu trả lời vẫn trích chính sách cũ dù prompt rõ. Cách điều tra đầu tiên hợp lý nhất?
+**Question 2 — Choose one.** Answers still cite old policy after an update. What investigation comes first?
 
-A. Xóa mọi trích dẫn để tránh người dùng nhìn thấy bản cũ.
+A. Remove citations.
 
-B. Chỉ đổi vai trò hệ thống thành chuyên gia chính sách.
+B. Change the system role to policy expert.
 
-C. Truy vết bản chunk từ kho qua retrieval tới prompt.
+C. Trace the chunk version from storage through retrieval to the prompt.
 
-D. Tăng ngân sách suy luận để mô hình phát hiện thay đổi chưa nhận.
+D. Increase reasoning budget to detect unseen updates.
 
-**Câu 3 — Chọn hai.** Thiết kế luồng RAG gồm bước chuẩn bị và bước hỏi. Hai cặp dữ liệu nào phải được nối đúng?
+**Question 3 — Choose two.** Which TWO mappings must a RAG flow preserve?
 
-A. Embedding truy vấn với các vectơ tài liệu trong không gian tương thích.
+A. Query embeddings to document vectors in a compatible space.
 
-B. Câu trả lời cuối với vectơ gần nhất, không cần câu hỏi gốc.
+B. Final answers to nearby vectors without the original question.
 
-C. Thứ hạng tìm kiếm với số trang của tài liệu, coi hai số là một.
+C. Search ranks to page numbers as if they were identical.
 
-D. Embedding của chunk với văn bản hoặc tham chiếu nguồn tương ứng.
+D. Chunk embeddings to corresponding text or source references.
 
-**Câu 4 — Chọn một.** Truy xuất lấy đúng tài liệu và prompt có đủ đoạn, nhưng mô hình bỏ qua ngoại lệ đã có. Tầng sửa ưu tiên là gì?
+**Question 4 — Choose one.** Retrieval and prompts include the exception, but the model ignores it. Which layer should be improved first?
 
-A. Tạo lại toàn bộ embedding trước khi xem câu trả lời.
+A. Rebuild all embeddings.
 
-B. Tăng top-k để bổ sung càng nhiều đoạn càng tốt.
+B. Increase top-k indefinitely.
 
-C. Cách mô hình sử dụng ngữ cảnh và tiêu chí chấm câu trả lời.
+C. Context use during generation and answer-scoring criteria.
 
-D. Đổi ID chunk để buộc hệ thống trả tài liệu khác.
+D. Change chunk IDs to force other documents.
 
-**Câu 5 — Chọn hai.** Nhóm muốn kiểm thử đầu cuối RAG thay vì chỉ kiểm tra API tìm kiếm. Hai điều kiện nào cần xác nhận?
+**Question 5 — Choose two.** Which TWO checks establish end-to-end RAG behavior?
 
-A. Chỉ cần mô hình sinh được văn bản sau mỗi truy vấn.
+A. The model generates any text for each query.
 
-B. Các kết quả tìm kiếm được ánh xạ thành đúng văn bản nguồn trong prompt.
+B. Retrieved results map to the correct source text in the prompt.
 
-C. Chỉ cần kho có số vectơ bằng số chunk.
+C. Vector count equals chunk count.
 
-D. Câu trả lời đáp ứng câu hỏi và được những đoạn đó hỗ trợ.
+D. The answer meets the question and is supported by that evidence.
 
 ## Đáp án và giải thích
 

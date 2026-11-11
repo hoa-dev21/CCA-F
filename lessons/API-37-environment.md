@@ -15,55 +15,55 @@ Khi thiết kế công cụ, hãy hỏi: “Tác nhân sẽ biết thao tác nà
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Agent gửi lệnh sửa cấu hình, nhận mã thoát 0, rồi báo tính năng đã hoạt động. Kiểm tra sau đó cho thấy ứng dụng đọc một tệp cấu hình khác. Bổ sung nào trực tiếp ngăn kết luận sai này?
+**Question 1 — Choose one.** An agent edits configuration and receives exit code zero, but the application reads another file. What prevents a false completion claim?
 
-A. Yêu cầu mô hình giải thích vì sao chọn đường dẫn trước khi gửi lệnh.
+A. Ask for a path-selection explanation before execution.
 
-B. Kiểm tra trạng thái mà ứng dụng thực sự sử dụng sau thao tác.
+B. Verify the state the application actually uses after the change.
 
-C. Đánh dấu thành công nếu cả lệnh và quá trình ghi log đều không lỗi.
+C. Declare success if execution and logging succeed.
 
-D. Chạy lại lệnh ghi cấu hình và so sánh hai mã thoát.
+D. Repeat the write and compare exit codes.
 
-**Câu 2 — Chọn một.** Một API trả HTTP 200 với nội dung “processing”. Bước kế tiếp cần bản ghi đã hoàn tất để tính báo cáo. Thiết kế phù hợp nhất là gì?
+**Question 2 — Choose one.** An API returns HTTP 200 with `processing`, but reporting needs a completed record. What is appropriate?
 
-A. Cho mô hình suy luận dữ liệu cuối từ dữ liệu tạm để giảm độ trễ.
+A. Infer final data from the provisional response.
 
-B. Đọc trạng thái hoàn tất theo hợp đồng API trước khi chạy bước phụ thuộc.
+B. Check completion according to the API contract before the dependent step.
 
-C. Cho bước báo cáo dùng dữ liệu phản hồi vì HTTP 200 đã xác nhận thành công.
+C. Use the response because HTTP 200 proves completion.
 
-D. Đợi một khoảng cố định rồi luôn đánh dấu hoàn tất.
+D. Wait a fixed interval and always declare completion.
 
-**Câu 3 — Chọn hai.** Agent sửa repo chưa quen. Tệp cấu hình tồn tại nhưng có các mục phụ thuộc lẫn nhau. Hai kiểm tra nào đặt đúng chỗ trong vòng quan sát–hành động?
+**Question 3 — Choose two.** An agent edits unfamiliar configuration with interdependent sections. Which TWO checks belong in its observation-action loop?
 
-A. Đọc lại prompt ban đầu thay cho đọc tệp vì yêu cầu đã đầy đủ.
+A. Reread only the original prompt instead of the file.
 
-B. Dùng câu xác nhận của agent làm bằng chứng hậu kiểm.
+B. Use the agent's assurance as post-action evidence.
 
-C. Đọc cấu hình hiện tại cùng các phần liên quan trước khi lập thay đổi.
+C. Read current configuration and related sections before planning.
 
-D. Đối chiếu diff và hành vi cần đạt sau khi sửa.
+D. Inspect the diff and required behavior afterward.
 
-**Câu 4 — Chọn một.** Sau thao tác xuất báo cáo, công cụ chỉ trả “request sent”. Nhóm muốn agent biết lúc nào có thể giao tệp. Cần sửa hợp đồng công cụ theo hướng nào?
+**Question 4 — Choose one.** A report export tool returns only “request sent.” What contract change lets the agent know when a deliverable is ready?
 
-A. Đổi thông báo thành “report generated” để mô hình không hiểu nhầm.
+A. Rename the message “report generated.”
 
-B. Trả mã tác vụ cùng cơ chế kiểm tra hoàn tất và lấy tệp.
+B. Return a job ID and a way to check completion and retrieve the file.
 
-C. Yêu cầu agent kể lại đầy đủ các bước đã gửi.
+C. Ask the agent to recount all submitted steps.
 
-D. Cho mô hình xác nhận dựa trên thời lượng xuất báo cáo trung bình.
+D. Infer completion from average export duration.
 
-**Câu 5 — Chọn hai.** API tra cứu thất bại nhưng đã trả một phần dữ liệu. Agent định dùng phần đó để hoàn tất tổng hợp. Hai việc nào cần làm trước khi kết luận?
+**Question 5 — Choose two.** A failed lookup yields partial data. Which TWO actions are needed before using it for synthesis?
 
-A. Coi phần dữ liệu nhận được là toàn bộ vì công cụ đã trả phản hồi.
+A. Treat received data as complete because a response exists.
 
-B. Ghi nhận lỗi và chọn phục hồi hoặc báo hạn chế theo trạng thái thực.
+B. Record the error and recover or disclose limitations according to actual state.
 
-C. Xác định phần dữ liệu thiếu có ảnh hưởng tới kết luận yêu cầu không.
+C. Assess whether missing data affects the requested conclusion.
 
-D. Chuyển lỗi thành danh sách rỗng để bước sau chạy thống nhất.
+D. Convert the error to an empty list for consistent processing.
 
 ## Đáp án và giải thích
 

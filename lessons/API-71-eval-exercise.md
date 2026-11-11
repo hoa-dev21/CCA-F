@@ -17,55 +17,55 @@ Tiêu chí do AI tạo cũng cần rà soát. Nếu nó yêu cầu một điều
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Generator đã thêm solution_criteria nhưng điểm chấm không đổi; job vẫn tải dataset từ đường dẫn cũ. Kiểm tra nào nên làm trước khi thay model grader?
+**Question 1 — Choose one.** The generator adds `solution_criteria`, but scores do not change and the job still loads an old dataset path. What should be checked first?
 
-A. Tăng số token của grader để nó tự suy ra các criteria còn thiếu.
+A. Increase grader tokens to infer missing criteria.
 
-B. Bỏ task gốc khỏi grader để buộc nó chú ý trường mới.
+B. Remove the original task to emphasize the new field.
 
-C. Kiểm tra dataset hiệu lực và criteria của từng case gửi chấm.
+C. The effective dataset and per-case criteria actually sent for grading.
 
-D. Thêm trọng số cho score để thay đổi được thể hiện rõ hơn.
+D. Increase score weights to reveal a change.
 
-**Câu 2 — Chọn hai.** Dataset sinh tự động chứa criteria bắt buộc lời giải dùng thư viện X, trong khi task cho phép mọi cách đúng. Hai bước nào giúp phép chấm đo đúng mục tiêu?
+**Question 2 — Choose two.** Generated criteria require library X although any correct solution is permitted. Which TWO steps align evaluation with the task?
 
-A. Loại khỏi báo cáo các ca không dùng X vì khác phong cách mẫu.
+A. Exclude solutions that do not use X.
 
-B. Đối chiếu grader với các đáp án đã kiểm tra, gồm lời giải đúng không dùng X.
+B. Validate grading against reviewed answers, including correct alternatives without X.
 
-C. Sửa mọi đáp án ứng viên để dùng X rồi công bố tỷ lệ đúng tăng.
+C. Rewrite every candidate to use X before reporting improvement.
 
-D. Rà và sửa criteria theo yêu cầu nhiệm vụ trước khi dùng làm chuẩn.
+D. Review and correct criteria against task requirements before using them.
 
-**Câu 3 — Chọn một.** Sau khi thêm criteria, grader giải thích dài hơn và chấm trung bình từ 7 lên 9. Nhóm kết luận chất lượng sản phẩm tăng. Bằng chứng nào còn thiếu?
+**Question 3 — Choose one.** After adding criteria, explanations lengthen and average scores rise from seven to nine. What evidence is missing for a product-quality claim?
 
-A. Xác nhận phần giải thích có nhiều từ kỹ thuật hơn baseline.
+A. More technical vocabulary in explanations.
 
-B. Đối chiếu nhãn chuẩn và đo trên tập giữ riêng.
+B. Comparison against ground-truth labels and a held-out evaluation.
 
-C. Cho cùng grader tự đánh giá độ tin cậy của điểm vừa chấm.
+C. The grader's confidence in its own scores.
 
-D. Chuẩn hóa mọi score về thang 100 để thấy cải thiện rõ hơn.
+D. Rescaling scores to 100.
 
-**Câu 4 — Chọn một.** Mỗi câu trả lời ứng viên được yêu cầu tự tạo solution_criteria, rồi grader dùng chính criteria đó để chấm nó. Rủi ro chính và cách sửa phù hợp nhất?
+**Question 4 — Choose one.** Each candidate generates its own criteria, which the grader then uses. What is the main risk and remedy?
 
-A. Rubric có thể dài; cắt còn một câu do chính ứng viên đề xuất.
+A. Long rubrics should be shortened by the candidate.
 
-B. Chi phí hai lời gọi cao; gộp sinh đáp án và tự chấm vào một lần để tăng độ tin cậy.
+B. Combine generation and self-grading to increase trust.
 
-C. Tiêu chí quá cụ thể; bỏ task và chỉ chấm tính trôi chảy để đồng nhất.
+C. Discard the task and grade fluency only.
 
-D. Tiêu chí có thể thích nghi có lợi cho ứng viên; dùng rubric gắn với task, được rà soát và cố định trước khi chấm.
+D. Criteria may favor the candidate; use reviewed task-based criteria fixed before grading.
 
-**Câu 5 — Chọn hai.** Dataset đã có criteria đúng, nhưng sau bước shuffle, một số đáp án bị ghép tiêu chí của case khác. Hai thiết kế nào ngăn lỗi này và giúp phát hiện nó?
+**Question 5 — Choose two.** After shuffling, some answers receive another case's criteria. Which TWO designs prevent and expose this?
 
-A. Kiểm tra mẫu payload và các ca đối chứng có tiêu chí khác biệt rõ.
+A. Inspect sample payloads and control cases with clearly different criteria.
 
-B. Gắn task, criteria và answer theo case ID ổn định xuyên pipeline.
+B. Bind tasks, criteria, and answers using stable case IDs throughout the pipeline.
 
-C. Tăng nhiệt độ grader để giảm ảnh hưởng của một criteria không phù hợp.
+C. Raise grader temperature.
 
-D. Chỉ so số lượng criteria và answers để khẳng định ánh xạ đúng.
+D. Equal answer and criteria counts prove correct mapping.
 
 ## Đáp án và giải thích
 

@@ -17,55 +17,55 @@ Trước khi giảm người kiểm tra, đo độ chính xác theo trường d�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Sau compact, yêu cầu “hoàn 35% đơn A trước ngày 12” mất số và ngày. Cách sửa kiến trúc nào bảo vệ các facts quan trọng xuyên phiên?
+**Question 1 — Choose one.** After compaction, “refund 35% of order A before the 12th” loses its amount and date. Which architectural change protects these facts across sessions?
 
-A. Tăng độ dài summary và coi đó là nguồn duy nhất.
+A. Make the summary longer and use it as the only source of truth.
 
-B. Lưu case/order facts có cấu trúc, nạp phần liên quan mỗi lượt.
+B. Store structured case and order facts, loading relevant fields on each turn.
 
-C. Dùng transcript gần nhất để suy lại các số đã mất.
+C. Infer missing numbers from the latest transcript.
 
-D. Đặt confidence cao hơn cho dữ kiện được nhắc nhiều lần.
+D. Assign higher confidence to frequently repeated facts.
 
-**Câu 2 — Chọn một.** Hai nguồn tài chính uy tín công bố hai giá trị khác nhau cho các kỳ đo khác nhau. Downstream cần nhận gì để tránh kết luận xung đột giả?
+**Question 2 — Choose one.** Two credible financial sources report different values for different measurement periods. What should downstream processing receive to avoid a false contradiction?
 
-A. Cả hai giá trị cùng nguồn, kỳ đo, phương pháp và giới hạn so sánh.
+A. Both values with sources, periods, methods, and comparability limits.
 
-B. Trung bình hai giá trị để dung hòa hai nguồn.
+B. Their average as a compromise.
 
-C. Chỉ giá trị mới nhất vì nguồn cũ không còn ý nghĩa.
+C. Only the latest value because older evidence is irrelevant.
 
-D. Giá trị do mô hình đánh confidence cao hơn, bỏ nguồn còn lại.
+D. Only the value assigned higher model confidence.
 
-**Câu 3 — Chọn hai.** Độ đúng tổng thể 97%, nhưng mẫu hiếm ít được đo. Hai bước nào cần trước và trong giảm review thủ công?
+**Question 3 — Choose two.** Overall accuracy is 97%, but rare document types are poorly measured. Which TWO steps are needed before and during a reduction in manual review?
 
-A. Dùng 97% làm ngưỡng chung cho mọi trường.
+A. Apply 97% as one threshold for every field.
 
-B. Phân tích theo loại tài liệu/trường và hiệu chỉnh điểm trên nhãn thật.
+B. Analyze quality by document type and field and calibrate scores against ground truth.
 
-C. Chỉ kiểm tra nhóm confidence thấp vì nhóm cao đã đủ an toàn.
+C. Inspect only low-confidence results because high-confidence ones are safe.
 
-D. Lấy mẫu ngẫu nhiên phân tầng ở nhóm được tự động chấp nhận.
+D. Take stratified random samples from automatically accepted results.
 
-**Câu 4 — Chọn một.** Tác nhân tổng hợp nhận summary “nguồn thống nhất”, nhưng các con số bên dưới thực ra cùng trích một báo cáo. Cách sửa bàn giao nào ngăn việc đếm lặp bằng chứng?
+**Question 4 — Choose one.** A synthesis agent receives a summary saying “sources agree,” but all figures cite one original report. Which handoff change prevents double-counting evidence?
 
-A. Chỉ giữ số lượng website và điểm uy tín trung bình.
+A. Keep only the number of websites and their average reputation.
 
-B. Bỏ mọi nguồn thứ cấp và giữ kết luận đã có.
+B. Discard all secondary sources while keeping the existing conclusion.
 
-C. Giữ claim–nguồn và nguồn gốc để kiểm tra tính độc lập.
+C. Preserve claim-to-source mappings and source origins to assess independence.
 
-D. Yêu cầu một tác nhân khác viết lại summary bằng ngôn từ mới.
+D. Ask another agent to rewrite the summary.
 
-**Câu 5 — Chọn hai.** Reviewer độc lập phải kiểm tra một thay đổi chạm API và consumer, trong khi findings cũ thuộc revision trước. Hai loại ngữ cảnh nào cần có?
+**Question 5 — Choose two.** An independent reviewer must examine changes to an API and its consumer. Previous findings refer to an older revision. Which TWO kinds of context are required?
 
-A. Hợp đồng hiện tại, diff các phía và tiêu chí tác động cần báo.
+A. Current contracts, diffs on both sides, and criteria for reportable impact.
 
-B. Findings cũ kèm trạng thái để xác minh trên revision mới.
+B. Previous findings with status, to verify them against the new revision.
 
-C. Chỉ giải thích của tác giả để reviewer tránh phân tâm bởi code.
+C. Only the author's explanation to avoid distraction from the code.
 
-D. Chỉ kết quả test xanh để suy ra các hợp đồng đã nhất quán.
+D. Only passing test results to infer that all contracts are consistent.
 
 ## Đáp án và giải thích
 

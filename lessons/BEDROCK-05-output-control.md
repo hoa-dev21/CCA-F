@@ -15,55 +15,55 @@ Mẫu Converse dùng `inferenceConfig` và `stopSequences`. Khả năng hỗ tr�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Ứng dụng prefill phần mở đầu JSON, provider trả phần tiếp nối; adapter chỉ parse phần mới nên lỗi. Cách sửa đúng trước khi đổi prompt?
+**Question 1 — Choose one.** An adapter parses only the provider's continuation of a prefilled JSON prefix and fails. What should be fixed first?
 
-A. Bỏ qua lỗi parse vì mô hình đã được định hướng JSON.
+A. Ignore errors because JSON was requested.
 
-B. Ghép prefill/phần tiếp nối đúng hợp đồng rồi validate.
+B. Combine prefix and continuation under the contract, then validate.
 
-C. Yêu cầu người dùng tự thêm phần thiếu khi đọc.
+C. Ask users to add missing content.
 
-D. Thêm stop marker ở đầu phần tiếp nối để tránh lỗi.
+D. Stop at the start of the continuation.
 
-**Câu 2 — Chọn hai.** Stop sequence khớp chuỗi xuất hiện trong một giá trị JSON và cắt dữ liệu. Hai việc nào cần làm?
+**Question 2 — Choose two.** A stop sequence occurs inside a JSON string and truncates output. Which TWO actions are needed?
 
-A. Kiểm tra marker và trạng thái dừng để xác định nguyên nhân cắt.
+A. Inspect the marker and stopping state.
 
-B. Coi gặp stop sequence là bằng chứng JSON đã hoàn chỉnh.
+B. Treat encountering the marker as proof of complete JSON.
 
-C. Validate đầu ra; điều chỉnh cơ chế kiểm soát/marker phù hợp trước khi chấp nhận.
+C. Validate and adjust output controls before acceptance.
 
-D. Tự nối dấu đóng ngoặc rồi coi mọi giá trị đã đầy đủ.
+D. Add closing braces and assume all values are complete.
 
-**Câu 3 — Chọn một.** Prefill nói “Phương án X rõ ràng tốt nhất”; mô hình tiếp tục bảo vệ X. Kiến trúc sư nên đánh giá kết quả thế nào?
+**Question 3 — Choose one.** A prefill asserts option X is best, and the model defends X. How should this be evaluated?
 
-A. X đã được xác nhận độc lập bởi mô hình.
+A. X has independent confirmation.
 
-B. Confidence có thể được suy từ độ dài lập luận ủng hộ X.
+B. Longer arguments imply greater confidence.
 
-C. Đầu vào đã định hướng; cần bằng chứng độc lập.
+C. The input biased the response; independent evidence is needed.
 
-D. Chỉ cần chạy lại cùng prefill nhiều lần để loại bias.
+D. Repeated use of the same prefill removes bias.
 
-**Câu 4 — Chọn một.** Mẫu trong khóa dùng prefill với một model, nhưng hệ production đổi model/provider. Bước nào cần trước khi tái sử dụng cấu hình?
+**Question 4 — Choose one.** Production changes the sample's model or provider. What should precede reusing prefill configuration?
 
-A. Giữ nguyên vì mọi model Claude đều cùng hợp đồng prefill.
+A. Assume all Claude models share its contract.
 
-B. Đổi mỗi model ID rồi kiểm tra UI có text.
+B. Change only the model ID and check for text.
 
-C. Bỏ kiểm tra trạng thái dừng để adapter linh hoạt.
+C. Remove stop-state handling.
 
-D. Xác minh hỗ trợ/hợp đồng đích và kiểm thử adapter.
+D. Verify target support and contracts and test the adapter.
 
-**Câu 5 — Chọn hai.** Downstream cần dữ liệu có trường/kiểu nghiêm ngặt. Hai điều nào đúng về dùng prefill và stop sequence?
+**Question 5 — Choose two.** Which TWO statements apply when downstream consumers require strict fields and types?
 
-A. Chúng có thể hướng/cắt đầu ra nhưng không tự chứng minh dữ liệu đạt hợp đồng nghiệp vụ.
+A. Prefill and stops guide output but do not prove business-contract compliance.
 
-B. Chỉ cần loại code fence là schema chắc chắn đúng.
+B. Removing code fences guarantees schema validity.
 
-C. Cần cơ chế schema phù hợp và validation cấu trúc/ngữ nghĩa theo yêu cầu.
+C. Use appropriate schema mechanisms plus structural and semantic validation.
 
-D. Một marker tùy ý có thể thay mọi validator nếu phản hồi đủ ngắn.
+D. Any marker replaces validators for short answers.
 
 ## Đáp án và giải thích
 

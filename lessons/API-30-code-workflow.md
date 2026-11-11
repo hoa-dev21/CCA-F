@@ -15,55 +15,55 @@ Ví dụ: Khi thêm công cụ chuyển đổi tài liệu, trước hết đọ
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Claude tạo module chuyển đổi mới trùng với tiện ích có sẵn trong repo. Nhóm muốn tránh lặp lại lỗi ở tính năng tiếp theo. Thay đổi quy trình nào phù hợp?
+**Question 1 — Choose one.** Claude creates a conversion module duplicating an existing utility. Which workflow change prevents recurrence?
 
-A. Khảo sát cấu trúc, mã tương tự và quy ước trước khi lập kế hoạch.
+A. Explore structure, similar code, and conventions before planning.
 
-B. Cấm tạo file mới cho mọi nhiệm vụ.
+B. Ban new files for every task.
 
-C. Viết prompt dài hơn nhưng không đưa đường dẫn mã hiện có.
+C. Write longer prompts without locating existing code.
 
-D. Chỉ phát hiện trùng lặp sau khi mọi test đã xanh.
+D. Check duplication only after all tests pass.
 
-**Câu 2 — Chọn hai.** Nhóm có lệnh build chung, một sở thích editor cá nhân và một workaround tạm của task. Hai quyết định nào đúng khi quản lý hướng dẫn?
+**Question 2 — Choose two.** A team has a stable build command, a personal editor preference, and a temporary task workaround. Which TWO instruction-management choices are appropriate?
 
-A. Đặt lệnh build ổn định ở cấu hình dự án được chia sẻ.
+A. Keep the stable build command in shared project configuration.
 
-B. Đưa cả ba vào quy tắc chung vĩnh viễn để không quên.
+B. Make all three permanent shared rules.
 
-C. Giữ thiết lập cá nhân đúng scope và trạng thái tạm trong ngữ cảnh/task phù hợp.
+C. Keep personal settings scoped appropriately and temporary state in task context.
 
-D. Ghi build command chỉ trong user config của tác giả.
+D. Store the build command only in its author's user configuration.
 
-**Câu 3 — Chọn một.** Tính năng chuyển tài liệu phải báo lỗi rõ khi file không tồn tại. Tác nhân đã viết code và báo “xong” nhưng không có kết quả kiểm thử. Bằng chứng nào giá trị nhất?
+**Question 3 — Choose one.** A conversion feature must report missing files clearly. The agent says “done” without test evidence. What evidence is most valuable?
 
-A. Số dòng code và nhận xét tự tin của tác nhân.
+A. Line count and the agent's confidence.
 
-B. Một demo với file tồn tại duy nhất.
+B. One demo using an existing file.
 
-C. Test ca đạt/lỗi theo yêu cầu, kiểm tra kết quả và diff.
+C. Passing and failing requirement-based tests, inspected results, and the diff.
 
-D. Một lời xác nhận thứ hai từ cùng tác nhân mà không chạy gì.
+D. A second unsupported completion statement.
 
-**Câu 4 — Chọn hai.** Theo quy trình dựa trên kiểm thử, hai đặc tính nào giúp test tránh chỉ phản chiếu implementation?
+**Question 4 — Choose two.** Which TWO test properties avoid merely mirroring implementation?
 
-A. Xác định expected behavior từ yêu cầu trước khi cài đặt.
+A. Derive expected behavior from requirements before coding.
 
-B. Lấy mọi giá trị hiện implementation trả làm expected.
+B. Use every current return value as the expected result.
 
-C. Bao gồm trường hợp lỗi/ranh giới có ý nghĩa với người dùng.
+C. Include meaningful error and boundary cases.
 
-D. Xóa assertion thất bại nếu code mới đã chạy hết exception.
+D. Delete failing assertions once exceptions stop occurring.
 
-**Câu 5 — Chọn một.** Sau khi đọc repo, tác nhân thấy cách đăng ký MCP tool khác mẫu video. Phương án nào phù hợp nhất cho tính năng mới?
+**Question 5 — Choose one.** The repository registers MCP tools differently from an old course video. What should guide a new feature?
 
-A. Sao chép nguyên mã video để bám khóa học.
+A. Copy the video's code exactly.
 
-B. Đổi toàn bộ cơ chế đăng ký của repo cho giống video.
+B. Replace the repository's registration system.
 
-C. Bỏ đăng ký và chỉ mô tả tên tool trong CLAUDE.md.
+C. Mention the tool in CLAUDE.md without registering it.
 
-D. Theo hợp đồng repo; kiểm thử đăng ký và gọi tool.
+D. Follow the repository contract and test registration and invocation.
 
 ## Đáp án và giải thích
 

@@ -15,55 +15,55 @@ Thời gian cache còn hiệu lực (TTL), ngưỡng token, số điểm đánh 
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Prefix gồm timestamp mỗi lượt, rồi tài liệu dài ổn định; breakpoint ở cuối tài liệu. Cache hit thấp. Sửa bố trí nào hợp lý?
+**Question 1 — Choose one.** A changing timestamp precedes a stable document, with a cache breakpoint after the document. Hits are low. What arrangement helps?
 
-A. Chỉ tăng max_tokens đầu ra.
+A. Increase output tokens.
 
-B. Đặt phần ổn định trước và dữ liệu từng lượt sau nó.
+B. Put stable content first and per-turn data afterward.
 
-C. Đặt timestamp thêm lần nữa sau breakpoint để cân bằng.
+C. Repeat the timestamp after the breakpoint.
 
-D. Đổi timestamp thành văn bản cùng độ dài nhưng vẫn thay giá trị.
+D. Keep changing timestamps at equal character lengths.
 
-**Câu 2 — Chọn một.** Nhóm đặt cache_control trên câu hỏi mới mỗi lượt và kỳ vọng cache toàn bộ yêu cầu. Hiểu đúng breakpoint là gì?
+**Question 2 — Choose one.** What does placing `cache_control` on a changing question actually mean?
 
-A. Nó bảo đảm mọi token sau marker đều được tái sử dụng.
+A. Every token after it is guaranteed reusable.
 
-B. Marker chỉ định prefix; còn cần điều kiện khớp cache.
+B. It marks a prefix boundary; cache-matching conditions still apply.
 
-C. Nó yêu cầu dịch vụ bỏ qua mọi khác biệt trước marker.
+C. The service ignores all earlier differences.
 
-D. Nó lưu câu trả lời cuối ở vị trí marker.
+D. It stores the final answer at that location.
 
-**Câu 3 — Chọn hai.** Muốn tối ưu prefix có tài liệu ổn định và câu hỏi động. Hai nguyên tắc nào phù hợp?
+**Question 3 — Choose two.** Which TWO principles support a stable-document prefix with changing questions?
 
-A. Đặt tài liệu dùng chung trước câu hỏi riêng từng lượt.
+A. Place shared documents before per-turn questions.
 
-B. Đối chiếu ngưỡng, TTL và cách đánh dấu với phiên bản thực dùng.
+B. Verify thresholds, TTL, and markers against the actual version.
 
-C. Chèn dữ liệu ngẫu nhiên trước tài liệu để phân biệt người dùng trong cache test.
+C. Insert random data before documents in cache tests.
 
-D. Lặp một đoạn vô nghĩa để vượt mọi ngưỡng token.
+D. Repeat meaningless text to bypass all thresholds.
 
-**Câu 4 — Chọn một.** Một thay đổi nhỏ trong system prompt xuất hiện trước breakpoint, tài liệu sau đó giữ nguyên. Nhóm mặc định vẫn full hit vì phần lớn token giống. Cần làm gì?
+**Question 4 — Choose one.** A small system-prompt change precedes the breakpoint. The team assumes a full hit because most tokens match. What should it do?
 
-A. Coi mọi cache đều bị xóa trên toàn tài khoản.
+A. Assume every account cache was deleted.
 
-B. Dùng phần trăm ký tự trùng làm tỷ lệ cache hit chính xác.
+B. Use character-overlap percentage as the exact hit rate.
 
-C. Quan sát usage và kiểm tra điều kiện khớp prefix của dịch vụ.
+C. Inspect usage and provider prefix-matching rules.
 
-D. Bỏ phần system vừa sửa để lấy lại hit dù mất yêu cầu mới.
+D. Discard the new requirement to restore hits.
 
-**Câu 5 — Chọn hai.** Review thiết kế cache thủ công, hai lỗi nào cần tránh?
+**Question 5 — Choose two.** Which TWO mistakes should a manual cache review avoid?
 
-A. Tối ưu hit bằng cách bỏ thông tin cần cho câu hỏi hiện tại.
+A. Omitting currently required information to maximize hits.
 
-B. Giữ phần tham chiếu ổn định trước dữ liệu biến đổi.
+B. Placing stable reference content before changing inputs.
 
-C. Đo số liệu thực sau mỗi thay đổi cấu trúc prompt.
+C. Measuring real usage after structural changes.
 
-D. Coi marker là bằng chứng cache chắc chắn đã được đọc.
+D. Treating a marker as proof that a cache was read.
 
 ## Đáp án và giải thích
 

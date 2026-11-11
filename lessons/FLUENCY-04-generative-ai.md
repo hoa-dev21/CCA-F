@@ -17,55 +17,55 @@ Nếu đang ôn Architect Foundations theo đề cương đã lưu trong dự á
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Trong cuộc chat dài, người dùng đã đưa một quy tắc ở đầu nhưng câu trả lời cuối không tuân thủ. Nhóm cho rằng mô hình đã được “huấn luyện bằng cuộc chat”. Chẩn đoán nào phù hợp?
+**Question 1 — Choose one.** A model forgets an early rule in a long chat, and the team assumes the chat trained it. What diagnosis is appropriate?
 
-A. Kiểm tra context đã cấp; thông tin mới chưa chứng minh mô hình đổi.
+A. Inspect supplied context; new conversation content does not prove weight changes.
 
-B. Mọi tin nhắn đã gửi tự động trở thành kiến thức huấn luyện có thể gọi lại.
+B. Every message automatically becomes permanent training knowledge.
 
-C. Cửa sổ ngữ cảnh dài chứng minh mọi chi tiết được nhớ chính xác.
+C. A long window guarantees perfect recall.
 
-D. Lỗi cho thấy AI tạo sinh không thể làm nhiệm vụ nhiều lượt.
+D. Generative AI cannot perform multistep conversations.
 
-**Câu 2 — Chọn một.** Một mô hình tạo được đoạn mã mới, chạy qua ví dụ đầu tiên nhưng sai ở dữ liệu khác. Nhận định nào phù hợp với bản chất AI tạo sinh?
+**Question 2 — Choose one.** Generated code passes one example but fails other inputs. What follows?
 
-A. Nội dung mới được tạo ra mặc nhiên có tính đúng chức năng.
+A. Novel content is automatically functionally correct.
 
-B. Mô hình chỉ có thể chép lại dữ liệu nên test đầu tiên là đủ.
+B. Models only copy, so one test is sufficient.
 
-C. Khả năng sinh nội dung khác bằng chứng đáp ứng yêu cầu.
+C. Generation ability differs from evidence of requirement satisfaction.
 
-D. Chỉ cần tăng độ dài context, không cần kiểm tra lại mã.
+D. Longer context replaces further testing.
 
-**Câu 3 — Chọn hai.** Nhóm chuẩn bị đầu vào cho nhiệm vụ dài hơn khả năng xử lý một lượt. Hai quyết định nào phù hợp với khái niệm cửa sổ ngữ cảnh hữu hạn?
+**Question 3 — Choose two.** Which TWO choices suit a task exceeding one context window?
 
-A. Chọn và tổ chức dữ liệu liên quan cần có trong từng lần xử lý.
+A. Select and organize information relevant to each processing step.
 
-B. Giả định mô hình tự truy cập các đoạn đã không còn được gửi.
+B. Assume omitted passages remain automatically accessible.
 
-C. Giữ các ràng buộc quan trọng trong phần đầu vào thực sự dùng để ra quyết định.
+C. Keep important constraints in the input actually used for decisions.
 
-D. Tăng yêu cầu độ dài đầu ra để bù cho tài liệu nguồn không được cung cấp.
+D. Increase output length to compensate for missing sources.
 
-**Câu 4 — Chọn một.** Nhóm ôn Architect có ít thời gian và chỉ có phần giới thiệu video về huấn luyện mô hình. Theo phạm vi đề cương đã lưu trong dự án, cách phân bổ nào hợp lý?
+**Question 4 — Choose one.** With limited exam time and only an introductory training video, what study allocation fits the stored blueprint?
 
-A. Suy ra chi tiết kiến trúc mô hình từ vài thuật ngữ trong giới thiệu.
+A. Infer detailed model architecture from introductory terms.
 
-B. Học nền tảng, ưu tiên thiết kế theo đề cương và nêu giới hạn nguồn.
+B. Learn foundations, prioritize blueprint-aligned design, and disclose source limits.
 
-C. Dành phần lớn thời gian học thuật toán huấn luyện vì là nền tảng của mọi tính năng.
+C. Spend most time on training algorithms.
 
-D. Bỏ khái niệm context vì đó là vấn đề huấn luyện ngoài phạm vi.
+D. Ignore context as irrelevant training detail.
 
-**Câu 5 — Chọn hai.** Sau khi bổ sung tài liệu vào prompt, mô hình trả lời tốt hơn. Hai kết luận nào được phép rút ra từ quan sát này?
+**Question 5 — Choose two.** Adding documents improves answers. Which TWO conclusions are supported?
 
-A. Mô hình đã cập nhật vĩnh viễn trọng số từ tài liệu vừa gửi.
+A. The documents permanently updated model weights.
 
-B. Tài liệu đã cung cấp thêm ngữ cảnh hữu ích cho nhiệm vụ thử nghiệm.
+B. The documents provided useful task context in the experiment.
 
-C. Các lần gọi tương lai không kèm tài liệu chắc chắn sẽ giữ kết quả này.
+C. Future calls without them will certainly retain the improvement.
 
-D. Cần quản lý việc cung cấp thông tin liên quan khi dùng trong các yêu cầu khác.
+D. Relevant information still needs appropriate provisioning in other requests.
 
 ## Đáp án và giải thích
 

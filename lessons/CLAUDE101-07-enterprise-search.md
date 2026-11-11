@@ -15,55 +15,55 @@ Khi nhận câu trả lời, hãy mở các trích dẫn để kiểm tra nội 
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Quản trị viên đã thêm nguồn nội bộ, nhưng một nhân viên không đọc được tài liệu của nhóm khác. Bước xử lý phù hợp nhất?
+**Question 1 — Choose one.** An employee cannot read another team's documents despite an installed connector. What should happen first?
 
-A. Đổi câu hỏi để tránh nhắc tên nhóm sở hữu tài liệu.
+A. Avoid the owning team's name in the question.
 
-B. Kiểm tra danh tính và quyền người dùng tại dịch vụ nguồn.
+B. Check the user's identity and source-system permissions.
 
-C. Cấp quyền quản trị toàn tổ chức vì connector đã có dữ liệu.
+C. Grant organization-wide administrator access.
 
-D. Yêu cầu AI dùng kiến thức của quản trị viên thay cho quyền người hỏi.
+D. Use the administrator's knowledge instead of user rights.
 
-**Câu 2 — Chọn hai.** Câu trả lời về ngày ra mắt có ba trích dẫn nhưng chúng đều là kế hoạch cũ. Hai bước nào cần trước khi gửi báo cáo?
+**Question 2 — Choose two.** Three launch-date citations all refer to old plans. Which TWO checks precede reporting?
 
-A. Giữ kết luận vì có nhiều trích dẫn nên đã đủ đáng tin.
+A. Accept because multiple citations are sufficient.
 
-B. Chọn ngày xuất hiện nhiều nhất trong ba trích dẫn làm ngày cuối cùng.
+B. Use the most repeated date.
 
-C. Tìm hoặc xác nhận quyết định mới hơn và điều chỉnh kết luận theo bằng chứng.
+C. Find or confirm newer decisions and revise the conclusion.
 
-D. Mở nguồn để kiểm tra thời điểm, phiên bản và bối cảnh từng trích dẫn.
+D. Open sources to inspect dates, versions, and context.
 
-**Câu 3 — Chọn một.** Thông tin đổi lịch nằm trong tài liệu dự án và luồng trao đổi đã kết nối. Nhiệm vụ là giải thích lý do nội bộ. Lựa chọn nào phù hợp nhất?
+**Question 3 — Choose one.** Schedule-change reasons exist in connected internal documents and discussions. What approach fits?
 
-A. Chỉ tìm web công khai vì thông tin ở đó dễ trích dẫn hơn.
+A. Search only public websites.
 
-B. Dùng suy luận từ thông lệ ngành thay cho tìm cuộc trao đổi.
+B. Infer reasons from industry practice.
 
-C. Chỉ đọc tiêu đề tài liệu rồi suy ra động cơ của nhóm dự án.
+C. Infer motives from document titles.
 
-D. Tìm nguồn nội bộ được phép, gắn nhận định với bằng chứng.
+D. Search authorized internal sources and link claims to evidence.
 
-**Câu 4 — Chọn hai.** Nguồn nói “đang cân nhắc hoãn”, AI kết luận “đã quyết định hoãn”. Hai điều cần kiểm tra trong bước duyệt?
+**Question 4 — Choose two.** A source says “considering a delay,” but the answer says “delay decided.” Which TWO checks are needed?
 
-A. Có bằng chứng bổ sung về quyết định cuối thay vì chỉ cuộc thảo luận không.
+A. Look for additional evidence of a final decision.
 
-B. Mức chắc chắn và trạng thái quyết định có khớp nội dung nguồn không.
+B. Match certainty and decision status to source content.
 
-C. Chỉ kiểm tra ngày câu trả lời được tạo vì ngày đó mới hơn nguồn.
+C. Only compare answer date with source date.
 
-D. Chỉ kiểm tra liên kết có mở được, vì đó là tiêu chí đủ cho trích dẫn.
+D. Only check that links open.
 
-**Câu 5 — Chọn một.** Hai nhân viên nhận kết quả tìm kiếm khác nhau cho cùng câu hỏi. Thiết kế điều tra nào tránh kết luận vội rằng mô hình không ổn định?
+**Question 5 — Choose one.** Two employees get different search results. What should be checked before blaming model instability?
 
-A. Ép cùng văn phong để loại khác biệt trong nguồn dữ liệu.
+A. Force identical style.
 
-B. Đối chiếu danh tính, quyền, kết nối và phiên bản tài liệu.
+B. Compare identity, permissions, connections, and document versions.
 
-C. Chỉ tăng nhiệt độ sinh để hai đầu ra có cơ hội giống nhau.
+C. Raise temperature so outputs might match.
 
-D. Sao chép token của người thấy nhiều tài liệu cho người còn lại.
+D. Copy the higher-access user's token.
 
 ## Đáp án và giải thích
 

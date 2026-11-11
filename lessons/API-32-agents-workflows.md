@@ -17,55 +17,55 @@ Ví dụ: Chuẩn hóa báo cáo theo các bước đã biết có thể dùng w
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Hệ gọi mô hình năm lần theo các bước cố định; một hệ khác cho mô hình chọn công cụ tiếp theo từ kết quả tra cứu. Tiêu chí phân biệt phù hợp nhất?
+**Question 1 — Choose one.** One system makes five model calls in a fixed sequence; another lets the model choose tools from observations. What distinguishes them?
 
-A. Mức độ phức tạp của chuỗi: nhiều bước cần phối hợp được xem là agent.
+A. The number of coordinated steps.
 
-B. Chủ thể quyết định bước tiếp theo trong hệ thống.
+B. Who determines the next step.
 
-C. Việc có vòng sửa đầu ra sau đánh giá, dù điều kiện chuyển bước đã lập trình cố định.
+C. Whether a programmed revision loop exists.
 
-D. Khả năng gọi nhiều tools trong một nhiệm vụ, không xét ai chọn thứ tự.
+D. Whether multiple tools can be called, regardless of control.
 
-**Câu 2 — Chọn một.** Nhiệm vụ chuẩn hóa báo cáo có các bước bắt buộc, ổn định và cần audit thứ tự. Lựa chọn khởi đầu hợp lý nhất?
+**Question 2 — Choose one.** A report-normalization task has stable mandatory steps and an auditable order. What is the best starting design?
 
-A. Agent tự chọn bước để có linh hoạt tối đa.
+A. An agent choosing every step for maximum flexibility.
 
-B. Một prompt dài yêu cầu tự tuân thủ mọi bước, không ghi trạng thái.
+B. One long prompt without recorded state.
 
-C. Workflow có chuyển bước và kiểm tra rõ theo quy trình đã biết.
+C. A workflow with explicit transitions and checks.
 
-D. Chạy mọi bước song song rồi chọn kết quả có vẻ đầy đủ nhất.
+D. Run every step in parallel and choose the most complete-looking output.
 
-**Câu 3 — Chọn hai.** Điều tra lỗi chưa rõ nguyên nhân: đọc log có thể dẫn sang kiểm tra cấu hình hoặc truy dữ liệu. Hai đặc điểm nào ủng hộ thiết kế agent có giới hạn?
+**Question 3 — Choose two.** An investigation may branch from logs to configuration or data checks. Which TWO properties support a bounded agent?
 
-A. Bước khảo sát tiếp theo phụ thuộc phát hiện mới.
+A. The next investigation step depends on new findings.
 
-B. Mọi yêu cầu đều có cùng chuỗi thao tác không đổi.
+B. Every request follows the same fixed sequence.
 
-C. Mô hình có các công cụ rõ phạm vi để khảo sát và điều kiện dừng/chi phí được kiểm soát.
+C. Scoped tools, stopping conditions, and controlled costs are available.
 
-D. Chưa có tiêu chí thành công nên để tác nhân tự chạy đến khi hết tài nguyên.
+D. No success criteria exist, so it should run until resources are exhausted.
 
-**Câu 4 — Chọn một.** Trong evaluator–optimizer, evaluator liên tục yêu cầu đổi giọng văn qua lại; chất lượng nghiệp vụ không tăng. Sửa nào nhắm đúng vấn đề?
+**Question 4 — Choose one.** An evaluator-optimizer keeps alternating tone without improving business quality. What addresses this?
 
-A. Tăng số vòng tối đa để chờ hai phía đồng thuận.
+A. Increase iterations until both models agree.
 
-B. Dùng cùng prompt cho generator và evaluator.
+B. Use identical generator and evaluator prompts.
 
-C. Bỏ evaluator sau một lần thất bại và coi bản đầu là đạt.
+C. Discard evaluation after one failure and accept the draft.
 
-D. Rubric rõ, có ngưỡng chấp nhận và giới hạn vòng.
+D. Use a clear rubric, acceptance threshold, and iteration limit.
 
-**Câu 5 — Chọn hai.** Nhóm muốn thay workflow đã đo tốt bằng agent vì tên gọi hiện đại hơn. Hai bằng chứng nào cần để biện minh thay đổi?
+**Question 5 — Choose two.** Which TWO findings justify replacing a well-performing workflow with an agent?
 
-A. Tác vụ có biến thiên khiến đường đi cố định thực sự bỏ sót hoặc tốn công.
+A. Task variability makes fixed paths miss requirements or waste work.
 
-B. Agent có thể tạo câu trả lời dài hơn workflow.
+B. Agents can write longer answers.
 
-C. Đánh giá cho thấy lợi ích chất lượng/khả năng thích ứng vượt chi phí và độ phức tạp bổ sung.
+C. Measured quality and adaptability gains outweigh added cost and complexity.
 
-D. Mô hình đã dùng nhiều tool trong một demo thành công.
+D. One successful demo used several tools.
 
 ## Đáp án và giải thích
 

@@ -17,55 +17,55 @@ Cũng cần biết công việc chạy trên máy cá nhân hay trên hệ thố
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Một nhiệm vụ cần thảo luận từng ý tưởng và người dùng muốn phản hồi sau mỗi phương án, chưa có đầu ra cố định. Cách làm nào phù hợp nhất theo bài?
+**Question 1 — Choose one.** A user wants iterative discussion of ideas with feedback after each option and no fixed deliverable yet. What fits?
 
-A. Thiết lập lịch chạy tự động cho ý tưởng trước khi xác định tiêu chí.
+A. Schedule automation before defining criteria.
 
-B. Chat từng lượt để cùng làm rõ và phát triển phương án.
+B. Use turn-by-turn chat to clarify and develop options.
 
-C. Giao tác vụ tự chủ dài rồi chỉ xem báo cáo cuối.
+C. Delegate a long autonomous task and inspect only the final report.
 
-D. Mở môi trường Code và yêu cầu sửa repository dù chưa có nhiệm vụ mã.
+D. Open a coding environment without a code task.
 
-**Câu 2 — Chọn hai.** Tác vụ nhiều bước cần tài liệu chỉ nằm trên laptop. Nhóm muốn tắt máy giữa lúc chạy. Hai điều cần xác minh?
+**Question 2 — Choose two.** A multistep job depends on laptop-only files, and the user wants to shut the laptop down. Which TWO facts need verification?
 
-A. Giả định mọi ứng dụng máy tính đã tự sao chép toàn bộ file lên cloud.
+A. Assume desktop apps upload all files automatically.
 
-B. Chỉ kiểm tra giao diện có thông báo “đang chạy” trước khi tắt.
+B. Only check that the UI says “running.”
 
-C. Môi trường chạy có tiếp tục truy cập được dữ liệu khi máy tắt hay không.
+C. Whether data remains accessible after shutdown.
 
-D. Tác vụ thực sự chạy ở máy local hay môi trường đám mây.
+D. Whether execution occurs locally or in the cloud.
 
-**Câu 3 — Chọn một.** Công việc là sửa lỗi trong dự án, chạy test và trình bày diff. Bạn chọn môi trường theo yếu tố nào?
+**Question 3 — Choose one.** For fixing code, running tests, and showing a diff, what should determine the environment?
 
-A. Giao diện nào có phần chat lớn hơn để chứa lời giải thích.
+A. The largest chat area.
 
-B. Môi trường nào có tên chế độ nghe tự chủ nhất.
+B. The most autonomous-sounding mode name.
 
-C. Chỉ số lượt trao đổi ít nhất, dù không có quyền chạy test.
+C. The fewest turns regardless of test access.
 
-D. Quyền đọc/sửa mã và chạy kiểm thử trong dự án.
+D. Authorized project reads, edits, and test execution.
 
-**Câu 4 — Chọn hai.** Nhóm giao tác vụ tổng hợp nhiều nguồn với đầu ra rõ. Hai điều cần đặt dù công cụ hỗ trợ tự chủ nhiều bước?
+**Question 4 — Choose two.** Which TWO requirements remain for autonomous multistep synthesis with a clear deliverable?
 
-A. Điểm kiểm tra kế hoạch/kết quả phù hợp với tác động của nhiệm vụ.
+A. Plan and result checkpoints proportional to task impact.
 
-B. Phạm vi dữ liệu, hành động và kết quả cần bàn giao.
+B. Data scope, allowed actions, and required outputs.
 
-C. Tiêu chí hoàn thành chỉ là số bước công cụ đã chạy.
+C. Tool-step count as the only completion criterion.
 
-D. Quyền sửa mọi nguồn đọc được để tránh phải dừng giữa chừng.
+D. Permission to modify every readable source.
 
-**Câu 5 — Chọn một.** Người dùng chuyển từ Chat sang chế độ làm việc nhiều bước và nghĩ rằng không cần duyệt nữa. Kết luận nào đúng?
+**Question 5 — Choose one.** Does moving from Chat to a multistep mode remove the need to review results?
 
-A. Đúng nếu cả hai chế độ dùng cùng mô hình nền.
+A. Yes, when the underlying model matches.
 
-B. Dù mức tự chủ khác, kết quả vẫn cần được kiểm chứng.
+B. No; results still require verification despite different autonomy levels.
 
-C. Đúng nếu công cụ tự tạo được kế hoạch có đánh số.
+C. Yes, if plans have numbered steps.
 
-D. Đúng nếu nhiệm vụ được diễn đạt bằng một prompt thay vì nhiều lượt.
+D. Yes, if one prompt expresses the task.
 
 ## Đáp án và giải thích
 

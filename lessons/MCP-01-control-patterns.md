@@ -21,55 +21,55 @@ Lấy được mẫu hướng dẫn chưa có nghĩa nhiệm vụ đã hoàn th�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** UI phải hiện danh mục tài liệu ngay khi mở bộ chọn, trước khi người dùng hỏi mô hình. Primitive nào khớp cách chủ động lựa chọn này?
+**Question 1 — Choose one.** The UI must show a document catalog when a picker opens, before any model question. Which primitive matches this control pattern?
 
-A. Tool để mô hình tự quyết định có cần danh mục ở lượt suy luận tiếp theo.
+A. A tool the model may invoke in its next turn.
 
-B. Resource để ứng dụng chủ động đọc và hiển thị danh mục.
+B. A resource the application reads and displays directly.
 
-C. Prompt để sinh một danh mục dự đoán từ tên dự án.
+C. A prompt predicting document names.
 
-D. Tool chạy nền khi được liệt kê dù chưa có lời gọi.
+D. A tool that executes automatically when listed.
 
-**Câu 2 — Chọn một.** Người dùng bấm “định dạng tài liệu”, chọn mẫu có tham số doc_id. Sau khi lấy prompt thành công, ứng dụng nên làm gì để hoàn tất tác vụ?
+**Question 2 — Choose one.** A user selects a formatting template with `doc_id`. After retrieving the prompt, what completes the task?
 
-A. Báo tài liệu đã định dạng vì server đã trả template.
+A. Report formatting complete because the template was returned.
 
-B. Lưu URI template làm phiên bản tài liệu mới.
+B. Save the URI template as the new document.
 
-C. Chạy mô hình với prompt; xử lý tools và kiểm tra kết quả.
+C. Run the model with the prompt, handle tools, and verify the result.
 
-D. Chỉ liệt kê các prompts lần nữa để xác nhận thao tác.
+D. List prompts again to confirm execution.
 
-**Câu 3 — Chọn hai.** Tool được gọi là model-controlled. Hai trách nhiệm nào vẫn thuộc ứng dụng/server?
+**Question 3 — Choose two.** Tools are described as model-controlled. Which TWO responsibilities remain with application and server code?
 
-A. Kiểm tra quyền và điều kiện thực thi lời gọi.
+A. Check permissions and execution preconditions.
 
-B. Thực thi thao tác được phép và trả kết quả đúng hợp đồng.
+B. Perform authorized actions and return contract-compliant results.
 
-C. Tự chạy mọi tool ngay khi mô hình được cung cấp danh sách.
+C. Execute every tool when its definition is exposed.
 
-D. Coi lựa chọn của mô hình là đủ để cấp quyền trên tài nguyên.
+D. Treat model selection as sufficient resource authorization.
 
-**Câu 4 — Chọn một.** Một server có cả resource tài liệu và tool cập nhật tài liệu. Quyền người dùng chỉ cho đọc. Client thấy tool trong danh sách và mô hình yêu cầu cập nhật. Cách xử lý đúng?
+**Question 4 — Choose one.** A read-only user sees an update tool in discovery, and the model requests it. What is correct?
 
-A. Cho chạy vì tools/list đã chứng minh quyền ghi.
+A. Execute because discovery proves write permission.
 
-B. Cấp quyền ghi tạm cho lời gọi có giải thích hợp lý, rồi thu hồi sau thao tác.
+B. Grant temporary writes if the model explains itself.
 
-C. Gửi yêu cầu tới server bằng tài khoản quyền cao hơn cho tiện.
+C. Invoke through a higher-privilege account.
 
-D. Áp dụng quyền hiện hành; từ chối lời gọi ngoài quyền.
+D. Apply current permissions and deny unauthorized execution.
 
-**Câu 5 — Chọn hai.** Thiết kế cần vừa cho người dùng chọn quy trình, vừa để UI nạp nội dung và mô hình quyết định thao tác khi chạy. Hai nhận định nào đúng?
+**Question 5 — Choose two.** A design combines user-selected workflows, UI-loaded content, and model-chosen actions. Which TWO statements are correct?
 
-A. Mỗi trải nghiệm chỉ được dùng một primitive nên phải chọn tool cho tất cả.
+A. Every experience must use only one primitive.
 
-B. Prompts có thể cung cấp mẫu do người dùng chọn, resources cung cấp dữ liệu app nạp.
+B. Prompts can provide user-selected templates while resources provide application-loaded data.
 
-C. Lấy prompt thành công không chứng minh các tool trong quy trình đã chạy.
+C. Successful prompt retrieval does not prove tool execution.
 
-D. Có resource thì không cần trả kết quả tool về mô hình.
+D. Resources eliminate the need to return tool results to the model.
 
 ## Đáp án và giải thích
 

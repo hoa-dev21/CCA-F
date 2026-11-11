@@ -30,55 +30,55 @@ Nguồn bài thực hành: đã đọc phụ đề tiếng Anh của [Chat exerc
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Server lưu hội thoại đầy đủ trong database, nhưng request mới chỉ chứa “rút gọn đoạn thứ hai”. Đổi model vẫn cho kết quả lệch chủ đề. Thay đổi nào xử lý đúng nguyên nhân?
+**Question 1 — Choose one.** The server stores the full conversation, but a new request contains only “shorten the second paragraph.” Changing models does not help. What addresses the cause?
 
-A. Chỉ gửi ID bản ghi lịch sử trong lời nhắc.
+A. Put only the history record ID in the prompt.
 
-B. Yêu cầu model suy ra ngữ cảnh từ giọng văn của câu mới.
+B. Ask the model to infer context from writing style.
 
-C. Nạp lịch sử liên quan vào messages của request mới.
+C. Load the relevant history into the new request's `messages`.
 
-D. Giữ kết nối HTTP lâu hơn để model nhớ request trước.
+D. Keep HTTP connections open longer to preserve memory.
 
-**Câu 2 — Chọn hai.** Ứng dụng đang xây lịch sử cho cuộc trao đổi văn bản nhiều lượt. Hai bất biến nào giúp câu “sửa đoạn bạn vừa viết” có đúng đối tượng?
+**Question 2 — Choose two.** Which TWO requirements let “revise the paragraph you just wrote” refer to the correct content in a multi-turn conversation?
 
-A. Gửi lịch sử vào log theo dõi thay cho messages để giảm token.
+A. Send history only to monitoring logs to save tokens.
 
-B. Lưu câu trả lời trước theo vai trò assistant.
+B. Store the previous answer with the `assistant` role.
 
-C. Đổi câu trả lời trước sang vai trò user để tăng mức ưu tiên.
+C. Relabel the previous answer as `user` for higher priority.
 
-D. Gửi lịch sử liên quan cùng câu người dùng mới theo đúng thứ tự.
+D. Send relevant history and the new user message in the correct order.
 
-**Câu 3 — Chọn một.** Một người dùng mở hai cuộc trò chuyện về hai khách hàng khác nhau. Wrapper dùng một mảng messages toàn cục cho cả hai. Biện pháp nào ngăn nhầm ngữ cảnh trực tiếp nhất?
+**Question 3 — Choose one.** Two conversations concern different customers, but a wrapper uses one global `messages` array. What most directly prevents context mixing?
 
-A. Thêm tên khách hàng vào cuối mảng chung ở mỗi lần gọi.
+A. Append each customer's name to the shared array.
 
-B. Tách lịch sử theo cuộc trò chuyện trước khi ghép request.
+B. Separate history by conversation before building requests.
 
-C. Xóa các tin nhắn assistant, chỉ giữ tin nhắn user của cả hai luồng.
+C. Keep only both conversations' user messages.
 
-D. Giữ mảng chung nhưng luôn chọn model có cửa sổ lớn hơn.
+D. Use a model with a larger context window.
 
-**Câu 4 — Chọn hai.** Sau nhiều lượt, hệ thống chỉ giữ tin nhắn user. Yêu cầu “giữ nguyên bảng bạn vừa tạo, sửa cột cuối” thất bại. Hai thay đổi nào cần phối hợp?
+**Question 4 — Choose two.** The system retains only user messages. “Keep your table and revise its last column” fails. Which TWO changes are needed?
 
-A. Thêm hướng dẫn rằng mọi từ “bảng” đều chỉ bảng do người dùng cung cấp.
+A. Declare that “table” always means user-provided content.
 
-B. Giữ phản hồi assistant chứa bảng mà câu mới đang tham chiếu.
+B. Retain the assistant response containing the referenced table.
 
-C. Lặp câu mới hai lần để thay thế phần phản hồi đã bỏ.
+C. Repeat the latest request twice.
 
-D. Đưa bản lịch sử đã chọn vào request gửi mô hình, không chỉ lưu tại server.
+D. Include the selected history in the model request, rather than merely storing it server-side.
 
-**Câu 5 — Chọn một.** Để giảm token, nhóm bỏ câu trả lời dài trước đó dù câu mới yêu cầu so sánh hai mục trong câu trả lời ấy. Phương án thu gọn nào phù hợp nhất?
+**Question 5 — Choose one.** A long answer is removed to save tokens, but the next question compares two items from it. Which reduction is appropriate?
 
-A. Giữ lời chào, tên model và số lượt để mô hình phục dựng nội dung.
+A. Keep greetings, model name, and turn count for reconstruction.
 
-B. Giữ đoạn tóm tắt “đã trả lời” và yêu cầu mô hình tự suy ra hai mục.
+B. Keep “already answered” and ask the model to infer the items.
 
-C. Giữ chính hai mục và phần hội thoại cần xác định tiêu chí so sánh.
+C. Keep the two items and the conversation needed to identify comparison criteria.
 
-D. Giữ toàn bộ câu hỏi user nhưng bỏ mọi nội dung assistant.
+D. Keep every user question but remove all assistant content.
 
 ## Đáp án và giải thích
 

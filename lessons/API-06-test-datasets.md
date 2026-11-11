@@ -17,55 +17,55 @@ Mã ví dụ dùng mô hình nhanh để hỗ trợ tạo dữ liệu, cùng k�
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Ứng dụng sinh Python, JSON và regex. Tập thử có 90% Python, các định dạng còn lại mỗi loại chỉ vài ca dễ. Điểm chung cao cho biết điều gì?
+**Question 1 — Choose one.** An application generates Python, JSON, and regex. Its test set is 90% Python with only a few easy cases for the others. How should a high overall score be handled?
 
-A. Có thể phát hành cả ba vì phần lớn yêu cầu đã đạt.
+A. Release all three formats because most requests passed.
 
-B. Chỉ tăng trọng số của hai nhóm ít mẫu.
+B. Only increase weights for the small categories.
 
-C. Bổ sung ca đại diện và đo riêng hai nhóm ít mẫu.
+C. Add representative cases and measure the underrepresented formats separately.
 
-D. Nên gộp mọi đầu ra thành văn bản để dùng điểm Python cho cả ba.
+D. Treat every output as text and apply the Python score to all formats.
 
-**Câu 2 — Chọn hai.** Nhờ mô hình tạo tập thử cho ứng dụng sinh mã AWS theo ba định dạng. Hai yêu cầu nào giúp dữ liệu có thể dùng trực tiếp và đúng mục tiêu?
+**Question 2 — Choose two.** An AI will generate AWS coding tests in three formats. Which TWO instructions make the dataset usable and aligned with the target application?
 
-A. Cho phép trộn lời giải thích vào trường task thay cho yêu cầu cụ thể.
+A. Allow vague explanations in the task field.
 
-B. Nêu các loại đầu ra và giới hạn độ phức tạp cần bao phủ.
+B. Specify output types and the complexity range to cover.
 
-C. Yêu cầu mọi task dùng cùng một ví dụ để dễ đạt điểm ổn định.
+C. Require the same example for every task.
 
-D. Quy định cấu trúc bản ghi, trong đó task mô tả nhiệm vụ cần kiểm tra.
+D. Define a record structure with a task describing the behavior to test.
 
-**Câu 3 — Chọn một.** Mỗi lần đánh giá, nhóm lại nhờ AI sinh một tập mới rồi so điểm hai prompt. Cách sửa nào giữ được phép so sánh đáng tin cậy?
+**Question 3 — Choose one.** The team generates a new dataset for each prompt evaluation and compares scores. What makes the comparison reliable?
 
-A. Yêu cầu tập mới có độ dài trung bình bằng tập cũ.
+A. Match average task lengths only.
 
-B. Giữ số lượng ca bằng nhau nhưng để chủ đề thay đổi tự do.
+B. Keep case counts equal while freely changing topics.
 
-C. Chạy hai prompt trên cùng tập đã duyệt và lưu lại.
+C. Run both prompts on the same reviewed, saved dataset.
 
-D. Chọn ngẫu nhiên một nửa điểm của mỗi đợt để so sánh.
+D. Randomly compare half the scores from each run.
 
-**Câu 4 — Chọn hai.** Đầu ra production phải chỉ gồm mã hoặc dữ liệu, không có lời giải thích. Hai loại ca nào cần có để kiểm tra hợp đồng này?
+**Question 4 — Choose two.** Production outputs must contain code or data without explanation. Which TWO case types test this contract?
 
-A. Task yêu cầu regex hoặc Python với tiêu chí đầu ra đúng loại tương ứng.
+A. Regex or Python tasks with format-specific output criteria.
 
-B. Task luôn cho phép Markdown để bộ parse dễ bỏ qua phần thừa.
+B. Tasks that always allow Markdown so parsers can ignore extras.
 
-C. Task yêu cầu JSON để kiểm tra có thêm văn bản ngoài JSON hay không.
+C. JSON tasks checking for text outside the JSON.
 
-D. Task chỉ yêu cầu giải thích bằng lời vì dễ chấm tính hữu ích.
+D. Explanation-only tasks because usefulness is easy to score.
 
-**Câu 5 — Chọn một.** Tập do AI tạo chứa task mơ hồ “làm việc với AWS” và task quá phức tạp so với ứng dụng mục tiêu. Xử lý nào tốt nhất trước khi đo prompt?
+**Question 5 — Choose one.** AI-generated tests include vague AWS tasks and tasks beyond the application's intended complexity. What should happen before evaluation?
 
-A. Duyệt task theo phạm vi/độ khó đã định rồi lưu tập.
+A. Review scope and difficulty, then save the approved dataset.
 
-B. Giữ nguyên vì dữ liệu AI tạo bảo đảm không thiên vị prompt.
+B. Keep everything because AI data is automatically unbiased.
 
-C. Chỉ sửa đáp án mẫu để phù hợp với bất kỳ đầu ra nào model sinh.
+C. Adapt reference answers to accept whatever the model generates.
 
-D. Loại ca khó để đo năng lực thông thường.
+D. Remove difficult cases merely to measure normal performance.
 
 ## Đáp án và giải thích
 

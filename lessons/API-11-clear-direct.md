@@ -15,55 +15,55 @@ Bạn vẫn có thể viết yêu cầu dưới dạng câu hỏi. Điều cần
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Stakeholder viết “báo cáo này khá thú vị, giúp tôi hiểu hơn”. Sản phẩm cần bản tóm tắt ba ý cho lãnh đạo. Chỉnh sửa nào giảm đúng sự mơ hồ?
+**Question 1 — Choose one.** A stakeholder asks vaguely to understand a report, but the product needs three executive summary points. Which revision reduces ambiguity?
 
-A. Nêu tác vụ ba ý, rủi ro cần tìm và người đọc ngay đầu.
+A. State the three-point deliverable, target risks, and audience at the start.
 
-B. Chỉ đổi câu kết thành “hãy trả lời thật hữu ích”.
+B. Change only the ending to “be helpful.”
 
-C. Đưa báo cáo vào prompt hai lần để nhấn mạnh tầm quan trọng.
+C. Include the report twice.
 
-D. Thêm lời khen model là chuyên gia nhưng giữ nguyên yêu cầu.
+D. Praise the model's expertise without changing the request.
 
-**Câu 2 — Chọn hai.** Prompt mới cần sinh báo cáo ra quyết định, không phải trò chuyện khám phá. Hai thông tin nào nên nêu rõ ngay trong yêu cầu?
+**Question 2 — Choose two.** A prompt must produce a decision report. Which TWO details should it state explicitly?
 
-A. Phạm vi vấn đề và đối tượng sử dụng báo cáo.
+A. The problem scope and intended audience.
 
-B. Sản phẩm phải bàn giao và cấu trúc mong muốn.
+B. The deliverable and desired structure.
 
-C. Toàn bộ lịch sử cá nhân của người đặt yêu cầu dù không liên quan.
+C. The requester's entire unrelated personal history.
 
-D. Một lời hứa rằng model phải luôn cho đáp án tự tin.
+D. A requirement to always sound confident.
 
-**Câu 3 — Chọn một.** Sau khi viết prompt trực tiếp hơn, điểm một ca tăng mạnh. Nhóm muốn áp dụng cùng công thức cho mọi nhiệm vụ. Kết luận nào thận trọng nhưng hữu ích?
+**Question 3 — Choose one.** A direct prompt improves one case. The team wants to apply the same formula everywhere. What is a useful, cautious conclusion?
 
-A. Chỉ cần duyệt độ rõ của prompt bằng mắt.
+A. Visual inspection of prompt clarity is sufficient.
 
-B. Cần đo lại theo tác vụ và rubric của từng ứng dụng.
+B. Evaluate the technique against each application's tasks and rubric.
 
-C. Mức tăng ở một ca chứng minh mọi prompt dài hơn đều tốt hơn.
+C. One improvement proves longer prompts always perform better.
 
-D. Kỹ thuật chỉ áp dụng cho đúng câu chữ demo nên không cần thử nơi khác.
+D. The technique applies only to the exact demo wording.
 
-**Câu 4 — Chọn hai.** Đội đang sửa “phân tích dữ liệu này” thành yêu cầu có thể kiểm thử. Hai bổ sung nào trực tiếp giúp người chấm xác định đã hoàn thành?
+**Question 4 — Choose two.** Which TWO additions make “analyze this data” easier to evaluate?
 
-A. Lặp từ “chính xác” ở mỗi đoạn thay cho tiêu chí cụ thể.
+A. Repeat “accurately” instead of concrete criteria.
 
-B. Nêu phải trả bảng kết quả và các hạn chế dữ liệu.
+B. Require a results table and data limitations.
 
-C. Nêu cần so sánh chỉ số nào trong khoảng thời gian nào.
+C. Specify the metrics and comparison period.
 
-D. Nêu model phải dùng từ ngữ “chuyên sâu” trong tiêu đề.
+D. Require “in-depth” in the title.
 
-**Câu 5 — Chọn một.** Một prompt rõ ràng yêu cầu “ba rủi ro chính” nhưng nguồn chỉ đủ chứng minh hai. Thiết kế chỉ dẫn nào tránh biến độ rõ thành ép bịa?
+**Question 5 — Choose one.** A prompt requests three key risks, but sources support only two. Which instruction avoids fabrication?
 
-A. Lấy một rủi ro và viết lại thành hai mục để đủ định dạng.
+A. Split one risk into two entries.
 
-B. Đổi “ba” thành “nhiều” để khỏi kiểm tra số lượng.
+B. Replace “three” with “many” to avoid counting.
 
-C. Chỉ nêu rủi ro có căn cứ và báo thiếu bằng chứng.
+C. Report only supported risks and disclose insufficient evidence.
 
-D. Cho phép suy đoán để điền đủ ba rủi ro.
+D. Allow speculation to fill all three slots.
 
 ## Đáp án và giải thích
 

@@ -19,55 +19,55 @@ Một kế hoạch tốt nêu rõ phần việc của mỗi bên và tiêu chí 
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Nhóm chọn mô hình và công cụ trước khi biết báo cáo phục vụ quyết định nào; mỗi người chấm kết quả theo một tiêu chí. Việc cần làm trước là gì?
+**Question 1 — Choose one.** The team selects tools before defining the report's decision purpose, and reviewers use different criteria. What comes first?
 
-A. Tăng khả năng của mô hình để đáp ứng mọi cách chấm.
+A. Increase model capability to satisfy all scoring styles.
 
-B. Chốt mục tiêu, người dùng và tiêu chí trước phân công.
+B. Agree on objectives, users, and criteria before allocating work.
 
-C. Chọn một mẫu báo cáo đẹp làm tiêu chí duy nhất.
+C. Choose an attractive template as the only criterion.
 
-D. Giao AI tự quyết định tiêu chí từ bản báo cáo đầu tiên.
+D. Let AI infer criteria from its first report.
 
-**Câu 2 — Chọn một.** AI có thể phân nhóm tài liệu nhưng không được truy cập hồ sơ nội bộ; kết luận cuối cần chuyên môn ngành. Thiết kế phân công nào phù hợp?
+**Question 2 — Choose one.** AI can group documents but cannot access restricted records, and conclusions require domain expertise. What allocation fits?
 
-A. Giao AI toàn bộ và yêu cầu suy đoán phần hồ sơ bị thiếu.
+A. Delegate everything and guess missing records.
 
-B. AI xử lý dữ liệu được phép; chuyên gia xử lý phần hạn chế và duyệt.
+B. Use AI on authorized data and experts for restricted work and review.
 
-C. Cho AI đóng vai chuyên gia để thay thế người duyệt.
+C. Replace experts with an AI expert role.
 
-D. Đưa toàn bộ hồ sơ vào prompt vì nhiệm vụ không thể làm thiếu nguồn.
+D. Upload all restricted files because the task needs them.
 
-**Câu 3 — Chọn hai.** Trước khi giao AI soạn hướng dẫn vận hành, hai thông tin nào cần xác định để phân công có cơ sở?
+**Question 3 — Choose two.** Which TWO facts support delegating operating-guide creation?
 
-A. Dữ liệu AI thực sự truy cập được và giới hạn của nền tảng.
+A. Actual AI data access and platform limitations.
 
-B. Số lượng từ khóa kỹ thuật trong prompt.
+B. Prompt technical-keyword count.
 
-C. Phần việc cần phán đoán người và tiêu chí nghiệm thu từng phần.
+C. Human-judgment requirements and acceptance criteria per part.
 
-D. Độ dài tối đa AI có thể viết, coi đó là thước đo bao phủ nhiệm vụ.
+D. Maximum output length as coverage.
 
-**Câu 4 — Chọn một.** Trong quá trình làm, chuyên gia phát hiện việc kiểm tra phương pháp nghiên cứu khó hơn dự kiến. Nhóm nên điều chỉnh thế nào?
+**Question 4 — Choose one.** Methodology review proves harder than expected. How should allocation change?
 
-A. Giữ phân công vì thay đổi sẽ làm mất tính nhất quán của kế hoạch.
+A. Freeze it to preserve the original plan.
 
-B. Yêu cầu AI chấm chính kết luận của nó thay chuyên gia để giữ deadline.
+B. Have AI grade itself to keep the deadline.
 
-C. Bỏ phần phương pháp khỏi tiêu chí chấp nhận cho vừa năng lực hiện có.
+C. Remove methodology from acceptance criteria.
 
-D. Đổi phạm vi/nguồn lực, giữ kiểm tra chuyên môn và cập nhật bàn giao.
+D. Adjust scope or resources, preserve expert checks, and update handoffs.
 
-**Câu 5 — Chọn hai.** Quản lý muốn đo chất lượng phân công. Hai dấu hiệu nào thuyết phục hơn tỷ lệ công việc tự động hóa?
+**Question 5 — Choose two.** Which TWO signals assess delegation better than automation percentage?
 
-A. Phần AI nhận phù hợp dữ liệu, năng lực và mức kiểm tra khả dụng.
+A. AI tasks fit accessible data, capabilities, and available verification.
 
-B. Mọi bước đều do AI thực hiện để giảm số lần bàn giao.
+B. AI performs every step to minimize handoffs.
 
-C. Có người kiểm tra/ra quyết định cho phần cần chuyên môn và tiêu chí hoàn tất rõ.
+C. Qualified people own required judgments and clear completion criteria.
 
-D. Các nhiệm vụ được chia thành số bước bằng nhau cho người và AI.
+D. Humans and AI receive equal step counts.
 
 ## Đáp án và giải thích
 

@@ -15,55 +15,55 @@ Hãy chọn ví dụ dựa trên lỗi thường gặp. Nếu ứng dụng hay t
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Bộ phân loại cảm xúc thường gán tích cực cho câu “tuyệt thật, lại mất dữ liệu”. Các ví dụ hiện tại chỉ có câu khen trực tiếp. Bổ sung nào sát lỗi nhất?
+**Question 1 — Choose one.** A sentiment classifier labels “Great, lost my data again” positive. Current examples contain only sincere praise. What should be added?
 
-A. Đổi mọi ví dụ sang nhãn trung tính để giảm nhầm tích cực.
+A. Make all labels neutral.
 
-B. Ví dụ châm biếm có nhãn đúng và lý do về ý định.
+B. Correctly labeled sarcastic examples explaining intent.
 
-C. Nhiều câu khen trực tiếp hơn để củng cố nhãn tích cực.
+C. More sincere praise examples.
 
-D. Chỉ một định nghĩa dài hơn cho từ “tuyệt”.
+D. Only a longer definition of “great.”
 
-**Câu 2 — Chọn hai.** Nhóm thêm few-shot cho bộ trích xuất. Hai đặc điểm nào làm ví dụ có ích hơn cho khái quát hóa?
+**Question 2 — Choose two.** Which TWO properties make extraction few-shot examples useful for generalization?
 
-A. Đưa một đầu ra mâu thuẫn với hướng dẫn mà không giải thích ngoại lệ.
+A. An unexplained output contradicting the instructions.
 
-B. Phân biệt rõ đầu vào mẫu và đầu ra đạt yêu cầu.
+B. Clearly separated example inputs and target outputs.
 
-C. Bao phủ những trường hợp dễ nhầm và định dạng thực tế cần xử lý.
+C. Coverage of confusing cases and realistic formats.
 
-D. Dùng nhiều bản sao gần giống của một ca dễ duy nhất.
+D. Many near-duplicates of one easy case.
 
-**Câu 3 — Chọn một.** Prompt yêu cầu trả JSON, nhưng các ví dụ đều có lời giải thích bên ngoài JSON. Model lặp lại phần lời giải thích. Cách sửa trực tiếp nhất?
+**Question 3 — Choose one.** A JSON-only prompt includes examples with explanations outside JSON. The model copies that style. What is the direct fix?
 
-A. Tăng số ví dụ có lời giải thích để model hiểu sâu nội dung.
+A. Add more explanatory examples.
 
-B. Làm đầu ra mẫu nhất quán với hợp đồng chỉ JSON rồi đo lại.
+B. Make examples obey the JSON-only contract and reevaluate.
 
-C. Chấp nhận output miễn chứa một đoạn JSON.
+C. Accept any output containing a JSON fragment.
 
-D. Thêm câu “rất quan trọng” nhưng giữ các ví dụ trái hợp đồng.
+D. Add “very important” without fixing examples.
 
-**Câu 4 — Chọn hai.** Sau khi thêm ví dụ cho ca khó, điểm trên chính ví dụ đó tăng. Hai việc nào cần làm để đánh giá lợi ích thực tế?
+**Question 4 — Choose two.** Scores improve on examples added to the prompt. Which TWO checks measure practical benefit?
 
-A. Thử trên các ca mới cùng loại nhưng không trùng ví dụ trong prompt.
+A. Evaluate new cases of the same type that are absent from the prompt.
 
-B. Chỉ chấm lại các ví dụ đã đưa vào prompt để đo khả năng nhớ.
+B. Grade only the prompt examples.
 
-C. Bỏ các ca không giống ví dụ vì few-shot không cần khái quát.
+C. Remove cases unlike the examples.
 
-D. Kiểm tra các nhóm cũ để phát hiện hồi quy do ví dụ mới.
+D. Check previous categories for regressions.
 
-**Câu 5 — Chọn một.** Hai nhãn dễ nhầm khác nhau ở việc người viết phàn nàn trực tiếp hay mỉa mai. Ngân sách prompt chỉ còn đủ hai ví dụ. Chọn bộ nào hợp lý nhất?
+**Question 5 — Choose one.** Two confusing labels distinguish direct complaints from sarcasm. There is room for two examples. Which pair is best?
 
-A. Cặp gần từ ngữ, khác ý định, có nhãn/lý do rõ.
+A. Similar wording with different intent, clear labels, and explanations.
 
-B. Hai câu tích cực rất ngắn để tiết kiệm token tối đa.
+B. Two short positive sentences.
 
-C. Lặp lại hai ca đã phân loại đúng.
+C. Two already-correct cases repeated.
 
-D. Hai câu có nội dung hoàn toàn khác nhau và không thuộc vùng nhầm.
+D. Two unrelated sentences outside the confusion area.
 
 ## Đáp án và giải thích
 

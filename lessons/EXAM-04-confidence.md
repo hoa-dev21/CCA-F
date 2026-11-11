@@ -17,55 +17,55 @@ Ví dụ: Hệ thống đạt 97% chung nhưng thường sai ngày đáo hạn �
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Hệ trích xuất đúng 97% toàn bộ trường, nhưng mã tài khoản của một mẫu hiếm sai 15%. Nhóm muốn bỏ duyệt khi mô hình tự tin trên 0,95. Quyết định nào có cơ sở nhất?
+**Question 1 — Choose one.** Extraction accuracy is 97% overall, but account numbers in a rare document type have a 15% error rate. The team wants to skip review above model confidence 0.95. What is the best decision?
 
-A. Dùng ngưỡng đó vì độ đúng tổng thể đã cao hơn yêu cầu.
+A. Use that threshold because overall accuracy is high.
 
-B. Tăng ngưỡng toàn hệ lên 0,99 rồi bỏ duyệt các mẫu hiếm.
+B. Raise the global threshold to 0.99 and skip review for rare types.
 
-C. Đổi sang mô hình lớn hơn và giữ quy trình đo hiện tại.
+C. Use a larger model without changing evaluation.
 
-D. Hiệu chỉnh theo trường/loại với nhãn thật; review nhóm rủi ro.
+D. Calibrate by field and document type against ground truth, and review high-risk groups.
 
-**Câu 2 — Chọn một.** Trong 100 trường mà mô hình chấm 0,98, chỉ 82 trường đúng trên tập kiểm định đại diện. Kết luận nào đúng nhất?
+**Question 2 — Choose one.** Of 100 fields assigned confidence 0.98, only 82 are correct on a representative validation set. What does this show?
 
-A. Điểm đang quá cao; 0,98 chưa phải xác suất đã hiệu chỉnh.
+A. The scores are overconfident; 0.98 is not a calibrated probability.
 
-B. Cần lấy trung bình 0,98 và 0,82 để có confidence vận hành.
+B. Average 0.98 and 0.82 to obtain operational confidence.
 
-C. Kết quả 82% chỉ phản ánh validator, không liên quan confidence.
+C. The 82% result concerns only the validator, not confidence.
 
-D. Có thể bỏ review vì mô hình vẫn đánh giá từng trường riêng lẻ.
+D. Review can be removed because the model scored each field separately.
 
-**Câu 3 — Chọn hai.** Sau triển khai tự động chấp nhận nhóm confidence cao, dữ liệu đầu vào bắt đầu đổi bố cục. Hai biện pháp nào giúp phát hiện lỗi lọt?
+**Question 3 — Choose two.** High-confidence results are automatically accepted. Input document layouts then begin to change. Which TWO measures help detect missed errors?
 
-A. Chỉ xem lại các trường bị hệ thống từ chối.
+A. Review only fields the system rejects.
 
-B. Lấy mẫu ngẫu nhiên phân tầng trong nhóm được tự động chấp nhận.
+B. Take stratified random samples from automatically accepted results.
 
-C. Theo dõi chất lượng theo loại tài liệu/trường và điều chỉnh ngưỡng khi có bằng chứng drift.
+C. Track quality by document type and field, adjusting thresholds when drift is demonstrated.
 
-D. Dùng tỷ lệ chấp nhận tự động làm chỉ số chính xác thay cho nhãn thật.
+D. Use the automatic acceptance rate as an accuracy measure instead of ground truth.
 
-**Câu 4 — Chọn một.** Hai trường có cùng tỷ lệ sai 1%: mô tả sản phẩm và số tài khoản nhận tiền. Nguồn lực review giới hạn. Chính sách nào hợp lý nhất?
+**Question 4 — Choose one.** Product descriptions and payment account numbers both have a 1% error rate. Review capacity is limited. Which policy is most appropriate?
 
-A. Dùng cùng ngưỡng vì xác suất sai bằng nhau.
+A. Apply the same threshold because error probabilities are equal.
 
-B. Ưu tiên mô tả dài vì tốn nhiều token hơn.
+B. Prioritize longer descriptions because they use more tokens.
 
-C. Ưu tiên theo hậu quả, chất lượng đo được và khả năng sửa lỗi.
+C. Prioritize by consequences, measured quality, and the ability to correct errors.
 
-D. Ưu tiên trường có confidence dao động nhiều, bỏ qua giá trị nghiệp vụ.
+D. Prioritize variable confidence scores without considering business impact.
 
-**Câu 5 — Chọn hai.** Một trường có confidence cao nhưng hai trang nguồn cho giá trị khác nhau. Hai hành động nào phù hợp trước khi tự động sử dụng?
+**Question 5 — Choose two.** A field has high model confidence, but two source pages provide different values. Which TWO actions are appropriate before using the value automatically?
 
-A. Chọn giá trị có confidence cao hơn và loại dấu xung đột.
+A. Select the higher-confidence value and remove the conflict flag.
 
-B. Giữ các giá trị cùng nguồn và trạng thái mâu thuẫn.
+B. Preserve both values, their sources, and the conflict status.
 
-C. Tính trung bình hai giá trị nếu schema yêu cầu một số duy nhất.
+C. Average the values if the schema requires one number.
 
-D. Chuyển trường đó sang quy trình xác minh có thẩm quyền hoặc quy tắc giải quyết xung đột đã định.
+D. Apply an authorized verification process or a predefined conflict resolution rule.
 
 ## Đáp án và giải thích
 

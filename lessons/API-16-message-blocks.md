@@ -15,55 +15,55 @@ Nếu chỉ lấy `content[0].text`, bạn có thể làm mất các khối yêu
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Response có text, hai tool_use rồi thêm text. UI chỉ lấy content[0].text và lưu chuỗi đó vào lịch sử. Hậu quả kiến trúc quan trọng nhất là gì?
+**Question 1 — Choose one.** A response contains text, two `tool_use` blocks, and more text. The UI stores only `content[0].text` in history. What is the main architectural consequence?
 
-A. Chỉ mất định dạng UI, còn model tự nhớ hai yêu cầu qua kết nối.
+A. Only presentation is lost; the connection preserves tool requests.
 
-B. Hai công cụ vẫn chạy vì tên chúng đã khai báo trong tools.
+B. Both tools execute because they were declared.
 
-C. Không có vấn đề nếu text đầu tiên nói “tôi sẽ tra cứu”.
+C. There is no problem if the first text promises a lookup.
 
-D. Mất yêu cầu công cụ và thông tin cần nối kết quả vào lượt sau.
+D. Tool requests and information needed to link later results are lost.
 
-**Câu 2 — Chọn hai.** Để xử lý phản hồi gồm nhiều loại block mà không phụ thuộc thứ tự ví dụ, hai bước nào cần có?
+**Question 2 — Choose two.** Which TWO steps support mixed response blocks without assuming their order?
 
-A. Lưu đầy đủ response.content trong tin nhắn assistant.
+A. Store complete `response.content` in the assistant message.
 
-B. Chỉ đọc block thứ hai vì tool_use thường nằm sau lời giải thích.
+B. Read only the second block because tools usually follow explanations.
 
-C. Duyệt danh sách và phân nhánh theo type của từng block.
+C. Iterate blocks and dispatch by each block's `type`.
 
-D. Chuyển mọi block thành một chuỗi rồi dò từ “tool”.
+D. Flatten everything into a string and search for “tool.”
 
-**Câu 3 — Chọn một.** Model viết “tôi sẽ kiểm tra đơn hàng” nhưng response không có tool_use. Router nên làm gì?
+**Question 3 — Choose one.** The model says “I will check the order” but returns no `tool_use`. What should the router do?
 
-A. Tạo một tool_use_id giả và ghi rằng model đã yêu cầu công cụ.
+A. Invent a tool request ID.
 
-B. Đánh dấu công cụ thành công vì model đã thông báo ý định.
+B. Mark the tool successful because intent was stated.
 
-C. Chỉ thực thi lời gọi có cấu trúc phù hợp, không theo câu văn.
+C. Execute only appropriately structured tool calls, not prose promises.
 
-D. Trích mã đơn bằng regex rồi tự chọn bất kỳ công cụ có tên gần nhất.
+D. Extract an order ID and invoke a similarly named tool.
 
-**Câu 4 — Chọn hai.** Một khối tool_use chứa id, name và input. Hai quan hệ nào ứng dụng phải bảo toàn khi điều phối?
+**Question 4 — Choose two.** Which TWO relationships must be preserved for a `tool_use` block containing `id`, `name`, and `input`?
 
-A. id liên kết kết quả sau này với đúng lần gọi.
+A. The ID links a later result to the correct invocation.
 
-B. Vị trí block trong mảng thay thế được id khi hai công cụ chạy song song.
+B. Array position replaces the ID for parallel tools.
 
-C. Nội dung text bên cạnh luôn được dùng thay input nếu dễ đọc hơn.
+C. Adjacent text always overrides input when easier to read.
 
-D. name và input xác định hàm cùng đối số cần thực thi.
+D. The name and input identify the function and arguments to execute.
 
-**Câu 5 — Chọn một.** Nhóm muốn một hàm trả chuỗi cho UI và một vòng xử lý công cụ dùng cùng response. Thiết kế nào phù hợp?
+**Question 5 — Choose one.** The UI needs a string, while the tool loop needs the same response. Which design is appropriate?
 
-A. Cho UI xóa tool_use sau khi render rồi dùng đối tượng đã sửa cho vòng lặp.
+A. Delete tool blocks after rendering and reuse the modified object.
 
-B. Dùng lời tóm tắt của UI để tái tạo id và input ở lần gọi sau.
+B. Reconstruct IDs and inputs from the UI summary.
 
-C. Thay response.content bằng text ngay sau khi nhận để giảm bộ nhớ.
+C. Replace content with text immediately.
 
-D. Giữ response đầy đủ cho điều phối, trích text riêng chỉ để hiển thị.
+D. Retain the full response for orchestration and extract text separately for display.
 
 ## Đáp án và giải thích
 

@@ -15,55 +15,55 @@ Ví dụ: Một bài kiểm thử báo thành công sau khi AI xóa điều ki�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Nhóm lặp lại chuỗi kiểm chứng khi refactor: đọc diff, chạy test mục tiêu, typecheck, ghi kết quả. Cách đóng gói nào giúp tái sử dụng có chủ đích?
+**Question 1 — Choose one.** A team repeatedly inspects diffs, runs targeted tests and type checks, and records evidence. How should this be packaged for intentional reuse?
 
-A. Skill ghi rõ lúc dùng, cách kiểm chứng và bằng chứng cần trả.
+A. A skill describing when to use it, verification steps, and required evidence.
 
-B. Đưa cả transcript lần refactor trước vào mọi phiên mới.
+B. The previous refactor's full transcript in every new session.
 
-C. Đặt tên nhánh verify để tác nhân tự suy ra quy trình.
+C. A branch named `verify`.
 
-D. Chỉ đặt alias lệnh test và coi toàn bộ quy trình đã được chuẩn hóa.
+D. Only a test-command alias as the entire standard process.
 
-**Câu 2 — Chọn một.** Test xanh sau sửa lỗi, nhưng diff cho thấy assertion quan trọng bị xóa. Quyết định nào đúng trước khi chấp nhận?
+**Question 2 — Choose one.** Tests pass after a fix, but the diff removes an important assertion. What should precede acceptance?
 
-A. Chấp nhận bản sửa vì test runner trả exit code 0 và toàn bộ test còn lại đều vượt qua trên nhánh hiện tại.
+A. Accept because all remaining tests pass.
 
-B. Review độ mạnh của test và chạy bằng chứng phù hợp với yêu cầu gốc.
+B. Review test strength and obtain evidence against original requirements.
 
-C. Yêu cầu tác nhân tự chấm confidence của bản sửa.
+C. Ask for model confidence.
 
-D. Chỉ thêm nhiều test không liên quan để bù số assertion đã mất.
+D. Add unrelated tests to replace the assertion count.
 
-**Câu 3 — Chọn hai.** Một bước kiểm tra bắt buộc tuyệt đối trước hành động phát hành. Hai thành phần nào cần cho thiết kế đáng tin?
+**Question 3 — Choose two.** A check is mandatory before release. Which TWO elements support reliable enforcement?
 
-A. Mô tả bước đó trong skill để quy trình minh bạch.
+A. Document the step in a skill.
 
-B. Dựa riêng vào skill như một cơ chế quyền không thể vượt qua.
+B. Rely on the skill alone as an unbypassable permission boundary.
 
-C. Gate bằng chương trình/quyền tại nơi thực hiện hành động, từ chối khi chưa đạt.
+C. Use a programmatic or permission gate that denies release until the check passes.
 
-D. Cho phát hành trước rồi dùng skill kiểm tra sau để tiết kiệm thời gian chờ.
+D. Release first and check afterward.
 
-**Câu 4 — Chọn một.** Skill chạy test thành công trên nhánh cũ rồi tác nhân sửa thêm code. Nó muốn dùng kết quả cũ để đánh dấu hoàn tất. Bước phù hợp nhất?
+**Question 4 — Choose one.** A skill passed tests before further edits. What should happen before claiming completion now?
 
-A. Chấp nhận nếu thay đổi cuối ít hơn mười dòng.
+A. Accept if the final edit is under ten lines.
 
-B. Gắn lại log cũ để giữ lịch sử bằng chứng.
+B. Attach old logs again.
 
-C. Bỏ qua kiểm tra vì skill đã được gọi đúng một lần.
+C. Skip checks because the skill already ran once.
 
-D. Kiểm tra lại phần bị ảnh hưởng trên mã hiện tại.
+D. Recheck affected behavior on current code.
 
-**Câu 5 — Chọn hai.** Một skill verification được chia sẻ cho dự án có nhiều package. Hai thông tin nào giúp tránh báo thành công giả?
+**Question 5 — Choose two.** Which TWO reporting details prevent false success from a multi-package verification skill?
 
-A. Package/phạm vi đã kiểm tra và lệnh thực tế đã chạy.
+A. The package or scope checked and actual commands run.
 
-B. Kết quả, lỗi còn mở và phần không thể kiểm tra.
+B. Results, unresolved errors, and checks that could not run.
 
-C. Chỉ câu “all checks passed” không cần phạm vi.
+C. Only “all checks passed.”
 
-D. Số lượng bước trong skill thay cho kết quả từng gate liên quan.
+D. The skill's step count instead of gate outcomes.
 
 ## Đáp án và giải thích
 

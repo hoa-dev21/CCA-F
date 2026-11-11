@@ -15,55 +15,55 @@ Ví dụ: Nếu câu hỏi cần dữ liệu đơn hàng hiện tại, thêm suy
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Tác vụ phân loại đơn giản đáp ứng SLA, còn bài toán lập kế hoạch nhiều ràng buộc thường sai. Nhóm cân nhắc bật thinking cho toàn hệ. Quyết định nào có cơ sở nhất?
+**Question 1 — Choose one.** Simple classification meets its SLA, while constrained planning often fails. How should the team assess enabling thinking?
 
-A. Bật cho tất cả vì nhiều suy luận luôn giảm cả chi phí lẫn độ trễ.
+A. Enable it globally because more reasoning always reduces costs and latency.
 
-B. Giữ tắt cho mọi tác vụ vì nhóm đơn giản đã đạt yêu cầu.
+B. Disable it globally because simple tasks already work.
 
-C. Đo lợi ích/chi phí theo nhóm rồi chọn nơi bật suy luận.
+C. Measure benefits and costs by task category and enable it selectively.
 
-D. Chỉ so sánh độ dài phần suy luận để chọn cấu hình.
+D. Compare reasoning length alone.
 
-**Câu 2 — Chọn hai.** Adapter ghi lịch sử chỉ giữ text hiển thị; lượt tiếp theo có thinking/tool interaction bị lỗi. Hai thay đổi nào phù hợp với bài?
+**Question 2 — Choose two.** An adapter saves only displayed text, breaking later thinking-and-tool turns. Which TWO changes are appropriate?
 
-A. Bảo toàn signature và nội dung opaque cần giữ, thay vì tự sửa để “làm sạch”.
+A. Preserve required signatures and opaque content without editing them.
 
-B. Giữ các khối phản hồi cần truyền lại theo hợp đồng mô hình/SDK.
+B. Retain response blocks required by the model and SDK contract.
 
-C. Tạo signature mới từ hash của text đã hiển thị để khớp giao diện.
+C. Generate replacement signatures from displayed text hashes.
 
-D. Bỏ mọi khối không đọc được vì chúng không mang ý nghĩa đối với người dùng.
+D. Discard unreadable blocks because users cannot interpret them.
 
-**Câu 3 — Chọn một.** Bot thiếu trạng thái đơn hàng hiện tại nhưng nhóm tăng thinking budget để giảm trả lời sai. Vì sao cách này chưa xử lý nguyên nhân?
+**Question 3 — Choose one.** A bot lacks current order status. Why does increasing thinking budget fail to address the cause?
 
-A. Mọi sai sót đơn hàng đều do budget thấp hơn kích thước lịch sử.
+A. All order errors result from insufficient history-sized budgets.
 
-B. Chỉ cần hiển thị phần thinking để người dùng tự suy ra trạng thái thật.
+B. Showing reasoning lets users infer actual status.
 
-C. Thinking chỉ hữu ích khi không dùng bất kỳ công cụ nào.
+C. Thinking is useful only without tools.
 
-D. Suy luận thêm không cung cấp dữ liệu hiện tại; cần tra nguồn có thẩm quyền và kiểm chứng.
+D. More reasoning does not supply current data; authoritative lookup and verification are needed.
 
-**Câu 4 — Chọn hai.** Đội chuyển mẫu thinking sang mô hình khác và muốn giữ temperature cùng prefill của mẫu cũ. Hai việc nào cần trước khi triển khai?
+**Question 4 — Choose two.** Thinking examples move to a different model, retaining old temperature and prefill settings. Which TWO checks precede deployment?
 
-A. Coi phần reasoning có vẻ thuyết phục là bằng chứng đủ về chất lượng.
+A. Persuasive reasoning alone proves quality.
 
-B. Đánh giá tác vụ đại diện với giới hạn độ trễ và chất lượng đặt trước.
+B. Evaluate representative tasks against preset quality and latency targets.
 
-C. Kiểm tra tương thích cấu hình và hợp đồng phản hồi của mô hình đích.
+C. Verify target configuration compatibility and response contracts.
 
-D. Giữ nguyên mọi tham số vì SDK chấp nhận đối tượng cấu hình.
+D. Keep all settings because the SDK accepts the object.
 
-**Câu 5 — Chọn một.** Câu trả lời có phần thinking dài, hợp lý nhưng số tổng cuối sai so với bảng nguồn. Hệ thống nên dựa vào tiêu chí nào để chấp nhận?
+**Question 5 — Choose one.** Reasoning looks convincing, but the final sum contradicts the source table. What should determine acceptance?
 
-A. Số lượng bước suy luận vì kết quả ngắn có thể chỉ là lỗi trình bày.
+A. The number of reasoning steps.
 
-B. Kết quả khớp nguồn và quy tắc nghiệp vụ khi kiểm tra độc lập.
+B. Independent checks against source values and business rules.
 
-C. Signature hợp lệ vì nó chứng nhận mọi mệnh đề trong thinking là đúng.
+C. A valid signature proving every statement is true.
 
-D. Mức tự tin ở đoạn kết vì mô hình đã cân nhắc nhiều khả năng.
+D. The model's final confidence.
 
 ## Đáp án và giải thích
 

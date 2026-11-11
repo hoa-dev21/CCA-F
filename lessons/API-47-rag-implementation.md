@@ -15,55 +15,55 @@ Ví dụ: Kết quả tìm kiếm trỏ nhầm đoạn văn. Trước khi sửa 
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Vector store trả ID đúng nhưng lookup văn bản dùng chỉ số mảng sau khi sắp xếp lại. Câu trả lời dẫn nhầm đoạn. Sửa ở đâu trước?
+**Question 1 — Choose one.** A vector store returns correct IDs, but text lookup uses array positions after sorting. Citations point to wrong passages. What should be fixed first?
 
-A. Đổi mô hình sinh sang loại lớn hơn.
+A. Use a larger generation model.
 
-B. Ánh xạ định danh kết quả về đúng nội dung nguồn.
+B. The mapping from result identifiers to source content.
 
-C. Thêm chỉ dẫn mô hình kiểm tra kỹ trích dẫn.
+C. Ask the model to inspect citations more carefully.
 
-D. Tăng k để hy vọng đoạn đúng cũng xuất hiện.
+D. Increase k in case the correct passage appears too.
 
-**Câu 2 — Chọn một.** Tăng k từ nhỏ lên lớn cải thiện câu hỏi cần nhiều đoạn nhưng làm sai các câu đơn giản. Cách chọn k phù hợp nhất?
+**Question 2 — Choose one.** Increasing k helps multi-passage questions but hurts simple ones. How should it be selected?
 
-A. Chọn k bằng số trang của toàn bộ kho.
+A. Set k to the corpus page count.
 
-B. Giữ k nhỏ nhất vì ít token luôn chính xác hơn.
+B. Always minimize k because fewer tokens are always more accurate.
 
-C. Giữ k lớn nhất vì chứa nhiều thông tin nhất.
+C. Always maximize k because more information is better.
 
-D. Chọn k theo chất lượng, nhiễu và chi phí từng nhóm hỏi.
+D. Evaluate quality, noise, and cost by question category.
 
-**Câu 3 — Chọn hai.** Một vector store chỉ lưu vectơ và điểm tương đồng. Hai thành phần nào còn cần để trả lời có thể kiểm tra?
+**Question 3 — Choose two.** A store contains only vectors and similarity scores. Which TWO elements are still needed for verifiable answers?
 
-A. Một nhãn “đã xác minh” dựa trên điểm tương đồng cao.
+A. A verified label inferred from high similarity.
 
-B. Mối liên hệ ổn định giữa từng vectơ và nguồn của nó.
+B. A stable relationship between each vector and its source.
 
-C. Câu trả lời mẫu duy nhất dùng cho mọi vectơ gần nhau.
+C. One reference answer for all nearby vectors.
 
-D. Văn bản gốc hoặc tham chiếu đủ để lấy lại văn bản.
+D. Original text or a reference sufficient to retrieve it.
 
-**Câu 4 — Chọn một.** Câu trả lời sai và đoạn đầu vào cũng sai chủ đề. Nhóm định chỉ sửa prompt sinh. Bước hợp lý hơn là gì?
+**Question 4 — Choose one.** An incorrect answer received off-topic passages. What is better than changing only generation prompts?
 
-A. Truy vết chunk, embedding, truy vấn và ánh xạ nguồn.
+A. Trace chunks, embeddings, queries, and source mappings.
 
-B. Đưa câu trả lời đúng vào prompt để bỏ qua kho dữ liệu.
+B. Insert the correct answer to bypass the corpus.
 
-C. Tăng giới hạn đầu ra để mô hình có thêm cơ hội tự sửa.
+C. Increase output length for self-correction.
 
-D. Chấm riêng văn phong để chọn prompt nghe đáng tin hơn.
+D. Score style to choose more trustworthy-sounding prompts.
 
-**Câu 5 — Chọn hai.** Sau đổi k, nhóm báo độ chính xác trung bình tăng. Hai kiểm tra nào cần trước triển khai?
+**Question 5 — Choose two.** Average accuracy rises after changing k. Which TWO checks are needed before deployment?
 
-A. Coi cải thiện trung bình là bằng chứng mọi câu hỏi đều tốt hơn.
+A. Assume every question improved.
 
-B. Bỏ đánh giá truy xuất vì đã đo câu trả lời cuối.
+B. Stop evaluating retrieval because answers were scored.
 
-C. Đo ngữ cảnh, độ trễ và lượng nội dung trùng được đưa vào.
+C. Measure context volume, latency, and duplicated content.
 
-D. Kiểm tra nhóm câu hỏi bị giảm chất lượng hoặc thiếu điều kiện quan trọng.
+D. Inspect degraded categories and missing important conditions.
 
 ## Đáp án và giải thích
 

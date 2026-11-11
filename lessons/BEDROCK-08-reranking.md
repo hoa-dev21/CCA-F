@@ -15,55 +15,55 @@ Xếp hạng lại thêm thời gian và chi phí. Nó cũng không thể chọn
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Hệ thống trả đúng mã sự cố nhưng sai nguyên nhân. Đo kiểm cho thấy đoạn nêu nguyên nhân đã có trong 30 ứng viên, thường ở vị trí 22; chỉ 5 đoạn đầu được gửi để trả lời. Thay đổi nào nhắm đúng nút thắt?
+**Question 1 — Choose one.** The causal passage is usually ranked 22nd among 30 candidates, but only five reach generation. What addresses the bottleneck?
 
-A. Xếp hạng lại 30 ứng viên theo câu hỏi trước khi chọn 5 đoạn.
+A. Rerank the 30 candidates against the question before selecting five.
 
-B. Tăng độ dài câu trả lời nhưng giữ nguyên 5 đoạn đầu.
+B. Increase answer length without changing context.
 
-C. Lập chỉ mục lại toàn bộ kho trước khi kiểm tra thứ tự ứng viên.
+C. Reindex everything before checking ranks.
 
-D. Yêu cầu mô hình trả lời bổ sung nguyên nhân từ tên sự cố.
+D. Infer the cause from the incident name.
 
-**Câu 2 — Chọn hai.** Reranker trả các ID [17, 4, 99], nhưng tập đầu vào chỉ có ID 1–30. Hai xử lý nào bảo toàn tính đúng đắn của pipeline?
+**Question 2 — Choose two.** A reranker returns IDs 17, 4, and 99 from candidates 1–30. Which TWO safeguards preserve correctness?
 
-A. Kiểm tra các ID trả về có thuộc tập ứng viên trước khi lấy nội dung.
+A. Check returned IDs belong to the candidate set.
 
-B. Nhờ mô hình viết lại nội dung của ID 99 dựa trên câu hỏi.
+B. Have the model invent passage 99.
 
-C. Tìm tài liệu số 99 trong toàn kho rồi ghép vào để hoàn thành danh sách.
+C. Fetch document 99 from the entire corpus.
 
-D. Giữ ánh xạ ID với đoạn gốc và nguồn khi dựng ngữ cảnh.
+D. Keep mappings to original passages and sources when assembling context.
 
-**Câu 3 — Chọn một.** Trên 100 câu hỏi thất bại, 80 câu không có đoạn đúng trong tập ứng viên. Ngân sách chỉ đủ sửa một tầng trước. Lựa chọn nào có khả năng cải thiện trực tiếp nhóm 80 câu?
+**Question 3 — Choose one.** For 80 of 100 failures, relevant passages never enter the candidate set. Which first improvement directly targets these failures?
 
-A. Yêu cầu reranker đưa ra lý giải dài cho từng ID.
+A. Longer reranker explanations.
 
-B. Giữ truy xuất và tăng số đoạn cuối từ 5 lên 10 trong cùng tập sai.
+B. Increase final context within the same irrelevant candidates.
 
-C. Cải thiện truy xuất ban đầu và đo recall của tập ứng viên.
+C. Improve initial retrieval and measure candidate recall.
 
-D. Dùng reranker mạnh hơn trên cùng tập ứng viên hiện tại.
+D. Use a stronger reranker on the unchanged set.
 
-**Câu 4 — Chọn hai.** Reranking tăng chất lượng nhưng làm thời gian phản hồi vượt mục tiêu. Nhóm định bật cho mọi truy vấn. Hai phép đo nào cần để quyết định thiết kế?
+**Question 4 — Choose two.** Reranking improves quality but violates latency targets. Which TWO measurements guide deployment?
 
-A. Chỉ đo thời gian reranker vì các tầng trước đã có kiểm thử riêng.
+A. Only reranker duration.
 
-B. Tách lỗi thiếu ứng viên khỏi lỗi thứ tự để biết lợi ích thực của tầng mới.
+B. Separate missing-candidate failures from ranking failures.
 
-C. So sánh chất lượng trả lời và độ trễ cuối cùng có/không có reranking.
+C. Compare end-to-end answer quality and latency with and without reranking.
 
-D. Chỉ chấm thứ tự ID bằng mắt trên các câu từng được dùng chỉnh prompt.
+D. Inspect ranks only on prompt-tuning examples.
 
-**Câu 5 — Chọn một.** Hai đoạn cùng chứa mã ERR-7: đoạn X liệt kê mã, đoạn Y giải thích điều kiện gây lỗi. Người dùng hỏi “vì sao lỗi chỉ xuất hiện sau đổi cấu hình?”. Tiêu chí chọn top-k nào phù hợp nhất?
+**Question 5 — Choose one.** Two passages mention ERR-7; one lists codes, the other explains conditions after configuration changes. What should top-k selection prioritize?
 
-A. Ưu tiên đoạn trả lời đúng nhu cầu thay đổi cấu hình.
+A. Evidence answering the specific configuration-change question.
 
-B. Ưu tiên đoạn có số lần xuất hiện ERR-7 nhiều nhất.
+B. The most ERR-7 repetitions.
 
-C. Ưu tiên đoạn ngắn nhất để giảm chi phí truyền ngữ cảnh.
+C. The shortest passage.
 
-D. Ưu tiên tài liệu có nhiều mã lỗi nhất để tăng phạm vi bao phủ.
+D. The document listing the most error codes.
 
 ## Đáp án và giải thích
 

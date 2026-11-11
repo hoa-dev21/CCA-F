@@ -25,55 +25,55 @@ Cung cấp yêu cầu, diff, tiêu chuẩn kiểm thử, dữ liệu mẫu và c
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Bot review báo nhiều style nit khiến kỹ sư bỏ qua lỗi thực. Nhóm muốn tăng giá trị findings thay vì chỉ giảm số lượng. Thay đổi nào tốt nhất?
+**Question 1 — Choose one.** A review bot reports so many minor style issues that engineers ignore real defects. Which change best improves finding quality?
 
-A. Giới hạn mỗi PR một finding bất kể mức nghiêm trọng.
+A. Limit every PR to one finding regardless of severity.
 
-B. Tiêu chí report/skip, ví dụ hợp lệ và bằng chứng tác động.
+B. Define report-or-skip criteria, valid examples, and required impact evidence.
 
-C. Yêu cầu giọng văn ít khẳng định hơn nhưng giữ mọi loại báo cáo.
+C. Use less assertive wording while reporting the same issues.
 
-D. Chỉ đổi sang mô hình lớn hơn và giữ prompt.
+D. Use a larger model without changing the prompt.
 
-**Câu 2 — Chọn một.** Commit mới sửa một finding, giữ nguyên finding khác và gây lỗi mới. Input nào giúp bot báo đúng thay đổi?
+**Question 2 — Choose one.** A new commit fixes one finding, leaves another open, and introduces a new defect. Which input best supports an accurate follow-up review?
 
-A. Chỉ danh sách findings cũ để tránh lạc phạm vi.
+A. Only previous findings to avoid scope changes.
 
-B. Chỉ lời tác giả nói đã sửa những gì.
+B. Only the author's account of what changed.
 
-C. Diff hiện tại và findings cũ; xác minh trạng thái từng lỗi.
+C. The current diff and previous findings, with verification of each issue's status.
 
-D. Toàn bộ lịch sử PR nhưng không cần revision hiện tại.
+D. The entire PR history without the current revision.
 
-**Câu 3 — Chọn hai.** Test generator liên tục tạo test đã có nhưng bỏ sót nhánh lỗi quan trọng. Hai loại input nào hữu ích nhất?
+**Question 3 — Choose two.** A test generator duplicates existing tests while missing an important error branch. Which TWO inputs are most useful?
 
-A. Test và fixtures hiện tại để biết hành vi đã được kiểm chứng.
+A. Existing tests and fixtures showing what is already covered.
 
-B. Tiêu chí rủi ro/hành vi cần kiểm tra và khoảng trống còn lại.
+B. Risk and behavior criteria identifying remaining coverage gaps.
 
-C. Chỉ số lượng test mục tiêu để buộc sinh nhiều hơn.
+C. Only a target test count.
 
-D. Yêu cầu đặt tên test khác để tránh trùng theo tên.
+D. A requirement to use different names for duplicate tests.
 
-**Câu 4 — Chọn một.** Bot đưa finding severity cao nhưng không chỉ ra đường thực thi bị ảnh hưởng; ví dụ đầu vào không tái hiện lỗi. Quyết định nào phù hợp cho gate?
+**Question 4 — Choose one.** A bot labels a finding high severity but cannot identify an affected execution path, and its example does not reproduce the problem. How should the merge decision be made?
 
-A. Chặn merge vì nhãn severity do bot đã đưa ra.
+A. Block merging solely because the bot assigned high severity.
 
-B. Bỏ mọi finding cùng category từ nay.
+B. Permanently discard every finding in the same category.
 
-C. Đổi severity thành thấp mà không xem lại lập luận.
+C. Lower the severity without checking the reasoning.
 
-D. Kiểm tra bằng chứng/tái hiện và tiêu chí report trước khi quyết định chặn.
+D. Verify the evidence, reproduction, and reporting criteria before deciding whether to block.
 
-**Câu 5 — Chọn hai.** Một category review có false positive cao, category bảo mật vẫn hữu ích. Hai biện pháp nào giảm nhiễu có kiểm soát?
+**Question 5 — Choose two.** One review category has many false positives, while security checks remain useful. Which TWO actions reduce noise in a controlled way?
 
-A. Tạm tắt category nhiễu, giữ những kiểm tra đã có giá trị.
+A. Temporarily disable the noisy category and retain useful checks.
 
-B. Tắt toàn bộ bot cho tới khi mọi category đạt cùng chất lượng.
+B. Disable the entire bot until all categories have equal quality.
 
-C. Bổ sung ví dụ report/skip và đo lại category trên tập riêng trước khi bật lại.
+C. Add report-or-skip examples and evaluate the category on a separate set before re-enabling it.
 
-D. Giấu các finding nhiễu trong phần cuối báo cáo nhưng vẫn tính vào gate.
+D. Move noisy findings to the report's end but still use them to block merging.
 
 ## Đáp án và giải thích
 

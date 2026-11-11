@@ -17,55 +17,55 @@ Các trò chơi ngôn ngữ trong bài giúp luyện cách đọc yêu cầu, nh
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Một người muốn cải thiện AI fluency trong hai tuần nhưng lập kế hoạch luyện mọi kỹ năng mà không có tiêu chí. Cách sửa nào khả thi và đo được nhất?
+**Question 1 — Choose one.** A learner wants better AI fluency in two weeks but plans to practice everything without criteria. What is feasible and measurable?
 
-A. Chỉ tăng số giờ luyện mà giữ nguyên mục tiêu chung.
+A. Increase practice hours without narrowing goals.
 
-B. Hoàn thành nhiều trò chơi nhất có thể rồi lấy số lượng làm mức thành thạo.
+B. Use completed-game count as proficiency.
 
-C. Chọn 1–2 điểm yếu, lịch luyện và tiêu chí tiến bộ.
+C. Choose one or two weaknesses, a practice schedule, and progress criteria.
 
-D. Dùng mỗi ngày một mô hình khác để mở rộng trải nghiệm.
+D. Use a different model every day.
 
-**Câu 2 — Chọn hai.** Bạn thường phải trả lời nhiều câu hỏi bổ sung vì prompt thiếu bối cảnh. Hai thành phần nào nên có trong bài tập luyện để biết mình tiến bộ?
+**Question 2 — Choose two.** Prompts often lack context and trigger follow-up questions. Which TWO exercise elements help measure improvement?
 
-A. Theo dõi yêu cầu còn thiếu và các lần AI phải hỏi lại vì thiếu thông tin cần thiết.
+A. Track missing requirements and necessary clarification requests.
 
-B. Chỉ dùng nhiệm vụ dễ hơn ở lượt sau để giảm số câu hỏi.
+B. Use easier tasks each time.
 
-C. Một dạng nhiệm vụ lặp lại có mục tiêu, dữ liệu và định dạng đầu ra được mô tả rõ.
+C. A repeated task type with clearly described goals, data, and output format.
 
-D. Cấm AI hỏi lại để số câu hỏi luôn bằng không.
+D. Ban clarification questions to make the count zero.
 
-**Câu 3 — Chọn một.** Thư viện prompt của nhóm chỉ chứa các câu đã cho đầu ra đẹp một lần. Khi đổi dữ liệu, kết quả thất thường. Cấu trúc mẫu nào hữu ích hơn?
+**Question 3 — Choose one.** A prompt library stores only prompts that once produced attractive outputs, then fails on new data. What template structure is more useful?
 
-A. Giữ nguyên input cũ để bảo đảm lặp lại thành công.
+A. Freeze the old input.
 
-B. Input thay được, phạm vi, ví dụ tốt và cách chấm.
+B. Replaceable inputs, applicability scope, good examples, and evaluation criteria.
 
-C. Chỉ ghi tên tác giả và điểm chất lượng tự đánh giá.
+C. Only author names and self-ratings.
 
-D. Gộp mọi mẫu thành một prompt dài áp dụng cho mọi tác vụ.
+D. One long prompt for every task.
 
-**Câu 4 — Chọn một.** Bạn còn ít thời gian trước kỳ thi Architect; trò chơi ngôn ngữ hấp dẫn nhưng các mục tool/MCP trong đề cương còn yếu. Cách phân bổ nào hợp lý?
+**Question 4 — Choose one.** Exam time is short; language games are appealing, but tool and MCP objectives remain weak. How should time be allocated?
 
-A. Hoàn thành hết trò chơi vì thuộc khóa nền tảng.
+A. Finish every game because it is in the foundation course.
 
-B. Ưu tiên điểm yếu theo đề cương; dùng trò chơi bổ trợ.
+B. Prioritize blueprint gaps and use games as supplementary practice.
 
-C. Chia thời gian bằng nhau cho mọi bài bất kể khoảng trống.
+C. Give every lesson equal time.
 
-D. Bỏ mọi thực hành fluency vì không có giá trị cho công việc kỹ thuật.
+D. Abandon all fluency practice as irrelevant to engineering.
 
-**Câu 5 — Chọn hai.** Một prompt mẫu được dùng tốt tháng trước nhưng nay thường bỏ sót yêu cầu trong loại nhiệm vụ mới. Hai việc nào giúp thư viện cải thiện dựa trên thực tế?
+**Question 5 — Choose two.** A previously useful prompt misses requirements in a new task type. Which TWO practices improve the library from evidence?
 
-A. Thử bản sửa với tiêu chí rõ trên các trường hợp đại diện, kể cả dạng mới.
+A. Test revisions with clear criteria on representative cases, including the new type.
 
-B. Đổi tên mẫu thành nâng cao và giữ nguyên hướng dẫn để người dùng tin tưởng hơn.
+B. Rename it “advanced” without changing instructions.
 
-C. Lưu các trường hợp thất bại và sửa mẫu theo nguyên nhân đã quan sát.
+C. Save failures and revise according to observed causes.
 
-D. Giữ nguyên mẫu vì đã từng có đầu ra tốt làm ví dụ.
+D. Keep it unchanged because one successful example exists.
 
 ## Đáp án và giải thích
 

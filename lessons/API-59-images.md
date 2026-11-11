@@ -15,55 +15,55 @@ Các giới hạn về số ảnh, kích thước và token trong video phụ th
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Một ảnh dashboard chứa nhiều biểu đồ; yêu cầu “phân tích ảnh” tạo mô tả dài nhưng bỏ tỷ lệ lỗi cần kiểm tra. Thay đổi nào nhắm thiếu sót rõ nhất?
+**Question 1 — Choose one.** A vague dashboard-image request produces a long description but omits the required error rate. What most directly helps?
 
-A. Yêu cầu chỉ trả JSON mà không bổ sung trường cần lấy.
+A. Require JSON without naming the field.
 
-B. Yêu cầu mô tả ảnh dài gấp đôi để tăng cơ hội nhắc đến tỷ lệ lỗi.
+B. Double the description length.
 
-C. Đổi vai trò thành chuyên gia cao cấp nhưng giữ nguyên câu hỏi.
+C. Assign a more senior expert role.
 
-D. Chỉ rõ vùng, đại lượng, đơn vị và tiêu chí so sánh.
+D. Specify the region, metric, unit, and comparison criteria.
 
-**Câu 2 — Chọn hai.** Mô hình đếm linh kiện bằng hai cách và cùng báo 48. Số lượng ảnh hưởng việc xuất kho. Hai hành động nào phù hợp trước khi chấp nhận?
+**Question 2 — Choose two.** Two model counting methods both report 48 components, affecting inventory shipment. Which TWO actions are appropriate?
 
-A. Không coi đồng thuận của hai lần tự kiểm tra là hai bằng chứng độc lập.
+A. Do not treat agreement between self-checks as independent evidence.
 
-B. Lấy 48 làm nhãn chuẩn để đánh giá lại chính hai cách đếm.
+B. Use 48 as ground truth for evaluating those methods.
 
-C. Chấp nhận ngay vì xác suất hai cách sai cùng số bằng không.
+C. Accept because two methods cannot make the same error.
 
-D. Đối chiếu bằng nguồn/kiểm tra phù hợp như dữ liệu kiểm kê hoặc kiểm đếm đã xác minh.
+D. Compare with verified counts or suitable inventory evidence.
 
-**Câu 3 — Chọn một.** Ảnh chụp biểu đồ mờ khiến mô hình đọc “8,1” thay vì “3,1”. Hệ thống yêu cầu số chính xác, không chấp nhận ước lượng. Hướng xử lý nào phù hợp?
+**Question 3 — Choose one.** A blurry chart is read as 8.1 instead of 3.1, and exact values are required. What should happen?
 
-A. Lấy ảnh/nguồn rõ hơn hoặc báo chưa đủ bằng chứng và chuyển xác minh.
+A. Obtain a clearer image or source, or disclose insufficient evidence and seek verification.
 
-B. Tăng số lần suy luận trên cùng ảnh rồi chọn giá trị xuất hiện nhiều nhất.
+B. Repeat reasoning and use the majority value.
 
-C. Chọn giá trị phù hợp xu hướng lịch sử để làm kết quả hiện tại.
+C. Select a value matching historical trends.
 
-D. Chấp nhận số có định dạng hợp lệ và để người dùng tự phát hiện sai.
+D. Accept any correctly formatted number.
 
-**Câu 4 — Chọn hai.** Ứng dụng so sánh ảnh trước và sau một thay đổi giao diện. Hai chi tiết nào nên có trong nhiệm vụ để kết quả hữu ích và có thể kiểm tra?
+**Question 4 — Choose two.** Which TWO task details make before-and-after UI image comparisons useful and verifiable?
 
-A. Chỉ rõ đối tượng/vùng cần so sánh và tiêu chí khác biệt quan trọng.
+A. Specify target regions and meaningful difference criteria.
 
-B. Yêu cầu gắn mỗi nhận xét với vị trí quan sát và phân biệt chi tiết không đọc rõ.
+B. Link observations to locations and distinguish unreadable details.
 
-C. Yêu cầu suy ra mọi hành vi backend từ các nút nhìn thấy.
+C. Infer all backend behavior from visible buttons.
 
-D. Dùng số lượng nhận xét làm tiêu chí chính để chọn kết quả tốt hơn.
+D. Use comment count as the main quality criterion.
 
-**Câu 5 — Chọn một.** Nhóm sao chép giới hạn ảnh/token từ video cũ vào cấu hình production của mô hình khác. Lựa chọn nào đúng trước khi chốt kiến trúc?
+**Question 5 — Choose one.** Old image and token limits are copied to a different production model. What should happen before finalizing the architecture?
 
-A. Kiểm tra hỗ trợ/giới hạn đích rồi thử dữ liệu đại diện.
+A. Verify target support and limits, then test representative data.
 
-B. Giữ thông số vì các mô hình cùng nhà cung cấp luôn có giới hạn giống nhau.
+B. Assume one provider's models share all limits.
 
-C. Chỉ đo xem request có HTTP thành công để kết luận cấu hình phù hợp.
+C. Use HTTP success as the only compatibility check.
 
-D. Tự động cắt ảnh vượt giới hạn mà không theo dõi nội dung bị mất.
+D. Crop oversized images without tracking lost content.
 
 ## Đáp án và giải thích
 

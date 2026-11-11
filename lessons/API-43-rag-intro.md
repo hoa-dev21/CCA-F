@@ -15,55 +15,55 @@ RAG giúp giảm nội dung không liên quan và làm việc với kho lớn, n
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** RAG tìm đúng chính sách hoàn tiền nhưng chỉ lấy đoạn điều kiện chung; ngoại lệ nằm ở phần tiếp theo. Câu trả lời sai dù mô hình bám sát đoạn được cấp. Ưu tiên sửa gì?
+**Question 1 — Choose one.** RAG retrieves a refund rule but misses its adjacent exception. The model follows the supplied passage and answers incorrectly. What should be fixed first?
 
-A. Tăng yêu cầu mô hình chỉ trả lời theo ngữ cảnh hiện tại.
+A. Insist more strongly on using current context only.
 
-B. Thêm vài mẫu câu trả lời đúng mà giữ nguyên truy xuất.
+B. Add answer examples without changing retrieval.
 
-C. Kiểm tra truy xuất có đủ quy tắc và ngoại lệ không.
+C. Check retrieval coverage of applicable rules and exceptions.
 
-D. Hạ temperature để câu trả lời ổn định hơn.
+D. Lower temperature.
 
-**Câu 2 — Chọn một.** Kho nhỏ vừa ngữ cảnh và cập nhật ít; nhóm đề xuất RAG vì “luôn tốt hơn gửi tài liệu”. Quyết định kiến trúc nên dựa vào đâu?
+**Question 2 — Choose one.** A small, rarely updated corpus fits in context. How should the team assess RAG versus supplying all documents?
 
-A. Chọn gửi toàn bộ vì RAG chỉ có ích với dữ liệu công khai.
+A. Always send everything because RAG helps only public data.
 
-B. Chọn RAG nếu trả lời ngắn hơn dù thiếu một số ngoại lệ.
+B. Prefer RAG whenever answers are shorter, even if exceptions disappear.
 
-C. Chỉ so số token của prompt cuối vì đó là toàn bộ chi phí RAG.
+C. Compare only final-prompt tokens.
 
-D. So chất lượng và chi phí toàn luồng trên bộ hỏi đại diện.
+D. Compare end-to-end quality and costs on representative questions.
 
-**Câu 3 — Chọn hai.** Câu trả lời RAG sai, nhóm chưa biết lỗi tìm kiếm hay sinh đáp án. Hai phép kiểm tra nào giúp phân biệt?
+**Question 3 — Choose two.** Which TWO checks distinguish retrieval failure from answer-generation failure?
 
-A. Cho mô hình bộ bằng chứng đầy đủ đã kiểm tra rồi chấm câu trả lời.
+A. Grade answers using a complete, verified evidence set.
 
-B. Gộp mọi lỗi thành một điểm trung bình duy nhất.
+B. Collapse all errors into one average.
 
-C. Chấm chỉ giọng văn và độ mạch lạc của câu trả lời cuối.
+C. Score only fluency.
 
-D. So các đoạn lấy được với bằng chứng cần cho câu hỏi.
+D. Compare retrieved passages with the evidence required by each question.
 
-**Câu 4 — Chọn một.** Ứng dụng đã chia kho tài liệu và lập chỉ mục, nhưng lúc hỏi chỉ gửi câu hỏi cho mô hình. Nhóm kỳ vọng mô hình tự biết dữ liệu đã lập chỉ mục. Thành phần nào thiếu?
+**Question 4 — Choose one.** Documents are indexed, but only the question is sent to the model. What is missing?
 
-A. Một prompt xác nhận rằng hệ thống có kho dữ liệu nội bộ.
+A. A prompt saying an internal corpus exists.
 
-B. Đặt tên mô hình theo chủ đề tài liệu để gắn kiến thức.
+B. A model name matching the documents' topic.
 
-C. Chạy lại bước chia đoạn trước mỗi câu hỏi.
+C. Rechunking before every question.
 
-D. Truy xuất khi hỏi, đưa đoạn tìm được vào request.
+D. Query-time retrieval and inclusion of retrieved text in the request.
 
-**Câu 5 — Chọn hai.** Người dùng hỏi chính sách cho một trường hợp cụ thể. Hai tiêu chí nào có ý nghĩa hơn chỉ “top result cùng chủ đề”?
+**Question 5 — Choose two.** Which TWO criteria matter beyond a top result sharing the topic?
 
-A. Câu trả lời cuối được kiểm tra đối chiếu với bằng chứng đã lấy.
+A. The final answer is checked against retrieved evidence.
 
-B. Điểm tương đồng cao được dùng thay nhãn đúng/sai của câu trả lời.
+B. Similarity score replaces answer-correctness labels.
 
-C. Mỗi câu trả lời có nhiều đoạn trích bất kể nội dung.
+C. Every answer includes many passages regardless of relevance.
 
-D. Đoạn chứa điều kiện áp dụng và ngoại lệ liên quan đến trường hợp.
+D. Retrieved text contains relevant applicability conditions and exceptions.
 
 ## Đáp án và giải thích
 

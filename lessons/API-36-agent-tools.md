@@ -15,55 +15,55 @@ Bài sử dụng công cụ tệp và dòng lệnh (shell) để minh họa côn
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Người dùng muốn nhắc trước khi hết bảo hành, nhưng chưa cung cấp ngày mua và thời hạn. Agent có công cụ thời gian, cộng thời gian và tạo lời nhắc. Hành động phù hợp nhất?
+**Question 1 — Choose one.** A warranty reminder needs purchase date and warranty duration, neither provided. The agent has time, date-arithmetic, and reminder tools. What should it do?
 
-A. Dùng ngày hiện tại làm ngày mua rồi đặt nhắc theo thời hạn phổ biến.
+A. Assume purchase was today and use a common duration.
 
-B. Hỏi đủ dữ kiện trước khi tính hạn và tạo nhắc.
+B. Obtain the missing facts before calculating and creating the reminder.
 
-C. Tạo nhắc trước, sửa khi khách phản đối.
+C. Create now and revise if the user objects.
 
-D. Gọi mọi công cụ và dùng câu trả lời có confidence cao nhất.
+D. Call every tool and select by confidence.
 
-**Câu 2 — Chọn một.** Một tool tên do_everything nhận chuỗi tùy ý; mô hình chọn sai giữa tra cứu và sửa dữ liệu. Thiết kế nào cải thiện khả năng kết hợp công cụ?
+**Question 2 — Choose one.** A `do_everything` tool accepts arbitrary strings and confuses reads with writes. Which design improves composability?
 
-A. Giữ tool chung, bổ sung ví dụ cho mỗi ý định và để parser suy ra thao tác từ chuỗi.
+A. Keep it and infer operations from more examples.
 
-B. Giữ một schema chuỗi rộng, kiểm tra chủ yếu đầu ra sau khi thao tác đã chạy.
+B. Keep an unrestricted string schema and check only after execution.
 
-C. Tách tool tái sử dụng có mục đích/schema rõ.
+C. Split it into reusable tools with clear purposes and schemas.
 
-D. Tạo tool riêng theo từng câu hỏi.
+D. Create a separate tool for every individual question.
 
-**Câu 3 — Chọn hai.** Agent chỉ tra trạng thái đơn hàng nhưng bộ demo có cả shell và file editor. Hai quyết định nào phù hợp khi đưa vào sản phẩm?
+**Question 3 — Choose two.** An order-status agent inherits shell and file-editor tools from a demo. Which TWO production choices are appropriate?
 
-A. Chỉ cấp công cụ cần cho vai trò tra cứu.
+A. Expose only capabilities needed for lookup.
 
-B. Giữ toàn bộ công cụ demo vì chúng đã được dùng trong khóa học.
+B. Retain all demo tools because the course used them.
 
-C. Kiểm tra quyền và đầu vào tại nơi thực thi, không chỉ dựa vào quyết định chọn tool.
+C. Validate permissions and inputs at execution time.
 
-D. Cấp shell rộng để phòng mọi tình huống chưa dự kiến.
+D. Grant unrestricted shell access for unforeseen situations.
 
-**Câu 4 — Chọn một.** Agent phải lấy thời điểm hiện tại, cộng 90 phút rồi tạo lời nhắc; timestamp bước tính là đầu vào bắt buộc của bước tạo. Điều phối nào đúng?
+**Question 4 — Choose one.** A reminder requires current time, adding 90 minutes, and creation using the calculated timestamp. What is correct?
 
-A. Gọi ba công cụ song song để giảm round-trip.
+A. Run all three simultaneously.
 
-B. Đặt timestamp ước lượng trong bước tạo rồi dùng bước tính để kiểm tra sau.
+B. Create with a guessed time and verify afterward.
 
-C. Chỉ gọi tạo lời nhắc với chuỗi “90 phút” dù schema cần timestamp.
+C. Send “90 minutes” although the schema requires a timestamp.
 
-D. Truyền kết quả theo phụ thuộc, kiểm tra trước khi tạo.
+D. Pass results along dependencies and validate before creation.
 
-**Câu 5 — Chọn hai.** Nhóm mở rộng agent sang các yêu cầu mới bằng cùng bộ công cụ ngày giờ/lời nhắc. Hai tiêu chí nào giúp đánh giá thiết kế tái sử dụng?
+**Question 5 — Choose two.** Which TWO criteria assess reusable time-and-reminder tools for new requests?
 
-A. Công cụ có thể kết hợp cho tác vụ mới mà vẫn có mục đích và kiểu dữ liệu rõ.
+A. They compose into new tasks while retaining clear purposes and types.
 
-B. Mỗi tool được đặt tên theo toàn bộ câu hỏi cụ thể của người dùng.
+B. Every tool is named after one complete user question.
 
-C. Có cách phát hiện thiếu dữ kiện và hỏi lại trước hành động phụ thuộc.
+C. The agent detects missing facts and asks before dependent actions.
 
-D. Mọi yêu cầu đều bắt buộc dùng cùng số lượng công cụ.
+D. Every request must use the same number of tools.
 
 ## Đáp án và giải thích
 

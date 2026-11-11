@@ -17,55 +17,55 @@ Ví dụ: AI được giao tổ chức lại mã nhưng còn sửa một tệp t
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Tác nhân tự chạy báo “chỉ refactor”, nhưng diff có cả thay đổi cấu hình deploy. Unit test xanh. Bước đánh giá tiếp theo nào đúng?
+**Question 1 — Choose one.** An autonomous agent claims “refactor only,” but its diff changes deployment configuration. Unit tests pass. What comes next?
 
-A. Chấp nhận vì refactor không đổi hành vi theo lời tác nhân.
+A. Accept the agent's claim of unchanged behavior.
 
-B. Rà diff, gồm file deploy, rồi kiểm tra theo tác động.
+B. Review the full diff, including deployment files, and verify by impact.
 
-C. Chỉ yêu cầu tác nhân sửa lại phần tóm tắt cho đầy đủ.
+C. Only correct the summary.
 
-D. Bỏ file deploy khỏi báo cáo để chỉ review phần được yêu cầu.
+D. Hide deployment changes to match requested scope.
 
-**Câu 2 — Chọn một.** Tác nhân nói “đã chạy test”, nhưng transcript chỉ chứa dự định chạy và không có kết quả. Kết luận nào hợp lý nhất?
+**Question 2 — Choose one.** The agent says tests ran, but the transcript shows only intentions. What is justified?
 
-A. Cần chạy hoặc quan sát bằng chứng thực thi trước khi xác nhận gate đạt.
+A. Obtain execution evidence before confirming the gate passed.
 
-B. Có thể coi là đạt vì tuyên bố dùng thì quá khứ.
+B. Past-tense wording proves execution.
 
-C. Permission cho phép test nên có thể suy ra test đã chạy.
+C. Permission to test implies tests ran.
 
-D. Chỉ cần reviewer đồng ý với câu tóm tắt.
+D. A reviewer's agreement with the summary is enough.
 
-**Câu 3 — Chọn hai.** Một job headless trả exit code 0 nhưng JSON nêu chưa hoàn thành vì hết lượt. Hai kiểm tra nào cần cho quyết định sử dụng kết quả?
+**Question 3 — Choose two.** A headless job exits zero, but JSON reports incomplete work due to turn exhaustion. Which TWO checks inform result use?
 
-A. Trạng thái nghiệp vụ trong JSON theo hợp đồng phản hồi.
+A. Business status under the response contract.
 
-B. Exit code 0 đủ nên bỏ nội dung JSON.
+B. Exit zero alone, ignoring JSON.
 
-C. Bằng chứng yêu cầu và gate thực tế đã đạt đến đâu.
+C. Evidence of requirements and gates actually met.
 
-D. Số token đã dùng để suy ra mức độ hoàn chỉnh.
+D. Token count as a completion proxy.
 
-**Câu 4 — Chọn một.** Reviewer độc lập không tìm ra lỗi ở bản sửa nhưng chưa có kiểm thử thực tế. Vai trò của kết quả review nên được hiểu thế nào?
+**Question 4 — Choose one.** An independent reviewer finds no defect, but no tests have run. How should this be interpreted?
 
-A. Nó thay thế test vì dùng context độc lập.
+A. Independent context replaces testing.
 
-B. Nó chứng minh mọi requirement đã được đáp ứng.
+B. Every requirement is proven satisfied.
 
-C. Nó đủ để chấp nhận nếu reviewer dùng mô hình khác và đã đọc toàn bộ diff.
+C. A different model reading the diff is sufficient.
 
-D. Bổ sung góc nhìn; vẫn kiểm tra phạm vi và kết quả chạy.
+D. Review adds perspective; scope and execution outcomes still need verification.
 
-**Câu 5 — Chọn hai.** Muốn tác vụ tự chạy chỉ được tiếp tục sau khi kiểm tra bắt buộc đạt, hai thành phần nào hỗ trợ thiết kế?
+**Question 5 — Choose two.** Which TWO elements enforce continuation only after mandatory checks pass?
 
-A. Một lời nhắc ở đầu prompt là toàn bộ cơ chế cưỡng chế.
+A. An opening reminder as the entire mechanism.
 
-B. Gate/hook bằng chương trình kiểm tra kết quả trước bước tiếp theo.
+B. A programmatic gate or hook checking results before the next action.
 
-C. Log trạng thái và kết quả kiểm tra gắn với mã đang được dùng.
+C. Logs linking check state and results to the code being used.
 
-D. Đánh dấu hoàn tất khi tác nhân im lặng đủ lâu.
+D. Declare completion after a period of silence.
 
 ## Đáp án và giải thích
 

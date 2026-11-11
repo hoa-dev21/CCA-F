@@ -15,55 +15,55 @@ Ví dụ: AI tạo dữ liệu JSON đúng cú pháp nhưng lọc nhầm loại 
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** JSON do model sinh parse được nhưng cấu hình vùng triển khai trái yêu cầu. Bộ chấm hiện chỉ kiểm tra parse. Bổ sung nào giải quyết lỗ hổng?
+**Question 1 — Choose one.** Generated JSON parses, but its deployment region violates the request. The grader only parses JSON. What should be added?
 
-A. Chấm cấu hình theo yêu cầu gốc của tác vụ.
+A. Evaluate configuration content against the original task.
 
-B. Thêm kiểm tra khoảng trắng để chắc chắn JSON đúng định dạng.
+B. Check whitespace formatting.
 
-C. Lặp phép parse để tăng độ tin cậy.
+C. Repeat parsing for reliability.
 
-D. Chấm độ mạch lạc của lời giải thích thay cho vùng triển khai.
+D. Score explanation fluency instead of the region.
 
-**Câu 2 — Chọn hai.** Nhóm dùng một model làm grader cho trợ lý. Hai thành phần nào cần có để điểm chấm có thể điều tra?
+**Question 2 — Choose two.** Which TWO elements make model-based grading inspectable?
 
-A. Tên prompt “bản cải tiến” để grader biết nên ưu tiên.
+A. The label “improved prompt” to influence preferences.
 
-B. Chỉ mức tự tin của model tạo output thay cho phân tích.
+B. Only the generating model's confidence.
 
-C. Lý do, điểm mạnh và điểm yếu đi kèm điểm số.
+C. Reasons, strengths, and weaknesses alongside the score.
 
-D. Yêu cầu gốc cùng output được chấm.
+D. The original request and the output being graded.
 
-**Câu 3 — Chọn một.** Đầu ra phải có JSON đúng cú pháp và tóm tắt đầy đủ các rủi ro khó quy thành chuỗi cố định. Thiết kế grader nào phù hợp nhất?
+**Question 3 — Choose one.** An output needs valid JSON and a complete risk summary that cannot be assessed by exact string matching. Which grader design fits?
 
-A. Dùng so khớp nguyên văn với một tóm tắt mẫu cho mọi đầu vào.
+A. Match every summary verbatim against one reference.
 
-B. Dùng mã kiểm tra JSON và model theo rubric kiểm tra nội dung.
+B. Use code for JSON validity and a rubric-based model for content.
 
-C. Dùng model cho cả hai rồi bỏ kiểm tra parse vì model hiểu JSON.
+C. Use a model for everything and remove parsing checks.
 
-D. Chỉ dùng parse JSON và coi trường risks có mặt là đủ.
+D. Parse JSON and check only that `risks` exists.
 
-**Câu 4 — Chọn hai.** Grader cho hai câu trả lời trái ngược cùng điểm cao. Hai bước nào giúp phân biệt lỗi rubric với lỗi người chấm?
+**Question 4 — Choose two.** A grader gives high scores to contradictory answers. Which TWO steps help distinguish rubric errors from grading errors?
 
-A. Xem lại lý do chấm và đối chiếu với yêu cầu gốc.
+A. Inspect grading reasons against the original request.
 
-B. Đổi tên model sinh đáp án rồi dùng tên đó làm tiêu chí phân xử.
+B. Use the generating model's name to settle disagreements.
 
-C. Dùng các ca có nhãn đã duyệt để kiểm tra tính nhất quán của grader.
+C. Check consistency against reviewed, labeled cases.
 
-D. Tăng điểm của cả hai để tránh tranh cãi giữa các lần chạy.
+D. Raise both scores to avoid disagreement.
 
-**Câu 5 — Chọn một.** Một output rất trôi chảy nhưng bỏ qua hai ràng buộc bắt buộc. Grader chỉ hỏi “câu trả lời có hay không?”. Sửa nào sát nguyên nhân nhất?
+**Question 5 — Choose one.** A fluent answer omits two mandatory constraints, but the grader asks only whether it is well written. What addresses the cause?
 
-A. Yêu cầu grader ưu tiên câu trả lời dài hơn vì thường đầy đủ hơn.
+A. Prefer longer responses as more complete.
 
-B. Chấm riêng tuân thủ và rõ ràng, chỉ ra vi phạm cụ thể.
+B. Score compliance separately from clarity and identify specific violations.
 
-C. Dùng điểm trình bày bù phần thông tin thiếu.
+C. Use presentation points to offset missing information.
 
-D. Chỉ giảm nhiệt độ model sinh để mặc định các ràng buộc sẽ được giữ.
+D. Lower generation temperature and assume constraints will be preserved.
 
 ## Đáp án và giải thích
 

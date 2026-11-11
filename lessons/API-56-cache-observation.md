@@ -15,55 +15,55 @@ Dùng lại cache thành công không chứng minh câu trả lời đạt chấ
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Hàm thêm cache_control sửa trực tiếp object tools dùng chung; yêu cầu khác bất ngờ mang cấu hình đó. Thay đổi nào đúng?
+**Question 1 — Choose one.** A function adds `cache_control` by mutating shared tools, affecting unrelated requests. What is correct?
 
-A. Tạo bản sao phù hợp trước khi sửa cấu trúc cho request riêng.
+A. Make an appropriate copy before request-specific modifications.
 
-B. Đổi tên biến local nhưng giữ cùng tham chiếu object.
+B. Rename the variable while keeping the same reference.
 
-C. Xóa cache_control sau khi gọi mà không xét request đồng thời.
+C. Remove the field afterward without considering concurrency.
 
-D. Thêm lời nhắc yêu cầu mô hình bỏ qua cache của request khác.
+D. Ask the model to ignore other requests' caching.
 
-**Câu 2 — Chọn một.** Usage cho thấy tạo cache ở lần đầu, đọc cache ở lần sau, nhưng đáp án vẫn sai. Kết luận nào đúng?
+**Question 2 — Choose one.** Usage shows cache creation then cache reading, but answers remain incorrect. What follows?
 
-A. Giữ nguyên prompt vì sửa nó sẽ làm giảm hit.
+A. Keep the prompt unchanged to protect hits.
 
-B. Xóa kiểm tra ngữ nghĩa để tận dụng hiệu quả cache.
+B. Remove semantic checks to benefit from caching.
 
-C. Cache có lợi hiệu năng; cần đo chất lượng riêng.
+C. Caching can improve performance; quality must be measured separately.
 
-D. Cache hit xác nhận câu trả lời đúng nên bộ chấm đã sai.
+D. Hits prove correctness, so the grader is wrong.
 
-**Câu 3 — Chọn hai.** Hai request có độ trễ khác nhau. Hai loại số liệu nào giúp biết cache được dùng ra sao?
+**Question 3 — Choose two.** Which TWO usage measures explain caching beyond latency differences?
 
-A. Chỉ số lần UI cập nhật trong streaming.
+A. Only streaming UI update count.
 
-B. Phần input tạo cache mới và phần đọc từ cache.
+B. Input written to and read from the cache.
 
-C. Phần input vẫn xử lý mới ngoài cache.
+C. Input still processed outside the cache.
 
-D. Chỉ tổng số ký tự đầu ra.
+D. Only output character count.
 
-**Câu 4 — Chọn một.** Sửa một đoạn đầu prompt làm cache-read giảm, nhưng vẫn còn khác 0. Cách diễn giải phù hợp?
+**Question 4 — Choose one.** Editing an early prompt section reduces cache reads but not to zero. What is appropriate?
 
-A. Có tái sử dụng một phần; cần đọc usage chi tiết.
+A. Some reuse remains; inspect detailed usage.
 
-B. Mọi cache đã mất vì có thay đổi đầu vào.
+B. All cache reuse is lost because input changed.
 
-C. Toàn bộ prompt vẫn hit vì số đọc khác 0.
+C. The entire prompt hits because reads are nonzero.
 
-D. Usage không đáng dùng khi độ trễ thay đổi.
+D. Ignore usage whenever latency changes.
 
-**Câu 5 — Chọn hai.** Nhóm chuyển mẫu cache sang SDK khác. Hai việc cần kiểm chứng là gì?
+**Question 5 — Choose two.** Which TWO checks matter when moving caching code to another SDK?
 
-A. Dùng tốc độ phản hồi làm bằng chứng duy nhất thay usage.
+A. Use speed as the only evidence.
 
-B. Tên và ý nghĩa trường usage của SDK/API đích.
+B. Verify target usage-field names and meanings.
 
-C. Giữ tên trường cũ rồi coi giá trị thiếu là cache hit.
+C. Keep old field names and interpret missing values as hits.
 
-D. Cách sao chép và gắn cấu hình không sửa object dùng chung ngoài ý muốn.
+D. Verify copying and cache configuration avoid unintended shared-object mutation.
 
 ## Đáp án và giải thích
 

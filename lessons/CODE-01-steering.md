@@ -17,55 +17,55 @@ Nếu nhiều phiên cùng sửa một kho mã nguồn, Git worktrees cho mỗi 
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Sau compact, tác nhân tiếp tục refactor nhưng bỏ ràng buộc “không đổi API công khai”. Trước khi tiếp tục phiên dài, thay đổi nào giảm đúng rủi ro này?
+**Question 1 — Choose one.** After compaction, an agent forgets “do not change the public API” during refactoring. What reduces this risk before continuing?
 
-A. Bàn giao ràng buộc và trạng thái cần giữ; kiểm tra lại diff.
+A. Hand off constraints and required state, then recheck the diff.
 
-B. Tăng giới hạn câu trả lời để tác nhân có chỗ nhắc lại mọi quyết định.
+B. Increase response length.
 
-C. Gửi lại yêu cầu refactor ban đầu, bỏ trạng thái công việc đang làm.
+C. Resend only the original request without current progress.
 
-D. Chỉ ghi tên nhánh để tác nhân tự suy ra các ràng buộc trước đó.
+D. Provide only the branch name.
 
-**Câu 2 — Chọn hai.** Hai phiên phải sửa cùng một mô-đun nhưng có mục tiêu độc lập. Nhóm muốn tránh ghi đè khi làm việc đồng thời. Hai biện pháp nào phù hợp?
+**Question 2 — Choose two.** Two independent sessions must edit one module concurrently. Which TWO measures reduce overwrites?
 
-A. Dùng chung thư mục và dựa vào prompt “đừng ghi đè”.
+A. Share one directory and say “do not overwrite.”
 
-B. Dùng worktree riêng cho từng nhánh công việc.
+B. Use separate worktrees.
 
-C. Xem worktree riêng là đủ để bỏ bước kiểm thử tích hợp.
+C. Treat worktrees as a substitute for integration tests.
 
-D. Review và kiểm thử lại khi hợp nhất các thay đổi.
+D. Review and retest combined changes.
 
-**Câu 3 — Chọn một.** Tác nhân báo đã refactor xong, code trông ngắn hơn nhưng chưa có kết quả thực thi. Tiêu chí hoàn tất nào kiểm chứng được rõ nhất?
+**Question 3 — Choose one.** An agent reports refactoring complete, with shorter code but no execution evidence. Which criterion is most verifiable?
 
-A. Không còn lời đề nghị sửa tiếp trong câu trả lời.
+A. No further suggestions appear.
 
-B. Số dòng giảm và tác nhân đánh giá rủi ro thấp.
+B. Line count fell and the agent considers risk low.
 
-C. Test liên quan và typecheck đạt; diff đã được rà soát.
+C. Relevant tests and type checks pass, and the diff is reviewed.
 
-D. Tác nhân đã dành đủ số lượt dự kiến cho nhiệm vụ.
+D. The planned iteration count was used.
 
-**Câu 4 — Chọn một.** Người dùng sửa yêu cầu giữa phiên: giữ cách lưu dữ liệu cũ, chỉ thay UI. Tác nhân đã lên kế hoạch đổi cả schema. Bước tiếp theo nào hợp lý nhất?
+**Question 4 — Choose one.** The user changes scope to UI only, preserving storage, after a schema-change plan was made. What should the agent do?
 
-A. Hoàn tất kế hoạch cũ để tránh lãng phí phần đã nghiên cứu.
+A. Finish the old plan to preserve research effort.
 
-B. Tiếp tục đổi schema nhưng không nhắc trong báo cáo UI.
+B. Change the schema without mentioning it.
 
-C. Tóm tắt yêu cầu mới nhưng vẫn giữ các bước schema trong kế hoạch.
+C. Summarize the new request but retain schema steps.
 
-D. Cập nhật phạm vi/kế hoạch, kiểm tra thay đổi đã làm và chỉ tiếp tục phần phù hợp yêu cầu mới.
+D. Update scope and plan, inspect existing changes, and continue only work aligned with the new request.
 
-**Câu 5 — Chọn hai.** Phiên dài chuyển sang tác nhân mới để hoàn tất sửa lỗi. Hai dữ liệu nào nên có trong bàn giao?
+**Question 5 — Choose two.** Which TWO items belong in a long-session debugging handoff?
 
-A. Ràng buộc, file đã sửa, kết quả kiểm tra và phần còn chưa xác minh.
+A. Constraints, modified files, test results, and unverified work.
 
-B. Chỉ lời kết luận “gần xong” để tránh tạo thiên lệch.
+B. Only “almost done” to avoid bias.
 
-C. Nguồn/đường dẫn cần đọc lại cùng các bước tiếp theo cụ thể.
+C. Sources or paths to reread and concrete next steps.
 
-D. Toàn bộ transcript thay cho việc chỉ ra trạng thái công việc.
+D. An entire transcript instead of explicit task state.
 
 ## Đáp án và giải thích
 

@@ -15,55 +15,55 @@ Kỹ thuật này phụ thuộc khả năng hỗ trợ của mô hình và phiê
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Prefill mở code fence nhưng không gồm nhãn ngôn ngữ; phần sinh bắt đầu bằng “bash”, parser lệnh coi đó là lệnh đầu tiên. Chẩn đoán nào sát nhất?
+**Question 1 — Choose one.** Prefill opens a code fence without a language label. Generation starts with `bash`, which a command parser treats as a command. What is happening?
 
-A. Ba lệnh bị thiếu quyền nên mô hình đổi sang shell dự phòng.
+A. Missing permissions caused shell fallback.
 
-B. API đã gọi shell bash trước khi sinh ba lệnh.
+B. The API executed Bash before generation.
 
-C. Phần sinh đang hoàn thiện nhãn ngôn ngữ của code fence.
+C. The model is completing the fence's language label.
 
-D. Stop sequence thêm nhãn bash để bảo đảm tương thích CLI.
+D. The stop sequence adds Bash for CLI compatibility.
 
-**Câu 2 — Chọn hai.** Bài yêu cầu ba lệnh trong một khối, stop marker là fence đóng. Chỉ nhận một lệnh và kết thúc tại marker đầu tiên. Hai kiểm tra nào cần trước khi coi đầu ra hoàn tất?
+**Question 2 — Choose two.** Three commands are required in one block, but output stops at the first closing fence after one command. Which TWO checks are needed?
 
-A. Kiểm tra đủ ba lệnh và cấu trúc theo hợp đồng, không chỉ phản hồi kết thúc bình thường.
+A. Verify all three commands and required structure, not just normal termination.
 
-B. Tự nhân bản lệnh đầu thành ba dòng để đáp ứng số lượng.
+B. Duplicate the first command three times.
 
-C. Kiểm tra model có chia mỗi lệnh thành khối riêng khiến marker đầu tiên cắt sớm không.
+C. Check whether separate command blocks cause the first fence to stop output early.
 
-D. Chỉ tăng max_tokens vì stop sequence sẽ đợi đến khi hết ngân sách.
+D. Only raise tokens because stop sequences wait for budget exhaustion.
 
-**Câu 3 — Chọn một.** Output có đúng ba lệnh AWS CLI, không comment, đúng một khối. Pipeline muốn chạy ngay trên tài khoản vận hành. Thiết kế nào còn thiếu?
+**Question 3 — Choose one.** Output has three AWS CLI commands in one block without comments. What is still required before production execution?
 
-A. Thêm cùng stop marker vào executor để chặn mọi lệnh nguy hiểm.
+A. Use the same stop marker as a safety check.
 
-B. Kiểm tra nội dung, quyền và tác động từng lệnh trước khi thực thi.
+B. Validate command content, permissions, and effects before execution.
 
-C. Đếm đủ ba dòng rồi dùng đó làm gate duy nhất.
+C. Count three lines as the only gate.
 
-D. Đổi code fence thành nhãn production để xác nhận phạm vi.
+D. Label the fence “production” as authorization.
 
-**Câu 4 — Chọn một.** Một mô hình khác không hỗ trợ tổ hợp prefill đang dùng. Nhóm bỏ qua lỗi cấu hình rồi ghép thủ công prefix vào phản hồi rỗng. Cách sửa đúng hơn?
+**Question 4 — Choose one.** A target model does not support the prefill combination. What is better than ignoring errors and prepending text to an empty response?
 
-A. Chọn cơ chế được hỗ trợ rồi kiểm tra lại đủ ba lệnh.
+A. Use a supported mechanism and retest all three commands.
 
-B. Giảm số lệnh từ ba xuống một mà không đổi yêu cầu nghiệp vụ.
+B. Silently reduce the requirement to one command.
 
-C. Bỏ kiểm tra lỗi để downstream luôn nhận một khối mã.
+C. Remove error checking to always return a code block.
 
-D. Giữ cơ chế cũ vì tên mô hình vẫn thuộc cùng họ.
+D. Keep old settings because the model belongs to the same family.
 
-**Câu 5 — Chọn hai.** Nhóm chỉ được sửa prefill và stop sequences trong bài tập, không đổi yêu cầu tạo ba lệnh. Hai tiêu chí nào cần dùng khi đánh giá bản sửa?
+**Question 5 — Choose two.** Only prefill and stop sequences may change; three commands remain required. Which TWO evaluation criteria apply?
 
-A. Phần sinh đủ ba lệnh trong một khối và không có lời dẫn/comment theo yêu cầu.
+A. Three commands in one block with no prohibited introduction or comments.
 
-B. Chỉ số token thấp nhất kể cả chỉ còn một lệnh.
+B. Minimum tokens even when only one command remains.
 
-C. Mọi lệnh đã thực sự chạy thành công chỉ vì chúng có mặt trong đầu ra.
+C. Commands were executed merely because they appear in output.
 
-D. Nội dung các lệnh vẫn đáp ứng ba thao tác gốc, không bị cắt hoặc thay nghĩa.
+D. All three original operations remain intact and untruncated.
 
 ## Đáp án và giải thích
 

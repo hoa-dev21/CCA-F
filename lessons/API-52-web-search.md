@@ -17,55 +17,55 @@ Tên phiên bản, điều kiện bật công cụ và các trường hỗ trợ
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Ứng dụng đang dùng web search phía dịch vụ nhưng dispatcher local báo “unknown tool”. Nguyên nhân kiến trúc nào cần kiểm tra?
+**Question 1 — Choose one.** Provider-hosted web search triggers “unknown tool” in a local dispatcher. What should be investigated?
 
-A. Có đổi tool_result thành câu trả lời người dùng hay không.
+A. Whether results were converted into user text.
 
-B. Có đặt max_tokens đủ lớn để tải web hay không.
+B. Whether output tokens are enough to download websites.
 
-C. Kiểm tra dispatcher có nhầm server tool thành client tool.
+C. Whether the dispatcher mistakes a server tool for a client tool.
 
-D. Có thiếu hàm local đọc mọi website theo tên công cụ hay không.
+D. Whether a local function must read every website by tool name.
 
-**Câu 2 — Chọn một.** Web search bị giới hạn số lần dùng; mô hình hết lượt nhưng vẫn thiếu bằng chứng cho một kết luận. Ứng dụng nên diễn giải giới hạn thế nào?
+**Question 2 — Choose one.** Search reaches its usage limit without sufficient evidence. How should that be interpreted?
 
-A. Hết quota chưa đủ bằng chứng; báo thiếu hoặc xử lý tiếp.
+A. The limit does not prove sufficient research; disclose gaps or arrange further handling.
 
-B. Hết lượt đồng nghĩa đã tìm đủ vì dịch vụ tự chọn lượng tối ưu.
+B. The quota guarantees optimal research completeness.
 
-C. Dùng nguồn đầu tiên để điền mọi kết luận còn thiếu.
+C. Use the first source to fill remaining conclusions.
 
-D. Bỏ nguồn khi hết lượt để câu trả lời ít bị chất vấn.
+D. Remove citations to avoid questions.
 
-**Câu 3 — Chọn hai.** Wrapper muốn chỉ giữ text cuối của phản hồi web search. Hai dữ liệu nào nên giữ thêm khi cần kiểm chứng?
+**Question 3 — Choose two.** A wrapper retains only final search text. Which TWO additional elements matter for verification?
 
-A. Chỉ danh sách domain được phép thay cho các đoạn trích.
+A. Only the allowed-domain list instead of passages.
 
-B. Các block và metadata cần cho xử lý đúng phản hồi công cụ.
+B. Blocks and metadata required for correct tool-response processing.
 
-C. Chỉ số lượt đã dùng thay cho nguồn.
+C. Only the number of searches used.
 
-D. Thông tin kết quả và nguồn gắn với nhận định.
+D. Search results and sources linked to claims.
 
-**Câu 4 — Chọn một.** Chỉ tìm trong một domain uy tín, nhưng đoạn trích nói năm trước còn câu trả lời khẳng định tình hình hiện tại. Cần sửa gì?
+**Question 4 — Choose one.** A trusted-domain passage concerns last year, but the answer claims current conditions. What should change?
 
-A. Coi domain được cho phép là đủ để bỏ kiểm tra nội dung.
+A. Allowed domains eliminate content checking.
 
-B. Dùng ngày truy xuất hôm nay làm mốc thời gian cho số liệu nguồn.
+B. Use today's retrieval date as the data date.
 
-C. Tăng số lần nhắc tên domain trong câu trả lời.
+C. Repeat the trusted domain name more often.
 
-D. Đối chiếu thời điểm và mức hỗ trợ của đoạn nguồn cho kết luận.
+D. Check source timing and whether it supports the claim's strength.
 
-**Câu 5 — Chọn hai.** Sau nâng SDK, web search vẫn trả text nhưng UI mất nguồn. Hai việc nào cần kiểm tra?
+**Question 5 — Choose two.** After an SDK upgrade, text remains but source links disappear. Which TWO areas should be checked?
 
-A. Thay toàn bộ bằng client tool vì server tool không cần metadata.
+A. Replace everything with client tools because server tools need no metadata.
 
-B. Kết luận rằng tìm kiếm không chạy chỉ vì UI không hiện nguồn.
+B. Assume search never ran because the UI lacks links.
 
-C. Cách SDK biểu diễn các block kết quả và trích dẫn ở phiên bản mới.
+C. New SDK representations of result and citation blocks.
 
-D. Đường truyền metadata từ backend tới phần hiển thị nguồn.
+D. Metadata transmission from backend to source display.
 
 ## Đáp án và giải thích
 

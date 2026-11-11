@@ -15,55 +15,55 @@ Khi chia sẻ, chọn quyền xem hoặc sửa theo nhu cầu người nhận. C
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Dashboard artifact tạo từ file doanh số tháng trước vẫn hiển thị số cũ sau khi file trên máy được sửa. Cần xác định gì đầu tiên?
+**Question 1 — Choose one.** A dashboard artifact still shows old figures after its local source file changes. What should be identified first?
 
-A. Dashboard dùng snapshot hay kết nối dữ liệu cập nhật?
+A. Whether the dashboard uses a snapshot or a live data connection.
 
-B. Màu biểu đồ có làm người xem nhầm số mới với số cũ không.
+B. Whether chart colors conceal new values.
 
-C. Tên artifact có chứa từ “live” để kích hoạt cập nhật không.
+C. Whether its name includes “live.”
 
-D. Có nên yêu cầu mô hình đoán số mới từ xu hướng tháng trước không.
+D. Whether the model can guess updated figures.
 
-**Câu 2 — Chọn hai.** Nhóm xuất artifact thành file rồi sửa file đã tải về. Hai điều nên kiểm tra trước bàn giao?
+**Question 2 — Choose two.** An exported artifact file is edited locally. Which TWO checks precede handoff?
 
-A. Phiên bản nào là bản cuối và nội dung xuất có đúng định dạng cần dùng không.
+A. Identify the final version and verify its actual export format and content.
 
-B. Chỉ kiểm tra artifact ban đầu rồi bỏ qua file thực tế được gửi.
+B. Check only the original artifact.
 
-C. Mặc định mọi chỉnh sửa file tự đồng bộ ngược vì có cùng tiêu đề.
+C. Assume matching titles provide reverse synchronization.
 
-D. Các sửa đổi ở file có được phản ánh lại artifact hay cần cập nhật riêng.
+D. Determine whether local edits need a separate artifact update.
 
-**Câu 3 — Chọn một.** Yêu cầu “làm dashboard đẹp” tạo biểu đồ nhưng không lọc được theo tháng, trong khi trưởng nhóm cần tính năng này. Prompt nào sửa đúng thiếu sót?
+**Question 3 — Choose one.** A “beautiful dashboard” lacks required monthly filtering. What prompt change addresses this?
 
-A. Đổi vai trò mô hình thành nhà thiết kế nhiều kinh nghiệm.
+A. Assign a more experienced designer role.
 
-B. Tăng số biểu đồ mà không nêu thao tác cần hỗ trợ.
+B. Add more charts without specifying behavior.
 
-C. Nêu người dùng, dữ liệu và hành vi lọc tháng của biểu đồ.
+C. Specify users, data, and month-filter behavior.
 
-D. Yêu cầu thêm hiệu ứng chuyển cảnh và giữ nguyên cấu trúc dữ liệu.
+D. Add transitions without changing data structure.
 
-**Câu 4 — Chọn hai.** Artifact chuẩn bị gửi cho người chỉ cần xem kết quả. Hai kiểm tra nào phù hợp?
+**Question 4 — Choose two.** Which TWO checks suit sharing an artifact with a view-only recipient?
 
-A. Cấp quyền sửa cho mọi người vì artifact dễ dùng lại.
+A. Grant edit access to everyone for reuse.
 
-B. Kiểm tra dữ liệu và phiên bản cuối thực tế được chia sẻ.
+B. Verify the actual data and final shared version.
 
-C. Chọn quyền chia sẻ theo nhu cầu xem hoặc sửa của người nhận.
+C. Match sharing permissions to viewing or editing needs.
 
-D. Coi khả năng mở được liên kết là đủ chứng minh số liệu đúng.
+D. Treat an opening link as proof of correct figures.
 
-**Câu 5 — Chọn một.** Nhóm muốn dùng artifact làm công cụ ra quyết định từ số liệu mới hàng ngày. Thiết kế nào làm rõ giới hạn sử dụng?
+**Question 5 — Choose one.** A daily decision tool uses fresh figures. Which design clarifies its limits?
 
-A. Nêu nguồn, độ mới và cách cập nhật/kiểm tra trước sử dụng.
+A. State sources, freshness, update methods, and pre-use checks.
 
-B. Bỏ thời điểm dữ liệu để giao diện luôn trông mới.
+B. Hide timestamps so it always looks current.
 
-C. Để mô hình làm mới lời giải thích mà giữ nguyên bảng số liệu cũ.
+C. Refresh explanations but retain old tables.
 
-D. Đổi tiêu đề thành “báo cáo hôm nay” mỗi khi mở artifact.
+D. Rename it “today's report” whenever opened.
 
 ## Đáp án và giải thích
 

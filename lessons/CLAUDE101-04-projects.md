@@ -19,55 +19,55 @@ Khi chia sẻ dự án, cấp quyền theo công việc người nhận cần l�
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Nhóm đặt “luôn trả lời theo mẫu kiểm toán” trong description của Project nhưng kết quả không ổn định. Cách tổ chức nào phù hợp nhất?
+**Question 1 — Choose one.** A Project description says “always use the audit template,” but compliance varies. How should content be organized?
 
-A. Đặt quy tắc ở instructions, tài liệu nguồn ở knowledge.
+A. Put rules in instructions and source documents in knowledge.
 
-B. Nhân bản description vào tên mọi tài liệu rồi giữ instructions trống.
+B. Repeat the description in filenames and leave instructions empty.
 
-C. Đưa mẫu vào một cuộc chat cũ và coi mọi chat khác sẽ tự dùng.
+C. Put the template in an old chat and assume all chats inherit it.
 
-D. Đổi tiêu đề Project thành tên mẫu kiểm toán để tạo quy tắc bắt buộc.
+D. Rename the Project after the template as enforcement.
 
-**Câu 2 — Chọn hai.** Knowledge chứa hai bản chính sách có mức ưu đãi khác nhau. Hai việc nào giảm nguy cơ dùng nhầm phiên bản?
+**Question 2 — Choose two.** Knowledge includes two policy versions with different discounts. Which TWO actions reduce version mistakes?
 
-A. Gắn phiên bản, thời điểm hiệu lực và tên tài liệu rõ ràng.
+A. Clearly label versions and effective dates.
 
-B. Yêu cầu giọng văn dứt khoát để mô hình chọn một bản và không báo mâu thuẫn.
+B. Demand decisive wording that hides conflicts.
 
-C. Giữ cả hai không chú thích vì nhiều tài liệu làm kết luận chắc hơn.
+C. Keep both unannotated because more documents mean certainty.
 
-D. Cập nhật hoặc phân định tài liệu thay thế, kiểm tra nguồn được dùng trong câu trả lời.
+D. Update or distinguish superseded documents and inspect answer sources.
 
-**Câu 3 — Chọn một.** Cộng tác viên chỉ cần hỏi đáp trên bộ tài liệu đã duyệt. Phương án quyền nào khớp nhu cầu?
+**Question 3 — Choose one.** A collaborator only needs Q&A over approved documents. What permission level fits?
 
-A. Chia sẻ thông tin đăng nhập của chủ dự án để có cùng trải nghiệm.
+A. Share the owner's login.
 
-B. Cấp toàn bộ quyền dự án vì việc đọc và sửa dùng chung giao diện.
+B. Grant every project permission.
 
-C. Cấp quyền xem/hỏi theo nhu cầu, tách khỏi quyền sửa.
+C. Provide viewing and querying access separately from editing.
 
-D. Cấp quyền chỉnh sửa để giảm khả năng gặp lỗi khi tra cứu.
+D. Grant edits to avoid lookup failures.
 
-**Câu 4 — Chọn hai.** Project có hàng nghìn trang. Một câu trả lời bỏ sót ngoại lệ nằm trong tài liệu ít được truy xuất. Hai nhận định nào phù hợp?
+**Question 4 — Choose two.** A large Project answer misses an exception in a rarely retrieved document. Which TWO statements are appropriate?
 
-A. Tăng độ dài description sẽ buộc đọc mọi trang trong mỗi lượt.
+A. A longer description forces every page into each turn.
 
-B. Cần kiểm tra phần nguồn được lấy và bổ sung tài liệu liên quan tới ngoại lệ.
+B. Inspect retrieved evidence and supply relevant exception material.
 
-C. Có tài liệu trong knowledge chưa chứng minh toàn bộ nội dung đã có trong lượt trả lời.
+C. Presence in knowledge does not prove all content reached the answer turn.
 
-D. Có thể coi ngoại lệ không tồn tại nếu không xuất hiện trong câu trả lời đầu.
+D. An omitted exception does not exist.
 
-**Câu 5 — Chọn một.** Nhóm thương hiệu cần dùng chung tài liệu dài hạn nhưng mỗi chiến dịch có đối tượng khác nhau. Thiết kế nào tránh trộn dữ liệu ổn định với yêu cầu từng lần?
+**Question 5 — Choose one.** Brand resources are long-lived, but campaign audiences vary. Which design separates these concerns?
 
-A. Giữ quy tắc/nguồn chung ở Project; nêu đối tượng ở yêu cầu mới.
+A. Keep shared rules and sources in the Project; specify audiences per request.
 
-B. Sửa toàn bộ knowledge mỗi khi thay đối tượng chiến dịch.
+B. Rewrite all knowledge for every audience.
 
-C. Ghi đối tượng đầu tiên vào tên Project và dùng cho mọi chiến dịch.
+C. Put the first audience in the Project name for every campaign.
 
-D. Chỉ giữ lịch sử một chat dài làm nơi duy nhất cho mọi tài liệu và quy tắc.
+D. Use one long chat as the only store for all rules and sources.
 
 ## Đáp án và giải thích
 

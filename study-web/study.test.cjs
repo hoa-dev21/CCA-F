@@ -6,10 +6,10 @@ const readline=require('node:readline');
 const {lessons,library,render}=require('./library.cjs');
 const {CodexBridge}=require('./codex-bridge.cjs');
 
-test('the real course bank parses all lessons, including the first lesson’s different heading style',()=>{
+test('the real course bank parses English question headings across all lessons',()=>{
   assert.equal(lessons.size,142);assert.equal([...lessons.values()].flatMap(l=>l.questions).length,710);
   assert.equal(library[0].id,'EXAM-14-loop-decomposition.md');
-  const l=lessons.get(library[0].id);assert.match(l.summary,/stop_reason/);assert.doesNotMatch(l.summaryHtml,/Đáp án|Chọn một/);
+  const l=lessons.get(library[0].id);assert.match(l.summary,/stop_reason/);assert.doesNotMatch(l.summaryHtml,/Đáp án|Choose one|Choose two/);
   assert.deepEqual(l.questions[0].correct,['B']);assert.deepEqual(l.questions[2].correct,['A','D']);
   assert.equal(l.questions[2].multiple,true);assert.match(l.questions[2].explanation,/kiểm tra bắt buộc bằng chương trình/);
   const first=lessons.get('API-01-tool-use.md');assert.equal(first.questions.length,5);assert.ok(first.notesHtml.includes('Đối chiếu'));
@@ -28,6 +28,9 @@ test('every lesson has five complete scenario questions, including two choose-tw
       assert.ok(q.correct.every(k=>q.options.some(o=>o.key===k)),q.id);
       assert.ok(q.explanation.length>80,q.id);
       assert.match(q.revision,/^[a-f0-9]{16}$/,q.id);
+      assert.equal(q.language,'en',q.id);
+      assert.doesNotMatch(q.prompt+q.options.map(o=>o.text).join(''),/[À-ỹĐđ]/u,q.id);
+      assert.match(q.explanation,/[À-ỹĐđ]/u,q.id);
       const prompt=q.prompt.trim();assert.ok(!prompts.has(prompt),'Duplicate prompt: '+q.id);prompts.add(prompt);
     }
   }

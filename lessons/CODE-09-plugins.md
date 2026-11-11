@@ -17,55 +17,55 @@ Khi ôn thi, dùng bài này để hiểu việc chia sẻ cấu hình và quy�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Nhóm muốn một skill trong plugin, nhưng gói còn chứa hooks và MCP config. Review trước khi cài nên bao phủ gì?
+**Question 1 — Choose one.** A desired plugin skill comes with hooks and MCP configuration. What should installation review cover?
 
-A. Chỉ file hướng dẫn skill vì đó là thành phần sẽ được gọi.
+A. Only the skill instructions.
 
-B. Chỉ uy tín tác giả vì gói đã có marketplace.
+B. Only marketplace author reputation.
 
-C. Mọi thành phần có thể chạy, quyền và tương tác với repo.
+C. All executable components, permissions, and repository interactions.
 
-D. Chỉ tên namespace vì namespace tự cô lập mã hook.
+D. Only namespace names as automatic hook isolation.
 
-**Câu 2 — Chọn một.** Dự án đã có PreToolUse hook; plugin thêm hook cùng sự kiện. Giả định nào đúng để lên kế hoạch kiểm tra theo bài?
+**Question 2 — Choose one.** A project and plugin both define PreToolUse hooks. What should testing assume?
 
-A. Cả hai có thể chạy, cần kiểm tra xung đột và thao tác hợp lệ/vi phạm.
+A. Both may run; test interactions and allowed and denied cases.
 
-B. Hook plugin luôn thay toàn bộ hook dự án.
+B. The plugin always replaces project hooks.
 
-C. Hook dự án tự động vô hiệu mọi hook plugin.
+C. Project hooks automatically disable plugin hooks.
 
-D. Hai hook cùng tên tự triệt tiêu nên không cần kiểm tra.
+D. Matching hooks cancel each other.
 
-**Câu 3 — Chọn hai.** Plugin hoạt động tốt ở phiên bản cũ; bản mới bổ sung hook sửa đầu vào công cụ. Hai hành động nào phù hợp khi cập nhật?
+**Question 3 — Choose two.** A plugin update adds input-modifying hooks. Which TWO actions are appropriate?
 
-A. Tự nâng cho cả nhóm vì skill chính không đổi tên.
+A. Upgrade everyone automatically because the skill name is unchanged.
 
-B. Xem diff/thành phần thay đổi và thử hành vi với cấu hình dự án.
+B. Review component changes and test against project configuration.
 
-C. Ghi nhận phiên bản được dùng để truy nguyên hoặc quay lại khi cần.
+C. Record versions for traceability and rollback.
 
-D. Chỉ kiểm tra mô tả marketplace còn giống trước.
+D. Check marketplace description only.
 
-**Câu 4 — Chọn một.** Hai thành viên cài cùng tên plugin nhưng khác phiên bản, tạo kết quả kiểm tra khác nhau. Cải thiện nào giải quyết tính nhất quán triển khai?
+**Question 4 — Choose one.** Teammates use different versions of one plugin and get different checks. What improves deployment consistency?
 
-A. Yêu cầu họ dùng cùng câu prompt và bỏ qua phiên bản.
+A. Use the same prompt and ignore versions.
 
-B. So sánh số token đầu ra rồi lấy phiên bản ít token hơn.
+B. Choose the version using fewer tokens.
 
-C. Đổi tên plugin ở một máy để tránh xung đột tên.
+C. Rename the plugin on one machine.
 
-D. Quản lý chung phiên bản/cấu hình; kiểm thử các lần nâng.
+D. Manage shared versions and configuration and test upgrades.
 
-**Câu 5 — Chọn hai.** Một plugin đã được rà soát bên ngoài nhưng cần dùng trong repo có quy tắc dữ liệu riêng. Hai điều nào vẫn cần xác minh?
+**Question 5 — Choose two.** A plugin passed external review, but the repository has specific data rules. Which TWO concerns remain?
 
-A. Hành vi hook/MCP và quyền có phù hợp giới hạn của dự án.
+A. Hook and MCP behavior and permissions fit project boundaries.
 
-B. Việc được review bên ngoài tự cấp quyền cần thiết trong repo.
+B. External review automatically grants repository authority.
 
-C. Tương tác với cấu hình hiện có và các trường hợp chặn/cho phép.
+C. Interactions with existing configuration and allow-or-deny cases.
 
-D. Namespace khác bảo đảm mã hook không ảnh hưởng thao tác dự án.
+D. Different namespaces guarantee hooks cannot affect the project.
 
 ## Đáp án và giải thích
 

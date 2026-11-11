@@ -16,55 +16,55 @@ Các con số, nhà cung cấp và mô hình trong khóa học là ví dụ tạ
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Truy vấn được tạo embedding bằng mô hình mới, kho vẫn dùng mô hình cũ có cùng số chiều. Tìm kiếm trả kết quả lạ. Kiểm tra nào cần ưu tiên?
+**Question 1 — Choose one.** Queries use a new embedding model while documents use an old one with the same dimensions. Search behaves strangely. What should be checked first?
 
-A. Kiểm tra hai model có tạo vectơ cùng không gian không.
+A. Whether both models produce vectors in a compatible space.
 
-B. Đổi tên trường lưu vectơ thành tên mô hình mới.
+B. Rename the vector field.
 
-C. Chuẩn hóa độ dài câu trả lời của mô hình sinh.
+C. Normalize generated answer lengths.
 
-D. Tăng top-k để bù mọi khác biệt giữa hai mô hình.
+D. Increase top-k to compensate for any model difference.
 
-**Câu 2 — Chọn một.** Đoạn đứng đầu rất gần truy vấn “đặt lại mật khẩu” nhưng nói về tài khoản quản trị, còn người hỏi dùng tài khoản khách. Điều gì cần làm trước trả lời?
+**Question 2 — Choose one.** A password-reset result concerns administrators, but the user is a guest. What should happen before answering?
 
-A. Đọc nội dung và điều kiện áp dụng của đoạn nguồn.
+A. Check the passage and its applicability conditions.
 
-B. Lấy trung bình vectơ của tài khoản khách và quản trị rồi trả lời.
+B. Average guest and administrator vectors.
 
-C. Bỏ loại tài khoản khỏi câu hỏi để tăng độ tương đồng.
+C. Remove account type from the question.
 
-D. Dùng điểm cao nhất làm bằng chứng đủ cho mọi tài khoản.
+D. Treat the highest similarity score as sufficient for every account.
 
-**Câu 3 — Chọn hai.** Nhóm muốn giải thích kết quả tìm kiếm bằng embedding. Hai phát biểu nào chính xác?
+**Question 3 — Choose two.** Which TWO statements correctly explain embedding search?
 
-A. Hai vectơ gần nhau chứng minh hai mệnh đề có cùng giá trị đúng/sai.
+A. Nearby vectors prove equal truth values.
 
-B. Vectơ hỗ trợ so độ gần để tìm nội dung có thể liên quan.
+B. Vector similarity identifies potentially relevant content.
 
-C. Chiều đầu tiên luôn là chủ đề nên dùng nó làm bộ lọc cố định.
+C. The first dimension always represents topic.
 
-D. Cần giữ văn bản gốc để đánh giá đoạn có thực sự trả lời câu hỏi.
+D. Original text is needed to assess whether a passage answers the question.
 
-**Câu 4 — Chọn một.** Người dùng hỏi “quên mã truy cập”, tài liệu ghi “đặt lại mật khẩu”. Tìm theo đúng cụm từ thất bại. Lợi ích nào của embedding đáng thử ở đây?
+**Question 4 — Choose one.** Exact search fails when a user says “forgot access code” and documents say “reset password.” What benefit should be tested?
 
-A. Chuyển truy vấn thành một câu trả lời đã được xác minh.
+A. Converting queries into verified answers.
 
-B. Bảo đảm tìm đúng vì mọi từ đồng nghĩa đều có vectơ giống hệt.
+B. Guaranteed success because synonyms have identical vectors.
 
-C. Tự cập nhật quy trình đổi mật khẩu mà không cần đọc tài liệu.
+C. Updating password procedures without reading sources.
 
-D. Tìm các cách diễn đạt gần nghĩa dù không trùng toàn bộ từ.
+D. Finding semantically related phrasing without identical words.
 
-**Câu 5 — Chọn hai.** Đánh giá thay mô hình embedding, hai điều kiện nào giúp kết quả có ý nghĩa?
+**Question 5 — Choose two.** Which TWO conditions make an embedding-model comparison meaningful?
 
-A. Chỉ kiểm tra số chiều đầu ra bằng nhau.
+A. Only equal vector dimensions.
 
-B. Chấm đoạn lấy được theo nhu cầu và điều kiện của câu hỏi.
+B. Judge retrieved passages against question needs and conditions.
 
-C. Tạo biểu diễn truy vấn và tài liệu bằng cấu hình tương thích.
+C. Use compatible query and document embedding configurations.
 
-D. So trực tiếp điểm gần từ hai mô hình như cùng một thang đo.
+D. Compare raw scores from different models as one shared scale.
 
 ## Đáp án và giải thích
 

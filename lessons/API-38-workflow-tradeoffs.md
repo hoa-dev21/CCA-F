@@ -17,55 +17,55 @@ Hãy bắt đầu bằng cách giải quyết đủ tin cậy cho bài toán và
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** 90% yêu cầu là trích xuất biểu mẫu cố định; 10% cần điều tra tài liệu thiếu. Nhóm ưu tiên dễ kiểm thử và chỉ cần tự chủ ở ngoại lệ. Kiến trúc nào phù hợp nhất?
+**Question 1 — Choose one.** Ninety percent of requests extract fixed forms; ten percent require investigating missing documents. The team wants predictable tests and autonomy only for exceptions. Which architecture fits?
 
-A. Workflow cho luồng chuẩn; agent giới hạn cho phần điều tra.
+A. A standard workflow with a bounded agent for investigation.
 
-B. Workflow cố định cho cả ngoại lệ bằng cách bỏ các trường chưa biết.
+B. A fixed workflow that drops unknown fields in exceptions.
 
-C. Agent tự chọn toàn bộ bước cho cả hai nhóm để thống nhất kiến trúc.
+C. An agent controlling every step for both groups.
 
-D. Hai agent độc lập xử lý mọi biểu mẫu rồi bỏ phiếu kết quả.
+D. Two agents voting on every form.
 
-**Câu 2 — Chọn một.** Agent điều tra sự cố phát hiện một phụ thuộc không có trong kế hoạch ban đầu. Điều gì biện minh việc chọn agent thay workflow cố định trong tình huống này?
+**Question 2 — Choose one.** An incident investigation discovers an unplanned dependency. What supports choosing an agent over a fixed workflow here?
 
-A. Đường điều tra phải thay đổi theo bằng chứng mới để đạt mục tiêu.
+A. The investigation path must adapt to new evidence to meet the objective.
 
-B. Agent thường tạo lời giải thích dài nên dễ chứng minh chất lượng hơn.
+B. Longer agent explanations prove quality.
 
-C. Số công cụ lớn tự nó đòi hỏi mọi bước do mô hình quyết định.
+C. A large tool count alone requires model-controlled sequencing.
 
-D. Tự chủ cho phép bỏ kiểm tra ở các bước trung gian đã chọn.
+D. Autonomy permits skipping intermediate checks.
 
-**Câu 3 — Chọn hai.** Một workflow ổn định đạt tiêu chí nhưng nhóm muốn chuyển sang agent. Hai bằng chứng nào nên có trước khi mở rộng quyền tự chủ?
+**Question 3 — Choose two.** Which TWO findings should precede replacing a successful workflow with an agent?
 
-A. Một demo agent giải đúng ca mà workflow đã giải đúng.
+A. A demo solving a case the workflow already handles.
 
-B. Tên mô hình mới được quảng bá có khả năng lập kế hoạch tốt.
+B. Marketing claims about a new model's planning ability.
 
-C. Các ca thất bại thực tế đòi hỏi chọn đường xử lý chưa thể mô tả đủ trong workflow.
+C. Real failures requiring paths inadequately represented by the workflow.
 
-D. Đánh giá đại diện so sánh chất lượng, độ trễ và lỗi của phương án mới.
+D. Representative comparisons of quality, latency, and failure rates.
 
-**Câu 4 — Chọn một.** Hai thiết kế có cùng tỷ lệ thành công cuối, nhưng agent đôi lúc gọi nhiều chuỗi công cụ khác nhau. Để chẩn đoán lỗi, cần mở rộng đánh giá nào?
+**Question 4 — Choose one.** Two designs have equal final success rates, but the agent takes variable tool paths. What additional evaluation supports diagnosis?
 
-A. Giữ một đường chạy thành công làm chuẩn cho mọi yêu cầu.
+A. Use one successful path as the standard for all requests.
 
-B. Chỉ so số token đầu ra vì kết quả cuối đã tương đương.
+B. Compare output tokens only.
 
-C. Chỉ chấm chất lượng ngôn ngữ để phân biệt hai thiết kế.
+C. Score language quality alone.
 
-D. Đánh giá thêm đường chạy và các kết quả trung gian.
+D. Inspect execution paths and intermediate results.
 
-**Câu 5 — Chọn hai.** Workflow yêu cầu duyệt trước bước xuất bản; agent được thêm để tìm thông tin còn thiếu. Hai nguyên tắc nào giữ đúng đánh đổi kiến trúc?
+**Question 5 — Choose two.** A workflow requires approval before publishing. An agent is added to investigate missing information. Which TWO principles preserve the intended architecture?
 
-A. Đưa mọi bước cố định vào prompt để thay workflow ngay.
+A. Replace all fixed steps with prompt instructions.
 
-B. Cho agent tự quyết bỏ gate khi tìm thấy đủ nguồn đáng tin.
+B. Let the agent bypass approval when sources seem sufficient.
 
-C. Giữ gate duyệt ở luồng xuất bản dù phần tìm kiếm có tự chủ.
+C. Retain the publication approval gate despite autonomous research.
 
-D. Giới hạn phần agent vào việc cần thích ứng và đo kết quả của nó.
+D. Limit autonomy to adaptive work and measure its outcomes.
 
 ## Đáp án và giải thích
 

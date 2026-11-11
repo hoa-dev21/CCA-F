@@ -15,55 +15,55 @@ Hoàn thành Claude 101 không đồng nghĩa với đạt chứng chỉ Archite
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Một người hoàn thành Claude 101 muốn ôn Architect trong thời gian giới hạn. Bước lập kế hoạch phù hợp nhất?
+**Question 1 — Choose one.** A Claude 101 graduate has limited Architect preparation time. What is the right next planning step?
 
-A. Làm thêm các ví dụ viết nội dung và coi đó là bao phủ thiết kế hệ thống.
+A. Treat more writing examples as system-design coverage.
 
-B. Dùng chứng nhận hoàn thành khóa nhập môn thay cho đánh giá kỹ năng Architect.
+B. Replace Architect skill assessment with an introductory completion certificate.
 
-C. Đối chiếu đề cương đúng phiên bản, ưu tiên kỹ năng còn thiếu.
+C. Consult the correct blueprint version and prioritize missing skills.
 
-D. Ôn lại mọi vị trí nút trong giao diện vì đã học đủ nền tảng chứng chỉ.
+D. Memorize UI button positions because the introduction covers everything.
 
-**Câu 2 — Chọn hai.** Bạn chọn công việc hàng tuần để áp dụng sau khóa học. Hai yếu tố nào giúp biến trải nghiệm thành kỹ năng?
+**Question 2 — Choose two.** Which TWO practices turn weekly AI use into skill development?
 
-A. Đổi công cụ mỗi lượt để tránh phải đối chiếu kết quả cũ.
+A. Change tools every turn to avoid comparisons.
 
-B. Ghi phản hồi cụ thể rồi đánh giá bản sửa so với yêu cầu ban đầu.
+B. Record specific feedback and compare revisions with original requirements.
 
-C. Dùng bối cảnh thật và tiêu chí kiểm tra kết quả có thể quan sát.
+C. Use real context and observable result criteria.
 
-D. Chỉ lưu prompt thành công và bỏ mọi dấu vết của lần thất bại.
+D. Keep only successful prompts and discard failures.
 
-**Câu 3 — Chọn một.** Nhóm cần tài liệu nền dùng lâu dài và quy trình báo cáo lặp lại. Tổ hợp nào phân vai đúng?
+**Question 3 — Choose one.** A team needs persistent reference context and a repeatable reporting process. Which combination assigns roles correctly?
 
-A. Projects giữ bối cảnh; Skills giữ quy trình và tiêu chí.
+A. Projects hold context; Skills hold procedures and criteria.
 
-B. Artifacts thay quyền kết nối dữ liệu; Projects tự chạy mọi quy trình.
+B. Artifacts replace data permissions and Projects execute every process.
 
-C. Skills lưu mọi số liệu mới nhất mà không cần đầu vào; chat chỉ để xem.
+C. Skills automatically store all current data without inputs.
 
-D. Một prompt dài duy nhất thay việc kiểm tra nguồn và kết quả mỗi lần.
+D. One long prompt replaces source and result verification.
 
-**Câu 4 — Chọn hai.** Kế hoạch thử AI có prompt rõ nhưng chưa quyết định dữ liệu nào được đưa vào và ai duyệt. Hai năng lực cần bổ sung trực tiếp?
+**Question 4 — Choose two.** A pilot has clear prompts but no data-use or review decisions. Which TWO capabilities need attention?
 
-A. Delegation để xác định phần AI làm và phần người giữ trách nhiệm.
+A. Delegation: deciding AI work and retained human responsibility.
 
-B. Chỉ ghi nhớ tên tính năng để bảo đảm công cụ được dùng đúng.
+B. Only memorizing feature names.
 
-C. Chỉ Description bằng cách thêm tính từ mô tả phong cách.
+C. Only adding stylistic adjectives through Description.
 
-D. Diligence để xét dữ liệu, minh bạch và trách nhiệm khi sử dụng.
+D. Diligence: considering data, transparency, and responsibility.
 
-**Câu 5 — Chọn một.** Mục tiêu tiếp theo là đọc/sửa repository và kiểm thử thay đổi. Lộ trình nào phù hợp nhất sau phần nhập môn?
+**Question 5 — Choose one.** The next goal is reading, editing, and testing a repository. What path fits?
 
-A. Ưu tiên thuộc mọi gói thuê bao trước khi thử một nhiệm vụ mã nguồn.
+A. Memorize subscription plans before any code task.
 
-B. Tập tạo slide để thay bằng chứng chạy test của dự án.
+B. Use slide creation as proof of project tests.
 
-C. Luyện trên dự án với công cụ, quyền và kiểm chứng phù hợp.
+C. Practice on a project with suitable tools, permissions, and verification.
 
-D. Chỉ luyện viết email hay hơn vì mọi thao tác dùng chung mô hình.
+D. Only practice better emails because all interfaces share a model.
 
 ## Đáp án và giải thích
 

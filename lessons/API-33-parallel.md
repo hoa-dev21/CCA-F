@@ -17,55 +17,55 @@ Chia nhánh giúp tập trung và cải thiện từng phần riêng, nhưng ch�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Ba reviewer đánh giá cùng tài liệu về bảo trì, trải nghiệm và định dạng; không reviewer nào cần đầu ra của reviewer khác. Thiết kế nào giảm độ trễ mà giữ đủ góc nhìn?
+**Question 1 — Choose one.** Three reviewers assess maintainability, user experience, and formatting independently. Which design reduces latency while preserving all perspectives?
 
-A. Chạy ba nhánh độc lập rồi tổng hợp theo tiêu chí chung.
+A. Run independent branches and synthesize against shared criteria.
 
-B. Chạy nối tiếp để mỗi reviewer bắt buộc thấy ý kiến trước.
+B. Force sequential reviews sharing previous opinions.
 
-C. Chỉ chạy reviewer trả lời nhanh nhất ở lần thử đầu.
+C. Run only whichever reviewer was fastest in a trial.
 
-D. Chạy ba nhánh rồi lấy bản dài nhất làm kết luận.
+D. Choose the longest branch output.
 
-**Câu 2 — Chọn một.** Bước B cần mức thuế được tính ở A; nhóm muốn chạy song song bằng cách đoán thuế cho B. Cách điều phối phù hợp nhất?
+**Question 2 — Choose one.** Step B requires the tax rate calculated by A. What is appropriate rather than guessing the rate to parallelize them?
 
-A. Chạy B với mức phổ biến và sửa câu trả lời nếu A khác.
+A. Use a common rate and revise afterward.
 
-B. Đợi kết quả A trước khi chạy B.
+B. Wait for A before running B.
 
-C. Cho A/B chạy đồng thời và dùng confidence chọn kết quả.
+C. Run both and choose by confidence.
 
-D. Chạy B hai lần với hai mức thuế thường gặp rồi bỏ phiếu.
+D. Run B with two guessed rates and vote.
 
-**Câu 3 — Chọn hai.** Hai nhánh review đưa kết luận trái nhau vì một bên ưu tiên latency, bên kia ưu tiên chất lượng. Hai việc nào cần ở bước tổng hợp?
+**Question 3 — Choose two.** Branches disagree because one prioritizes latency and another quality. Which TWO synthesis actions are needed?
 
-A. Giữ tiêu chí và bằng chứng của mỗi nhánh để giải thích khác biệt.
+A. Preserve each branch's criteria and evidence.
 
-B. Loại nhánh thiểu số để kết luận nhất quán.
+B. Remove the minority view.
 
-C. Đối chiếu với ràng buộc/mục tiêu hệ thống trước khi chọn tradeoff.
+C. Compare tradeoffs with system requirements and constraints.
 
-D. Chọn nhánh dùng nhiều token hơn vì có vẻ phân tích sâu hơn.
+D. Prefer the branch using more tokens.
 
-**Câu 4 — Chọn một.** Hệ song song có ba nhánh; một nhánh timeout sau khi hai nhánh hoàn tất. Báo cáo cuối yêu cầu đủ cả ba tiêu chí. Cách xử lý phù hợp?
+**Question 4 — Choose one.** Two of three parallel branches finish; the third times out. The report requires all three criteria. What should happen?
 
-A. Xuất báo cáo hoàn tất bằng hai nhánh vì đa số đã xong.
+A. Declare completion because a majority finished.
 
-B. Thay phần timeout bằng nhận xét suy đoán của tổng hợp.
+B. Invent the missing assessment during synthesis.
 
-C. Chạy lại toàn bộ ba nhánh để kết quả đồng thời.
+C. Rerun all three to synchronize results.
 
-D. Giữ phần đạt; phục hồi hoặc báo thiếu tiêu chí còn lại.
+D. Preserve completed work and recover or disclose the missing criterion.
 
-**Câu 5 — Chọn hai.** Nhóm cân nhắc chia một prompt thành nhiều nhánh. Hai yếu tố nào phải đánh giá trước khi coi đây là cải tiến?
+**Question 5 — Choose two.** Which TWO factors must be evaluated before splitting a prompt into parallel branches?
 
-A. Đầu vào cần thiết của từng nhánh đã sẵn và không phụ thuộc kết quả nhánh khác.
+A. Required inputs are available without depending on another branch's output.
 
-B. Mỗi nhánh có tên khác nhau nên chắc chắn độc lập.
+B. Different branch names prove independence.
 
-C. Chất lượng cuối, độ trễ và chi phí tổng hợp trên tập tác vụ đại diện.
+C. Final quality, latency, and synthesis cost on representative tasks.
 
-D. Số nhánh càng lớn càng tăng độ đúng dù chúng đọc cùng bằng chứng.
+D. More branches always improve accuracy on identical evidence.
 
 ## Đáp án và giải thích
 

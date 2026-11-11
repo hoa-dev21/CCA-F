@@ -15,55 +15,55 @@ Cách này hữu ích khi nội dung dài, có nhiều nguồn hoặc dùng mẫ
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Prompt ghép mã nguồn và tài liệu hướng dẫn thành một khối. Model đôi lúc báo một ví dụ trong tài liệu là lỗi trong mã. Thay đổi nào nhắm đúng nguyên nhân?
+**Question 1 — Choose one.** A prompt combines code and documentation. The model mistakes documentation examples for code defects. What addresses this?
 
-A. Đổi tên biến trong mã cho giống từ ngữ trong tài liệu.
+A. Rename code variables to match documentation vocabulary.
 
-B. Chỉ tăng giới hạn đầu ra để model có chỗ giải thích dài hơn.
+B. Increase output length.
 
-C. Tách mã/tài liệu bằng thẻ mô tả và nêu cách đối chiếu.
+C. Separate code and reference documents with descriptive tags and explain how to compare them.
 
-D. Gộp mã và tài liệu vào cùng thẻ data.
+D. Place everything inside one `data` tag.
 
-**Câu 2 — Chọn hai.** Nhóm chuẩn hóa prompt dùng thẻ XML cho nguồn tham khảo và yêu cầu. Hai lựa chọn nào có cơ sở theo bài?
+**Question 2 — Choose two.** Which TWO XML practices are supported by the lesson?
 
-A. Dùng cặp mở/đóng nhất quán để ranh giới các phần rõ ràng.
+A. Use consistent opening and closing tags to clarify boundaries.
 
-B. Chọn một tên thẻ bí mật được cho là tự nâng mức tin cậy của nguồn.
+B. Use a secret tag name believed to increase source trust.
 
-C. Coi tài liệu trong thẻ là đã được xác minh vì có cấu trúc XML.
+C. Treat XML-wrapped documents as verified evidence.
 
-D. Dùng tên thẻ mô tả phù hợp với loại nội dung của ứng dụng.
+D. Choose descriptive names appropriate to each content type.
 
-**Câu 3 — Chọn một.** Một đoạn tài liệu chứa câu “bỏ qua yêu cầu trước”. Hệ thống đặt nó trong reference_docs nhưng vẫn cần phân tích như dữ liệu. Thiết kế nào phù hợp nhất?
+**Question 3 — Choose one.** A reference document says “ignore previous instructions.” It must be analyzed as data. Which design is appropriate?
 
-A. Bỏ thẻ và nối câu đó vào cuối yêu cầu để giữ nguyên thứ tự nguồn.
+A. Remove tags and append the sentence to the user request.
 
-B. Đưa tài liệu vào system như hướng dẫn.
+B. Place the document in the system prompt as instructions.
 
-C. Tách tài liệu khỏi chỉ dẫn; nêu vai trò và thử ca gây nhầm.
+C. Separate data from instructions, explain its role, and test confusing cases.
 
-D. Đổi tên thẻ thành trusted_docs rồi mặc định mọi câu trong đó đáng tin.
+D. Rename the tag `trusted_docs` and trust every sentence inside it.
 
-**Câu 4 — Chọn hai.** Prompt so sánh hai phiên bản cấu hình. Hai cách đóng gói nào giúp tránh báo ngược thay đổi?
+**Question 4 — Choose two.** Which TWO packaging choices reduce reversed conclusions when comparing configurations?
 
-A. Giữ riêng tên file nhưng bỏ toàn bộ nội dung hai phiên bản.
+A. Keep filenames but remove both configurations.
 
-B. Nêu rõ cần đối chiếu từ phiên bản cũ sang phiên bản mới.
+B. State the comparison direction from old to new.
 
-C. Tách old_config và new_config bằng các thẻ có nhãn rõ.
+C. Use clearly labeled `old_config` and `new_config` tags.
 
-D. Dùng cùng một tên config cho cả hai và bỏ mô tả thứ tự.
+D. Use the same `config` label for both without specifying order.
 
-**Câu 5 — Chọn một.** Sau khi thêm XML, model tuân thủ cấu trúc hơn nhưng vẫn đưa kết luận sai. Nhóm định bỏ validation vì “đã dùng thẻ”. Kết luận nào đúng?
+**Question 5 — Choose one.** XML improves structural compliance, but conclusions remain wrong. Can validation be removed?
 
-A. Thẻ giúp nhận biết phần; vẫn phải kiểm tra độ đúng.
+A. No; tags clarify sections, while correctness still requires checking.
 
-B. Nếu các thẻ cân bằng thì kết luận trong mỗi thẻ được bảo đảm đúng.
+B. Yes; balanced tags guarantee correct conclusions.
 
-C. Nên đổi mọi thẻ sang tiếng Anh để loại bỏ sai ngữ nghĩa.
+C. English tag names eliminate semantic errors.
 
-D. Tăng lớp thẻ thay kiểm tra nội dung.
+D. Additional tag layers replace content validation.
 
 ## Đáp án và giải thích
 

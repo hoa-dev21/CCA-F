@@ -23,55 +23,55 @@ Kết hợp schema với quy ước chuẩn hóa, chẳng hạn định dạng n
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Workflow bắt buộc trích metadata rồi mới enrichment. Cả hai công cụ được khai báo và tool_choice đặt any. Mô hình đôi khi gọi enrichment đầu tiên. Sửa nào đáp ứng thứ tự bắt buộc?
+**Question 1 — Choose one.** A workflow requires metadata extraction before enrichment. Both tools are available with `tool_choice=any`, and enrichment sometimes runs first. Which change enforces the required order?
 
-A. Đổi thứ tự mô tả công cụ và thêm ví dụ metadata đứng trước.
+A. Reorder tool descriptions and add a metadata-first example.
 
-B. Ép metadata; host xác nhận đạt rồi mới cho enrichment.
+B. Force metadata extraction, then let the host enable enrichment only after validation succeeds.
 
-C. Giữ any nhưng yêu cầu mô hình giải thích vì sao metadata đã đủ.
+C. Keep `any` and ask the model to explain why metadata is sufficient.
 
-D. Cho chạy cả hai rồi bỏ enrichment nếu metadata thất bại.
+D. Run both tools and discard enrichment if metadata fails.
 
-**Câu 2 — Chọn một.** JSON parse được, đúng schema, nhưng tổng hóa đơn khác tổng các dòng. Hệ thống nên làm gì?
+**Question 2 — Choose one.** JSON parses and matches the schema, but the invoice total differs from the sum of its line items. What should the system do?
 
-A. Validate nghiệp vụ; giữ hai tổng và đánh dấu xung đột.
+A. Apply business validation, preserve both totals, and flag the conflict.
 
-B. Chấp nhận vì cấu trúc hợp lệ là mục tiêu của structured output.
+B. Accept it because structured output guarantees the required shape.
 
-C. Ghi đè tổng khai báo bằng tổng tính để đảm bảo nhất quán.
+C. Overwrite the stated total with the calculated total.
 
-D. Retry đến khi mô hình tạo hai tổng bằng nhau.
+D. Retry until the model makes both totals equal.
 
-**Câu 3 — Chọn hai.** Hợp đồng yêu cầu trường mã số thuế, nhưng một số tài liệu không có; loại tài liệu cũng có thể mơ hồ. Hai lựa chọn schema nào giảm việc bịa dữ liệu?
+**Question 3 — Choose two.** An output contract requires a tax ID, but some documents omit it and their type may be ambiguous. Which TWO schema choices reduce fabricated data?
 
-A. Đặt mã số thuế là chuỗi bắt buộc và chấp nhận số gần đúng.
+A. Require a string and accept an approximate tax ID.
 
-B. Cho phép null theo quy ước rõ, phân biệt với chuỗi rỗng.
+B. Allow `null` with clearly defined meaning distinct from an empty string.
 
-C. Bắt chọn loại phổ biến nhất khi không đủ dấu hiệu.
+C. Require the most common document type when evidence is insufficient.
 
-D. Có nhãn unclear/other và trường giải thích nếu downstream cần phân biệt.
+D. Support `unclear` or `other`, with an explanation field when consumers need the distinction.
 
-**Câu 4 — Chọn một.** Host nhận đúng tên công cụ bắt buộc và arguments đúng kiểu. Công cụ sẽ cập nhật hồ sơ khách hàng. Bằng chứng nào còn cần trước khi thực thi?
+**Question 4 — Choose one.** The host receives the required tool name and correctly typed arguments for updating a customer record. What still needs checking before execution?
 
-A. Mô hình đã chọn đúng công cụ nên quyền cập nhật được suy ra.
+A. The correct tool choice proves update permission.
 
-B. JSON hợp lệ đủ chứng minh khách hàng tồn tại.
+B. Valid JSON proves the customer exists.
 
-C. Quyền trên hồ sơ, tính hợp lệ nghiệp vụ và tiền điều kiện thao tác.
+C. Record-level permissions, business validity, and action preconditions.
 
-D. Một câu xác nhận bằng văn xuôi từ cùng mô hình thay cho kiểm tra host.
+D. A prose confirmation from the same model instead of host-side checks.
 
-**Câu 5 — Chọn hai.** Một API downstream phân biệt “không có trường” và “đã kiểm tra nhưng không tìm thấy”. Hai việc nào cần làm khi thiết kế đầu ra?
+**Question 5 — Choose two.** A downstream API distinguishes an omitted field from a checked-but-not-found value. Which TWO design actions preserve that distinction?
 
-A. Quy định rõ optional so với null và kiểm thử adapter với cả hai.
+A. Define optional fields versus `null` and test the adapter with both.
 
-B. Xóa mọi null trước khi gửi để payload gọn hơn.
+B. Remove all `null` values to reduce payload size.
 
-C. Giữ trạng thái thiếu theo bằng chứng thay vì tự điền giá trị mặc định.
+C. Preserve missing-data states supported by evidence instead of inventing defaults.
 
-D. Chuyển cả hai trường hợp thành chuỗi rỗng để thống nhất kiểu.
+D. Convert both states to empty strings for a consistent type.
 
 ## Đáp án và giải thích
 

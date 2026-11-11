@@ -17,55 +17,55 @@ Cấp công cụ phù hợp vai trò và thu hẹp khả năng bằng kiểm tra
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Metadata phải được host kiểm tra trước khi enrichment gọi dịch vụ tính phí. tool_choice=any cho phép chọn cả hai. Thay đổi nào bảo đảm tiền điều kiện mà không chỉ dựa vào lời nhắc?
+**Question 1 — Choose one.** The host must validate metadata before enrichment calls a paid service. `tool_choice=any` allows either tool. Which change enforces this prerequisite?
 
-A. Đặt metadata trước enrichment trong danh sách tools.
+A. List the metadata tool before enrichment.
 
-B. Ép metadata; host kiểm tra đạt mới cho enrichment chạy.
+B. Force metadata extraction and enable enrichment only after host validation succeeds.
 
-C. Dùng ví dụ enrichment sau metadata và giữ nguyên executor.
+C. Add a metadata-first example without changing the executor.
 
-D. Cho chạy song song rồi bỏ enrichment nếu metadata lỗi.
+D. Run both in parallel and discard enrichment if metadata fails.
 
-**Câu 2 — Chọn hai.** MCP tool dùng cùng “Operation failed” cho timeout tra cứu và hoàn tiền bị cấm. Hai thay đổi nào giúp điều phối đúng?
+**Question 2 — Choose two.** An MCP tool returns “Operation failed” for both a lookup timeout and a forbidden refund. Which TWO changes support correct orchestration?
 
-A. Trả loại lỗi, retryability và thông tin có thể hành động, dùng trạng thái lỗi đúng giao diện.
+A. Return the error type, retryability, and actionable context using the interface's proper error status.
 
-B. Chuyển mọi lỗi thành kết quả rỗng để mô hình tiếp tục tổng hợp.
+B. Convert every error into an empty result so synthesis can continue.
 
-C. Retry timeout có giới hạn; đưa lỗi chính sách sang luồng được phép.
+C. Bound retries for timeouts and route policy failures to permitted handling.
 
-D. Retry tất cả lỗi một lần rồi mới đọc phân loại để đơn giản code.
+D. Retry every failure once before inspecting its type.
 
-**Câu 3 — Chọn một.** fetchRecord được re-export thành loadCustomer và getAccount; grep fetchRecord chỉ thấy một caller. Trước khi đổi tham số, cần làm gì?
+**Question 3 — Choose one.** `fetchRecord` is re-exported as `loadCustomer` and `getAccount`. Grep for `fetchRecord` finds only one caller. What should happen before changing its parameters?
 
-A. Đổi caller tìm được và coi các wrapper không gọi trực tiếp là không ảnh hưởng.
+A. Update the visible caller and assume indirect wrappers are unaffected.
 
-B. Tìm mọi file có chữ customer rồi đổi chữ ký hàng loạt.
+B. Change signatures in every file containing “customer.”
 
-C. Dùng số kết quả grep làm ước lượng phạm vi và tăng test ngẫu nhiên.
+C. Use the Grep count to estimate coverage and add random tests.
 
-D. Truy alias/export, đọc wrapper và kiểm tra caller của từng tên liên quan.
+D. Trace aliases and exports, inspect wrappers, and check callers of every relevant name.
 
-**Câu 4 — Chọn một.** Tool schema xác nhận amount là số dương; mô hình yêu cầu hoàn 700 USD cho giao dịch cho phép tối đa 500 USD. Host nên dựa vào đâu để từ chối?
+**Question 4 — Choose one.** A tool schema requires a positive `amount`. The model requests a USD 700 refund for a transaction capped at USD 500. What should the host do?
 
-A. Schema đúng nên cho chạy rồi kiểm tra phản hồi dịch vụ.
+A. Execute because the schema is valid, then inspect the service response.
 
-B. Yêu cầu mô hình tự sửa thành 500 USD mà không xác nhận lại ý định.
+B. Change the amount to USD 500 without confirming the requested action.
 
-C. Kiểm tra quy tắc nghiệp vụ trước thực thi và trả lỗi có hướng chuyển cấp.
+C. Check business rules before execution and return an error with an escalation path.
 
-D. Chia thành hai lần gọi 350 USD để cả hai đều nằm trong ngưỡng.
+D. Split the refund into two USD 350 calls.
 
-**Câu 5 — Chọn hai.** Một tool trả lỗi tạm thời sau khi có kết quả một phần. Hai thông tin nào cần giữ trong hợp đồng kết quả?
+**Question 5 — Choose two.** A tool returns a transient error after producing partial results. Which TWO elements should the result contract preserve?
 
-A. Phần dữ liệu đã có với nguồn/phạm vi rõ.
+A. Available data with clear sources and scope.
 
-B. Dấu thành công tổng thể vì ít nhất một phần có dữ liệu.
+B. An overall success flag because some data exists.
 
-C. Chỉ lỗi, bỏ phần đã có để đồng nhất kiểu trả về.
+C. Only the error, discarding useful data for a uniform return type.
 
-D. Trạng thái chưa đầy đủ, nguyên nhân và khả năng phục hồi.
+D. An incomplete status, the cause, and recovery options.
 
 ## Đáp án và giải thích
 

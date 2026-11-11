@@ -17,55 +17,55 @@ Lưu lại kế hoạch để dùng tiếp khi luyện mô tả yêu cầu (Desc
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Nhóm muốn tạo tài liệu onboarding “hay và đầy đủ”, nhưng chưa biết người đọc phải làm được gì sau khi đọc. Quyết định lập kế hoạch nào cần trước?
+**Question 1 — Choose one.** The team wants a “great, complete” onboarding guide without defining reader outcomes. What planning decision comes first?
 
-A. Chốt danh sách chương theo tài liệu cũ và dùng số chương hoàn thành làm tiêu chí, rồi mới hỏi người đọc cần thực hiện việc gì.
+A. Freeze chapters from an old guide before asking about outcomes.
 
-B. Đề nghị AI viết toàn bộ rồi chọn mục tiêu phù hợp với bản nháp.
+B. Generate everything and choose matching goals afterward.
 
-C. Chốt kết quả và cách kiểm chứng trước khi chia việc.
+C. Define outcomes and verification before dividing work.
 
-D. Giao mỗi thành viên một chương có độ dài bằng nhau.
+D. Assign equal-length chapters.
 
-**Câu 2 — Chọn một.** AI đã viết bản nháp từ tài liệu cũ, nhưng người phụ trách phát hiện quy trình hiện tại khác đáng kể. Bước phù hợp nhất?
+**Question 2 — Choose one.** A draft uses outdated procedures that differ substantially from current practice. What is best?
 
-A. Giữ bản nháp vì kế hoạch ban đầu dùng tài liệu đó.
+A. Keep it because the plan used those sources.
 
-B. Cập nhật nguồn, phân công và đánh giá theo yêu cầu mới.
+B. Update sources, allocation, and evaluation to current requirements.
 
-C. Yêu cầu AI chỉnh văn phong để hạn chế chú ý vào khác biệt.
+C. Hide differences with better style.
 
-D. Chỉ thêm chú thích “quy trình có thể thay đổi” rồi phát hành.
+D. Publish with “procedures may change.”
 
-**Câu 3 — Chọn hai.** Một kế hoạch chia dự án thành tám nhiệm vụ nhưng chỉ ghi người thực hiện. Hai mục nào cần bổ sung để bàn giao đáng tin cậy?
+**Question 3 — Choose two.** Eight tasks identify owners only. Which TWO additions support reliable handoff?
 
-A. Dữ liệu/kỹ năng cần cho từng nhiệm vụ.
+A. Required data and skills per task.
 
-B. Số token cố định bằng nhau cho mọi nhiệm vụ.
+B. Equal token budgets for all tasks.
 
-C. Người kiểm tra cùng tiêu chí đầu ra được chấp nhận.
+C. Reviewers and acceptable output criteria.
 
-D. Mức độ tự tin mong muốn trong câu trả lời của AI.
+D. Desired confidence in AI answers.
 
-**Câu 4 — Chọn một.** Nhóm chọn dự án thực hành quá lớn, mỗi lần chỉ viết prompt nhưng không đi tới kiểm tra đầu ra. Thay đổi nào giúp luyện cả vòng cộng tác?
+**Question 4 — Choose one.** A practice project is so large that learners only write prompts and never evaluate results. What helps complete the collaboration loop?
 
-A. Chọn dự án nhiều bước đủ nhỏ để làm, kiểm tra và rút kinh nghiệm.
+A. Choose a multistep project small enough to execute, check, and reflect on.
 
-B. Chỉ luyện đặt tên bốn năng lực để có nền tảng vững hơn.
+B. Only memorize competency names.
 
-C. Chia dự án thành nhiều prompt rời mà không cần mục tiêu chung.
+C. Split into unrelated prompts without a shared goal.
 
-D. Thêm nhiều công cụ để tự động hoàn thành phần còn thiếu.
+D. Add tools to automate everything missing.
 
-**Câu 5 — Chọn hai.** Kế hoạch được lưu lại sau buổi đầu. Hai cách sử dụng nào tạo giá trị cho các buổi sau?
+**Question 5 — Choose two.** Which TWO uses make a saved plan valuable in later sessions?
 
-A. Coi kế hoạch là bất biến để kết quả các buổi luôn có cùng phạm vi.
+A. Treat it as immutable.
 
-B. Dùng nó để tiếp tục Description và Discernment trên cùng nhiệm vụ, tránh mất mục tiêu.
+B. Use it to continue Description and Discernment without losing the objective.
 
-C. Sửa kế hoạch khi phát hiện thiếu dữ liệu hoặc cần chuyên môn khác, ghi lại thay đổi.
+C. Revise and record changes when data or expertise gaps emerge.
 
-D. Chỉ lưu để chứng minh đã hoàn thành hoạt động, không cần đối chiếu đầu ra.
+D. Store it only as proof of activity completion.
 
 ## Đáp án và giải thích
 

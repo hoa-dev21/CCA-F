@@ -15,55 +15,55 @@ Sau khi thiết lập kết nối, cần đăng nhập hoặc xác thực, cấp
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Prompt yêu cầu tổng hợp ticket từ hệ thống nội bộ, nhưng chưa có connector. AI viết báo cáo nghe hợp lý. Bước cần làm trước khi dùng báo cáo?
+**Question 1 — Choose one.** AI writes a plausible internal-ticket report without a connector. What must happen before using it?
 
-A. Đưa tên miền hệ thống vào prompt và coi như đã cấp quyền đọc.
+A. Mention the domain as read authorization.
 
-B. Hỏi AI có chắc chắn đã truy cập hệ thống hay không.
+B. Ask whether the AI is sure it accessed data.
 
-C. Kết nối, xác thực và kiểm tra quyền đọc dữ liệu ticket.
+C. Connect, authenticate, and verify access to the actual tickets.
 
-D. Yêu cầu báo cáo có nhiều mã ticket hơn để tăng tính cụ thể.
+D. Require more ticket identifiers for specificity.
 
-**Câu 2 — Chọn hai.** Connector đọc được tài liệu nhưng gửi email thất bại. Hai điều cần kiểm tra trước khi sửa prompt?
+**Question 2 — Choose two.** A connector reads documents but cannot send email. Which TWO checks precede prompt changes?
 
-A. Độ dài câu yêu cầu vì quyền đọc luôn bao hàm quyền gửi.
+A. Prompt length because reading implies sending.
 
-B. Danh tính đã xác thực có quyền thực hiện hành động gửi tương ứng.
+B. The authenticated identity's permission to send.
 
-C. Connector có hỗ trợ hành động gửi hay chỉ cung cấp khả năng đọc.
+C. Whether the connector supports sending or only reading.
 
-D. Tên tài liệu vì cùng một connector bảo đảm cùng quyền cho mọi thao tác.
+D. Document names because one connector guarantees identical rights.
 
-**Câu 3 — Chọn một.** Ứng dụng cần đọc file local trong thư mục được cho phép, nhưng chỉ có kết nối dịch vụ web. Cách chọn khả năng phù hợp?
+**Question 3 — Choose one.** A task needs allowed local files, but only web-service connectivity exists. What should be selected?
 
-A. Kiểm tra công cụ local có quyền vào đúng thư mục.
+A. A local tool authorized for the relevant directory.
 
-B. Gửi đường dẫn ổ đĩa vào dịch vụ web rồi coi nó truy cập được file.
+B. Send a drive path to the web service and assume access.
 
-C. Cấp thêm quyền đọc dịch vụ web để đường dẫn local trở nên khả dụng.
+C. Grant more web-service read rights to expose local disks.
 
-D. Đổi prompt sang tiếng Anh để connector hiểu đường dẫn tốt hơn.
+D. Use English so paths are understood.
 
-**Câu 4 — Chọn hai.** Sau khi cài connector, quản trị viên muốn dùng ngay cho báo cáo lớn. Hai bước kiểm tra ban đầu hợp lý?
+**Question 4 — Choose two.** Which TWO initial checks should follow connector installation?
 
-A. Thử một yêu cầu đọc nhỏ với dữ liệu có thể đối chiếu.
+A. Try a small read with independently checkable data.
 
-B. Đánh giá thành công chỉ từ việc biểu tượng connector xuất hiện.
+B. Accept the connector icon as success.
 
-C. Dùng tài khoản quản trị để bỏ qua mọi vấn đề quyền trong bản thử.
+C. Use administrator access to bypass permissions.
 
-D. Xác nhận tài khoản và phạm vi quyền đang dùng đúng mục đích.
+D. Verify the account and effective permission scope.
 
-**Câu 5 — Chọn một.** Nhóm muốn dùng MCP để nối nhiều nguồn. Một thành viên nói có giao thức chung thì mọi công cụ sẽ có cùng quyền và hành động. Kết luận phù hợp?
+**Question 5 — Choose one.** Does a common MCP protocol give every connected tool identical rights and actions?
 
-A. Đúng nếu nguồn đã được một quản trị viên cài đặt.
+A. Yes, if an administrator installed it.
 
-B. Chỉ cần đặt cùng tên công cụ ở mọi nguồn để đồng nhất hành vi.
+B. Identical tool names unify all behavior.
 
-C. Giao thức thống nhất; năng lực và quyền vẫn cần kiểm tra riêng.
+C. No; protocol consistency still requires capability and permission checks per integration.
 
-D. Đúng nếu các công cụ dùng cùng định dạng JSON.
+D. Yes, when all tools return JSON.
 
 ## Đáp án và giải thích
 

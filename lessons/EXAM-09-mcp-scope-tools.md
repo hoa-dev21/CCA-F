@@ -27,55 +27,55 @@ Nếu mốc của Edit xuất hiện nhiều lần và không xác định đư�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Một MCP server ticket hoạt động trên máy tác giả nhưng đồng đội không thấy khi clone repo. Cấu hình nằm ở user scope. Cách sửa phù hợp cho dùng chung và credential riêng?
+**Question 1 — Choose one.** An MCP ticket server works on its author's machine but is absent when teammates clone the repository. Its configuration is user-scoped. How should shared configuration and individual credentials be handled?
 
-A. Commit cả cấu hình user cùng token đang hoạt động.
+A. Commit the entire user configuration and working token.
 
-B. Version cấu hình dự án; credential/quyền riêng từng người.
+B. Version project-level connection configuration while keeping credentials and permissions individual.
 
-C. Yêu cầu mọi người dùng chung tài khoản máy tác giả.
+C. Have everyone use the author's machine account.
 
-D. Thêm mô tả server vào README và giữ nguyên scope.
+D. Document the server in README without changing configuration scope.
 
-**Câu 2 — Chọn một.** Bạn cần tìm file **/*.test.tsx có gọi saveOrder, nhưng repository rất lớn. Trình tự nào thu hẹp tìm kiếm đúng loại dữ liệu?
+**Question 2 — Choose one.** You need to find files matching `**/*.test.tsx` that call `saveOrder` in a large repository. Which search sequence is appropriate?
 
-A. Grep chuỗi “.test.tsx” trong nội dung rồi đọc mọi file khớp.
+A. Grep for the string `.test.tsx` inside file contents, then read every match.
 
-B. Read lần lượt mọi thư mục rồi tìm bằng mắt.
+B. Read all directories and search manually.
 
-C. Glob tên test, Grep nội dung, Read ngữ cảnh khớp.
+C. Glob for test paths, Grep their contents, then Read the matching context.
 
-D. Glob chuỗi saveOrder vì đó là tên hàm cần tìm.
+D. Glob for `saveOrder` because it is the function name.
 
-**Câu 3 — Chọn hai.** Edit báo anchor xuất hiện ba lần. File vừa được người khác sửa. Hai hành động nào giảm nguy cơ ghi đè hoặc sửa nhầm?
+**Question 3 — Choose two.** Edit reports that its anchor appears three times, and someone else has just modified the file. Which TWO actions reduce accidental overwrites and incorrect edits?
 
-A. Read lại phiên bản hiện tại và lấy ngữ cảnh đủ phân biệt vị trí.
+A. Read the current file and obtain enough context to distinguish the target location.
 
-B. Dùng kết quả Read cũ để Write cả file với thay đổi mong muốn.
+B. Use the old Read result to rewrite the entire file.
 
-C. Sửa với anchor duy nhất hoặc thay thế có kiểm soát, rồi kiểm tra diff.
+C. Use a unique anchor or controlled replacement, then inspect the diff.
 
-D. Chọn lần xuất hiện đầu tiên vì công cụ đã xác nhận có chuỗi cần sửa.
+D. Edit the first occurrence because the target string exists.
 
-**Câu 4 — Chọn một.** Grep tên fetchRecord chỉ thấy một caller, nhưng hàm còn được re-export thành loadCustomer qua wrapper. Trước khi đổi chữ ký hàm, bước nào cần làm?
+**Question 4 — Choose one.** Grep finds one caller of `fetchRecord`, but a wrapper re-exports it as `loadCustomer`. What should happen before changing its signature?
 
-A. Coi grep đã bao phủ vì implementation chỉ có một tên.
+A. Assume the search is complete because the implementation has one name.
 
-B. Đổi chữ ký rồi dựa vào production logs tìm caller bị lỗi.
+B. Change the signature and use production logs to find broken callers.
 
-C. Tìm mọi file chứa từ “Record” và sửa đồng loạt.
+C. Change every file containing “Record.”
 
-D. Truy alias/export; đọc wrapper và caller của từng tên.
+D. Trace aliases and exports, then inspect wrappers and callers of each relevant name.
 
-**Câu 5 — Chọn hai.** Đưa MCP server vào project scope giúp đồng đội nhìn thấy cấu hình. Hai điều nào vẫn cần kiểm tra trên mỗi môi trường?
+**Question 5 — Choose two.** Project-scoped MCP configuration is visible to teammates. Which TWO things still need checking in each environment?
 
-A. Credential thực tế và quyền trên hệ thống đích.
+A. Actual credentials and permissions on the target system.
 
-B. Việc server đã được tác giả dùng thành công thay cho kiểm tra kết nối.
+B. The author's successful connection as a substitute for local checks.
 
-C. Phê duyệt/cấu hình môi trường và khả năng truy cập server.
+C. Required approvals, environment configuration, and server reachability.
 
-D. Tính nhất quán quyền ghi của mọi người chỉ từ file cấu hình được commit.
+D. Identical write permissions inferred solely from the committed configuration.
 
 ## Đáp án và giải thích
 

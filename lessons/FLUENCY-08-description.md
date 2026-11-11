@@ -17,55 +17,55 @@ Nếu nội dung đúng nhưng câu trả lời quá dài, hãy làm rõ cách t
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Một nhóm yêu cầu AI “so sánh hai giải pháp cho ban điều hành”. Kết quả đúng dữ kiện nhưng thành bài hướng dẫn kỹ thuật dài, thiếu bảng quyết định. Sửa mô tả nào nhắm trực tiếp vào sản phẩm cần nhận?
+**Question 1 — Choose one.** A factually correct comparison for executives becomes a long technical tutorial without a decision table. What directly specifies the desired product?
 
-A. Nêu người đọc, tiêu chí và cấu trúc bảng cần bàn giao.
+A. State audience, criteria, and the required table structure.
 
-B. Yêu cầu AI kiểm tra từng con số hai lần trước khi viết.
+B. Ask for double-checking every number.
 
-C. Yêu cầu AI phản biện mạnh hơn trong mọi lượt trao đổi.
+C. Require stronger criticism in every turn.
 
-D. Chia nghiên cứu thành nhiều lượt nhưng giữ nguyên mô tả đầu ra.
+D. Add research stages without changing the deliverable description.
 
-**Câu 2 — Chọn một.** Báo cáo chọn nhà cung cấp đã đúng định dạng nhưng kết luận trước khi kiểm tra chi phí vận hành. Nhóm muốn giữ định dạng hiện tại. Can thiệp nào phù hợp nhất?
+**Question 2 — Choose one.** A correctly formatted supplier report reaches a conclusion before examining operating costs. What helps while retaining format?
 
-A. Đổi báo cáo sang infographic để thấy chi phí rõ hơn.
+A. Convert it into an infographic.
 
-B. Đưa toàn bộ báo cáo vào phụ lục và chỉ trình bày kết luận.
+B. Move everything except the conclusion to an appendix.
 
-C. Yêu cầu giọng văn ít tự tin hơn mà giữ cách phân tích.
+C. Make the tone less confident only.
 
-D. Đối chiếu tiêu chí và căn cứ chi phí trước kết luận.
+D. Check criteria and cost evidence before concluding.
 
-**Câu 3 — Chọn hai.** AI liên tục đồng ý với phương án của kiến trúc sư dù dữ liệu còn thiếu. Hai chỉ dẫn nào chủ yếu cải thiện Performance trong quan hệ cộng tác?
+**Question 3 — Choose two.** AI agrees with an architect despite missing evidence. Which TWO instructions primarily improve Performance in collaboration?
 
-A. Yêu cầu nêu bất đồng có căn cứ và nói rõ điểm chưa đủ thông tin.
+A. Raise evidence-based disagreements and disclose information gaps.
 
-B. Yêu cầu tính tổng chi phí ba năm theo một công thức cố định.
+B. Calculate three-year costs using a fixed formula.
 
-C. Chỉ rõ khi nào cần hỏi lại thay vì tự giả định ý người dùng.
+C. Specify when to ask rather than assume user intent.
 
-D. Yêu cầu mỗi bảng so sánh có đúng bốn cột.
+D. Require exactly four table columns.
 
-**Câu 4 — Chọn một.** Một prompt ghi “bản đề xuất tối đa một trang”, sau đó yêu cầu “giải thích đầy đủ từng nguồn và từng phép tính ngay trong bản đề xuất”. AI liên tục vi phạm độ dài. Cách sửa tốt nhất?
+**Question 4 — Choose one.** A prompt demands one page and detailed explanations of every source and calculation within it. What is best?
 
-A. Tăng vai trò từ chuyên viên lên kiến trúc sư trưởng.
+A. Use a more senior expert role.
 
-B. Bỏ toàn bộ yêu cầu nguồn để ưu tiên hình thức.
+B. Remove all evidence requirements.
 
-C. Lặp lại giới hạn một trang ở đầu và cuối prompt.
+C. Repeat the one-page limit.
 
-D. Tách đề xuất một trang và phụ lục chứa bằng chứng.
+D. Separate a one-page proposal from an evidence appendix.
 
-**Câu 5 — Chọn hai.** Nhóm đã mô tả rõ Product, Process và Performance cho tác vụ rủi ro cao. Hai kết luận nào vẫn đúng?
+**Question 5 — Choose two.** Product, Process, and Performance are clearly described for a high-risk task. Which TWO conclusions still apply?
 
-A. Đầu ra vẫn cần kiểm tra theo tiêu chí và nguồn dữ liệu thực tế.
+A. Outputs need verification against criteria and real sources.
 
-B. Mô tả đủ ba phần là bằng chứng kết quả đã chính xác.
+B. Complete descriptions prove correctness.
 
-C. Nếu đầu ra sai, cần xác định khía cạnh nào chưa đạt để phản hồi có mục tiêu.
+C. Failures need diagnosis by unmet aspect for targeted feedback.
 
-D. Chỉ cần đánh giá văn phong vì Process đã được chỉ định trong prompt.
+D. Only style needs evaluation because the process was specified.
 
 ## Đáp án và giải thích
 

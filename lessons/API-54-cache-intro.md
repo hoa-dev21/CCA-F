@@ -15,55 +15,55 @@ Hãy kiểm tra số liệu sử dụng thực tế để biết phần nào đ�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Ứng dụng đã cache tài liệu dài, lượt sau chỉ gửi câu hỏi vì cho rằng dịch vụ tự nhớ tài liệu. Kết quả mất ngữ cảnh. Sửa nào đúng?
+**Question 1 — Choose one.** After caching a document, an application sends only new questions, assuming the service remembers it. Context is missing. What is the fix?
 
-A. Vẫn gửi nội dung cần thiết theo cơ chế cache hỗ trợ.
+A. Continue supplying necessary content through the supported caching mechanism.
 
-B. Tăng TTL trong prompt văn bản.
+B. Write a longer TTL in prose.
 
-C. Yêu cầu mô hình nhớ ID cuộc gọi trước trong câu hỏi.
+C. Ask the model to remember the prior call ID.
 
-D. Coi cache là kho câu trả lời và trả đáp án lượt đầu.
+D. Replay the first answer as an answer cache.
 
-**Câu 2 — Chọn một.** Hai câu hỏi khác nhau về cùng tài liệu đều có cache hit. Nhóm lo hệ thống sẽ trả cùng câu trả lời. Diễn giải đúng là gì?
+**Question 2 — Choose one.** Two different questions about one document get cache hits. Must they receive identical answers?
 
-A. Cache hit chứng minh câu hỏi thứ hai giống nghĩa câu đầu.
+A. A hit proves both questions mean the same thing.
 
-B. Tái dùng xử lý prefix; câu trả lời vẫn theo request mới.
+B. Prefix processing is reused; generation still follows the new request.
 
-C. Cần tắt cache mỗi khi câu hỏi đổi dù tài liệu giữ nguyên.
+C. Disable caching whenever the question changes.
 
-D. Cache hit buộc mô hình phát lại nguyên câu trả lời trước.
+D. A hit forces replay of the previous answer.
 
-**Câu 3 — Chọn hai.** Dịch vụ dùng cùng tài liệu và tool definitions cho nhiều lượt. Hai việc nào giúp đánh giá caching có ích không?
+**Question 3 — Choose two.** Which TWO measures establish whether caching repeated documents and tool definitions helps?
 
-A. Giả định văn bản gần giống nhau luôn được tái sử dụng.
+A. Assume similar text always qualifies.
 
-B. Chỉ kiểm tra câu trả lời giống nhau giữa hai lượt.
+B. Check only answer similarity.
 
-C. Đo usage phản ánh tạo/đọc cache ở yêu cầu thực.
+C. Inspect actual cache creation and read usage.
 
-D. So độ trễ và chi phí trên workload đại diện.
+D. Compare latency and cost on representative workloads.
 
-**Câu 4 — Chọn một.** Nhóm thấy lần gọi thứ hai nhanh hơn và tuyên bố cache hoạt động. Kết luận thận trọng nhất?
+**Question 4 — Choose one.** A second call is faster. What is the cautious conclusion about caching?
 
-A. Có thể coi đó là bằng chứng chắc chắn của cache.
+A. Speed alone proves a cache hit.
 
-B. Cần đối chiếu số liệu cache vì tốc độ còn chịu nhiều yếu tố.
+B. Check cache usage because other factors affect latency.
 
-C. Có thể bỏ gửi tài liệu từ lần tiếp theo.
+C. Documents can now be omitted.
 
-D. Có thể kết luận nội dung đã chính xác hơn nhờ cache.
+D. The answer must be more accurate.
 
-**Câu 5 — Chọn hai.** Notebook nêu TTL và một mô hình cụ thể. Hai lựa chọn nào phù hợp khi triển khai ở môi trường khác?
+**Question 5 — Choose two.** A notebook specifies a TTL and model. Which TWO actions suit another deployment environment?
 
-A. Xác minh điều kiện cache của mô hình/API đang dùng.
+A. Verify cache requirements for the target model and API.
 
-B. Thêm nội dung lặp vô nghĩa để mọi request giống nhau hơn.
+B. Add meaningless repeated content to align requests.
 
-C. Áp nguyên TTL vì đó là thuộc tính bất biến của mọi cache.
+C. Copy TTL as an invariant of every cache.
 
-D. Đo lợi ích trên nội dung lặp lại thật của ứng dụng.
+D. Measure benefits on the application's real repeated content.
 
 ## Đáp án và giải thích
 

@@ -15,55 +15,55 @@ Bài gốc có nhắc đến tính năng ghi nhớ (memory) và bộ hướng d�
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Ứng dụng gửi hai yêu cầu API tách rời. Yêu cầu hai viết “rút ngắn bước 2” nhưng không kèm câu trả lời trước. Chat sản phẩm có ghi nhớ nên nhóm cho rằng lỗi do prompt quá ngắn. Sửa đúng là gì?
+**Question 1 — Choose one.** A second standalone API request says “shorten step 2” without the prior answer. What is the correct fix?
 
-A. Tăng độ dài yêu cầu hai bằng hướng dẫn viết văn chung.
+A. Add generic writing instructions.
 
-B. Yêu cầu API dùng tính năng ghi nhớ của giao diện chat mà không chuyển ngữ cảnh.
+B. Request chat-product memory without supplying context.
 
-C. Gửi nội dung cần sửa cùng mục tiêu và ràng buộc giữ lại trong yêu cầu hai.
+C. Send the content to revise, the objective, and constraints to preserve.
 
-D. Thêm tên người dùng vào yêu cầu hai để API tự tìm cuộc trò chuyện.
+D. Add a username so the API finds the conversation.
 
-**Câu 2 — Chọn hai.** Nhóm viết hướng dẫn nhân viên mới từ quy trình nội bộ. Hai phần đầu vào nào cần thiết để giảm việc AI tự đoán?
+**Question 2 — Choose two.** Which TWO inputs reduce guessing when drafting onboarding instructions from internal procedures?
 
-A. Chỉ tên quy trình vì mô hình biết cách doanh nghiệp thường vận hành.
+A. Only the procedure name.
 
-B. Nhiệm vụ cụ thể cùng cấu trúc, mức chi tiết của đầu ra.
+B. A specific task, structure, and required detail level.
 
-C. Tài liệu quy trình đúng phiên bản và mục tiêu của người đọc.
+C. The correct procedure version and reader objectives.
 
-D. Một lời yêu cầu “chuyên nghiệp” thay cho tiêu chí nội dung.
+D. “Be professional” instead of content criteria.
 
-**Câu 3 — Chọn một.** Bản nháp đã đúng năm bước, riêng bước 2 quá dài. Bạn cần giữ thứ tự và nội dung bốn bước còn lại. Phản hồi nào kiểm soát thay đổi tốt nhất?
+**Question 3 — Choose one.** A five-step draft is correct except step 2 is too long. Which feedback best controls the change?
 
-A. Giữ năm bước; rút bước 2 còn hai câu, giữ đủ điều kiện.
+A. Keep five steps; shorten step 2 to two sentences while preserving conditions.
 
-B. Viết lại toàn bộ cho ngắn hơn và tự chọn lại cấu trúc phù hợp.
+B. Rewrite everything and choose a new structure.
 
-C. Giữ nguyên độ dài nhưng đổi vai trò thành chuyên gia truyền thông.
+C. Keep length and change the expert role.
 
-D. Tạo thêm năm cách trình bày rồi chọn bản nghe tự nhiên nhất.
+D. Generate five styles and choose the most natural.
 
-**Câu 4 — Chọn hai.** Hội thoại đã chuyển qua nhiều chủ đề, tài liệu cũ và mới mâu thuẫn. Hai bước nào giúp khởi động lại có kiểm soát?
+**Question 4 — Choose two.** Old and new documents conflict after many conversation topics. Which TWO steps support a controlled restart?
 
-A. Tóm tắt mục tiêu hiện tại và đưa tài liệu liên quan đúng phiên bản vào phiên mới.
+A. Provide current objectives and correctly versioned sources in a new session.
 
-B. Sao chép toàn bộ lịch sử không phân biệt phiên bản và để AI tự chọn.
+B. Copy everything without identifying versions.
 
-C. Mở phiên trống rồi chỉ viết “tiếp tục như cũ” để tránh ngữ cảnh dài.
+C. Start blank and say only “continue.”
 
-D. Nêu các quyết định cần giữ cùng những yêu cầu đã bị thay thế.
+D. State decisions to preserve and requirements that were superseded.
 
-**Câu 5 — Chọn một.** Prompt yêu cầu tóm tắt cho người mới nhưng đầu ra đầy chữ viết tắt. Tài liệu đã đủ và nội dung đúng. Bước điều chỉnh nhắm đúng nguyên nhân?
+**Question 5 — Choose one.** An accurate beginner summary uses too many unexplained abbreviations. What directly addresses the problem?
 
-A. Thay mô hình trước khi xác định yêu cầu diễn đạt còn thiếu.
+A. Replace the model before specifying expression requirements.
 
-B. Yêu cầu câu trả lời dài gấp đôi để các thuật ngữ tự trở nên rõ nghĩa.
+B. Double response length.
 
-C. Nêu người đọc, cách giải thích chữ viết tắt và câu mẫu.
+C. Specify the audience, abbreviation explanations, and an example sentence.
 
-D. Thu thập thêm tài liệu kỹ thuật chi tiết hơn rồi giữ prompt cũ.
+D. Add more technical references without changing instructions.
 
 ## Đáp án và giải thích
 

@@ -17,55 +17,55 @@ Vì vậy, không chọn quyền chỉ dựa trên tên công cụ. Hãy xét kh
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Hai agent dùng cùng công cụ browser: một chạy test trên bản sao, một thanh toán bằng tài khoản thật. Cách quyết định mức tự chủ phù hợp?
+**Question 1 — Choose one.** One browser agent tests a copy; another pays using a real account. What should determine autonomy?
 
-A. Cấp quyền rộng hơn cho agent có ít bước thực hiện hơn.
+A. Fewer steps justify broader permissions.
 
-B. Dùng độ tự tin trong câu trả lời của agent làm ngưỡng cấp quyền.
+B. Self-reported confidence alone.
 
-C. Đánh giá tác động, khả năng khôi phục và kiểm chứng từng việc.
+C. Impact, recoverability, and verification requirements of each task.
 
-D. Cấp cùng quyền vì cả hai gọi cùng tên công cụ.
+D. Identical permissions because tool names match.
 
-**Câu 2 — Chọn hai.** Agent sửa hàm dựa trên kiến thức về framework, chưa đọc file hiện tại. Hai việc nào cần bổ sung vào vòng làm việc?
+**Question 2 — Choose two.** An agent edits based on framework knowledge without reading current files. Which TWO steps are needed?
 
-A. Yêu cầu mô hình mô tả framework dài hơn thay cho đọc dự án.
+A. A longer framework explanation instead of project inspection.
 
-B. Dùng kiểm thử hoặc quan sát hành vi để kiểm chứng bản sửa.
+B. Tests or behavior observations verifying the fix.
 
-C. Đọc mã và phụ thuộc liên quan trong dự án trước khi chọn bản sửa.
+C. Reading current code and relevant dependencies before selecting changes.
 
-D. Đánh dấu hoàn thành khi công cụ ghi file trả thành công.
+D. Declaring completion when a file write succeeds.
 
-**Câu 3 — Chọn một.** Agent có điểm hoàn thành cao trên tác vụ thuận lợi, nhưng thường lặp vô hạn khi dịch vụ trả lỗi. Đánh giá nào thiếu?
+**Question 3 — Choose one.** An agent succeeds on easy tasks but loops indefinitely on service errors. What evaluation is missing?
 
-A. Các ca lỗi, giới hạn vòng lặp và đường phục hồi/chuyển cấp.
+A. Failure cases, loop limits, and recovery or escalation paths.
 
-B. Chỉ độ dài prompt mô tả nhiệm vụ thành công.
+B. Only successful-task prompt length.
 
-C. Chỉ số lần công cụ có thể được gọi đồng thời.
+C. Only concurrent-call capacity.
 
-D. Chỉ việc tác nhân có thể tạo câu trả lời cuối đúng định dạng.
+D. Only final-answer formatting.
 
-**Câu 4 — Chọn hai.** Trước khi cho agent tự chạy, nhóm muốn phân biệt “thành công” với “đã hết lượt”. Hai yếu tố nên có?
+**Question 4 — Choose two.** Which TWO elements distinguish autonomous success from exhausted iterations?
 
-A. Tiêu chí kết quả quan sát được gắn với mục tiêu người dùng.
+A. Observable outcome criteria tied to the user's objective.
 
-B. Lấy câu “đã hoàn tất” do mô hình viết làm bằng chứng cuối.
+B. The model's “finished” statement as final evidence.
 
-C. Coi mọi vòng dừng không ném exception là thành công.
+C. Every stop without an exception counts as success.
 
-D. Trạng thái dừng riêng cho lỗi, hết ngân sách và cần chuyển xử lý.
+D. Separate terminal states for errors, budget limits, and escalation.
 
-**Câu 5 — Chọn một.** Agent tạo patch đúng và chạy test đạt trong nhánh riêng. Nhiệm vụ được giao là chuẩn bị thay đổi để con người duyệt. Bước nào phù hợp tiếp theo?
+**Question 5 — Choose one.** An agent prepares a correct patch and passing tests for human review. What should it do next?
 
-A. Mở rộng phạm vi sửa các module liên quan trước khi báo cáo để tối ưu toàn hệ thống.
+A. Expand into related modules before reporting.
 
-B. Xóa bản ghi test vì diff đã chứa toàn bộ thông tin người duyệt cần.
+B. Delete test records because the diff is sufficient.
 
-C. Bàn giao diff cùng kết quả kiểm chứng và giới hạn còn lại cho người duyệt.
+C. Hand off the diff, verification results, and remaining limitations.
 
-D. Triển khai production vì test đạt đã chứng minh quyền tự chủ phù hợp.
+D. Deploy because passing tests establish authority.
 
 ## Đáp án và giải thích
 

@@ -15,55 +15,55 @@ Trang mở đầu ngắn không đủ để suy ra chi tiết kỹ thuật của
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Kỹ sư có một tuần ôn Architect và muốn dành phần lớn thời gian học mọi chi tiết cấu hình cloud trong khóa Bedrock vì khóa có nhiều bài. Cơ sở ưu tiên nào phù hợp nhất?
+**Question 1 — Choose one.** An engineer has one week to prepare and wants to prioritize all cloud configuration details because the Bedrock course has many lessons. What should guide priorities?
 
-A. Số lượng bài của mỗi chủ đề trong khóa.
+A. Lesson counts per topic.
 
-B. Thứ tự xuất hiện trên trang giới thiệu khóa học.
+B. Topic order on the introduction page.
 
-C. Ánh xạ Exam Guide sang các bài liên quan.
+C. Mapping the Exam Guide to relevant lessons.
 
-D. Mức khó cảm nhận của các lệnh cài đặt trong video.
+D. Perceived difficulty of installation commands.
 
-**Câu 2 — Chọn hai.** Một mục tool-use có nội dung tương tự khóa Claude API; nhóm muốn dùng chung tài liệu ôn. Hai việc nào cần để tránh bỏ khác biệt nhà cung cấp?
+**Question 2 — Choose two.** Tool-use content resembles the direct API course. Which TWO actions support sharing study material without losing provider differences?
 
-A. Đối chiếu nguyên tắc chung trước khi quyết định dùng chung tóm tắt.
+A. Compare common principles before reusing summaries.
 
-B. Giữ riêng các khác biệt request/response và môi trường chạy.
+B. Preserve request, response, and runtime differences separately.
 
-C. Đồng nhất toàn bộ ví dụ code chỉ vì cùng mô hình Claude.
+C. Unify all code because both use Claude.
 
-D. Dùng trang mở đầu làm bằng chứng rằng mọi API đều tương đương.
+D. Use the introduction as proof of API equivalence.
 
-**Câu 3 — Chọn một.** Người học đọc xong trang mở đầu và ghi “đã hoàn thành khóa, có thể triển khai”. Bằng chứng nào còn thiếu để khẳng định năng lực đó?
+**Question 3 — Choose one.** A learner reads the introduction and claims deployment competence. What evidence is still missing?
 
-A. Bằng chứng trang mở đầu đã đọc và các mục nội dung đã được đánh dấu xem.
+A. Marked introductory pages.
 
-B. Bản kế hoạch học ánh xạ đủ mọi chủ đề của chương trình khóa.
+B. A complete study plan.
 
-C. Khả năng giải thích các thuật ngữ trong trang giới thiệu mà chưa thực hành.
+C. Explaining introductory terms without practice.
 
-D. Bằng chứng thực hành/đánh giá các năng lực liên quan.
+D. Practice and evaluation of the relevant capabilities.
 
-**Câu 4 — Chọn một.** Một câu hỏi về cấu trúc phản hồi Converse xuất hiện khi đang đọc bài mở đầu. Cách dùng tài liệu nào hợp lý?
+**Question 4 — Choose one.** A question about Converse response structure arises during the introduction. What is appropriate?
 
-A. Suy ra cấu trúc từ sơ đồ tổng quát vì nó đã nêu nhà cung cấp.
+A. Infer it from the overview diagram.
 
-B. Tra bài chuyên đề và nguồn kỹ thuật tương ứng.
+B. Consult the specialized lesson and corresponding technical sources.
 
-C. Dùng cấu trúc API trực tiếp của cùng model.
+C. Use the direct API structure for the same model.
 
-D. Bỏ qua vì mọi nội dung chưa có trên trang mở đầu đều ngoài khóa.
+D. Ignore anything absent from the introduction.
 
-**Câu 5 — Chọn hai.** Khi lập kế hoạch học dùng nhiều khóa nguồn, hai thông tin nào cần tách biệt?
+**Question 5 — Choose two.** Which TWO distinctions matter when planning study across several courses?
 
-A. Năng lực đã được thực hành/đánh giá so với bài chỉ mới đọc định hướng.
+A. Practiced and evaluated skills versus orientation material merely read.
 
-B. Tỷ lệ số video đã mở như bằng chứng duy nhất về mức hiểu.
+B. Opened-video percentage as the sole understanding metric.
 
-C. Nguồn quyết định phạm vi thi so với nguồn cung cấp nội dung học bổ trợ.
+C. Sources defining exam scope versus supplementary learning sources.
 
-D. Tên nhà cung cấp như bằng chứng tự đủ rằng mọi nội dung thuộc đề thi.
+D. Provider names as sufficient proof of exam coverage.
 
 ## Đáp án và giải thích
 

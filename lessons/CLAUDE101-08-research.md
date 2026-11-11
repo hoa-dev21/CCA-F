@@ -20,55 +20,55 @@ Với một dữ kiện đơn giản, tra cứu tập trung có thể phù hợp
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Bạn cần một mốc công bố mới nhất từ website chính thức để điền vào báo cáo có hạn chót 10 phút. Cách tiếp cận phù hợp nhất?
+**Question 1 — Choose one.** You need the latest official announcement date within ten minutes. What approach fits?
 
-A. Tra cứu tập trung vào nguồn chính thức và kiểm tra đúng mốc sự kiện.
+A. Use focused official-source lookup and verify the event date.
 
-B. Mở nghiên cứu nhiều vòng về toàn bộ lịch sử tổ chức trước khi tìm mốc.
+B. Research the organization's entire history first.
 
-C. Dùng suy luận từ thời điểm công bố thường niên của các năm trước.
+C. Infer from previous annual announcement patterns.
 
-D. Tìm trong tài liệu nội bộ cũ vì nguồn nội bộ luôn cập nhật hơn web.
+D. Use old internal documents as inherently fresher than the web.
 
-**Câu 2 — Chọn hai.** Báo cáo cần so sánh ba phương án theo chi phí và thời gian triển khai tại Việt Nam trong năm vừa qua. Hai thông tin nào nên có trong yêu cầu nghiên cứu?
+**Question 2 — Choose two.** A report compares three options by cost and rollout time in Vietnam over the previous year. Which TWO request details matter?
 
-A. Quyết định cần hỗ trợ và các tiêu chí so sánh giữa phương án.
+A. The decision being supported and comparison criteria.
 
-B. Yêu cầu phương án rẻ nhất thắng trước khi xác định các loại chi phí.
+B. Declare the cheapest winner before defining cost categories.
 
-C. Chỉ tên ba phương án để mô hình tự chọn mọi tiêu chí.
+C. Only name the options and let the model choose everything.
 
-D. Giới hạn địa lý, thời gian dữ liệu và cấu trúc báo cáo mong muốn.
+D. Geographic and time scope plus desired report structure.
 
-**Câu 3 — Chọn một.** Tất cả số liệu đã được cung cấp và xác minh. Nhóm chỉ cần phân tích đánh đổi giữa hai phương án, không cần dữ liệu mới. Cách dùng nào phù hợp?
+**Question 3 — Choose one.** All figures are supplied and verified; only tradeoff analysis is needed. What is appropriate?
 
-A. Tìm nội bộ bằng tài khoản khác để tăng số lượng tài liệu.
+A. Search internally under another account for more documents.
 
-B. Thay số liệu hiện có bằng các số phổ biến mà mô hình nhớ.
+B. Replace figures with common numbers from memory.
 
-C. Suy luận trên dữ liệu đã có với tiêu chí quyết định rõ.
+C. Reason over supplied data with clear decision criteria.
 
-D. Bắt buộc nghiên cứu web nhiều vòng vì mọi phân tích phải có nguồn mới.
+D. Always conduct multiround web research.
 
-**Câu 4 — Chọn hai.** Nghiên cứu cần cả giá thị trường lẫn chi phí vận hành nội bộ. Hai điều phải bảo đảm?
+**Question 4 — Choose two.** Research needs market prices and internal operating costs. Which TWO conditions are required?
 
-A. Coi khả năng tìm web là quyền truy cập mọi bảng chi phí của công ty.
+A. Web access grants every company spreadsheet permission.
 
-B. Kiểm tra nguồn của các nhận định quan trọng khi tổng hợp kết luận.
+B. Verify important claims' sources during synthesis.
 
-C. Có kết nối và quyền phù hợp để lấy dữ liệu nội bộ cần thiết.
+C. Suitable internal connections and permissions.
 
-D. Để thời gian nghiên cứu dài thay thế bước kiểm chứng nguồn.
+D. Longer research replaces source verification.
 
-**Câu 5 — Chọn một.** Research tìm ra một giả định ban đầu không còn đúng. Báo cáo đang chạy theo kế hoạch cũ. Cách điều phối phù hợp nhất?
+**Question 5 — Choose one.** Research disproves an initial assumption, but the old plan continues. What should happen?
 
-A. Cập nhật hướng tìm theo bằng chứng và tác động tới so sánh.
+A. Adjust research to the new evidence and its comparison impact.
 
-B. Giữ kế hoạch cũ để mọi phần báo cáo có số nguồn ngang nhau.
+B. Keep the plan so sections have equal source counts.
 
-C. Bỏ nguồn mới vì nó không nằm trong danh sách dự kiến.
+C. Discard unexpected sources.
 
-D. Chỉ sửa kết luận cuối mà không xem lại các phần phụ thuộc giả định.
+D. Change only the conclusion without revisiting dependent analysis.
 
 ## Đáp án và giải thích
 

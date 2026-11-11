@@ -15,55 +15,55 @@ Không nên rút ngắn bằng cách bỏ kiểm tra cần thiết hoặc âm th
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Sau khi thêm vai trò “kỹ sư Python viết súc tích”, hàm kiểm tra ký tự trùng còn một dòng nhưng chuyển mọi chuỗi sang lowercase. Yêu cầu gốc chưa nói về phân biệt hoa/thường. Quyết định nào đúng nhất?
+**Question 1 — Choose one.** A concise Python role yields a one-line duplicate-character function that lowercases inputs, although case sensitivity was unspecified. What is appropriate?
 
-A. Làm rõ hoa/thường rồi kiểm thử; style không đổi semantics.
+A. Clarify case semantics and test; style instructions do not redefine behavior.
 
-B. Chấp nhận vì lowercase là cách phổ biến để đơn giản hóa xử lý chuỗi.
+B. Accept because lowercasing is common.
 
-C. Thêm từ “concise” nhiều lần rồi chọn bản ngắn nhất.
+C. Repeat “concise” and choose the shortest version.
 
-D. Bỏ ca “Aa” khỏi phép đo để chỉ so tính súc tích trên các ca đã thống nhất.
+D. Remove `Aa` from evaluation to compare only agreed cases.
 
-**Câu 2 — Chọn hai.** Wrapper nhận system prompt nhưng một nhánh gọi API không truyền tham số đó. Các lượt chạy có phong cách thiếu nhất quán. Hai bước nào giúp khoanh vùng đúng nguyên nhân?
+**Question 2 — Choose two.** A wrapper accepts a system prompt, but one API branch omits it. Which TWO steps isolate inconsistent style?
 
-A. Thử cùng nhiệm vụ và cấu hình qua các nhánh để tách lỗi truyền context khỏi biến thiên đầu ra.
+A. Run the same task and settings through each branch to separate missing context from variation.
 
-B. Chỉ tăng temperature để phong cách thống nhất giữa các nhánh.
+B. Raise temperature for consistency.
 
-C. Kiểm tra payload thực tế của từng đường gọi để xác nhận hướng dẫn được gửi.
+C. Inspect each branch's actual request payload.
 
-D. Đặt vai trò vào tên biến client để nhánh nào cũng nhìn thấy.
+D. Put the role in the client variable's name.
 
-**Câu 3 — Chọn một.** Bản rút gọn vượt qua ví dụ chuỗi có ký tự lặp nhưng lỗi với chuỗi rỗng. Nhóm báo cải thiện vì token giảm 60%. Cách đánh giá phù hợp nhất?
+**Question 3 — Choose one.** A shorter function passes a duplicate-character example but fails on empty strings. Token use falls 60%. How should it be evaluated?
 
-A. Đánh giá correctness trên tập ca biên đã định trước rồi mới so chi phí/độ dài giữa các bản đáp ứng.
+A. Check correctness on defined boundary cases, then compare costs among qualifying versions.
 
-B. Chỉ đo trên chuỗi không rỗng vì ví dụ video cũng như vậy.
+B. Exclude empty strings because the video does.
 
-C. Chấp nhận khi system prompt có từ “expert”, vì lỗi biên có thể sửa sau.
+C. Accept an expert role and fix boundaries later.
 
-D. Gộp điểm độ dài và correctness với trọng số bằng nhau để lỗi biên được bù.
+D. Let brevity points offset correctness failures equally.
 
-**Câu 4 — Chọn một.** Tác vụ thay đổi mỗi lượt nhưng yêu cầu chung luôn là mã súc tích, ít lời dẫn. Trong cấu trúc mẫu của bài, thiết kế nào giữ ranh giới rõ nhất?
+**Question 4 — Choose one.** Tasks vary by turn, while concise code with little introduction is always required. Which separation is clearest?
 
-A. Đổi function name thành concise_request rồi bỏ hướng dẫn gửi mô hình.
+A. Rename the wrapper and omit model instructions.
 
-B. Chỉ dựa vào câu trả lời ngắn của lượt trước mà không gửi lại nó.
+B. Rely on an unsent previous short answer.
 
-C. System giữ phong cách chung; mỗi task nêu chức năng riêng.
+C. Keep shared style in `system` and specific functionality in each task.
 
-D. Đưa tất cả tác vụ tương lai vào system prompt ngay từ đầu.
+D. Put every future task in the system prompt upfront.
 
-**Câu 5 — Chọn hai.** Để so sánh system role mới với baseline cho hàm kiểm tra ký tự trùng, hai điều kiện nào giúp kết luận có ý nghĩa?
+**Question 5 — Choose two.** Which TWO conditions make a new duplicate-checking system role comparable with its baseline?
 
-A. Dùng số dòng làm chuẩn duy nhất vì mục tiêu bài có chữ súc tích.
+A. Use line count as the only metric.
 
-B. Giữ yêu cầu chức năng và tập kiểm thử ổn định giữa hai phiên bản.
+B. Keep functional requirements and tests stable.
 
-C. Chỉ giữ các ca mà phiên bản mới làm tốt hơn để báo mức tiến bộ.
+C. Report only cases improved by the new version.
 
-D. Đo các ca rỗng, lặp, không lặp và hoa/thường theo semantics đã thống nhất.
+D. Test empty, repeated, unique, and mixed-case strings under agreed semantics.
 
 ## Đáp án và giải thích
 

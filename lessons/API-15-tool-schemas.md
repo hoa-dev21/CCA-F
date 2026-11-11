@@ -19,55 +19,55 @@ Bạn có thể nhờ Claude tạo bản mô tả từ mã và tài liệu, như
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Hai công cụ read_invoice và read_payment cùng mô tả “lấy dữ liệu tài chính”. Model thường chọn sai dù input_schema đều hợp lệ. Sửa nào trực tiếp nhất?
+**Question 1 — Choose one.** `read_invoice` and `read_payment` both say “get financial data.” The model chooses incorrectly despite valid schemas. What helps most?
 
-A. Thêm nhiều thuộc tính tùy chọn giống nhau vào cả hai schema.
+A. Add identical optional properties to both schemas.
 
-B. Chỉ tăng số lần retry mà giữ nguyên mô tả lựa chọn.
+B. Retry more without changing descriptions.
 
-C. Đổi cả hai tên thành fetch_data để giảm khác biệt.
+C. Rename both tools `fetch_data`.
 
-D. Làm rõ dữ liệu trả về và ranh giới sử dụng hai tool.
+D. Clarify returned data and when each tool should be used.
 
-**Câu 2 — Chọn hai.** Công cụ nhận ngày dạng YYYY-MM-DD, còn hàm thực thi cần customer_id. Hai kiểm tra nào phải có khi duyệt schema AI tạo?
+**Question 2 — Choose two.** A tool accepts dates as YYYY-MM-DD, and its implementation requires `customer_id`. Which TWO checks are needed for an AI-generated schema?
 
-A. Giả định type hints đã tự cung cấp mã gọi dịch vụ.
+A. Assume type hints also implement the service call.
 
-B. Chấp nhận schema nếu JSON hợp lệ dù thiếu customer_id.
+B. Accept valid JSON even if `customer_id` is absent.
 
-C. Mô tả định dạng ngày và ý nghĩa tham số tại nơi model đọc được.
+C. Expose date format and parameter meanings to the model.
 
-D. Đối chiếu tên, kiểu và tham số bắt buộc với hàm thực thi.
+D. Match names, types, and required parameters to the implementation.
 
-**Câu 3 — Chọn một.** Schema có amount là số, nhưng chính sách chỉ cho phép hoàn dưới hạn mức theo tài khoản. Model gửi số hợp lệ nhưng vượt hạn. Tầng nào cần quyết định cho phép thực thi?
+**Question 3 — Choose one.** `amount` is numeric, but a refund exceeds the account's policy limit. Which layer should authorize execution?
 
-A. Host kiểm tra chính sách tài khoản trước giao dịch.
+A. The host, checking account policy before the transaction.
 
-B. Dùng description amount thay gate nghiệp vụ.
+B. The `amount` description instead of business validation.
 
-C. Đổi tên công cụ thành safe_refund rồi tin yêu cầu model tạo.
+C. A tool renamed `safe_refund`, trusting generated requests.
 
-D. JSON parser cho phép mọi số nên giao dịch phải được coi hợp lệ.
+D. The JSON parser, because every number is structurally valid.
 
-**Câu 4 — Chọn hai.** Hàm tra cứu cần order_id và region; schema chỉ khai báo order_id bắt buộc, region nằm trong chú thích nội bộ. Hai sửa đổi nào cần phối hợp?
+**Question 4 — Choose two.** A lookup requires `order_id` and `region`, but only `order_id` is required in its schema. `region` appears only in internal comments. Which TWO changes are needed?
 
-A. Giữ schema cũ vì model có thể suy ra chú thích trong mã chưa gửi.
+A. Keep the schema because the model can infer unseen comments.
 
-B. Nêu ý nghĩa và giá trị định dạng của region trong mô tả gửi model.
+B. Describe `region` and its valid format in the model-facing definition.
 
-C. Cho router tự chọn một region bất kỳ để mọi lời gọi đều chạy.
+C. Have the router select an arbitrary region.
 
-D. Đưa region vào schema và required nếu hàm thật sự luôn cần nó.
+D. Add `region` to the schema and mark it required if the function always needs it.
 
-**Câu 5 — Chọn một.** Nhóm tạo schema chính xác nhưng chưa đăng ký mã thực thi. Demo cho thấy model sinh tool_use đẹp. Điều gì còn thiếu để tuyên bố công cụ hoạt động?
+**Question 5 — Choose one.** A schema is correct, but no implementation is registered. The model produces valid `tool_use`. What is still needed to demonstrate a working tool?
 
-A. Chạy được hàm tương ứng và gửi kết quả thực tế trở lại model.
+A. Execute the corresponding function and return its actual result to the model.
 
-B. Chỉ kiểm tra tên công cụ trong tool_use trùng schema.
+B. Check only that the tool name matches.
 
-C. Chụp một mẫu tool_use hợp lệ làm bằng chứng tích hợp hoàn tất.
+C. Use a screenshot of valid `tool_use` as integration proof.
 
-D. Cho model diễn giải các tham số như thể đó là dữ liệu dịch vụ.
+D. Have the model interpret arguments as though they were service data.
 
 ## Đáp án và giải thích
 

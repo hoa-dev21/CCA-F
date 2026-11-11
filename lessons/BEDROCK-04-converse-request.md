@@ -15,55 +15,55 @@ Ví dụ đơn giản lấy khối văn bản đầu tiên để hiển thị. K
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Sau chuyển sang Converse, request thành công nhưng code vẫn đọc response.content của API cũ. Sửa phù hợp nhất?
+**Question 1 — Choose one.** After migration to Converse, code still reads the direct API's `response.content`. What is appropriate?
 
-A. Bọc JSON trả về trong một trường content nhưng giữ nguyên các giả định block cũ.
+A. Wrap everything in `content` while retaining old block assumptions.
 
-B. Chỉ sửa request cho Converse; giữ parser response cũ vì lời gọi đã thành công.
+B. Change requests only because calls succeed.
 
-C. Sửa adapter Converse, gồm output.message trong mẫu.
+C. Update the Converse adapter, including the sample's `output.message` path.
 
-D. Đọc chuỗi đầu tiên tìm được ở bất kỳ trường nào của JSON.
+D. Read the first string anywhere in the JSON.
 
-**Câu 2 — Chọn hai.** Ví dụ chỉ hiển thị khối text đầu tiên; production có text và tool-use blocks. Hai thay đổi nào cần?
+**Question 2 — Choose two.** Production returns text and tool blocks, while a sample displays only the first text block. Which TWO changes are needed?
 
-A. Giữ tin nhắn đầy đủ để lưu lịch sử và xử lý tiếp.
+A. Retain the complete message for history and further processing.
 
-B. Chỉ lưu text hiển thị để giảm context ở mọi trường hợp.
+B. Always store displayed text only.
 
-C. Phân loại/xử lý các block theo hợp đồng thay vì coi mọi block là text.
+C. Handle block types according to the response contract.
 
-D. Ghép tên tool vào text rồi bỏ block có cấu trúc.
+D. Flatten tool names into prose and discard structure.
 
-**Câu 3 — Chọn một.** Service báo model không tồn tại trong môi trường được chọn; cùng notebook từng chạy ở tài khoản khác. Kiểm tra nào ưu tiên?
+**Question 3 — Choose one.** A model is missing in the selected environment although the notebook worked elsewhere. What should be checked first?
 
-A. Đổi sang region notebook đã chạy và coi cấu hình tài khoản hiện tại là tương đương.
+A. Switch regions and assume account configuration matches.
 
-B. ID/profile, vùng và quyền tài khoản đang dùng.
+B. The active model ID or profile, region, and account permissions.
 
-C. Sao chép ID từ ví dụ cùng model family mà không kiểm tra profile hiện hành.
+C. Copy a similar family ID without checking profiles.
 
-D. Retry cùng cấu hình theo exponential backoff trước khi kiểm tra quyền truy cập.
+D. Retry with backoff before checking access.
 
-**Câu 4 — Chọn một.** Nhóm dùng inference profile và cho rằng từ đó mọi ràng buộc nơi xử lý dữ liệu đều không còn. Kiến trúc sư nên làm gì?
+**Question 4 — Choose one.** A team assumes inference profiles eliminate data-location restrictions. What should an architect do?
 
-A. Chấp nhận vì profile là một tên trừu tượng không gắn vùng.
+A. Accept because abstract names have no region.
 
-B. Dựa riêng vào vùng SDK để kết luận routing.
+B. Infer routing solely from the SDK region.
 
-C. Chỉ kiểm tra request thành công, vì lỗi policy sẽ luôn được trả ngay.
+C. Check request success only.
 
-D. Đối chiếu routing profile với ràng buộc dữ liệu.
+D. Compare profile routing with data-handling constraints.
 
-**Câu 5 — Chọn hai.** Khi thay adapter Anthropic trực tiếp bằng Converse, hai kiểm thử nào có giá trị nhất?
+**Question 5 — Choose two.** Which TWO tests matter when replacing a direct Anthropic adapter with Converse?
 
-A. Request/response có nhiều block và lịch sử tool interaction được bảo toàn.
+A. Mixed blocks and tool-interaction history remain intact.
 
-B. Chỉ một prompt “xin chào” trả text không rỗng.
+B. Only a greeting returns nonempty text.
 
-C. Các trạng thái kết thúc/lỗi được chuyển đúng cho hệ điều phối.
+C. Stop and error states reach orchestration correctly.
 
-D. So sánh tên biến local giữa hai implementation phải giống nhau.
+D. Local variable names match across implementations.
 
 ## Đáp án và giải thích
 

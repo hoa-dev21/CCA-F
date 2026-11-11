@@ -17,55 +17,55 @@ Quy trình đánh giá tốn công chuẩn bị nhưng giúp phát hiện điể
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Prompt mới trả lời xuất sắc cho ca demo, nhưng production có nhiều dạng yêu cầu chưa thử. Bằng chứng nào phù hợp nhất trước khi thay bản đang chạy?
+**Question 1 — Choose one.** A new prompt excels on a demo, but many production request types remain untested. What evidence is needed before replacement?
 
-A. Chạy prompt mới nhiều lần trên chính ca demo rồi lấy kết quả tốt nhất.
+A. Repeat the demo and select the best answer.
 
-B. So sánh hai prompt trên cùng tập đại diện với cùng tiêu chí chấm.
+B. Compare both prompts on the same representative set with identical criteria.
 
-C. Cho tác giả prompt mới chọn thêm vài ví dụ chắc chắn chạy tốt.
+C. Let the author select additional cases guaranteed to succeed.
 
-D. So độ dài câu trả lời trung bình của bản mới với bản cũ.
+D. Compare average response lengths.
 
-**Câu 2 — Chọn hai.** Dashboard đánh giá chỉ hiển thị một điểm trung bình. Hai dữ liệu bổ sung nào giúp biết nên sửa prompt ở đâu?
+**Question 2 — Choose two.** An evaluation dashboard shows only an average score. Which TWO additions help locate prompt weaknesses?
 
-A. Tên người viết prompt để dùng như chỉ báo chất lượng.
+A. The author's name as a quality indicator.
 
-B. Điểm theo nhóm tác vụ mà người dùng thật gặp.
+B. Scores by real-world task category.
 
-C. Phân loại lỗi và lưu đầu ra của các trường hợp thất bại.
+C. Error categories and stored failing outputs.
 
-D. Số chữ trong prompt thay cho kết quả từng trường hợp.
+D. Prompt word count instead of case-level results.
 
-**Câu 3 — Chọn một.** Đội A tăng điểm từ 7 lên 9 sau khi vừa sửa prompt vừa nới tiêu chí “đủ ý”. Kết luận nào hợp lý?
+**Question 3 — Choose one.** Scores rise from seven to nine after changing the prompt and relaxing completeness criteria. What can be concluded?
 
-A. Chỉ cần tăng số ca của bản mới để loại ảnh hưởng của tiêu chí.
+A. More new-prompt cases will eliminate the criteria difference.
 
-B. Prompt mới tốt hơn vì điểm tuyệt đối đã tăng hai đơn vị.
+B. The prompt improved because the score rose by two.
 
-C. Chưa tách được tác động của prompt; cần chấm hai bản theo cùng tiêu chí.
+C. The effects are confounded; score both versions using identical criteria.
 
-D. Dùng tiêu chí cũ cho bản cũ và mới cho bản mới vì mỗi prompt có mục tiêu riêng.
+D. Each version should retain different criteria.
 
-**Câu 4 — Chọn hai.** Một hệ thống tạo cấu hình vừa cần JSON hợp lệ vừa cần cấu hình đáp ứng yêu cầu. Hai hoạt động nào thực sự thuộc đánh giá chất lượng?
+**Question 4 — Choose two.** A configuration generator needs valid JSON and task-correct configurations. Which TWO activities evaluate quality?
 
-A. Đối chiếu nội dung cấu hình với nhiệm vụ gốc và các ràng buộc.
+A. Compare configuration content with the task and constraints.
 
-B. Kiểm tra đầu ra có parse được theo định dạng yêu cầu.
+B. Check that the output parses in the required format.
 
-C. Đổi tên biến trong prompt để bản mới dễ phân biệt trong Git.
+C. Rename prompt variables to distinguish versions in Git.
 
-D. Thêm thẻ XML vào prompt rồi mặc định điểm sẽ tăng.
+D. Add XML tags and assume scores improve.
 
-**Câu 5 — Chọn một.** Bản mới tăng điểm chung nhưng làm nhóm yêu cầu quan trọng giảm rõ rệt. Cách chọn bản phát hành tốt nhất là gì?
+**Question 5 — Choose one.** Overall scores improve, but a critical request category deteriorates. What should determine release?
 
-A. Chỉ dùng điểm chung làm điều kiện phát hành.
+A. The overall average alone.
 
-B. Đối chiếu mức giảm với tiêu chí của nhóm quan trọng.
+B. The regression against acceptance criteria for that critical category.
 
-C. Chỉ chọn câu trả lời đẹp nhất của mỗi bản để trình nhóm duyệt.
+C. The best-looking answer from each version.
 
-D. Bỏ nhóm bị giảm khỏi tập đánh giá vì không đại diện cho xu hướng tăng.
+D. Remove the declining category from evaluation.
 
 ## Đáp án và giải thích
 

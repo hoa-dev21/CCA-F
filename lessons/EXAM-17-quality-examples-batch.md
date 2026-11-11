@@ -17,55 +17,55 @@ Khi chọn xử lý theo lô (batch), phải xét tổng thời gian chờ gom v
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Trường phương pháp nghiên cứu hay null khi thông tin nằm trong đoạn mở đầu, dù đúng khi có heading Methodology. Cải thiện nào nhắm nguyên nhân?
+**Question 1 — Choose one.** An extractor returns `null` for research methods stated in the introduction, but succeeds under a “Methodology” heading. Which improvement addresses the cause?
 
-A. Tăng giới hạn token đầu ra để mô hình viết chi tiết hơn.
+A. Increase output tokens to allow longer answers.
 
-B. Few-shot cho bố cục bị bỏ sót; đánh giá trên tài liệu mới.
+B. Add few-shot examples of the missed layout and evaluate on new documents.
 
-C. Bắt schema cấm null để buộc điền phương pháp.
+C. Forbid `null` so the model must fill the field.
 
-D. Chỉ huấn luyện evaluator chấp nhận null thường xuyên hơn.
+D. Train the evaluator to accept `null` more often.
 
-**Câu 2 — Chọn một.** Category comment-style gây phần lớn cảnh báo sai; category bảo mật vẫn có giá trị. Cách cải thiện trước mắt tốt nhất?
+**Question 2 — Choose one.** Comment-style checks cause most false alarms, while security checks are useful. What is the best immediate improvement?
 
-A. Tắt tất cả review để người dùng lấy lại niềm tin.
+A. Disable all reviews to restore user trust.
 
-B. Đổi mọi cảnh báo style thành severity cao để người dùng chú ý.
+B. Raise the severity of every style warning.
 
-C. Tắt riêng nhóm nhiễu; sửa tiêu chí/ví dụ và đo trước khi bật.
+C. Disable the noisy category, improve its criteria and examples, and measure before restoring it.
 
-D. Giữ nguyên gate nhưng chuyển cảnh báo style xuống cuối.
+D. Keep the merge gate unchanged and move style warnings to the report's end.
 
-**Câu 3 — Chọn hai.** Giả sử xử lý batch tối đa 24 giờ và deadline từ lúc tài liệu đến là 30 giờ. Chu kỳ gom 4 giờ được đề xuất. Hai kết luận nào đúng?
+**Question 3 — Choose two.** Assume batch processing takes up to 24 hours and documents have a 30-hour deadline from arrival. The proposed collection interval is four hours. Which TWO conclusions are correct?
 
-A. Worst case chờ và xử lý là 28 giờ trước các khâu phụ.
+A. Worst-case waiting plus processing takes 28 hours before other steps.
 
-B. Mọi tài liệu còn ít nhất 6 giờ để retry.
+B. Every document has at least six hours left for retries.
 
-C. Có tối đa 2 giờ đệm trong worst case; phải tính thêm retry và thời gian phụ.
+C. At most two hours remain in the worst case; retries and overhead must also fit.
 
-D. Polling thường xuyên sẽ tăng khoảng đệm đảm bảo lên 6 giờ.
+D. More frequent polling increases the guaranteed buffer to six hours.
 
-**Câu 4 — Chọn một.** Few-shot sửa tốt 20 tài liệu được dùng để thiết kế prompt; nhóm muốn coi đó là mức tăng chất lượng production. Bước nào còn thiếu?
+**Question 4 — Choose one.** Few-shot examples improve results on the same 20 documents used to design the prompt. What is still needed before claiming production quality gains?
 
-A. Chạy lại cùng 20 tài liệu với thứ tự khác.
+A. Rerun those 20 documents in a different order.
 
-B. Đánh giá trên tập giữ riêng, có bố cục hiếm và tiêu chí chấm cố định.
+B. Evaluate a held-out set with rare layouts and fixed scoring criteria.
 
-C. Tính tỷ lệ JSON parse được trên 20 tài liệu.
+C. Measure JSON parse success on those 20 documents.
 
-D. Lấy confidence trung bình của mô hình làm độ chính xác.
+D. Use average model confidence as accuracy.
 
-**Câu 5 — Chọn hai.** Batch 500 tài liệu có 8 lỗi do dài vượt giới hạn và nhiều kết quả thành công. Hai lựa chọn nào giảm chi phí retry và giữ truy nguyên?
+**Question 5 — Choose two.** A 500-document batch has eight failures due to excessive input length and many successes. Which TWO choices reduce retry cost and preserve traceability?
 
-A. Gửi lại toàn bộ batch dưới ID mới cho dễ quản lý.
+A. Resubmit the entire batch under a new ID.
 
-B. Retry nguyên 8 tài liệu mà không đổi chiến lược xử lý.
+B. Retry the same eight documents without changing processing.
 
-C. Lưu ánh xạ custom_id và trạng thái từng mục để chọn đúng phần lỗi.
+C. Preserve `custom_id` mappings and per-item status to identify failures.
 
-D. Điều chỉnh xử lý đầu vào quá dài, rồi gửi lại riêng các mục cần phục hồi.
+D. Adjust handling of oversized inputs and resubmit only the items requiring recovery.
 
 ## Đáp án và giải thích
 

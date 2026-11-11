@@ -15,55 +15,55 @@ Giao diện và lệnh khởi chạy Inspector có thể thay đổi theo phiên
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Chatbot không đọc được tài liệu. Nhóm chưa biết lỗi server hay host. Thử nghiệm nào cô lập server hiệu quả nhất?
+**Question 1 — Choose one.** A chatbot cannot read documents. Which test isolates the MCP server from the host?
 
-A. Gọi trực tiếp tool đọc trong Inspector với ID hợp lệ.
+A. Call the read tool directly in Inspector using a valid ID.
 
-B. Tăng số công cụ đưa cho model để tạo thêm đường đọc.
+B. Expose more tools to the model.
 
-C. Thay system prompt của chatbot rồi gọi lại toàn bộ luồng.
+C. Change the system prompt and rerun the entire flow.
 
-D. Thay model trước khi kiểm tra giao diện công cụ.
+D. Replace the model before inspecting tools.
 
-**Câu 2 — Chọn hai.** Inspector gọi sửa tài liệu và nhận success. Hai kiểm tra nào cung cấp bằng chứng tốt hơn về tính đúng của thao tác?
+**Question 2 — Choose two.** Inspector returns success after an edit. Which TWO checks provide stronger correctness evidence?
 
-A. Chỉ kiểm tra dòng success có đúng chính tả.
+A. Check only the spelling of “success.”
 
-B. Kiểm tra phần không nằm trong yêu cầu vẫn được giữ nguyên.
+B. Verify unrelated content remains unchanged.
 
-C. Coi việc công cụ xuất hiện trong danh sách là đủ cho mọi đầu vào.
+C. Treat discovery-list presence as sufficient for every input.
 
-D. Đọc lại tài liệu và đối chiếu phần phải thay đổi.
+D. Read back the document and compare the intended change.
 
-**Câu 3 — Chọn một.** Cùng ID tài liệu, Inspector đọc đúng nhưng chatbot không hề phát tool_use. Ưu tiên điều tra nào hợp lý nhất?
+**Question 3 — Choose one.** Inspector reads a document correctly, but the chatbot emits no `tool_use`. What should be investigated first?
 
-A. Đổi ID trong kho cho tới khi model gọi công cụ.
+A. Change stored IDs until the model calls a tool.
 
-B. Tools host gửi model và cách host xử lý phản hồi.
+B. The host's advertised tools and response handling.
 
-C. Viết lại ngay backend đọc tài liệu vì đó là thành phần cuối cùng.
+C. Rewrite the document backend immediately.
 
-D. Thêm retry ở hàm server dù chưa có lời gọi đến server.
+D. Add server retries although no request reaches it.
 
-**Câu 4 — Chọn hai.** Khi kiểm thử server độc lập trước tích hợp, hai ca nào cần có để hiểu hợp đồng sửa tài liệu?
+**Question 4 — Choose two.** Which TWO independent-server tests reveal the editing contract?
 
-A. Một ID hợp lệ và chuỗi khớp để xác nhận đường thành công.
+A. A valid ID and matching text for the success path.
 
-B. Chỉ kiểm tra tên server được hiển thị đúng trong Inspector.
+B. Only the server's displayed name.
 
-C. Chỉ gọi list_tools nhiều lần để đo độ ổn định danh sách.
+C. Repeated `list_tools` calls only.
 
-D. Một ID hoặc chuỗi không khớp để kiểm tra phản hồi lỗi.
+D. An invalid ID or unmatched text for error behavior.
 
-**Câu 5 — Chọn một.** Inspector trả lỗi với ID hợp lệ mà ứng dụng trước đây đọc được. Nhóm muốn sửa prompt ngay. Hướng điều tra nào có căn cứ hơn?
+**Question 5 — Choose one.** Inspector fails for an ID the application previously read. What is better than immediately editing the prompt?
 
-A. Chuyển lỗi thành tài liệu rỗng và đánh dấu tích hợp thành công.
+A. Convert the failure into an empty document and claim success.
 
-B. Gọi trực tiếp để khoanh dữ liệu, quyền hoặc logic server.
+B. Use direct calls to isolate data, permissions, or server logic.
 
-C. Tăng số ví dụ trong prompt vì mọi lỗi công cụ đều bắt nguồn từ model.
+C. Add prompt examples because every tool error originates in the model.
 
-D. Ép model nói “đã đọc” để không lộ lỗi backend.
+D. Force the model to say the document was read.
 
 ## Đáp án và giải thích
 

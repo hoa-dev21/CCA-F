@@ -15,55 +15,55 @@ Phần liên hệ với đề cương thi nhấn mạnh trường `stop_reason`,
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Yêu cầu “nhắc tôi sau ba ngày” cần lấy ngày hiện tại rồi tính ngày đích. Host dừng ngay sau công cụ đầu tiên vì đã có text. Sửa nào đúng?
+**Question 1 — Choose one.** A reminder request requires today's date and then a target date. The host stops after the first tool because text exists. What should change?
 
-A. Coi text trong response là đủ để kết luận lượt đã hoàn tất.
+A. Treat any text as completion.
 
-B. Trả tool_result rồi tiếp tục theo phản hồi mới.
+B. Return the tool result and continue according to the next response.
 
-C. Tính ngày đích bằng lời giải thích đầu tiên trước khi có ngày hiện tại.
+C. Calculate the target before obtaining today's date.
 
-D. Gọi hết tools để tránh thêm vòng lặp.
+D. Execute every available tool to avoid another turn.
 
-**Câu 2 — Chọn hai.** Wrapper phục vụ cả hiển thị và vòng công cụ. Hai quyết định nào hỗ trợ hội thoại nhiều lượt đúng cấu trúc?
+**Question 2 — Choose two.** Which TWO wrapper choices support both display and multi-turn tool use?
 
-A. Chỉ trả chuỗi text rồi tái tạo tool_use từ câu văn.
+A. Return text only and reconstruct tool calls from prose.
 
-B. Dùng hàm riêng trích văn bản cho giao diện.
+B. Use a separate text-extraction function for the UI.
 
-C. Bỏ các block trung gian sau mỗi lượt để model tự tính lại.
+C. Discard intermediate blocks after every turn.
 
-D. Trả đối tượng phản hồi đầy đủ cho phần điều phối.
+D. Return the full response object to orchestration.
 
-**Câu 3 — Chọn một.** Response chứa text “đã xử lý xong” nhưng stop_reason là tool_use. Host cần dựa vào gì để chọn bước tiếp theo?
+**Question 3 — Choose one.** The response says “finished” but has `stop_reason=tool_use`. What should the host do?
 
-A. Đổi stop_reason thành end_turn trước khi lưu để lịch sử nhất quán.
+A. Rewrite the reason as `end_turn` for consistency.
 
-B. Dừng khi số block text nhiều hơn số block tool_use.
+B. Stop when text blocks outnumber tool blocks.
 
-C. Dùng câu text cuối làm điều kiện dừng vì người dùng sẽ đọc nó.
+C. Use the final sentence as the stopping condition.
 
-D. Xử lý yêu cầu công cụ hợp lệ trong phản hồi rồi gửi kết quả tiếp.
+D. Process valid tool requests and send their results back.
 
-**Câu 4 — Chọn hai.** Một lượt thứ hai lại gọi công cụ đã chạy ở lượt đầu vì không thấy kết quả. Hai thông tin nào cần kiểm tra trên request thứ hai?
+**Question 4 — Choose two.** The second turn repeats a tool because it cannot see the first result. Which TWO items should be checked in the second request?
 
-A. Có tool_result tương ứng và dữ liệu trả về trong lịch sử không.
+A. The corresponding tool result and returned data in history.
 
-B. Có lịch sử assistant chứa yêu cầu công cụ trước đó không.
+B. The assistant message containing the earlier request.
 
-C. Có cùng độ dài text hiển thị với lượt đầu không.
+C. The same displayed text length as before.
 
-D. Có giữ tên hàm UI đã dùng để render câu trả lời không.
+D. The UI rendering function's name.
 
-**Câu 5 — Chọn một.** Host giới hạn 8 vòng để kiểm soát chi phí. Vòng thứ 8 vẫn yêu cầu công cụ. Trạng thái nào phản ánh đúng tình hình?
+**Question 5 — Choose one.** The host permits eight iterations, but iteration eight still requests a tool. What status is accurate?
 
-A. Dừng theo ngân sách và báo nhiệm vụ chưa hoàn tất.
+A. Stop at the budget and report incomplete work.
 
-B. Đánh dấu thành công vì mọi quy trình được phép tối đa 8 vòng.
+B. Report success because the maximum iterations were used.
 
-C. Tăng vô hạn số vòng vì tool_use luôn phải được ưu tiên hơn giới hạn.
+C. Continue without limit because tool calls override budgets.
 
-D. Bỏ tool_use cuối, lấy text làm kết quả xong.
+D. Discard the final tool request and declare its text complete.
 
 ## Đáp án và giải thích
 

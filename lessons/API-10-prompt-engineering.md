@@ -15,55 +15,55 @@ Có thể dùng bộ kiểm thử nhỏ để thử ý tưởng nhanh, rồi m�
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Nhóm vừa đổi prompt, thêm ví dụ, thay model và thay grader; điểm tăng. Muốn biết sửa prompt có thật sự giúp, nên làm gì?
+**Question 1 — Choose one.** The team changes a prompt, examples, model, and grader simultaneously, and scores improve. How can it isolate the prompt's effect?
 
-A. So độ dài hai prompt để ước lượng đóng góp từng thay đổi.
+A. Compare prompt lengths.
 
-B. Chạy cấu hình mới nhiều lần rồi quy mọi cải thiện cho prompt.
+B. Repeat the new configuration and credit all gains to the prompt.
 
-C. Chọn thay đổi có tên dễ giải thích nhất làm nguyên nhân.
+C. Select the easiest change to explain as the cause.
 
-D. Giữ các yếu tố khác cố định và so hai prompt trên cùng tập.
+D. Hold other factors fixed and compare prompts on the same dataset.
 
-**Câu 2 — Chọn hai.** Ứng dụng lập thực đơn đạt văn phong tốt nhưng sai khẩu phần và yêu cầu ăn uống. Hai việc nào cần làm trước khi tối ưu tiếp?
+**Question 2 — Choose two.** A meal planner writes well but violates portion sizes and dietary requirements. Which TWO actions should precede further optimization?
 
-A. Dùng lỗi quan sát được để sửa chỉ dẫn liên quan rồi chạy lại.
+A. Revise relevant instructions based on observed errors, then rerun evaluation.
 
-B. Chỉ thêm ví dụ văn phong đẹp vì điểm hiện tại đang đo phần đó.
+B. Add only stylistically polished examples.
 
-C. Đưa khẩu phần và ràng buộc ăn uống vào tiêu chí đánh giá.
+C. Include portions and dietary constraints in evaluation criteria.
 
-D. Giảm trọng số lỗi nội dung để tổng điểm phản ánh cảm nhận tốt.
+D. Lower content-error weights to reflect the favorable impression.
 
-**Câu 3 — Chọn một.** Một sửa đổi tốt trên tập 10 ca dùng để lặp nhanh. Trước phát hành cho nhiều dạng đầu vào, quyết định nào phù hợp nhất?
+**Question 3 — Choose one.** A prompt change improves ten quick-iteration cases. What is appropriate before a broader release?
 
-A. Dùng đúng 10 ca đó làm bằng chứng duy nhất vì đã lặp nhiều lần.
+A. Use those ten cases as the only evidence.
 
-B. Tăng số lượt chạy của một ca dễ nhất để tiết kiệm chi phí.
+B. Repeat the easiest case to save money.
 
-C. Bỏ tập cũ và chỉ đo các ca mới được tác giả prompt chọn.
+C. Discard old cases and use only new cases selected by the author.
 
-D. Xác thực lại trên tập đại diện rộng hơn và kiểm tra hồi quy.
+D. Validate on a broader representative set and check regressions.
 
-**Câu 4 — Chọn hai.** Prompt mới sửa được lỗi thiếu trường nhưng làm sai một nhóm định dạng khác. Hai thông tin nào cần cho quyết định giữ hay bỏ thay đổi?
+**Question 4 — Choose two.** A change fixes a missing field but breaks another output-format category. Which TWO inputs inform whether to keep it?
 
-A. Mức chấp nhận hồi quy và tầm quan trọng của nhóm bị ảnh hưởng.
+A. Acceptable regression limits and the affected category's importance.
 
-B. Điểm và lỗi theo từng nhóm tác vụ, không chỉ điểm chung.
+B. Scores and errors by task category, not just the average.
 
-C. Mức tự tin của người viết prompt rằng bản mới rõ ràng hơn.
+C. The author's confidence that the wording is clearer.
 
-D. Số kỹ thuật prompt đã thêm vào bản mới.
+D. The number of prompting techniques added.
 
-**Câu 5 — Chọn một.** Prompt thiếu trường customer_id. Đội đề xuất tăng độ dài hướng dẫn lên gấp đôi bằng nhiều quy tắc không liên quan. Cách sửa có mục tiêu hơn là gì?
+**Question 5 — Choose one.** A prompt omits `customer_id`. Instead of adding many unrelated rules, what is a targeted fix?
 
-A. Làm rõ customer_id; đo trước/sau cả ca thiếu trường.
+A. Clarify `customer_id` and compare results before and after, including missing-field cases.
 
-B. Bổ sung toàn bộ quy tắc từ các dự án trước.
+B. Import every rule from previous projects.
 
-C. Đổi giọng văn sang trang trọng rồi suy ra model sẽ tuân thủ cấu trúc hơn.
+C. Use a formal tone and infer stronger structural compliance.
 
-D. Chỉ tăng giới hạn đầu ra dù output hiện tại chưa chạm giới hạn.
+D. Increase the output limit even though it is not being reached.
 
 ## Đáp án và giải thích
 

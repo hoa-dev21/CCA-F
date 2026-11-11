@@ -15,55 +15,55 @@ Nếu kết quả là biểu đồ, hãy mở biểu đồ và đối chiếu v�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Ứng dụng tải CSV lên Files API và nhận file_id, nhưng lượt phân tích báo không tìm thấy dữ liệu. Điều tra nào nhắm đúng ranh giới giữa lưu tệp và thực thi?
+**Question 1 — Choose one.** A CSV upload returns `file_id`, but analysis cannot find the data. Which investigation addresses the storage-execution boundary?
 
-A. Tăng thời gian chạy mã vì nhận file_id chứng minh CSV đã được mount.
+A. Increase runtime because the ID proves the CSV is mounted.
 
-B. Kiểm tra file reference đã đi vào đúng request/runtime chưa.
+B. Check whether the file reference reaches the correct request and runtime.
 
-C. Yêu cầu mô hình suy ra cột từ tên file để tiếp tục phân tích.
+C. Infer columns from the filename.
 
-D. Tải lại CSV sau mỗi câu hỏi vì file_id chỉ phục vụ tải xuống.
+D. Reupload for every question because IDs support downloads only.
 
-**Câu 2 — Chọn hai.** Công cụ chạy mã trả biểu đồ và lời tóm tắt “doanh thu tăng 20%”. Báo cáo sẽ dùng để quyết định ngân sách. Hai bước kiểm chứng nào bổ sung cho nhau?
+**Question 2 — Choose two.** Code execution produces a chart and claims 20% revenue growth. Which TWO checks support using this in a budget decision?
 
-A. Cho cùng mô hình viết lại tóm tắt bằng hai cách rồi dùng phần giống nhau.
+A. Have the same model rewrite the claim twice and keep the overlap.
 
-B. Đối chiếu phép tính, bộ lọc và dữ liệu nguồn đã thực sự được dùng.
+B. Inspect calculations, filters, and the source data actually used.
 
-C. Mở biểu đồ, kiểm tra trục, đơn vị và nội dung với dữ liệu kết quả.
+C. Open the chart and compare axes, units, and content with computed results.
 
-D. Coi tải xuống thành công là bằng chứng tỷ lệ 20% đã được xác nhận.
+D. Treat a successful download as verification of 20% growth.
 
-**Câu 3 — Chọn một.** Một mẫu code execution trong khóa truy cập mạng thành công. Nhóm chuyển sang môi trường khác và muốn dùng cùng thiết kế. Quyết định kiến trúc nào phù hợp?
+**Question 3 — Choose one.** A course execution sample accesses the network, but deployment moves elsewhere. What is appropriate?
 
-A. Chạy một phép tính không dùng mạng trong môi trường mới; nếu thành công thì giữ nguyên phần tải dữ liệu qua mạng.
+A. Test local arithmetic and assume networking also works.
 
-B. Kiểm tra token gọi API được chấp nhận rồi coi kết nối mạng bên trong môi trường thực thi đã được cấp tương ứng.
+B. Treat API authentication as authorization for runtime networking.
 
-C. Giữ cấu hình mẫu và bổ sung retry/backoff cho truy cập mạng trước khi xác minh các giới hạn của môi trường mới.
+C. Add retries before checking environment restrictions.
 
-D. Xác minh giới hạn môi trường, phiên bản công cụ và cách cấp dữ liệu trước khi dựa vào truy cập mạng.
+D. Verify runtime limits, tool versions, and data provisioning before depending on network access.
 
-**Câu 4 — Chọn hai.** Job tạo ba tệp đầu ra, nhưng người dùng chỉ thấy một lời trả lời bằng văn bản. Hai trách nhiệm nào ứng dụng vẫn phải đảm nhiệm dù mã chạy phía dịch vụ?
+**Question 4 — Choose two.** A job generates three files, but the user sees only text. Which TWO responsibilities remain with the application?
 
-A. Dùng file_id đầu vào làm địa chỉ cho tất cả tệp đầu ra để giảm trạng thái.
+A. Reuse the input file ID for all outputs.
 
-B. Đọc phản hồi để nhận đúng định danh các artifact được tạo.
+B. Read the response to identify generated artifacts.
 
-C. Tải hoặc cung cấp artifact phù hợp và xác minh chúng đúng với yêu cầu.
+C. Retrieve or expose suitable artifacts and verify they meet the request.
 
-D. Triển khai lại toàn bộ sandbox chạy mã trên máy người dùng cho mọi yêu cầu.
+D. Reimplement every execution sandbox on the user's machine.
 
-**Câu 5 — Chọn một.** Pipeline đánh dấu hoàn tất ngay sau khi nhận mã tệp CSV đã tải lên, trước khi có phản hồi thực thi. Cách sửa trạng thái nào chính xác nhất?
+**Question 5 — Choose one.** A pipeline declares completion immediately after CSV upload, before execution responds. What is the accurate state design?
 
-A. Phân biệt upload, cấp tệp, chạy và kiểm chứng kết quả.
+A. Distinguish upload, file provisioning, execution, and result verification.
 
-B. Giữ trạng thái hoàn tất nhưng bổ sung confidence cho kết quả chưa có.
+B. Keep completion and add confidence for nonexistent results.
 
-C. Đợi một khoảng thời gian cố định sau upload rồi coi như phân tích xong.
+C. Wait a fixed interval and assume analysis finished.
 
-D. Chỉ đổi nhãn thành “đang phân tích” và giữ nguyên điều kiện kết thúc job.
+D. Rename the status “analyzing” without changing completion conditions.
 
 ## Đáp án và giải thích
 

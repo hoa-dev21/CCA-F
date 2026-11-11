@@ -17,55 +17,55 @@ Khi tính hạn, cộng cả thời gian chờ gom lô và xử lý. Theo ví d�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Gate kiểm tra PR cần phản hồi trong vài phút; báo cáo nợ kỹ thuật được đọc sáng mai. Nhóm muốn giảm chi phí nhưng không đổi SLA. Thiết kế nào phù hợp?
+**Question 1 — Choose one.** A PR merge check needs a response within minutes, while a technical debt report is read tomorrow morning. Which design reduces cost while preserving timing requirements?
 
-A. Đưa cả hai vào batch để đồng nhất cách điều phối.
+A. Batch both tasks for consistent orchestration.
 
-B. Realtime cho gate; batch cho báo cáo nếu đáp ứng deadline.
+B. Use real-time processing for the merge check and batch the report if its deadline permits.
 
-C. Dùng batch cho gate nhưng tăng tần suất polling để đáp ứng SLA.
+C. Batch the merge check and poll more often to meet its SLA.
 
-D. Dùng realtime cho cả hai vì cùng phân tích mã nguồn.
+D. Use real-time processing for both because both analyze code.
 
-**Câu 2 — Chọn một.** Batch 500 tài liệu có 492 thành công và 8 lỗi vượt giới hạn đầu vào. Cách phục hồi nào tránh lặp công việc và nhắm đúng nguyên nhân?
+**Question 2 — Choose one.** A batch of 500 documents has 492 successes and eight failures caused by input limits. Which recovery approach avoids unnecessary work and addresses the cause?
 
-A. Gửi lại 500 tài liệu với ID mới để có bộ kết quả thống nhất.
+A. Resubmit all 500 documents with new IDs.
 
-B. Gửi lại nguyên 8 tài liệu vì lỗi batch thường là tạm thời.
+B. Resubmit the eight unchanged documents because batch errors are usually temporary.
 
-C. Ánh xạ 8 lỗi bằng custom_id, điều chỉnh đầu vào rồi retry riêng các mục đó.
+C. Identify the eight failures by `custom_id`, adjust their inputs, and retry only those items.
 
-D. Đánh dấu 8 mục là thành công với kết quả rỗng để đủ số lượng.
+D. Mark the eight failures successful with empty results.
 
-**Câu 3 — Chọn hai.** Một job nộp 200 yêu cầu, kết quả được nhận không theo thứ tự đầu vào. Hai thiết kế nào giúp ghi đúng kết quả và retry an toàn?
+**Question 3 — Choose two.** A job submits 200 requests and receives results out of input order. Which TWO designs support correct matching and safe retries?
 
-A. Dùng custom_id ổn định để nối từng kết quả với bản ghi nguồn.
+A. Use stable `custom_id` values to map results to source records.
 
-B. Ghép theo vị trí dòng vì số lượng đầu vào và đầu ra bằng nhau.
+B. Match by line position because input and output counts are equal.
 
-C. Lưu trạng thái từng mục và chống ghi trùng khi nhận lại kết quả.
+C. Track item-level status and prevent duplicate writes when results are received again.
 
-D. Tạo ID mới sau mỗi lần polling để phân biệt các lần tải.
+D. Assign new IDs on every poll.
 
-**Câu 4 — Chọn một.** Trong giới hạn giả định của bài toán, batch có thể xử lý 24 giờ, deadline từ lúc tài liệu đến là 30 giờ, cần dự phòng 4 giờ cho khâu khác. Chu kỳ gom tối đa nào đáp ứng worst case?
+**Question 4 — Choose one.** Assume batch processing takes up to 24 hours, the deadline is 30 hours after arrival, and other steps require four hours. What is the maximum collection interval that meets the worst-case deadline?
 
-A. 6 giờ vì 6 + 24 bằng deadline.
+A. Six hours, because 6 + 24 equals 30.
 
-B. 4 giờ vì còn 2 giờ sau khi batch xử lý.
+B. Four hours, leaving two hours after batch processing.
 
-C. 3 giờ vì thời gian chờ trung bình chỉ 1,5 giờ.
+C. Three hours, because the average wait is only 1.5 hours.
 
-D. 2 giờ vì 2 + 24 + 4 bằng 30 giờ.
+D. Two hours, because 2 + 24 + 4 equals 30.
 
-**Câu 5 — Chọn hai.** Một yêu cầu batch trả tool_use cho công cụ nội bộ; cần kết quả công cụ để mô hình trả lời cuối. Hai trách nhiệm nào vẫn thuộc hệ điều phối?
+**Question 5 — Choose two.** A batch request returns `tool_use` for an internal tool whose result is needed for the final answer. Which TWO responsibilities remain with the orchestrator?
 
-A. Xác thực/thực thi công cụ rồi nối kết quả với yêu cầu tương ứng.
+A. Validate and execute the tool, linking its result to the corresponding request.
 
-B. Xem tool_use là bằng chứng công cụ đã được provider thực thi.
+B. Treat `tool_use` as proof that the provider executed the tool.
 
-C. Tạo lượt tiếp theo với kết quả công cụ theo giao thức cần dùng.
+C. Create the next model turn with the tool result in the required protocol.
 
-D. Đổi trạng thái job thành lỗi vĩnh viễn vì batch không thể trả tool_use.
+D. Mark the job permanently failed because a batch cannot return `tool_use`.
 
 ## Đáp án và giải thích
 

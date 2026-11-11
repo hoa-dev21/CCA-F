@@ -15,55 +15,55 @@ Cần phân biệt ba mốc: biết có những mẫu nào, lấy được hư�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Slash command /format hiển thị trong UI, nhưng khi chạy báo thiếu doc_id vì client gửi document. Sửa nào trực tiếp nhất?
+**Question 1 — Choose one.** `/format` appears in the UI, but execution lacks `doc_id` because the client sends `document`. What is the direct fix?
 
-A. Đổi label hiển thị của slash command.
+A. Change the displayed command label.
 
-B. Đổi prompt để không cần tài liệu cụ thể.
+B. Remove document selection from the prompt.
 
-C. Ánh xạ arguments theo hợp đồng get_prompt.
+C. Map arguments according to the `get_prompt` contract.
 
-D. Thêm cùng giá trị vào system prompt và giữ args sai.
+D. Put the value in the system prompt while retaining incorrect arguments.
 
-**Câu 2 — Chọn hai.** Ứng dụng cần hiển thị menu prompt rồi chạy mẫu người dùng chọn. Hai thao tác nào thuộc đúng các mốc trước khi gọi mô hình?
+**Question 2 — Choose two.** Which TWO operations support showing a prompt menu and retrieving the selected template before model execution?
 
-A. list_prompts để khám phá mô tả và tham số có sẵn.
+A. Use `list_prompts` to discover descriptions and parameters.
 
-B. call_tool với tên prompt để vừa lấy mẫu vừa thực thi.
+B. Use `call_tool` with the prompt name to retrieve and execute it.
 
-C. get_prompt với tên và args để lấy messages đã điền.
+C. Use `get_prompt` with its name and arguments to obtain populated messages.
 
-D. Đánh dấu hoàn thành nghiệp vụ ngay khi menu hiện.
+D. Declare business completion when the menu appears.
 
-**Câu 3 — Chọn một.** get_prompt trả messages đúng nhưng tài liệu không thay đổi. Log kết thúc ngay sau lời gọi đó. Bước còn thiếu là gì?
+**Question 3 — Choose one.** `get_prompt` returns correct messages, but logs end there and the document stays unchanged. What is missing?
 
-A. Tăng timeout get_prompt để server có thời gian chỉnh tài liệu.
+A. Increase its timeout so the server edits the document.
 
-B. Chạy messages qua model/tool và xác minh kết quả.
+B. Execute the messages through the model/tool loop and verify the result.
 
-C. Đổi tên doc_id thành đường dẫn đầy đủ dù server chấp nhận ID.
+C. Replace the accepted document ID with a full path.
 
-D. Dùng list_prompts xác nhận nhiệm vụ đã xong.
+D. Use discovery to confirm completion.
 
-**Câu 4 — Chọn hai.** Người dùng chọn tài liệu A nhưng client giữ args từ lần trước cho tài liệu B. Hai kiểm soát nào giúp tránh sửa sai đối tượng?
+**Question 4 — Choose two.** The user selects document A, but cached arguments still identify B. Which TWO controls prevent editing the wrong document?
 
-A. Ràng buộc args với lựa chọn hiện tại trước khi gọi get_prompt.
+A. Bind arguments to the current selection before retrieval.
 
-B. Dựa vào tên slash command để suy ra tài liệu muốn sửa.
+B. Infer the document from the slash-command name.
 
-C. Kiểm tra định danh trong messages và đối tượng tác động khi thực thi.
+C. Check the identifier in generated messages and the actual execution target.
 
-D. Chỉ kiểm tra HTTP thành công của get_prompt.
+D. Check only successful HTTP status.
 
-**Câu 5 — Chọn một.** Server thêm một tham số bắt buộc cho prompt; client vẫn dùng menu cache cũ. Cách xử lý phù hợp nhất khi gặp lỗi thiếu tham số?
+**Question 5 — Choose one.** A server adds a required prompt parameter, while the client caches old discovery data. What should happen on a missing-parameter error?
 
-A. Tự điền chuỗi rỗng cho mọi tham số mới.
+A. Fill every new parameter with an empty string.
 
-B. Giữ retry nguyên request vì discovery từng thành công.
+B. Retry unchanged because discovery once succeeded.
 
-C. Bỏ tham số bắt buộc trong messages sau khi lấy được mẫu.
+C. Delete the requirement from retrieved messages.
 
-D. Cập nhật định nghĩa và lấy đủ tham số theo hợp đồng mới.
+D. Refresh the definition and collect all required arguments under the new contract.
 
 ## Đáp án và giải thích
 

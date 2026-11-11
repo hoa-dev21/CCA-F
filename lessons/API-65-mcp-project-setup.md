@@ -15,55 +15,55 @@ Ví dụ: Nếu chatbot chưa khởi động được ngay từ đầu, cần ki
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Starter CLI đã lỗi import trước khi bạn thêm MCP. Sau đó bạn thay client và server cùng lúc, lỗi vẫn còn. Cách xác định nguyên nhân hiệu quả nhất?
+**Question 1 — Choose one.** A starter CLI already has import errors before MCP is added. Changing both client and server does not fix it. What isolates the cause?
 
-A. Viết lại giao thức MCP vì cả client lẫn server đều đã thay đổi.
+A. Rewrite the protocol because both sides changed.
 
-B. Chỉ sửa prompt chatbot vì đó là phần nhận yêu cầu đầu tiên.
+B. Change only the chatbot prompt.
 
-C. Đưa baseline về trạng thái chạy được rồi thêm từng thay đổi.
+C. Restore a working baseline, then introduce changes incrementally.
 
-D. Thêm công cụ kiểm tra kết nối vào server chưa khởi động được.
+D. Add connection diagnostics to a server that cannot start.
 
-**Câu 2 — Chọn hai.** Dự án học lưu tài liệu trong dictionary và có tên report.pdf. Nhóm muốn dùng ngay cho hồ sơ thật cần tồn tại qua restart. Hai điều nào phải xác minh/bổ sung?
+**Question 2 — Choose two.** A learning project stores mock documents in a dictionary with names such as `report.pdf`. Which TWO requirements precede real records surviving restarts?
 
-A. Dùng extension xlsx thay pdf để server nhận dữ liệu như bảng.
+A. Rename PDFs to XLSX.
 
-B. Chỉ đổi dictionary key thành đường dẫn tuyệt đối để dữ liệu tự lưu.
+B. Use absolute dictionary keys for automatic persistence.
 
-C. Khả năng đọc/giải mã tệp nhị phân thật thay vì chỉ nội dung giả có tên tệp.
+C. Support actual binary file reading and decoding rather than filename-labeled mock content.
 
-D. Cơ chế lưu bền và khôi phục dữ liệu đáp ứng yêu cầu restart.
+D. Provide suitable durable storage and recovery.
 
-**Câu 3 — Chọn một.** Doanh nghiệp đã có MCP server tài liệu phù hợp, cần thêm trải nghiệm CLI riêng. Mẫu khóa học tự viết cả hai phía. Cách áp dụng nào hợp lý?
+**Question 3 — Choose one.** A company already has a suitable document MCP server and needs a custom CLI. How should the two-sided course example be applied?
 
-A. Viết lại server theo mẫu trước vì MCP yêu cầu cùng tác giả ở hai phía.
+A. Rewrite the server because both sides must have one author.
 
-B. Gắn server vào CLI rồi coi việc list được tools là toàn bộ tác vụ đã hoàn tất.
+B. Connect and consider tool discovery the entire finished task.
 
-C. Xác minh hợp đồng/quyền server rồi xây phần client còn thiếu.
+C. Verify the server contract and permissions, then build the missing client.
 
-D. Bỏ kiểm tra quyền vì server dùng lại đã từng hoạt động với client khác.
+D. Skip authorization because another client used the server.
 
-**Câu 4 — Chọn một.** Mẫu CLI dùng ANTHROPIC_API_KEY trong .env; nhóm chuyển sang môi trường Vertex nhưng giữ client gọi API trực tiếp. Chỉnh project ID không làm request dùng Vertex. Cần sửa lớp nào?
+**Question 4 — Choose one.** A CLI keeps the direct API client while moving to Vertex. Changing project ID has no effect. Which layer needs correction?
 
-A. Đổi tên server MCP vì server luôn quyết định nhà cung cấp mô hình.
+A. The MCP server name, which always selects the model provider.
 
-B. Nạp Google credentials nhưng giữ client trực tiếp vì cùng gọi Claude.
+B. Load Google credentials but retain the direct client.
 
-C. Cấu hình client/định tuyến và cơ chế xác thực đúng nhà cung cấp đích.
+C. Provider-specific client routing and authentication configuration.
 
-D. Giữ API trực tiếp và thay system prompt nêu tên Vertex.
+D. Mention Vertex in the system prompt.
 
-**Câu 5 — Chọn hai.** Nhóm đã chạy được baseline, muốn thêm công cụ cập nhật tài liệu vào CLI. Hai kiểm tra nào giúp xác nhận tích hợp thay vì chỉ xác nhận khởi động?
+**Question 5 — Choose two.** Which TWO checks verify integration of a new document-update tool beyond startup?
 
-A. Thử tài liệu không tồn tại và lỗi cập nhật, xác nhận không báo thành công giả.
+A. Missing-document and update-failure cases do not report false success.
 
-B. Chỉ xác nhận README đã được đọc và dependencies đã cài.
+B. Only README reading and dependency installation.
 
-C. Thử đường chọn tool, thực thi và trả kết quả về đúng lời gọi.
+C. Selection, execution, and correctly linked result return work end to end.
 
-D. Chỉ kiểm tra tên công cụ xuất hiện trong danh sách khám phá.
+D. Only the tool name appears in discovery.
 
 ## Đáp án và giải thích
 

@@ -23,55 +23,55 @@ Trong vòng lặp của tác nhân AI, mô hình chọn công cụ tiếp theo d
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Host hiện dừng thành công với mọi stop_reason khác tool_use. Một response bị cắt do giới hạn đầu ra nhưng vẫn được báo hoàn tất. Sửa nào đúng nhất?
+**Question 1 — Choose one.** The host treats every stop reason except `tool_use` as success, including output truncation. What is the correct fix?
 
-A. Xử lý end_turn và các trạng thái dừng khác riêng biệt.
+A. Handle `end_turn` separately from other stopping states.
 
-B. Chạy lại mọi response vô hạn cho tới khi xuất hiện tool_use.
+B. Retry forever until `tool_use` appears.
 
-C. Coi mọi response có text là thành công, kể cả bị cắt.
+C. Accept every response containing text.
 
-D. Tìm câu “hoàn thành” trong phần text để thay việc đọc stop_reason.
+D. Search for “complete” instead of inspecting the stop reason.
 
-**Câu 2 — Chọn hai.** Một response yêu cầu ba công cụ; một lần gọi ném exception. Hai tính chất nào cần giữ trong vòng xử lý?
+**Question 2 — Choose two.** Three tools are requested and one throws an exception. Which TWO properties should the loop preserve?
 
-A. Mọi kết quả thành công bị đổi thành lỗi để đồng nhất response.
+A. Convert successful results to errors for consistency.
 
-B. Bỏ lịch sử yêu cầu gốc và chỉ gửi một câu mô tả exception.
+B. Discard requests and send only an exception sentence.
 
-C. Lỗi thực thi được biểu diễn là lỗi, không đổi thành “không có dữ liệu”.
+C. Represent execution failures as errors rather than missing data.
 
-D. Kết quả hoặc lỗi của từng lần gọi được nối đúng ID.
+D. Link each result or error to the correct invocation ID.
 
-**Câu 3 — Chọn một.** Model yêu cầu tên công cụ chưa được router đăng ký. Nhóm đề xuất gọi hàm có tên gần giống nhất. Cách xử lý phù hợp hơn?
+**Question 3 — Choose one.** The model requests an unregistered tool. What is preferable to invoking the closest name?
 
-A. Trả lỗi đúng ID; kiểm tra tools có khớp router không.
+A. Return a correctly linked error and check advertised tools against the router.
 
-B. Cho model biết lời gọi thành công nhưng không trả dữ liệu.
+B. Report success without data.
 
-C. Chuyển tên công cụ trực tiếp thành lệnh shell để mở rộng khả năng.
+C. Convert the name directly into a shell command.
 
-D. Chọn hàm gần tên nhất để thực thi.
+D. Execute the closest available name.
 
-**Câu 4 — Chọn hai.** Trong vòng agent, model chọn công cụ tiếp theo theo dữ liệu vừa nhận. Hai trách nhiệm nào vẫn thuộc ứng dụng?
+**Question 4 — Choose two.** The model selects the next tool from observations. Which TWO responsibilities remain with the application?
 
-A. Áp dụng quyền cùng giới hạn tài nguyên khi xử lý lời gọi.
+A. Enforce permissions and resource limits.
 
-B. Coi mọi lựa chọn của model là quyền thực thi đã được cấp.
+B. Treat every selection as authorization.
 
-C. Thay dữ liệu lỗi bằng kết quả thành công để vòng lặp tiếp tục.
+C. Replace errors with successful data to keep running.
 
-D. Ánh xạ tên và đầu vào tới hàm thực thi đã đăng ký.
+D. Map names and arguments to registered implementations.
 
-**Câu 5 — Chọn một.** Một công cụ trả dữ liệu, model sau đó yêu cầu tra cứu bổ sung. Host đang chạy toàn bộ chuỗi công cụ cố định bất kể response mới. Điều chỉnh nào tạo đúng vòng agent của bài?
+**Question 5 — Choose one.** The model requests an additional lookup, but the host always runs a fixed tool sequence. What creates the intended agent loop?
 
-A. Bỏ kết quả giữa, quyết định lại từ đầu.
+A. Discard intermediate results and restart decisions.
 
-B. Chạy mọi công cụ song song để không cần đọc phản hồi trung gian.
+B. Run all tools in parallel without reading intermediate responses.
 
-C. Giữ chuỗi cố định, thêm mọi kết quả vào lịch sử nhưng không xét lời gọi mới.
+C. Keep the fixed sequence and ignore new requests.
 
-D. Chọn bước tiếp từ phản hồi mới trong giới hạn host.
+D. Select the next step from the latest response within host limits.
 
 ## Đáp án và giải thích
 

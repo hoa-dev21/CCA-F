@@ -15,55 +15,55 @@ Nếu một quy trình được lặp lại thường xuyên, chẳng hạn ki�
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Nhóm muốn thử AI cho báo cáo doanh số trước khi mở rộng sang quyết định thương mại. Pilot nào có khả năng kiểm chứng tốt nhất?
+**Question 1 — Choose one.** Which pilot best tests AI sales-report support before broader commercial decisions?
 
-A. Giao chọn chiến lược bán hàng toàn năm rồi đánh giá bằng cảm giác của quản lý.
+A. Delegate annual strategy and judge by management impressions.
 
-B. Chọn một chủ đề không có dữ liệu gốc để xem khả năng tự tìm hiểu.
+B. Choose a topic with no source data.
 
-C. Đánh giá chỉ bằng tốc độ tạo báo cáo vì nội dung sẽ được dùng về sau.
+C. Measure report speed only.
 
-D. AI soạn từ bảng có sẵn; kiểm tra phép tính và kết luận.
+D. Draft from available tables and verify calculations and conclusions.
 
-**Câu 2 — Chọn hai.** AI viết bản ghi nhớ từ bảng khách hàng. Hai kiểm tra nào cần trước khi sử dụng?
+**Question 2 — Choose two.** Which TWO checks precede using an AI memo based on customer tables?
 
-A. Kiểm tra kết luận có được hỗ trợ bởi số liệu hay đã suy diễn vượt nguồn.
+A. Check whether conclusions exceed the evidence.
 
-B. Đối chiếu phép tính và tên khách hàng với dữ liệu gốc.
+B. Verify calculations and customer names against originals.
 
-C. Coi vai trò “chuyên gia phân tích” trong prompt là bằng chứng độ chính xác.
+C. Treat an analyst role as accuracy evidence.
 
-D. Dùng một bản tóm tắt thứ hai từ cùng mô hình làm chuẩn duy nhất, thay cho đối chiếu bảng nguồn.
+D. Use a second same-model summary as the only reference.
 
-**Câu 3 — Chọn một.** Một ví dụ khóa học dùng AI sắp xếp tài liệu pháp lý. Nhóm suy ra AI có thể tự phê duyệt mọi quyết định chuyên môn. Nhận định phù hợp?
+**Question 3 — Choose one.** A course example organizes legal documents. Does this prove AI can approve every professional decision?
 
-A. Có thể suy ra nếu câu trả lời đính kèm nhiều thuật ngữ chuyên ngành.
+A. Yes, if it uses specialist terminology.
 
-B. Một ví dụ thành công chưa chứng minh năng lực toàn lĩnh vực.
+B. No; one success does not establish whole-domain competence.
 
-C. Có thể suy ra nếu tài liệu được trình bày nhất quán theo cùng mẫu.
+C. Yes, if formatting is consistent.
 
-D. Có thể suy ra sau khi đổi vai trò thành chuyên gia cấp cao.
+D. Yes, with a senior-expert role.
 
-**Câu 4 — Chọn hai.** Nhóm kiểm tra bài viết theo thương hiệu mỗi tuần. Hai thành phần nào đáng đưa vào skill dùng lại?
+**Question 4 — Choose two.** Which TWO items belong in a reusable weekly brand-review skill?
 
-A. Quy tắc tự công bố mọi bài đạt mẫu mà không xét phạm vi được giao.
+A. Automatic publication authority for all matching drafts.
 
-B. Nội dung chiến dịch đầu tiên làm dữ liệu cố định cho mọi chiến dịch sau.
+B. The first campaign as permanent data for all future work.
 
-C. Ví dụ đạt/chưa đạt và cách báo những điểm cần người duyệt quyết định.
+C. Passing and failing examples and issues reserved for human decisions.
 
-D. Các bước kiểm tra và tiêu chí chấp nhận theo hướng dẫn thương hiệu.
+D. Review steps and acceptance criteria based on brand guidance.
 
-**Câu 5 — Chọn một.** Pilot tiết kiệm thời gian soạn thảo nhưng người duyệt phải sửa nhiều kết luận sai. Nhóm nên đánh giá kết quả thế nào?
+**Question 5 — Choose one.** A pilot drafts faster but reviewers fix many incorrect conclusions. How should benefit be assessed?
 
-A. Chỉ tính thời gian đến bản nháp đầu vì đó là phần AI phụ trách.
+A. Count only time to the first draft.
 
-B. Bỏ ca phải sửa để đo tốc độ ở các lần chạy thành công.
+B. Exclude cases needing corrections.
 
-C. Tăng số báo cáo tự tạo để bù cho thời gian người duyệt.
+C. Generate more reports to offset review time.
 
-D. Đo chất lượng cuối và thời gian gồm cả kiểm tra, sửa lỗi.
+D. Measure final quality and total time including checks and corrections.
 
 ## Đáp án và giải thích
 

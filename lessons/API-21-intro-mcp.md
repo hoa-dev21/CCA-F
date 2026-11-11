@@ -15,55 +15,55 @@ MCP và cơ chế dùng công cụ (tool use) bổ sung cho nhau. Tool use là q
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Hai ứng dụng đều tích hợp cùng hệ thống ticket nhưng đang sao chép mã kết nối. Nhóm muốn tái sử dụng mà vẫn giữ hội thoại riêng. Kiến trúc nào phù hợp?
+**Question 1 — Choose one.** Two applications duplicate integration code for the same ticket system. Which architecture promotes reuse while preserving separate conversations?
 
-A. Nhúng hai bản mã tích hợp vào system prompt để tái sử dụng.
+A. Embed both implementations in system prompts.
 
-B. MCP server dùng chung; mỗi app có client và context riêng.
+B. Use a shared MCP server with separate clients and contexts per application.
 
-C. Bỏ client rồi đưa địa chỉ server vào prompt để model tự kết nối.
+C. Omit clients and put the server address in the prompt.
 
-D. Đưa cả hai lịch sử vào server ticket chung.
+D. Store both conversation histories in the ticket server.
 
-**Câu 2 — Chọn hai.** Nhóm mô tả MCP như phần thay thế toàn bộ tool use. Hai nhận định nào sửa đúng sự nhầm lẫn?
+**Question 2 — Choose two.** Which TWO statements correct the claim that MCP replaces all tool use?
 
-A. Mọi công cụ local đều bắt buộc phải chuyển sang MCP mới chạy được.
+A. Every local tool must become an MCP tool to work.
 
-B. MCP server tự quyết định đầy đủ cuộc hội thoại ngay khi được cài.
+B. Installing an MCP server makes it manage the whole conversation.
 
-C. MCP chuẩn hóa giao tiếp khám phá và gọi khả năng phía server.
+C. MCP standardizes discovery and invocation of server capabilities.
 
-D. Tool use biểu diễn quá trình model đề nghị thao tác rồi nhận kết quả.
+D. Tool use represents model requests for actions followed by returned results.
 
-**Câu 3 — Chọn một.** Nhà cung cấp đã có MCP server đọc ticket. Ứng dụng mới cần dùng dữ liệu đó để trả lời. Thành phần nào vẫn phải được xây hoặc nối?
+**Question 3 — Choose one.** A vendor supplies an MCP server for tickets. What must the application still connect or implement?
 
-A. Client gọi server; host trả kết quả về model.
+A. A client that invokes the server and a host that returns results to the model.
 
-B. Một bản sao database ticket nằm trong trọng số model.
+B. A copy of the ticket database in model weights.
 
-C. Liệt kê server trong system thay client.
+C. A server name in the system prompt instead of a client.
 
-D. Cơ chế để server tự đọc mọi lịch sử hội thoại đang mở.
+D. A server mechanism to read every open conversation automatically.
 
-**Câu 4 — Chọn hai.** Khi phân tích lỗi “server đọc ticket thành công nhưng chatbot không trả lời được”, hai ranh giới nào cần kiểm tra?
+**Question 4 — Choose two.** The server reads tickets successfully, but the chatbot cannot answer. Which TWO boundaries should be checked?
 
-A. Server có mô tả đủ chi tiết để model suy ra nội dung ticket mà không nhận kết quả không.
+A. Whether the description lets the model infer unseen ticket content.
 
-B. Ứng dụng có đưa kết quả vào ngữ cảnh của model không.
+B. Whether the application puts results into model context.
 
-C. Model có được tăng ngân sách suy luận để tự phục hồi phần dữ liệu chưa truyền không.
+C. Whether more reasoning budget can restore untransmitted data.
 
-D. Client có nhận và trả dữ liệu đúng cho ứng dụng không.
+D. Whether the client receives and returns data correctly to the host.
 
-**Câu 5 — Chọn một.** Một tiện ích chỉ cần gọi một hàm local đã có, không chia sẻ tích hợp cho ứng dụng khác. Kết luận thiết kế nào phù hợp với bài?
+**Question 5 — Choose one.** A utility needs one existing local function with no shared integration requirement. Which design is appropriate?
 
-A. Không thể có tool use nếu không có resource URI.
+A. Tool use is impossible without a resource URI.
 
-B. Phải thêm MCP server dù không có nhu cầu tích hợp để model được gọi hàm.
+B. An MCP server is mandatory.
 
-C. Cần chuyển hàm thành một prompt template để model tự thực thi mã.
+C. Convert the function into a prompt so the model executes its code.
 
-D. Dùng client tool trực tiếp; chỉ thêm MCP khi cần lợi ích đó.
+D. Use a direct client tool and add MCP when its benefits are needed.
 
 ## Đáp án và giải thích
 

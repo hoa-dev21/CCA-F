@@ -20,55 +20,55 @@ Giữ đầy đủ lịch sử và kết quả trung gian để Claude biết đ
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Nhóm thêm schema create_reminder vào tools; model gọi đúng tên nhưng host báo không biết công cụ. Điểm tích hợp nào cần kiểm tra đầu tiên?
+**Question 1 — Choose one.** `create_reminder` is advertised and selected correctly, but the host reports an unknown tool. What should be checked first?
 
-A. Tăng số ví dụ lời nhắc trong description.
+A. Add more examples to its description.
 
-B. Đổi system prompt để model dùng một tên khác chưa đăng ký.
+B. Ask the model to use another unregistered name.
 
-C. Ánh xạ create_reminder tới hàm thực thi trong router.
+C. The router mapping from `create_reminder` to its implementation.
 
-D. Tăng giới hạn số vòng vì lời gọi đã đúng cấu trúc.
+D. Increase the iteration limit.
 
-**Câu 2 — Chọn hai.** Hàm tính thời điểm mới đã có unit test. Hai bước nào còn cần để model dùng được nó trong vòng chung?
+**Question 2 — Choose two.** A date calculation function has unit tests. Which TWO integration steps let the model use it?
 
-A. Tạo riêng một hội thoại cố định cho mọi câu hỏi chứa thời gian.
+A. Build a fixed conversation for every time-related request.
 
-B. Đưa định nghĩa và schema vào tools gửi model.
+B. Include its definition and schema in the model's tools.
 
-C. Đăng ký tên công cụ với hàm thực thi trong router.
+C. Register its name and implementation in the router.
 
-D. Chỉ thêm tên hàm vào tài liệu nội bộ mà không gửi định nghĩa.
+D. Mention it only in internal documentation.
 
-**Câu 3 — Chọn một.** Yêu cầu nhắc việc vào ba ngày sau hôm nay cần get_time, add_days rồi create_reminder. Hệ thống muốn giảm độ trễ bằng chạy cả ba cùng lúc. Nhận định nào đúng?
+**Question 3 — Choose one.** A reminder needs `get_time`, then `add_days`, then `create_reminder`. Can all three run simultaneously to reduce latency?
 
-A. Giữ thứ tự vì bước sau cần kết quả bước trước.
+A. No; each dependent step needs the preceding result.
 
-B. Coi schema riêng là chứng cứ độc lập.
+B. Separate schemas prove independence.
 
-C. Có thể dùng thời điểm đoán cho bước tạo và bỏ qua sai số nếu nhỏ.
+C. Use guessed timestamps and ignore small differences.
 
-D. Chạy tạo trước rồi dùng bước tính để giải thích thời điểm đã chọn.
+D. Create first and explain the selected time afterward.
 
-**Câu 4 — Chọn hai.** Thêm công cụ mới nhưng không muốn nhân số nhánh hội thoại theo mọi tổ hợp công cụ. Hai đặc điểm nào của vòng chung hỗ trợ mục tiêu này?
+**Question 4 — Choose two.** Which TWO loop features support adding tools without coding every tool combination separately?
 
-A. Giữ lịch sử cùng kết quả trung gian cho quyết định tiếp theo.
+A. Retain history and intermediate results for later decisions.
 
-B. Duyệt các block tool_use theo type thay vì theo một tên cố định.
+B. Process `tool_use` blocks by type rather than one hard-coded name.
 
-C. Xóa kết quả sau mỗi lần gọi để các công cụ được “độc lập”.
+C. Delete results after each call to make tools independent.
 
-D. Chỉ hỗ trợ đúng một tool_use ở vị trí thứ hai của response.
+D. Support only one tool block in the second response position.
 
-**Câu 5 — Chọn một.** Model không bao giờ chọn một hàm mới dù router chạy hàm ấy tốt trong test. Logs request không có định nghĩa hàm. Sửa ở đâu?
+**Question 5 — Choose one.** A new function works in router tests but is never selected. Request logs contain no definition for it. Where is the fix?
 
-A. Mã lưu output UI vì đó là nơi model khám phá công cụ.
+A. UI output storage, where the model discovers tools.
 
-B. Thuật toán của hàm thực thi vì model chưa gọi được.
+B. The function's algorithm.
 
-C. Danh sách tools được gửi cho model trong request.
+C. The request's model-facing tools list.
 
-D. Đổi router để tự chạy hàm mới trong mọi request.
+D. Have the router execute it on every request.
 
 ## Đáp án và giải thích
 

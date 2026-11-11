@@ -22,55 +22,55 @@ Bạn có thể nhờ AI góp ý để cải thiện prompt, rồi thử lại v
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** AI trả dữ liệu đúng nhưng tên trường JSON thay đổi giữa các lượt, làm adapter lỗi. Thay đổi prompt nào trực tiếp nhất, trước khi kiểm thử lại adapter?
+**Question 1 — Choose one.** Correct JSON data uses changing field names and breaks an adapter. What prompt revision is most direct?
 
-A. Yêu cầu mô hình suy nghĩ kỹ hơn trước mọi câu trả lời.
+A. Ask for more careful thinking.
 
-B. Giao vai trò chuyên gia dữ liệu nhưng không nêu cấu trúc.
+B. Assign a data-expert role without structure.
 
-C. Tăng độ dài tối đa để mô hình giải thích các tên trường.
+C. Increase length for field-name explanations.
 
-D. Nêu schema, ví dụ hợp lệ và cách biểu diễn dữ liệu thiếu.
+D. Specify the schema, a valid example, and missing-data representation.
 
-**Câu 2 — Chọn hai.** Prompt phân tích yêu cầu gồm chín tiêu chí nhưng AI chỉ xử lý năm tiêu chí đầu. Hai thay đổi nào nhắm đúng lỗi bao phủ?
+**Question 2 — Choose two.** A nine-criterion analysis covers only the first five. Which TWO changes target coverage?
 
-A. Bổ sung bước đối chiếu đầu ra với danh sách đầy đủ các tiêu chí.
+A. Add an output check against the complete criteria list.
 
-B. Chia nhiệm vụ thành các bước có phạm vi và đầu ra rõ.
+B. Divide work into clearly scoped steps and outputs.
 
-C. Chỉ giữ năm tiêu chí AI thường làm tốt nhất.
+C. Keep only the five easiest criteria.
 
-D. Đổi giọng điệu sang quyết đoán để tránh câu trả lời lửng.
+D. Use a decisive tone.
 
-**Câu 3 — Chọn một.** AI đưa ra khuyến nghị mua hàng có vẻ hợp lý nhưng dựa trên giá và điều khoản không có trong tài liệu đã cung cấp. Cách sửa phù hợp nhất?
+**Question 3 — Choose one.** A plausible purchase recommendation invents prices and terms absent from supplied documents. What is appropriate?
 
-A. Yêu cầu một vai trò có nhiều năm kinh nghiệm trong lĩnh vực.
+A. Assign a more experienced role.
 
-B. Thêm ví dụ một khuyến nghị viết thuyết phục.
+B. Add persuasive writing examples.
 
-C. Yêu cầu câu trả lời ngắn để giảm số nhận định.
+C. Shorten the answer to reduce claims.
 
-D. Bổ sung nguồn giá/điều khoản, phân biệt đã biết và chưa biết.
+D. Provide price and term sources and distinguish known from unknown.
 
-**Câu 4 — Chọn một.** AI đề xuất prompt mới dài gấp ba lần và nói chất lượng sẽ tốt hơn. Nhóm nên quyết định bằng cách nào?
+**Question 4 — Choose one.** AI proposes a prompt three times longer and promises better quality. How should the team decide?
 
-A. Cho AI chấm mức chuyên nghiệp của hai prompt rồi dùng điểm cao hơn.
+A. Let AI rate professionalism.
 
-B. Chọn prompt có câu “kiểm tra trước khi trả lời” nhiều lần hơn.
+B. Choose the version repeating “check” most often.
 
-C. Đo cả hai trên cùng tập và tiêu chí; kiểm tra lỗi mới/cũ.
+C. Compare both on the same dataset and criteria, examining old and new errors.
 
-D. Chấp nhận vì prompt mới mô tả nhiều bước hơn.
+D. Accept because it has more steps.
 
-**Câu 5 — Chọn hai.** Nhóm dùng vài ví dụ để hướng dẫn phân loại phản hồi, nhưng tất cả ví dụ đều là trường hợp dễ và tích cực. Hai bổ sung nào giúp prompt thể hiện ranh giới quyết định tốt hơn?
+**Question 5 — Choose two.** All few-shot classification examples are easy and positive. Which TWO additions clarify decision boundaries?
 
-A. Thêm nhiều bản sao của ví dụ tích cực để tăng trọng số.
+A. Duplicate positive examples.
 
-B. Nêu tiêu chí phân loại và cách xử lý thiếu thông tin phù hợp nhiệm vụ.
+B. Specify classification criteria and task-appropriate uncertainty handling.
 
-C. Chỉ đổi nhãn các ví dụ sao cho số lượng mỗi nhãn cân bằng.
+C. Relabel examples merely to balance counts.
 
-D. Thêm trường hợp gần ranh giới, phản ánh nhầm lẫn đã quan sát.
+D. Add borderline examples reflecting observed confusion.
 
 ## Đáp án và giải thích
 

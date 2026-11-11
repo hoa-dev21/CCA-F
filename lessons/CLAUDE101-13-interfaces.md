@@ -15,55 +15,55 @@ Mỗi giao diện có khả năng, quyền truy cập và điều kiện sử d�
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Người dùng cần sửa workbook đang mở có công thức phụ thuộc nhau. Trợ lý tạo một file Excel mới với số liệu tĩnh. Thiếu sót chính là gì?
+**Question 1 — Choose one.** A user needs changes in an open workbook with dependent formulas, but the assistant creates a static new file. What is missing?
 
-A. Chưa dùng đủ nhiều sheet trong file mới.
+A. More worksheets.
 
-B. Chưa trình bày công thức bằng lời giải thích dài hơn.
+B. Longer formula explanations.
 
-C. Chưa gửi file mới qua cùng kênh chat như yêu cầu ban đầu.
+C. Sending the file through the same chat channel.
 
-D. Chưa chọn công cụ sửa và kiểm chứng đúng workbook.
+D. A tool that edits and verifies the intended workbook.
 
-**Câu 2 — Chọn hai.** Một yêu cầu được chuyển từ Slack sang công cụ phát triển phần mềm. Hai điều cần xác minh lại?
+**Question 2 — Choose two.** A task moves from Slack to a development tool. Which TWO things need rechecking?
 
-A. Quyền thực thi và khả năng kiểm tra kết quả của công cụ mới.
+A. Execution permissions and result-verification capabilities.
 
-B. Dữ liệu và repository cần dùng có thực sự truy cập được trong môi trường mới.
+B. Actual access to required data and repositories in the new environment.
 
-C. Mặc định nội dung đã thấy ở phiên trước luôn có trong ngữ cảnh mới.
+C. Assume all prior session content is present.
 
-D. Mặc định quyền ở Slack tự chuyển sang mọi công cụ khác.
+D. Assume Slack permissions transfer automatically.
 
-**Câu 3 — Chọn một.** Hai công cụ cùng có thể “hỗ trợ tài liệu”: một chỉ tạo file mới, một sửa tài liệu đang mở. Người dùng yêu cầu cập nhật bảng hiện tại và giữ nhận xét. Cách chọn phù hợp?
+**Question 3 — Choose one.** A user wants an existing document table updated while preserving comments. Which tool choice fits?
 
-A. Dùng chat mô tả thay đổi để người dùng tự suy ra tài liệu đã được cập nhật.
+A. Describe edits in chat and imply completion.
 
-B. Chọn công cụ tiếp cận đúng tài liệu và kiểm tra được bảng cùng nhận xét sau sửa.
+B. Use a tool accessing that document and verifying both table and comments afterward.
 
-C. Chọn công cụ tạo file nhanh hơn rồi coi file mới thay thế hoàn toàn bản đang mở.
+C. Create a faster new file and assume full replacement.
 
-D. Chọn theo tên thương hiệu dù chưa kiểm tra khả năng giữ nhận xét.
+D. Choose by brand name without checking comment preservation.
 
-**Câu 4 — Chọn hai.** Nhóm thiết kế một quy trình đa giao diện. Hai câu hỏi nào giúp chọn đúng nơi thực hiện mỗi bước?
+**Question 4 — Choose two.** Which TWO questions guide a multi-interface workflow?
 
-A. Giao diện nào tạo lời xác nhận hoàn thành dài nhất.
+A. Which interface gives the longest completion message?
 
-B. Giao diện nào xuất hiện nhiều nhất trong video hướng dẫn cũ.
+B. Which appeared most in old videos?
 
-C. Có quyền phù hợp và cách kiểm chứng thay đổi tại đích hay không.
+C. Are suitable permissions and target-state verification available?
 
-D. Dữ liệu đích ở đâu và cần đọc, sửa hay thực thi thao tác gì.
+D. Where is the target data, and what reads, edits, or actions are needed?
 
-**Câu 5 — Chọn một.** Trợ lý đã giải thích cách sửa code trong chat. Báo cáo dự án ghi “đã sửa và test đạt”. Điều chỉnh nào đúng?
+**Question 5 — Choose one.** A chat explains a code fix, but project status says “fixed and tests passed.” What correction is needed?
 
-A. Giữ báo cáo vì lời giải thích bao gồm cả lệnh test nên đã tương đương thực thi.
+A. Keep it because suggested test commands equal execution.
 
-B. Thêm ảnh chụp đoạn chat làm bằng chứng test đạt.
+B. Use a chat screenshot as test evidence.
 
-C. Nhờ reviewer kiểm tra logic bản vá trong chat rồi ghi kết quả review thành trạng thái test đã chạy đạt.
+C. Relabel logic review as passing executed tests.
 
-D. Chưa xác nhận sửa xong: cần áp dụng và test trong repository.
+D. Do not confirm completion until the patch is applied and tested in the repository.
 
 ## Đáp án và giải thích
 

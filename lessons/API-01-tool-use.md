@@ -63,55 +63,55 @@ Hãy thử trả lời bằng lời của bạn: “Khi khách hỏi trạng th�
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Bot phải trả trạng thái thanh toán tại thời điểm hỏi. Kho dữ liệu phân tích cập nhật mỗi đêm; hệ thống giao dịch có API đọc. Thay đổi nào đáp ứng yêu cầu mà vẫn giữ Claude ở vai trò diễn giải?
+**Question 1 — Choose one.** A bot must report current payment status. Analytics data updates nightly, while the transaction system provides a read API. Which change supplies current evidence while keeping Claude responsible for interpretation?
 
-A. Mô tả API thật chi tiết rồi coi yêu cầu gọi công cụ là bằng chứng đã tra cứu.
+A. Describe the API and treat a tool request as proof of lookup.
 
-B. Dùng truy vấn hợp lệ để xác nhận trạng thái.
+B. Use a valid query to confirm the status.
 
-C. Cho ứng dụng thực thi công cụ đọc API giao dịch rồi đưa kết quả cho Claude.
+C. Have the application call the transaction API and return the result to Claude.
 
-D. Đưa bản xuất gần nhất vào prompt và yêu cầu Claude suy luận thay đổi trong ngày.
+D. Provide the latest export and ask Claude to infer today's changes.
 
-**Câu 2 — Chọn hai.** Claude đề nghị tra đơn DH102. Nhóm muốn phân tách trách nhiệm để nhật ký có thể kiểm toán. Hai sự kiện nào phải được ghi nhận ở phía ứng dụng thực thi?
+**Question 2 — Choose two.** Claude requests order DH102. Which TWO events must the executing application log to support an auditable separation of responsibilities?
 
-A. Kết quả hoặc lỗi dịch vụ được chuyển trở lại Claude.
+A. The service result or error returned to Claude.
 
-B. Lần cập nhật trọng số mô hình bằng trạng thái đơn vừa tra.
+B. A model weight update using the order status.
 
-C. Sự xác nhận rằng mọi dữ liệu HTTP 200 đều mới nhất.
+C. Confirmation that all HTTP 200 data is current.
 
-D. Đầu vào thực sự được gửi đến dịch vụ tra cứu.
+D. The actual input sent to the lookup service.
 
-**Câu 3 — Chọn một.** Log chỉ có một khối yêu cầu tra cứu hợp lệ; dịch vụ chưa được gọi. Người dùng hỏi liệu đơn đã giao chưa. Cách xử lý nào tránh công bố kết luận chưa có bằng chứng?
+**Question 3 — Choose one.** The log contains a valid lookup request, but the service has not run. A user asks whether the order was delivered. What should happen?
 
-A. Tra cứu thực tế trước khi xác nhận trạng thái.
+A. Perform the lookup before confirming the status.
 
-B. Trả dự đoán trước, sửa sau khi API trả khác.
+B. Predict now and correct the answer if the API disagrees.
 
-C. Dùng kết quả của đơn khác cùng khách hàng vì đã xác minh danh tính.
+C. Use another order for the same verified customer.
 
-D. Thông báo tra cứu thành công vì yêu cầu đã vượt kiểm tra cấu trúc.
+D. Report lookup success because the request passed structural validation.
 
-**Câu 4 — Chọn hai.** API trả HTTP 200, trạng thái “dự kiến giao trước 18 giờ”, bản ghi cập nhật hôm qua. Hai chi tiết nào cần giữ trong câu trả lời cho người đang hỏi trạng thái hiện tại?
+**Question 4 — Choose two.** An API returns HTTP 200 with “delivery expected before 18:00,” but the record was updated yesterday. Which TWO details must the answer preserve?
 
-A. Ngày cập nhật được thay bằng thời điểm gọi API hôm nay.
+A. Replace the record date with today's API call time.
 
-B. HTTP 200 được dùng để khẳng định giao hàng chắc chắn.
+B. Treat HTTP 200 as guaranteed delivery.
 
-C. Mốc 18 giờ vẫn được diễn đạt là dự kiến.
+C. Describe 18:00 as an estimate.
 
-D. Hạn chế về độ mới của bản ghi được nêu rõ.
+D. Disclose the record's freshness limitation.
 
-**Câu 5 — Chọn một.** Công cụ báo không tìm thấy DH102. Hội thoại trước từng nói đơn đã thanh toán nhưng không có nguồn đi kèm. Kết luận nào có căn cứ nhất?
+**Question 5 — Choose one.** A tool cannot find DH102. An earlier, unsourced message said it was paid. Which conclusion is best supported?
 
-A. Đã thanh toán vì kết luận trước đó cần được giữ nhất quán.
+A. It was paid because earlier conclusions must remain consistent.
 
-B. Chưa đủ cơ sở xác nhận thanh toán; cần kiểm tra mã đơn hoặc nguồn tra cứu.
+B. Payment cannot yet be confirmed; check the order ID or lookup source.
 
-C. Đã thanh toán với độ tin cậy thấp, lấy câu trả lời trước làm nguồn dự phòng.
+C. It was probably paid, using the earlier answer as fallback evidence.
 
-D. Chưa thanh toán vì không có bản ghi trả về từ công cụ.
+D. It was unpaid because the tool returned no record.
 
 ## Đáp án và giải thích
 

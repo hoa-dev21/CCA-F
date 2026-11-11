@@ -27,55 +27,55 @@ Chọn chế độ lập kế hoạch khi thay đổi kiến trúc, nhiều tệ
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Repo có nhiều package, quy ước chỉ áp dụng test .test.tsx. Nhóm muốn chia sẻ quy tắc mà không làm nhiễu công việc khác. Cách tổ chức phù hợp?
+**Question 1 — Choose one.** A repository has multiple packages, and a convention applies only to `.test.tsx` files. How should the team share it without affecting unrelated work?
 
-A. Đặt toàn bộ quy ước ở user config của trưởng nhóm.
+A. Store all conventions in the team lead's user configuration.
 
-B. Dùng project rule có paths khớp test ở các package.
+B. Use a project rule with `paths` matching the relevant tests across packages.
 
-C. Dán quy tắc vào mọi prompt tương tác của thành viên.
+C. Paste the rule into every member's interactive prompts.
 
-D. Dùng tên file rule có chữ “test” nhưng không đặt điều kiện phạm vi.
+D. Put “test” in the rule filename without configuring path scope.
 
-**Câu 2 — Chọn một.** Skill khám phá repo tạo log rất dài; cuộc hội thoại chính chỉ cần kết luận có nguồn. Thiết kế nào xử lý cả context lẫn bàn giao?
+**Question 2 — Choose one.** A repository exploration skill produces long logs, but the main conversation needs only sourced conclusions. Which design manages both context and handoff?
 
-A. context: fork cùng đầu ra tóm tắt có đường dẫn, phát hiện và giới hạn.
+A. Use `context: fork` and return findings, paths, and limitations in a summary.
 
-B. context: fork rồi giả định parent tự đọc được toàn bộ phát hiện của child.
+B. Use `context: fork` and assume the parent automatically sees all child findings.
 
-C. Chia hướng dẫn thành nhiều file và import tất cả vào context chính.
+C. Split the instructions into files and import all of them into the main context.
 
-D. Giới hạn số dòng log nhưng loại luôn vị trí nguồn để tiết kiệm token.
+D. Limit log lines and remove source locations to save tokens.
 
-**Câu 3 — Chọn hai.** Skill nhận tên môi trường triển khai. argument-hint hiển thị “staging | production”. Hai kiểm soát nào vẫn cần nếu muốn tránh đầu vào ngoài danh sách và thao tác vượt quyền?
+**Question 3 — Choose two.** A skill accepts a deployment environment and displays `staging | production` through `argument-hint`. Which TWO controls are still needed to prevent invalid inputs and unauthorized actions?
 
-A. Coi argument-hint là validation vì người dùng đã thấy cú pháp.
+A. Treat `argument-hint` as validation because users see the syntax.
 
-B. Kiểm tra tham số thực tế trước khi gọi thao tác.
+B. Validate the actual argument before invoking the action.
 
-C. Thiết lập công cụ/quyền phù hợp và kiểm tra tại nơi thực thi.
+C. Configure suitable tools and permissions, checking them at execution time.
 
-D. Liệt kê môi trường trong description và chỉ đưa ví dụ hợp lệ để mô hình suy ra giới hạn.
+D. List environments in the description and rely on valid examples alone.
 
-**Câu 4 — Chọn một.** Một nhóm đặt hướng dẫn bảo mật dài trong file chung và chia thành ba file được import toàn bộ. Kết luận nào đúng về ngữ cảnh?
+**Question 4 — Choose one.** A team splits a long security instruction file into three files and imports all three. What follows about context usage?
 
-A. Số file tăng nên mỗi lượt chỉ tải một phần ngẫu nhiên.
+A. Only one file will load randomly because there are more files.
 
-B. Import bảo đảm phần chưa liên quan không tiêu tốn context.
+B. Imports guarantee that irrelevant sections consume no context.
 
-C. Tách file tự động tạo các phạm vi quyền riêng.
+C. Separate files automatically create separate permission scopes.
 
-D. Dễ quản lý hơn, nhưng phần được nạp vẫn chiếm context.
+D. The files may be easier to maintain, but all loaded content still consumes context.
 
-**Câu 5 — Chọn hai.** Nhóm muốn skill review thống nhất nhưng không cho sửa mã. Hai lựa chọn phù hợp?
+**Question 5 — Choose two.** A team wants a shared review skill that cannot modify code. Which TWO choices support this goal?
 
-A. Đặt skill ở phạm vi dự án và quản lý phiên bản cùng repo.
+A. Store and version the skill at project scope.
 
-B. Hạn chế công cụ/quyền theo tác vụ đọc và kiểm tra cấu hình thực tế.
+B. Restrict tools and permissions to reading, and verify the effective configuration.
 
-C. Chỉ viết “không sửa” trong description rồi cấp mọi công cụ.
+C. Say “do not edit” in the description while granting every tool.
 
-D. Đặt skill trong thư mục cá nhân của tác giả để tránh đồng đội sửa.
+D. Store the skill only in its author's personal directory.
 
 ## Đáp án và giải thích
 

@@ -17,55 +17,55 @@ Theo phần liên hệ với đề cương thi, prompt giúp định hướng h�
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Gia sư giải đúng nhưng liên tục đưa đáp án trước khi học viên thử. Hệ thống dùng chung hàm gọi API với trợ lý biên tập. Sửa ở đâu để đặt hành vi ổn định theo từng ứng dụng?
+**Question 1 — Choose one.** A tutor solves problems correctly but reveals answers before students try. It shares an API wrapper with an editing assistant. How should application-specific behavior be configured?
 
-A. Truyền vai trò và cách dạy qua tham số system dùng chung.
+A. Pass the role and teaching policy through the shared `system` parameter.
 
-B. Chèn một đáp án mẫu vào cuối mỗi câu hỏi toán của học viên.
+B. Append a sample answer to every student question.
 
-C. Đổi mọi tin nhắn user thành system để tăng tính nhất quán.
+C. Convert all user messages into system messages.
 
-D. Hard-code cùng hướng dẫn gia sư cho cả hai app.
+D. Hard-code the tutor instructions for both applications.
 
-**Câu 2 — Chọn hai.** Nhóm kiểm thử system prompt gia sư trước phát hành. Hai tiêu chí nào cùng cần thiết để kết luận hệ thống đạt mục tiêu?
+**Question 2 — Choose two.** Which TWO criteria are necessary when evaluating a tutor's system prompt?
 
-A. Có gợi ý theo bước và chừa cơ hội cho học viên thử không.
+A. Whether it gives progressive hints and lets students try.
 
-B. Câu trả lời có cùng độ dài với ví dụ duy nhất trong prompt không.
+B. Whether its length matches one prompt example.
 
-C. Có lặp nguyên văn nhãn “gia sư” trong mọi câu trả lời không.
+C. Whether every response repeats the word “tutor.”
 
-D. Đáp số và lập luận toán học có đúng không.
+D. Whether its mathematical answers and reasoning are correct.
 
-**Câu 3 — Chọn một.** Hàm dùng chung đọc một biến system toàn cục. Hai request đồng thời cho gia sư và biên tập đôi lúc đổi giọng cho nhau. Thiết kế nào phù hợp nhất?
+**Question 3 — Choose one.** A shared function reads a global `system` variable. Concurrent tutor and editor requests sometimes exchange styles. Which design is appropriate?
 
-A. Thêm tên ứng dụng vào câu trả lời sau khi model đã sinh xong.
+A. Add application names after generation.
 
-B. Nhận system như đầu vào riêng của từng lần gọi.
+B. Accept `system` separately for each call.
 
-C. Nối hai system để model tự chọn vai trò.
+C. Combine both system prompts and let the model choose.
 
-D. Tăng số ví dụ trong biến toàn cục để model tự nhận diện vai trò.
+D. Add more examples to the global variable.
 
-**Câu 4 — Chọn hai.** Một prompt chỉ ghi “bạn là chuyên gia” nhưng sản phẩm cần gia sư không tiết lộ lời giải ngay. Hai chỉnh sửa nào giúp yêu cầu có thể kiểm chứng?
+**Question 4 — Choose two.** A prompt says only “you are an expert,” but the tutor must avoid immediate solutions. Which TWO changes make the behavior testable?
 
-A. Thêm nhiều chức danh chuyên môn mà không đổi quy trình phản hồi.
+A. Add more professional titles without changing the response process.
 
-B. Nêu rõ phải gợi ý trước khi cung cấp lời giải đầy đủ.
+B. Require hints before complete solutions.
 
-C. Yêu cầu ngôn ngữ trang trọng để thay cho tiêu chí sư phạm.
+C. Use formal language instead of teaching criteria.
 
-D. Mô tả cách phản hồi khi học viên đã thử nhưng mắc lỗi.
+D. Specify how to respond after a student's incorrect attempt.
 
-**Câu 5 — Chọn một.** Bản system mới đạt điểm toán ngang bản cũ nhưng giảm mạnh tỷ lệ tiết lộ đáp án sớm. Quyết định nào có cơ sở nhất?
+**Question 5 — Choose one.** A new system prompt maintains math scores while reducing premature answer disclosure. What is the best release decision?
 
-A. Loại bản mới vì điểm toán không tăng nên system không có tác dụng.
+A. Reject it because math accuracy did not improve.
 
-B. Chỉ đo độ ngắn của câu trả lời để suy ra mức độ gợi ý.
+B. Measure response length alone as a proxy for hints.
 
-C. Phát hành sau một hội thoại gợi ý tốt.
+C. Release after one successful tutoring conversation.
 
-D. Đo độ đúng và cách dạy trên tập đại diện.
+D. Evaluate both correctness and teaching behavior on representative cases.
 
 ## Đáp án và giải thích
 

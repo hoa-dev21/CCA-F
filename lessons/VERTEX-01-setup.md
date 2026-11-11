@@ -17,55 +17,55 @@ Khi chuyển từ notebook sang môi trường vận hành, chọn danh tính v�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** gcloud login thành công nhưng ứng dụng dùng AnthropicVertex vẫn lỗi xác thực. Bước điều tra nào nhắm đúng ranh giới giữa CLI và SDK?
+**Question 1 — Choose one.** `gcloud login` succeeds, but an `AnthropicVertex` application fails authentication. What checks the CLI-SDK boundary?
 
-A. Đăng nhập CLI lại nhiều lần nhưng giữ nguyên credential runtime.
+A. Repeat CLI login while retaining runtime credentials.
 
-B. Đổi system prompt để yêu cầu mô hình xác nhận quyền.
+B. Ask the model to confirm access.
 
-C. Kiểm tra credential SDK thực dùng, project và quyền.
+C. Inspect the SDK's actual credentials, project, and permissions.
 
-D. Tăng timeout suy luận để chờ quyền được nhận.
+D. Increase reasoning timeouts.
 
-**Câu 2 — Chọn một.** Notebook chạy được bằng đăng nhập tương tác cá nhân; job production không có người đăng nhập. Cách chuyển phù hợp?
+**Question 2 — Choose one.** A notebook uses personal interactive login, while a production job has no interactive user. What is appropriate?
 
-A. Dùng danh tính runtime phù hợp; kiểm tra quyền và đích triển khai.
+A. Use a suitable runtime identity and verify permissions and deployment targets.
 
-B. Sao chép lịch sử hội thoại vì notebook đã xác thực trong phiên cũ.
+B. Copy conversation history because the old session authenticated.
 
-C. Dùng nguyên credential cá nhân trên mọi máy mà không xét lifecycle.
+C. Reuse personal credentials everywhere without lifecycle review.
 
-D. Chỉ giữ cùng tên SDK để bảo đảm mọi quyền giống notebook.
+D. Use the same SDK name as proof of equal permissions.
 
-**Câu 3 — Chọn hai.** Ứng dụng có API key Anthropic trực tiếp nhưng client đang định tuyến qua Vertex. Hai điều nào phải kiểm tra khi tích hợp?
+**Question 3 — Choose two.** An application has a direct Anthropic key but routes through Vertex. Which TWO checks matter?
 
-A. Cơ chế xác thực mà client/provider đang cấu hình thực sự yêu cầu.
+A. The authentication mechanism required by the configured client and provider.
 
-B. Chỉ tên mô hình Claude vì cùng mô hình phải dùng chung key.
+B. Only the Claude name, which guarantees shared keys.
 
-C. Project, region và quyền truy cập mô hình của môi trường Vertex.
+C. Vertex project, region, and model-access permissions.
 
-D. Tự đưa API key trực tiếp vào mọi trường credential để thử.
+D. Try the direct key in every credential field.
 
-**Câu 4 — Chọn một.** SDK đã lấy được credential hợp lệ nhưng dịch vụ báo không truy cập được mô hình ở cấu hình hiện tại. Điều tra nào phù hợp tiếp theo?
+**Question 4 — Choose one.** Credentials are valid, but the model is inaccessible under current configuration. What comes next?
 
-A. Coi lỗi là sai prompt vì xác thực đã thành công.
+A. Assume the prompt is wrong.
 
-B. Đối chiếu model/project/region và quyền truy cập đích.
+B. Verify model, project, region, and target access permissions.
 
-C. Coi notebook ở dự án khác chạy được là đủ để bỏ kiểm tra cấu hình.
+C. Trust another project's working notebook.
 
-D. Đổi temperature vì tham số đó có thể bật quyền mô hình.
+D. Change temperature to enable access.
 
-**Câu 5 — Chọn hai.** Nhóm muốn tránh sự cố khi chuyển notebook sang production. Hai loại kiểm chứng nào cần làm trên runtime đích?
+**Question 5 — Choose two.** Which TWO checks belong on the target production runtime?
 
-A. Xác nhận danh tính thật và quyền tối thiểu cần thiết cho lời gọi.
+A. Verify its actual identity and required minimum permissions.
 
-B. Chỉ kiểm tra tài khoản CLI của người triển khai.
+B. Only check the deployer's CLI account.
 
-C. Xác nhận endpoint/project/region/model phù hợp và chạy thử đường gọi thực tế.
+C. Verify endpoint, project, region, and model, then test the real invocation path.
 
-D. Chỉ so sánh nội dung prompt giữa hai môi trường.
+D. Only compare prompt content across environments.
 
 ## Đáp án và giải thích
 

@@ -17,55 +17,55 @@ Một phản hồi có thể yêu cầu nhiều công cụ. Giả sử hai phép
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Hai tra cứu A và B hoàn thành ngược thứ tự khởi chạy. Kết quả A chứa giá đơn hàng, B chứa trạng thái giao. Cách ghép nào đúng?
+**Question 1 — Choose one.** Lookups A and B finish in reverse order. A returns price and B delivery status. How should results be matched?
 
-A. Ghép kết quả theo thứ tự hoàn tất.
+A. By completion order.
 
-B. Gắn mỗi kết quả với tool_use_id của chính lời gọi tạo ra nó.
+B. By the `tool_use_id` of each originating call.
 
-C. Ghép bằng tên công cụ vì một công cụ chỉ có thể xuất hiện một lần.
+C. By tool name, assuming one invocation per tool.
 
-D. Cho Claude suy ra kết quả nào thuộc A hay B từ nội dung text.
+D. Have Claude infer the mapping from prose.
 
-**Câu 2 — Chọn hai.** Một công cụ lỗi kết nối, công cụ kia thành công. Hai đặc điểm nào cần có trong các tool_result trả về?
+**Question 2 — Choose two.** One tool fails to connect while another succeeds. Which TWO properties must the returned results have?
 
-A. Bỏ kết quả lỗi để model chỉ nhận dữ liệu đáng tin.
+A. Omit the failed result.
 
-B. Mỗi kết quả giữ đúng tool_use_id ban đầu.
+B. Each result retains its original `tool_use_id`.
 
-C. Cả hai kết quả đều gắn lỗi vì cùng nằm trong một response.
+C. Mark both as errors because they share one response.
 
-D. Kết quả thất bại được đánh dấu is_error thay vì biến thành dữ liệu rỗng thành công.
+D. Mark the failure with `is_error` rather than reporting empty success.
 
-**Câu 3 — Chọn một.** Hàm tra cứu đã chạy và lưu dữ liệu vào database, nhưng request tiếp theo không chứa tool_result. Model tiếp tục hỏi dữ liệu. Nguyên nhân trực tiếp là gì?
+**Question 3 — Choose one.** A lookup runs and saves data in a database, but the next request omits `tool_result`. Why does the model still ask for the data?
 
-A. Cần đổi role của mọi messages thành assistant để model biết đã có kết quả.
+A. All messages must use the assistant role.
 
-B. Cần gọi lại hàm nhiều lần cho tới khi model tự nhận thấy dữ liệu.
+B. The function must run repeatedly until the model notices.
 
-C. Model phải tự đọc database nếu tên database có trong schema.
+C. The model must read the database named in the schema.
 
-D. Kết quả chưa được đưa vào ngữ cảnh mà model nhận.
+D. The result has not entered the context received by the model.
 
-**Câu 4 — Chọn hai.** Theo mẫu hội thoại của bài, sau khi thực thi client tool, hai thành phần nào phải cùng được giữ khi gọi Claude tiếp?
+**Question 4 — Choose two.** After executing a client tool, which TWO components belong in the next conversation request in the lesson's pattern?
 
-A. Tin nhắn assistant chỉ chứa câu “công cụ đã chạy” thay yêu cầu gốc.
+A. An assistant message saying “tool ran” instead of the original request.
 
-B. Tin nhắn user do người dùng tự gõ lại toàn bộ dữ liệu công cụ.
+B. A user manually retyping the tool data.
 
-C. Tin nhắn user có tool_result nối đúng ID và chứa kết quả.
+C. A user message with the result linked to the correct tool ID.
 
-D. Tin nhắn assistant có khối tool_use gốc.
+D. The assistant message containing the original `tool_use` block.
 
-**Câu 5 — Chọn một.** Một công cụ trả “không tìm thấy đơn”; công cụ khác bị timeout. Adapter đang chuyển cả hai thành mảng rỗng. Cải tiến nào cần ưu tiên?
+**Question 5 — Choose one.** An adapter turns both “order not found” and a timeout into empty arrays. What improvement is the priority?
 
-A. Coi cả hai là lỗi vĩnh viễn, không retry.
+A. Treat both as permanent failures.
 
-B. Phân biệt truy vấn rỗng hợp lệ với lỗi thực thi.
+B. Distinguish a valid empty lookup from an execution error.
 
-C. Đổi cả hai thành thành công để tránh gián đoạn hội thoại.
+C. Report both as successes.
 
-D. Ghép hai thông báo vào text chung không giữ ID lời gọi.
+D. Combine messages into text without invocation IDs.
 
 ## Đáp án và giải thích
 

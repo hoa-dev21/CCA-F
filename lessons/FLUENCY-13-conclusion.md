@@ -15,55 +15,55 @@ Sau một công việc, hãy tự nhìn lại: Bạn đã chia việc hợp lý 
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Nhóm đã viết prompt chi tiết và chọn mô hình mạnh, nhưng không quyết định phần việc nào cần người duyệt hay cách kiểm chứng. Đánh giá nào đúng nhất?
+**Question 1 — Choose one.** Detailed prompts and a strong model are selected, but review ownership and verification are undefined. What is missing?
 
-A. Còn thiếu Delegation, Discernment, Diligence phù hợp.
+A. Appropriate Delegation, Discernment, and Diligence.
 
-B. Chỉ cần tăng số ví dụ trong prompt để bao phủ việc duyệt.
+B. Only more prompt examples.
 
-C. Có thể bỏ người duyệt nếu mô hình đưa ra lý do dài cho kết quả.
+C. Longer model explanations instead of review.
 
-D. Description đã tốt nên ba năng lực còn lại được đáp ứng gián tiếp.
+D. Nothing; good Description indirectly satisfies everything.
 
-**Câu 2 — Chọn hai.** Một công việc chuyển từ cùng AI viết bản nháp sang cho AI chủ động xử lý nhiều bước trong phạm vi cho phép. Hai điều nào vẫn cần được duy trì?
+**Question 2 — Choose two.** A task moves from collaborative drafting to autonomous multistep execution. Which TWO requirements remain?
 
-A. Bỏ Description vì tác nhân chủ động tự xác định mọi mục tiêu.
+A. Remove Description because the agent chooses all objectives.
 
-B. Ranh giới phân công và quyền quyết định phù hợp với chế độ mới.
+B. Suitable allocation boundaries and decision authority.
 
-C. Chỉ đánh giá lượt đầu vì các bước sau đã thuộc agency.
+C. Evaluate only the first turn.
 
-D. Tiêu chí đánh giá cùng trách nhiệm về dữ liệu và kết quả sử dụng.
+D. Evaluation criteria and responsibility for data and outcomes.
 
-**Câu 3 — Chọn một.** Một nhân viên thuộc tên bốn năng lực nhưng nhiều lần gửi bản nháp chưa xác minh. Bài tập cải thiện nào có bằng chứng tiến bộ rõ nhất?
+**Question 3 — Choose one.** An employee knows competency names but repeatedly sends unverified drafts. Which exercise provides measurable improvement?
 
-A. Yêu cầu AI chấm mức fluency dựa trên việc nhân viên nhớ đúng tên framework.
+A. Have AI grade fluency from memorized definitions.
 
-B. Học thêm định nghĩa tiếng Anh và làm bài nhận diện thuật ngữ.
+B. Study more English definitions only.
 
-C. Tăng số công cụ AI đã thử trong tuần.
+C. Try more tools each week.
 
-D. Luyện việc thật: ghi tiêu chí, kiểm chứng trước gửi, rà lỗi lọt.
+D. Practice real tasks with criteria, pre-delivery verification, and missed-error review.
 
-**Câu 4 — Chọn một.** Bạn xây quy tắc AI cá nhân để áp dụng vào nhiều nhiệm vụ. Nội dung nào chuyển framework thành quyết định thực hành tốt nhất?
+**Question 4 — Choose one.** Which personal AI policy translates the framework into practical decisions?
 
-A. Ranh giới dùng AI/dữ liệu, kiểm chứng, trách nhiệm và minh bạch.
+A. Boundaries for AI and data use, verification, responsibility, and transparency.
 
-B. Lời cam kết sẽ dùng AI có trách nhiệm nhưng không nêu tiêu chí.
+B. A general promise to be responsible without criteria.
 
-C. Yêu cầu luôn chọn bản trả lời dài nhất để có nhiều căn cứ.
+C. Always choose the longest answer.
 
-D. Danh sách mô hình theo thứ tự phổ biến và một prompt chung.
+D. A popularity-ranked model list and one generic prompt.
 
-**Câu 5 — Chọn hai.** Sau dự án, nhóm thấy phần lớn lỗi đến từ yêu cầu mơ hồ và dữ liệu chưa được kiểm chứng. Hai cải tiến nào nên ưu tiên cho vòng tiếp theo?
+**Question 5 — Choose two.** Most project errors come from vague requests and unverified data. Which TWO improvements deserve priority?
 
-A. Chỉ tăng tốc độ sinh để có thời gian đọc nhiều bản nháp hơn.
+A. Generate faster to read more drafts.
 
-B. Đặt tiêu chí đối chiếu nguồn và trách nhiệm duyệt trước khi sử dụng.
+B. Set source-checking criteria and review ownership before use.
 
-C. Tự động chấp nhận kết quả khi đúng định dạng để giảm việc thủ công.
+C. Automatically accept correctly formatted outputs.
 
-D. Chuẩn hóa mô tả mục tiêu, đầu vào, đầu ra và điểm cần hỏi lại.
+D. Standardize objectives, inputs, outputs, and when to ask clarifying questions.
 
 ## Đáp án và giải thích
 

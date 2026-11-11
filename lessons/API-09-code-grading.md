@@ -21,55 +21,55 @@ Mẫu lấy trung bình hai điểm chỉ là một cách minh họa. Có thể 
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Regex biên dịch được nhưng nhận cả chuỗi hợp lệ lẫn không hợp lệ. Cần thêm lớp kiểm tra nào?
+**Question 1 — Choose one.** A regex compiles but matches both valid and invalid strings. What additional check is needed?
 
-A. Đo độ ngắn của biểu thức để giảm khả năng lỗi.
+A. Measure expression brevity.
 
-B. Các ví dụ dương và âm theo hành vi cần nhận diện.
+B. Test positive and negative examples for the intended behavior.
 
-C. Biên dịch regex bằng cùng thư viện thêm một lần.
+C. Compile again with the same library.
 
-D. Xác nhận output không có Markdown rồi coi là hoàn tất.
+D. Check only that Markdown is absent.
 
-**Câu 2 — Chọn hai.** Ứng dụng chấm Python bằng ast.parse, JSON bằng json.loads. Hai kết luận nào được các phép kiểm này hỗ trợ?
+**Question 2 — Choose two.** Python is graded with `ast.parse`, and JSON with `json.loads`. Which TWO conclusions are supported?
 
-A. Python được kiểm tra cú pháp mà không cần chạy mã sinh ra.
+A. Python syntax can be checked without executing generated code.
 
-B. JSON parse được chứng minh cấu trúc nghiệp vụ không thiếu trường.
+B. Parsable JSON proves that required business fields exist.
 
-C. JSON parse được chưa chứng minh các giá trị đáp ứng task.
+C. Parsable JSON does not prove its values satisfy the task.
 
-D. Python parse được chứng minh thuật toán trả đúng mọi đầu vào.
+D. Parsable Python proves correct behavior for every input.
 
-**Câu 3 — Chọn một.** Một bản ghi yêu cầu JSON nhưng output là Python hợp lệ. Validator được chọn bằng cách đoán từ output nên ca vẫn đạt. Sửa nào phù hợp?
+**Question 3 — Choose one.** A test requires JSON, but valid Python passes because the validator is selected by guessing from the output. What is the fix?
 
-A. Cho tất cả output qua mọi validator và đạt nếu một phép bất kỳ thành công.
+A. Run every validator and accept any success.
 
-B. Đổi format của test case theo định dạng model đã tạo.
+B. Change the test format to match the generated output.
 
-C. Chọn validator từ trường format của test case, không từ output.
+C. Select validation from the test case's required `format`.
 
-D. Bỏ kiểm tra định dạng để ưu tiên model tự chọn cách giải.
+D. Remove format checking and let the model choose.
 
-**Câu 4 — Chọn hai.** Đội đánh giá muốn báo riêng lỗi cú pháp và lỗi tác vụ. Hai phép kiểm nào bổ sung cho nhau khi chấm mã sinh?
+**Question 4 — Choose two.** Which TWO checks separate syntax errors from task errors in generated code?
 
-A. Chạy mọi mã chưa kiểm tra trực tiếp trên máy production.
+A. Execute all unchecked code directly in production.
 
-B. Parse cú pháp bằng validator tương ứng với format.
+B. Parse using the validator for the required format.
 
-C. Dùng điểm parse để thay hoàn toàn điểm đúng nhiệm vụ.
+C. Use parsing scores as the entire task-correctness score.
 
-D. Kiểm tra hành vi hoặc đối chiếu yêu cầu sau khi cú pháp hợp lệ.
+D. Check behavior or requirements after syntax validation.
 
-**Câu 5 — Chọn một.** Đầu ra JSON đúng nội dung nhưng được bọc trong lời giải thích. Hợp đồng yêu cầu chỉ JSON. Cách chấm nào phản ánh đúng hợp đồng?
+**Question 5 — Choose one.** Correct JSON is wrapped in an explanation, but the contract requires JSON only. How should it be graded?
 
-A. Ghi lỗi định dạng: toàn bộ output không parse được.
+A. Report a format failure because the complete output cannot be parsed as JSON.
 
-B. Chấm đạt nếu model khẳng định đoạn bên trong là JSON.
+B. Pass if the model says the embedded content is JSON.
 
-C. Đổi format sang text vì nội dung trả lời vẫn hữu ích.
+C. Change the required format to text.
 
-D. Trích JSON rồi chấm đạt, không lưu bước sửa.
+D. Extract JSON and silently pass the repaired result.
 
 ## Đáp án và giải thích
 

@@ -15,55 +15,55 @@ Các bước đọc dự án, lập kế hoạch, sửa mã và kiểm thử đ�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** CLI đã cài và đăng nhập thành công. Tác nhân sửa tính năng rồi đề nghị merge vì “môi trường đã sẵn sàng”. Bằng chứng nào vẫn cần?
+**Question 1 — Choose one.** The CLI is installed and authenticated. An agent proposes merging a feature because the environment is ready. What evidence is still needed?
 
-A. Một lần gọi mô hình thành công từ đúng thư mục.
+A. A successful model call from the directory.
 
-B. Diff đúng phạm vi và kiểm thử hành vi tính năng.
+B. An appropriately scoped diff and feature behavior tests.
 
-C. Ảnh chụp phiên bản CLI và tài khoản đang đăng nhập.
+C. A screenshot of CLI version and account.
 
-D. Số lượng file tác nhân đã đọc trước khi sửa.
+D. The number of files read.
 
-**Câu 2 — Chọn hai.** Video cài CLI đã cũ; môi trường vận hành khác hệ điều hành trong demo. Hai bước nào phù hợp trước khi áp dụng?
+**Question 2 — Choose two.** An old installation video uses another operating system. Which TWO steps are appropriate?
 
-A. Kiểm tra CLI chạy được và xác thực bằng cơ chế được cấu hình cho môi trường đích.
+A. Verify CLI execution and the target environment's authentication mechanism.
 
-B. Cài thêm mọi phương thức tìm thấy để ít nhất một bản hoạt động.
+B. Install every available method so one works.
 
-C. Đối chiếu hướng dẫn chính thức phù hợp phiên bản và môi trường thực tế.
+C. Consult official instructions for the actual version and environment.
 
-D. Dùng đúng lệnh cũ và bỏ qua cảnh báo vì bài học là nguồn chính thức.
+D. Copy old commands and ignore warnings.
 
-**Câu 3 — Chọn một.** Đăng nhập API trực tiếp thành công trên laptop, nhưng job Bedrock không gọi được mô hình. Cách điều tra đúng lớp lỗi nhất?
+**Question 3 — Choose one.** Direct API authentication works on a laptop, but a Bedrock job cannot invoke a model. What should be investigated?
 
-A. Đổi model name nhưng giữ nguyên cơ chế xác thực trực tiếp.
+A. Change the model name while keeping direct authentication.
 
-B. Gửi system prompt yêu cầu “hãy dùng Bedrock”.
+B. Tell the system prompt to use Bedrock.
 
-C. Kiểm tra provider, danh tính AWS và quyền môi trường đích.
+C. Provider routing, AWS identity, and target-environment permissions.
 
-D. Đổi tên repo để CLI nhận biết đây là dự án cloud.
+D. Rename the repository to indicate a cloud project.
 
-**Câu 4 — Chọn một.** Tác nhân đã đăng nhập nhưng đang mở thư mục repo cũ có cấu trúc gần giống repo cần sửa. Kiểm soát nào nên thực hiện trước khi giao thay đổi?
+**Question 4 — Choose one.** An authenticated agent has opened a similar but outdated repository. What should be verified before assigning changes?
 
-A. Tăng quyền file để bảo đảm tác nhân sửa được mọi thư mục.
+A. Grant access to every directory.
 
-B. Dựa vào tên package trong prompt để tác nhân tự chọn thư mục.
+B. Rely on package names in the prompt.
 
-C. Chờ test thất bại rồi mới kiểm tra repo.
+C. Wait for failing tests before checking location.
 
-D. Xác định lại thư mục dự án, revision và phạm vi file được phép thay đổi.
+D. The project directory, revision, and permitted change scope.
 
-**Câu 5 — Chọn hai.** Nhóm thêm MCP server cho Claude Code để tra thông tin nội bộ. Hai điều nào cần phân biệt với việc CLI đã cài xong?
+**Question 5 — Choose two.** Which TWO concerns remain separate from CLI installation when adding an internal MCP server?
 
-A. Khả năng kết nối, quyền và hợp đồng của công cụ/dữ liệu MCP mới.
+A. Connectivity, permissions, and new tool or data contracts.
 
-B. Việc kết quả công cụ có đủ căn cứ cho nhiệm vụ và cần kiểm chứng ra sao.
+B. Whether results provide adequate task evidence and how to verify them.
 
-C. Server có tên đúng thì không cần kiểm tra lời gọi và xử lý lỗi.
+C. The correct server name eliminates invocation testing.
 
-D. MCP tự mở mọi quyền file để bù cho phạm vi công cụ trước đó.
+D. MCP automatically grants all filesystem permissions.
 
 ## Đáp án và giải thích
 

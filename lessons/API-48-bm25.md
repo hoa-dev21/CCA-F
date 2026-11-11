@@ -15,55 +15,55 @@ Hai cách tìm kiếm có thể kết hợp. Tuy vậy, một đoạn chứa đ�
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Hỏi về INC-204, semantic search trả nhiều sự cố tương tự nhưng không đúng mã. Bổ sung nào nhắm đúng khoảng trống?
+**Question 1 — Choose one.** Semantic search for INC-204 returns similar incidents with different IDs. What addresses the gap?
 
-A. Dùng sự cố gần nhất làm thay thế nếu mô tả tương tự.
+A. Substitute the most similar incident.
 
-B. Xóa mã INC-204 khỏi truy vấn để tăng độ gần nghĩa.
+B. Remove INC-204 to improve semantic similarity.
 
-C. Tìm chính xác mã, rồi kiểm tra nội dung ứng viên.
+C. Search for the exact identifier and inspect candidate content.
 
-D. Tăng temperature cho câu trả lời để thử nhiều sự cố hơn.
+D. Raise generation temperature.
 
-**Câu 2 — Chọn một.** BM25 tìm đúng trang chứa INC-204 nhưng trang chỉ liệt kê mã, không nói nguyên nhân. Có thể kết luận gì?
+**Question 2 — Choose one.** BM25 finds a page listing INC-204 but not its cause. What is justified?
 
-A. Mã trùng chứng minh đoạn giải thích nguyên nhân trong câu hỏi là đúng.
+A. Matching the ID proves the proposed cause.
 
-B. Điểm cao nhất đủ thay phần nội dung chưa có.
+B. The highest score replaces missing content.
 
-C. Khớp mã giúp tìm ứng viên, vẫn thiếu bằng chứng về nguyên nhân.
+C. The match identifies a candidate, but causal evidence is still missing.
 
-D. Chỉ cần thêm trích dẫn trang này vào kết luận dự đoán.
+D. Cite the page to support a guessed cause.
 
-**Câu 3 — Chọn hai.** Kho có cả thuật ngữ kỹ thuật chính xác và câu hỏi dùng cách diễn đạt đời thường. Hai thiết kế nào có cơ sở?
+**Question 3 — Choose two.** Queries include both precise technical terms and everyday paraphrases. Which TWO designs are justified?
 
-A. Dùng lexical search để bổ sung tín hiệu khớp thuật ngữ hoặc mã.
+A. Use lexical search for exact terms and identifiers.
 
-B. Coi mọi từ xuất hiện nhiều trong kho là bằng chứng mạnh hơn từ hiếm.
+B. Treat frequently occurring terms as inherently stronger evidence.
 
-C. Dùng semantic search cho các cách diễn đạt gần nghĩa.
+C. Use semantic search for related phrasing.
 
-D. Chỉ giữ thuật ngữ hiếm nhất rồi bỏ toàn bộ ngữ cảnh truy vấn.
+D. Keep only the rarest query word and discard context.
 
-**Câu 4 — Chọn một.** Sau thay đổi dữ liệu, nhiều trang lặp một từ chung và đứng cao trong tìm kiếm. Vì sao chỉ đếm số lần từ xuất hiện là chưa đủ?
+**Question 4 — Choose one.** Pages repeating a common word rank highly. Why is counting occurrences insufficient?
 
-A. Từ xuất hiện nhiều luôn nên bị loại dù là mã cần tìm.
+A. Frequent words must always be removed, even target identifiers.
 
-B. Còn phải xét độ phổ biến của từ trên toàn kho.
+B. Corpus-wide term frequency also matters.
 
-C. Độ dài câu trả lời cuối sẽ sửa được thứ hạng truy xuất.
+C. Answer length can repair retrieval ranking.
 
-D. Mỗi từ hiếm phải được coi là đáp án nghiệp vụ đúng.
+D. Every rare term is a correct business answer.
 
-**Câu 5 — Chọn hai.** Đánh giá thêm BM25 vào hệ RAG, hai nhóm ca nào cần giữ trong bộ thử?
+**Question 5 — Choose two.** Which TWO test categories belong in a BM25-enhanced RAG evaluation?
 
-A. Chỉ các câu chứa nguyên văn tiêu đề tài liệu.
+A. Only exact document titles.
 
-B. Chỉ đo có ít nhất một từ chung giữa truy vấn và kết quả.
+B. Only questions sharing any word with results.
 
-C. Câu hỏi dùng từ đồng nghĩa và cần bối cảnh để trả lời.
+C. Paraphrased questions requiring context.
 
-D. Câu hỏi có mã/tên riêng cần khớp đúng đối tượng.
+D. Questions requiring exact identifiers or proper names.
 
 ## Đáp án và giải thích
 

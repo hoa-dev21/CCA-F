@@ -15,55 +15,55 @@ Có thể dùng bản đồ sau để nối kiến thức: API nhận yêu cầu
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Nhóm học đến prompt engineering và muốn đổi prompt production ngay vì một câu trả lời mới hay hơn. Vì sao cần quay lại phần đánh giá trước khi quyết định?
+**Question 1 — Choose one.** One new prompt answer looks better, and the team wants immediate production rollout. Why return to evaluation first?
 
-A. Cần chờ học hết mọi kỹ thuật rồi mới được chạy bất kỳ đánh giá nào.
+A. No evaluation is allowed until every technique is learned.
 
-B. Cần tăng độ dài câu trả lời để thay đổi được nhìn thấy rõ hơn.
+B. Longer answers make improvements visible.
 
-C. Cần so cải thiện/hồi quy trên tập ca và tiêu chí ổn định.
+C. Improvements and regressions need comparison under stable cases and criteria.
 
-D. Cần dùng mô hình đắt hơn làm chuẩn rồi chép nguyên câu trả lời đó.
+D. An expensive model's output should simply be copied.
 
-**Câu 2 — Chọn hai.** Một người đã xem video tool loop và chép notebook nhưng chưa tự chạy. Hai hoạt động nào tạo bằng chứng hiểu cách triển khai tốt hơn?
+**Question 2 — Choose two.** A learner watches tool-loop videos and copies a notebook without running it. Which TWO activities provide stronger implementation evidence?
 
-A. Ghi nhớ chữ cái đáp án của ví dụ rồi coi đó là kiểm thử triển khai.
+A. Memorize example answer letters.
 
-B. Chạy luồng và thay đầu vào để quan sát yêu cầu tool, kết quả và lượt trả lời tiếp.
+B. Run varied inputs and inspect requests, tool results, and subsequent turns.
 
-C. Thử lỗi có kiểm soát và giải thích hệ thống phản hồi/phục hồi ra sao.
+C. Introduce controlled errors and explain handling and recovery.
 
-D. Đánh dấu notebook đã hoàn thành khi mọi ô mã đã được sao chép.
+D. Declare completion after copying every cell.
 
-**Câu 3 — Chọn một.** Một bản thiết kế viết “dùng MCP nên không cần orchestration hoặc quản lý context nữa”. Phân tích nào phù hợp với bản đồ khóa học?
+**Question 3 — Choose one.** A design claims MCP removes orchestration and context-management needs. What is correct?
 
-A. Đúng nếu tất cả tool của workflow được khai báo trong cùng server.
+A. True when tools share one server.
 
-B. Sai vì MCP và API chỉ là hai tên cho cùng lớp orchestration.
+B. False because MCP and the API are identical orchestration layers.
 
-C. Đúng nếu schema của tool đã định nghĩa đủ kiểu đầu vào.
+C. True when input schemas are complete.
 
-D. MCP kết nối; host vẫn điều phối bước và quản lý context.
+D. MCP connects capabilities; the host still orchestrates steps and manages context.
 
-**Câu 4 — Chọn một.** Notebook API trực tiếp chạy được nhưng bản cloud của đồng đội lỗi xác thực trước khi sinh câu trả lời. Người học đề xuất đổi prompt. Bước chẩn đoán nào ưu tiên?
+**Question 4 — Choose one.** A direct API notebook works, but a cloud version fails authentication before generation. What should be checked before editing prompts?
 
-A. Tăng max_tokens vì cloud có thể cần câu trả lời dài hơn để xác thực.
+A. Increase output tokens for authentication.
 
-B. Kiểm tra client/provider, credential và quyền môi trường trước khi tối ưu nội dung yêu cầu.
+B. Client and provider configuration, credentials, and target permissions.
 
-C. Chỉ chép khóa của notebook đang chạy sang vì cùng model Claude.
+C. Copy the working notebook's key because both use Claude.
 
-D. Thêm vai trò kỹ sư cloud vào system prompt để model tự chọn credential.
+D. Add a cloud-engineer role to select credentials.
 
-**Câu 5 — Chọn hai.** Một nhóm muốn nối các phần khóa học thành prototype có thể đánh giá. Hai phân công trách nhiệm nào đúng?
+**Question 5 — Choose two.** Which TWO responsibility assignments are correct for an evaluable prototype?
 
-A. API request mang nhiệm vụ/ngữ cảnh; công cụ cung cấp hành động hoặc dữ liệu bên ngoài.
+A. API requests carry tasks and context; tools supply external actions or data.
 
-B. Workflow/agent tổ chức các bước, còn đánh giá đo kết quả theo yêu cầu.
+B. Workflows or agents organize steps; evaluation measures outcomes against requirements.
 
-C. Một schema công cụ đủ để sinh mã, chạy công cụ và lưu bền toàn bộ trạng thái.
+C. A tool schema alone executes code and persists all state.
 
-D. RAG tự tạo quyền truy cập cho mọi tài liệu mà truy vấn tìm thấy.
+D. RAG automatically authorizes every retrieved document.
 
 ## Đáp án và giải thích
 

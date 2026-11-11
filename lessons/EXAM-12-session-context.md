@@ -23,55 +23,55 @@ Nếu câu trả lời chuyển từ dẫn đúng lớp mã đã tìm sang “th
 
 ## Tự kiểm tra — tình huống Architect
 
-**Câu 1 — Chọn một.** Phiên điều tra cũ liên tục viện dẫn file đã bị thay đổi sau một refactor lớn. Cách tiếp tục nào giảm context lỗi thời mà giữ được mục tiêu?
+**Question 1 — Choose one.** An old investigation session keeps citing files changed by a major refactor. How can work continue with less stale context while preserving the objective?
 
-A. Phiên mới nhận summary có nguồn; xác minh lại file hiện tại.
+A. Start a new session with a sourced summary and verify current files.
 
-B. Giữ phiên và yêu cầu tin các kết luận cũ vì chúng đã từng được kiểm tra.
+B. Trust old conclusions because they were checked previously.
 
-C. Nạp lại toàn bộ transcript cũ để tăng mức chi tiết.
+C. Reload the entire old transcript for more detail.
 
-D. Chỉ xóa câu trả lời cuối, giữ nguyên kết quả công cụ đã cũ.
+D. Delete only the final answer while retaining stale tool results.
 
-**Câu 2 — Chọn hai.** Hệ nhiều tác nhân phải phục hồi sau crash mà không làm lại bước đã hoàn tất. Hai thành phần nào cần có?
+**Question 2 — Choose two.** A multi-agent system must recover after a crash without repeating completed work. Which TWO elements are needed?
 
-A. Một thông báo “hãy tiếp tục” không kèm trạng thái.
+A. A “continue” message without state.
 
-B. State có cấu trúc tại vị trí biết trước cùng manifest chỉ ra artifact/trạng thái bước.
+B. Structured state at a known location and a manifest identifying artifacts and step status.
 
-C. Tóm tắt và dữ kiện cần thiết được đưa rõ vào context tác nhân khởi động lại.
+C. An explicit summary and required facts loaded into the restarted agent's context.
 
-D. Một session ID cũ được coi là đủ để mọi tác nhân tự có lại context.
+D. An old session ID assumed to restore all context automatically.
 
-**Câu 3 — Chọn một.** Sau ba lần compact, “hoàn 35% đơn A trước ngày 12” thành “khách muốn hoàn sớm”. Thay đổi nào bảo vệ dữ kiện nghiệp vụ?
+**Question 3 — Choose one.** After three compactions, “refund 35% of order A before the 12th” becomes “customer wants a refund soon.” Which change protects business facts?
 
-A. Tăng độ dài bản tóm tắt văn xuôi.
+A. Increase the prose summary length.
 
-B. Yêu cầu mô hình nhắc lại số tiền từ trí nhớ mỗi lượt.
+B. Ask the model to repeat the amount from memory on every turn.
 
-C. Lưu facts chuẩn trong case state; nạp lại khi cần xử lý.
+C. Store canonical facts in structured case state and reload them when needed.
 
-D. Đưa cả hội thoại vào tên công cụ để không bị compact.
+D. Put the whole conversation in tool names to avoid compaction.
 
-**Câu 4 — Chọn một.** Sau crash, manifest ghi “đã gửi yêu cầu thanh toán” nhưng chưa có xác nhận thành công. Khởi động lại nên làm gì trước khi gửi lại?
+**Question 4 — Choose one.** After a crash, the manifest says a payment request was sent but has no success confirmation. What should happen before resubmission?
 
-A. Đánh dấu thành công vì thao tác đã được gửi.
+A. Mark it successful because it was submitted.
 
-B. Gửi lại ngay vì lần trước không có phản hồi.
+B. Resubmit immediately because no response was received.
 
-C. Đổi transaction ID rồi gửi để tránh trùng tên.
+C. Use a new transaction ID to avoid a naming collision.
 
-D. Kiểm tra trạng thái bên đích bằng định danh giao dịch và quy tắc chống lặp.
+D. Check the target system using the transaction identifier and idempotency rules.
 
-**Câu 5 — Chọn hai.** Summary bàn giao có các phát hiện từ phiên trước. Hai thông tin nào giúp tác nhân mới biết phần nào cần xác minh lại?
+**Question 5 — Choose two.** A handoff summary includes findings from a previous session. Which TWO items help a new agent identify what needs rechecking?
 
-A. Nguồn/đường dẫn cùng revision hoặc thời điểm kiểm tra.
+A. Sources or paths with the revision or time checked.
 
-B. Điểm chưa xác minh, giả định và công việc còn mở.
+B. Unverified points, assumptions, and unfinished work.
 
-C. Chỉ một confidence chung cho toàn summary.
+C. Only one confidence score for the entire summary.
 
-D. Tên tác nhân cũ thay cho nguồn bằng chứng.
+D. The previous agent's name instead of evidence sources.
 
 ## Đáp án và giải thích
 
