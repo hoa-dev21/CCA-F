@@ -19,43 +19,69 @@ Ví dụ: Một regex được yêu cầu nhận đúng mã đơn hàng. Ngoài 
 
 Mẫu lấy trung bình hai điểm chỉ là một cách minh họa. Có thể chọn trọng số theo yêu cầu ứng dụng. Nếu đúng cú pháp là điều kiện bắt buộc, điểm trung bình cao không đủ để bỏ qua lỗi cú pháp.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Regex biên dịch thành công nhưng nhận mọi chuỗi. Kết luận đúng?
+**Câu 1 — Chọn một.** Regex biên dịch được nhưng nhận cả chuỗi hợp lệ lẫn không hợp lệ. Cần thêm lớp kiểm tra nào?
 
-A. Đã chứng minh đúng yêu cầu nghiệp vụ.
+A. Đo độ ngắn của biểu thức để giảm khả năng lỗi.
 
-B. Không cần kiểm tra thêm.
+B. Các ví dụ dương và âm theo hành vi cần nhận diện.
 
-C. Mọi regex đều sai cú pháp.
+C. Biên dịch regex bằng cùng thư viện thêm một lần.
 
-D. Đã qua kiểm tra cú pháp, chưa chứng minh đúng hành vi.
+D. Xác nhận output không có Markdown rồi coi là hoàn tất.
 
-**2. Chọn một.** Trường nào giúp chọn validator trong bài?
+**Câu 2 — Chọn hai.** Ứng dụng chấm Python bằng ast.parse, JSON bằng json.loads. Hai kết luận nào được các phép kiểm này hỗ trợ?
 
-A. `format`.
+A. Python được kiểm tra cú pháp mà không cần chạy mã sinh ra.
 
-B. Tên người dùng.
+B. JSON parse được chứng minh cấu trúc nghiệp vụ không thiếu trường.
 
-C. Thời gian mở trình duyệt.
+C. JSON parse được chưa chứng minh các giá trị đáp ứng task.
 
-D. Điểm cố định.
+D. Python parse được chứng minh thuật toán trả đúng mọi đầu vào.
 
-**3. Chọn hai.** Đánh giá tổng thể cần phân biệt những khía cạnh nào?
+**Câu 3 — Chọn một.** Một bản ghi yêu cầu JSON nhưng output là Python hợp lệ. Validator được chọn bằng cách đoán từ output nên ca vẫn đạt. Sửa nào phù hợp?
 
-A. Cú pháp hợp lệ.
+A. Cho tất cả output qua mọi validator và đạt nếu một phép bất kỳ thành công.
 
-B. Mọi đầu ra phải dài bằng nhau.
+B. Đổi format của test case theo định dạng model đã tạo.
 
-C. Giải quyết đúng yêu cầu.
+C. Chọn validator từ trường format của test case, không từ output.
 
-D. Mọi trường hợp phải đạt 10.
+D. Bỏ kiểm tra định dạng để ưu tiên model tự chọn cách giải.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Đội đánh giá muốn báo riêng lỗi cú pháp và lỗi tác vụ. Hai phép kiểm nào bổ sung cho nhau khi chấm mã sinh?
 
-1. **D.** A và B suy rộng quá bằng chứng; C trái dữ kiện biên dịch thành công.
-2. **A.** B, C không mô tả loại đầu ra; D là điểm chứ không phải bộ chọn validator.
-3. **A, C.** B không phải yêu cầu chung; D biến mục tiêu thành giả định, không phải đánh giá.
+A. Chạy mọi mã chưa kiểm tra trực tiếp trên máy production.
+
+B. Parse cú pháp bằng validator tương ứng với format.
+
+C. Dùng điểm parse để thay hoàn toàn điểm đúng nhiệm vụ.
+
+D. Kiểm tra hành vi hoặc đối chiếu yêu cầu sau khi cú pháp hợp lệ.
+
+**Câu 5 — Chọn một.** Đầu ra JSON đúng nội dung nhưng được bọc trong lời giải thích. Hợp đồng yêu cầu chỉ JSON. Cách chấm nào phản ánh đúng hợp đồng?
+
+A. Ghi lỗi định dạng: toàn bộ output không parse được.
+
+B. Chấm đạt nếu model khẳng định đoạn bên trong là JSON.
+
+C. Đổi format sang text vì nội dung trả lời vẫn hữu ích.
+
+D. Trích JSON rồi chấm đạt, không lưu bước sửa.
+
+## Đáp án và giải thích
+
+1. **B.** B kiểm tra ngữ nghĩa đối sánh. C chỉ lặp kiểm tra cú pháp; A không chứng minh hành vi; D kiểm tra bao gói nhưng bỏ lỗi nhận diện.
+
+2. **A, C.** A là phạm vi của AST parse; C phân biệt cú pháp với nội dung. D chưa có kiểm thử hành vi; B chưa kiểm tra schema hay quy tắc nghiệp vụ.
+
+3. **C.** C kiểm tra đúng hợp đồng đầu vào. A chấp nhận sai loại; B thay yêu cầu để hợp kết quả; D bỏ ràng buộc của sản phẩm.
+
+4. **B, D.** B phát hiện sai cấu trúc, D phát hiện sai chức năng. C đồng nhất hai tiêu chí; A không cần thiết để parse và tạo rủi ro thực thi ngoài phạm vi đánh giá.
+
+5. **A.** A đo đầu ra thực tế theo hợp đồng. D che lỗi bằng hậu xử lý không được quy định; C thay nhiệm vụ; B dùng tự nhận định thay kiểm tra.
 
 ## Đối chiếu Bedrock
 

@@ -15,42 +15,66 @@ Bạn cũng có thể xây một thư viện prompt, tức tập hợp các mẫ
 
 Các trò chơi ngôn ngữ trong bài giúp luyện cách đọc yêu cầu, nhận ra nhiều cách hiểu và đưa phản hồi chính xác. Nếu đang ôn thi Architect gấp, hãy coi đây là hoạt động bổ trợ; ưu tiên các nội dung kỹ thuật trong đề cương thi thay vì cố hoàn thành mọi trò chơi.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Kế hoạch phát triển nào khả thi hơn?
+**Câu 1 — Chọn một.** Một người muốn cải thiện AI fluency trong hai tuần nhưng lập kế hoạch luyện mọi kỹ năng mà không có tiêu chí. Cách sửa nào khả thi và đo được nhất?
 
-A. Chọn mọi thứ cùng lúc không lịch.
+A. Chỉ tăng số giờ luyện mà giữ nguyên mục tiêu chung.
 
-B. Không cần tiêu chí.
+B. Hoàn thành nhiều trò chơi nhất có thể rồi lấy số lượng làm mức thành thạo.
 
-C. Chọn 1–2 năng lực ưu tiên, hoạt động và dấu hiệu tiến bộ.
+C. Chọn 1–2 điểm yếu, lịch luyện và tiêu chí tiến bộ.
 
-D. Chỉ lưu tên khóa.
+D. Dùng mỗi ngày một mô hình khác để mở rộng trải nghiệm.
 
-**2. Chọn một.** Thư viện prompt nên giữ gì để dùng lại?
+**Câu 2 — Chọn hai.** Bạn thường phải trả lời nhiều câu hỏi bổ sung vì prompt thiếu bối cảnh. Hai thành phần nào nên có trong bài tập luyện để biết mình tiến bộ?
 
-A. Mẫu có chỗ thay input, ví dụ tốt và tiêu chí đánh giá.
+A. Theo dõi yêu cầu còn thiếu và các lần AI phải hỏi lại vì thiếu thông tin cần thiết.
 
-B. Chỉ một câu không có bối cảnh cho mọi tác vụ.
+B. Chỉ dùng nhiệm vụ dễ hơn ở lượt sau để giảm số câu hỏi.
 
-C. Chỉ điểm 10 tự gán.
+C. Một dạng nhiệm vụ lặp lại có mục tiêu, dữ liệu và định dạng đầu ra được mô tả rõ.
 
-D. Chỉ tên người tạo.
+D. Cấm AI hỏi lại để số câu hỏi luôn bằng không.
 
-**3. Chọn một.** Khi ôn Architect nhanh, hoạt động trò chơi của bài nên được xem thế nào?
+**Câu 3 — Chọn một.** Thư viện prompt của nhóm chỉ chứa các câu đã cho đầu ra đẹp một lần. Khi đổi dữ liệu, kết quả thất thường. Cấu trúc mẫu nào hữu ích hơn?
 
-A. Thay thế toàn bộ tool/MCP.
+A. Giữ nguyên input cũ để bảo đảm lặp lại thành công.
 
-B. Bổ trợ tùy nhu cầu, không thay mục tiêu kỹ thuật trong Exam Guide.
+B. Input thay được, phạm vi, ví dụ tốt và cách chấm.
 
-C. Là toàn bộ nội dung thi.
+C. Chỉ ghi tên tác giả và điểm chất lượng tự đánh giá.
 
-D. Là bằng chứng tự động thi đỗ.
+D. Gộp mọi mẫu thành một prompt dài áp dụng cho mọi tác vụ.
 
-## Đáp án
+**Câu 4 — Chọn một.** Bạn còn ít thời gian trước kỳ thi Architect; trò chơi ngôn ngữ hấp dẫn nhưng các mục tool/MCP trong đề cương còn yếu. Cách phân bổ nào hợp lý?
 
-1. **C.** C gắn mục tiêu với thực hành đo được; A quá rộng, B không biết tiến bộ, D chưa có hành động.
+A. Hoàn thành hết trò chơi vì thuộc khóa nền tảng.
 
-2. **A.** A hỗ trợ tái sử dụng và kiểm chứng; B không thích ứng, C không phải bằng chứng, D không mô tả cách dùng.
+B. Ưu tiên điểm yếu theo đề cương; dùng trò chơi bổ trợ.
 
-3. **B.** B đặt đúng ưu tiên; A và C thu hẹp sai phạm vi, D không có cơ sở.
+C. Chia thời gian bằng nhau cho mọi bài bất kể khoảng trống.
+
+D. Bỏ mọi thực hành fluency vì không có giá trị cho công việc kỹ thuật.
+
+**Câu 5 — Chọn hai.** Một prompt mẫu được dùng tốt tháng trước nhưng nay thường bỏ sót yêu cầu trong loại nhiệm vụ mới. Hai việc nào giúp thư viện cải thiện dựa trên thực tế?
+
+A. Thử bản sửa với tiêu chí rõ trên các trường hợp đại diện, kể cả dạng mới.
+
+B. Đổi tên mẫu thành nâng cao và giữ nguyên hướng dẫn để người dùng tin tưởng hơn.
+
+C. Lưu các trường hợp thất bại và sửa mẫu theo nguyên nhân đã quan sát.
+
+D. Giữ nguyên mẫu vì đã từng có đầu ra tốt làm ví dụ.
+
+## Đáp án và giải thích
+
+1. **C.** C tập trung nguồn lực và xác định cách đánh giá. D đo sự đa dạng công cụ; A đo thời gian; B đo hoạt động. Không chỉ số nào tự chứng minh năng lực đang yếu đã cải thiện.
+
+2. **A, C.** C tạo bài tập có phạm vi so sánh; A đo lỗi mục tiêu. B thay độ khó làm sai phép so sánh. D tối ưu chỉ số bằng cách chặn hành vi cần thiết thay vì cải thiện Description.
+
+3. **B.** B giúp tái sử dụng có điều kiện và kiểm chứng đầu ra mới. A không thích ứng nhiệm vụ. C không mô tả cách dùng hay bằng chứng. D làm lẫn yêu cầu và không bảo đảm phù hợp từng tác vụ.
+
+4. **B.** B chọn theo mục tiêu và điểm yếu trong điều kiện thời gian. A ưu tiên hoàn thành hoạt động thay vì phạm vi thi. D loại quá mức lợi ích bổ trợ. C phân bổ đều nhưng không xét giá trị cải thiện.
+
+5. **A, C.** C tạo phản hồi có căn cứ; A kiểm tra tác động và khả năng dùng ở phạm vi mới. D coi một lần thành công là bảo đảm lâu dài. B thay nhãn mà không thay hành vi hay kiểm chứng.

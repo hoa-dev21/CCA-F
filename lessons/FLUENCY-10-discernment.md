@@ -17,42 +17,66 @@ Ví dụ: Một bảng so sánh có thể trình bày đẹp nhưng dùng sai s�
 
 Phản hồi nên chỉ rõ vấn đề và cách sửa, chẳng hạn: “Phần so sánh còn thiếu chi phí vận hành. Hãy bổ sung số liệu có nguồn và nêu rõ chỗ chưa đủ dữ liệu”. Chỉ nói “không hay” sẽ khiến AI khó biết cần sửa gì.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Kiểm tra số liệu có đúng nguồn là loại nào?
+**Câu 1 — Chọn một.** Bảng so sánh rất dễ đọc, trích nguồn đầy đủ, nhưng số tiền trong bảng không khớp nguồn. Phản hồi nào nhắm lỗi chính?
 
-A. Chỉ Performance.
+A. Yêu cầu dùng thêm nguồn nhưng giữ nguyên các số để bảo toàn định dạng.
 
-B. Product Discernment.
+B. Chuyển sang biểu đồ để người đọc dễ phát hiện xu hướng.
 
-C. Chỉ lập lịch.
+C. Khen bố cục và chỉ yêu cầu giọng văn thận trọng hơn.
 
-D. Chỉ chọn nền tảng.
+D. Đối chiếu số với nguồn; sửa sai, đánh dấu phần chưa xác minh.
 
-**2. Chọn một.** AI bỏ qua một nhóm nguyên nhân quan trọng khi phân tích. Khía cạnh cần xem?
+**Câu 2 — Chọn hai.** Phương án được khuyến nghị có chi phí đầu tư thấp nhất, nhưng phân tích đã bỏ qua vận hành và chi phí chuyển đổi. Hai việc nào thể hiện Process Discernment?
 
-A. Chỉ độ đẹp tiêu đề.
+A. Yêu cầu bổ sung các yếu tố thiếu bằng căn cứ rồi xem lại kết luận.
 
-B. Không liên quan đánh giá.
+B. Đổi tiêu đề báo cáo để bớt thiên vị phương án được chọn.
 
-C. Process Discernment: khoảng trống cách tiếp cận.
+C. Kiểm tra những yếu tố và giả định đã bị loại khỏi cách so sánh.
 
-D. Chỉ tốc độ tải trang.
+D. Chấp nhận kết luận vì phép cộng chi phí đầu tư không sai.
 
-**3. Chọn một.** Phản hồi nào giúp cải tiến tốt hơn?
+**Câu 3 — Chọn một.** AI sửa số liệu đúng sau phản hồi nhưng tiếp tục trả lời dài và bỏ qua yêu cầu hỏi lại khi mơ hồ. Đánh giá nào chính xác nhất?
 
-A. “Phần so sánh thiếu chi phí vận hành; thêm căn cứ và nêu giới hạn dữ liệu.”
+A. Product tốt hơn; Performance vẫn chưa đạt yêu cầu.
 
-B. “Không thích.”
+B. Khi số liệu đúng, toàn bộ ba khía cạnh đều đạt.
 
-C. “Hãy hoàn hảo.”
+C. Đây chỉ là lỗi Product vì mọi hành vi đều xuất hiện trong đầu ra.
 
-D. “Viết dài hơn bất kể nội dung.”
+D. Cần thay dữ liệu nguồn vì phản hồi dài chứng minh nguồn không phù hợp.
 
-## Đáp án
+**Câu 4 — Chọn một.** Một reviewer chỉ nói “bản này chưa đủ tốt”. AI sửa văn phong nhiều lần nhưng vẫn thiếu chi phí vận hành. Phản hồi nào tạo vòng sửa hữu ích nhất?
 
-1. **B.** B đánh giá chất lượng nội dung; A là hành vi, C và D không phải kiểm tra số liệu.
+A. “Hãy hành động như chuyên gia giàu kinh nghiệm hơn.”
 
-2. **C.** C nhắm sự thiếu bao quát; A và D là hình thức, B bỏ lỗi thật.
+B. “Thêm chi phí vận hành có nguồn; nêu dữ liệu thiếu.”
 
-3. **A.** A chỉ lỗi và hướng sửa; B, C mơ hồ, D không nhắm chất lượng.
+C. “Chấm lại bài của bạn và chỉ gửi bản điểm cao nhất.”
+
+D. “Viết thêm hai trang để phân tích toàn diện hơn.”
+
+**Câu 5 — Chọn hai.** Hai bản phân tích có cùng kết luận, một bản trình bày mạch lạc hơn. Trước khi chọn bản đó để sử dụng, hai kiểm tra nào có giá trị nhất?
+
+A. Dùng độ trôi chảy làm bằng chứng tác giả hiểu đầy đủ vấn đề.
+
+B. Lấy sự đồng ý giữa hai bản làm xác nhận độc lập cho mọi số liệu.
+
+C. Đối chiếu độ đúng, mức liên quan và khả năng hiểu của người đọc mục tiêu.
+
+D. Kiểm tra các bước/căn cứ trình bày có hỗ trợ kết luận và có bỏ sót yếu tố quan trọng không.
+
+## Đáp án và giải thích
+
+1. **D.** D thực hiện Product Discernment trên độ đúng nội dung. C chỉ sửa Performance; A thêm nguồn mà chưa sửa sai lệch; B thay hình thức không làm số liệu đúng.
+
+2. **A, C.** C xem khoảng trống của phương pháp; A sửa phương pháp và đánh giá hệ quả. B đổi trình bày, không khôi phục yếu tố thiếu. D đúng một phép tính không chứng minh cách tiếp cận đủ để ra quyết định.
+
+3. **A.** A tách độ đúng sản phẩm khỏi hành vi tương tác. B đánh đồng các khía cạnh. C bỏ phân biệt hữu ích của framework. D không có bằng chứng rằng nguồn gây vấn đề về cách phối hợp.
+
+4. **B.** B xác định phần thiếu, loại căn cứ và thay đổi cần thực hiện. A yêu cầu vai trò nhưng không chẩn đoán. D tăng dung lượng chưa bảo đảm đúng yếu tố. C tự chấm không xác định ranh giới chất lượng của người dùng.
+
+5. **C, D.** C đánh giá Product; D đánh giá Process. A suy độ đúng từ văn phong. B đồng thuận có thể xuất phát từ cùng dữ liệu sai hoặc cùng giả định thiếu, chưa tạo bằng chứng độc lập.

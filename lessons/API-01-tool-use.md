@@ -63,43 +63,67 @@ Hãy thử trả lời bằng lời của bạn: “Khi khách hỏi trạng th�
 
 ## Tự kiểm tra
 
-**Câu 1 — Chọn một.** Bot hỗ trợ cần trạng thái thanh toán mới nhất. Ứng dụng chỉ gửi câu hỏi cho Claude rồi hiển thị câu trả lời. Thay đổi nào giải quyết đúng nguồn thiếu dữ liệu?
+**Câu 1 — Chọn một.** Bot phải trả trạng thái thanh toán tại thời điểm hỏi. Kho dữ liệu phân tích cập nhật mỗi đêm; hệ thống giao dịch có API đọc. Thay đổi nào đáp ứng yêu cầu mà vẫn giữ Claude ở vai trò diễn giải?
 
-A. Thêm ví dụ các trạng thái thanh toán vào prompt.
+A. Mô tả API thật chi tiết rồi coi yêu cầu gọi công cụ là bằng chứng đã tra cứu.
 
-B. Cung cấp công cụ tra cứu, thực thi yêu cầu từ Claude và trả kết quả về.
+B. Dùng truy vấn hợp lệ để xác nhận trạng thái.
 
-C. Yêu cầu Claude trả lời thật chắc chắn.
+C. Cho ứng dụng thực thi công cụ đọc API giao dịch rồi đưa kết quả cho Claude.
 
-D. Tăng độ dài câu trả lời.
+D. Đưa bản xuất gần nhất vào prompt và yêu cầu Claude suy luận thay đổi trong ngày.
 
-**Câu 2 — Chọn hai.** Với công cụ do ứng dụng thực thi trong bài học, trách nhiệm nào thuộc máy chủ ứng dụng?
+**Câu 2 — Chọn hai.** Claude đề nghị tra đơn DH102. Nhóm muốn phân tách trách nhiệm để nhật ký có thể kiểm toán. Hai sự kiện nào phải được ghi nhận ở phía ứng dụng thực thi?
 
-A. Thực thi mã gọi dịch vụ bên ngoài.
+A. Kết quả hoặc lỗi dịch vụ được chuyển trở lại Claude.
 
-B. Gửi dữ liệu thu được trở lại Claude.
+B. Lần cập nhật trọng số mô hình bằng trạng thái đơn vừa tra.
 
-C. Thay đổi kiến thức huấn luyện của Claude.
+C. Sự xác nhận rằng mọi dữ liệu HTTP 200 đều mới nhất.
 
-D. Suy ra thời tiết hiện tại từ dữ liệu huấn luyện.
+D. Đầu vào thực sự được gửi đến dịch vụ tra cứu.
 
-**Câu 3 — Chọn một.** Claude đã tạo yêu cầu tra cứu đơn hàng nhưng mã ứng dụng chưa thực thi công cụ. Kết luận nào đúng?
+**Câu 3 — Chọn một.** Log chỉ có một khối yêu cầu tra cứu hợp lệ; dịch vụ chưa được gọi. Người dùng hỏi liệu đơn đã giao chưa. Cách xử lý nào tránh công bố kết luận chưa có bằng chứng?
 
-A. Claude đã có kết quả mới vì biết tên công cụ.
+A. Tra cứu thực tế trước khi xác nhận trạng thái.
 
-B. Chỉ cần lặp lại prompt để cập nhật đơn hàng.
+B. Trả dự đoán trước, sửa sau khi API trả khác.
 
-C. Luồng lấy dữ liệu chưa hoàn tất; cần thực thi và trả kết quả.
+C. Dùng kết quả của đơn khác cùng khách hàng vì đã xác minh danh tính.
 
-D. Không cần hệ thống đơn hàng nếu mô tả công cụ chi tiết.
+D. Thông báo tra cứu thành công vì yêu cầu đã vượt kiểm tra cấu trúc.
+
+**Câu 4 — Chọn hai.** API trả HTTP 200, trạng thái “dự kiến giao trước 18 giờ”, bản ghi cập nhật hôm qua. Hai chi tiết nào cần giữ trong câu trả lời cho người đang hỏi trạng thái hiện tại?
+
+A. Ngày cập nhật được thay bằng thời điểm gọi API hôm nay.
+
+B. HTTP 200 được dùng để khẳng định giao hàng chắc chắn.
+
+C. Mốc 18 giờ vẫn được diễn đạt là dự kiến.
+
+D. Hạn chế về độ mới của bản ghi được nêu rõ.
+
+**Câu 5 — Chọn một.** Công cụ báo không tìm thấy DH102. Hội thoại trước từng nói đơn đã thanh toán nhưng không có nguồn đi kèm. Kết luận nào có căn cứ nhất?
+
+A. Đã thanh toán vì kết luận trước đó cần được giữ nhất quán.
+
+B. Chưa đủ cơ sở xác nhận thanh toán; cần kiểm tra mã đơn hoặc nguồn tra cứu.
+
+C. Đã thanh toán với độ tin cậy thấp, lấy câu trả lời trước làm nguồn dự phòng.
+
+D. Chưa thanh toán vì không có bản ghi trả về từ công cụ.
 
 ## Đáp án và giải thích
 
-1. **B.** Đưa dữ liệu thực tế vào luồng. A chỉ minh họa định dạng; C thay đổi cách diễn đạt; D thay đổi độ dài. Cả ba không lấy trạng thái thanh toán.
-2. **A, B.** Máy chủ thực thi và trả dữ liệu. C không xảy ra trong vòng gọi công cụ; D không thể xác lập thời tiết mới nhất.
-3. **C.** Yêu cầu công cụ chưa phải kết quả công cụ. A nhầm định nghĩa với thực thi; B không truy cập nguồn dữ liệu; D không thay thế được hệ thống thật.
+1. **C.** C tạo đường lấy dữ liệu hiện tại. D thiếu cập nhật trong ngày; B có câu truy vấn nhưng chưa có kết quả; A nhầm khai báo và đề nghị với thực thi.
 
-Nếu sai câu 2 hoặc 3, hãy vẽ lại bốn bước: yêu cầu → Claude yêu cầu công cụ → ứng dụng thực thi → Claude dùng kết quả trả lời.
+2. **A, D.** D và A chứng minh vòng lấy dữ liệu đã chạy. B không phải bước của vòng tool use; C nhầm thành công truyền tải với độ mới của dữ liệu nghiệp vụ.
+
+3. **A.** A hoàn tất bước còn thiếu. B xác nhận quá sớm; C dùng sai đối tượng; D chỉ chứng minh đầu vào đúng cấu trúc, không chứng minh công cụ đã chạy.
+
+4. **C, D.** C giữ mức chắc chắn của nguồn; D giữ giới hạn bằng chứng. A đánh tráo thời điểm đọc với cập nhật; B dùng thành công kỹ thuật để suy ra cam kết giao hàng.
+
+5. **B.** B phân biệt thiếu dữ liệu với bằng chứng phủ định. A và C dùng phát biểu chưa được xác minh làm nguồn; D suy diễn trạng thái thanh toán từ kết quả không tìm thấy.
 
 ## Đối chiếu Bedrock: sử dụng công cụ
 

@@ -13,43 +13,69 @@ Phần mở đầu cũng có thể định hướng câu trả lời. Nếu bạ
 
 Mẫu Converse dùng `inferenceConfig` và `stopSequences`. Khả năng hỗ trợ prefill và cách phối hợp tùy mô hình, nhà cung cấp, phiên bản. Với việc trích xuất dữ liệu có cấu trúc, xem thêm [schema và tool_choice](EXAM-05-structured-output.md) cùng kiểm tra dữ liệu, thay vì chỉ cắt bỏ định dạng Markdown.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Prefill bắt đầu bằng một quan điểm, mô hình tiếp tục bảo vệ nó. Có thể kết luận gì?
+**Câu 1 — Chọn một.** Ứng dụng prefill phần mở đầu JSON, provider trả phần tiếp nối; adapter chỉ parse phần mới nên lỗi. Cách sửa đúng trước khi đổi prompt?
 
-A. Quan điểm chắc chắn đúng.
+A. Bỏ qua lỗi parse vì mô hình đã được định hướng JSON.
 
-B. Mô hình được định hướng bởi đầu vào; cần đánh giá bằng chứng độc lập.
+B. Ghép prefill/phần tiếp nối đúng hợp đồng rồi validate.
 
-C. Mọi quan điểm khác sai.
+C. Yêu cầu người dùng tự thêm phần thiếu khi đọc.
 
-D. Không cần xem nguồn.
+D. Thêm stop marker ở đầu phần tiếp nối để tránh lỗi.
 
-**2. Chọn một.** Stop marker cắt giữa JSON. Bước phù hợp?
+**Câu 2 — Chọn hai.** Stop sequence khớp chuỗi xuất hiện trong một giá trị JSON và cắt dữ liệu. Hai việc nào cần làm?
 
-A. Coi là hoàn tất vì đã dừng.
+A. Kiểm tra marker và trạng thái dừng để xác định nguyên nhân cắt.
 
-B. Đổi tên mô hình mà không xem input.
+B. Coi gặp stop sequence là bằng chứng JSON đã hoàn chỉnh.
 
-C. Kiểm tra marker/cấu hình, trạng thái kết thúc và validation đầu ra.
+C. Validate đầu ra; điều chỉnh cơ chế kiểm soát/marker phù hợp trước khi chấp nhận.
 
-D. Gán parse thành công cố định.
+D. Tự nối dấu đóng ngoặc rồi coi mọi giá trị đã đầy đủ.
 
-**3. Chọn một.** Khi dùng kỹ thuật này ở mô hình khác, cần làm gì?
+**Câu 3 — Chọn một.** Prefill nói “Phương án X rõ ràng tốt nhất”; mô hình tiếp tục bảo vệ X. Kiến trúc sư nên đánh giá kết quả thế nào?
 
-A. Kiểm tra hỗ trợ và hợp đồng API/SDK hiện tại trước khi chạy.
+A. X đã được xác nhận độc lập bởi mô hình.
 
-B. Giả định mọi version giống nhau.
+B. Confidence có thể được suy từ độ dài lập luận ủng hộ X.
 
-C. Bỏ mọi lỗi tương thích.
+C. Đầu vào đã định hướng; cần bằng chứng độc lập.
 
-D. Chỉ sửa giọng điệu.
+D. Chỉ cần chạy lại cùng prefill nhiều lần để loại bias.
 
-## Đáp án
+**Câu 4 — Chọn một.** Mẫu trong khóa dùng prefill với một model, nhưng hệ production đổi model/provider. Bước nào cần trước khi tái sử dụng cấu hình?
 
-1. **B.** A và C nhầm định hướng với bằng chứng; D bỏ kiểm chứng.
-2. **C.** A nhầm dừng với đạt; B chưa chẩn đoán marker; D tạo kết quả giả.
-3. **A.** B suy rộng phiên bản; C che lỗi; D không kiểm tra khả năng.
+A. Giữ nguyên vì mọi model Claude đều cùng hợp đồng prefill.
+
+B. Đổi mỗi model ID rồi kiểm tra UI có text.
+
+C. Bỏ kiểm tra trạng thái dừng để adapter linh hoạt.
+
+D. Xác minh hỗ trợ/hợp đồng đích và kiểm thử adapter.
+
+**Câu 5 — Chọn hai.** Downstream cần dữ liệu có trường/kiểu nghiêm ngặt. Hai điều nào đúng về dùng prefill và stop sequence?
+
+A. Chúng có thể hướng/cắt đầu ra nhưng không tự chứng minh dữ liệu đạt hợp đồng nghiệp vụ.
+
+B. Chỉ cần loại code fence là schema chắc chắn đúng.
+
+C. Cần cơ chế schema phù hợp và validation cấu trúc/ngữ nghĩa theo yêu cầu.
+
+D. Một marker tùy ý có thể thay mọi validator nếu phản hồi đủ ngắn.
+
+## Đáp án và giải thích
+
+1. **B.** B sửa cách tái dựng đầu ra. A không tạo dữ liệu dùng được. C đẩy lỗi adapter cho người dùng. D cắt thêm nội dung thay vì khôi phục phần mở đầu.
+
+2. **A, C.** A chẩn đoán điều kiện dừng, C kiểm tra tính đầy đủ. B nhầm dừng sinh với hoàn thành yêu cầu. D có thể tạo JSON parse được nhưng thiếu hoặc sai dữ liệu.
+
+3. **C.** C nhận diện điều kiện đầu vào ảnh hưởng đầu ra. A bỏ ảnh hưởng đó. B độ dài không chứng minh đúng. D lặp cùng thiên lệch không tạo phép đánh giá độc lập.
+
+4. **D.** D kiểm tra tính tương thích cụ thể. A khái quát từ họ model. B smoke text không chứng minh các đặc tính điều khiển. C che trạng thái quan trọng thay vì xử lý khác biệt.
+
+5. **A, C.** A phân biệt điều khiển sinh và tính đúng; C cung cấp kiểm tra cần thiết. B đúng định dạng trình bày không bảo đảm trường/kiểu. D độ dài và marker không xác nhận nội dung nghiệp vụ.
 
 ## Đối chiếu Vertex
 

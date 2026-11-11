@@ -20,42 +20,66 @@ Chọn cách sửa dựa trên lỗi thực tế. Nếu AI trả sai cấu trúc
 
 Bạn có thể nhờ AI góp ý để cải thiện prompt, rồi thử lại và đánh giá kết quả theo tiêu chí đã đặt. Yêu cầu “hãy suy nghĩ trước khi trả lời” không bảo đảm câu trả lời đúng; điều cần kiểm tra là kết quả và căn cứ mà AI trình bày.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** AI trả sai cấu trúc JSON mong muốn. Sửa prompt trực tiếp nhất trong bài?
+**Câu 1 — Chọn một.** AI trả dữ liệu đúng nhưng tên trường JSON thay đổi giữa các lượt, làm adapter lỗi. Thay đổi prompt nào trực tiếp nhất, trước khi kiểm thử lại adapter?
 
-A. Chỉ khen AI.
+A. Yêu cầu mô hình suy nghĩ kỹ hơn trước mọi câu trả lời.
 
-B. Chỉ đổi chủ đề.
+B. Giao vai trò chuyên gia dữ liệu nhưng không nêu cấu trúc.
 
-C. Bỏ mọi ràng buộc.
+C. Tăng độ dài tối đa để mô hình giải thích các tên trường.
 
-D. Nêu cấu trúc và ví dụ đầu ra cần có.
+D. Nêu schema, ví dụ hợp lệ và cách biểu diễn dữ liệu thiếu.
 
-**2. Chọn một.** Nhiệm vụ nhiều phần thường bị bỏ sót. Kỹ thuật nào phù hợp?
+**Câu 2 — Chọn hai.** Prompt phân tích yêu cầu gồm chín tiêu chí nhưng AI chỉ xử lý năm tiêu chí đầu. Hai thay đổi nào nhắm đúng lỗi bao phủ?
 
-A. Chia thành các bước có phạm vi rõ.
+A. Bổ sung bước đối chiếu đầu ra với danh sách đầy đủ các tiêu chí.
 
-B. Chỉ yêu cầu nhanh hơn.
+B. Chia nhiệm vụ thành các bước có phạm vi và đầu ra rõ.
 
-C. Xóa các phần khó.
+C. Chỉ giữ năm tiêu chí AI thường làm tốt nhất.
 
-D. Không đưa bối cảnh.
+D. Đổi giọng điệu sang quyết đoán để tránh câu trả lời lửng.
 
-**3. Chọn một.** Nhờ AI cải thiện prompt có thay thế việc đo chất lượng không?
+**Câu 3 — Chọn một.** AI đưa ra khuyến nghị mua hàng có vẻ hợp lý nhưng dựa trên giá và điều khoản không có trong tài liệu đã cung cấp. Cách sửa phù hợp nhất?
 
-A. Có, luôn bảo đảm đúng.
+A. Yêu cầu một vai trò có nhiều năm kinh nghiệm trong lĩnh vực.
 
-B. Chưa; vẫn kiểm tra đầu ra theo tiêu chí.
+B. Thêm ví dụ một khuyến nghị viết thuyết phục.
 
-C. Có, nếu prompt dài.
+C. Yêu cầu câu trả lời ngắn để giảm số nhận định.
 
-D. Có, nếu giọng tự tin.
+D. Bổ sung nguồn giá/điều khoản, phân biệt đã biết và chưa biết.
 
-## Đáp án
+**Câu 4 — Chọn một.** AI đề xuất prompt mới dài gấp ba lần và nói chất lượng sẽ tốt hơn. Nhóm nên quyết định bằng cách nào?
 
-1. **D.** D cung cấp mục tiêu định dạng; A, B không sửa lỗi, C làm mơ hồ hơn.
+A. Cho AI chấm mức chuyên nghiệp của hai prompt rồi dùng điểm cao hơn.
 
-2. **A.** A giảm tải từng bước; B không xử lý bao phủ, C bỏ yêu cầu, D thiếu dữ liệu.
+B. Chọn prompt có câu “kiểm tra trước khi trả lời” nhiều lần hơn.
 
-3. **B.** B giữ vòng kiểm chứng; A, C, D suy từ hình thức sang độ đúng.
+C. Đo cả hai trên cùng tập và tiêu chí; kiểm tra lỗi mới/cũ.
+
+D. Chấp nhận vì prompt mới mô tả nhiều bước hơn.
+
+**Câu 5 — Chọn hai.** Nhóm dùng vài ví dụ để hướng dẫn phân loại phản hồi, nhưng tất cả ví dụ đều là trường hợp dễ và tích cực. Hai bổ sung nào giúp prompt thể hiện ranh giới quyết định tốt hơn?
+
+A. Thêm nhiều bản sao của ví dụ tích cực để tăng trọng số.
+
+B. Nêu tiêu chí phân loại và cách xử lý thiếu thông tin phù hợp nhiệm vụ.
+
+C. Chỉ đổi nhãn các ví dụ sao cho số lượng mỗi nhãn cân bằng.
+
+D. Thêm trường hợp gần ranh giới, phản ánh nhầm lẫn đã quan sát.
+
+## Đáp án và giải thích
+
+1. **D.** D làm rõ hợp đồng đầu ra cần kiểm chứng. A/B không cung cấp cấu trúc cụ thể. C tăng diễn giải, không bảo đảm trường ổn định; prompt cũng không thay thế validation của ứng dụng.
+
+2. **A, B.** B giảm việc phải xử lý quá nhiều mục trong một bước. A phát hiện phần còn thiếu. D thay cách nói, không đo bao phủ. C giảm yêu cầu nghiệp vụ để che lỗi thay vì đáp ứng nhiệm vụ.
+
+3. **D.** D nhắm thiếu căn cứ. B định hình văn phong, C giảm chiều dài và A định hướng vai trò; cả ba không bổ sung dữ liệu còn thiếu và có thể giữ nguyên suy đoán.
+
+4. **C.** C đánh giá tác động lên đầu ra. D/B suy chất lượng từ hình thức prompt. A có thể góp ý nhưng không thay bằng chứng thực nghiệm trên nhiệm vụ.
+
+5. **B, D.** D minh họa vùng khó; B làm rõ quy tắc và giới hạn. A không mở rộng dạng tình huống. C cân bằng bằng cách đổi nhãn không có căn cứ sẽ dạy sai hợp đồng.

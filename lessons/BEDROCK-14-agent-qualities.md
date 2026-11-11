@@ -15,42 +15,66 @@ Mức tự chủ còn phụ thuộc tác động của nhiệm vụ. Thử giao 
 
 Vì vậy, không chọn quyền chỉ dựa trên tên công cụ. Hãy xét khả năng kiểm chứng, đảo ngược thao tác và chuyển cho người có thẩm quyền khi cần.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Tác nhân AI sửa file dựa trên giả định về cấu trúc repo rồi thất bại. Thiết kế nào giải quyết nguyên nhân?
+**Câu 1 — Chọn một.** Hai agent dùng cùng công cụ browser: một chạy test trên bản sao, một thanh toán bằng tài khoản thật. Cách quyết định mức tự chủ phù hợp?
 
-A. Cấp mọi công cụ có thể có.
+A. Cấp quyền rộng hơn cho agent có ít bước thực hiện hơn.
 
-B. Thêm lời khẳng định mô hình rất giỏi.
+B. Dùng độ tự tin trong câu trả lời của agent làm ngưỡng cấp quyền.
 
-C. Bỏ kiểm tra đầu ra.
+C. Đánh giá tác động, khả năng khôi phục và kiểm chứng từng việc.
 
-D. Cho tác nhân AI đọc trạng thái repo cần thiết trước khi sửa và kiểm chứng sau đó.
+D. Cấp cùng quyền vì cả hai gọi cùng tên công cụ.
 
-**2. Chọn một.** Tác nhân AI lặp cùng công cụ dù liên tục nhận lỗi. Thiếu điều gì?
+**Câu 2 — Chọn hai.** Agent sửa hàm dựa trên kiến thức về framework, chưa đọc file hiện tại. Hai việc nào cần bổ sung vào vòng làm việc?
 
-A. Thêm output dài hơn.
+A. Yêu cầu mô hình mô tả framework dài hơn thay cho đọc dự án.
 
-B. Giới hạn vòng lặp và nhánh xử lý lỗi/chuyển cấp.
+B. Dùng kiểm thử hoặc quan sát hành vi để kiểm chứng bản sửa.
 
-C. Công cụ có tên ngắn hơn.
+C. Đọc mã và phụ thuộc liên quan trong dự án trước khi chọn bản sửa.
 
-D. Bỏ kết quả công cụ.
+D. Đánh dấu hoàn thành khi công cụ ghi file trả thành công.
 
-**3. Chọn một.** Hai tác nhân AI cùng dùng Computer Use: một thử UI staging, một chuyển tiền thật. Có thể dùng cùng mức tự chủ vì cùng công cụ?
+**Câu 3 — Chọn một.** Agent có điểm hoàn thành cao trên tác vụ thuận lợi, nhưng thường lặp vô hạn khi dịch vụ trả lỗi. Đánh giá nào thiếu?
 
-A. Có, tên công cụ quyết định toàn bộ rủi ro.
+A. Các ca lỗi, giới hạn vòng lặp và đường phục hồi/chuyển cấp.
 
-B. Có, screenshot bảo đảm đúng.
+B. Chỉ độ dài prompt mô tả nhiệm vụ thành công.
 
-C. Không; cần xét tác động, quyền, khả năng đảo ngược và kiểm chứng của từng tác vụ.
+C. Chỉ số lần công cụ có thể được gọi đồng thời.
 
-D. Có, Docker loại bỏ hậu quả ngoài hệ thống.
+D. Chỉ việc tác nhân có thể tạo câu trả lời cuối đúng định dạng.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Trước khi cho agent tự chạy, nhóm muốn phân biệt “thành công” với “đã hết lượt”. Hai yếu tố nên có?
 
-1. **D.** Cho tác nhân AI đọc trạng thái repo cần thiết trước khi sửa và kiểm chứng sau đó. A không bảo đảm ngữ cảnh phù hợp; B không cung cấp dữ kiện; C bỏ phản hồi.
+A. Tiêu chí kết quả quan sát được gắn với mục tiêu người dùng.
 
-2. **B.** Giới hạn vòng lặp và nhánh xử lý lỗi/chuyển cấp. A/C không giải quyết vòng lặp; D làm mất bằng chứng lỗi.
+B. Lấy câu “đã hoàn tất” do mô hình viết làm bằng chứng cuối.
 
-3. **C.** Không; cần xét tác động, quyền, khả năng đảo ngược và kiểm chứng của từng tác vụ. A bỏ ngữ cảnh; B nhầm quan sát với bảo đảm; D bỏ tác động qua dịch vụ/tài khoản thật.
+C. Coi mọi vòng dừng không ném exception là thành công.
+
+D. Trạng thái dừng riêng cho lỗi, hết ngân sách và cần chuyển xử lý.
+
+**Câu 5 — Chọn một.** Agent tạo patch đúng và chạy test đạt trong nhánh riêng. Nhiệm vụ được giao là chuẩn bị thay đổi để con người duyệt. Bước nào phù hợp tiếp theo?
+
+A. Mở rộng phạm vi sửa các module liên quan trước khi báo cáo để tối ưu toàn hệ thống.
+
+B. Xóa bản ghi test vì diff đã chứa toàn bộ thông tin người duyệt cần.
+
+C. Bàn giao diff cùng kết quả kiểm chứng và giới hạn còn lại cho người duyệt.
+
+D. Triển khai production vì test đạt đã chứng minh quyền tự chủ phù hợp.
+
+## Đáp án và giải thích
+
+1. **C.** C đánh giá theo hệ quả thực. D bỏ qua môi trường; A số bước không đo mức rủi ro; B tự tin không chứng minh tác động có thể kiểm soát.
+
+2. **B, C.** C cung cấp trạng thái riêng của dự án; B đánh giá kết quả. A không cập nhật thông tin tại chỗ; D chỉ chứng minh thao tác ghi, không chứng minh sửa đúng.
+
+3. **A.** A đánh giá khả năng vận hành khi điều kiện xấu. B không trực tiếp kiểm tra vòng lặp lỗi; C đo năng lực song song; D định dạng không chứng minh dừng và phục hồi đúng.
+
+4. **A, D.** A định nghĩa thành công; D tránh trộn các lý do dừng. C đồng nhất kết thúc kỹ thuật với đạt mục tiêu; B dựa vào tự báo cáo thay vì bằng chứng.
+
+5. **C.** C hoàn thành trong phạm vi được giao. D suy quyền từ kết quả test; A tự mở rộng mục tiêu; B loại bỏ bằng chứng hành vi không có trong diff.

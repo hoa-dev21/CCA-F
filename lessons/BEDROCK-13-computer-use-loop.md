@@ -15,45 +15,69 @@ Giữ mã liên kết giữa lời gọi và kết quả, báo rõ lỗi thực 
 
 Đặt giới hạn số bước, thời gian, điều kiện thành công và cách thoát hoặc chuyển xử lý khi lỗi. Lặp lại thao tác bấm mà trang không đổi cần được chẩn đoán, không tiếp tục vô hạn.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Đã khai báo bản mô tả cấu trúc dữ liệu Computer Use nhưng không có bộ thực thi. Điều gì còn thiếu?
+**Câu 1 — Chọn một.** Ứng dụng đã gửi schema công cụ chuột nhưng chưa có tiến trình điều khiển máy tính. Mô hình trả yêu cầu bấm nút. Phần nào còn thiếu để hoàn thành vòng xử lý?
 
-A. Một system prompt dài hơn là đủ.
+A. Một mô tả công cụ chi tiết hơn để mô hình tự thực thi cú bấm.
 
-B. Hạ tầng nhận yêu cầu và thực thi thao tác, trả kết quả về mô hình.
+B. AWS profile ở mọi nhà cung cấp để schema trở thành công cụ đang chạy.
 
-C. Bỏ vòng kết quả công cụ.
+C. Một câu assistant xác nhận đã bấm để mô hình chuyển bước.
 
-D. Thêm nhiều tên công cụ trùng.
+D. Executor chạy thao tác, trả kết quả và quan sát cho mô hình.
 
-**2. Chọn một.** Mô hình yêu cầu click nhưng bộ thực thi báo không tìm được màn hình. Host nên làm gì?
+**Câu 2 — Chọn hai.** Hai thao tác liên tiếp là bấm Lưu và chụp màn hình. Bộ thực thi trả kết quả chụp cho ID của thao tác bấm. Hai điều cần sửa?
 
-A. Giả báo thành công.
+A. Quan sát trạng thái sau thao tác trước khi suy ra việc lưu thành công.
 
-B. Để mô hình tưởng đã click.
+B. Giữ đúng mã liên kết giữa từng lời gọi và kết quả tương ứng.
 
-C. Trả lỗi có cấu trúc/ngữ cảnh và cho phép khôi phục trong giới hạn.
+C. Gắn mọi kết quả vào thao tác cuối để giảm kích thước lịch sử.
 
-D. Lặp yêu cầu vô hạn.
+D. Bỏ ID vì thứ tự mảng đã đủ khi hệ thống chạy bất đồng bộ.
 
-**3. Chọn một.** Mẫu khóa học cần AWS profile. Có thể suy điều gì?
+**Câu 3 — Chọn một.** Sau ba lần bấm cùng tọa độ, màn hình không thay đổi. Chính sách cho phép tối đa mười bước. Bước tiếp theo hợp lý nhất?
 
-A. Đó là cấu hình của mẫu Bedrock, cần phân biệt với triển khai dùng nhà cung cấp khác.
+A. Đổi ngẫu nhiên tọa độ đến khi có thay đổi trên màn hình.
 
-B. Mọi Computer Use bắt buộc AWS.
+B. Kiểm tra trạng thái, lỗi tool và mục tiêu trước khi thử lại.
 
-C. Mọi bộ thực thi bắt buộc Firefox.
+C. Bấm thêm bảy lần rồi báo thành công vì đã dùng hết ngân sách.
 
-D. Bản mô tả cấu trúc dữ liệu tự cài Docker.
+D. Tăng ngân sách tự động vì thao tác hợp lệ theo schema.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Bạn chuyển mẫu Computer Use từ Bedrock sang nhà cung cấp khác. Hai kiểm tra nào cần làm trước khi chạy?
 
-1. **B.** Hạ tầng nhận yêu cầu và thực thi thao tác, trả kết quả về mô hình. A không tạo bộ thực thi; C làm mô hình thiếu phản hồi; D không cung cấp khả năng thực thi.
+A. Chỉ thay URL endpoint vì cấu trúc công cụ luôn giống nhau ở mọi nơi.
 
-2. **C.** Trả lỗi có cấu trúc/ngữ cảnh và cho phép khôi phục trong giới hạn. A/B làm sai trạng thái; D không có điều kiện dừng.
+B. Giữ AWS profile làm điều kiện bắt buộc của mọi triển khai mới.
 
-3. **A.** Đó là cấu hình của mẫu Bedrock, cần phân biệt với triển khai dùng nhà cung cấp khác. B/C khái quát quá mức một reference implementation; D nhầm mô tả công cụ với hạ tầng.
+C. Xác nhận bộ thực thi, môi trường quan sát và cơ chế báo lỗi hoạt động.
+
+D. Kiểm tra mô hình và giao diện công cụ có tương thích với nhà cung cấp mới.
+
+**Câu 5 — Chọn một.** Bộ thực thi không tìm được màn hình để chụp sau khi bấm. Host cần phản hồi ra sao?
+
+A. Trả ảnh cũ và đánh dấu thành công để không làm gián đoạn kế hoạch.
+
+B. Bỏ kết quả lỗi rồi yêu cầu mô hình tiếp tục từ bước kế tiếp.
+
+C. Trả ảnh trống như ảnh thật vì định dạng vẫn hợp lệ.
+
+D. Trả lỗi đúng lời gọi để vòng xử lý quyết định phục hồi/dừng.
+
+## Đáp án và giải thích
+
+1. **D.** D hoàn tất phía host và phản hồi. A nhầm khai báo với thực thi; B biến cấu hình mẫu thành yêu cầu chung; C tạo xác nhận không có hành động.
+
+2. **A, B.** B giữ hợp đồng vòng công cụ; A kiểm chứng tác động. D dễ nhầm khi kết quả về khác thứ tự; C làm mất quan hệ giữa hành động và bằng chứng.
+
+3. **B.** B sử dụng phản hồi để điều chỉnh. C nhầm giới hạn với thành công; D tránh ràng buộc thay vì xử lý lỗi; A tạo tác động không gắn với mục tiêu.
+
+4. **C, D.** D kiểm tra hợp đồng dịch vụ; C kiểm tra phía thực thi. B là chi tiết mẫu Bedrock, không phải bản chất Computer Use; A giả định tương thích chưa được xác minh.
+
+5. **D.** D giữ trạng thái trung thực và khả năng phục hồi. A dùng bằng chứng lỗi thời; B mất thông tin cần chẩn đoán; C đúng định dạng nhưng sai nghĩa.
 
 ## Đối chiếu phụ đề chính thức
 

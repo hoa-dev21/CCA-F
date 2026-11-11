@@ -13,43 +13,69 @@ Client gửi yêu cầu đọc và xử lý phản hồi. MIME type cho biết l
 
 Mẫu của khóa chỉ lấy phần tử đầu tiên trong `contents`. Không nên suy ra rằng mọi resource chỉ có một phần nội dung. Khi triển khai, cần xử lý đầy đủ các phần mà loại resource đó có thể trả về.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Người dùng đã chọn tài liệu cụ thể. Ứng dụng muốn tránh vòng gọi công cụ lấy tài liệu sau đó. Thiết kế phù hợp bài?
+**Câu 1 — Chọn một.** Người dùng đã chọn chính xác report-42 trước khi gửi câu hỏi. Nhóm muốn giảm một vòng tool chỉ để lấy tài liệu đó. Thiết kế nào phù hợp?
 
-A. Chỉ gửi tên file và yêu cầu đoán.
+A. Đọc resource đã chọn, xử lý nội dung rồi đưa vào yêu cầu ban đầu.
 
-B. Đọc resource rồi đưa nội dung vào prompt ban đầu.
+B. Đưa chỉ tên report-42 vào prompt và giả định mô hình đã biết nội dung.
 
-C. Xóa lựa chọn người dùng.
+C. Gọi mô hình để chọn lại tài liệu dù người dùng đã chọn.
 
-D. Chỉ đổi system prompt.
+D. Tải mọi report để tránh phải truyền định danh cụ thể.
 
-**2. Chọn một.** Resource text có MIME `application/json`. Mẫu client làm gì?
+**Câu 2 — Chọn hai.** Resource trả ba phần contents: metadata JSON và hai đoạn văn bản. Mẫu client chỉ đọc contents[0]. Hai thay đổi nào cần cho triển khai này?
 
-A. Coi mọi JSON là mã cần thực thi.
+A. Xử lý đầy đủ các phần cần theo hợp đồng resource.
 
-B. Xóa nội dung vì không phải plain text.
+B. Giữ phần đầu vì MCP luôn đặt nội dung nghiệp vụ đầy đủ ở đó.
 
-C. Parse JSON theo kiểu nội dung.
+C. Dùng MIME của từng phần để chọn parser/biểu diễn tương ứng.
 
-D. Gắn nội dung vào tên công cụ.
+D. Ép cả ba phần qua JSON.parse bất kể loại nội dung.
 
-**3. Chọn một.** Phân công nào đúng?
+**Câu 3 — Chọn một.** Client nhận application/json nhưng parse thất bại do payload lỗi. UI vẫn đưa chuỗi đó vào prompt như thể là danh mục hợp lệ. Cách xử lý tốt hơn?
 
-A. Client giao tiếp server; ứng dụng quyết định cách dùng dữ liệu trong prompt.
+A. Đổi MIME thành text/plain ngay ở client rồi tiếp tục.
 
-B. Client bắt buộc tự chọn mọi tài liệu thay người dùng.
+B. Để Claude sửa rồi coi dữ liệu hợp lệ.
 
-C. Server tự tạo mọi hội thoại cuối cùng.
+C. Báo lỗi resource và phục hồi theo hợp đồng.
 
-D. MIME type thay thế nội dung resource.
+D. Lấy mọi từ giữa dấu ngoặc kép làm tên tài liệu.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Một client thư viện đang tự đọc toàn bộ tài liệu server và đưa vào mọi câu hỏi. Người dùng chỉ chọn một tài liệu. Hai trách nhiệm nên tách ra là gì?
 
-1. **B.** A thiếu dữ liệu; C bỏ yêu cầu; D không đưa tài liệu vào ngữ cảnh.
-2. **C.** A nhầm dữ liệu với mã; B làm mất dữ liệu; D sai vị trí sử dụng.
-3. **A.** B và C gán trách nhiệm không có trong mẫu; D nhầm thông tin mô tả với dữ liệu.
+A. Client giao tiếp server và trả dữ liệu theo giao thức.
+
+B. Client luôn quyết định phạm vi nội dung thay cho ứng dụng.
+
+C. Ứng dụng chọn dữ liệu liên quan và cách đưa vào prompt.
+
+D. Mô hình tự loại mọi tài liệu ngoài ý muốn sau khi đã nhận chúng.
+
+**Câu 5 — Chọn một.** Hai người dùng chọn cùng tên report.pdf nhưng có định danh và quyền khác nhau. Adapter cache chỉ theo tên hiển thị. Sửa nào giữ đúng tài liệu được chọn?
+
+A. Dùng độ dài file để phân biệt các bản có cùng tên.
+
+B. Nối tên file với câu hỏi tự nhiên làm cache key.
+
+C. Trả bản tải gần nhất vì cả hai cùng tên.
+
+D. Dùng định danh resource cùng phạm vi truy cập.
+
+## Đáp án và giải thích
+
+1. **A.** A đưa bằng chứng vào context trước suy luận. B nhầm định danh với nội dung. C lặp quyết định đã có. D tải quá phạm vi thay vì dùng lựa chọn rõ ràng.
+
+2. **A, C.** A tránh mất phần văn bản, C tránh parse sai kiểu. B suy rộng hạn chế của mẫu. D văn bản thuần không nhất thiết là JSON hợp lệ.
+
+3. **C.** C không che lỗi giao thức thành dữ liệu hợp lệ. A thay nhãn không sửa nguồn. B suy luận không thay validation. D heuristic có thể tạo danh mục sai từ payload hỏng.
+
+4. **A, C.** A là giao tiếp; C là chính sách sử dụng/ngữ cảnh. B làm lớp giao tiếp tự áp chính sách phạm vi. D chuyển trách nhiệm lọc sang mô hình sau khi dữ liệu đã được đưa vào.
+
+5. **D.** D giữ quan hệ lựa chọn–đối tượng–phạm vi. A không duy nhất. B câu hỏi không xác định quyền. C có thể trả nhầm dữ liệu của người khác.
 
 ## Đối chiếu khóa MCP riêng
 

@@ -18,42 +18,66 @@ Với công việc lặp lại, hãy chọn một số ví dụ thật, đặt t
 
 Nếu số liệu đã đúng nhưng kết luận thiếu ý, hãy chỉ ra ý cần phân tích thêm. Viết dài hơn hoặc trả lời tự tin hơn không tự làm kết quả chính xác hơn.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Bạn nhờ Claude soạn nội dung tư vấn cho một khách hàng, nhưng câu trả lời còn chung chung, chưa sát nhu cầu của khách. Bạn nên sửa prompt (yêu cầu gửi cho Claude) như thế nào trước tiên?
+**Câu 1 — Chọn một.** Email tư vấn đúng ngữ pháp nhưng đề xuất sản phẩm vượt ngân sách khách hàng. Prompt chỉ ghi “viết email chuyên nghiệp”. Thay đổi nào ưu tiên?
 
-A. Chỉ tăng tham số `temperature` để thay đổi mức độ ngẫu nhiên khi mô hình tạo câu trả lời.
+A. Yêu cầu mô hình thể hiện sự tự tin của chuyên gia bán hàng.
 
-B. Bổ sung thông tin về khách hàng, tình huống cần tư vấn và các yêu cầu cụ thể.
+B. Bổ sung nhu cầu, ngân sách và tiêu chí của khách hàng.
 
-C. Bỏ mọi dữ liệu thực tế.
+C. Đưa thêm ví dụ lời chào và chữ ký theo thương hiệu.
 
-D. Chỉ đổi tên tài liệu.
+D. Giảm số từ để email súc tích hơn.
 
-**2. Chọn một.** Câu trả lời tự tin nhưng số liệu chưa được xác minh. Cách phù hợp?
+**Câu 2 — Chọn hai.** Một quy trình tạo báo cáo sẽ dùng hàng tuần. Hai bước nào tạo cơ sở cải tiến đáng tin hơn việc chọn bản văn hay nhất?
 
-A. Chấp nhận vì tone rõ.
+A. So sánh độ tự tin trong lời kết luận thay cho đối chiếu dữ liệu.
 
-B. Chỉ hỏi mô hình có chắc không rồi coi là đủ.
+B. Chỉ dùng mẫu đã sửa thành công để chứng minh độ ổn định.
 
-C. Đối chiếu nguồn/bằng chứng phù hợp trước khi sử dụng.
+C. Ghi lỗi quan sát được, sửa yêu cầu và kiểm tra lại theo cùng tiêu chí.
 
-D. Chỉ tăng độ dài.
+D. Đặt tiêu chí rõ và thử trên các ví dụ thật có đặc điểm khác nhau.
 
-**3. Chọn một.** Muốn biết Claude phù hợp tác vụ lặp lại của nhóm không. Cách đánh giá ban đầu?
+**Câu 3 — Chọn một.** JSON đầu ra thường có đủ thông tin nhưng sai tên trường, làm hệ thống nhận dữ liệu từ chối. Cách sửa prompt trực tiếp nhất?
 
-A. Dùng ví dụ công việc thật và tiêu chí rõ để so kết quả, rồi cải tiến.
+A. Bổ sung thêm dữ liệu nền về chủ đề cần phân tích.
 
-B. Chỉ một demo bất kỳ không giống tác vụ.
+B. Yêu cầu phản hồi ngắn hơn để giảm số token.
 
-C. Luôn gán điểm cao.
+C. Yêu cầu suy nghĩ kỹ hơn nhưng không nêu hợp đồng đầu ra.
 
-D. Chỉ xem tên mô hình.
+D. Nêu cấu trúc trường và một ví dụ đầu ra hợp lệ.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Báo cáo có số liệu đúng nhưng kết luận bỏ qua chi phí vận hành. Hai phản hồi nào hữu ích?
 
-1. **B.** Claude cần biết khách hàng là ai, đang gặp vấn đề gì và cần kết quả như thế nào để trả lời sát nhu cầu. A chỉ thay đổi `temperature`, không cung cấp thông tin còn thiếu về khách hàng. C bỏ đi dữ liệu cần thiết. D đổi tên tài liệu nhưng không làm rõ tình huống. `temperature` là tên tham số kỹ thuật; trong bài này không dịch thành “nhiệt độ”.
+A. Cung cấp nguồn chi phí liên quan và yêu cầu ghi rõ chỗ còn thiếu dữ liệu.
 
-2. **C.** C kiểm chứng sự kiện; A, B dùng tín hiệu không đủ, D không thêm nguồn.
+B. Chỉ ra yếu tố bị thiếu và yêu cầu phân tích ảnh hưởng của nó tới kết luận.
 
-3. **A.** A đo theo nhu cầu; B thiếu đại diện, C sai phép đo, D không kiểm tra đầu ra.
+C. Yêu cầu giữ nguyên kết luận và thêm lời khẳng định chắc chắn.
+
+D. Yêu cầu thêm ba đoạn văn bất kỳ để kết luận sâu hơn.
+
+**Câu 5 — Chọn một.** Prompt mới đạt 5/5 ví dụ demo do người viết tự chọn. Nhóm định bỏ kiểm tra đầu ra. Kết luận hợp lý nhất?
+
+A. Tăng số lần chạy cùng một ví dụ dễ để thay thế đánh giá các dạng đầu vào khác.
+
+B. Có tín hiệu tốt; cần thử thêm trên mẫu đại diện và ca khó.
+
+C. Năm mẫu đúng đủ chứng minh prompt xử lý mọi đầu vào cùng chủ đề.
+
+D. Chỉ cần hỏi mô hình độ tin cậy rồi dùng điểm tự báo cáo để quyết định.
+
+## Đáp án và giải thích
+
+1. **B.** B xử lý thông tin quyết định còn thiếu. C và D chỉ đổi hình thức; A có thể làm đề xuất sai nghe thuyết phục hơn.
+
+2. **C, D.** D tạo tập đánh giá liên quan; C nối thay đổi với kết quả. B thiên lệch về dữ liệu đã tối ưu; A đo phong cách thay vì chất lượng.
+
+3. **D.** D làm rõ yêu cầu cấu trúc. A sửa sai tầng; B không xác định tên trường; C không thay thế hợp đồng định dạng.
+
+4. **A, B.** B sửa thiếu sót lập luận; A bổ sung căn cứ. D tăng dung lượng không bảo đảm đúng trọng tâm; C khóa kết luận trước khi xem bằng chứng bổ sung.
+
+5. **B.** B giới hạn kết luận theo bằng chứng. C khái quát quá mức; D chưa có hiệu chỉnh; A kiểm tra lặp lại một dạng không đo độ bao phủ.

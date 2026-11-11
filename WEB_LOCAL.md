@@ -14,6 +14,10 @@ Nếu chuyển sang máy khác, cần Node.js và chạy `npm.cmd install` trong
 
 Trang mở bài EXAM14 trước. Đọc **Bài giảng**, chọn **Đã hiểu, làm bài tập**, chọn đáp án rồi bấm **Kiểm tra đáp án**. Với câu chọn hai, chọn đủ hai đáp án trước khi kiểm tra.
 
+Mỗi bài có **5 câu tình huống theo hướng luyện thi Architect**: 3 câu chọn một và 2 câu chọn hai. Đọc kỹ ràng buộc của tình huống; các phương án nhiễu thường đúng một phần nhưng sai thứ tự, phạm vi, điều kiện hoặc nguồn bằng chứng. Lời giải phân tích cả phương án đúng và sai.
+
+Kết quả trả lời được gắn với phiên bản câu hỏi. Khi câu hỏi/đáp án thay đổi, kết quả cũ không được tính vào điểm hoặc danh sách ôn sai của bộ mới; tiến độ đọc vẫn giữ nguyên. Kết quả của bộ mới tiếp tục lưu và đồng bộ qua Turso nếu đã cấu hình. Các thiết bị nên cập nhật cùng phiên bản ứng dụng và bài học.
+
 Tiến độ đọc, kết quả và hội thoại được lưu trong trình duyệt trên máy bạn. **Ôn câu sai** giúp xem lại điểm còn vướng; **Luyện10câu** chọn ngẫu nhiên từ18bài trọng tâm. Đây là luyện tập theo tài liệu, không phải đề thi thật.
 
 ## Hỏi AI bằng tài khoản đang dùng

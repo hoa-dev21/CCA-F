@@ -15,42 +15,66 @@ Ví dụ: Để làm tài liệu hướng dẫn cho nhân viên mới, AI có th
 
 Lưu lại kế hoạch để dùng tiếp khi luyện mô tả yêu cầu (Description), đánh giá kết quả (Discernment) và sử dụng AI có trách nhiệm (Diligence). Nếu phát hiện dữ liệu thiếu hoặc nhiệm vụ cần chuyên môn khác, hãy sửa kế hoạch và phân công lại.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Dự án chưa có tiêu chí thành công. Bước phù hợp trước khi giao việc?
+**Câu 1 — Chọn một.** Nhóm muốn tạo tài liệu onboarding “hay và đầy đủ”, nhưng chưa biết người đọc phải làm được gì sau khi đọc. Quyết định lập kế hoạch nào cần trước?
 
-A. Giao hết cho AI.
+A. Chốt danh sách chương theo tài liệu cũ và dùng số chương hoàn thành làm tiêu chí, rồi mới hỏi người đọc cần thực hiện việc gì.
 
-B. Làm rõ kết quả cần đạt cùng các nhiệm vụ chính.
+B. Đề nghị AI viết toàn bộ rồi chọn mục tiêu phù hợp với bản nháp.
 
-C. Chỉ chọn màu báo cáo.
+C. Chốt kết quả và cách kiểm chứng trước khi chia việc.
 
-D. Bỏ kế hoạch.
+D. Giao mỗi thành viên một chương có độ dài bằng nhau.
 
-**2. Chọn một.** Nhiệm vụ cần phán đoán chuyên môn. Kế hoạch nên ghi gì?
+**Câu 2 — Chọn một.** AI đã viết bản nháp từ tài liệu cũ, nhưng người phụ trách phát hiện quy trình hiện tại khác đáng kể. Bước phù hợp nhất?
 
-A. AI quyết định mọi thứ.
+A. Giữ bản nháp vì kế hoạch ban đầu dùng tài liệu đó.
 
-B. Không cần xác định người chịu trách nhiệm.
+B. Cập nhật nguồn, phân công và đánh giá theo yêu cầu mới.
 
-C. Phần cần chuyên môn người và cách phối hợp với AI.
+C. Yêu cầu AI chỉnh văn phong để hạn chế chú ý vào khác biệt.
 
-D. Chỉ thời gian bắt đầu.
+D. Chỉ thêm chú thích “quy trình có thể thay đổi” rồi phát hành.
 
-**3. Chọn một.** Tại sao cần lưu kế hoạch?
+**Câu 3 — Chọn hai.** Một kế hoạch chia dự án thành tám nhiệm vụ nhưng chỉ ghi người thực hiện. Hai mục nào cần bổ sung để bàn giao đáng tin cậy?
 
-A. Để tiếp tục thực hành và điều chỉnh trên cùng dự án.
+A. Dữ liệu/kỹ năng cần cho từng nhiệm vụ.
 
-B. Để không bao giờ thay đổi.
+B. Số token cố định bằng nhau cho mọi nhiệm vụ.
 
-C. Để thay mọi kết quả kiểm tra.
+C. Người kiểm tra cùng tiêu chí đầu ra được chấp nhận.
 
-D. Để chứng minh dự án tự hoàn tất.
+D. Mức độ tự tin mong muốn trong câu trả lời của AI.
 
-## Đáp án
+**Câu 4 — Chọn một.** Nhóm chọn dự án thực hành quá lớn, mỗi lần chỉ viết prompt nhưng không đi tới kiểm tra đầu ra. Thay đổi nào giúp luyện cả vòng cộng tác?
 
-1. **B.** B tạo mục tiêu phân công; A giao khi chưa hiểu việc, C không đủ, D bỏ bước nền tảng.
+A. Chọn dự án nhiều bước đủ nhỏ để làm, kiểm tra và rút kinh nghiệm.
 
-2. **C.** C phân công theo điểm mạnh; A, B bỏ phán đoán/trách nhiệm, D chưa mô tả công việc.
+B. Chỉ luyện đặt tên bốn năng lực để có nền tảng vững hơn.
 
-3. **A.** A hỗ trợ liên tục; B cứng nhắc, C và D nhầm kế hoạch với bằng chứng kết quả.
+C. Chia dự án thành nhiều prompt rời mà không cần mục tiêu chung.
+
+D. Thêm nhiều công cụ để tự động hoàn thành phần còn thiếu.
+
+**Câu 5 — Chọn hai.** Kế hoạch được lưu lại sau buổi đầu. Hai cách sử dụng nào tạo giá trị cho các buổi sau?
+
+A. Coi kế hoạch là bất biến để kết quả các buổi luôn có cùng phạm vi.
+
+B. Dùng nó để tiếp tục Description và Discernment trên cùng nhiệm vụ, tránh mất mục tiêu.
+
+C. Sửa kế hoạch khi phát hiện thiếu dữ liệu hoặc cần chuyên môn khác, ghi lại thay đổi.
+
+D. Chỉ lưu để chứng minh đã hoàn thành hoạt động, không cần đối chiếu đầu ra.
+
+## Đáp án và giải thích
+
+1. **C.** C xác lập giá trị và tiêu chí trước khi chia việc. A có kế hoạch nội dung nhưng lấy độ bao phủ tài liệu cũ thay cho kết quả người đọc cần đạt. B đảo chiều mục tiêu theo sản phẩm tình cờ tạo ra. D phân chia khối lượng chưa dựa vào hành vi cần hỗ trợ.
+
+2. **B.** B dùng dữ liệu mới để sửa kế hoạch và sản phẩm. A giữ nhất quán với nguồn lỗi thời. C thay trình bày không sửa nghiệp vụ. D cảnh báo chung không thay việc cung cấp hướng dẫn đúng cho người mới.
+
+3. **A, C.** A cho biết điều kiện thực hiện, C xác định kiểm chứng và trách nhiệm. B là phân bổ tài nguyên máy móc không xét yêu cầu. D confidence thể hiện không phải tiêu chí nghiệp vụ hay bằng chứng hoàn tất.
+
+4. **A.** A tạo cơ hội trải nghiệm cả phân công, mô tả, đánh giá và sử dụng. B chỉ tăng kiến thức khái niệm. C khó nối thành kết quả có tiêu chí. D tăng khả năng công cụ không tự giải quyết phạm vi thực hành quá lớn.
+
+5. **B, C.** B nối các năng lực trên một công việc thực; C giữ kế hoạch phù hợp bằng chứng mới. A ngăn thích ứng. D biến kế hoạch thành thủ tục thay vì công cụ điều phối và đánh giá.

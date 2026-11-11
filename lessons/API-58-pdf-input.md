@@ -13,45 +13,69 @@ Ví dụ: Bạn cần số liệu trong một bảng ở trang cụ thể. Hãy 
 
 Bài này bổ sung kiến thức về đầu vào của API. Chi tiết xử lý hình ảnh và khả năng thị giác không phải trọng tâm của đề cương thi Architect đã lưu.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Trong mẫu, PDF được gửi dưới block nào?
+**Câu 1 — Chọn một.** Adapter đang gửi PDF bằng khối image và nhận lỗi kiểu nội dung. Theo mẫu của bài, thay đổi đầu tiên cần làm là gì?
 
-A. Chỉ system string không có dữ liệu.
+A. Tăng độ phân giải PDF trong khi giữ nguyên loại nội dung.
 
-B. Document với media type PDF phù hợp.
+B. Giữ khối image nhưng đổi phần mở rộng tên tệp thành .pdf.
 
-C. Chỉ tên file bất kỳ.
+C. Nới validator phía ứng dụng để chấp nhận response lỗi là nội dung tài liệu.
 
-D. Luôn image/png dù không đổi file.
+D. Gửi document block với kiểu PDF theo giao thức đích.
 
-**2. Chọn một.** Mô hình không trích được một trường. Có thể kết luận ngay nó không có trong PDF?
+**Câu 2 — Chọn hai.** Bảng ở trang 17 có hai cột số giống nhau nhưng khác đơn vị. Mô hình trích đúng hình thức JSON mà chọn nhầm cột. Hai cải thiện nào nhắm trực tiếp lỗi này?
 
-A. Luôn có thể.
+A. Chấp nhận kết quả vì schema đã kiểm tra trường là số.
 
-B. Có nếu output ngắn.
+B. Lấy trung bình hai cột để giảm ảnh hưởng lựa chọn sai.
 
-C. Chưa; kiểm tra trang/bảng và khả năng đọc nguồn trước.
+C. Đối chiếu kết quả với bảng gốc, gồm tiêu đề cột và chú thích liên quan.
 
-D. Có nếu có trích dẫn nguồn bất kỳ.
+D. Chỉ rõ trang, tên bảng, trường và đơn vị cần lấy trong yêu cầu.
 
-**3. Chọn một.** Để kiểm tra bản trích xuất quan trọng nên làm gì?
+**Câu 3 — Chọn một.** Mô hình trả “không tìm thấy mã hợp đồng” trong PDF 40 trang. Workflow định đánh dấu hợp đồng không có mã. Bước xử lý nào có căn cứ nhất?
 
-A. Đối chiếu đúng vị trí trong tài liệu gốc.
+A. Chạy lại cùng prompt và coi hai câu trả lời giống nhau là chứng minh vắng mặt.
 
-B. Chỉ nhìn độ tự tin.
+B. Suy ra mã từ tên file để điền trường bắt buộc.
 
-C. Chỉ xem tên file.
+C. Đánh dấu thiếu vĩnh viễn vì provider đã chấp nhận toàn bộ PDF.
 
-D. Chỉ đánh giá văn phong.
+D. Phân biệt chưa trích được với xác nhận vắng mặt; kiểm tra vùng liên quan hoặc chuyển review theo yêu cầu.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Một PDF chứa số liệu trong bảng, ý nghĩa đơn vị trong chú thích và điều kiện áp dụng ở đoạn văn bên cạnh. Hai yêu cầu nào giúp tránh trích số đúng nhưng diễn giải sai?
 
-1. **B.** B khớp loại nguồn; A và C không đưa tài liệu, D sai kiểu dữ liệu.
+A. Đọc số liệu cùng tiêu đề, chú thích và điều kiện liên quan.
 
-2. **C.** C phân biệt lỗi đọc với dữ liệu vắng; A, B, D kết luận vượt bằng chứng.
+B. Chỉ lấy chuỗi số có định dạng hợp lệ để loại nhiễu từ văn bản.
 
-3. **A.** A dùng nguồn trực tiếp; B, C, D không xác nhận giá trị trích xuất.
+C. Chuẩn hóa tất cả đơn vị theo giá trị thường gặp của tài liệu cùng loại.
+
+D. Giữ vị trí nguồn cùng giá trị và đơn vị trong kết quả cần kiểm chứng.
+
+**Câu 5 — Chọn một.** Đội đã chạy thành công một PDF văn bản và định triển khai cho cả bản scan, bảng phức tạp và bố cục nhiều cột. Bằng chứng nào còn thiếu trước khi khẳng định chất lượng?
+
+A. Một ví dụ có câu trả lời rất dài giải thích từng bước đọc.
+
+B. Đo lỗi theo trường và bố cục trên tài liệu đại diện.
+
+C. Việc dùng cùng phần mở rộng nên có thể tái dùng nguyên mức chính xác.
+
+D. Thông báo upload thành công cho từng định dạng tệp .pdf.
+
+## Đáp án và giải thích
+
+1. **D.** A sai: độ phân giải không sửa lỗi hợp đồng kiểu nội dung. B sai: đổi tên không thay đổi loại khối hoặc cấu trúc request. C sai: việc đó che lỗi giao thức, không giúp provider nhận PDF đúng. D đúng: vấn đề nằm ở biểu diễn tài liệu trong request trước khi xét khả năng đọc nội dung.
+
+2. **C, D.** A sai: kiểu số không chứng minh đã chọn đúng cột hoặc đơn vị. B sai: tạo số tổng hợp không được yêu cầu và có thể không có ý nghĩa nghiệp vụ. C đúng: kiểm chứng nguồn bắt lỗi đọc sai mà parse JSON không phát hiện. D đúng: vị trí và semantics giúp phân biệt các giá trị gần nhau.
+
+3. **D.** A sai: các lần đọc có thể lặp cùng lỗi bỏ sót nên đồng thuận không đủ chứng cứ. B sai: tên file chưa được xác nhận là nguồn hợp lệ của mã hợp đồng. C sai: chấp nhận tệp không bảo đảm đọc chính xác mọi phần. D đúng: thất bại trích xuất có thể do bỏ sót chứ chưa chứng minh tài liệu không chứa trường.
+
+4. **A, D.** A đúng: ý nghĩa của số phụ thuộc bố cục và thông tin xung quanh. B sai: loại văn bản có thể bỏ điều kiện quyết định ý nghĩa giá trị. C sai: giả định từ tài liệu khác không thay thế đơn vị ghi trong nguồn hiện tại. D đúng: downstream cần truy được bằng chứng để xác minh cách diễn giải.
+
+5. **B.** A sai: độ dài giải thích không chứng minh bao phủ đúng các dạng bố cục. B đúng: một mẫu dễ không đại diện cho các thách thức đọc và trích xuất khác nhau. C sai: phần mở rộng không thể hiện độ khó của nội dung và bố cục. D sai: upload đo khả năng nhận tệp, không đo độ chính xác nội dung.
 
 ## Đối chiếu tính năng trên Bedrock
 

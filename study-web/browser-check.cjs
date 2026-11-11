@@ -11,7 +11,7 @@ const {chromium}=require('playwright');
   await page.addInitScript(()=>{Object.defineProperty(navigator,'clipboard',{value:{writeText:async text=>{window.__copiedStudyText=text;}}});});
   await page.goto(origin);await page.waitForSelector('#lesson-article h2');
   assert.match(await page.locator('#lesson-title').innerText(),/Điều kiện dừng/);
-  await page.click('#mark-read');assert.equal(await page.locator('.quiz-card').count(),3);
+  await page.click('#mark-read');assert.equal(await page.locator('.quiz-card').count(),5);
   await page.locator('.quiz-card').nth(0).locator('[data-option="A"]').click();await page.locator('.quiz-card').nth(0).locator('[data-check]').click();
   assert.match(await page.locator('.quiz-card').nth(0).locator('.answer-feedback').innerText(),/Đáp án: B/);
   await page.locator('.quiz-card').nth(2).locator('[data-option="A"]').click();assert.equal(await page.locator('.quiz-card').nth(2).locator('[data-check]').isDisabled(),true);
@@ -23,7 +23,7 @@ const {chromium}=require('playwright');
   await page.click('#practice-start');await page.waitForFunction(()=>document.querySelectorAll('.quiz-card').length===10);assert.equal(await page.locator('.quiz-card').count(),10);
   await page.fill('#search','MCP');assert.ok((await page.locator('.lesson-link').count())>0);
   await page.locator('.lesson-link').first().click();await page.waitForTimeout(150);await page.fill('#chat-input','Vì sao schema chưa phải là executor?');await page.click('#copy-question');const copied=await page.evaluate(()=>window.__copiedStudyText);assert.match(copied,/schema chưa phải/);assert.ok(!copied.includes('Đáp án tham chiếu'));
-  const lib=await(await fetch(origin+'/api/library')).json();assert.equal(lib.lessons.length,142);assert.equal(lib.totalQuestions,426);
+  const lib=await(await fetch(origin+'/api/library')).json();assert.equal(lib.lessons.length,142);assert.equal(lib.totalQuestions,710);
   for(const path of ['beginner','quick']){
    assert.ok(lib.learningPaths[path].stages.length);
    await page.selectOption('#learning-path',path);
@@ -38,6 +38,35 @@ const {chromium}=require('playwright');
   await page.setViewportSize({width:390,height:844});await page.click('#menu-toggle');assert.equal(await page.locator('#sidebar').evaluate(el=>el.classList.contains('open')),true);await page.keyboard.press('Escape');
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),true);
   await page.click('#mobile-tutor');assert.equal(await page.locator('#tutor').isVisible(),true);await page.screenshot({path:'.study-test/mobile-tutor.png'});await page.click('#mobile-tutor');await page.screenshot({path:'.study-test/mobile.png',fullPage:true});
-  assert.deepEqual(errors,[]);console.log('PASS: desktop/mobile, quiz single/multiple, persistence, wrong-answer review, practice, clipboard, origin checks and private-file isolation.');
+  assert.deepEqual(errors,[]);
+  const lesson=await(await fetch(origin+'/api/lesson?id=EXAM-14-loop-decomposition.md')).json();
+  const migration=await browser.newContext();
+  await migration.addInitScript(({lesson})=>{
+   if(localStorage.getItem('architect-study-v1'))return;
+   const [legacy,changed,current]=lesson.questions;
+   localStorage.setItem('architect-study-v1',JSON.stringify({read:{[lesson.id]:123},answers:{
+    [legacy.id]:{selected:['A'],checked:true,correct:false},
+    [changed.id]:{selected:['A'],checked:true,correct:false,revision:'outdated'},
+    [current.id]:{selected:current.correct,checked:true,correct:true,revision:current.revision}
+   }}));
+  },{lesson});
+  const migrated=await migration.newPage();await migrated.goto(origin);await migrated.waitForSelector('#lesson-article h2');await migrated.click('#tab-quiz');
+  assert.equal(await migrated.locator('#wrong-count').innerText(),'0');
+  assert.match(await migrated.locator('#progress-label').innerText(),/^1 \/ 142/);
+  assert.equal(await migrated.locator('.answer-feedback').count(),1);
+  assert.equal(await migrated.locator('.quiz-card').nth(0).locator('.answer-option.selected').count(),0);
+  assert.equal(await migrated.evaluate(()=>Object.keys(JSON.parse(localStorage.getItem('architect-study-v1')).answers).length),3);
+  for(const q of lesson.questions.filter(q=>q.number!==3)){
+   const card=migrated.locator('.quiz-card').nth(q.number-1);
+   for(const key of q.correct)await card.locator(`[data-option="${key}"]`).click();
+   await card.locator('[data-check]').click();
+  }
+  assert.match(await migrated.locator('#quiz-summary').innerText(),/5 \/ 5/);
+  await migrated.reload();await migrated.waitForSelector('#lesson-article h2');await migrated.click('#tab-quiz');
+  assert.match(await migrated.locator('#quiz-summary').innerText(),/5 \/ 5/);
+  await migrated.click('#quiz-reset');assert.equal(await migrated.locator('.answer-feedback').count(),0);
+  assert.equal(await migrated.evaluate(()=>Object.keys(JSON.parse(localStorage.getItem('architect-study-v1')).answers).length),0);
+  await migration.close();
+  console.log('PASS: desktop/mobile, five-question scoring, single/multiple choice, version migration, persistence, wrong-answer review, practice, clipboard and API isolation.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

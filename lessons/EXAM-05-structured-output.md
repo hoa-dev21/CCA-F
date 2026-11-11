@@ -21,43 +21,69 @@ Thiết kế sẵn cách biểu diễn thông tin thiếu hoặc mơ hồ. Optio
 
 Kết hợp schema với quy ước chuẩn hóa, chẳng hạn định dạng ngày, và kiểm tra nghiệp vụ sau trích xuất.
 
-## Câu hỏi tình huống
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Quy trình xử lý cần luôn trích thông tin mô tả bằng một công cụ xác định trước khi làm bước sau. Chọn cấu hình nào sát đề cương?
+**Câu 1 — Chọn một.** Workflow bắt buộc trích metadata rồi mới enrichment. Cả hai công cụ được khai báo và tool_choice đặt any. Mô hình đôi khi gọi enrichment đầu tiên. Sửa nào đáp ứng thứ tự bắt buộc?
 
-A. Auto và hy vọng mô hình luôn chọn đúng.
+A. Đổi thứ tự mô tả công cụ và thêm ví dụ metadata đứng trước.
 
-B. Forced selection với tên công cụ thông tin mô tả.
+B. Ép metadata; host xác nhận đạt rồi mới cho enrichment.
 
-C. Any khi tập có cả công cụ enrichment thay thế.
+C. Giữ any nhưng yêu cầu mô hình giải thích vì sao metadata đã đủ.
 
-D. Chỉ tăng output tokens.
+D. Cho chạy cả hai rồi bỏ enrichment nếu metadata thất bại.
 
-**2. Chọn một.** JSON đúng bản mô tả cấu trúc dữ liệu nhưng tổng các dòng khác tổng hóa đơn. Kết luận nào đúng?
+**Câu 2 — Chọn một.** JSON parse được, đúng schema, nhưng tổng hóa đơn khác tổng các dòng. Hệ thống nên làm gì?
 
-A. Đã đúng toàn bộ vì parse thành công.
+A. Validate nghiệp vụ; giữ hai tổng và đánh dấu xung đột.
 
-B. Cần bỏ mọi bản mô tả cấu trúc dữ liệu.
+B. Chấp nhận vì cấu trúc hợp lệ là mục tiêu của structured output.
 
-C. Đây là lỗi ngữ nghĩa cần validation, bản mô tả cấu trúc dữ liệu đúng chưa loại trừ nó.
+C. Ghi đè tổng khai báo bằng tổng tính để đảm bảo nhất quán.
 
-D. Chỉ cần đổi thụt dòng JSON.
+D. Retry đến khi mô hình tạo hai tổng bằng nhau.
 
-**3. Chọn hai.** Nguồn có thể không ghi mã số thuế hoặc loại tài liệu có thể mơ hồ. Thiết kế nào phù hợp?
+**Câu 3 — Chọn hai.** Hợp đồng yêu cầu trường mã số thuế, nhưng một số tài liệu không có; loại tài liệu cũng có thể mơ hồ. Hai lựa chọn schema nào giảm việc bịa dữ liệu?
 
-A. Cho phép biểu diễn thiếu dữ liệu theo nullable/optional đã định nghĩa.
+A. Đặt mã số thuế là chuỗi bắt buộc và chấp nhận số gần đúng.
 
-B. Bắt luôn điền một mã hợp lệ trông có vẻ thật.
+B. Cho phép null theo quy ước rõ, phân biệt với chuỗi rỗng.
 
-C. Chọn ngẫu nhiên một enum khi không rõ.
+C. Bắt chọn loại phổ biến nhất khi không đủ dấu hiệu.
 
-D. Có giá trị unclear/other và trường chi tiết khi hợp đồng cần.
+D. Có nhãn unclear/other và trường giải thích nếu downstream cần phân biệt.
 
-## Đáp án
+**Câu 4 — Chọn một.** Host nhận đúng tên công cụ bắt buộc và arguments đúng kiểu. Công cụ sẽ cập nhật hồ sơ khách hàng. Bằng chứng nào còn cần trước khi thực thi?
 
-1. **B.** A không buộc gọi; C không buộc đúng tên; D không điều khiển lựa chọn.
-2. **C.** A nhầm hình thức với nội dung; B bỏ kiểm tra hữu ích; D không sửa số liệu.
-3. **A, D.** B khuyến khích bịa; C che sự mơ hồ.
+A. Mô hình đã chọn đúng công cụ nên quyền cập nhật được suy ra.
+
+B. JSON hợp lệ đủ chứng minh khách hàng tồn tại.
+
+C. Quyền trên hồ sơ, tính hợp lệ nghiệp vụ và tiền điều kiện thao tác.
+
+D. Một câu xác nhận bằng văn xuôi từ cùng mô hình thay cho kiểm tra host.
+
+**Câu 5 — Chọn hai.** Một API downstream phân biệt “không có trường” và “đã kiểm tra nhưng không tìm thấy”. Hai việc nào cần làm khi thiết kế đầu ra?
+
+A. Quy định rõ optional so với null và kiểm thử adapter với cả hai.
+
+B. Xóa mọi null trước khi gửi để payload gọn hơn.
+
+C. Giữ trạng thái thiếu theo bằng chứng thay vì tự điền giá trị mặc định.
+
+D. Chuyển cả hai trường hợp thành chuỗi rỗng để thống nhất kiểu.
+
+## Đáp án và giải thích
+
+1. **B.** B cưỡng chế lựa chọn và điều kiện chuyển bước. A và C chỉ hướng dẫn. D cho phép thực thi bước phụ thuộc trước khi tiền điều kiện được xác nhận.
+
+2. **A.** A phân biệt cấu trúc và ngữ nghĩa, giữ bằng chứng. B không kiểm tra nghiệp vụ. C sửa nguồn mà không biết tổng nào đúng. D có thể ép mô hình tạo sự nhất quán giả.
+
+3. **B, D.** B biểu diễn thiếu dữ liệu; D biểu diễn phân loại chưa xác định. A và C ép một giá trị có vẻ hoàn chỉnh nhưng thiếu căn cứ. Cần thống nhất ngữ nghĩa null với bên tiêu thụ.
+
+4. **C.** C kiểm tra các điều kiện schema không chứng minh được. A nhầm chọn công cụ với cấp quyền. B nhầm kiểu dữ liệu với tồn tại thực thể. D vẫn là lời mô hình, không phải kiểm soát thực thi.
+
+5. **A, C.** A giữ hợp đồng giữa các bên, C tránh tạo dữ kiện. B và D xóa mất khác biệt mà downstream cần, dù payload vẫn có thể parse thành công.
 
 ## Đối chiếu bài Bedrock
 

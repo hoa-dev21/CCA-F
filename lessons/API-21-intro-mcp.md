@@ -13,43 +13,69 @@ Ví dụ: Hai ứng dụng đều cần tra cứu yêu cầu hỗ trợ khách h
 
 MCP và cơ chế dùng công cụ (tool use) bổ sung cho nhau. Tool use là quá trình Claude yêu cầu thao tác và nhận kết quả; MCP chuẩn hóa cách ứng dụng tìm và gọi công cụ đó. Không phải công cụ nào cũng cần MCP. Ngược lại, chỉ có MCP server chưa đủ để tự điều hành hội thoại hay bảo đảm Claude ra quyết định đúng.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Nhiều ứng dụng đang sao chép bản mô tả cấu trúc dữ liệu và mã tích hợp cùng một dịch vụ. MCP giúp trực tiếp ở đâu?
+**Câu 1 — Chọn một.** Hai ứng dụng đều tích hợp cùng hệ thống ticket nhưng đang sao chép mã kết nối. Nhóm muốn tái sử dụng mà vẫn giữ hội thoại riêng. Kiến trúc nào phù hợp?
 
-A. Đóng gói lớp tích hợp thành server để client dùng lại.
+A. Nhúng hai bản mã tích hợp vào system prompt để tái sử dụng.
 
-B. Tự bảo đảm mọi câu trả lời đúng.
+B. MCP server dùng chung; mỗi app có client và context riêng.
 
-C. Xóa nhu cầu nhận kết quả công cụ.
+C. Bỏ client rồi đưa địa chỉ server vào prompt để model tự kết nối.
 
-D. Biến dữ liệu hiện tại thành kiến thức huấn luyện tức thì.
+D. Đưa cả hai lịch sử vào server ticket chung.
 
-**2. Chọn một.** Quan hệ giữa MCP và tool use?
+**Câu 2 — Chọn hai.** Nhóm mô tả MCP như phần thay thế toàn bộ tool use. Hai nhận định nào sửa đúng sự nhầm lẫn?
 
-A. Hoàn toàn đồng nghĩa.
+A. Mọi công cụ local đều bắt buộc phải chuyển sang MCP mới chạy được.
 
-B. Tool use không bao giờ hoạt động với MCP.
+B. MCP server tự quyết định đầy đủ cuộc hội thoại ngay khi được cài.
 
-C. Bổ sung nhau: MCP cung cấp lớp tích hợp cho khả năng công cụ.
+C. MCP chuẩn hóa giao tiếp khám phá và gọi khả năng phía server.
 
-D. Có MCP thì không cần mô hình quyết định.
+D. Tool use biểu diễn quá trình model đề nghị thao tác rồi nhận kết quả.
 
-**3. Chọn một.** Ai có thể xây dựng MCP server theo bài?
+**Câu 3 — Chọn một.** Nhà cung cấp đã có MCP server đọc ticket. Ứng dụng mới cần dùng dữ liệu đó để trả lời. Thành phần nào vẫn phải được xây hoặc nối?
 
-A. Chỉ tác giả ứng dụng cuối.
+A. Client gọi server; host trả kết quả về model.
 
-B. Nhà cung cấp dịch vụ hoặc người phát triển khác.
+B. Một bản sao database ticket nằm trong trọng số model.
 
-C. Chỉ người dùng cuối qua prompt.
+C. Liệt kê server trong system thay client.
 
-D. Không ai cần viết mã tích hợp.
+D. Cơ chế để server tự đọc mọi lịch sử hội thoại đang mở.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Khi phân tích lỗi “server đọc ticket thành công nhưng chatbot không trả lời được”, hai ranh giới nào cần kiểm tra?
 
-1. **A.** B không được bảo đảm; C làm đứt luồng; D nhầm ngữ cảnh với huấn luyện.
-2. **C.** A bỏ khác biệt vai trò; B sai về tích hợp; D bỏ bước quyết định trong ứng dụng.
-3. **B.** A và C giới hạn sai chủ thể; D nhầm tái sử dụng tích hợp với không cần triển khai.
+A. Server có mô tả đủ chi tiết để model suy ra nội dung ticket mà không nhận kết quả không.
+
+B. Ứng dụng có đưa kết quả vào ngữ cảnh của model không.
+
+C. Model có được tăng ngân sách suy luận để tự phục hồi phần dữ liệu chưa truyền không.
+
+D. Client có nhận và trả dữ liệu đúng cho ứng dụng không.
+
+**Câu 5 — Chọn một.** Một tiện ích chỉ cần gọi một hàm local đã có, không chia sẻ tích hợp cho ứng dụng khác. Kết luận thiết kế nào phù hợp với bài?
+
+A. Không thể có tool use nếu không có resource URI.
+
+B. Phải thêm MCP server dù không có nhu cầu tích hợp để model được gọi hàm.
+
+C. Cần chuyển hàm thành một prompt template để model tự thực thi mã.
+
+D. Dùng client tool trực tiếp; chỉ thêm MCP khi cần lợi ích đó.
+
+## Đáp án và giải thích
+
+1. **B.** B tái sử dụng tầng tích hợp và giữ trách nhiệm host. D trộn trạng thái không cần thiết; C thiếu thành phần giao tiếp; A mã trong prompt không thay kết nối thực thi.
+
+2. **C, D.** D và C mô tả hai vai trò bổ sung. B gán nhiệm vụ điều phối host cho server; A suy rộng giao thức thành yêu cầu bắt buộc cho mọi công cụ.
+
+3. **A.** A nối dữ liệu vào hội thoại. B không phải mô hình hoạt động của MCP; C tên không tạo kết nối; D không cần và làm sai phân tách trách nhiệm.
+
+4. **B, D.** D kiểm tra đường dữ liệu server–host; B kiểm tra host–model. A mô tả khả năng không thay dữ liệu của ticket cụ thể; C tăng ngân sách suy luận không đưa kết quả chưa truyền vào context.
+
+5. **D.** D chọn cơ chế theo nhu cầu. B áp đặt không có trong bài; A nhầm resource với điều kiện tool use; C template hướng dẫn không chạy hàm.
 
 ## Đối chiếu khóa MCP riêng
 

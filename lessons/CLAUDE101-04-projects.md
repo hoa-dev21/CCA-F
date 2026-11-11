@@ -17,42 +17,66 @@ Ví dụ: Nhóm truyền thông có thể lưu tài liệu thương hiệu vào 
 
 Khi chia sẻ dự án, cấp quyền theo công việc người nhận cần làm. Người chỉ cần xem hoặc hỏi về tài liệu không nhất thiết cần quyền sửa. Chi tiết quyền và gói dịch vụ cần được kiểm tra khi triển khai.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Nhóm tải lại cùng brand guide ở nhiều chat. Cách tổ chức phù hợp?
+**Câu 1 — Chọn một.** Nhóm đặt “luôn trả lời theo mẫu kiểm toán” trong description của Project nhưng kết quả không ổn định. Cách tổ chức nào phù hợp nhất?
 
-A. Chỉ rút ngắn tên file.
+A. Đặt quy tắc ở instructions, tài liệu nguồn ở knowledge.
 
-B. Bỏ guide khỏi mọi chat.
+B. Nhân bản description vào tên mọi tài liệu rồi giữ instructions trống.
 
-C. Đưa tài liệu vào knowledge của dự án và dùng instructions phù hợp.
+C. Đưa mẫu vào một cuộc chat cũ và coi mọi chat khác sẽ tự dùng.
 
-D. Chỉ viết mục đích ở tên tài khoản.
+D. Đổi tiêu đề Project thành tên mẫu kiểm toán để tạo quy tắc bắt buộc.
 
-**2. Chọn một.** Muốn mọi chat trong dự án dùng một mẫu phản hồi. Nên đặt ở đâu?
+**Câu 2 — Chọn hai.** Knowledge chứa hai bản chính sách có mức ưu đãi khác nhau. Hai việc nào giảm nguy cơ dùng nhầm phiên bản?
 
-A. Dự án instructions.
+A. Gắn phiên bản, thời điểm hiệu lực và tên tài liệu rõ ràng.
 
-B. Chỉ description cho người xem.
+B. Yêu cầu giọng văn dứt khoát để mô hình chọn một bản và không báo mâu thuẫn.
 
-C. Chỉ một file không bao giờ tham chiếu.
+C. Giữ cả hai không chú thích vì nhiều tài liệu làm kết luận chắc hơn.
 
-D. Chỉ tên người dùng.
+D. Cập nhật hoặc phân định tài liệu thay thế, kiểm tra nguồn được dùng trong câu trả lời.
 
-**3. Chọn một.** Tài liệu cũ vẫn được dùng trả lời. Biện pháp trực tiếp?
+**Câu 3 — Chọn một.** Cộng tác viên chỉ cần hỏi đáp trên bộ tài liệu đã duyệt. Phương án quyền nào khớp nhu cầu?
 
-A. Thêm mọi người quyền sửa bất kể cần.
+A. Chia sẻ thông tin đăng nhập của chủ dự án để có cùng trải nghiệm.
 
-B. Rà soát/cập nhật knowledge và phân biệt phiên bản.
+B. Cấp toàn bộ quyền dự án vì việc đọc và sửa dùng chung giao diện.
 
-C. Chỉ yêu cầu mô hình tự tin hơn.
+C. Cấp quyền xem/hỏi theo nhu cầu, tách khỏi quyền sửa.
 
-D. Không cần quản lý nguồn.
+D. Cấp quyền chỉnh sửa để giảm khả năng gặp lỗi khi tra cứu.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Project có hàng nghìn trang. Một câu trả lời bỏ sót ngoại lệ nằm trong tài liệu ít được truy xuất. Hai nhận định nào phù hợp?
 
-1. **C.** C tái sử dụng nguồn và quy tắc; A không chia sẻ ngữ cảnh, B bỏ nguồn, D sai nơi.
+A. Tăng độ dài description sẽ buộc đọc mọi trang trong mỗi lượt.
 
-2. **A.** A là bề mặt hướng dẫn; B không thay instructions, C và D không xác định hành vi.
+B. Cần kiểm tra phần nguồn được lấy và bổ sung tài liệu liên quan tới ngoại lệ.
 
-3. **B.** B sửa dữ liệu tham chiếu; A không tự cập nhật, C không sửa nguồn, D giữ lỗi.
+C. Có tài liệu trong knowledge chưa chứng minh toàn bộ nội dung đã có trong lượt trả lời.
+
+D. Có thể coi ngoại lệ không tồn tại nếu không xuất hiện trong câu trả lời đầu.
+
+**Câu 5 — Chọn một.** Nhóm thương hiệu cần dùng chung tài liệu dài hạn nhưng mỗi chiến dịch có đối tượng khác nhau. Thiết kế nào tránh trộn dữ liệu ổn định với yêu cầu từng lần?
+
+A. Giữ quy tắc/nguồn chung ở Project; nêu đối tượng ở yêu cầu mới.
+
+B. Sửa toàn bộ knowledge mỗi khi thay đối tượng chiến dịch.
+
+C. Ghi đối tượng đầu tiên vào tên Project và dùng cho mọi chiến dịch.
+
+D. Chỉ giữ lịch sử một chat dài làm nơi duy nhất cho mọi tài liệu và quy tắc.
+
+## Đáp án và giải thích
+
+1. **A.** A tách hướng dẫn khỏi dữ liệu và mô tả. B và D không tạo nơi đặt quy tắc phù hợp; C mặc định chuyển ngữ cảnh giữa các chat.
+
+2. **A, D.** A làm rõ thời điểm áp dụng; D kiểm soát nguồn thực dùng. C tăng nhập nhằng; B che mâu thuẫn thay vì giải quyết nó.
+
+3. **C.** C gắn quyền với công việc. D không có nhu cầu sửa; A làm mất phân biệt danh tính và phạm vi; B suy quyền từ giao diện.
+
+4. **B, C.** C phân biệt lưu trữ và ngữ cảnh sử dụng; B nhắm lỗi truy xuất. A không có cơ sở; D biến sự vắng mặt trong đầu ra thành bằng chứng phủ định.
+
+5. **A.** A phân lớp bối cảnh ổn định và nhiệm vụ. B tạo cập nhật không cần thiết; C cố định thông tin thay đổi theo chiến dịch; D khó phân biệt phiên bản và trạng thái.

@@ -15,42 +15,66 @@ Mẫu tiếp theo dùng `AnthropicVertex` với dự án, vùng và thông tin x
 
 Khi chuyển từ notebook sang môi trường vận hành, chọn danh tính và quyền phù hợp với hạ tầng, không sao chép nguyên cách đăng nhập tương tác. Tên mô hình, vùng và giao diện trong khóa cần được kiểm tra khi triển khai. Khi ôn thi, ưu tiên hiểu sự khác nhau giữa các lớp xác thực và quyền truy cập.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** gcloud đã đăng nhập nhưng SDK vẫn lỗi xác thực. Kiểm tra nào sát vấn đề nhất?
+**Câu 1 — Chọn một.** gcloud login thành công nhưng ứng dụng dùng AnthropicVertex vẫn lỗi xác thực. Bước điều tra nào nhắm đúng ranh giới giữa CLI và SDK?
 
-A. Tăng temperature.
+A. Đăng nhập CLI lại nhiều lần nhưng giữ nguyên credential runtime.
 
-B. Thông tin xác thực ứng dụng thực sự đang dùng, dự án và quyền truy cập.
+B. Đổi system prompt để yêu cầu mô hình xác nhận quyền.
 
-C. Đổi system prompt.
+C. Kiểm tra credential SDK thực dùng, project và quyền.
 
-D. Tăng max_tokens.
+D. Tăng timeout suy luận để chờ quyền được nhận.
 
-**2. Chọn một.** Có Anthropic API key trực tiếp. Có thể mặc định dùng nó thay Google credentials trong mẫu AnthropicVertex không?
+**Câu 2 — Chọn một.** Notebook chạy được bằng đăng nhập tương tác cá nhân; job production không có người đăng nhập. Cách chuyển phù hợp?
 
-A. Có, mọi nhà cung cấp dùng chung key.
+A. Dùng danh tính runtime phù hợp; kiểm tra quyền và đích triển khai.
 
-B. Có, chỉ đổi mô hình name là đủ.
+B. Sao chép lịch sử hội thoại vì notebook đã xác thực trong phiên cũ.
 
-C. Không; xác thực và định tuyến phải theo nhà cung cấp và client được cấu hình.
+C. Dùng nguyên credential cá nhân trên mọi máy mà không xét lifecycle.
 
-D. Có, nếu prompt đủ ngắn.
+D. Chỉ giữ cùng tên SDK để bảo đảm mọi quyền giống notebook.
 
-**3. Chọn một.** Notebook gọi mô hình thành công ở một dự án. Điều gì cần kiểm tra khi chuyển sang production?
+**Câu 3 — Chọn hai.** Ứng dụng có API key Anthropic trực tiếp nhưng client đang định tuyến qua Vertex. Hai điều nào phải kiểm tra khi tích hợp?
 
-A. Danh tính runtime, quyền, project/region và khả năng truy cập mô hình của môi trường đích.
+A. Cơ chế xác thực mà client/provider đang cấu hình thực sự yêu cầu.
 
-B. Chỉ sao chép lịch sử chat.
+B. Chỉ tên mô hình Claude vì cùng mô hình phải dùng chung key.
 
-C. Chỉ tăng temperature.
+C. Project, region và quyền truy cập mô hình của môi trường Vertex.
 
-D. Không cần kiểm tra thêm vì cùng SDK.
+D. Tự đưa API key trực tiếp vào mọi trường credential để thử.
 
-## Đáp án
+**Câu 4 — Chọn một.** SDK đã lấy được credential hợp lệ nhưng dịch vụ báo không truy cập được mô hình ở cấu hình hiện tại. Điều tra nào phù hợp tiếp theo?
 
-1. **B.** CLI login không đủ để chứng minh SDK lấy đúng danh tính/project. A/C/D là tham số suy luận, không giải quyết xác thực.
+A. Coi lỗi là sai prompt vì xác thực đã thành công.
 
-2. **C.** A/B nhầm định dạng yêu cầu tương tự với cơ chế xác thực giống nhau; D không liên quan đến credentials.
+B. Đối chiếu model/project/region và quyền truy cập đích.
 
-3. **A.** B/C không xác minh môi trường đích; D bỏ qua khác biệt danh tính, quyền và phạm vi triển khai.
+C. Coi notebook ở dự án khác chạy được là đủ để bỏ kiểm tra cấu hình.
+
+D. Đổi temperature vì tham số đó có thể bật quyền mô hình.
+
+**Câu 5 — Chọn hai.** Nhóm muốn tránh sự cố khi chuyển notebook sang production. Hai loại kiểm chứng nào cần làm trên runtime đích?
+
+A. Xác nhận danh tính thật và quyền tối thiểu cần thiết cho lời gọi.
+
+B. Chỉ kiểm tra tài khoản CLI của người triển khai.
+
+C. Xác nhận endpoint/project/region/model phù hợp và chạy thử đường gọi thực tế.
+
+D. Chỉ so sánh nội dung prompt giữa hai môi trường.
+
+## Đáp án và giải thích
+
+1. **C.** C xác định credential mà lời gọi thật sử dụng. A giả định CLI và SDK chung danh tính. B/D là thay đổi không giải quyết nguồn credential và quyền trên request.
+
+2. **A.** A chuyển cả danh tính và cấu hình triển khai. B ngữ cảnh hội thoại không phải xác thực. C bỏ quản lý danh tính/vòng đời môi trường. D thư viện giống nhau không cấp cùng quyền.
+
+3. **A, C.** A/C xét đúng mặt phẳng xác thực và triển khai. B nhầm mô hình tương tự với hợp đồng nhà cung cấp. D thử credential sai loại không giải quyết routing và có thể làm rối cấu hình.
+
+4. **B.** B kiểm tra các điều kiện ngoài việc có credential. A/D trộn lớp suy luận và truy cập. C bằng chứng ở dự án khác không xác nhận quyền/vùng của môi trường hiện tại.
+
+5. **A, C.** A kiểm tra danh tính thực thi, C kiểm tra đường gọi và khả năng truy cập đích. B không chứng minh credential runtime. D giữ prompt giống nhau không làm môi trường xác thực/triển khai giống nhau.

@@ -7,12 +7,30 @@ const {lessons,library,render}=require('./library.cjs');
 const {CodexBridge}=require('./codex-bridge.cjs');
 
 test('the real course bank parses all lessons, including the first lesson’s different heading style',()=>{
-  assert.equal(lessons.size,142);assert.equal([...lessons.values()].flatMap(l=>l.questions).length,426);
+  assert.equal(lessons.size,142);assert.equal([...lessons.values()].flatMap(l=>l.questions).length,710);
   assert.equal(library[0].id,'EXAM-14-loop-decomposition.md');
   const l=lessons.get(library[0].id);assert.match(l.summary,/stop_reason/);assert.doesNotMatch(l.summaryHtml,/Đáp án|Chọn một/);
   assert.deepEqual(l.questions[0].correct,['B']);assert.deepEqual(l.questions[2].correct,['A','D']);
   assert.equal(l.questions[2].multiple,true);assert.match(l.questions[2].explanation,/kiểm tra bắt buộc bằng chương trình/);
-  const first=lessons.get('API-01-tool-use.md');assert.equal(first.questions.length,3);assert.ok(first.notesHtml.includes('Đối chiếu'));
+  const first=lessons.get('API-01-tool-use.md');assert.equal(first.questions.length,5);assert.ok(first.notesHtml.includes('Đối chiếu'));
+});
+test('every lesson has five complete scenario questions, including two choose-two questions',()=>{
+  const prompts=new Set();
+  for(const lesson of lessons.values()){
+    assert.equal(lesson.questions.length,5,lesson.id);
+    assert.equal(lesson.questions.filter(q=>q.multiple).length,2,lesson.id);
+    assert.deepEqual(lesson.questions.map(q=>q.number),[1,2,3,4,5],lesson.id);
+    for(const q of lesson.questions){
+      assert.deepEqual(q.options.map(o=>o.key),['A','B','C','D'],q.id);
+      assert.equal(new Set(q.options.map(o=>o.text)).size,4,q.id);
+      assert.equal(q.correct.length,q.multiple?2:1,q.id);
+      assert.equal(new Set(q.correct).size,q.correct.length,q.id);
+      assert.ok(q.correct.every(k=>q.options.some(o=>o.key===k)),q.id);
+      assert.ok(q.explanation.length>80,q.id);
+      assert.match(q.revision,/^[a-f0-9]{16}$/,q.id);
+      const prompt=q.prompt.trim();assert.ok(!prompts.has(prompt),'Duplicate prompt: '+q.id);prompts.add(prompt);
+    }
+  }
 });
 test('rendered study text cannot inject HTML, scripts, image handlers or javascript links',()=>{
   const html=render('<script>alert(1)</script>\n\n<img src=x onerror=alert(1)>\n\n[x](javascript:alert)\n\n![picture](javascript:alert)');

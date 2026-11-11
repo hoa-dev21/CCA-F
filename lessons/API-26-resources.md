@@ -15,43 +15,69 @@ MIME type cho biết loại nội dung, chẳng hạn JSON cho danh sách hoặc
 
 Resources công bố nội dung để ứng dụng đọc; tools cung cấp thao tác có thể gọi. Đây không phải quy tắc cấm công cụ đọc dữ liệu: bài trước đã có công cụ đọc tài liệu. Hãy chọn theo cách ứng dụng hoặc mô hình sẽ chủ động lấy thông tin.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Giao diện cần danh mục tài liệu để autocomplete trước khi gửi câu hỏi cho Claude. Thiết kế phù hợp?
+**Câu 1 — Chọn một.** Autocomplete tài liệu phải hiện khi người dùng gõ @, trước khi gọi mô hình. Thiết kế nào đáp ứng đúng quyền chủ động của UI?
 
-A. Resource trả danh mục mà ứng dụng đọc được.
+A. Công bố resource danh mục để ứng dụng đọc trực tiếp.
 
-B. Chờ Claude tự bịa tên tài liệu.
+B. Yêu cầu Claude gọi tool liệt kê sau mỗi ký tự người dùng nhập.
 
-C. Dùng công cụ sửa tài liệu để liệt kê.
+C. Chỉ cung cấp prompt mô tả tên tài liệu thường gặp.
 
-D. Chỉ mô tả danh mục trong tên mô hình.
+D. Đưa tất cả tài liệu vào system prompt ngay khi mở ứng dụng.
 
-**2. Chọn một.** Cần đọc nội dung theo `doc_id`. Cách thiết kế trong bài?
+**Câu 2 — Chọn hai.** Server có docs://documents cho danh mục và docs://documents/{doc_id} cho nội dung. Hai nhận định nào đúng?
 
-A. Một URI khác không liên quan tài liệu.
+A. Địa chỉ danh mục cố định nên ứng dụng có thể coi nội dung không đổi.
 
-B. URI template có tham số `doc_id`.
+B. Template cho phép đọc đối tượng cụ thể bằng tham số định danh.
 
-C. Chỉ trả danh sách tên, không có cách đọc.
+C. Nội dung tại URI cố định vẫn có thể đổi khi kho tài liệu đổi.
 
-D. Dùng điểm phép đánh giá làm ID.
+D. Template tự bảo đảm mọi doc_id người dùng gửi đều được phép đọc.
 
-**3. Chọn một.** URI resource cố định có nghĩa gì?
+**Câu 3 — Chọn một.** Resource danh mục trả JSON, resource chi tiết trả văn bản. Client đang nối mọi phản hồi vào một chuỗi và UI không đọc được danh sách. Sửa nào phù hợp nhất?
 
-A. Nội dung không thể thay đổi.
+A. Đổi mọi resource sang MIME text/plain.
 
-B. Không bao giờ cần server.
+B. Yêu cầu người dùng chọn tài liệu bằng vị trí ký tự trong chuỗi.
 
-C. Địa chỉ không có tham số, nội dung vẫn có thể được cập nhật.
+C. Bỏ resource danh mục và dùng tên tài liệu trong prompt mẫu.
 
-D. Chỉ dùng cho ảnh.
+D. Parse JSON danh mục; giữ text theo MIME/hợp đồng.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Một server đã có tool đọc tài liệu; nhóm muốn thêm resource đọc tài liệu đã chọn từ UI. Hai kết luận nào phù hợp?
 
-1. **A.** B không dựa vào danh mục thật; C sai mục đích; D không tạo giao diện đọc.
-2. **B.** A và D sai định danh; C chưa đáp ứng đọc nội dung.
-3. **C.** A nhầm địa chỉ với nội dung; B bỏ nơi cung cấp; D giới hạn sai kiểu dữ liệu.
+A. Hai cách có thể cùng tồn tại vì quyền chủ động sử dụng khác nhau.
+
+B. Tool đọc dữ liệu phải bị xóa vì resources độc quyền mọi thao tác đọc.
+
+C. Chọn primitive theo luồng ứng dụng/mô hình và hợp đồng dữ liệu.
+
+D. Resource chỉ hợp lệ nếu mô hình chủ động yêu cầu mỗi lần đọc.
+
+**Câu 5 — Chọn một.** UI đã cache danh mục từ URI cố định. Một tài liệu mới xuất hiện trên server nhưng không hiện ở UI. Nguyên nhân nào nên kiểm tra trước?
+
+A. URI cố định không hỗ trợ bổ sung mục nên phải đổi toàn bộ scheme.
+
+B. Dữ liệu resource hiện tại và chính sách cache của app.
+
+C. Độ dài tối đa câu trả lời của Claude khi gợi ý tài liệu.
+
+D. Đổi danh mục sang URI template có tham số.
+
+## Đáp án và giải thích
+
+1. **A.** A để ứng dụng đọc dữ liệu phục vụ UI mà không cần lượt mô hình. B thêm phụ thuộc suy luận không cần thiết. C không cung cấp danh mục thật. D tải thừa nội dung để giải bài toán danh sách.
+
+2. **B, C.** B nói về tham số hóa địa chỉ; C phân biệt địa chỉ và nội dung. A suy ra tính bất biến không có căn cứ. D định dạng URI không thay thế kiểm tra quyền/đối tượng.
+
+3. **D.** D tôn trọng kiểu nội dung. A xóa thông tin kiểu thay vì sửa adapter. B làm UI phụ thuộc biểu diễn chuỗi. C mất nguồn danh mục đang cần cho autocomplete.
+
+4. **A, C.** A và C phân biệt cách kích hoạt thay vì cấm trùng loại dữ liệu. B đặt quy tắc không có trong bài. D đảo vai trò ứng dụng chủ động đọc resource.
+
+5. **B.** B xét trạng thái nguồn và cache. A nhầm cố định địa chỉ với bất biến nội dung. C luồng UI đọc resource không phụ thuộc câu trả lời mô hình. D danh mục có thể dùng URI cố định.
 
 ## Đối chiếu khóa MCP riêng
 

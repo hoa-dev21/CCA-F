@@ -13,42 +13,66 @@ Cũng cần tách việc hiển thị với việc thực thi. Nếu công cụ 
 
 Nhận dữ liệu sớm hơn đòi hỏi xử lý tốt trạng thái chưa hoàn tất. Tên sự kiện, tùy chọn và cách giữ dữ liệu chờ trong video thuộc phiên bản lúc giảng; khi triển khai phải đối chiếu API và thư viện đang dùng. Chi tiết streaming nằm ngoài phạm vi đề cương thi đã lưu.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Đang stream nhưng mới nhận nửa chuỗi JSON. Có nên coi lỗi parse là kết quả cuối chắc chắn hỏng?
+**Câu 1 — Chọn một.** Stream công cụ chuyển tiền đã có amount=500 nhưng chưa nhận tài khoản đích. UI muốn phản hồi nhanh. Thiết kế nào đúng?
 
-A. Có, mọi phần luôn hoàn chỉnh.
+A. Thực thi trước với tài khoản gần nhất trong hội thoại rồi sửa nếu cần.
 
-B. Chưa; cần phân biệt phần tạm với dữ liệu hoàn tất và xử lý đúng trạng thái.
+B. Thực thi khi chuỗi đầu tiên parse được dù stream chưa kết thúc.
 
-C. Có, xóa mọi input.
+C. Cho mô hình xác nhận giao dịch trong lúc chờ phần còn lại.
 
-D. Không cần parse bao giờ.
+D. Báo tiến độ; đủ đối số và qua kiểm tra mới thực thi.
 
-**2. Chọn một.** Input chưa hoàn tất nhưng đã có trường số tiền. Có nên thực thi thanh toán ngay?
+**Câu 2 — Chọn một.** Parser báo lỗi khi mới nhận nửa chuỗi JSON từ stream. Kết luận hợp lý nhất là gì?
 
-A. Có, mô hình luôn không đổi phần sau.
+A. Chèn dấu đóng JSON rồi dùng đối số đã vá để thực thi.
 
-B. Có, để UI nhanh.
+B. Bỏ kiểm tra cấu trúc vì streaming vốn không parse được.
 
-C. Không; chờ input đủ và kiểm tra hợp đồng/quyền trước tác động.
+C. Đó còn là dữ liệu tạm; phải xét trạng thái cuối.
 
-D. Có, chỉ cần một trường.
+D. Coi toàn bộ yêu cầu thất bại và chạy lại công cụ ngay.
 
-**3. Chọn một.** Lợi ích chính được bài hướng tới?
+**Câu 3 — Chọn hai.** Bộ xử lý streaming đã ghép đủ đối số của một thao tác ghi. Hai gate nào còn cần trước tác động?
 
-A. Phản hồi từng phần sớm hơn, đi cùng xử lý validation phù hợp.
+A. Bỏ validation vì dữ liệu do mô hình sinh có schema mô tả.
 
-B. Bảo đảm mọi hành động đúng.
+B. Xác nhận đầu vào hoàn tất và đúng cấu trúc theo hợp đồng.
 
-C. Tự cấp quyền công cụ.
+C. Kiểm tra quyền và điều kiện nghiệp vụ của thao tác.
 
-D. Bỏ yêu cầu quản lý trạng thái.
+D. Coi việc UI hiện đủ văn bản là quyền phê duyệt.
 
-## Đáp án
+**Câu 4 — Chọn một.** Ứng dụng dùng tên sự kiện từ video cũ, không nhận biết kết thúc ở SDK mới. Bước sửa đúng là gì?
 
-1. **B.** B xét trạng thái stream; A giả định sai, C bỏ dữ liệu, D bỏ validation.
+A. Đếm số dấu ngoặc để thay hoàn toàn trạng thái stream.
 
-2. **C.** C tách hiển thị khỏi thực thi; A, B, D đánh đổi tính đúng mà không đủ dữ liệu.
+B. Dùng một timeout ngắn làm dấu kết thúc cho mọi yêu cầu.
 
-3. **A.** A là độ đáp ứng; B bảo đảm quá mức, C sai quyền, D bỏ nhiệm vụ ứng dụng.
+C. Đối chiếu sự kiện và cách hoàn tất của phiên bản đang dùng.
+
+D. Thực thi mỗi lần có một delta vì mỗi delta là lời gọi riêng.
+
+**Câu 5 — Chọn hai.** Đo hiệu quả tool streaming so với trả một lần. Hai tiêu chí nào cần tách?
+
+A. Coi số delta nhiều hơn là chất lượng nghiệp vụ cao hơn.
+
+B. Thời điểm người dùng thấy tiến độ đầu tiên.
+
+C. Coi token đầu tiên là thời điểm công cụ hoàn thành.
+
+D. Thời điểm đối số hợp lệ sẵn sàng để thực thi an toàn.
+
+## Đáp án và giải thích
+
+1. **D.** A sai: Dùng đầu vào suy đoán có thể chuyển sai nơi. B sai: Một phần parse được chưa chứng minh đối số cuối hoàn chỉnh. C sai: Lời xác nhận đi trước kết quả thực thi. D đúng: Hiển thị sớm không đồng nghĩa được phép tạo tác động.
+
+2. **C.** A sai: Sửa tùy tiện có thể làm sai ý nghĩa còn đang truyền. B sai: Đầu vào cuối vẫn cần đọc và kiểm tra. C đúng: JSON chưa hoàn chỉnh có thể là trạng thái bình thường. D sai: Có thể phát sinh gọi trùng trước khi biết kết quả cuối.
+
+3. **B, C.** A sai: Mô tả không thay kiểm tra tại bộ thực thi. B đúng: Đủ dữ liệu phải được xác định bằng trạng thái giao thức. C đúng: Đúng JSON không đồng nghĩa được phép thực hiện. D sai: Hiển thị không là cơ chế cấp quyền.
+
+4. **C.** A sai: JSON cân bằng không chứng minh không còn sự kiện. B sai: Chậm dữ liệu có thể bị hiểu nhầm là hoàn tất. C đúng: Lỗi thuộc hợp đồng giao thức thực tế. D sai: Các phần có thể thuộc cùng một lời gọi.
+
+5. **B, D.** A sai: Phân mảnh truyền dữ liệu không đo độ đúng. B đúng: Streaming có thể cải thiện phản hồi cảm nhận. C sai: Đầu vào còn đang được sinh. D đúng: Đây là mốc khác hiển thị ban đầu.

@@ -13,43 +13,69 @@ Lấy được mẫu mới là lấy được hướng dẫn, chưa phải sửa
 
 Dùng Inspector để thử mẫu với tham số cụ thể và xem các tin nhắn được tạo ra. Kiểm tra mã tài liệu, nội dung hướng dẫn và cấu trúc tin nhắn, rồi thử trên dữ liệu thực tế để biết chất lượng kết quả. Mẫu hữu ích cần gắn với nhiệm vụ của server, có mô tả rõ và dùng được các công cụ, tài liệu sẵn có.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Client lấy prompt “định dạng” thành công. Điều gì đã xảy ra chắc chắn theo bài?
+**Câu 1 — Chọn một.** Inspector lấy mẫu chuyển đổi tài liệu và hiển thị messages đúng doc_id. Nhóm đánh dấu tác vụ chuyển đổi đã hoàn tất. Nhận định nào chính xác hơn?
 
-A. Mọi tài liệu đã được sửa xong.
+A. Prompt được lấy thành công nên server đã chạy tool chuyển đổi.
 
-B. Hệ thống xử lý phía máy chủ đã tự chạy mọi công cụ.
+B. Mới sinh hướng dẫn; còn chạy model/tool và kiểm chứng.
 
-C. Server đã trả messages của mẫu hướng dẫn.
+C. Messages đúng doc_id chứng minh chất lượng Markdown đạt yêu cầu.
 
-D. Không cần gửi gì cho Claude.
+D. Lưu messages làm tài liệu đã chuyển đổi.
 
-**2. Chọn một.** Muốn kiểm tra `doc_id` được chèn đúng trước tích hợp, làm gì?
+**Câu 2 — Chọn hai.** Mẫu nhận doc_id nhưng nội dung messages luôn dùng một ID hard-code. Hai kiểm thử nào tìm và ngăn lỗi này?
 
-A. Dùng inspector lấy prompt với tham số và xem messages.
+A. Gọi mẫu với ít nhất hai ID khác nhau và đối chiếu messages.
 
-B. Chỉ đọc tên decorator.
+B. Chỉ kiểm tra list_prompts có tên mẫu.
 
-C. Bỏ tham số để đoán giá trị.
+C. Kiểm tra tác vụ thực tế tác động đúng tài liệu được yêu cầu.
 
-D. Đếm số ký tự description.
+D. Đếm số messages để suy ra tham số đã được nội suy.
 
-**3. Chọn một.** Mẫu hướng dẫn có giá trị nhất khi nào?
+**Câu 3 — Chọn một.** Một prompt chuyển đổi yêu cầu công cụ edit_document, nhưng server triển khai chỉ read_document. Lựa chọn nào phù hợp nhất trước khi cung cấp cho người dùng?
 
-A. Càng mơ hồ càng tốt.
+A. Giữ prompt vì mô hình có thể suy ra cách sửa từ tool đọc.
 
-B. Không liên quan chức năng server.
+B. Đổi tên tool đọc trong prompt thành tool sửa.
 
-C. Luôn bỏ mọi công cụ hiện có.
+C. Đánh dấu prompt đã kiểm thử vì Inspector trả messages.
 
-D. Thể hiện hướng dẫn chuyên môn cụ thể, liên quan và đã kiểm thử.
+D. Khớp prompt với năng lực thực, bổ sung tool nếu cần.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Nhóm muốn prompt dùng lại có giá trị hơn một câu “hãy xử lý tài liệu”. Hai thành phần nào nên có?
 
-1. **C.** A và B nhầm tạo hướng dẫn với thực thi; D bỏ bước chạy với mô hình.
-2. **A.** B và D không kiểm tra nội dung được tạo; C không xác minh thay tham số.
-3. **D.** A tăng mơ hồ; B thiếu giá trị tác vụ; C bỏ khả năng hỗ trợ thực thi.
+A. Tiêu chí đầu ra và các bước chuyên môn gắn nhiệm vụ server.
+
+B. Tên người dùng cố định để giảm số tham số.
+
+C. Tham số đối tượng rõ và cách dùng resources/tools sẵn có.
+
+D. Toàn bộ lịch sử hội thoại của tác giả mẫu.
+
+**Câu 5 — Chọn một.** Prompt đã được sửa để thêm một tiêu chí định dạng. Inspector trả cấu trúc messages hợp lệ. Bằng chứng nào còn cần để chấp nhận thay đổi?
+
+A. So độ dài prompt mới và cũ, dài hơn thì đầy đủ hơn.
+
+B. Kiểm tra chỉ tên mẫu trong danh mục sau cập nhật.
+
+C. Đo tiêu chí mới và hồi quy trên tài liệu đại diện.
+
+D. Đảm bảo mọi messages đều dùng cùng role để thống nhất.
+
+## Đáp án và giải thích
+
+1. **B.** B tách hướng dẫn và thực thi. A suy ra tác động chưa diễn ra. C chỉ kiểm tra tham số, không kiểm tra kết quả. D lưu hướng dẫn không phải chuyển đổi tài liệu.
+
+2. **A, C.** A phát hiện hard-code trong sinh hướng dẫn; C kiểm tra đúng đối tượng đầu-cuối. B chỉ khám phá danh sách. D số messages không phản ánh giá trị định danh.
+
+3. **D.** D xử lý khoảng cách hướng dẫn–năng lực. A/B không tạo chức năng ghi. C nhầm việc lấy mẫu với khả năng hoàn thành nhiệm vụ.
+
+4. **A, C.** A làm rõ chất lượng công việc; C giúp tái dùng đúng đối tượng/năng lực. B làm mẫu kém tổng quát. D đưa ngữ cảnh cá nhân không cần thiết và không thay quy trình rõ ràng.
+
+5. **C.** C kiểm tra hành vi và hồi quy. A độ dài không đo chất lượng. B xác nhận khám phá, không thực thi. D đồng nhất role không phải tiêu chí đúng và có thể phá hợp đồng messages.
 
 ## Đối chiếu khóa MCP riêng
 

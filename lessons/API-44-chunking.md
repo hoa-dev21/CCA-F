@@ -18,45 +18,69 @@ Ví dụ: Quy tắc nằm ở cuối đoạn, còn ngoại lệ nằm ở đầu
 
 Không có kích thước hay phương pháp tốt nhất cho mọi kho. Hãy kiểm tra đoạn được lấy có giữ đủ ý nghĩa và truy được về nguồn không; cách phức tạp nhất chưa chắc đáng với công sức thêm vào.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Đoạn văn bản bị tách điều kiện khỏi quy tắc ở câu kế. Hướng kiểm tra phù hợp?
+**Câu 1 — Chọn một.** Một chính sách có quy tắc cuối mục và ngoại lệ đầu mục kế. Chunk theo độ dài làm hai phần tách nhau; câu hỏi về ngoại lệ thường sai. Thử nghiệm nào nhắm đúng nguyên nhân?
 
-A. Chỉ đổi mô hình ngay.
+A. Tăng số ví dụ định dạng JSON cho mô hình trả lời.
 
-B. Cắt nhỏ hơn tùy tiện.
+B. Giảm kích thước mọi chunk xuống nhỏ nhất để tăng độ chính xác.
 
-C. Đánh dấu mọi đáp án đúng.
+C. Thử ranh giới/overlap mới trên ca cần quy tắc và ngoại lệ.
 
-D. Điều chỉnh ranh giới/overlap và đo chất lượng ngữ cảnh.
+D. Giữ chunk hiện tại và loại ngoại lệ khỏi tiêu chí đánh giá.
 
-**2. Chọn một.** Kho Markdown có tiêu đề nhất quán. Chiến lược nào đáng thử?
+**Câu 2 — Chọn một.** Kho Markdown có tiêu đề nhất quán nhưng mục dài ngắn rất khác nhau. Phương án khởi đầu hợp lý nhất?
 
-A. Đoạn văn bản theo phần/tiêu đề rồi kiểm tra độ đầy đủ.
+A. Coi mỗi tiêu đề là một chunk độc lập không kèm nội dung.
 
-B. Luôn bỏ tiêu đề.
+B. Dùng một độ dài cố định làm chuẩn và bỏ thông tin tiêu đề.
 
-C. Chỉ một đoạn văn bản rỗng.
+C. Gộp cả kho thành một chunk vì cấu trúc đã rõ.
 
-D. Không cần xét cấu trúc.
+D. Chia theo mục, tách mục dài và đo độ đủ ngữ cảnh.
 
-**3. Chọn một.** Overlap tạo đánh đổi nào?
+**Câu 3 — Chọn hai.** Tăng overlap giúp một số câu đúng hơn nhưng chi phí tăng. Hai chỉ số nào cần xem cùng nhau?
 
-A. Chỉ giảm dữ liệu vô hạn.
+A. Chỉ tốc độ tạo embedding lần đầu, bỏ qua lúc truy vấn.
 
-B. Giữ bối cảnh lân cận nhưng tăng phần trùng/lượng lưu.
+B. Lượng nội dung trùng được lưu và đưa vào ngữ cảnh.
 
-C. Bảo đảm mọi truy vấn đúng.
+C. Tỷ lệ lấy đủ bằng chứng ở câu hỏi có thông tin qua ranh giới.
 
-D. Thay thế mọi đánh giá.
+D. Số chunk tăng được coi trực tiếp là chất lượng cao hơn.
 
-## Đáp án
+**Câu 4 — Chọn một.** Nhóm đổi sang semantic chunking phức tạp; chất lượng trên bộ hỏi không đổi còn xử lý chậm hơn. Quyết định nào phù hợp?
 
-1. **D.** D nhắm nguyên nhân; A chưa sửa truy xuất dữ liệu, B có thể làm tệ hơn, C che lỗi.
+A. Giữ cách mới vì tên “semantic” bảo đảm hiểu tài liệu sâu hơn.
 
-2. **A.** A dùng bảo đảm của nguồn; B mất nghĩa, C không có dữ liệu, D bỏ tín hiệu hữu ích.
+B. Giữ phương án đơn giản nếu nó đáp ứng tiêu chí với chi phí tốt hơn.
 
-3. **B.** B mô tả chi phí/lợi ích; A sai về lượng dữ liệu, C và D bảo đảm quá mức.
+C. Tăng độ phức tạp tiếp trước khi phân tích các lỗi còn lại.
+
+D. Chỉ đánh giá trên các ca từng cải thiện để chứng minh cách mới.
+
+**Câu 5 — Chọn hai.** Một chunk trả lời tốt nhưng không truy lại được đoạn nguồn sau khi tài liệu cập nhật. Hai yêu cầu nào nên bổ sung?
+
+A. Giữ tham chiếu nguồn và vị trí hoặc phiên bản phù hợp khi chia đoạn.
+
+B. Dùng thứ tự chunk trong kết quả tìm kiếm làm vị trí nguồn cố định.
+
+C. Kiểm tra tính toàn vẹn ngữ nghĩa lẫn khả năng đối chiếu sau chia.
+
+D. Chỉ lưu embedding vì nó đại diện đầy đủ văn bản.
+
+## Đáp án và giải thích
+
+1. **C.** A sai: Định dạng không sửa bằng chứng thiếu. B sai: Có thể làm ngữ cảnh phân mảnh hơn. C đúng: Cần bảo toàn ngữ cảnh qua ranh giới. D sai: Thay tiêu chí che lỗi thay vì sửa nó.
+
+2. **D.** A sai: Tiêu đề không cung cấp toàn bộ bằng chứng. B sai: Có thể tách bối cảnh đang có sẵn. C sai: Mất tính chọn lọc và có thể vượt ngữ cảnh. D đúng: Tận dụng cấu trúc nhưng vẫn đo hạn chế.
+
+3. **B, C.** A sai: Không phản ánh toàn bộ tác động vận hành. B đúng: Đo chi phí và nhiễu do chồng lặp. C đúng: Đo lợi ích của overlap. D sai: Số lượng không đo đủ ý nghĩa.
+
+4. **B.** A sai: Tên phương pháp không thay bằng chứng đánh giá. B đúng: Độ phức tạp cần được biện minh bằng lợi ích đo được. C sai: Có thể tối ưu sai tầng lỗi. D sai: Chọn mẫu thiên lệch không phản ánh hiệu quả toàn bộ.
+
+5. **A, C.** A đúng: Cần truy được về bằng chứng gốc. B sai: Thứ hạng truy vấn không phải định danh vị trí tài liệu. C đúng: Chunk tốt phải hữu ích và kiểm chứng được. D sai: Vectơ không thay đường lấy văn bản nguồn.
 
 ## Đối chiếu RAG trên Bedrock
 

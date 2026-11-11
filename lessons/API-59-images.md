@@ -13,45 +13,69 @@ AI vẫn có thể đếm sai vật thể hoặc đọc nhầm chi tiết. Việ
 
 Các giới hạn về số ảnh, kích thước và token trong video phụ thuộc phiên bản. Khả năng thị giác (vision) là phần bổ trợ, nằm ngoài phạm vi đề cương Architect đã lưu; một ảnh cũng không đủ để thay mọi đánh giá chuyên môn.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Ảnh phức tạp và câu hỏi quá chung cho kết quả yếu. Cải thiện theo bài?
+**Câu 1 — Chọn một.** Một ảnh dashboard chứa nhiều biểu đồ; yêu cầu “phân tích ảnh” tạo mô tả dài nhưng bỏ tỷ lệ lỗi cần kiểm tra. Thay đổi nào nhắm thiếu sót rõ nhất?
 
-A. Chỉ yêu cầu mô hình chắc chắn.
+A. Yêu cầu chỉ trả JSON mà không bổ sung trường cần lấy.
 
-B. Bỏ ảnh.
+B. Yêu cầu mô tả ảnh dài gấp đôi để tăng cơ hội nhắc đến tỷ lệ lỗi.
 
-C. Không nêu mục tiêu.
+C. Đổi vai trò thành chuyên gia cao cấp nhưng giữ nguyên câu hỏi.
 
-D. Nêu tiêu chí, phạm vi và ví dụ phù hợp rồi kiểm tra kết quả.
+D. Chỉ rõ vùng, đại lượng, đơn vị và tiêu chí so sánh.
 
-**2. Chọn một.** Mô hình đếm lại hai cách và cho cùng số. Có chắc thay được mọi xác minh không?
+**Câu 2 — Chọn hai.** Mô hình đếm linh kiện bằng hai cách và cùng báo 48. Số lượng ảnh hưởng việc xuất kho. Hai hành động nào phù hợp trước khi chấp nhận?
 
-A. Không; đó vẫn có thể là lỗi tương quan, cần kiểm chứng phù hợp mục tiêu.
+A. Không coi đồng thuận của hai lần tự kiểm tra là hai bằng chứng độc lập.
 
-B. Có, luôn chính xác tuyệt đối.
+B. Lấy 48 làm nhãn chuẩn để đánh giá lại chính hai cách đếm.
 
-C. Có, không cần nhìn nguồn.
+C. Chấp nhận ngay vì xác suất hai cách sai cùng số bằng không.
 
-D. Có, miễn trả lời dài.
+D. Đối chiếu bằng nguồn/kiểm tra phù hợp như dữ liệu kiểm kê hoặc kiểm đếm đã xác minh.
 
-**3. Chọn một.** Khi ôn gấp theo Exam Guide này, nên dành ưu tiên gì cho chi tiết vision?
+**Câu 3 — Chọn một.** Ảnh chụp biểu đồ mờ khiến mô hình đọc “8,1” thay vì “3,1”. Hệ thống yêu cầu số chính xác, không chấp nhận ước lượng. Hướng xử lý nào phù hợp?
 
-A. Bỏ toàn bộ tools/MCP để học ảnh.
+A. Lấy ảnh/nguồn rõ hơn hoặc báo chưa đủ bằng chứng và chuyển xác minh.
 
-B. Đọc bổ trợ; ưu tiên mục tiêu kỹ thuật nằm trong phạm vi thi.
+B. Tăng số lần suy luận trên cùng ảnh rồi chọn giá trị xuất hiện nhiều nhất.
 
-C. Coi ảnh là toàn bộ bài thi.
+C. Chọn giá trị phù hợp xu hướng lịch sử để làm kết quả hiện tại.
 
-D. Chỉ học giới hạn ảnh trong video.
+D. Chấp nhận số có định dạng hợp lệ và để người dùng tự phát hiện sai.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Ứng dụng so sánh ảnh trước và sau một thay đổi giao diện. Hai chi tiết nào nên có trong nhiệm vụ để kết quả hữu ích và có thể kiểm tra?
 
-1. **D.** D làm rõ tác vụ; A không thêm thông tin, B mất nguồn, C tăng mơ hồ.
+A. Chỉ rõ đối tượng/vùng cần so sánh và tiêu chí khác biệt quan trọng.
 
-2. **A.** A giới hạn bằng chứng tự kiểm; B, C, D bảo đảm quá mức.
+B. Yêu cầu gắn mỗi nhận xét với vị trí quan sát và phân biệt chi tiết không đọc rõ.
 
-3. **B.** B theo blueprint; A, C, D chuyển sai trọng tâm.
+C. Yêu cầu suy ra mọi hành vi backend từ các nút nhìn thấy.
+
+D. Dùng số lượng nhận xét làm tiêu chí chính để chọn kết quả tốt hơn.
+
+**Câu 5 — Chọn một.** Nhóm sao chép giới hạn ảnh/token từ video cũ vào cấu hình production của mô hình khác. Lựa chọn nào đúng trước khi chốt kiến trúc?
+
+A. Kiểm tra hỗ trợ/giới hạn đích rồi thử dữ liệu đại diện.
+
+B. Giữ thông số vì các mô hình cùng nhà cung cấp luôn có giới hạn giống nhau.
+
+C. Chỉ đo xem request có HTTP thành công để kết luận cấu hình phù hợp.
+
+D. Tự động cắt ảnh vượt giới hạn mà không theo dõi nội dung bị mất.
+
+## Đáp án và giải thích
+
+1. **D.** A sai: định dạng không xác định nội dung quan trọng phải quan sát. B sai: tăng độ dài không định hướng vào mục tiêu bị bỏ sót. C sai: vai trò không cung cấp vị trí và tiêu chí còn thiếu. D đúng: phạm vi cụ thể biến nhiệm vụ rộng thành thông tin có thể kiểm chứng.
+
+2. **A, D.** A đúng: cả hai có thể chia sẻ cùng lỗi quan sát hoặc bỏ sót. B sai: dùng dự đoán làm chuẩn tạo vòng xác nhận, không kiểm chứng sự thật. C sai: không có cơ sở độc lập để suy luận xác suất đó. D đúng: quyết định cần bằng chứng đủ tin cậy ngoài tự khẳng định của mô hình.
+
+3. **A.** A đúng: cần cải thiện dữ liệu quan sát hoặc giữ trạng thái chưa biết thay vì đoán. B sai: có thể lặp cùng lỗi quan sát do chất lượng nguồn. C sai: xu hướng không chứng minh ký tự thật trong ảnh. D sai: validator định dạng không bảo vệ yêu cầu chính xác đã đặt ra.
+
+4. **A, B.** A đúng: giúp tránh mô tả các thay đổi không liên quan tới mục đích. B đúng: giữ khả năng đối chiếu và giới hạn của bằng chứng ảnh. C sai: ảnh giao diện không chứng minh logic thực thi hoặc trạng thái hệ thống phía sau. D sai: nhiều nhận xét có thể là suy diễn hoặc thay đổi vụn không liên quan.
+
+5. **A.** A đúng: thông số gắn phiên bản không được mặc định áp dụng sang môi trường khác. B sai: cùng nhà cung cấp không chứng minh cùng hợp đồng hoặc năng lực. C sai: thành công giao thức không chứng minh nội dung ảnh còn đủ cho nhiệm vụ. D sai: cắt có thể loại chi tiết cần thiết và gây kết luận sai không được phát hiện.
 
 ## Đối chiếu tính năng trên Bedrock
 

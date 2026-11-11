@@ -15,40 +15,66 @@ Theo giao diện trong đề cương, tác nhân điều phối cần `Task` tro
 
 Ví dụ: Nghiên cứu thị trường có một nhánh đọc quy định và một nhánh đọc dữ liệu khách hàng. Tác nhân điều phối giao phạm vi riêng, nhận kết quả có nguồn rồi kiểm tra xem có thiếu dữ liệu của một thời kỳ nào không. Nếu thiếu, nó giao truy vấn bổ sung và chuyển phát hiện mới vào bước tổng hợp.
 
-## Câu hỏi tình huống
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Tác nhân AI tổng hợp không thấy báo cáo mà tác nhân AI tìm kiếm đã đọc, dù tác nhân điều phối có trong lịch sử. Cách nào giải quyết trực tiếp vấn đề này?
+**Câu 1 — Chọn một.** Tác nhân tìm kiếm đọc 40 tài liệu; tác nhân tổng hợp chỉ nhận tên chủ đề. Báo cáo thiếu bằng chứng dù coordinator có đầy đủ lịch sử. Thay đổi nào giải quyết đúng nguyên nhân với ít ngữ cảnh thừa nhất?
 
-A. Tăng quyền tìm kiếm cho mọi tác nhân AI và giữ nguyên prompt.
+A. Cho tổng hợp đọc lại cả 40 tài liệu để tự dựng lịch sử.
 
-B. Truyền phát hiện cần thiết cùng nguồn vào prompt của tác nhân AI tổng hợp.
+B. Bàn giao phát hiện, vị trí nguồn và giới hạn cho tổng hợp.
 
-C. Chỉ yêu cầu tổng hợp tự tin hơn.
+C. Gắn chung session ID cho hai tác nhân rồi giữ nguyên prompt.
 
-D. Mặc định phiên con dùng chung toàn bộ bộ nhớ.
+D. Tăng ngân sách token của tổng hợp để nó tự suy ra phần lịch sử thiếu.
 
-**2. Chọn một.** Câu hỏi đơn giản vẫn gọi bốn tác nhân AI, gây chậm và trùng kết quả. Thiết kế nào phù hợp với đề cương?
+**Câu 2 — Chọn hai.** Hệ nghiên cứu dùng bốn chuyên gia cho mọi yêu cầu. Với câu hỏi tra một ngày công bố, độ trễ tăng nhưng độ đúng không đổi. Hai thay đổi nào giữ khả năng xử lý nghiên cứu phức tạp mà giảm công việc thừa?
 
-A. Gọi cả bốn hai lần để lấy đồng thuận.
+A. Coordinator định tuyến theo nhu cầu thực tế của yêu cầu.
 
-B. Chuyển mọi liên lạc thành mạng tác nhân AI tự do.
+B. Mỗi chuyên gia tự gọi tất cả chuyên gia còn lại khi thấy thiếu thông tin.
 
-C. Tác nhân điều phối chọn tác nhân AI theo yêu cầu, phân phạm vi rõ và giữ định tuyến tập trung.
+C. Phân phạm vi và đầu ra riêng cho các nhánh thật sự cần chạy.
 
-D. Bỏ tổng hợp, trả bốn kết quả bất kể mâu thuẫn.
+D. Luôn gọi đủ bốn nhánh nhưng chỉ giữ kết quả nhánh trả lời sớm nhất.
 
-**3. Chọn hai.** Tổng hợp thiếu một góc quan trọng. Tác nhân điều phối nên làm gì?
+**Câu 3 — Chọn một.** Hai tác nhân đều đề xuất một giải pháp, nhưng cùng dẫn lại một bài blog gốc. Coordinator muốn gọi đây là xác nhận độc lập. Quyết định nào tốt nhất?
 
-A. Xác định khoảng trống và giao truy vấn bổ sung có mục tiêu.
+A. Coi là hai bằng chứng vì hai lần suy luận được thực hiện độc lập.
 
-B. Giấu khoảng trống để báo cáo có vẻ hoàn chỉnh.
+B. Cho tác nhân thứ ba đọc hai kết luận và bỏ phiếu.
 
-C. Bắt đầu mọi nhánh lại mà không xem nguyên nhân.
+C. Lấy giao của hai kết luận làm kết luận chắc chắn.
 
-D. Truyền kết quả bổ sung vào lượt tổng hợp tiếp theo, bảo toàn thông tin mô tả nguồn.
+D. Truy nguồn gốc; ghi nhận một nguồn, bổ sung khi rủi ro đòi hỏi.
 
-## Đáp án
+**Câu 4 — Chọn một.** Bản tổng hợp tốt về chi phí nhưng thiếu ràng buộc lưu trữ dữ liệu, một tiêu chí bắt buộc. Còn đủ ngân sách cho một nhánh nghiên cứu. Bước tiếp theo nào phù hợp?
 
-1. **B.** A chưa cung cấp dữ liệu đã có; C không sửa thiếu ngữ cảnh; D giả định cơ chế thừa kế không có.
-2. **C.** A thêm chi phí mà không giảm trùng; B bỏ kiến trúc định tuyến của tình huống; D không tạo kết luận thống nhất.
-3. **A, D.** B che thiếu bao phủ; C có thể lãng phí và không nhắm khoảng trống.
+A. Giao truy vấn có mục tiêu về ràng buộc lưu trữ, rồi đưa phát hiện có nguồn vào lượt tổng hợp mới.
+
+B. Chạy lại toàn bộ chuyên gia với prompt ban đầu để tăng cơ hội tìm được.
+
+C. Yêu cầu tổng hợp tự thêm một đoạn lưu trữ dựa vào kiến thức chung.
+
+D. Gửi báo cáo hiện tại và đánh dấu phần thiếu là vấn đề trình bày.
+
+**Câu 5 — Chọn hai.** Một nhánh hết thời gian và chỉ có ba nguồn trong sáu nguồn dự kiến. Hai thông tin nào cần bàn giao để coordinator quyết định dùng kết quả một phần hay bổ sung nghiên cứu?
+
+A. Điểm tự tin tổng hợp thay cho danh sách nguồn còn thiếu.
+
+B. Các phát hiện đã có kèm nguồn, phạm vi đã kiểm tra.
+
+C. Kết luận hoàn thành vì nhánh đã tiêu hết ngân sách được cấp.
+
+D. Những phần chưa kiểm tra và lý do dừng hoặc lỗi đã gặp.
+
+## Đáp án và giải thích
+
+1. **B.** B tạo bàn giao tường minh, có chọn lọc. A có thể lấy lại dữ liệu nhưng lặp toàn bộ nghiên cứu. C không chứng minh các context độc lập được chia sẻ. D tăng sức chứa, không đưa bằng chứng vào đó.
+
+2. **A, C.** A giảm nhánh không cần; C giảm trùng lặp khi cần nhiều nhánh. B tạo điều phối phân tán khó kiểm soát. D bỏ kết quả nhưng vẫn trả chi phí gọi và có thể chọn câu trả lời nhanh mà thiếu góc quan trọng.
+
+3. **D.** D phân biệt độc lập của tác nhân và độc lập của bằng chứng. A đếm đôi nguồn; B thêm phiếu nhưng không thêm chứng cứ; C đồng thuận không loại được sai lệch chung từ nguồn gốc.
+
+4. **A.** A dùng ngân sách cho khoảng trống đã xác định. B lặp việc đã đủ; C chưa tạo bằng chứng cho tiêu chí bắt buộc; D coi thiếu thông tin quyết định là lỗi văn phong.
+
+5. **B, D.** B bảo toàn phần có thể dùng, D làm rõ khoảng trống và khả năng phục hồi. A không đủ để kiểm tra độ bao phủ. C nhầm hoàn tất ngân sách với hoàn tất nhiệm vụ.

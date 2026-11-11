@@ -17,43 +17,69 @@ Trong giai đoạn đầu của ví dụ, mọi kết quả đều được gán
 
 Ví dụ: Chương trình tạo đủ 100 bản ghi nhưng bản nào cũng được gán 10 điểm cố định. Bạn mới biết luồng gửi yêu cầu và thu câu trả lời hoạt động. Chưa có bằng chứng rằng 100 câu trả lời đó đạt chất lượng.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Quy trình xử lý luôn gán `score=10`. Kết quả có thể chứng minh gì?
+**Câu 1 — Chọn một.** Pipeline chạy đủ 200 ca, lưu output và luôn gán score=10. Nhóm muốn dùng báo cáo để duyệt phát hành. Kết luận nào đúng?
 
-A. Mọi đầu ra đều đúng.
+A. Có thể dùng độ phân tán điểm bằng không để xác nhận độ ổn định model.
 
-B. Prompt tốt nhất đã được tìm thấy.
+B. Pipeline đã kiểm tra luồng chạy, chưa có phép đo chất lượng đầu ra.
 
-C. Các bước chạy và tập hợp kết quả hoạt động, chưa chứng minh chất lượng.
+C. Chỉ cần tăng số ca để điểm cố định trở thành đáng tin cậy.
 
-D. Không cần triển khai bộ chấm điểm.
+D. Chất lượng đã đạt tối đa vì mọi ca đều có đầu ra và điểm.
 
-**2. Chọn hai.** Ngoài điểm, nên giữ dữ liệu nào theo cấu trúc bài học?
+**Câu 2 — Chọn hai.** Một ca có điểm thấp nhưng dashboard không cho biết nguyên nhân. Hai trường nào phải đi cùng score để điều tra theo cấu trúc của bài?
 
-A. Test case gốc.
+A. output thay bằng câu trả lời lý tưởng do người viết mong muốn.
 
-B. Mật khẩu tài khoản.
+B. output chứa câu trả lời thực tế.
 
-C. Đầu ra thực tế.
+C. test_case chứa đầu vào thực tế.
 
-D. Một điểm tự đặt để thay đầu ra.
+D. test_case thay bằng số thứ tự trong một tập có thể thay đổi.
 
-**3. Chọn một.** Hàm nào chịu trách nhiệm chạy toàn bộ bộ dữ liệu?
+**Câu 3 — Chọn một.** Nhóm muốn thay cách chấm mà giữ cách ghép prompt và vòng duyệt tập. Trách nhiệm nào là điểm tích hợp hợp lý nhất?
 
-A. `run_prompt`.
+A. Giao bộ chấm tự duyệt tập rồi bỏ bản ghi test_case.
 
-B. `run_eval`.
+B. run_prompt tự đổi toàn bộ tập để phù hợp bộ chấm mới.
 
-C. Hàm chỉ parse JSON.
+C. run_eval viết lại mọi output trước khi bộ chấm nhận chúng.
 
-D. Hàm đọc system prompt.
+D. run_test_case chấm output do run_prompt trả về.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Sau refactor, run_eval trả điểm chung tốt nhưng thiếu 12 output do lỗi gọi API. Hai cách xử lý nào giúp báo cáo không gây hiểu lầm?
 
-1. **C.** A, B, D đều coi giá trị tạm là kết quả đo thật.
-2. **A, C.** Giữ bằng chứng để chẩn đoán. B không phục vụ đánh giá và không nên đưa vào; D thay bằng chứng bằng số giả.
-3. **B.** A xử lý một prompt; C và D không điều phối toàn bộ tập.
+A. Ghi nhận rõ các ca không chạy thành công và nguyên nhân.
+
+B. Gán điểm tối đa cho ca lỗi để không phạt chất lượng prompt.
+
+C. Tách số ca được chấm khỏi tổng số ca dự kiến khi tổng hợp.
+
+D. Loại ca lỗi khỏi báo cáo và vẫn ghi rằng đã chạy đủ tập.
+
+**Câu 5 — Chọn một.** Hai phiên bản run_prompt trả khác nhau nhưng log chỉ giữ score. Nhóm muốn xác định lỗi ghép prompt hay lỗi bộ chấm. Cải tiến nào trực tiếp nhất?
+
+A. Chỉ lưu điểm trung bình của mỗi phiên bản để giảm nhiễu.
+
+B. Chỉ lưu output có điểm cao làm chuẩn cho lần chạy sau.
+
+C. Lưu từng test_case, output và score trong cùng bản ghi.
+
+D. Lưu riêng ba danh sách và ghép theo thứ tự hoàn thành bất đồng bộ.
+
+## Đáp án và giải thích
+
+1. **B.** B phân biệt kiểm tra plumbing với đánh giá. D và A diễn giải điểm giả như kết quả đo; C tăng số lần chấm giả không tạo bằng chứng.
+
+2. **B, C.** C cho yêu cầu; B cho hành vi quan sát. A mất bằng chứng thất bại; D có thể không truy lại được đầu vào sau khi tập đổi.
+
+3. **D.** D giữ phân tách chạy một ca, chấm và tổng hợp. B trộn sinh output với quản lý dữ liệu; C làm sai bằng chứng; A mất cấu trúc truy nguyên từng ca.
+
+4. **A, C.** A giữ khả năng điều tra; C làm rõ mẫu số phép đo. B bịa kết quả chấm; D che mất độ bao phủ và lỗi vận hành.
+
+5. **C.** C giữ liên kết đầu vào–đầu ra–điểm. D có nguy cơ ghép nhầm ca khi thứ tự hoàn thành đổi; A và B bỏ dữ liệu cần chẩn đoán lỗi.
 
 ## Đối chiếu Bedrock
 

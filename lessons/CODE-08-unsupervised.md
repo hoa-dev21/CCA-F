@@ -15,40 +15,66 @@ Một phiên rà soát độc lập có thể phát hiện lỗi mà phiên vi�
 
 Ví dụ: AI được giao tổ chức lại mã nhưng còn sửa một tệp triển khai ngoài kế hoạch. Dù các kiểm thử đơn vị đã thành công, bạn vẫn cần xem thay đổi đó và thực hiện kiểm tra phù hợp trước khi chấp nhận.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Tóm tắt đẹp nhưng chưa xem mã. Nên bắt đầu kiểm chứng ở đâu?
+**Câu 1 — Chọn một.** Tác nhân tự chạy báo “chỉ refactor”, nhưng diff có cả thay đổi cấu hình deploy. Unit test xanh. Bước đánh giá tiếp theo nào đúng?
 
-A. Chỉ đọc lại tóm tắt.
+A. Chấp nhận vì refactor không đổi hành vi theo lời tác nhân.
 
-B. Chỉ yêu cầu tác nhân AI tự tin hơn.
+B. Rà diff, gồm file deploy, rồi kiểm tra theo tác động.
 
-C. Diff thực tế, gồm cả thay đổi ngoài kế hoạch.
+C. Chỉ yêu cầu tác nhân sửa lại phần tóm tắt cho đầy đủ.
 
-D. Chỉ đếm số commit.
+D. Bỏ file deploy khỏi báo cáo để chỉ review phần được yêu cầu.
 
-**2. Chọn một.** Tác nhân AI nói “đã chạy test” nhưng không có kết quả ghi lại. Kết luận phù hợp?
+**Câu 2 — Chọn một.** Tác nhân nói “đã chạy test”, nhưng transcript chỉ chứa dự định chạy và không có kết quả. Kết luận nào hợp lý nhất?
 
-A. Cần chạy/quan sát gate thực tế; lời tuyên bố chưa đủ bằng chứng.
+A. Cần chạy hoặc quan sát bằng chứng thực thi trước khi xác nhận gate đạt.
 
-B. Coi là pass vì ngôn ngữ rõ.
+B. Có thể coi là đạt vì tuyên bố dùng thì quá khứ.
 
-C. Bỏ test vì đã có kiểm tra quyền.
+C. Permission cho phép test nên có thể suy ra test đã chạy.
 
-D. Chỉ sửa tài liệu để ghi pass.
+D. Chỉ cần reviewer đồng ý với câu tóm tắt.
 
-**3. Chọn một.** Người kiểm tra độc lập có vai trò nào?
+**Câu 3 — Chọn hai.** Một job headless trả exit code 0 nhưng JSON nêu chưa hoàn thành vì hết lượt. Hai kiểm tra nào cần cho quyết định sử dụng kết quả?
 
-A. Bảo đảm không cần test.
+A. Trạng thái nghiệp vụ trong JSON theo hợp đồng phản hồi.
 
-B. Tạo góc nhìn mới, bổ sung cho kiểm tra thực thi.
+B. Exit code 0 đủ nên bỏ nội dung JSON.
 
-C. Tự động chứng minh mọi requirement đã đạt.
+C. Bằng chứng yêu cầu và gate thực tế đã đạt đến đâu.
 
-D. Thay thế diff bằng một lời nhận xét chung.
+D. Số token đã dùng để suy ra mức độ hoàn chỉnh.
 
-## Đáp án
+**Câu 4 — Chọn một.** Reviewer độc lập không tìm ra lỗi ở bản sửa nhưng chưa có kiểm thử thực tế. Vai trò của kết quả review nên được hiểu thế nào?
 
-1. **C.** A và B vẫn dựa lời kể; D không cho biết nội dung thay đổi.
-2. **A.** B tin tuyên bố; C nhầm quyền với đúng; D tạo hồ sơ sai.
-3. **B.** A và C suy rộng bảo đảm; D bỏ nguồn bằng chứng trực tiếp.
+A. Nó thay thế test vì dùng context độc lập.
+
+B. Nó chứng minh mọi requirement đã được đáp ứng.
+
+C. Nó đủ để chấp nhận nếu reviewer dùng mô hình khác và đã đọc toàn bộ diff.
+
+D. Bổ sung góc nhìn; vẫn kiểm tra phạm vi và kết quả chạy.
+
+**Câu 5 — Chọn hai.** Muốn tác vụ tự chạy chỉ được tiếp tục sau khi kiểm tra bắt buộc đạt, hai thành phần nào hỗ trợ thiết kế?
+
+A. Một lời nhắc ở đầu prompt là toàn bộ cơ chế cưỡng chế.
+
+B. Gate/hook bằng chương trình kiểm tra kết quả trước bước tiếp theo.
+
+C. Log trạng thái và kết quả kiểm tra gắn với mã đang được dùng.
+
+D. Đánh dấu hoàn tất khi tác nhân im lặng đủ lâu.
+
+## Đáp án và giải thích
+
+1. **B.** B dùng trạng thái thực tế và kiểm tra đúng phần bị ảnh hưởng. A tin lời kể dù có bằng chứng khác. C sửa báo cáo chưa đánh giá tác động. D che thay đổi thực sự vẫn tồn tại.
+
+2. **A.** A phân biệt kế hoạch/tuyên bố với thực thi. B dựa vào ngữ pháp. C nhầm được phép với đã làm. D thêm một sự đồng ý không thay thế kết quả kiểm thử.
+
+3. **A, C.** A đọc trạng thái nhiệm vụ, C kiểm tra điều kiện chấp nhận. B chỉ nhìn một lớp tín hiệu. D tiêu hao tài nguyên không đo độ hoàn tất.
+
+4. **D.** D giữ đúng giới hạn của review. A/B suy rộng kết luận không tìm thấy lỗi thành bảo đảm đúng. C đổi mô hình và đọc toàn bộ diff có thể giúp rà soát, nhưng chưa thay thế kết quả kiểm chứng hành vi khi chạy.
+
+5. **B, C.** B cưỡng chế điều kiện, C cho phép kiểm chứng trạng thái thật. A hướng dẫn nhưng không bảo đảm không bỏ bước. D dùng trạng thái hội thoại thay bằng chứng nhiệm vụ.

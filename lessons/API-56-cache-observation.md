@@ -13,45 +13,69 @@ Khi một phần nội dung thay đổi, khả năng dùng lại cache ở phầ
 
 Dùng lại cache thành công không chứng minh câu trả lời đạt chất lượng. Một prompt chạy nhanh hơn nhưng vẫn trả lời sai cần được sửa và đánh giá như bình thường.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Muốn chứng minh yêu cầu dùng cache, dữ liệu nào phù hợp nhất?
+**Câu 1 — Chọn một.** Hàm thêm cache_control sửa trực tiếp object tools dùng chung; yêu cầu khác bất ngờ mang cấu hình đó. Thay đổi nào đúng?
 
-A. Chỉ cảm giác chờ ngắn.
+A. Tạo bản sao phù hợp trước khi sửa cấu trúc cho request riêng.
 
-B. Usage đọc/tạo cache theo API được hỗ trợ.
+B. Đổi tên biến local nhưng giữ cùng tham chiếu object.
 
-C. Chỉ tên mô hình.
+C. Xóa cache_control sau khi gọi mà không xét request đồng thời.
 
-D. Chỉ câu trả lời dài.
+D. Thêm lời nhắc yêu cầu mô hình bỏ qua cache của request khác.
 
-**2. Chọn một.** Vì sao mẫu sao chép bản mô tả cấu trúc dữ liệu trước khi thêm cache control?
+**Câu 2 — Chọn một.** Usage cho thấy tạo cache ở lần đầu, đọc cache ở lần sau, nhưng đáp án vẫn sai. Kết luận nào đúng?
 
-A. Để bỏ validation.
+A. Giữ nguyên prompt vì sửa nó sẽ làm giảm hit.
 
-B. Để tạo mọi quyền mới.
+B. Xóa kiểm tra ngữ nghĩa để tận dụng hiệu quả cache.
 
-C. Tránh mutation ngoài ý muốn của cấu trúc dùng lại.
+C. Cache có lợi hiệu năng; cần đo chất lượng riêng.
 
-D. Để thay kết quả công cụ.
+D. Cache hit xác nhận câu trả lời đúng nên bộ chấm đã sai.
 
-**3. Chọn một.** Cache hit cao có đủ kết luận prompt đạt chất lượng không?
+**Câu 3 — Chọn hai.** Hai request có độ trễ khác nhau. Hai loại số liệu nào giúp biết cache được dùng ra sao?
 
-A. Chưa; vẫn đánh giá độ đúng và đáp ứng yêu cầu.
+A. Chỉ số lần UI cập nhật trong streaming.
 
-B. Đủ mọi trường hợp.
+B. Phần input tạo cache mới và phần đọc từ cache.
 
-C. Đủ nếu chi phí giảm.
+C. Phần input vẫn xử lý mới ngoài cache.
 
-D. Đủ nếu không có log lỗi.
+D. Chỉ tổng số ký tự đầu ra.
 
-## Đáp án
+**Câu 4 — Chọn một.** Sửa một đoạn đầu prompt làm cache-read giảm, nhưng vẫn còn khác 0. Cách diễn giải phù hợp?
 
-1. **B.** B là tín hiệu trực tiếp; A có nhiễu, C và D không xác nhận hit.
+A. Có tái sử dụng một phần; cần đọc usage chi tiết.
 
-2. **C.** C kiểm soát thay đổi; A, B, D không liên quan thao tác sao chép.
+B. Mọi cache đã mất vì có thay đổi đầu vào.
 
-3. **A.** A tách hiệu năng và chất lượng; B, C, D suy rộng từ tín hiệu khác.
+C. Toàn bộ prompt vẫn hit vì số đọc khác 0.
+
+D. Usage không đáng dùng khi độ trễ thay đổi.
+
+**Câu 5 — Chọn hai.** Nhóm chuyển mẫu cache sang SDK khác. Hai việc cần kiểm chứng là gì?
+
+A. Dùng tốc độ phản hồi làm bằng chứng duy nhất thay usage.
+
+B. Tên và ý nghĩa trường usage của SDK/API đích.
+
+C. Giữ tên trường cũ rồi coi giá trị thiếu là cache hit.
+
+D. Cách sao chép và gắn cấu hình không sửa object dùng chung ngoài ý muốn.
+
+## Đáp án và giải thích
+
+1. **A.** A đúng: Tránh tác dụng phụ lên cấu hình dùng chung. B sai: Tên mới không tạo bản sao. C sai: Vẫn có khoảng thời gian đối tượng chung bị thay đổi. D sai: Lỗi nằm ở trạng thái ứng dụng, không phải suy luận.
+
+2. **C.** A sai: Không nên ưu tiên cache hơn yêu cầu đúng. B sai: Che lỗi không cải thiện chất lượng. C đúng: Hit không chứng minh dùng bằng chứng đúng. D sai: Hai tiêu chí độc lập.
+
+3. **B, C.** A sai: Không là chỉ số hit cache. B đúng: Phân biệt chi phí khởi tạo với tái sử dụng. C đúng: Cho biết cache chỉ bao phủ bao nhiêu đầu vào. D sai: Không mô tả xử lý đầu vào.
+
+4. **A.** A đúng: Quan sát cho phép hiểu tác động từng phần. B sai: Mâu thuẫn với số liệu đọc còn tồn tại. C sai: Có hit một phần không chứng minh toàn bộ. D sai: Độ trễ là chỉ số khác, không phủ nhận usage.
+
+5. **B, D.** A sai: Không tách cache khỏi các nguyên nhân hiệu năng khác. B đúng: Không đọc nhầm số tạo với số đọc. C sai: Thiếu dữ liệu không là thành công. D đúng: Giữ cô lập cấu hình giữa các lượt.
 
 ## Đối chiếu Vertex
 

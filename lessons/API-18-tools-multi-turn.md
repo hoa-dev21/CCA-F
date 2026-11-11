@@ -13,43 +13,69 @@ Vòng xử lý gồm: gửi yêu cầu, lưu phản hồi, thực hiện các c�
 
 Phần liên hệ với đề cương thi nhấn mạnh trường `stop_reason`, tức lý do mô hình dừng phản hồi. Giá trị `tool_use` cho biết cần xử lý yêu cầu công cụ; `end_turn` cho biết mô hình kết thúc lượt. Có văn bản trong phản hồi chưa đủ để kết luận đã xong, vì cùng phản hồi đó vẫn có thể chứa khối `tool_use`.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Sau công cụ thứ nhất, Claude yêu cầu công cụ thứ hai để hoàn tất nhiệm vụ. Hệ thống nên làm gì?
+**Câu 1 — Chọn một.** Yêu cầu “nhắc tôi sau ba ngày” cần lấy ngày hiện tại rồi tính ngày đích. Host dừng ngay sau công cụ đầu tiên vì đã có text. Sửa nào đúng?
 
-A. Dừng vì đã dùng một công cụ.
+A. Coi text trong response là đủ để kết luận lượt đã hoàn tất.
 
-B. Bỏ công cụ thứ hai và đoán kết quả.
+B. Trả tool_result rồi tiếp tục theo phản hồi mới.
 
-C. Thực thi yêu cầu hợp lệ, trả kết quả và tiếp tục vòng lặp.
+C. Tính ngày đích bằng lời giải thích đầu tiên trước khi có ngày hiện tại.
 
-D. Xóa lịch sử trước khi chạy tiếp.
+D. Gọi hết tools để tránh thêm vòng lặp.
 
-**2. Chọn một.** Vì sao tách hàm hiển thị text khỏi hàm hỗ trợ chat?
+**Câu 2 — Chọn hai.** Wrapper phục vụ cả hiển thị và vòng công cụ. Hai quyết định nào hỗ trợ hội thoại nhiều lượt đúng cấu trúc?
 
-A. Để luồng xử lý giữ đầy đủ blocks và thông tin mô tả cần thiết.
+A. Chỉ trả chuỗi text rồi tái tạo tool_use từ câu văn.
 
-B. Để luôn loại bỏ công cụ call.
+B. Dùng hàm riêng trích văn bản cho giao diện.
 
-C. Để không cần lưu assistant message.
+C. Bỏ các block trung gian sau mỗi lượt để model tự tính lại.
 
-D. Để mô hình tự gọi hệ thống xử lý phía máy chủ mà không có mã.
+D. Trả đối tượng phản hồi đầy đủ cho phần điều phối.
 
-**3. Chọn một.** Phản hồi có text và `stop_reason=tool_use`. Theo Exam Guide, nên hiểu thế nào?
+**Câu 3 — Chọn một.** Response chứa text “đã xử lý xong” nhưng stop_reason là tool_use. Host cần dựa vào gì để chọn bước tiếp theo?
 
-A. Hoàn tất vì đã có text.
+A. Đổi stop_reason thành end_turn trước khi lưu để lịch sử nhất quán.
 
-B. Vẫn cần xử lý yêu cầu công cụ.
+B. Dừng khi số block text nhiều hơn số block tool_use.
 
-C. Mọi công cụ đều đã chạy.
+C. Dùng câu text cuối làm điều kiện dừng vì người dùng sẽ đọc nó.
 
-D. Phải bỏ qua kết quả công cụ.
+D. Xử lý yêu cầu công cụ hợp lệ trong phản hồi rồi gửi kết quả tiếp.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Một lượt thứ hai lại gọi công cụ đã chạy ở lượt đầu vì không thấy kết quả. Hai thông tin nào cần kiểm tra trên request thứ hai?
 
-1. **C.** A dừng sớm; B bịa dữ liệu; D mất ngữ cảnh.
-2. **A.** B và C phá luồng công cụ; D nhầm việc trích text với thực thi hệ thống xử lý phía máy chủ.
-3. **B.** A dùng sai tín hiệu kết thúc; C nhầm yêu cầu với thực thi; D loại bỏ dữ liệu cần cho bước tiếp.
+A. Có tool_result tương ứng và dữ liệu trả về trong lịch sử không.
+
+B. Có lịch sử assistant chứa yêu cầu công cụ trước đó không.
+
+C. Có cùng độ dài text hiển thị với lượt đầu không.
+
+D. Có giữ tên hàm UI đã dùng để render câu trả lời không.
+
+**Câu 5 — Chọn một.** Host giới hạn 8 vòng để kiểm soát chi phí. Vòng thứ 8 vẫn yêu cầu công cụ. Trạng thái nào phản ánh đúng tình hình?
+
+A. Dừng theo ngân sách và báo nhiệm vụ chưa hoàn tất.
+
+B. Đánh dấu thành công vì mọi quy trình được phép tối đa 8 vòng.
+
+C. Tăng vô hạn số vòng vì tool_use luôn phải được ưu tiên hơn giới hạn.
+
+D. Bỏ tool_use cuối, lấy text làm kết quả xong.
+
+## Đáp án và giải thích
+
+1. **B.** B cho model dùng kết quả để chọn bước sau. C thiếu đầu vào; D bỏ phụ thuộc và có thể chạy thao tác không cần; A text có thể đi cùng tool_use.
+
+2. **B, D.** D giữ trạng thái giao thức, B tách nhu cầu UI. A mất id/name/input chính xác; C mất kết quả và yêu cầu cần cho bước tiếp.
+
+3. **D.** D tôn trọng tín hiệu điều phối. C và B dùng chỉ dấu văn bản không có nghĩa giao thức; A sửa sai dữ liệu để che yêu cầu chưa xử lý.
+
+4. **A, B.** B và A kiểm tra chuỗi trao đổi cần thiết. C và D là chi tiết hiển thị, không chứng minh model đã nhận lịch sử công cụ.
+
+5. **A.** A phân biệt dừng vận hành với hoàn thành tác vụ. B và D tạo kết luận không có kết quả hỗ trợ; C bỏ ràng buộc tài nguyên của ứng dụng.
 
 ## Đối chiếu Bedrock: hội thoại nhiều lượt có công cụ
 

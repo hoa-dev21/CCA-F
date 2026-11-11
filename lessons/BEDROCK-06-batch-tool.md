@@ -13,43 +13,69 @@ Chỉ chạy đồng thời các thao tác độc lập. Nếu B cần kết qu�
 
 `batch_tool` tự viết trong bài khác Message Batches API xử lý các yêu cầu theo lô bất đồng bộ. Hai cơ chế có mục đích và vòng đời riêng. Với mỗi thao tác trong nhóm, vẫn cần kiểm tra công cụ được phép dùng, đầu vào, quyền và kết quả.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Một công cụ nhận mảng invocation nhưng mã thực thi dùng for đồng bộ. Điều gì đúng?
+**Câu 1 — Chọn một.** batch_tool nhận bốn invocation; run_batch dùng for và chờ run_tool từng mục. Log cho thấy chỉ một tool chạy mỗi thời điểm. Kết luận đúng?
 
-A. Chắc chắn mọi công cụ chạy đồng thời.
+A. Đã song song vì mô hình gửi một mảng.
 
-B. Không có invocation nào được xử lý.
+B. Gom request, nhưng executor vẫn chạy tuần tự.
 
-C. Đây là Message Batches API.
+C. Batch API của provider đang tự hạn chế concurrency.
 
-D. Lời gọi được gom, nhưng chưa chứng minh concurrency thực thi.
+D. Phải đổi prompt vì executor không liên quan tốc độ.
 
-**2. Chọn một.** B cần kết quả A. Có nên cho chúng chạy đồng thời chỉ vì cùng mảng?
+**Câu 2 — Chọn một.** Hai tra cứu độc lập và một cập nhật cần kết quả cả hai được đặt trong cùng danh sách. Điều phối nào phù hợp?
 
-A. Không; phải giải quyết phụ thuộc dữ liệu trước.
+A. Chạy cả ba cùng lúc vì cùng một batch.
 
-B. Có, thứ tự không bao giờ quan trọng.
+B. Chạy cập nhật trước để tận dụng thời gian tra cứu.
 
-C. Có, mô hình tự bảo đảm hệ thống xử lý phía máy chủ.
+C. Song song tra cứu; đợi/kiểm tra dữ liệu rồi cập nhật.
 
-D. Có, miễn không log lỗi.
+D. Đưa giá trị dự đoán vào cập nhật, dùng tra cứu kiểm tra sau.
 
-**3. Chọn một.** batch_tool và Message Batches API có đồng nghĩa không?
+**Câu 3 — Chọn hai.** Muốn executor chạy song song các invocation độc lập, hai cơ chế nào cần bên cạnh việc khởi chạy đồng thời?
 
-A. Có, mọi batch có cùng SLA.
+A. Liên kết kết quả/lỗi với từng invocation một cách ổn định.
 
-B. Không; một bên là công cụ gom invocation, bên kia là API batch yêu cầu riêng.
+B. Coi thứ tự hoàn tất luôn trùng thứ tự đầu vào.
 
-C. Có, cả hai tự chạy client các công cụ nhiều lượt.
+C. Kiểm tra quyền/đầu vào và xử lý lỗi riêng theo mỗi thao tác.
 
-D. Có, tên là đủ quyết định.
+D. Nếu một mục lỗi, đánh dấu mọi mục còn lại thành công để batch có kết quả.
 
-## Đáp án
+**Câu 4 — Chọn một.** Nhóm nghe “batch_tool” và muốn áp luôn vòng đời polling của Message Batches API vào hàm cục bộ. Cách đánh giá đúng?
 
-1. **D.** A nhầm grouping với scheduling; B sai về vòng for; C nhầm sản phẩm.
-2. **A.** B bỏ phụ thuộc; C gán bảo đảm ngoài mô hình; D che lỗi không sửa dữ liệu.
-3. **B.** A suy rộng SLA; C gán công cụ loop tự động; D nhầm tên với chức năng.
+A. Hai cơ chế có cùng từ batch nên dùng chung vòng đời.
+
+B. Mọi batch_tool đều là wrapper chính thức của Message Batches API.
+
+C. Chỉ khác tên SDK, quy tắc thực thi giống nhau.
+
+D. Tool gom invocation khác API batch yêu cầu bất đồng bộ.
+
+**Câu 5 — Chọn hai.** Một batch chứa hai tra cứu thành công và một ghi dữ liệu timeout chưa rõ đã thực thi chưa. Hai hành động nào hợp lý?
+
+A. Giữ kết quả hai tra cứu và trạng thái chưa xác định của thao tác ghi.
+
+B. Chạy lại toàn bộ batch vô điều kiện cho nhất quán.
+
+C. Xác minh trạng thái hoặc dùng quy tắc chống lặp trước khi retry ghi.
+
+D. Báo cả batch thất bại hoàn toàn và xóa mọi kết quả đã có.
+
+## Đáp án và giải thích
+
+1. **B.** B phân biệt gom lời gọi và chạy đồng thời. A lấy cấu trúc dữ liệu làm bằng chứng concurrency. C nhầm batch_tool tự viết với dịch vụ batch. D cách thực thi host quyết định lịch chạy.
+
+2. **C.** C tôn trọng đồ thị phụ thuộc. A/B không có đầu vào cập nhật. D có thể gây tác động từ dữ liệu sai trước khi biết kết quả thực.
+
+3. **A, C.** A tránh ghép nhầm khi thứ tự thay đổi; C giữ hợp đồng và trạng thái từng tác động. B không đúng với concurrency. D báo thành công không có bằng chứng.
+
+4. **D.** D xét cơ chế và vòng đời thực. A/B/C suy tương đương từ tên gọi; bài dùng một công cụ tự viết, không chứng minh nó có job lifecycle của dịch vụ batch.
+
+5. **A, C.** A bảo toàn dữ liệu hữu ích và không báo sai; C giảm nguy cơ tác động lặp. B có thể ghi hai lần. D làm mất phần thành công mà không giải quyết trạng thái ghi chưa rõ.
 
 ## Đối chiếu Vertex
 

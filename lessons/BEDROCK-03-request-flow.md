@@ -13,42 +13,66 @@ Ví dụ: Giao diện không hiện câu trả lời. Cần xác định câu h�
 
 Gửi yêu cầu thành công cũng chưa chứng minh câu trả lời đúng nhiệm vụ. Sơ đồ này chỉ mô tả luồng tổng thể, không đủ để kết luận về quyền truy cập, vùng triển khai hoặc chính sách lưu dữ liệu. Các chi tiết đó cần tài liệu và cấu hình của môi trường thực tế.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Trong mẫu web chat, thành phần nào gọi Bedrock client?
+**Câu 1 — Chọn một.** UI không hiện trả lời; log backend cho thấy provider đã trả HTTP thành công nhưng chưa biết adapter đọc gì. Bước điều tra trực tiếp nhất?
 
-A. Chỉ CSS của trang.
+A. Viết lại system prompt để mô hình trả lời ngắn hơn.
 
-B. Hệ thống xử lý phía máy chủ ứng dụng.
+B. Kiểm tra payload qua adapter backend đến UI.
 
-C. Tên mô hình tự gọi.
+C. Đổi model mặc định để tránh lỗi hiển thị.
 
-D. Chỉ file ảnh.
+D. Tăng retry ở trình duyệt bất kể backend đã có kết quả.
 
-**2. Chọn một.** UI không hiện kết quả. Cần phân biệt điều gì để debug?
+**Câu 2 — Chọn hai.** Ứng dụng chuyển từ API trực tiếp sang Bedrock. Hai trách nhiệm nào vẫn thuộc ứng dụng?
 
-A. Chỉ giọng điệu.
+A. Quản lý lịch sử hội thoại và gửi ngữ cảnh cần thiết.
 
-B. Chỉ tiêu đề.
+B. Mặc định provider giữ đầy đủ mọi hội thoại theo ID người dùng.
 
-C. Từng chặng UI/backend/provider và cấu trúc phản hồi.
+C. Xử lý đúng phản hồi và chuyển dữ liệu phù hợp về giao diện.
 
-D. Không cần kết quả API.
+D. Để trình duyệt suy từ tên model ra cấu trúc phản hồi.
 
-**3. Chọn một.** Sơ đồ yêu cầu ngắn có đủ để khẳng định mọi chính sách lưu trữ dữ liệu không?
+**Câu 3 — Chọn một.** Backend ghi “request succeeded”; người dùng nói câu trả lời thiếu một điều kiện quan trọng. Cách hiểu đúng?
 
-A. Chưa; cần tài liệu chính sách/cấu hình có thẩm quyền.
+A. Truyền tải thành công chưa chứng minh chất lượng tác vụ.
 
-B. Đủ mọi trường hợp.
+B. Provider trả thành công nên yêu cầu người dùng chắc chắn đã được đáp ứng.
 
-C. Đủ nếu dùng cloud lớn.
+C. Đây luôn là lỗi trình duyệt vì backend đã hoàn tất.
 
-D. Đủ nếu API trả nhanh.
+D. Cần tăng quyền tài khoản cloud để mô hình hiểu thêm điều kiện.
 
-## Đáp án
+**Câu 4 — Chọn một.** Một sơ đồ có browser → backend → Bedrock → backend → browser. Nhóm dùng sơ đồ để cam kết dữ liệu không bao giờ được lưu ở provider. Kết luận nào đúng?
 
-1. **B.** B đúng luồng; A, C, D không thực hiện yêu cầu SDK trong mẫu.
+A. Dùng sơ đồ đã được nhóm backend duyệt làm bằng chứng cho toàn bộ vòng đời dữ liệu.
 
-2. **C.** C cô lập tầng lỗi; A, B không quan sát luồng, D bỏ bằng chứng.
+B. Coi backend trung gian là nơi duy nhất lưu dữ liệu vì browser chỉ gọi backend.
 
-3. **A.** A giới hạn suy luận; B, C, D không chứng minh retention.
+C. Dùng bằng chứng mã hóa đường truyền để xác nhận dữ liệu không được lưu ở provider.
+
+D. Đối chiếu chính sách và cấu hình lưu trữ thực tế.
+
+**Câu 5 — Chọn hai.** Để phân biệt lỗi browser, backend và provider, hai thông tin quan sát nào hữu ích nhất?
+
+A. Trạng thái và định danh liên kết yêu cầu qua từng chặng.
+
+B. Chỉ thời lượng tổng cùng câu “thất bại”.
+
+C. Dạng dữ liệu vào/ra được kiểm tra tại ranh giới adapter mà không lộ bí mật.
+
+D. Chỉ confidence do mô hình tự chấm.
+
+## Đáp án và giải thích
+
+1. **B.** B theo chặng còn chưa xác minh trong luồng. A/C chưa có bằng chứng lỗi ở sinh nội dung. D có thể tạo yêu cầu lặp mà không sửa adapter/hiển thị.
+
+2. **A, C.** A và C là trách nhiệm điều phối dữ liệu của ứng dụng. B không được suy ra từ đổi provider. D cấu trúc phải theo hợp đồng, không đoán từ tên model.
+
+3. **A.** A phân biệt vận hành và chất lượng ngữ nghĩa. B suy quá tín hiệu HTTP. C khoanh lỗi chưa có bằng chứng. D quyền không trực tiếp sửa thiếu ngữ cảnh hoặc suy luận.
+
+4. **D.** D cần chính sách và cấu hình có thẩm quyền về lưu trữ. A sơ đồ luồng giản lược không mô tả đầy đủ retention. B nơi browser gọi không xác định nơi provider lưu. C mã hóa khi truyền khác việc giữ dữ liệu sau xử lý.
+
+5. **A, C.** A nối các chặng, C xác định chỗ sai hợp đồng dữ liệu. B không khoanh được tầng lỗi. D không đo hoạt động truyền tải hay parse dữ liệu.

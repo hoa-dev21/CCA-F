@@ -15,43 +15,69 @@ Lưu bộ dữ liệu thành tệp giúp dùng lại cùng đầu vào khi so s�
 
 Mã ví dụ dùng mô hình nhanh để hỗ trợ tạo dữ liệu, cùng kỹ thuật viết sẵn phần mở đầu câu trả lời (prefilling) và chuỗi dừng (stop sequence). Khả năng hỗ trợ các kỹ thuật này tùy mô hình; cần kiểm tra trước khi chạy. Điều chính cần nắm ở đây là cách thiết kế và lưu bộ đầu vào phù hợp.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Ứng dụng hỗ trợ ba định dạng nhưng bộ dữ liệu chỉ gồm Python. Hạn chế trực tiếp?
+**Câu 1 — Chọn một.** Ứng dụng sinh Python, JSON và regex. Tập thử có 90% Python, các định dạng còn lại mỗi loại chỉ vài ca dễ. Điểm chung cao cho biết điều gì?
 
-A. JSON không thể lưu task.
+A. Có thể phát hành cả ba vì phần lớn yêu cầu đã đạt.
 
-B. Chưa đo được chất lượng ở hai nhóm còn lại.
+B. Chỉ tăng trọng số của hai nhóm ít mẫu.
 
-C. Không thể so sánh prompt Python.
+C. Bổ sung ca đại diện và đo riêng hai nhóm ít mẫu.
 
-D. Mọi kết quả Python đều sai.
+D. Nên gộp mọi đầu ra thành văn bản để dùng điểm Python cho cả ba.
 
-**2. Chọn một.** Lý do lưu bộ dữ liệu để dùng lại?
+**Câu 2 — Chọn hai.** Nhờ mô hình tạo tập thử cho ứng dụng sinh mã AWS theo ba định dạng. Hai yêu cầu nào giúp dữ liệu có thể dùng trực tiếp và đúng mục tiêu?
 
-A. Để so các phiên bản trên cùng đầu vào.
+A. Cho phép trộn lời giải thích vào trường task thay cho yêu cầu cụ thể.
 
-B. Để không cần bộ chấm điểm.
+B. Nêu các loại đầu ra và giới hạn độ phức tạp cần bao phủ.
 
-C. Để bảo đảm mô hình không sai.
+C. Yêu cầu mọi task dùng cùng một ví dụ để dễ đạt điểm ổn định.
 
-D. Để API tự nhớ hội thoại.
+D. Quy định cấu trúc bản ghi, trong đó task mô tả nhiệm vụ cần kiểm tra.
 
-**3. Chọn một.** Khi nhờ mô hình tạo bộ dữ liệu, chỉ dẫn nào hữu ích nhất?
+**Câu 3 — Chọn một.** Mỗi lần đánh giá, nhóm lại nhờ AI sinh một tập mới rồi so điểm hai prompt. Cách sửa nào giữ được phép so sánh đáng tin cậy?
 
-A. “Tạo gì cũng được.”
+A. Yêu cầu tập mới có độ dài trung bình bằng tập cũ.
 
-B. “Hãy cho mọi đầu ra điểm 10.”
+B. Giữ số lượng ca bằng nhau nhưng để chủ đề thay đổi tự do.
 
-C. Nêu loại task, định dạng bản ghi và giới hạn độ phức tạp.
+C. Chạy hai prompt trên cùng tập đã duyệt và lưu lại.
 
-D. Không mô tả ứng dụng đích.
+D. Chọn ngẫu nhiên một nửa điểm của mỗi đợt để so sánh.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Đầu ra production phải chỉ gồm mã hoặc dữ liệu, không có lời giải thích. Hai loại ca nào cần có để kiểm tra hợp đồng này?
 
-1. **B.** A sai về JSON; C vẫn có thể so trên nhóm Python; D không suy ra từ thiếu bao phủ.
-2. **A.** B và C nhầm dữ liệu với đánh giá và bảo đảm; D nhầm dữ liệu kiểm thử với lịch sử yêu cầu.
-3. **C.** A và D tạo dữ liệu kém liên quan; B làm sai hoạt động chấm điểm.
+A. Task yêu cầu regex hoặc Python với tiêu chí đầu ra đúng loại tương ứng.
+
+B. Task luôn cho phép Markdown để bộ parse dễ bỏ qua phần thừa.
+
+C. Task yêu cầu JSON để kiểm tra có thêm văn bản ngoài JSON hay không.
+
+D. Task chỉ yêu cầu giải thích bằng lời vì dễ chấm tính hữu ích.
+
+**Câu 5 — Chọn một.** Tập do AI tạo chứa task mơ hồ “làm việc với AWS” và task quá phức tạp so với ứng dụng mục tiêu. Xử lý nào tốt nhất trước khi đo prompt?
+
+A. Duyệt task theo phạm vi/độ khó đã định rồi lưu tập.
+
+B. Giữ nguyên vì dữ liệu AI tạo bảo đảm không thiên vị prompt.
+
+C. Chỉ sửa đáp án mẫu để phù hợp với bất kỳ đầu ra nào model sinh.
+
+D. Loại ca khó để đo năng lực thông thường.
+
+## Đáp án và giải thích
+
+1. **C.** C nhận ra thiếu bao phủ. A suy rộng từ nhóm đa số; D làm mất tiêu chí định dạng; B tăng trọng số không tạo thêm bằng chứng về loại ca chưa có.
+
+2. **B, D.** D làm dữ liệu có hợp đồng; B định hướng độ bao phủ. C làm nghèo tình huống; A lẫn đáp án hoặc lời bình với đầu vào nhiệm vụ.
+
+3. **C.** C cố định đầu vào. B số lượng bằng nhau không bảo đảm độ khó bằng nhau; A độ dài không đại diện độ khó; D trộn điểm không kiểm soát khác biệt dữ liệu.
+
+4. **A, C.** C và A kiểm tra các định dạng thực tế. B nới hợp đồng so với production; D đổi tác vụ nên không kiểm chứng yêu cầu đầu ra chỉ có nội dung dùng được.
+
+5. **A.** A kiểm soát chất lượng dữ liệu kiểm thử. B nhầm nguồn sinh với tính đại diện; D làm mất ca khó nhưng hợp lệ; C làm thước đo chạy theo kết quả thay vì yêu cầu.
 
 ## Đối chiếu Bedrock
 

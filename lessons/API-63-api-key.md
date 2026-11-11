@@ -13,42 +13,66 @@ Không đưa giá trị khóa vào kho mã nguồn, câu hỏi luyện tập ho�
 
 Giao diện quản lý và các lựa chọn xác thực có thể thay đổi. Khi thực hành, dựa vào hướng dẫn chính thức của môi trường đang dùng. Đây là bước chuẩn bị thực hành, không phải nội dung ưu tiên của đề cương Architect; việc đọc bản tóm tắt cũng chưa tạo khóa thay bạn.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Có cần gửi API key thật cho trợ giảng để học bài không?
+**Câu 1 — Chọn một.** Ứng dụng thử nghiệm dùng khóa tên “course” trong workspace sản xuất. Nhóm cho rằng tên này đã giới hạn khóa cho bài học. Trước khi chạy workload mới, cần kiểm tra gì trực tiếp nhất?
 
-A. Có, luôn cần.
+A. Giới hạn độ dài prompt để khóa chỉ dùng được cho nội dung khóa học.
 
-B. Có, phải chép vào bài test.
+B. Workspace, quyền thực tế và nơi cấp/lưu khóa đang dùng.
 
-C. Có, phải đăng công khai.
+C. Thử một request nhỏ thành công rồi coi mọi quyền đã phù hợp.
 
-D. Không; bài giảng và câu hỏi không cần secret thực.
+D. Đổi tên thành “read-only-course” rồi giữ nguyên mọi cấu hình.
 
-**2. Chọn một.** Tên khóa “course” có tự bảo đảm quyền và an toàn không?
+**Câu 2 — Chọn hai.** Bạn cần nhờ đồng đội chẩn đoán lỗi xác thực nhưng không cần họ thực hiện yêu cầu thay bạn. Hai thông tin nào phù hợp để chia sẻ?
 
-A. Không; vẫn cần scope/lưu trữ phù hợp.
+A. Khóa thật trong ảnh chụp console vì ảnh không phải mã nguồn.
 
-B. Có, tên đủ ngăn mọi lộ lọt.
+B. File .env đầy đủ qua issue riêng để thông tin dễ tái hiện.
 
-C. Có, không cần bảo mật.
+C. Cách ứng dụng nạp credential và workspace dự kiến, không kèm giá trị khóa.
 
-D. Có, thay token bằng tên là được.
+D. Mã lỗi đã che dữ liệu nhạy cảm cùng cấu hình môi trường liên quan.
 
-**3. Chọn một.** Khi UI console khác video, nên dựa vào gì để thực hành?
+**Câu 3 — Chọn một.** Một khóa được lưu trong biến môi trường, nhưng script debug in toàn bộ môi trường vào artifact CI. Nhận định nào chính xác nhất?
 
-A. Đoán vị trí cũ rồi xóa tùy tiện.
+A. Khóa đã ở biến môi trường nên artifact chỉ chứa tên biến.
 
-B. Tài liệu hiện hành và quyền của môi trường đang dùng.
+B. Artifact CI là nội bộ nên không cần kiểm tra những người có thể đọc.
 
-C. Chỉ tiêu đề video.
+C. Log vẫn có thể lộ khóa; phải giới hạn hoặc che giá trị.
 
-D. Không cần xác minh gì.
+D. Đổi tên khóa trong console sẽ làm giá trị đã ghi ra log không còn hữu ích.
 
-## Đáp án
+**Câu 4 — Chọn một.** Console hiện tại khác video, có nhiều workspace và các lựa chọn quyền mới. Bạn muốn tạo credential cho môi trường học riêng. Bước nào có cơ sở nhất?
 
-1. **D.** D giữ dữ liệu đúng nhu cầu; A, B, C truyền secret không cần thiết.
+A. Dùng khóa sản xuất đang hoạt động để loại vấn đề giao diện mới.
 
-2. **A.** A phân biệt nhãn và kiểm soát; B, C, D suy rộng chức năng tên.
+B. Tạo khóa ở workspace đang chọn, chỉ xem lại phạm vi nếu gọi thử bị lỗi.
 
-3. **B.** B kiểm tra quy trình thực; A có thể tác động sai, C thiếu hướng dẫn, D bỏ xác minh.
+C. Xác minh workspace, quyền và quy trình console hiện hành.
+
+D. Chọn các quyền rộng nhất để tránh lỗi trong quá trình làm bài.
+
+**Câu 5 — Chọn hai.** Hai ứng dụng có tên khóa gần giống nhau; một ứng dụng đang gửi request bằng credential của môi trường khác. Hai bước nào giúp xác định đúng nguyên nhân mà không đoán theo nhãn?
+
+A. So sánh chất lượng câu trả lời để suy ra khóa nào đang được dùng.
+
+B. Đổi tên cả hai khóa theo tên ứng dụng rồi coi lỗi đã sửa.
+
+C. Đối chiếu workspace/quyền của credential hiệu lực với môi trường dự kiến.
+
+D. Theo dõi nguồn cấu hình thực sự được runtime nạp và thứ tự ưu tiên.
+
+## Đáp án và giải thích
+
+1. **B.** A sai: Nội dung prompt không xác lập quyền của credential. B đúng: Nhãn chỉ phục vụ nhận diện; các thuộc tính thực tế mới quyết định phạm vi truy cập. C sai: Kết nối thành công chứng minh một yêu cầu được chấp nhận, không chứng minh phạm vi quyền tối thiểu. D sai: Đổi nhãn không tạo quyền chỉ đọc hoặc tách môi trường.
+
+2. **C, D.** A sai: Ảnh vẫn truyền giá trị bí mật cho người nhận và nơi lưu ảnh. B sai: Issue riêng vẫn là nơi chia sẻ không cần thiết nếu chỉ cần chẩn đoán đường nạp cấu hình. C đúng: Đây là ngữ cảnh cần để phát hiện nạp nhầm nguồn hoặc phạm vi. D đúng: Các tín hiệu này giúp phân biệt lỗi cấu hình mà không truyền bí mật xác thực.
+
+3. **C.** A sai: Việc in môi trường có thể in cả giá trị, không tự thay bằng tên. B sai: Phạm vi truy cập artifact có thể rộng hơn phạm vi người cần sử dụng khóa. C đúng: Bí mật cần được bảo vệ trên toàn luồng, không chỉ nơi mã nguồn đọc nó. D sai: Đổi nhãn không mặc nhiên thay đổi hoặc thu hồi credential đã lộ.
+
+4. **C.** A sai: Hoạt động được không chứng minh khóa phù hợp mục đích học riêng. B sai: Một request có thể thành công ở workspace không mong muốn; thử gọi không thay việc xác nhận phạm vi trước khi tạo. C đúng: Cách này kiểm tra ngữ nghĩa thao tác trong môi trường thực tế thay vì bắt chước vị trí UI. D sai: Tối ưu tránh lỗi bằng quyền thừa không đáp ứng yêu cầu phạm vi phù hợp.
+
+5. **C, D.** A sai: Nội dung sinh ra không phải bằng chứng đáng tin về danh tính xác thực. B sai: Tên giúp quản trị nhưng không đổi giá trị runtime đã nạp. C đúng: Đây là phép kiểm tra phạm vi thực tế sau khi tìm đúng nguồn nạp. D đúng: Credential hiệu lực có thể khác cấu hình mà người vận hành đang nhìn.

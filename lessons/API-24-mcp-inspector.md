@@ -13,43 +13,69 @@ Với thao tác sửa tài liệu, thông báo “success” chưa đủ để b
 
 Giao diện và lệnh khởi chạy Inspector có thể thay đổi theo phiên bản. Điều chính cần học là thử riêng từng phần của hệ thống và kiểm tra kết quả sau thao tác.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Chatbot báo không đọc được tài liệu. Bạn muốn xác định công cụ server có hoạt động không. Bước nào cô lập tầng lỗi tốt nhất?
+**Câu 1 — Chọn một.** Chatbot không đọc được tài liệu. Nhóm chưa biết lỗi server hay host. Thử nghiệm nào cô lập server hiệu quả nhất?
 
-A. Đổi prompt chatbot và chạy lại mọi thứ.
+A. Gọi trực tiếp tool đọc trong Inspector với ID hợp lệ.
 
-B. Nâng mô hình trước khi kiểm tra server.
+B. Tăng số công cụ đưa cho model để tạo thêm đường đọc.
 
-C. Gọi trực tiếp công cụ với tham số đã biết qua inspector.
+C. Thay system prompt của chatbot rồi gọi lại toàn bộ luồng.
 
-D. Chỉ đọc câu trả lời tự đánh giá của chatbot.
+D. Thay model trước khi kiểm tra giao diện công cụ.
 
-**2. Chọn một.** Công cụ sửa trả “success”. Cách xác minh sát ví dụ trong bài?
+**Câu 2 — Chọn hai.** Inspector gọi sửa tài liệu và nhận success. Hai kiểm tra nào cung cấp bằng chứng tốt hơn về tính đúng của thao tác?
 
-A. Đọc lại tài liệu qua công cụ và đối chiếu nội dung.
+A. Chỉ kiểm tra dòng success có đúng chính tả.
 
-B. Chỉ kiểm tra thời gian chạy.
+B. Kiểm tra phần không nằm trong yêu cầu vẫn được giữ nguyên.
 
-C. Giả định success chứng minh mọi yêu cầu nội dung.
+C. Coi việc công cụ xuất hiện trong danh sách là đủ cho mọi đầu vào.
 
-D. Chạy lại công cụ sửa mà không xem trạng thái.
+D. Đọc lại tài liệu và đối chiếu phần phải thay đổi.
 
-**3. Chọn một.** Công cụ chạy đúng trong inspector nhưng chatbot không gọi nó. Nên điều tra tiếp ở đâu?
+**Câu 3 — Chọn một.** Cùng ID tài liệu, Inspector đọc đúng nhưng chatbot không hề phát tool_use. Ưu tiên điều tra nào hợp lý nhất?
 
-A. Chỉ viết lại mã lưu trữ dù đã kiểm tra đúng.
+A. Đổi ID trong kho cho tới khi model gọi công cụ.
 
-B. Bỏ server và trả dữ liệu hard-code.
+B. Tools host gửi model và cách host xử lý phản hồi.
 
-C. Coi inspector là kiểm thử toàn bộ ứng dụng đã đạt.
+C. Viết lại ngay backend đọc tài liệu vì đó là thành phần cuối cùng.
 
-D. Kiểm tra công bố bản mô tả cấu trúc dữ liệu, mô tả và luồng điều phối phía ứng dụng.
+D. Thêm retry ở hàm server dù chưa có lời gọi đến server.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Khi kiểm thử server độc lập trước tích hợp, hai ca nào cần có để hiểu hợp đồng sửa tài liệu?
 
-1. **C.** A và B thay tầng khác trước khi cô lập; D không quan sát trực tiếp công cụ.
-2. **A.** B không kiểm tra nội dung; C suy rộng từ thông báo; D lặp thao tác thay vì xác minh.
-3. **D.** Công cụ đúng riêng lẻ chưa chứng minh tích hợp. A sửa tầng chưa có bằng chứng lỗi; B che vấn đề; C nhầm kiểm thử thành phần với đầu-cuối.
+A. Một ID hợp lệ và chuỗi khớp để xác nhận đường thành công.
+
+B. Chỉ kiểm tra tên server được hiển thị đúng trong Inspector.
+
+C. Chỉ gọi list_tools nhiều lần để đo độ ổn định danh sách.
+
+D. Một ID hoặc chuỗi không khớp để kiểm tra phản hồi lỗi.
+
+**Câu 5 — Chọn một.** Inspector trả lỗi với ID hợp lệ mà ứng dụng trước đây đọc được. Nhóm muốn sửa prompt ngay. Hướng điều tra nào có căn cứ hơn?
+
+A. Chuyển lỗi thành tài liệu rỗng và đánh dấu tích hợp thành công.
+
+B. Gọi trực tiếp để khoanh dữ liệu, quyền hoặc logic server.
+
+C. Tăng số ví dụ trong prompt vì mọi lỗi công cụ đều bắt nguồn từ model.
+
+D. Ép model nói “đã đọc” để không lộ lỗi backend.
+
+## Đáp án và giải thích
+
+1. **A.** A bỏ các tầng hội thoại để thử server. C và D thay nhiều thành phần nhưng chưa cô lập; B thêm khả năng không xác định nguyên nhân.
+
+2. **B, D.** D kiểm tra tác động yêu cầu; B kiểm tra tác động ngoài ý muốn. A chỉ đo thông báo; C nhầm khám phá với độ đúng thực thi.
+
+3. **B.** B nhắm tầng lựa chọn/điều phối chưa hoạt động. C trái bằng chứng server đọc được; A thay dữ liệu không sửa công bố công cụ; D retry không chạy khi chưa có lời gọi.
+
+4. **A, D.** A kiểm tra thực thi, D kiểm tra lỗi có thể xử lý. C và B chỉ đo kết nối/khám phá, không đo hành vi đọc sửa.
+
+5. **B.** B bám bằng chứng lỗi xuất hiện cả khi bỏ model. C không phù hợp tầng đã cô lập; D và A che sự cố thay vì khắc phục.
 
 ## Đối chiếu khóa MCP riêng
 

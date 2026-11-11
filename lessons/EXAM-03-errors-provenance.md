@@ -17,40 +17,66 @@ Nếu dữ liệu thực sự xung đột, tác nhân phân tích tài liệu ho
 
 Kết quả có cấu trúc nên phân biệt phát hiện có căn cứ, còn tranh luận và chưa đủ dữ liệu. Giữ nguyên các hạn chế về phương pháp mà nguồn đã nêu. Chọn cách trình bày phù hợp: bảng cho số liệu cần so sánh, văn xuôi cho diễn biến, danh sách có cấu trúc cho phát hiện kỹ thuật. Nêu rõ chủ đề nào có bằng chứng và chủ đề nào còn trống do chưa truy cập được nguồn.
 
-## Câu hỏi tình huống
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Tìm kiếm lỗi quá thời gian chờ sau thử phục hồi cục bộ. Báo cáo nào hữu ích nhất?
+**Câu 1 — Chọn một.** Tìm kiếm hết thời gian sau hai lần thử; đã đọc được một nguồn. Coordinator phải quyết định nghiên cứu tiếp hay dùng kết quả có điều kiện. Bàn giao nào hỗ trợ quyết định tốt nhất?
 
-A. “Không tìm thấy gì”, gắn thành công.
+A. “Không có kết quả”, để coordinator chuyển sang nguồn khác.
 
-B. Loại lỗi, truy vấn, các lần thử, dữ liệu một phần và phương án thay thế.
+B. Lỗi, truy vấn, số lần thử, nguồn đã đọc và phạm vi chưa kiểm tra.
 
-C. Chỉ ghi “failed”.
+C. Kết luận từ nguồn đã đọc, bỏ chi tiết lỗi để tránh nhiễu.
 
-D. Hủy mọi nhánh khác dù đang có kết quả.
+D. “Nghiên cứu chưa chắc chắn” cùng điểm tự tin chung của tác nhân.
 
-**2. Chọn một.** Hai nguồn đáng tin cho tỷ lệ khác nhau ở hai năm khác nhau. Cách tổng hợp phù hợp?
+**Câu 2 — Chọn một.** Hai báo cáo đáng tin đưa ra 12% và 17%, nhưng khác năm và định nghĩa mẫu. Cách tổng hợp phù hợp nhất trước khi đưa ra xu hướng?
 
-A. Chọn số lớn hơn.
+A. Lấy trung bình vì cả hai nguồn đều đáng tin.
 
-B. Bỏ cả hai vì chắc chắn nguồn sai.
+B. Chọn số mới hơn và loại số cũ khỏi bằng chứng.
 
-C. Giữ giá trị cùng ngày và phương pháp, giải thích khác biệt thời kỳ trước khi coi là mâu thuẫn.
+C. Giữ kỳ đo/phương pháp; kiểm tra tính so sánh trước suy luận.
 
-D. Lấy trung bình và bỏ nguồn.
+D. Gắn nhãn mâu thuẫn và chuyển toàn bộ việc phân tích cho người dùng.
 
-**3. Chọn hai.** Sau nén kết quả để chuyển cho tác nhân AI tổng hợp, dữ liệu nào cần giữ?
+**Câu 3 — Chọn hai.** Để giảm context, tác nhân nén 30 trang bằng chứng thành 2 trang. Hai thành phần nào phải giữ để kết luận vẫn kiểm tra lại được?
 
-A. Ánh xạ từng claim với nguồn và vị trí liên quan.
+A. Ánh xạ từng nhận định quan trọng với nguồn và vị trí liên quan.
 
-B. Chỉ danh sách URL không gắn với kết luận.
+B. Toàn bộ suy nghĩ nội bộ đã dẫn tới việc chọn mỗi nhận định.
 
-C. Gắn mọi phát hiện là chắc chắn để đơn giản hóa.
+C. Ngày, phạm vi đo và ghi chú thiếu dữ liệu hoặc xung đột.
 
-D. Ngày thu thập/công bố và chú thích khoảng trống hoặc xung đột.
+D. Một danh sách URL cuối báo cáo, không cần nối URL với từng nhận định.
 
-## Đáp án
+**Câu 4 — Chọn một.** Một nguồn gốc được ba website đăng lại. Báo cáo yêu cầu “ít nhất hai nguồn độc lập” cho kết luận rủi ro cao. Cách xử lý nào đúng?
 
-1. **B.** A che lỗi; C không đủ phục hồi; D bỏ kết quả hợp lệ không cần thiết.
-2. **C.** A chọn tùy tiện; B kết luận quá sớm; D xóa khác biệt ngữ nghĩa và việc ghi rõ nguồn.
-3. **A, D.** B làm mất liên kết bằng chứng; C làm mất thông tin bất định.
+A. Đếm ba tên miền là ba nguồn để đáp ứng quy tắc.
+
+B. Chọn hai bản có cách viết khác nhau nhất làm bằng chứng độc lập.
+
+C. Dùng điểm uy tín của tên miền để bù thiếu nguồn độc lập.
+
+D. Tính một nguồn gốc; tìm nguồn độc lập hoặc nêu thiếu hụt.
+
+**Câu 5 — Chọn hai.** API tìm kiếm trả lỗi 503; một truy vấn khác thành công nhưng không thấy tài liệu phù hợp. Hai trạng thái nào cần được phân biệt trong đầu ra?
+
+A. Truy vấn lỗi được ghi là chưa xác định kết quả do lỗi truy cập.
+
+B. Truy vấn thành công được ghi là không tìm thấy trong phạm vi đã kiểm tra.
+
+C. Cả hai được ghi là không có bằng chứng tồn tại ở mọi nguồn.
+
+D. Truy vấn lỗi được ghi là tài liệu không tồn tại để downstream dùng cùng schema.
+
+## Đáp án và giải thích
+
+1. **B.** B phân biệt lỗi truy cập với không có bằng chứng và giữ phần đã thu được. A đánh mất dữ liệu một phần. C che khoảng trống. D không chỉ ra nơi cần phục hồi.
+
+2. **C.** C đánh giá tính tương thích của phép đo. A tạo thống kê không có cơ sở; B mất bối cảnh; D coi khác biệt phạm vi là mâu thuẫn trước khi kiểm tra.
+
+3. **A, C.** A duy trì truy nguyên; C duy trì điều kiện diễn giải. B không cần cho kiểm chứng bằng chứng. D có nguồn nhưng không xác định nguồn nào hỗ trợ nhận định nào.
+
+4. **D.** D xét quan hệ nguồn, không chỉ URL. A và B nhầm số bản sao với số phép quan sát. C đánh giá uy tín không giải quyết sự phụ thuộc của bằng chứng.
+
+5. **A, B.** A giữ tính chưa biết; B giới hạn kết luận vào phạm vi truy vấn. C suy rộng quá dữ liệu. D biến lỗi hạ tầng thành kết luận nội dung chỉ để thống nhất cấu trúc.

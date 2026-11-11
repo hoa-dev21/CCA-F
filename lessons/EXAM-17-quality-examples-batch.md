@@ -15,42 +15,66 @@ Khi chọn xử lý theo lô (batch), phải xét tổng thời gian chờ gom v
 
 Đây là phép tính chưa gồm thử lại và thời gian phụ. Nó không phải bảo đảm cho hệ thống vận hành thực tế. Batch phù hợp với công việc chấp nhận chờ, không chỉ vì có lợi về chi phí.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Field phương pháp nghiên cứu thường null ở tài liệu không có mục Methodology nhưng thông tin thực ra nằm trong đoạn mở đầu. Cải thiện nào sát nguyên nhân nhất?
+**Câu 1 — Chọn một.** Trường phương pháp nghiên cứu hay null khi thông tin nằm trong đoạn mở đầu, dù đúng khi có heading Methodology. Cải thiện nào nhắm nguyên nhân?
 
-A. Luôn điền phương pháp phổ biến nhất.
+A. Tăng giới hạn token đầu ra để mô hình viết chi tiết hơn.
 
-B. Bỏ mọi trường null mà không kiểm tra.
+B. Few-shot cho bố cục bị bỏ sót; đánh giá trên tài liệu mới.
 
-C. Thêm few-shot cho bố cục có phương pháp nhúng trong đoạn và phép đánh giá trên tài liệu mới.
+C. Bắt schema cấm null để buộc điền phương pháp.
 
-D. Chỉ bắt mô hình tự tin hơn.
+D. Chỉ huấn luyện evaluator chấp nhận null thường xuyên hơn.
 
-**2. Chọn một.** Category comment-style tạo nhiều cảnh báo sai khiến kỹ sư bỏ qua cả lỗi bảo mật thật. Lựa chọn phù hợp nhất?
+**Câu 2 — Chọn một.** Category comment-style gây phần lớn cảnh báo sai; category bảo mật vẫn có giá trị. Cách cải thiện trước mắt tốt nhất?
 
-A. Thêm thật nhiều cảnh báo style.
+A. Tắt tất cả review để người dùng lấy lại niềm tin.
 
-B. Tạm tắt nhóm nhiễu, xác định report/skip rõ và ví dụ hợp lệ để cải thiện trước khi bật lại.
+B. Đổi mọi cảnh báo style thành severity cao để người dùng chú ý.
 
-C. Bỏ mọi category kiểm tra vĩnh viễn.
+C. Tắt riêng nhóm nhiễu; sửa tiêu chí/ví dụ và đo trước khi bật.
 
-D. Đổi nhãn mọi finding thành critical.
+D. Giữ nguyên gate nhưng chuyển cảnh báo style xuống cuối.
 
-**3. Chọn một.** Theo tình huống trong đề cương: xử lý tối đa 24 giờ, hạn hoàn thành là 30 giờ từ lúc tài liệu đến, chưa tính thử lại và thời gian phụ. Chu kỳ gom nào dưới đây còn khoảng đệm?
+**Câu 3 — Chọn hai.** Giả sử xử lý batch tối đa 24 giờ và deadline từ lúc tài liệu đến là 30 giờ. Chu kỳ gom 4 giờ được đề xuất. Hai kết luận nào đúng?
 
-A. Mỗi 8 giờ vì 24 < 30.
+A. Worst case chờ và xử lý là 28 giờ trước các khâu phụ.
 
-B. Mỗi 12 giờ vì xử lý theo lô được giảm giá.
+B. Mọi tài liệu còn ít nhất 6 giờ để retry.
 
-C. Mỗi 24 giờ vì gọi là xử lý theo lô hằng ngày.
+C. Có tối đa 2 giờ đệm trong worst case; phải tính thêm retry và thời gian phụ.
 
-D. Mỗi 4 giờ: chờ tối đa 4 + 24 = 28 giờ, còn 2 giờ đệm theo lý thuyết.
+D. Polling thường xuyên sẽ tăng khoảng đệm đảm bảo lên 6 giờ.
 
-## Đáp án
+**Câu 4 — Chọn một.** Few-shot sửa tốt 20 tài liệu được dùng để thiết kế prompt; nhóm muốn coi đó là mức tăng chất lượng production. Bước nào còn thiếu?
 
-1. **C.** A bịa giá trị; B che lỗi; D không dạy cách nhận thông tin có thật ở bố cục khác.
+A. Chạy lại cùng 20 tài liệu với thứ tự khác.
 
-2. **B.** A tăng nhiễu; C bỏ cả nhóm hữu ích; D làm severity mất nghĩa. Cần đo precision/recall theo category khi cải thiện.
+B. Đánh giá trên tập giữ riêng, có bố cục hiếm và tiêu chí chấm cố định.
 
-3. **D.** A, B, C lần lượt có thể mất 8 + 24 = 32 giờ, 12 + 24 = 36 giờ và 24 + 24 = 48 giờ, đều vượt hạn 30 giờ. Khoảng đệm 2 giờ của D chưa tính thử lại hoặc các chậm trễ khác khi vận hành.
+C. Tính tỷ lệ JSON parse được trên 20 tài liệu.
+
+D. Lấy confidence trung bình của mô hình làm độ chính xác.
+
+**Câu 5 — Chọn hai.** Batch 500 tài liệu có 8 lỗi do dài vượt giới hạn và nhiều kết quả thành công. Hai lựa chọn nào giảm chi phí retry và giữ truy nguyên?
+
+A. Gửi lại toàn bộ batch dưới ID mới cho dễ quản lý.
+
+B. Retry nguyên 8 tài liệu mà không đổi chiến lược xử lý.
+
+C. Lưu ánh xạ custom_id và trạng thái từng mục để chọn đúng phần lỗi.
+
+D. Điều chỉnh xử lý đầu vào quá dài, rồi gửi lại riêng các mục cần phục hồi.
+
+## Đáp án và giải thích
+
+1. **B.** B bổ sung dạng bố cục bị thiếu và kiểm tra khả năng tổng quát. A không tạo tín hiệu trích xuất; C khuyến khích điền thiếu căn cứ; D thay thước đo để che lỗi.
+
+2. **C.** C giảm hại có chọn lọc và đặt đường phục hồi có kiểm chứng. A bỏ chức năng hữu ích; B làm nhiễu nghiêm trọng hơn; D chỉ thay hiển thị, không sửa quyết định sai.
+
+3. **A, C.** A tính 4 + 24, C nêu phần ngân sách còn lại. B bỏ thời gian chờ gom. D tần suất quan sát không rút ngắn thời gian xử lý được cam kết.
+
+4. **B.** B kiểm tra tổng quát hóa và tránh đo trên dữ liệu đã tối ưu. A vẫn dùng dữ liệu cũ; C chỉ kiểm tra cấu trúc; D thay nhãn thực bằng tự đánh giá chưa hiệu chỉnh.
+
+5. **C, D.** C xác định phần lỗi và nối lại kết quả, D giải quyết nguyên nhân. A lặp phần đã xong; B giữ nguyên điều kiện thất bại. Retry không thay thế bước chẩn đoán.

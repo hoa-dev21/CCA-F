@@ -13,45 +13,69 @@ Ví dụ: Giao diện đã hiện nửa câu rồi kết nối bị ngắt. Đi�
 
 Tên sự kiện và các phương thức thư viện trong video tùy phiên bản. Với phạm vi ôn thi đã lưu, điều chính cần phân biệt là dữ liệu đang truyền với kết quả hoàn chỉnh; không cần học sâu mọi chi tiết triển khai streaming.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Giao diện nhận từng phần văn bản khi phản hồi đang được tạo. Chúng có nhất thiết đến từ nhiều yêu cầu API không?
+**Câu 1 — Chọn một.** UI đã hiển thị nửa câu rồi kết nối streaming bị ngắt. Backend hiện đánh dấu thành công khi nhận chunk đầu tiên. Cách sửa nào đúng?
 
-A. Có, mỗi từ là yêu cầu.
+A. Chờ thêm thời gian cố định rồi báo thành công nếu không có chunk mới.
 
-B. Có, mỗi dòng là hội thoại mới.
+B. Chỉ xác nhận hoàn tất khi nhận kết thúc hợp lệ, không chỉ delta.
 
-C. Có, không có final message.
+C. Ghép dấu chấm vào cuối phần text để biến thành câu trả lời hoàn chỉnh.
 
-D. Không; nhiều events có thể là các phần của một yêu cầu.
+D. Coi thành công nếu phần đã nhận tạo thành câu có nghĩa.
 
-**2. Chọn một.** Cần cả UI phản hồi sớm và lịch sử cho công cụ loop. Thiết kế nào?
+**Câu 2 — Chọn hai.** Ứng dụng cần vừa hiển thị sớm vừa dùng phản hồi cho vòng công cụ tiếp theo. Hai luồng xử lý nào nên được tách rõ?
 
-A. Stream cho hiển thị, giữ final message đầy đủ cho logic/lưu trữ.
+A. Cập nhật UI từ các delta phù hợp để người dùng thấy tiến trình.
 
-B. Chỉ lưu ký tự cuối.
+B. Chỉ lưu text đã render vì mọi metadata có thể suy ra từ câu chữ.
 
-C. Bỏ thông tin mô tả vì đã hiển thị.
+C. Biến mỗi delta thành một assistant message độc lập trong lịch sử.
 
-D. Mỗi đoạn văn bản đổi role ngẫu nhiên.
+D. Tích lũy phản hồi đầy đủ gồm các content block và metadata cần cho bước sau.
 
-**3. Chọn một.** Stream dừng bất ngờ sau nửa câu. Có nên báo tác vụ thành công?
+**Câu 3 — Chọn một.** Một phản hồi streaming gồm 80 sự kiện. Bộ đo chi phí nội bộ tính đó là 80 lượt gọi mô hình. Điều chỉnh nào phù hợp?
 
-A. Có, đã thấy text.
+A. Chia số sự kiện cho độ dài câu trung bình để suy ra số lượt.
 
-B. Chưa; kiểm tra kết thúc/lỗi và xử lý trạng thái chưa hoàn chỉnh.
+B. Đếm request và usage của nó, không đếm chunk stream.
 
-C. Có, miễn có token.
+C. Dùng số dòng UI hiển thị để đo số tin nhắn mô hình.
 
-D. Có, tên mô hình đủ chứng minh.
+D. Đếm mỗi sự kiện có chữ là một lượt, bỏ các sự kiện metadata.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Mã mẫu streaming chạy được với SDK cũ; nhóm đổi SDK và giữ adapter bằng cách đoán tên event. Hai hành động nào giảm lỗi tích hợp?
 
-1. **D.** D đúng khái niệm streaming; A, B, C nhầm event với request/state.
+A. Đối chiếu event/method với hợp đồng của SDK đang dùng.
 
-2. **A.** A tách trách nhiệm; B và C mất dữ liệu, D sai cấu trúc hội thoại.
+B. Chỉ thử một câu trả lời thuần text ngắn rồi suy rộng sang tool loop.
 
-3. **B.** B kiểm tra completion; A và C nhầm xuất hiện dữ liệu với hoàn tất, D không phải bằng chứng.
+C. Bỏ event không biết và vẫn báo hoàn tất khi socket đóng.
+
+D. Kiểm thử hoàn tất, lỗi giữa chừng và phản hồi có nhiều loại content block.
+
+**Câu 5 — Chọn một.** UI nối các delta text đúng, nhưng lượt công cụ sau thiếu ID cần liên kết. Lỗi thiết kế có khả năng nhất là gì?
+
+A. Cần coi mọi delta là user message để mô hình khôi phục ID.
+
+B. Streaming tự động tạo ID mới sau mỗi delta nên không thể giữ liên kết.
+
+C. Ứng dụng dùng chuỗi đã render thay cho đối tượng phản hồi đầy đủ khi lưu lịch sử.
+
+D. Phản hồi text dài làm ID công cụ hết hiệu lực.
+
+## Đáp án và giải thích
+
+1. **B.** A sai: im lặng có thể do mất kết nối, không phải tín hiệu kết thúc hợp lệ. B đúng: nhận dữ liệu một phần chưa chứng minh yêu cầu đã hoàn thành. C sai: sửa trình bày không khôi phục nội dung chưa nhận được. D sai: văn bản có nghĩa vẫn có thể chỉ là phần của phản hồi hoặc thiếu tool call.
+
+2. **A, D.** A đúng: đây là mục tiêu trải nghiệm của streaming. B sai: stop reason và khối công cụ không thể được suy ra đáng tin từ text. C sai: nhiều delta thuộc một phản hồi, không phải nhiều lượt hội thoại. D đúng: giao thức tiếp nối cần dữ liệu hoàn chỉnh ngoài text hiển thị.
+
+3. **B.** A sai: độ dài văn bản không xác định biên yêu cầu API. B đúng: nhiều sự kiện có thể là các phần của cùng một yêu cầu. C sai: xuống dòng hiển thị không mang nghĩa giao thức gọi API. D sai: delta văn bản vẫn là thành phần của cùng phản hồi.
+
+4. **A, D.** A đúng: tên và cách ghép phản hồi có thể phụ thuộc phiên bản. B sai: đường đi đơn giản không kiểm tra các loại block hoặc lỗi tiếp nối. C sai: socket đóng không luôn là kết thúc thành công, event bị bỏ có thể cần thiết. D đúng: các nhánh này phát hiện việc nhầm delta, trạng thái và đối tượng cuối.
+
+5. **C.** A sai: đổi role làm sai lịch sử và không tái tạo được dữ liệu đã bỏ. B sai: không thể suy ra hạn chế đó; lỗi nằm ở việc lưu dữ liệu cần thiết. C đúng: chuỗi hiển thị có thể mất content block và định danh công cụ. D sai: độ dài text không tự giải thích mất ID trong adapter.
 
 ## Đối chiếu Bedrock
 

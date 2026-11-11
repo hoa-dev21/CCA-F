@@ -18,40 +18,66 @@ Cần phân biệt “được phép làm” với “làm đúng”. AI có th�
 
 Với CI — quy trình tự động xây dựng và kiểm thử mã — thường không có người trực để trả lời hộp thoại phê duyệt. Cần cho phép trước các công cụ cần thiết và xác định rõ cách từ chối thao tác ngoài phạm vi. Không nên dùng bypass chỉ để giải quyết việc cấu hình quyền còn thiếu.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Job qua được kiểm tra quyền nhưng test thất bại. Cách hiểu đúng?
+**Câu 1 — Chọn một.** Job được phép sửa file và chạy test nhưng test thất bại. Nhóm cho rằng qua permission check nghĩa là đã an toàn để merge. Cách giải thích đúng?
 
-A. Kiểm tra quyền chứng minh tính đúng của mã.
+A. Quyền được cấp chứng minh tác nhân sẽ chọn hành động đúng.
 
-B. Mã hợp phạm vi thao tác vẫn có thể sai; cần gate kiểm chứng riêng.
+B. Permission check thất bại ngầm nên cần cấp thêm quyền.
 
-C. Không cần sửa mã vì hành động được phép.
+C. Quyền giới hạn thao tác; gate riêng kiểm chứng chất lượng.
 
-D. Chỉ tăng quyền sẽ sửa test.
+D. Chỉ cần đổi mode để cùng code trở thành hợp lệ.
 
-**2. Chọn một.** CI treo vì chờ phê duyệt. Thiết kế phù hợp bài?
+**Câu 2 — Chọn một.** CI không có người trực nhưng đang chờ prompt phê duyệt. Thiết kế nào giữ giới hạn thao tác và tránh treo?
 
-A. Chờ vô hạn.
+A. Chạy không tương tác với allowlist; ngoài phạm vi thì từ chối.
 
-B. Bỏ mọi kiểm tra quyền ở production.
+B. Tự trả lời yes cho mọi prompt để bảo đảm tiến độ.
 
-C. Dùng chế độ không hỏi với các công cụ được phê duyệt trước và từ chối phần ngoài danh sách.
+C. Tăng timeout CI vì sớm muộn người dùng sẽ trả lời.
 
-D. Đổi câu chào của tác nhân AI.
+D. Bỏ kiểm tra quyền cho job đầu tiên, bổ sung lại sau.
 
-**3. Chọn một.** Nhóm muốn nghiên cứu thay đổi kiến trúc trước khi sửa. Mode nào sát mục đích?
+**Câu 3 — Chọn hai.** Nhóm muốn đánh giá hai phương án kiến trúc trước khi cho phép sửa mã. Hai điều nào phù hợp với giai đoạn này?
 
-A. Plan.
+A. Chọn chế độ lập kế hoạch và nêu rõ đầu ra cần so sánh.
 
-B. Bypass chỉ vì nhanh.
+B. Cho tác nhân sửa cả hai phương án trong cùng thư mục để dễ minh họa.
 
-C. Tự cấp mọi quyền không cần thiết.
+C. Đưa ràng buộc, dữ liệu cần đọc và tiêu chí quyết định.
 
-D. Chạy tác vụ ghi trước rồi mới hỏi.
+D. Coi việc cho phép lập kế hoạch là phê duyệt triển khai phương án tác nhân thích.
 
-## Đáp án
+**Câu 4 — Chọn một.** Lệnh test cần ghi cache trong thư mục được phép nhưng bị từ chối. Tác nhân đề xuất vô hiệu mọi kiểm soát filesystem. Cách xử lý tối thiểu phù hợp?
 
-1. **B.** A và C nhầm hai loại kiểm tra; D không sửa logic.
-2. **C.** A không giải quyết unattended; B bỏ kiểm soát quá mức; D không ảnh hưởng quyền.
-3. **A.** B, C không cần cho khảo sát; D đảo thứ tự kiểm soát.
+A. Cấp toàn bộ quyền filesystem vì test là thao tác đáng tin.
+
+B. Xác minh nhu cầu cache; chỉ cho ghi đúng phạm vi cần thiết.
+
+C. Bỏ chạy test và dùng suy luận thay kết quả.
+
+D. Đổi tên lệnh test để vượt quy tắc chặn.
+
+**Câu 5 — Chọn hai.** Một tác vụ chỉ cần đọc diff và xuất findings nhưng được cấp quyền ghi và mạng rộng. Hai thay đổi nào giảm quyền thừa?
+
+A. Hạn chế công cụ/quyền theo nhiệm vụ review chỉ đọc.
+
+B. Giữ toàn bộ quyền nhưng thêm câu “cẩn thận” ở cuối prompt.
+
+C. Định nghĩa cách báo khi cần thao tác ngoài phạm vi thay vì tự mở rộng.
+
+D. Cho quyền rộng vì mô hình đã có thành tích tốt trong các lần trước.
+
+## Đáp án và giải thích
+
+1. **C.** C phân biệt quyền hành động và tính đúng của sản phẩm. A nhầm hai khái niệm. B không có căn cứ từ lỗi test. D thay mode không sửa hành vi lỗi của code.
+
+2. **A.** A định trước quyền và đường thất bại trong môi trường headless. B/C không kiểm soát đúng giới hạn hoặc không phù hợp không người trực. D mở quyền trước khi hiểu tác động.
+
+3. **A, C.** A đặt chế độ/mục tiêu nghiên cứu; C cung cấp cơ sở so sánh. B đã thực hiện thay đổi trước quyết định. D suy rộng quyền nghiên cứu thành quyền triển khai.
+
+4. **B.** B xử lý nhu cầu cụ thể với phạm vi nhỏ nhất phù hợp. A mở quá rộng; C mất bằng chứng; D né cơ chế quyền mà không giải quyết giới hạn được đặt.
+
+5. **A, C.** A giới hạn năng lực; C tạo đường xử lý nhu cầu mới. B chỉ hướng dẫn. D lịch sử chất lượng không chứng minh mọi thao tác tương lai đều phù hợp nhiệm vụ hiện tại.

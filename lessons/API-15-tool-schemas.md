@@ -17,43 +17,69 @@ Ví dụ: Nếu tham số là một ngày, cần nói rõ ngày phải viết th
 
 Bạn có thể nhờ Claude tạo bản mô tả từ mã và tài liệu, nhưng vẫn cần đối chiếu với hàm thật. Mô tả một tham số mà hàm không nhận sẽ khiến hai bên không khớp nhau. Chú thích kiểu dữ liệu trong mã (type annotation) cũng không thay thế việc viết và kết nối hàm thực thi.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Claude liên tục chọn nhầm giữa hai công cụ có mô tả giống nhau. Cải thiện trực tiếp?
+**Câu 1 — Chọn một.** Hai công cụ read_invoice và read_payment cùng mô tả “lấy dữ liệu tài chính”. Model thường chọn sai dù input_schema đều hợp lệ. Sửa nào trực tiếp nhất?
 
-A. Tăng độ dài đầu ra.
+A. Thêm nhiều thuộc tính tùy chọn giống nhau vào cả hai schema.
 
-B. Làm rõ mục đích, phạm vi và lúc dùng từng công cụ.
+B. Chỉ tăng số lần retry mà giữ nguyên mô tả lựa chọn.
 
-C. Xóa mọi mô tả.
+C. Đổi cả hai tên thành fetch_data để giảm khác biệt.
 
-D. Chỉ thay màu giao diện.
+D. Làm rõ dữ liệu trả về và ranh giới sử dụng hai tool.
 
-**2. Chọn một.** Thành phần nào mô tả cấu trúc đối số?
+**Câu 2 — Chọn hai.** Công cụ nhận ngày dạng YYYY-MM-DD, còn hàm thực thi cần customer_id. Hai kiểm tra nào phải có khi duyệt schema AI tạo?
 
-A. `input_schema`.
+A. Giả định type hints đã tự cung cấp mã gọi dịch vụ.
 
-B. Tiêu đề giao diện.
+B. Chấp nhận schema nếu JSON hợp lệ dù thiếu customer_id.
 
-C. Phản hồi cuối cùng.
+C. Mô tả định dạng ngày và ý nghĩa tham số tại nơi model đọc được.
 
-D. Tên tài khoản.
+D. Đối chiếu tên, kiểu và tham số bắt buộc với hàm thực thi.
 
-**3. Chọn một.** Có bản mô tả cấu trúc dữ liệu nhưng chưa có hàm gọi hệ thống xử lý phía máy chủ. Điều gì còn thiếu?
+**Câu 3 — Chọn một.** Schema có amount là số, nhưng chính sách chỉ cho phép hoàn dưới hạn mức theo tài khoản. Model gửi số hợp lệ nhưng vượt hạn. Tầng nào cần quyết định cho phép thực thi?
 
-A. Không thiếu gì, bản mô tả cấu trúc dữ liệu tự gọi hệ thống xử lý phía máy chủ.
+A. Host kiểm tra chính sách tài khoản trước giao dịch.
 
-B. Chỉ cần đổi tên công cụ.
+B. Dùng description amount thay gate nghiệp vụ.
 
-C. Mã thực thi thao tác khi nhận yêu cầu công cụ.
+C. Đổi tên công cụ thành safe_refund rồi tin yêu cầu model tạo.
 
-D. Chỉ cần tăng `max_tokens`.
+D. JSON parser cho phép mọi số nên giao dịch phải được coi hợp lệ.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Hàm tra cứu cần order_id và region; schema chỉ khai báo order_id bắt buộc, region nằm trong chú thích nội bộ. Hai sửa đổi nào cần phối hợp?
 
-1. **B.** A và D không sửa chọn công cụ; C bỏ thông tin cần thiết.
-2. **A.** B, C, D không định nghĩa hợp đồng đối số.
-3. **C.** A nhầm mô tả với thực thi; B và D không tạo kết nối hệ thống xử lý phía máy chủ.
+A. Giữ schema cũ vì model có thể suy ra chú thích trong mã chưa gửi.
+
+B. Nêu ý nghĩa và giá trị định dạng của region trong mô tả gửi model.
+
+C. Cho router tự chọn một region bất kỳ để mọi lời gọi đều chạy.
+
+D. Đưa region vào schema và required nếu hàm thật sự luôn cần nó.
+
+**Câu 5 — Chọn một.** Nhóm tạo schema chính xác nhưng chưa đăng ký mã thực thi. Demo cho thấy model sinh tool_use đẹp. Điều gì còn thiếu để tuyên bố công cụ hoạt động?
+
+A. Chạy được hàm tương ứng và gửi kết quả thực tế trở lại model.
+
+B. Chỉ kiểm tra tên công cụ trong tool_use trùng schema.
+
+C. Chụp một mẫu tool_use hợp lệ làm bằng chứng tích hợp hoàn tất.
+
+D. Cho model diễn giải các tham số như thể đó là dữ liệu dịch vụ.
+
+## Đáp án và giải thích
+
+1. **D.** D cung cấp tín hiệu chọn công cụ. A tăng độ phức tạp không sửa ranh giới; C làm mơ hồ hơn; B lặp quyết định dựa trên cùng thông tin thiếu.
+
+2. **C, D.** D kiểm tra hợp đồng hai phía; C giảm mơ hồ về giá trị. A nhầm kiểu với triển khai; B đúng cú pháp nhưng thiếu đầu vào bắt buộc của hàm.
+
+3. **A.** A phân biệt schema dữ liệu với quyền nghiệp vụ. B hướng dẫn không thay chốt thực thi; D nhầm tính hợp lệ số với quyền giao dịch; C tên không cưỡng chế chính sách.
+
+4. **B, D.** D xác định sự hiện diện, B xác định cách điền. C đoán đầu vào có thể truy sai dữ liệu; A giả định model thấy nội dung chưa được cung cấp.
+
+5. **A.** A kiểm chứng đường thực thi và phản hồi. B chỉ kiểm tra khai báo; D nhầm đầu vào với kết quả; C chứng minh model đề nghị đúng, chưa chứng minh công cụ chạy.
 
 ## Đối chiếu Bedrock: mô tả đầu vào công cụ bằng JSON Schema
 

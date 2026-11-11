@@ -13,45 +13,69 @@ Không nên lặp văn bản vô nghĩa chỉ để vượt ngưỡng đủ đi�
 
 Thời gian cache còn hiệu lực (TTL), ngưỡng token, số điểm đánh dấu và cách bật tự động hoặc thủ công có thể khác theo mô hình, phiên bản. Bài này giải thích logic của ví dụ; không phải bộ thông số có thể áp dụng nguyên trạng cho mọi hệ thống.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Phần tài liệu ổn định bị chèn dữ liệu thay đổi ở đầu mỗi yêu cầu. Nên xem xét gì?
+**Câu 1 — Chọn một.** Prefix gồm timestamp mỗi lượt, rồi tài liệu dài ổn định; breakpoint ở cuối tài liệu. Cache hit thấp. Sửa bố trí nào hợp lý?
 
-A. Đổi font.
+A. Chỉ tăng max_tokens đầu ra.
 
-B. Bỏ mọi câu hỏi.
+B. Đặt phần ổn định trước và dữ liệu từng lượt sau nó.
 
-C. Tăng tên file.
+C. Đặt timestamp thêm lần nữa sau breakpoint để cân bằng.
 
-D. Tách prefix ổn định và phần biến đổi theo hợp đồng cache.
+D. Đổi timestamp thành văn bản cùng độ dài nhưng vẫn thay giá trị.
 
-**2. Chọn một.** Tại sao không nên lặp vô nghĩa văn bản để đạt ngưỡng cache?
+**Câu 2 — Chọn một.** Nhóm đặt cache_control trên câu hỏi mới mỗi lượt và kỳ vọng cache toàn bộ yêu cầu. Hiểu đúng breakpoint là gì?
 
-A. Không phục vụ tác vụ và có thể tăng chi phí/context.
+A. Nó bảo đảm mọi token sau marker đều được tái sử dụng.
 
-B. Vì mọi cache đều cấm văn bản.
+B. Marker chỉ định prefix; còn cần điều kiện khớp cache.
 
-C. Vì output luôn bằng input.
+C. Nó yêu cầu dịch vụ bỏ qua mọi khác biệt trước marker.
 
-D. Vì đó là cách xác minh đúng duy nhất.
+D. Nó lưu câu trả lời cuối ở vị trí marker.
 
-**3. Chọn một.** Có thể áp ngưỡng/TTL trong video cho mọi mô hình hiện tại không?
+**Câu 3 — Chọn hai.** Muốn tối ưu prefix có tài liệu ổn định và câu hỏi động. Hai nguyên tắc nào phù hợp?
 
-A. Có, luôn bất biến.
+A. Đặt tài liệu dùng chung trước câu hỏi riêng từng lượt.
 
-B. Không; cần xác minh theo tài liệu/cấu hình đang triển khai.
+B. Đối chiếu ngưỡng, TTL và cách đánh dấu với phiên bản thực dùng.
 
-C. Có, nếu prompt dài.
+C. Chèn dữ liệu ngẫu nhiên trước tài liệu để phân biệt người dùng trong cache test.
 
-D. Có, không cần usage.
+D. Lặp một đoạn vô nghĩa để vượt mọi ngưỡng token.
 
-## Đáp án
+**Câu 4 — Chọn một.** Một thay đổi nhỏ trong system prompt xuất hiện trước breakpoint, tài liệu sau đó giữ nguyên. Nhóm mặc định vẫn full hit vì phần lớn token giống. Cần làm gì?
 
-1. **D.** D nhắm điều kiện tái dùng; A, B, C không tổ chức nội dung phù hợp.
+A. Coi mọi cache đều bị xóa trên toàn tài khoản.
 
-2. **A.** A nêu đánh đổi thực; B sai tuyệt đối, C sai quan hệ, D nhầm tối ưu với xác minh.
+B. Dùng phần trăm ký tự trùng làm tỷ lệ cache hit chính xác.
 
-3. **B.** B kiểm tra tương thích; A, C, D suy rộng chi tiết phiên bản.
+C. Quan sát usage và kiểm tra điều kiện khớp prefix của dịch vụ.
+
+D. Bỏ phần system vừa sửa để lấy lại hit dù mất yêu cầu mới.
+
+**Câu 5 — Chọn hai.** Review thiết kế cache thủ công, hai lỗi nào cần tránh?
+
+A. Tối ưu hit bằng cách bỏ thông tin cần cho câu hỏi hiện tại.
+
+B. Giữ phần tham chiếu ổn định trước dữ liệu biến đổi.
+
+C. Đo số liệu thực sau mỗi thay đổi cấu trúc prompt.
+
+D. Coi marker là bằng chứng cache chắc chắn đã được đọc.
+
+## Đáp án và giải thích
+
+1. **B.** A sai: Không sửa điều kiện khớp prefix đầu vào. B đúng: Biến động đầu prefix có thể phá khả năng khớp phía sau. C sai: Không loại biến động đã có ở đầu. D sai: Cùng độ dài không đồng nghĩa cùng nội dung.
+
+2. **B.** A sai: Bài mô tả prefix đến điểm đánh dấu. B đúng: Đánh dấu không làm nội dung đổi trở thành giống nhau. C sai: Không phải cơ chế bỏ qua thay đổi. D sai: Nhầm đầu vào với đầu ra.
+
+3. **A, B.** A đúng: Tạo phần đầu ổn định. B đúng: Điều kiện cụ thể phụ thuộc môi trường. C sai: Phá tính ổn định đang muốn đo. D sai: Tốn đầu vào và không tạo giá trị nhiệm vụ.
+
+4. **C.** A sai: Một thay đổi request không chứng minh phạm vi ảnh hưởng đó. B sai: Không phải số liệu sử dụng thật. C đúng: Tỷ lệ giống cao không tự bảo đảm hit. D sai: Tối ưu cache không nên phá nhiệm vụ.
+
+5. **A, D.** A đúng: Hiệu năng không được thay chất lượng nhiệm vụ. B sai: Đây là cách bố trí có cơ sở, không phải lỗi. C sai: Đây là cách xác minh phù hợp, không phải lỗi. D đúng: Còn phụ thuộc điều kiện và usage.
 
 ## Đối chiếu tính năng trên Bedrock
 

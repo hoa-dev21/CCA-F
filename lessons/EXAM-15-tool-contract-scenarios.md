@@ -15,42 +15,66 @@ Lỗi MCP cần được đánh dấu bằng `isError` và có nội dung đủ 
 
 Cấp công cụ phù hợp vai trò và thu hẹp khả năng bằng kiểm tra thật. Khi tìm nơi gọi hàm trong mã có lớp trung gian (wrapper), xác định cả các tên xuất ra hoặc bí danh rồi tìm từng tên. Chỉ tìm tên hàm gốc một lần có thể bỏ sót nơi gọi qua tên khác.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Enrichment cần thông tin mô tả đã kiểm tra. Cấu hình `tool_choice="any"` với cả hai công cụ khiến mô hình đôi lúc gọi enrichment trước. Sửa phù hợp nhất?
+**Câu 1 — Chọn một.** Metadata phải được host kiểm tra trước khi enrichment gọi dịch vụ tính phí. tool_choice=any cho phép chọn cả hai. Thay đổi nào bảo đảm tiền điều kiện mà không chỉ dựa vào lời nhắc?
 
-A. Chỉ đổi description enrichment thành chữ hoa.
+A. Đặt metadata trước enrichment trong danh sách tools.
 
-B. Ép công cụ thông tin mô tả ở lượt đầu, host thực thi/kiểm tra rồi mở bước tiếp theo và gửi kết quả.
+B. Ép metadata; host kiểm tra đạt mới cho enrichment chạy.
 
-C. Giữ any và coi mọi công cụ call là đúng thứ tự.
+C. Dùng ví dụ enrichment sau metadata và giữ nguyên executor.
 
-D. Chạy enrichment trước với thông tin mô tả do host đoán.
+D. Cho chạy song song rồi bỏ enrichment nếu metadata lỗi.
 
-**2. Chọn hai.** Hệ thống trả cùng “Operation failed” cho lỗi quá thời gian chờ và hoàn tiền bị cấm. Cần thay đổi gì?
+**Câu 2 — Chọn hai.** MCP tool dùng cùng “Operation failed” cho timeout tra cứu và hoàn tiền bị cấm. Hai thay đổi nào giúp điều phối đúng?
 
-A. Trả category, khả năng thử lại và mô tả có thể hành động, đánh dấu lỗi đúng giao diện MCP.
+A. Trả loại lỗi, retryability và thông tin có thể hành động, dùng trạng thái lỗi đúng giao diện.
 
-B. Đánh dấu cả hai là kết quả thành công rỗng.
+B. Chuyển mọi lỗi thành kết quả rỗng để mô hình tiếp tục tổng hợp.
 
-C. Thử lại chính sách cấm đến khi mô hình đổi quyết định.
+C. Retry timeout có giới hạn; đưa lỗi chính sách sang luồng được phép.
 
-D. Thử lại lỗi quá thời gian chờ có giới hạn; giải thích/chuyển luồng được phép cho business error không thử lại.
+D. Retry tất cả lỗi một lần rồi mới đọc phân loại để đơn giản code.
 
-**3. Chọn một.** Hàm `fetchRecord` được tái export qua wrapper dưới hai tên; grep tên gốc chỉ thấy một caller. Bước phù hợp nhất?
+**Câu 3 — Chọn một.** fetchRecord được re-export thành loadCustomer và getAccount; grep fetchRecord chỉ thấy một caller. Trước khi đổi tham số, cần làm gì?
 
-A. Kết luận không còn caller nào khác.
+A. Đổi caller tìm được và coi các wrapper không gọi trực tiếp là không ảnh hưởng.
 
-B. Đọc mọi file toàn repo vào một prompt.
+B. Tìm mọi file có chữ customer rồi đổi chữ ký hàng loạt.
 
-C. Xác định các tên export/alias của wrapper, tìm từng tên rồi đọc luồng liên quan.
+C. Dùng số kết quả grep làm ước lượng phạm vi và tăng test ngẫu nhiên.
 
-D. Đổi tên hàm mà không kiểm tra imports.
+D. Truy alias/export, đọc wrapper và kiểm tra caller của từng tên liên quan.
 
-## Đáp án
+**Câu 4 — Chọn một.** Tool schema xác nhận amount là số dương; mô hình yêu cầu hoàn 700 USD cho giao dịch cho phép tối đa 500 USD. Host nên dựa vào đâu để từ chối?
 
-1. **B.** A không cưỡng chế; C nhầm any với forced-name; D bỏ tiền điều kiện và có thể dùng dữ liệu bịa.
+A. Schema đúng nên cho chạy rồi kiểm tra phản hồi dịch vụ.
 
-2. **A, D.** B che lỗi truy cập/chính sách thành rỗng hợp lệ; C không thay đổi quy tắc nghiệp vụ và lãng phí thử lại.
+B. Yêu cầu mô hình tự sửa thành 500 USD mà không xác nhận lại ý định.
 
-3. **C.** A bỏ alias; B gây tải ngữ cảnh không có mục tiêu; D có thể làm hỏng các caller chưa phát hiện.
+C. Kiểm tra quy tắc nghiệp vụ trước thực thi và trả lỗi có hướng chuyển cấp.
+
+D. Chia thành hai lần gọi 350 USD để cả hai đều nằm trong ngưỡng.
+
+**Câu 5 — Chọn hai.** Một tool trả lỗi tạm thời sau khi có kết quả một phần. Hai thông tin nào cần giữ trong hợp đồng kết quả?
+
+A. Phần dữ liệu đã có với nguồn/phạm vi rõ.
+
+B. Dấu thành công tổng thể vì ít nhất một phần có dữ liệu.
+
+C. Chỉ lỗi, bỏ phần đã có để đồng nhất kiểu trả về.
+
+D. Trạng thái chưa đầy đủ, nguyên nhân và khả năng phục hồi.
+
+## Đáp án và giải thích
+
+1. **B.** B đặt cổng chuyển trạng thái và kiểm tra thực tế. A/C có thể định hướng nhưng không cưỡng chế. D vẫn gọi dịch vụ tính phí trước khi biết tiền điều kiện đạt.
+
+2. **A, C.** A giữ tín hiệu cần cho điều phối; C dùng đúng tín hiệu đó. B biến lỗi thành dữ liệu thiếu và che nguyên nhân. D bỏ qua việc lỗi nghiệp vụ không thay đổi chỉ bằng retry.
+
+3. **D.** D lần theo quan hệ thật. A bỏ ảnh hưởng qua wrapper; B tìm rộng nhưng không xác định đúng quan hệ; C số lần xuất hiện chuỗi không đo đủ độ bao phủ của ký hiệu.
+
+4. **C.** C phân biệt schema với chính sách giao dịch. A đặt gate quá muộn; B thay đổi yêu cầu nghiệp vụ; D né giới hạn thay vì tuân thủ ý nghĩa của nó.
+
+5. **A, D.** A giúp dùng lại phần hợp lệ; D ngăn downstream tưởng toàn bộ nhiệm vụ đã xong. B che phạm vi thiếu. C có thể làm mất công việc hữu ích và buộc chạy lại không cần thiết.

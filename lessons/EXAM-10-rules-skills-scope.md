@@ -25,40 +25,66 @@ Giới hạn công cụ không thay kiểm tra đường dẫn hoặc quyền ph
 
 Chọn chế độ lập kế hoạch khi thay đổi kiến trúc, nhiều tệp hoặc còn nhiều phương án. Ví dụ: chuyển thư viện ảnh hưởng 45 tệp cần khảo sát trước; sửa một điều kiện ngày đã rõ lỗi có thể thực hiện trực tiếp rồi kiểm tra. Tác nhân Explore có thể giữ kết quả tìm kiếm dài và trả phần tóm tắt hữu ích cho phiên chính, thay vì đưa mọi chi tiết vào đó.
 
-## Câu hỏi tình huống
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Quy ước test phải áp dụng ở nhiều package. Cách đặt phù hợp đề cương?
+**Câu 1 — Chọn một.** Repo có nhiều package, quy ước chỉ áp dụng test .test.tsx. Nhóm muốn chia sẻ quy tắc mà không làm nhiễu công việc khác. Cách tổ chức phù hợp?
 
-A. Chỉ ở home của tác giả.
+A. Đặt toàn bộ quy ước ở user config của trưởng nhóm.
 
-B. Trong một thư mục không chứa các test khác.
+B. Dùng project rule có paths khớp test ở các package.
 
-C. Nhắc lại thủ công trong mọi chat.
+C. Dán quy tắc vào mọi prompt tương tác của thành viên.
 
-D. Path-scoped rule dùng glob khớp test ở các thư mục liên quan.
+D. Dùng tên file rule có chữ “test” nhưng không đặt điều kiện phạm vi.
 
-**2. Chọn một.** Skill phân tích repo trả output khám phá dài gây loãng hội thoại chính. Frontmatter nào nhắm vấn đề này?
+**Câu 2 — Chọn một.** Skill khám phá repo tạo log rất dài; cuộc hội thoại chính chỉ cần kết luận có nguồn. Thiết kế nào xử lý cả context lẫn bàn giao?
 
-A. `context: fork`, đồng thời bàn giao kết quả cần thiết có cấu trúc.
+A. context: fork cùng đầu ra tóm tắt có đường dẫn, phát hiện và giới hạn.
 
-B. Chỉ `argument-hint`.
+B. context: fork rồi giả định parent tự đọc được toàn bộ phát hiện của child.
 
-C. Xóa mọi giới hạn công cụ.
+C. Chia hướng dẫn thành nhiều file và import tất cả vào context chính.
 
-D. Nạp toàn bộ log vào mọi lượt chính.
+D. Giới hạn số dòng log nhưng loại luôn vị trí nguồn để tiết kiệm token.
 
-**3. Chọn hai.** Nhóm muốn skill dùng chung nhưng công cụ hạn chế và tham số dễ hiểu. Lựa chọn phù hợp?
+**Câu 3 — Chọn hai.** Skill nhận tên môi trường triển khai. argument-hint hiển thị “staging | production”. Hai kiểm soát nào vẫn cần nếu muốn tránh đầu vào ngoài danh sách và thao tác vượt quyền?
 
-A. Chỉ tạo bản cá nhân mà không chia sẻ cấu hình.
+A. Coi argument-hint là validation vì người dùng đã thấy cú pháp.
 
-B. Đặt ở dự án `.claude/skills/` và cấu hình `allowed-tools` thích hợp.
+B. Kiểm tra tham số thực tế trước khi gọi thao tác.
 
-C. Dùng `argument-hint` để gợi ý cách truyền tham số, thêm validation thật nếu cần cưỡng chế.
+C. Thiết lập công cụ/quyền phù hợp và kiểm tra tại nơi thực thi.
 
-D. Coi hint là bảo đảm tuyệt đối tham số hợp lệ.
+D. Liệt kê môi trường trong description và chỉ đưa ví dụ hợp lệ để mô hình suy ra giới hạn.
 
-## Đáp án
+**Câu 4 — Chọn một.** Một nhóm đặt hướng dẫn bảo mật dài trong file chung và chia thành ba file được import toàn bộ. Kết luận nào đúng về ngữ cảnh?
 
-1. **D.** A không chia sẻ; B không phủ test rải rác; C dễ bỏ sót và lặp.
-2. **A.** B chỉ gợi ý đối số; C không cô lập ngữ cảnh; D làm loãng thêm.
-3. **B, C.** A thiếu phân phối; D nhầm gợi ý với kiểm soát bằng mã.
+A. Số file tăng nên mỗi lượt chỉ tải một phần ngẫu nhiên.
+
+B. Import bảo đảm phần chưa liên quan không tiêu tốn context.
+
+C. Tách file tự động tạo các phạm vi quyền riêng.
+
+D. Dễ quản lý hơn, nhưng phần được nạp vẫn chiếm context.
+
+**Câu 5 — Chọn hai.** Nhóm muốn skill review thống nhất nhưng không cho sửa mã. Hai lựa chọn phù hợp?
+
+A. Đặt skill ở phạm vi dự án và quản lý phiên bản cùng repo.
+
+B. Hạn chế công cụ/quyền theo tác vụ đọc và kiểm tra cấu hình thực tế.
+
+C. Chỉ viết “không sửa” trong description rồi cấp mọi công cụ.
+
+D. Đặt skill trong thư mục cá nhân của tác giả để tránh đồng đội sửa.
+
+## Đáp án và giải thích
+
+1. **B.** B khớp phạm vi đường dẫn và được chia sẻ. A không đi theo repo. C dễ thiếu/khác phiên bản. D tên gợi nghĩa không thay thế cấu hình phạm vi.
+
+2. **A.** A tách khám phá và bàn giao đủ dùng. B bỏ giao diện bàn giao. C tổ chức file không có nghĩa giảm nội dung đã import. D giảm dung lượng bằng cách mất khả năng kiểm chứng.
+
+3. **B, C.** B cưỡng chế giá trị; C cưỡng chế năng lực thao tác. A nhầm gợi ý giao diện với kiểm tra. D có thể hướng dẫn lựa chọn nhưng mô tả và ví dụ vẫn không thay thế kiểm tra tham số/quyền khi thực thi.
+
+4. **D.** D phân biệt tổ chức tài liệu và lượng ngữ cảnh. A/B không được suy ra từ thao tác chia rồi import tất cả. C file hướng dẫn không tự tạo ranh giới quyền thực thi.
+
+5. **A, B.** A chia sẻ được phiên bản; B giảm năng lực ngoài nhiệm vụ. C chỉ nhắc bằng ngôn ngữ dù vẫn cấp quyền rộng. D làm mất mục tiêu phân phối nhất quán cho nhóm.

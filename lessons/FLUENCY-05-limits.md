@@ -16,40 +16,66 @@ Ví dụ: Nếu bạn hỏi “Đơn hàng của tôi đang ở đâu?”, AI c�
 
 Khi xây dựng ứng dụng dùng API: Ứng dụng cần gửi kèm những phần liên quan của cuộc trò chuyện trước đó để AI hiểu câu hỏi tiếp theo. Đừng mặc định rằng AI tự nhớ các yêu cầu đã gửi riêng lẻ.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** AI đưa số liệu sai nhưng lời giải thích rất tự tin. Hạn chế nào liên quan?
+**Câu 1 — Chọn một.** Trợ lý trả vị trí hiện tại của đơn hàng rất cụ thể dù chỉ nhận mã đơn và không có kết nối hệ thống. Sửa nào nhắm đúng nguồn thiếu thông tin?
 
-A. Không thể tạo văn bản.
+A. Yêu cầu trả lời ít chắc chắn hơn nhưng giữ quy trình hiện tại.
 
-B. Không có bất kỳ khả năng ngôn ngữ nào.
+B. Thêm ví dụ trạng thái đơn hàng vào prompt rồi dùng ví dụ gần nhất.
 
-C. Hallucination; cần xác minh nguồn.
+C. Đưa nguồn hiện tại được phép vào luồng rồi kiểm chứng.
 
-D. Mọi dữ liệu sai đều thành đúng khi nói rõ.
+D. Chạy cùng câu hỏi nhiều lần rồi lấy trạng thái được nhắc nhiều nhất.
 
-**2. Chọn một.** Cần trạng thái hệ thống mới nhất. Hướng thiết kế phù hợp?
+**Câu 2 — Chọn một.** Năm demo đều đúng, nhưng dữ liệu thực tế đa dạng hơn và có tác vụ cần nhiều bước suy luận. Quyết định triển khai nào phù hợp?
 
-A. Chỉ tin dữ liệu huấn luyện.
+A. Coi năm lần đúng là chứng minh đủ khả năng tổng quát.
 
-B. Đưa dữ liệu hiện tại qua nguồn/công cụ phù hợp rồi kiểm tra.
+B. Đo trên mẫu đại diện/ca khó, kiểm chứng theo rủi ro.
 
-C. Không cần kết nối hệ thống.
+C. Chỉ kiểm tra ngữ pháp vì sai nội dung sẽ làm câu trả lời thiếu trôi chảy.
 
-D. Tăng độ dài câu trả lời thay truy xuất.
+D. Tăng độ tự tin trong prompt để mô hình không do dự khi gặp trường hợp mới.
 
-**3. Chọn một.** Tại sao cần quản lý ngữ cảnh ở phiên dài?
+**Câu 3 — Chọn hai.** Ứng dụng gọi API riêng cho từng lượt, nhưng câu “đổi phương án thứ hai thành rẻ hơn” không kèm lịch sử. Hai việc nào giúp giải quyết thiếu ngữ cảnh?
 
-A. Ngữ cảnh là vô hạn.
+A. Gửi các phương án trước cùng yêu cầu mới trong đầu vào liên quan.
 
-B. Mọi thông tin cũ được giữ chính xác mãi.
+B. Tăng số lần retry nguyên yêu cầu vì context có thể được nhớ lại.
 
-C. Không thể dùng hội thoại.
+C. Xác định rõ đối tượng “phương án thứ hai” và các ràng buộc cần giữ.
 
-D. Ngữ cảnh hữu hạn, thông tin quan trọng có thể không còn trong đầu vào phù hợp.
+D. Dựa vào việc cùng API key để suy ra mô hình có chung trí nhớ hội thoại.
 
-## Đáp án
+**Câu 4 — Chọn một.** AI vừa tra cứu một nguồn nhưng dữ liệu nguồn được cập nhật từ tháng trước. Người dùng cần trạng thái hôm nay. Kết luận nào đúng?
 
-1. **C.** C mô tả đầu ra sai; A và B phủ nhận quá mức khả năng, D nhầm diễn đạt với sự thật.
-2. **B.** B bổ sung bằng chứng mới; A, C, D không lấy trạng thái hiện tại.
-3. **D.** D nêu giới hạn; A, B sai về duy trì vô hạn, C phủ nhận quá rộng khả năng.
+A. Có công cụ là đủ để bảo đảm thông tin mới.
+
+B. Thời điểm gọi công cụ có thể dùng thay thời điểm cập nhật nguồn.
+
+C. Kết quả tra cứu luôn đáng tin hơn mọi dữ liệu người dùng đưa.
+
+D. Kiểm tra độ mới/phạm vi nguồn, không chỉ lúc lấy về.
+
+**Câu 5 — Chọn hai.** Sau nhiều lượt, AI bỏ quên một ràng buộc và đưa số liệu tự tin nhưng không có căn cứ. Hai bước nào giải quyết hai giới hạn này?
+
+A. Nạp lại ràng buộc quan trọng vào ngữ cảnh đang dùng.
+
+B. Chỉ yêu cầu dùng giọng khiêm tốn hơn cho toàn câu trả lời.
+
+C. Đối chiếu số liệu với nguồn và biểu diễn phần chưa xác minh.
+
+D. Giữ câu trả lời vì tính nhất quán về văn phong cho thấy mô hình hiểu nhiệm vụ.
+
+## Đáp án và giải thích
+
+1. **C.** C cung cấp bằng chứng riêng cho đơn hàng. A giảm mức khẳng định nhưng chưa trả được trạng thái. B cung cấp mẫu, không phải dữ liệu đơn. D đồng thuận giữa các suy đoán không tạo thông tin hiện tại.
+
+2. **B.** B không suy rộng quá demo và xét giới hạn suy luận. A mẫu nhỏ chưa bao phủ thực tế. C văn phong trôi chảy không báo độ đúng. D thay đổi cách diễn đạt, không chứng minh khả năng giải quyết.
+
+3. **A, C.** A cung cấp thông tin bị thiếu; C loại mơ hồ về đối tượng và điều kiện. B không thêm dữ liệu. D danh tính xác thực không chứng minh lịch sử yêu cầu đã được cung cấp cho mô hình.
+
+4. **D.** D phân biệt thời điểm truy xuất và thời điểm thông tin có hiệu lực. A coi kết nối là bảo đảm. B làm sai metadata của dữ liệu. C xếp hạng nguồn tuyệt đối mà không kiểm tra chất lượng cụ thể.
+
+5. **A, C.** A xử lý thiếu/bỏ sót context; C xử lý nội dung thiếu căn cứ. B sửa mức thể hiện tự tin chứ không sửa dữ kiện. D phong cách nhất quán không chứng minh tính đúng hay mức hiểu ràng buộc.

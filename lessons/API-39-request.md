@@ -13,45 +13,69 @@ Phản hồi là một đối tượng chứa nội dung và các thông tin kh�
 
 Bài cũng đề cập đặt khóa API trong cấu hình môi trường và không đưa tệp `.env` chứa thông tin bí mật vào kho mã nguồn. Tên mô hình trong notebook là ví dụ tại thời điểm giảng, cần kiểm tra khả năng hỗ trợ khi triển khai. Xác thực và quản lý tài khoản không phải trọng tâm đề cương thi đã lưu.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** max_tokens=1000 có nghĩa gì trong mẫu?
+**Câu 1 — Chọn một.** Wrapper chỉ trả content[0].text. Sau khi thêm client tools, giao diện vẫn hiện lời “đang tra cứu” nhưng không có dữ liệu. Sửa nào tác động đúng nguyên nhân?
 
-A. Mọi câu trả lời bắt buộc dài đúng 1000 token.
+A. Tăng max_tokens để mô hình đủ chỗ viết dữ liệu tra cứu.
 
-B. Giới hạn trên cho đầu ra, không phải mục tiêu độ dài.
+B. Ghép mọi block thành chuỗi và tìm tên công cụ bằng regex.
 
-C. Giới hạn số message bằng 1000.
+C. Thay lời dẫn bằng thông báo hoàn tất khi text không rỗng.
 
-D. Bảo đảm tác vụ đã hoàn thành.
+D. Chuyển content blocks và stop_reason cho bộ điều phối.
 
-**2. Chọn một.** Hàm hỗ trợ chỉ lấy block text đầu tiên. Khi thêm tool use, cần thay đổi gì?
+**Câu 2 — Chọn một.** Đặt max_tokens=1000, phản hồi kết thúc bình thường ở 180 token và đáp ứng yêu cầu. Cách diễn giải nào đúng?
 
-A. Bỏ mọi thông tin mô tả.
+A. Cần nối thêm phần giải thích để sử dụng đủ token đã đặt.
 
-B. Đổi tên biến là đủ.
+B. 180 token chứng minh chỉ 18% yêu cầu được xử lý.
 
-C. Giữ và xử lý toàn bộ blocks/metadata cần cho vòng gọi.
+C. API đã bỏ qua tham số vì đầu ra chưa đạt 1000 token.
 
-D. Coi mọi công cụ call là câu trả lời cuối.
+D. Hợp lệ: max_tokens đặt trần, không ấn định độ dài.
 
-**3. Chọn một.** Nên hiểu mô hình ID trong notebook khóa như thế nào?
+**Câu 3 — Chọn hai.** Nhóm chuyển notebook mẫu thành dịch vụ. Hai thành phần nào cần bảo toàn để mở rộng từ trả lời văn bản sang tool use?
 
-A. Ví dụ theo thời điểm khóa; kiểm tra mô hình hỗ trợ khi triển khai.
+A. Vai trò và nội dung có cấu trúc của các tin nhắn trong lịch sử.
 
-B. Bảo đảm là mô hình mới nhất mãi mãi.
+B. Metadata điều khiển cùng các block phản hồi cần cho vòng gọi.
 
-C. Thay thế hoàn toàn lựa chọn theo nhu cầu.
+C. Chỉ bản text đã hiển thị vì người dùng không nhìn các block còn lại.
 
-D. Không cần kiểm tra API hỗ trợ.
+D. Tên mô hình trong notebook như một cam kết hỗ trợ lâu dài.
 
-## Đáp án
+**Câu 4 — Chọn một.** Một nhóm dùng số từ để kiểm tra max_tokens và báo lỗi vì câu trả lời 400 từ có hơn 400 token. Điều chỉnh nào đúng?
 
-1. **B.** B đúng vai trò trần; A nhầm mục tiêu, C sai loại giới hạn, D không suy ra từ tham số.
+A. Bỏ qua lý do dừng nếu đầu ra chưa vượt số từ dự kiến.
 
-2. **C.** C bảo toàn yêu cầu công cụ; A mất tín hiệu, B không đổi luồng, D dừng sớm.
+B. Tính mỗi dấu cách là một token để thống nhất các ngôn ngữ.
 
-3. **A.** A phân biệt ví dụ và hiện hành; B, C, D bỏ xác minh tương thích.
+C. Đo token bằng cơ chế phù hợp, không đồng nhất token với từ.
+
+D. Giảm mọi yêu cầu xuống cùng số từ với max_tokens.
+
+**Câu 5 — Chọn hai.** Đưa API vào backend triển khai mới, hai việc nào cần làm với cấu hình từ notebook?
+
+A. Sao chép nguyên tên mô hình để kết quả chắc chắn tái lập.
+
+B. Giữ khóa trong cấu hình bí mật và loại .env thật khỏi kho mã.
+
+C. Commit .env rồi dựa vào tên nhánh private để bảo vệ khóa.
+
+D. Kiểm tra model ID và khả năng hỗ trợ của môi trường đích.
+
+## Đáp án và giải thích
+
+1. **D.** A sai: Thêm ngân sách không chạy công cụ. B sai: Làm mất cấu trúc loại block, ID và đối số cần điều phối. C sai: Có chữ không chứng minh đã nhận kết quả công cụ. D đúng: Text đầu tiên có thể chỉ là lời dẫn của một lượt cần thực thi tiếp.
+
+2. **D.** A sai: Thêm chữ không cần thiết không cải thiện nhiệm vụ. B sai: Token đầu ra không đo tỷ lệ công việc hoàn tất. C sai: Trần không buộc dùng hết ngân sách. D đúng: Độ đầy đủ cần xét theo nhiệm vụ và lý do dừng.
+
+3. **A, B.** A đúng: Ngữ cảnh cần giữ đúng nguồn và dạng nội dung. B đúng: Ứng dụng cần biết khi nào phải thực thi tiếp. C sai: UI là một phép chiếu, không đủ cho giao thức. D sai: Ví dụ tại thời điểm giảng không bảo đảm môi trường mới.
+
+4. **C.** A sai: Nội dung có thể bị cắt dù phép đếm từ trông hợp lệ. B sai: Quy tắc tự đặt không phản ánh tokenizer. C đúng: Token là đơn vị xử lý có thể tách khác từ. D sai: Độ dài từ không ràng buộc trực tiếp số token.
+
+5. **B, D.** A sai: Cùng tên không bảo đảm mọi điều kiện và phiên bản như cũ. B đúng: Khóa không nên được phát tán cùng mã mẫu. C sai: Phân phối bí mật qua lịch sử repo mở rộng phạm vi lộ khóa. D đúng: Ví dụ cũ không đủ chứng minh tương thích.
 
 ## Đối chiếu Vertex
 

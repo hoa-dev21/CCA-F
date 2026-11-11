@@ -13,43 +13,69 @@ Bài còn giới thiệu cách phát triển dựa trên kiểm thử: xác đ�
 
 Ví dụ: Khi thêm công cụ chuyển đổi tài liệu, trước hết đọc phần xử lý tài liệu và cách đăng ký công cụ MCP. Sau đó lập kế hoạch dùng lại mã, xác định cách xử lý tệp không tồn tại, rồi triển khai và kiểm thử. Các lệnh và phím tắt trong video thuộc phiên bản lúc giảng; điều chính cần nắm là quy trình.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Claude tạo một module mới trùng chức năng có sẵn. Bước phòng ngừa sát bài học nhất?
+**Câu 1 — Chọn một.** Claude tạo module chuyển đổi mới trùng với tiện ích có sẵn trong repo. Nhóm muốn tránh lặp lại lỗi ở tính năng tiếp theo. Thay đổi quy trình nào phù hợp?
 
-A. Đọc các file và mẫu liên quan trước khi lập kế hoạch.
+A. Khảo sát cấu trúc, mã tương tự và quy ước trước khi lập kế hoạch.
 
-B. Chỉ yêu cầu sinh mã nhanh hơn.
+B. Cấm tạo file mới cho mọi nhiệm vụ.
 
-C. Bỏ cấu trúc dự án khỏi ngữ cảnh.
+C. Viết prompt dài hơn nhưng không đưa đường dẫn mã hiện có.
 
-D. Tăng độ dài phản hồi cuối.
+D. Chỉ phát hiện trùng lặp sau khi mọi test đã xanh.
 
-**2. Chọn một.** Quy ước build cần chia sẻ cho mọi kỹ sư trong cùng repo. Phạm vi phù hợp?
+**Câu 2 — Chọn hai.** Nhóm có lệnh build chung, một sở thích editor cá nhân và một workaround tạm của task. Hai quyết định nào đúng khi quản lý hướng dẫn?
 
-A. Chỉ ghi trong ghi chú riêng không chia sẻ.
+A. Đặt lệnh build ổn định ở cấu hình dự án được chia sẻ.
 
-B. Cấu hình dự án dùng chung.
+B. Đưa cả ba vào quy tắc chung vĩnh viễn để không quên.
 
-C. Đưa vào mọi câu hỏi thủ công, không lưu.
+C. Giữ thiết lập cá nhân đúng scope và trạng thái tạm trong ngữ cảnh/task phù hợp.
 
-D. Chỉ thêm vào kết quả test tạm.
+D. Ghi build command chỉ trong user config của tác giả.
 
-**3. Chọn một.** Nhóm muốn kiểm chứng tính năng mới theo luồng test-driven trong bài. Thứ tự phù hợp?
+**Câu 3 — Chọn một.** Tính năng chuyển tài liệu phải báo lỗi rõ khi file không tồn tại. Tác nhân đã viết code và báo “xong” nhưng không có kết quả kiểm thử. Bằng chứng nào giá trị nhất?
 
-A. Viết lời kết luận rồi bỏ kiểm thử.
+A. Số dòng code và nhận xét tự tin của tác nhân.
 
-B. Triển khai ngẫu nhiên, không nêu tiêu chí.
+B. Một demo với file tồn tại duy nhất.
 
-C. Xác định test case, viết test phù hợp, rồi triển khai và kiểm tra.
+C. Test ca đạt/lỗi theo yêu cầu, kiểm tra kết quả và diff.
 
-D. Chỉ đổi tên hàm để coi là hoàn thành.
+D. Một lời xác nhận thứ hai từ cùng tác nhân mà không chạy gì.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Theo quy trình dựa trên kiểm thử, hai đặc tính nào giúp test tránh chỉ phản chiếu implementation?
 
-1. **A.** B và D không cung cấp kiến trúc hiện có; C làm giảm khả năng tái sử dụng.
-2. **B.** A không chia sẻ; C dễ bỏ sót và lặp; D không phải nơi lưu quy tắc lâu dài.
-3. **C.** A, B thiếu bằng chứng hành vi; D không thực hiện yêu cầu tính năng.
+A. Xác định expected behavior từ yêu cầu trước khi cài đặt.
+
+B. Lấy mọi giá trị hiện implementation trả làm expected.
+
+C. Bao gồm trường hợp lỗi/ranh giới có ý nghĩa với người dùng.
+
+D. Xóa assertion thất bại nếu code mới đã chạy hết exception.
+
+**Câu 5 — Chọn một.** Sau khi đọc repo, tác nhân thấy cách đăng ký MCP tool khác mẫu video. Phương án nào phù hợp nhất cho tính năng mới?
+
+A. Sao chép nguyên mã video để bám khóa học.
+
+B. Đổi toàn bộ cơ chế đăng ký của repo cho giống video.
+
+C. Bỏ đăng ký và chỉ mô tả tên tool trong CLAUDE.md.
+
+D. Theo hợp đồng repo; kiểm thử đăng ký và gọi tool.
+
+## Đáp án và giải thích
+
+1. **A.** A cung cấp cơ sở tái sử dụng trước khi đầu tư triển khai. B hạn chế máy móc có thể ngăn tính năng cần file mới. C không đưa bằng chứng kiến trúc. D phát hiện muộn làm tăng công sửa lại.
+
+2. **A, C.** A chia sẻ thông tin ổn định; C tránh biến tạm thời/cá nhân thành quy tắc toàn nhóm. B gây tích lũy hướng dẫn sai phạm vi. D khiến máy mới thiếu quy ước chung.
+
+3. **C.** C kiểm chứng yêu cầu và kiểm tra thay đổi. A/D là tín hiệu không thay thực thi. B bỏ đúng nhánh lỗi mà yêu cầu đặt ra.
+
+4. **A, C.** A tạo chuẩn độc lập; C kiểm tra rủi ro hành vi. B hợp thức hóa cả lỗi hiện có. D làm yếu bằng chứng thay vì xử lý nguyên nhân thất bại.
+
+5. **D.** D áp dụng quy trình với môi trường thực. A có thể sai phiên bản/kiến trúc; B mở rộng phạm vi không cần; C hướng dẫn không thay đăng ký thực thi.
 
 ## Đối chiếu Bedrock
 

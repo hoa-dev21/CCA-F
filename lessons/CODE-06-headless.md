@@ -19,40 +19,66 @@ Với công việc nhiều giai đoạn, có thể lưu mã định danh phiên 
 
 Bài còn nhắc đến chế độ khởi chạy tối giản (bare) và các tính năng đang thử nghiệm. Môi trường khởi chạy nhất quán không bảo đảm AI trả lời giống hệt ở mọi lần. Các quy tắc tự nạp cấu hình và giới hạn sản phẩm cần được xác minh theo phiên bản.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Tác vụ cần môi trường nội bộ và logic quy trình xử lý riêng. Lựa chọn sát bài?
+**Câu 1 — Chọn một.** Một tác vụ cần truy cập dữ liệu chỉ có trong mạng nội bộ và phải dùng logic điều phối riêng. Hạ tầng routine cloud hiện không có kết nối tới dữ liệu đó. Lựa chọn triển khai phù hợp nhất?
 
-A. Chỉ dùng một routine cloud bất kể không truy cập được dữ liệu.
+A. Dùng routine cloud rồi thêm tên máy nội bộ vào prompt.
 
-B. Headless trong quy trình xử lý do nhóm quản lý.
+B. Chạy headless trong môi trường nhóm quản lý có quyền truy cập nguồn.
 
-C. Chạy UI tương tác trong CI rồi chờ người duyệt.
+C. Dùng UI tương tác trong CI và chờ người đăng nhập mỗi lần.
 
-D. Không gửi dữ liệu đầu vào.
+D. Chuyển toàn bộ dữ liệu ra ngoài trước, không cần đánh giá điều kiện truy cập.
 
-**2. Chọn một.** Trong ví dụ xuất kết quả dạng JSON, bước xử lý tiếp theo cần lấy dữ liệu đúng cấu trúc đã yêu cầu. Nên đọc trường nào?
+**Câu 2 — Chọn một.** CLI trả JSON envelope chứa metadata phiên và structured_output theo schema nghiệp vụ. Adapter cần kiểm tra findings để quyết định bước sau. Cách xử lý đúng nhất?
 
-A. Tên session thay cho dữ liệu.
+A. Đọc trạng thái chạy; validate findings từ structured_output.
 
-B. Lời giải thích trong log tùy ý.
+B. Validate toàn bộ envelope như thể mọi trường đều thuộc schema findings.
 
-C. `structured_output` theo hợp đồng phản hồi.
+C. Lấy dòng văn bản cuối stdout vì đó thường là tóm tắt kết quả.
 
-D. Toàn bộ phản hồi JSON, coi cả thông tin về phiên chạy là dữ liệu kết quả.
+D. Dùng session ID làm tín hiệu thành công và bỏ kiểm tra findings.
 
-**3. Chọn một.** Muốn đưa luồng Claude vào sản phẩm Python/TypeScript thay vì chỉ gọi shell. Lựa chọn bài nêu?
+**Câu 3 — Chọn hai.** Workflow nhiều giai đoạn muốn tiếp tục cùng phiên để tận dụng ngữ cảnh, nhưng repo có thể đổi giữa hai lần chạy. Hai việc nào cần làm?
 
-A. Agent SDK — bộ thư viện tích hợp tác nhân AI vào ứng dụng.
+A. Chỉ lưu bản tóm tắt cuối, bỏ session ID vì có thể suy lại.
 
-B. Chỉ thay tên script.
+B. Lưu session ID/trạng thái cần thiết để tiếp tục đúng phiên.
 
-C. Chỉ tạo một ảnh chụp màn hình.
+C. Tin mọi kết quả công cụ cũ nếu session ID không đổi.
 
-D. Xóa mọi xử lý messages.
+D. Xác minh lại dữ liệu nguồn đã thay đổi trước khi dựa vào kết luận cũ.
 
-## Đáp án
+**Câu 4 — Chọn một.** Sản phẩm TypeScript cần tích hợp vòng điều phối tác nhân, xử lý sự kiện và logic nghiệp vụ trong ứng dụng. Theo các lựa chọn của bài, hướng nào sát nhu cầu nhất?
 
-1. **B.** A bỏ yêu cầu môi trường; C dễ treo và sai kiểu chạy; D thiếu dữ liệu.
-2. **C.** Trường `structured_output` chứa kết quả có cấu trúc theo ví dụ của bài. Mã phiên và nội dung ghi trong log không thay thế dữ liệu này. Toàn bộ phản hồi JSON còn có thông tin khác về quá trình chạy, nên không được coi tất cả là kết quả nghiệp vụ.
-3. **A.** B và C không cung cấp thư viện tích hợp; D bỏ chính luồng cần xử lý.
+A. Đóng gói thêm các lệnh shell rời rạc và để UI tự ghép log.
+
+B. Dùng routine không truy cập được runtime của sản phẩm.
+
+C. Dùng Agent SDK để tích hợp luồng tác nhân vào mã ứng dụng.
+
+D. Dùng chế độ tương tác và parse câu trả lời văn xuôi làm giao thức.
+
+**Câu 5 — Chọn hai.** Hai lần chạy cùng cấu hình khởi động tối giản cho đầu ra hơi khác nhau. Hai kết luận nào hợp lý?
+
+A. Cấu hình môi trường nhất quán không bảo đảm đầu ra mô hình giống hệt.
+
+B. Sai khác đầu ra chứng minh cấu hình khởi động đã không được áp dụng.
+
+C. Không cần đo chất lượng nếu các lần chạy cùng command line.
+
+D. Vẫn cần kiểm thử hành vi và kiểm tra hợp đồng/cấu hình theo phiên bản.
+
+## Đáp án và giải thích
+
+1. **B.** B đáp ứng nơi chạy và quyền truy cập cần thiết. A không tạo kết nối mạng. C không phù hợp tác vụ tự động không người trực. D thay đổi ranh giới dữ liệu mà chưa xét yêu cầu tổ chức.
+
+2. **A.** A phân biệt trạng thái thực thi với dữ liệu nghiệp vụ. B đọc nhầm tầng giao thức. C phụ thuộc cách trình bày log. D có phiên không đồng nghĩa đã có kết quả hợp lệ.
+
+3. **B, D.** B xác định phiên, D bảo vệ tính hiện hành của bằng chứng. A không bảo đảm nối đúng trạng thái. C đồng nhất danh tính phiên với độ mới của nội dung.
+
+4. **C.** C phù hợp tích hợp lập trình vào sản phẩm. A có thể dùng cho script đơn giản nhưng không đáp ứng trực tiếp nhu cầu vòng điều phối trong ứng dụng. B không đạt ràng buộc môi trường. D phụ thuộc tương tác và văn phong thay vì giao diện tích hợp.
+
+5. **A, D.** A phân biệt tái lập môi trường và tính xác định đầu ra. D xác nhận điều sản phẩm cần. B suy nguyên nhân duy nhất từ một hiện tượng. C bỏ đo kết quả dù môi trường giống nhau.

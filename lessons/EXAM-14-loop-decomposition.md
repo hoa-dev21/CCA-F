@@ -76,38 +76,62 @@ Bạn cần giải thích được ba quyết định: chương trình dựa và
 
 **1. Chọn một.** Claude viết “tôi đã hoàn thành” nhưng phản hồi có `stop_reason="tool_use"` và yêu cầu đọc tệp cấu hình. Ứng dụng điều khiển vòng lặp nên làm gì?
 
-A. Dừng và đánh dấu thành công theo text.
+A. Ghi nhận hoàn thành theo text, chuyển yêu cầu đọc cấu hình sang tác vụ nền để bổ sung sau.
 
 B. Thực thi yêu cầu công cụ hợp lệ, trả kết quả đúng ID và tiếp tục vòng lặp.
 
-C. Xóa yêu cầu gọi công cụ rồi chỉ lưu text.
+C. Gửi lại câu hỏi người dùng với kết quả đọc cấu hình, bỏ phản hồi yêu cầu công cụ để rút ngắn lịch sử.
 
-D. Dừng thành công vì đã đủ năm vòng.
+D. Khi đã hết ngân sách vòng lặp, dùng câu “đã hoàn thành” làm kết quả thành công thay vì chạy công cụ.
 
 **2. Chọn một.** Bạn nhận yêu cầu “bổ sung kiểm thử toàn diện cho hệ thống mã nguồn cũ”, nhưng chưa biết cấu trúc hệ thống. Cách chia việc nào phù hợp nhất?
 
-A. Giao viết test cho mọi file ngay, không cần tìm hiểu hệ thống.
+A. Phân công số lượng test bằng nhau cho từng thư mục, dùng tỷ lệ file có test để quyết định đã kiểm tra đủ.
 
-B. Chỉ kiểm tra file đầu tiên rồi kết luận toàn repo.
+B. Ưu tiên các hàm có độ phức tạp cao, cố định danh sách đó để giữ tiến độ dù phát hiện thêm phụ thuộc nghiệp vụ.
 
 C. Lập bản đồ, chọn hành vi/rủi ro quan trọng, ưu tiên test và điều chỉnh kế hoạch theo phụ thuộc mới.
 
-D. Giữ cố định kế hoạch đầu dù phát hiện luồng dữ liệu khác.
+D. Hoàn tất toàn bộ test đơn vị theo cấu trúc file trước, sau đó mới khảo sát các luồng nghiệp vụ xuyên mô-đun.
 
 **3. Chọn hai.** Công cụ A trả thời gian dạng Unix, công cụ B trả thời gian dạng ISO 8601. Quy định không cho trợ lý tự hoàn tiền quá 500 USD. Hai lựa chọn nào đặt bước xử lý đúng thời điểm?
 
 A. Chuẩn hóa thời gian sau công cụ theo quy định về dữ liệu và hành vi và giữ nguồn/giá trị gốc.
 
-B. Chỉ nhắc mô hình không hoàn tiền vượt ngưỡng, vẫn cho bộ thực thi thực hiện mọi yêu cầu.
+B. Kiểm tra ngưỡng trong bước chọn công cụ của mô hình, rồi cho bộ thực thi tin mọi yêu cầu đã qua bước này.
 
-C. Sau khi chuyển tiền xong, dùng PostToolUse để coi như đã chặn.
+C. Dùng PostToolUse phát hiện giao dịch vượt ngưỡng và tạo giao dịch bù, coi đó là cơ chế ngăn hoàn tiền.
 
 D. Chặn yêu cầu vi phạm trước khi thực thi và trả đường chuyển cấp phù hợp.
 
+**4. Chọn một.** Vòng lặp đã dùng hết ngân sách thực thi. Phản hồi cuối vẫn yêu cầu một công cụ hợp lệ, nhưng chưa có kết quả của công cụ đó. Trạng thái nào nên trả cho hệ thống gọi?
+
+A. Thành công với phần văn bản cuối vì yêu cầu công cụ còn lại đã hợp lệ.
+
+B. Chưa hoàn tất do hết ngân sách, kèm trạng thái để người vận hành quyết định tiếp tục.
+
+C. Thành công một phần và coi yêu cầu công cụ chưa chạy là đã chạy nhưng không có dữ liệu.
+
+D. Tiếp tục thực thi vì `tool_use` có độ ưu tiên cao hơn giới hạn ngân sách do ứng dụng đặt.
+
+**5. Chọn hai.** Hai công cụ trả thời gian: A trả `1710000000`, B trả chuỗi ISO có độ lệch múi giờ. Nhóm muốn chuẩn hóa trước khi chuyển cho Claude. Hai yêu cầu nào cần có trong thiết kế?
+
+A. Xác định đơn vị của A và quy tắc xử lý múi giờ của B trước khi chuyển đổi.
+
+B. Giữ cả giá trị gốc và nguồn để kiểm tra lại khi hai kết quả không khớp.
+
+C. Diễn giải cả hai theo múi giờ máy chủ để mọi giá trị được xử lý bằng cùng một quy tắc.
+
+D. Dùng thời gian hiện tại cho giá trị không phân tích được để đầu ra luôn đáp ứng định dạng chung.
+
 ## Đáp án
 
-1. **B.** `tool_use` cho biết ứng dụng cần xử lý yêu cầu công cụ rồi gửi kết quả lại đúng mã định danh. A sai vì lấy câu chữ làm điều kiện dừng. C sai vì xóa mất yêu cầu công cụ cần được xử lý và lưu trong lịch sử. D sai vì chạy đủ số lượt không chứng minh nhiệm vụ đã hoàn thành.
+1. **B.** `tool_use` yêu cầu xử lý công cụ hợp lệ và trả kết quả gắn đúng mã định danh trong lịch sử. A có thực thi nhưng đánh dấu thành công quá sớm; C có dữ liệu nhưng phá cấu trúc trao đổi; D nhầm giới hạn tài nguyên với bằng chứng hoàn thành.
 
-2. **C.** Trước hết cần hiểu hệ thống, chọn các hành vi quan trọng để kiểm thử, rồi điều chỉnh kế hoạch theo những gì tìm được. A dễ tạo nhiều việc nhưng bỏ sót rủi ro chính. B không đủ cơ sở để đánh giá toàn hệ thống. D giữ kế hoạch đã không còn phù hợp dù có thông tin mới.
+2. **C.** Lập bản đồ và đánh giá rủi ro giúp chọn đúng hành vi cần kiểm chứng; phụ thuộc mới có thể làm thay đổi ưu tiên. A tối ưu số file, B tối ưu một chỉ số mã nguồn, D trì hoãn tìm hiểu luồng nghiệp vụ tới sau khi đã tốn công viết test. Các cách đó đều có thể tạo nhiều test mà bỏ sót rủi ro quan trọng.
 
-3. **A, D.** A đặt bước chuẩn hóa sau khi có kết quả công cụ, đồng thời giữ dữ liệu gốc để đối chiếu. D chặn giao dịch vi phạm trước khi giao dịch được thực hiện. B chỉ đưa lời nhắc cho mô hình mà không có bước kiểm tra bắt buộc bằng chương trình. C kiểm tra sau khi tiền đã chuyển nên không ngăn được giao dịch.
+3. **A, D.** A chuẩn hóa sau khi nhận dữ liệu. D đặt kiểm tra bắt buộc bằng chương trình trước tác động bên ngoài. B giao việc bảo đảm chính sách cho quyết định của mô hình. C là phát hiện và khắc phục sau tác động, không phải ngăn giao dịch; giao dịch bù còn có thể thất bại.
+
+4. **B.** Hết ngân sách là điều kiện dừng vận hành, không xác nhận thành công. A dựa vào văn bản và tính hợp lệ thay vì kết quả. C biến “chưa chạy” thành một kết quả giả. D bỏ qua ràng buộc tài nguyên: cần báo trạng thái chưa hoàn tất để quyết định tiếp tục có chủ đích.
+
+5. **A, B.** Chuẩn hóa phải giữ nguyên ý nghĩa của thời điểm và khả năng đối chiếu. C áp dụng một quy tắc chung nhưng có thể làm sai thời điểm vốn đã có múi giờ. D tạo dữ liệu không có trong nguồn; đúng định dạng không đồng nghĩa đúng nội dung.

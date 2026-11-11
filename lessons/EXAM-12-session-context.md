@@ -21,40 +21,66 @@ Trong khám phá dự án dài, tác nhân con có thể giữ chi tiết tìm k
 
 Nếu câu trả lời chuyển từ dẫn đúng lớp mã đã tìm sang “thường hệ thống sẽ…”, hoặc mâu thuẫn với phát hiện trước, hãy kiểm tra sự suy giảm ngữ cảnh. Giao câu hỏi cụ thể cho từng nhánh, tổng hợp theo giai đoạn và chuyển kết quả cần thiết sang giai đoạn sau. Trước khi dùng `/compact` để rút gọn, giữ dữ kiện quan trọng có cấu trúc và kiểm tra bản tóm tắt không làm mất chúng.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Repo đã thay đổi lớn từ lần điều tra trước. Tác nhân AI liên tục viện dẫn kết quả công cụ cũ. Lựa chọn phù hợp?
+**Câu 1 — Chọn một.** Phiên điều tra cũ liên tục viện dẫn file đã bị thay đổi sau một refactor lớn. Cách tiếp tục nào giảm context lỗi thời mà giữ được mục tiêu?
 
-A. Giữ lịch sử cũ và cấm đọc lại.
+A. Phiên mới nhận summary có nguồn; xác minh lại file hiện tại.
 
-B. Chỉ thêm câu “hãy chính xác”.
+B. Giữ phiên và yêu cầu tin các kết luận cũ vì chúng đã từng được kiểm tra.
 
-C. Báo hoàn tất vì đã có kết quả ban đầu để so sánh.
+C. Nạp lại toàn bộ transcript cũ để tăng mức chi tiết.
 
-D. Cân nhắc phiên mới với summary/state có nguồn và xác minh lại file hiện tại.
+D. Chỉ xóa câu trả lời cuối, giữ nguyên kết quả công cụ đã cũ.
 
-**2. Chọn hai.** Phục hồi sau crash trong hệ nhiều tác nhân AI nên có gì?
+**Câu 2 — Chọn hai.** Hệ nhiều tác nhân phải phục hồi sau crash mà không làm lại bước đã hoàn tất. Hai thành phần nào cần có?
 
-A. State có cấu trúc ở vị trí biết trước và manifest để tác nhân điều phối tải.
+A. Một thông báo “hãy tiếp tục” không kèm trạng thái.
 
-B. Chỉ dựa vào trí nhớ không được lưu.
+B. State có cấu trúc tại vị trí biết trước cùng manifest chỉ ra artifact/trạng thái bước.
 
-C. Đưa summary/phát hiện cần thiết vào prompt tác nhân AI khởi động lại.
+C. Tóm tắt và dữ kiện cần thiết được đưa rõ vào context tác nhân khởi động lại.
 
-D. Giả định file tồn tại nghĩa tác nhân con đã đọc.
+D. Một session ID cũ được coi là đủ để mọi tác nhân tự có lại context.
 
-**3. Chọn một.** Summary dài dần làm mất chính xác số tiền và order ID. Cách sửa phù hợp?
+**Câu 3 — Chọn một.** Sau ba lần compact, “hoàn 35% đơn A trước ngày 12” thành “khách muốn hoàn sớm”. Thay đổi nào bảo vệ dữ kiện nghiệp vụ?
 
-A. Nén thêm mọi con số thành mô tả chung.
+A. Tăng độ dài bản tóm tắt văn xuôi.
 
-B. Giữ facts giao dịch có cấu trúc ngoài phần summary dễ mất chi tiết.
+B. Yêu cầu mô hình nhắc lại số tiền từ trí nhớ mỗi lượt.
 
-C. Dùng điểm tự tin thay order ID.
+C. Lưu facts chuẩn trong case state; nạp lại khi cần xử lý.
 
-D. Xóa kết quả công cụ liên quan.
+D. Đưa cả hội thoại vào tên công cụ để không bị compact.
 
-## Đáp án
+**Câu 4 — Chọn một.** Sau crash, manifest ghi “đã gửi yêu cầu thanh toán” nhưng chưa có xác nhận thành công. Khởi động lại nên làm gì trước khi gửi lại?
 
-1. **D.** A giữ trạng thái sai; B không thay bằng chứng; C nhầm lịch sử với hiện trạng.
-2. **A, C.** B không phục hồi được; D nhầm lưu trữ với ngữ cảnh mô hình đã nhận.
-3. **B.** A mất dữ kiện thêm; C sai loại thông tin; D bỏ nguồn cần thiết.
+A. Đánh dấu thành công vì thao tác đã được gửi.
+
+B. Gửi lại ngay vì lần trước không có phản hồi.
+
+C. Đổi transaction ID rồi gửi để tránh trùng tên.
+
+D. Kiểm tra trạng thái bên đích bằng định danh giao dịch và quy tắc chống lặp.
+
+**Câu 5 — Chọn hai.** Summary bàn giao có các phát hiện từ phiên trước. Hai thông tin nào giúp tác nhân mới biết phần nào cần xác minh lại?
+
+A. Nguồn/đường dẫn cùng revision hoặc thời điểm kiểm tra.
+
+B. Điểm chưa xác minh, giả định và công việc còn mở.
+
+C. Chỉ một confidence chung cho toàn summary.
+
+D. Tên tác nhân cũ thay cho nguồn bằng chứng.
+
+## Đáp án và giải thích
+
+1. **A.** A chuyển tri thức cần thiết và kiểm tra tính hiện hành. B coi bằng chứng cũ là vĩnh viễn. C có thể tăng nhiễu cũ; D không loại được dữ liệu công cụ đang gây sai.
+
+2. **B, C.** B cung cấp điểm phục hồi, C đưa thông tin vào quá trình suy luận mới. A thiếu trạng thái; D không chứng minh context hoặc artifact đã được tải lại.
+
+3. **C.** C tách facts chính xác khỏi phần tóm tắt dễ mất chi tiết. A giảm nguy cơ nhưng không tạo nơi lưu chuẩn; B có thể củng cố số nhớ sai; D lạm dụng metadata và không giải quyết quản lý trạng thái.
+
+4. **D.** D phân biệt gửi yêu cầu với hoàn tất tác động. A có thể báo thành công sai; B có thể thực thi hai lần; C đổi ID còn có thể vô hiệu cơ chế chống lặp.
+
+5. **A, B.** A cho biết bằng chứng có thể lỗi thời; B phân biệt đã biết và chưa biết. C không xác định phần cần kiểm tra. D không chứng minh tính đúng hay tính hiện hành của phát hiện.

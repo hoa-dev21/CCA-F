@@ -19,40 +19,66 @@ Cũng trong mẫu này, mã kết thúc chương trình (exit code) 2 biểu th�
 
 Để bổ sung ngữ cảnh sau khi hội thoại được rút gọn, bài dùng `SessionStart` với điều kiện khớp sự kiện `compact`. Không mặc định đầu ra của `PostCompact` sẽ được đưa vào hội thoại. Đây là chi tiết cần kiểm tra theo phiên bản trước khi triển khai. Dù đã có hook, vẫn phải kiểm tra mã và dữ liệu đầu vào để biết quy tắc có thực sự được thực thi đúng hay không.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Phải ngăn gửi dữ liệu trước khi lệnh chạy. Hook phù hợp nhất?
+**Câu 1 — Chọn một.** Quy định cấm gửi dữ liệu nhạy cảm ra ngoài. Hook PostToolUse phát hiện vi phạm và log cảnh báo sau lệnh upload. Thiết kế nào đáp ứng yêu cầu ngăn gửi?
 
-A. PostToolUse sau khi gửi xong.
+A. Giữ PostToolUse nhưng tăng mức cảnh báo thành critical.
 
-B. Chỉ ghi một lời nhắc ở cuối.
+B. Chặn upload vi phạm bằng PreToolUse trước thực thi.
 
-C. PreToolUse kiểm tra và từ chối trước thực thi.
+C. Dùng Stop hook sau khi tác nhân hoàn tất toàn bộ nhiệm vụ.
 
-D. Chỉ tóm tắt hội thoại.
+D. Dùng PostToolUse xóa file nguồn khi phát hiện upload không hợp lệ.
 
-**2. Chọn một.** Hook ở sự kiện hỗ trợ blocking muốn chặn nhưng trả exit code 1 theo mẫu khóa. Lỗi nào cần xem lại?
+**Câu 2 — Chọn một.** Theo hợp đồng mẫu của bài, exit code 1 là lỗi không chặn và 2 là lỗi chặn ở sự kiện hỗ trợ. Hook trả 1 và in “DENIED”, nhưng lệnh vẫn chạy. Cần sửa điều gì?
 
-A. 1 không phải blocking code trong mẫu; cần cơ chế quyết định/exit code chặn phù hợp.
+A. Cho wrapper đọc “DENIED” từ log và đánh dấu thất bại khi công cụ trả kết quả.
 
-B. Mọi exit code đều chặn.
+B. Thêm nhiều dòng stderr để lỗi rõ hơn.
 
-C. Chỉ cần log màu đỏ.
+C. Dùng cơ chế chặn đúng event; thử xem lệnh còn chạy không.
 
-D. Không cần kiểm tra event.
+D. Di chuyển cùng hook sang sự kiện bất kỳ sau công cụ.
 
-**3. Chọn một.** Hook sửa một trường bằng `updatedInput` rồi làm mất trường bắt buộc khác. Cách sửa?
+**Câu 3 — Chọn hai.** Hook thay command bằng updatedInput, nhưng tool còn yêu cầu workdir và timeout. Hai thao tác nào tránh làm sai lời gọi?
 
-A. Bỏ bản mô tả cấu trúc dữ liệu hoàn toàn.
+A. Giữ các trường cần thiết khi xây đối tượng đầu vào thay thế.
 
-B. Giữ các trường cần thiết trong đối tượng đầu vào thay thế.
+B. Chỉ trả command vì các trường còn lại luôn tự được trộn theo ý muốn.
 
-C. Cho mô hình đoán lại sau thao tác.
+C. Kiểm tra đối tượng thay thế theo hợp đồng và thử trường hợp có đủ tham số.
 
-D. Chỉ sửa tên hook.
+D. Để mô hình bổ sung các trường bị mất sau khi tool đã chạy.
 
-## Đáp án
+**Câu 4 — Chọn một.** Nhóm muốn khôi phục ngữ cảnh sau compact bằng hook, nhưng không biết sự kiện nào đưa đầu ra vào hội thoại ở phiên bản đang dùng. Quyết định nào tốt nhất?
 
-1. **C.** A quá muộn; B và D không cưỡng chế trước hành động.
-2. **A.** B sai về ngữ nghĩa exit code; C không quyết định luồng; D bỏ khác biệt sự kiện.
-3. **B.** A không khôi phục hợp đồng; C dựa vào đoán; D không sửa input.
+A. Dựa vào tên PostCompact để mặc định mọi stdout được đưa vào context.
+
+B. Ghi ngữ cảnh ra stderr vì lỗi luôn được thêm vào hội thoại.
+
+C. Chuyển toàn bộ nội dung sang hook sau công cụ cho dễ gọi.
+
+D. Xác minh hợp đồng phiên bản bằng một lượt compact có kiểm tra context.
+
+**Câu 5 — Chọn hai.** Hook bảo vệ một thao tác nhạy cảm đã được viết. Hai kiểm thử nào cần để biết nó thực thi đúng chính sách?
+
+A. Yêu cầu vi phạm bị chặn trước khi có tác động bên ngoài.
+
+B. Yêu cầu hợp lệ vẫn chạy với đầu vào bắt buộc được giữ đủ.
+
+C. Chỉ unit-test mã trả về của hook, chưa chạy lời gọi công cụ qua host.
+
+D. Chỉ kiểm tra file hook tồn tại ở đường dẫn cấu hình.
+
+## Đáp án và giải thích
+
+1. **B.** B đặt kiểm soát trước tác động. A/C chỉ phát hiện sau khi đã gửi; D xóa nguồn không thu hồi dữ liệu đã rời hệ thống và còn tạo tác động khác.
+
+2. **C.** C kiểm tra ngữ nghĩa đầu ra và khả năng chặn của event. A đánh dấu lỗi sau khi thao tác đã chạy, không ngăn tác động. B hiển thị rõ hơn không đổi quyết định. D càng không ngăn được tác động đã xảy ra.
+
+3. **A, C.** A bảo toàn đầu vào cần thiết; C kiểm chứng cách host áp dụng thay thế. B giả định cơ chế merge chưa được bảo đảm. D sửa sau thực thi không bảo vệ lời gọi hiện tại.
+
+4. **D.** D kiểm chứng nơi và cách context được nạp. A suy từ tên event; B suy từ kênh log; C đổi sự kiện nhưng chưa giải quyết thời điểm và hợp đồng nạp sau compact.
+
+5. **A, B.** A kiểm tra ngăn tác động; B tránh chặn/sửa sai hành động hợp lệ. C kiểm tra riêng hook nhưng chưa chứng minh host dùng đúng quyết định đó. D là tồn tại cấu hình, chưa chứng minh hook được gọi hay quyết định được host áp dụng.

@@ -13,43 +13,69 @@ Không có bộ tên thẻ bắt buộc cho cách tổ chức prompt này. Hãy 
 
 Cách này hữu ích khi nội dung dài, có nhiều nguồn hoặc dùng mẫu prompt chứa các phần được thay vào mỗi lần chạy. Nó giúp tổ chức thông tin; không tự bổ sung dữ liệu thiếu, kết nối cơ sở dữ liệu hay bảo đảm mọi kết luận đúng.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Prompt trộn mã và tài liệu khiến phân tích nhầm vai trò từng đoạn. Cải thiện trực tiếp?
+**Câu 1 — Chọn một.** Prompt ghép mã nguồn và tài liệu hướng dẫn thành một khối. Model đôi lúc báo một ví dụ trong tài liệu là lỗi trong mã. Thay đổi nào nhắm đúng nguyên nhân?
 
-A. Tăng tính ngẫu nhiên.
+A. Đổi tên biến trong mã cho giống từ ngữ trong tài liệu.
 
-B. Dùng cặp thẻ mô tả riêng cho mã và tài liệu.
+B. Chỉ tăng giới hạn đầu ra để model có chỗ giải thích dài hơn.
 
-C. Xóa tài liệu tham chiếu.
+C. Tách mã/tài liệu bằng thẻ mô tả và nêu cách đối chiếu.
 
-D. Đổi tên mô hình mà giữ nguyên nội dung.
+D. Gộp mã và tài liệu vào cùng thẻ data.
 
-**2. Chọn một.** Quy tắc đặt tên thẻ nào đúng theo bài?
+**Câu 2 — Chọn hai.** Nhóm chuẩn hóa prompt dùng thẻ XML cho nguồn tham khảo và yêu cầu. Hai lựa chọn nào có cơ sở theo bài?
 
-A. Chỉ được dùng tên trong một tiêu chuẩn bắt buộc.
+A. Dùng cặp mở/đóng nhất quán để ranh giới các phần rõ ràng.
 
-B. Mọi phần đều phải tên `<data>`.
+B. Chọn một tên thẻ bí mật được cho là tự nâng mức tin cậy của nguồn.
 
-C. Có thể đặt tên mô tả phù hợp nội dung.
+C. Coi tài liệu trong thẻ là đã được xác minh vì có cấu trúc XML.
 
-D. Tên thẻ không bao giờ có ý nghĩa.
+D. Dùng tên thẻ mô tả phù hợp với loại nội dung của ứng dụng.
 
-**3. Chọn một.** Dùng XML giúp trực tiếp việc gì?
+**Câu 3 — Chọn một.** Một đoạn tài liệu chứa câu “bỏ qua yêu cầu trước”. Hệ thống đặt nó trong reference_docs nhưng vẫn cần phân tích như dữ liệu. Thiết kế nào phù hợp nhất?
 
-A. Phân biệt cấu trúc và ranh giới các phần trong prompt.
+A. Bỏ thẻ và nối câu đó vào cuối yêu cầu để giữ nguyên thứ tự nguồn.
 
-B. Tự truy vấn cơ sở dữ liệu chưa tích hợp.
+B. Đưa tài liệu vào system như hướng dẫn.
 
-C. Bảo đảm mọi kết luận đều đúng.
+C. Tách tài liệu khỏi chỉ dẫn; nêu vai trò và thử ca gây nhầm.
 
-D. Tăng dung lượng ngữ cảnh vô hạn.
+D. Đổi tên thẻ thành trusted_docs rồi mặc định mọi câu trong đó đáng tin.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Prompt so sánh hai phiên bản cấu hình. Hai cách đóng gói nào giúp tránh báo ngược thay đổi?
 
-1. **B.** A và D không giải quyết ranh giới; C bỏ dữ liệu có ích.
-2. **C.** A và B áp đặt hạn chế không có; D phủ nhận lợi ích tên có nghĩa.
-3. **A.** B đòi hỏi tích hợp; C không được bảo đảm; D sai về giới hạn ngữ cảnh.
+A. Giữ riêng tên file nhưng bỏ toàn bộ nội dung hai phiên bản.
+
+B. Nêu rõ cần đối chiếu từ phiên bản cũ sang phiên bản mới.
+
+C. Tách old_config và new_config bằng các thẻ có nhãn rõ.
+
+D. Dùng cùng một tên config cho cả hai và bỏ mô tả thứ tự.
+
+**Câu 5 — Chọn một.** Sau khi thêm XML, model tuân thủ cấu trúc hơn nhưng vẫn đưa kết luận sai. Nhóm định bỏ validation vì “đã dùng thẻ”. Kết luận nào đúng?
+
+A. Thẻ giúp nhận biết phần; vẫn phải kiểm tra độ đúng.
+
+B. Nếu các thẻ cân bằng thì kết luận trong mỗi thẻ được bảo đảm đúng.
+
+C. Nên đổi mọi thẻ sang tiếng Anh để loại bỏ sai ngữ nghĩa.
+
+D. Tăng lớp thẻ thay kiểm tra nội dung.
+
+## Đáp án và giải thích
+
+1. **C.** C giữ ranh giới và vai trò từng phần. D vẫn trộn hai loại nội dung; A thay dữ liệu cần phân tích; B không khắc phục nhầm nguồn.
+
+2. **A, D.** D không phụ thuộc bộ tên bắt buộc; A tạo phân đoạn rõ. B gán tính chất không có cho tên thẻ; C nhầm bao gói dữ liệu với kiểm chứng nội dung.
+
+3. **C.** C kết hợp phân ranh giới với chỉ dẫn sử dụng dữ liệu. D tên thẻ không tạo bảo đảm an toàn; B nâng dữ liệu thành chỉ dẫn; A làm ranh giới còn khó nhận biết hơn.
+
+4. **B, C.** C xác định đối tượng, B xác định chiều so sánh. D dễ nhầm vai trò; A không cung cấp dữ liệu để phân tích thay đổi.
+
+5. **A.** A phân biệt cấu trúc prompt với chất lượng suy luận. B gán bảo đảm không có; D tăng độ phức tạp cú pháp; C đổi ngôn ngữ nhãn không chứng minh kết luận đúng.
 
 ## Đối chiếu Bedrock: Structure with XML tags
 

@@ -15,43 +15,69 @@ Ví dụ: Trích xuất dữ liệu theo cấu trúc cố định có thể dùn
 
 Hãy bắt đầu bằng cách giải quyết đủ tin cậy cho bài toán và thêm quyền tự chủ khi có nhu cầu rõ. Không thể kết luận mọi workflow tốt hơn agent, hoặc ngược lại, nếu chưa xét yêu cầu và dữ liệu cụ thể.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Hệ thống chỉ xử lý một quy trình đầu vào/đầu ra đã biết, ưu tiên dễ kiểm thử. Lựa chọn ban đầu?
+**Câu 1 — Chọn một.** 90% yêu cầu là trích xuất biểu mẫu cố định; 10% cần điều tra tài liệu thiếu. Nhóm ưu tiên dễ kiểm thử và chỉ cần tự chủ ở ngoại lệ. Kiến trúc nào phù hợp nhất?
 
-A. Tác nhân AI tự chủ tối đa dù không cần.
+A. Workflow cho luồng chuẩn; agent giới hạn cho phần điều tra.
 
-B. Quy trình làm việc có các bước và gate rõ.
+B. Workflow cố định cho cả ngoại lệ bằng cách bỏ các trường chưa biết.
 
-C. Loại bỏ validation để tăng linh hoạt.
+C. Agent tự chọn toàn bộ bước cho cả hai nhóm để thống nhất kiến trúc.
 
-D. Chỉ chọn theo tên công nghệ mới nhất.
+D. Hai agent độc lập xử lý mọi biểu mẫu rồi bỏ phiếu kết quả.
 
-**2. Chọn một.** Tác vụ liên tục cần chọn hướng điều tra dựa trên phát hiện mới. Điều gì ủng hộ tác nhân AI?
+**Câu 2 — Chọn một.** Agent điều tra sự cố phát hiện một phụ thuộc không có trong kế hoạch ban đầu. Điều gì biện minh việc chọn agent thay workflow cố định trong tình huống này?
 
-A. Không cần quan sát công cụ.
+A. Đường điều tra phải thay đổi theo bằng chứng mới để đạt mục tiêu.
 
-B. Mọi bước đều bất biến.
+B. Agent thường tạo lời giải thích dài nên dễ chứng minh chất lượng hơn.
 
-C. Nhu cầu thích ứng đường giải quyết theo thông tin mới.
+C. Số công cụ lớn tự nó đòi hỏi mọi bước do mô hình quyết định.
 
-D. Không cần đánh giá kết quả.
+D. Tự chủ cho phép bỏ kiểm tra ở các bước trung gian đã chọn.
 
-**3. Chọn một.** Vì sao tác nhân AI thường khó đánh giá hơn một quy trình xử lý cố định?
+**Câu 3 — Chọn hai.** Một workflow ổn định đạt tiêu chí nhưng nhóm muốn chuyển sang agent. Hai bằng chứng nào nên có trước khi mở rộng quyền tự chủ?
 
-A. Có nhiều chuỗi hành động khả dĩ, không biết trước mọi đường thực thi.
+A. Một demo agent giải đúng ca mà workflow đã giải đúng.
 
-B. Không thể lưu bất kỳ log nào.
+B. Tên mô hình mới được quảng bá có khả năng lập kế hoạch tốt.
 
-C. Công cụ không bao giờ trả kết quả.
+C. Các ca thất bại thực tế đòi hỏi chọn đường xử lý chưa thể mô tả đủ trong workflow.
 
-D. Tác nhân AI luôn không có mục tiêu.
+D. Đánh giá đại diện so sánh chất lượng, độ trễ và lỗi của phương án mới.
 
-## Đáp án
+**Câu 4 — Chọn một.** Hai thiết kế có cùng tỷ lệ thành công cuối, nhưng agent đôi lúc gọi nhiều chuỗi công cụ khác nhau. Để chẩn đoán lỗi, cần mở rộng đánh giá nào?
 
-1. **B.** A thêm tự do không phục vụ yêu cầu; C bỏ kiểm chứng; D không xét bài toán.
-2. **C.** A và D bỏ yêu cầu vận hành; B nghiêng về quy trình làm việc cố định.
-3. **A.** B và C không phải đặc tính bắt buộc; D trái định nghĩa tác nhân AI nhận mục tiêu.
+A. Giữ một đường chạy thành công làm chuẩn cho mọi yêu cầu.
+
+B. Chỉ so số token đầu ra vì kết quả cuối đã tương đương.
+
+C. Chỉ chấm chất lượng ngôn ngữ để phân biệt hai thiết kế.
+
+D. Đánh giá thêm đường chạy và các kết quả trung gian.
+
+**Câu 5 — Chọn hai.** Workflow yêu cầu duyệt trước bước xuất bản; agent được thêm để tìm thông tin còn thiếu. Hai nguyên tắc nào giữ đúng đánh đổi kiến trúc?
+
+A. Đưa mọi bước cố định vào prompt để thay workflow ngay.
+
+B. Cho agent tự quyết bỏ gate khi tìm thấy đủ nguồn đáng tin.
+
+C. Giữ gate duyệt ở luồng xuất bản dù phần tìm kiếm có tự chủ.
+
+D. Giới hạn phần agent vào việc cần thích ứng và đo kết quả của nó.
+
+## Đáp án và giải thích
+
+1. **A.** A đúng: Tự chủ được đặt vào phần có nhu cầu thích ứng. B sai: Giảm phức tạp bằng cách bỏ yêu cầu điều tra chưa đáp ứng nhiệm vụ. C sai: Tăng số đường thực thi cho phần vốn cố định mà chưa có lợi ích rõ. D sai: Thêm chi phí và biến thiên cho toàn bộ luồng, chưa giải quyết phân loại nhiệm vụ.
+
+2. **A.** A đúng: Nhu cầu thích ứng là lợi ích trực tiếp của agent. B sai: Độ dài giải thích không đo tính đúng. C sai: Số công cụ không quyết định cấu trúc điều phối. D sai: Tự chủ vẫn cần quan sát và kiểm chứng.
+
+3. **C, D.** A sai: Không cho thấy lợi ích bổ sung trên phạm vi tác vụ. B sai: Khả năng chung không chứng minh phù hợp hệ thống này. C đúng: Cần nhu cầu chức năng cụ thể. D đúng: Lợi ích phải được đo cùng đánh đổi.
+
+4. **D.** A sai: Agent có thể cần các đường khác hợp lệ. B sai: Token không phản ánh toàn bộ hành động và lỗi trung gian. C sai: Cách diễn đạt không đo độ tin cậy điều phối. D đúng: Nhiều đường có thể che giấu nguyên nhân khác nhau.
+
+5. **C, D.** A sai: Chuyển điều khiển sang prompt làm tăng biến thiên chưa có nhu cầu. B sai: Đủ dữ liệu không thay quyền phê duyệt đã yêu cầu. C đúng: Mở quyền khám phá không đồng nghĩa bỏ ràng buộc rõ. D đúng: Giảm không gian hành động không cần thiết.
 
 ## Đối chiếu Vertex
 

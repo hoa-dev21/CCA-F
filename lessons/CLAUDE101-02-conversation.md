@@ -13,42 +13,66 @@ Sau câu trả lời đầu tiên, bạn có thể gửi yêu cầu tiếp để
 
 Bài gốc có nhắc đến tính năng ghi nhớ (memory) và bộ hướng dẫn cho nhiệm vụ chuyên biệt (skills) trong ứng dụng. Đừng suy ra rằng các yêu cầu API gửi riêng lẻ cũng tự nhớ nhau. Trong cách dùng Messages API được học ở đây, ứng dụng cần gửi kèm ngữ cảnh liên quan. Một số thao tác giao diện trong video đã thay đổi; điều cần nắm là cách cung cấp thông tin và phản hồi.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** AI trả báo cáo không đúng đối tượng độc giả. Cần bổ sung trực tiếp gì?
+**Câu 1 — Chọn một.** Ứng dụng gửi hai yêu cầu API tách rời. Yêu cầu hai viết “rút ngắn bước 2” nhưng không kèm câu trả lời trước. Chat sản phẩm có ghi nhớ nên nhóm cho rằng lỗi do prompt quá ngắn. Sửa đúng là gì?
 
-A. Chỉ câu “làm tốt hơn”.
+A. Tăng độ dài yêu cầu hai bằng hướng dẫn viết văn chung.
 
-B. Chỉ số token lớn hơn.
+B. Yêu cầu API dùng tính năng ghi nhớ của giao diện chat mà không chuyển ngữ cảnh.
 
-C. Bỏ mọi quy tắc.
+C. Gửi nội dung cần sửa cùng mục tiêu và ràng buộc giữ lại trong yêu cầu hai.
 
-D. Bối cảnh độc giả, mục tiêu và định dạng cần có.
+D. Thêm tên người dùng vào yêu cầu hai để API tự tìm cuộc trò chuyện.
 
-**2. Chọn một.** Muốn sửa tone mà giữ nội dung tốt, phản hồi nào hữu ích?
+**Câu 2 — Chọn hai.** Nhóm viết hướng dẫn nhân viên mới từ quy trình nội bộ. Hai phần đầu vào nào cần thiết để giảm việc AI tự đoán?
 
-A. Nêu cụ thể đoạn/tone cần đổi và giữ những phần phù hợp.
+A. Chỉ tên quy trình vì mô hình biết cách doanh nghiệp thường vận hành.
 
-B. Chỉ “sai”.
+B. Nhiệm vụ cụ thể cùng cấu trúc, mức chi tiết của đầu ra.
 
-C. Xóa dữ liệu nguồn bất kể cần.
+C. Tài liệu quy trình đúng phiên bản và mục tiêu của người đọc.
 
-D. Coi bản nháp là kết quả bắt buộc.
+D. Một lời yêu cầu “chuyên nghiệp” thay cho tiêu chí nội dung.
 
-**3. Chọn một.** Memory trên ứng dụng có chứng minh API yêu cầu độc lập tự nhớ nhau không?
+**Câu 3 — Chọn một.** Bản nháp đã đúng năm bước, riêng bước 2 quá dài. Bạn cần giữ thứ tự và nội dung bốn bước còn lại. Phản hồi nào kiểm soát thay đổi tốt nhất?
 
-A. Có, mọi API dùng cùng cơ chế.
+A. Giữ năm bước; rút bước 2 còn hai câu, giữ đủ điều kiện.
 
-B. Không; cần phân biệt giao diện và trách nhiệm quản lý ngữ cảnh của API.
+B. Viết lại toàn bộ cho ngắn hơn và tự chọn lại cấu trúc phù hợp.
 
-C. Có, nếu cùng API key.
+C. Giữ nguyên độ dài nhưng đổi vai trò thành chuyên gia truyền thông.
 
-D. Có, nếu không tạo client mới.
+D. Tạo thêm năm cách trình bày rồi chọn bản nghe tự nhiên nhất.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Hội thoại đã chuyển qua nhiều chủ đề, tài liệu cũ và mới mâu thuẫn. Hai bước nào giúp khởi động lại có kiểm soát?
 
-1. **D.** D giảm mơ hồ đang gây lỗi; A mơ hồ, B không chỉ đối tượng, C bỏ yêu cầu.
+A. Tóm tắt mục tiêu hiện tại và đưa tài liệu liên quan đúng phiên bản vào phiên mới.
 
-2. **A.** A đưa hướng sửa; B thiếu thông tin, C mất căn cứ, D bỏ vòng cải tiến.
+B. Sao chép toàn bộ lịch sử không phân biệt phiên bản và để AI tự chọn.
 
-3. **B.** B phân biệt lớp sản phẩm; A, C, D giả định tự lưu lịch sử mà mẫu API không có.
+C. Mở phiên trống rồi chỉ viết “tiếp tục như cũ” để tránh ngữ cảnh dài.
+
+D. Nêu các quyết định cần giữ cùng những yêu cầu đã bị thay thế.
+
+**Câu 5 — Chọn một.** Prompt yêu cầu tóm tắt cho người mới nhưng đầu ra đầy chữ viết tắt. Tài liệu đã đủ và nội dung đúng. Bước điều chỉnh nhắm đúng nguyên nhân?
+
+A. Thay mô hình trước khi xác định yêu cầu diễn đạt còn thiếu.
+
+B. Yêu cầu câu trả lời dài gấp đôi để các thuật ngữ tự trở nên rõ nghĩa.
+
+C. Nêu người đọc, cách giải thích chữ viết tắt và câu mẫu.
+
+D. Thu thập thêm tài liệu kỹ thuật chi tiết hơn rồi giữ prompt cũ.
+
+## Đáp án và giải thích
+
+1. **C.** C cung cấp đối tượng cần sửa. D không tạo lịch sử; A thêm chữ nhưng thiếu dữ liệu; B suy hành vi của sản phẩm sang các yêu cầu API độc lập.
+
+2. **B, C.** C cung cấp căn cứ và bối cảnh; B xác định sản phẩm cần tạo. A bỏ dữ liệu riêng; D chỉ định phong cách nhưng chưa xác định thông tin cần có.
+
+3. **A.** A nêu phần giữ và phần đổi. B có thể làm mất nội dung đã đúng; C không sửa lỗi độ dài; D thêm lựa chọn nhưng không kiểm soát phạm vi sửa.
+
+4. **A, D.** A tái lập căn cứ; D tránh hồi sinh yêu cầu cũ. C thiếu trạng thái; B giữ nguyên sự nhập nhằng đã gây vấn đề.
+
+5. **C.** C sửa tiêu chí giao tiếp còn thiếu. D tăng dữ liệu không giải quyết đối tượng; A đổi công cụ trước khi sửa hợp đồng đầu ra; B độ dài không bảo đảm thuật ngữ được giải thích.

@@ -13,42 +13,66 @@ Bài học mô tả hai phần thiết lập: quản trị viên cấu hình ngu
 
 Khi nhận câu trả lời, hãy mở các trích dẫn để kiểm tra nội dung gốc, bối cảnh, phiên bản và thời điểm. Có trích dẫn giúp bạn kiểm chứng dễ hơn, nhưng không bảo đảm mọi kết luận của AI đều đúng. Khả năng cung cấp tính năng, cách thiết lập và cách lưu trữ dữ liệu cần được kiểm tra lại khi triển khai.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Cần tìm quyết định nội bộ trong chat và tài liệu dự án. Tính năng sát bài nhất?
+**Câu 1 — Chọn một.** Quản trị viên đã thêm nguồn nội bộ, nhưng một nhân viên không đọc được tài liệu của nhóm khác. Bước xử lý phù hợp nhất?
 
-A. Chỉ suy luận từ dữ liệu huấn luyện.
+A. Đổi câu hỏi để tránh nhắc tên nhóm sở hữu tài liệu.
 
-B. Chỉ tìm một trang web công khai.
+B. Kiểm tra danh tính và quyền người dùng tại dịch vụ nguồn.
 
-C. Enterprise Search với nguồn và quyền phù hợp.
+C. Cấp quyền quản trị toàn tổ chức vì connector đã có dữ liệu.
 
-D. Một file trống.
+D. Yêu cầu AI dùng kiến thức của quản trị viên thay cho quyền người hỏi.
 
-**2. Chọn một.** Admin đã cấu hình nguồn, người dùng vẫn chưa xác thực dịch vụ. Bước còn thiếu theo bài?
+**Câu 2 — Chọn hai.** Câu trả lời về ngày ra mắt có ba trích dẫn nhưng chúng đều là kế hoạch cũ. Hai bước nào cần trước khi gửi báo cáo?
 
-A. Hoàn tất xác thực người dùng và kiểm tra quyền nguồn.
+A. Giữ kết luận vì có nhiều trích dẫn nên đã đủ đáng tin.
 
-B. Gán mọi tài liệu là công khai.
+B. Chọn ngày xuất hiện nhiều nhất trong ba trích dẫn làm ngày cuối cùng.
 
-C. Chỉ đổi tên dự án.
+C. Tìm hoặc xác nhận quyết định mới hơn và điều chỉnh kết luận theo bằng chứng.
 
-D. Bỏ giới hạn truy cập.
+D. Mở nguồn để kiểm tra thời điểm, phiên bản và bối cảnh từng trích dẫn.
 
-**3. Chọn một.** Vì sao nên mở trích dẫn nguồn của kết quả nội bộ?
+**Câu 3 — Chọn một.** Thông tin đổi lịch nằm trong tài liệu dự án và luồng trao đổi đã kết nối. Nhiệm vụ là giải thích lý do nội bộ. Lựa chọn nào phù hợp nhất?
 
-A. Chỉ để đếm link.
+A. Chỉ tìm web công khai vì thông tin ở đó dễ trích dẫn hơn.
 
-B. Kiểm tra nguồn, bối cảnh và phiên bản liên quan.
+B. Dùng suy luận từ thông lệ ngành thay cho tìm cuộc trao đổi.
 
-C. Để thay mọi phép kiểm chứng.
+C. Chỉ đọc tiêu đề tài liệu rồi suy ra động cơ của nhóm dự án.
 
-D. Vì trích dẫn nguồn luôn chứng minh mọi kết luận.
+D. Tìm nguồn nội bộ được phép, gắn nhận định với bằng chứng.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Nguồn nói “đang cân nhắc hoãn”, AI kết luận “đã quyết định hoãn”. Hai điều cần kiểm tra trong bước duyệt?
 
-1. **C.** C nhắm tri thức nội bộ đa nguồn; A không có trạng thái tổ chức, B sai phạm vi, D không có dữ liệu.
+A. Có bằng chứng bổ sung về quyết định cuối thay vì chỉ cuộc thảo luận không.
 
-2. **A.** A hoàn thiện luồng hợp lệ; B và D mở rộng quyền không cần thiết, C không xác thực.
+B. Mức chắc chắn và trạng thái quyết định có khớp nội dung nguồn không.
 
-3. **B.** B dùng nguồn để xác minh; A không đánh giá nội dung, C và D coi trích dẫn nguồn là bảo đảm.
+C. Chỉ kiểm tra ngày câu trả lời được tạo vì ngày đó mới hơn nguồn.
+
+D. Chỉ kiểm tra liên kết có mở được, vì đó là tiêu chí đủ cho trích dẫn.
+
+**Câu 5 — Chọn một.** Hai nhân viên nhận kết quả tìm kiếm khác nhau cho cùng câu hỏi. Thiết kế điều tra nào tránh kết luận vội rằng mô hình không ổn định?
+
+A. Ép cùng văn phong để loại khác biệt trong nguồn dữ liệu.
+
+B. Đối chiếu danh tính, quyền, kết nối và phiên bản tài liệu.
+
+C. Chỉ tăng nhiệt độ sinh để hai đầu ra có cơ hội giống nhau.
+
+D. Sao chép token của người thấy nhiều tài liệu cho người còn lại.
+
+## Đáp án và giải thích
+
+1. **B.** B kiểm tra đúng hai lớp thiết lập. C vượt nhu cầu; D giả định chia sẻ danh tính/quyền; A thay câu chữ không giải quyết kiểm soát truy cập.
+
+2. **C, D.** D đánh giá nguồn thực; C xử lý thay đổi theo thời gian. B bỏ qua hiệu lực; A số lượng trích dẫn không xác nhận tính hiện hành.
+
+3. **D.** D truy cập đúng nơi có bằng chứng. A có thể thiếu quyết định nội bộ; B và C thay dữ liệu cụ thể bằng suy đoán.
+
+4. **A, B.** B phát hiện suy diễn quá mức; A tìm căn cứ cần thiết. D xác minh truy cập chứ không xác minh claim; C ngày tạo câu trả lời không làm nguồn thành quyết định mới.
+
+5. **B.** B kiểm tra đầu vào và phạm vi dữ liệu. C không giải quyết quyền; D bỏ ranh giới truy cập; A đồng nhất hình thức mà không đồng nhất bằng chứng.

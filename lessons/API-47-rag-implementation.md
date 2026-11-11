@@ -13,45 +13,69 @@ Chọn k là một quyết định cần thử trên dữ liệu thật. Lấy n
 
 Ví dụ: Kết quả tìm kiếm trỏ nhầm đoạn văn. Trước khi sửa prompt trả lời, hãy kiểm tra cách chia dữ liệu, tạo vectơ, tìm kiếm và ánh xạ kết quả về nguồn. Đầu vào sai có thể là nguyên nhân khiến câu trả lời sai.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Store chỉ giữ vectơ và không có đường lấy nội dung. Còn thiếu gì?
+**Câu 1 — Chọn một.** Vector store trả ID đúng nhưng lookup văn bản dùng chỉ số mảng sau khi sắp xếp lại. Câu trả lời dẫn nhầm đoạn. Sửa ở đâu trước?
 
-A. Chỉ màu giao diện.
+A. Đổi mô hình sinh sang loại lớn hơn.
 
-B. Chỉ token dài hơn.
+B. Ánh xạ định danh kết quả về đúng nội dung nguồn.
 
-C. Chỉ lời giải thích.
+C. Thêm chỉ dẫn mô hình kiểm tra kỹ trích dẫn.
 
-D. Đoạn văn bản gốc hoặc tham chiếu ánh xạ về văn bản.
+D. Tăng k để hy vọng đoạn đúng cũng xuất hiện.
 
-**2. Chọn một.** Truy vấn tìm kiếm trả nhầm đoạn văn bản. Nên kiểm tra trực tiếp phần nào?
+**Câu 2 — Chọn một.** Tăng k từ nhỏ lên lớn cải thiện câu hỏi cần nhiều đoạn nhưng làm sai các câu đơn giản. Cách chọn k phù hợp nhất?
 
-A. Dữ liệu/chunk, các vectơ biểu diễn và tìm kiếm/ánh xạ kết quả.
+A. Chọn k bằng số trang của toàn bộ kho.
 
-B. Chỉ độ lịch sự câu trả lời.
+B. Giữ k nhỏ nhất vì ít token luôn chính xác hơn.
 
-C. Chỉ thông báo “đã xong”.
+C. Giữ k lớn nhất vì chứa nhiều thông tin nhất.
 
-D. Không cần xem nguồn.
+D. Chọn k theo chất lượng, nhiễu và chi phí từng nhóm hỏi.
 
-**3. Chọn một.** Tăng k lên rất lớn có luôn tốt không?
+**Câu 3 — Chọn hai.** Một vector store chỉ lưu vectơ và điểm tương đồng. Hai thành phần nào còn cần để trả lời có thể kiểm tra?
 
-A. Có, mọi nguồn đều hữu ích.
+A. Một nhãn “đã xác minh” dựa trên điểm tương đồng cao.
 
-B. Không; cần cân bằng bao phủ với nhiễu/context và đo trên tác vụ.
+B. Mối liên hệ ổn định giữa từng vectơ và nguồn của nó.
 
-C. Có, ngữ cảnh vô hạn.
+C. Câu trả lời mẫu duy nhất dùng cho mọi vectơ gần nhau.
 
-D. Có, không cần evaluation.
+D. Văn bản gốc hoặc tham chiếu đủ để lấy lại văn bản.
 
-## Đáp án
+**Câu 4 — Chọn một.** Câu trả lời sai và đoạn đầu vào cũng sai chủ đề. Nhóm định chỉ sửa prompt sinh. Bước hợp lý hơn là gì?
 
-1. **D.** D nối truy xuất dữ liệu với đối chiếu dữ liệu nguồn; A, B, C không khôi phục nguồn.
+A. Truy vết chunk, embedding, truy vấn và ánh xạ nguồn.
 
-2. **A.** A kiểm tra tầng gây lỗi; B và C không sửa truy xuất dữ liệu, D bỏ bằng chứng.
+B. Đưa câu trả lời đúng vào prompt để bỏ qua kho dữ liệu.
 
-3. **B.** B thể hiện đánh đổi; A giả định mọi dữ liệu liên quan, C và D bỏ giới hạn/kiểm chứng.
+C. Tăng giới hạn đầu ra để mô hình có thêm cơ hội tự sửa.
+
+D. Chấm riêng văn phong để chọn prompt nghe đáng tin hơn.
+
+**Câu 5 — Chọn hai.** Sau đổi k, nhóm báo độ chính xác trung bình tăng. Hai kiểm tra nào cần trước triển khai?
+
+A. Coi cải thiện trung bình là bằng chứng mọi câu hỏi đều tốt hơn.
+
+B. Bỏ đánh giá truy xuất vì đã đo câu trả lời cuối.
+
+C. Đo ngữ cảnh, độ trễ và lượng nội dung trùng được đưa vào.
+
+D. Kiểm tra nhóm câu hỏi bị giảm chất lượng hoặc thiếu điều kiện quan trọng.
+
+## Đáp án và giải thích
+
+1. **B.** A sai: Không sửa việc đưa sai văn bản vào ngữ cảnh. B đúng: Đây là lỗi liên kết dữ liệu, không phải suy luận. C sai: Không thể sửa nguồn đã bị tráo ở trước prompt. D sai: Có thể thêm nhiễu và vẫn giữ lỗi ánh xạ.
+
+2. **D.** A sai: Kích thước kho không xác định số đoạn cần cho từng câu. B sai: Có thể thiếu bằng chứng cho câu nhiều điều kiện. C sai: Nội dung thêm có thể gây nhiễu hoặc vượt ngữ cảnh. D đúng: Không có k tối ưu chung chỉ từ một chỉ số.
+
+3. **B, D.** A sai: Điểm tìm kiếm không xác minh sự thật. B đúng: Tránh đưa nhầm đoạn khi tra ngược. C sai: Gần nghĩa chưa chứng minh cùng đáp án. D đúng: Mô hình cần nội dung, không chỉ điểm.
+
+4. **A.** A đúng: Đầu vào sai cần điều tra tầng tạo đầu vào. B sai: Che một ca mà không sửa cơ chế tìm kiếm. C sai: Đầu ra dài không thay dữ liệu liên quan. D sai: Không đo tính đúng bằng chứng.
+
+5. **C, D.** A sai: Không suy ra phân bố lỗi từ trung bình. B sai: Mất khả năng xác định nguyên nhân và điểm yếu. C đúng: Chất lượng phải xét cùng chi phí và giới hạn. D đúng: Trung bình có thể che lỗi theo nhóm.
 
 ## Đối chiếu RAG trên Bedrock
 

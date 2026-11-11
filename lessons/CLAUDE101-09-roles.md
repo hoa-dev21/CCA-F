@@ -13,42 +13,66 @@ Ví dụ: Bạn cung cấp bảng doanh số và nhờ Claude viết bản nháp
 
 Nếu một quy trình được lặp lại thường xuyên, chẳng hạn kiểm tra bài viết theo hướng dẫn thương hiệu, có thể đóng gói các bước và tiêu chí thành skill để dùng lại. Kết quả mỗi lần chạy vẫn cần được kiểm tra.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Chọn use-case đầu tiên để đánh giá có ích nhất thế nào?
+**Câu 1 — Chọn một.** Nhóm muốn thử AI cho báo cáo doanh số trước khi mở rộng sang quyết định thương mại. Pilot nào có khả năng kiểm chứng tốt nhất?
 
-A. Một nhiệm vụ thật lặp lại, có dữ liệu và tiêu chí kiểm tra.
+A. Giao chọn chiến lược bán hàng toàn năm rồi đánh giá bằng cảm giác của quản lý.
 
-B. Một yêu cầu vô hạn không mục tiêu.
+B. Chọn một chủ đề không có dữ liệu gốc để xem khả năng tự tìm hiểu.
 
-C. Chỉ tác vụ không bao giờ làm.
+C. Đánh giá chỉ bằng tốc độ tạo báo cáo vì nội dung sẽ được dùng về sau.
 
-D. Không cần dữ liệu nguồn.
+D. AI soạn từ bảng có sẵn; kiểm tra phép tính và kết luận.
 
-**2. Chọn một.** Có ví dụ ứng dụng trong finance/legal nghĩa gì?
+**Câu 2 — Chọn hai.** AI viết bản ghi nhớ từ bảng khách hàng. Hai kiểm tra nào cần trước khi sử dụng?
 
-A. AI thay mọi chuyên gia.
+A. Kiểm tra kết luận có được hỗ trợ bởi số liệu hay đã suy diễn vượt nguồn.
 
-B. Đầu ra không cần kiểm tra.
+B. Đối chiếu phép tính và tên khách hàng với dữ liệu gốc.
 
-C. Không tự chứng minh phù hợp mọi quyết định chuyên môn; vẫn cần đánh giá theo bối cảnh.
+C. Coi vai trò “chuyên gia phân tích” trong prompt là bằng chứng độ chính xác.
 
-D. Mọi quyết định đều được phép tự động.
+D. Dùng một bản tóm tắt thứ hai từ cùng mô hình làm chuẩn duy nhất, thay cho đối chiếu bảng nguồn.
 
-**3. Chọn một.** Nhóm muốn chuẩn hóa brand kiểm tra lặp lại. Tài liệu bài gợi ý hướng nào?
+**Câu 3 — Chọn một.** Một ví dụ khóa học dùng AI sắp xếp tài liệu pháp lý. Nhóm suy ra AI có thể tự phê duyệt mọi quyết định chuyên môn. Nhận định phù hợp?
 
-A. Chỉ chat mới không lưu cách làm.
+A. Có thể suy ra nếu câu trả lời đính kèm nhiều thuật ngữ chuyên ngành.
 
-B. Đóng gói quy trình phù hợp thành skill và kiểm tra kết quả.
+B. Một ví dụ thành công chưa chứng minh năng lực toàn lĩnh vực.
 
-C. Chỉ một ảnh logo.
+C. Có thể suy ra nếu tài liệu được trình bày nhất quán theo cùng mẫu.
 
-D. Xóa style guide.
+D. Có thể suy ra sau khi đổi vai trò thành chuyên gia cấp cao.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Nhóm kiểm tra bài viết theo thương hiệu mỗi tuần. Hai thành phần nào đáng đưa vào skill dùng lại?
 
-1. **A.** A cho phép đo giá trị; B khó nghiệm thu, C ít đại diện, D thiếu căn cứ.
+A. Quy tắc tự công bố mọi bài đạt mẫu mà không xét phạm vi được giao.
 
-2. **C.** C tránh suy rộng ví dụ; A, B, D bỏ trách nhiệm và ràng buộc.
+B. Nội dung chiến dịch đầu tiên làm dữ liệu cố định cho mọi chiến dịch sau.
 
-3. **B.** B tái sử dụng thủ tục; A lặp công sức, C thiếu quy tắc, D bỏ nguồn.
+C. Ví dụ đạt/chưa đạt và cách báo những điểm cần người duyệt quyết định.
+
+D. Các bước kiểm tra và tiêu chí chấp nhận theo hướng dẫn thương hiệu.
+
+**Câu 5 — Chọn một.** Pilot tiết kiệm thời gian soạn thảo nhưng người duyệt phải sửa nhiều kết luận sai. Nhóm nên đánh giá kết quả thế nào?
+
+A. Chỉ tính thời gian đến bản nháp đầu vì đó là phần AI phụ trách.
+
+B. Bỏ ca phải sửa để đo tốc độ ở các lần chạy thành công.
+
+C. Tăng số báo cáo tự tạo để bù cho thời gian người duyệt.
+
+D. Đo chất lượng cuối và thời gian gồm cả kiểm tra, sửa lỗi.
+
+## Đáp án và giải thích
+
+1. **D.** D giới hạn phạm vi và có chuẩn đối chiếu. A quá rộng, tiêu chí mơ hồ; B thiếu căn cứ; C bỏ chất lượng đầu ra.
+
+2. **A, B.** B kiểm tra dữ kiện; A kiểm tra suy luận. D có thể lặp cùng lỗi ở bản tóm tắt khác và không thay thế đối chiếu dữ liệu gốc. C vai trò chỉ định hướng cách trả lời, không chứng minh chuyên môn hay tính đúng.
+
+3. **B.** B phân biệt hỗ trợ có phạm vi và quyết định chuyên môn. C đánh giá hình thức; D thay nhãn vai trò; A dùng thuật ngữ thay bằng chứng năng lực.
+
+4. **C, D.** D đóng gói quy trình; C giúp phân biệt lỗi và giới hạn. B trộn dữ liệu riêng với cách làm; A tự mở rộng từ hỗ trợ kiểm tra sang quyền công bố.
+
+5. **D.** D đo giá trị toàn quy trình. A chuyển chi phí sang người dùng mà không tính; B thiên lệch mẫu; C tăng sản lượng không giải quyết lỗi.

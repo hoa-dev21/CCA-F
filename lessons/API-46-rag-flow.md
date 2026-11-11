@@ -13,45 +13,69 @@ Bài dùng độ tương đồng cosine (cosine similarity) và khoảng cách c
 
 Đây là điểm phục vụ tìm kiếm, không phải mức chắc chắn rằng câu trả lời đúng. Ví dụ: tài liệu nói về cách sửa lỗi phần mềm nhưng không nêu số lỗi đã sửa. Dù tài liệu gần nghĩa với câu hỏi, hệ thống vẫn cần nói rõ thiếu bằng chứng hoặc tìm thêm nguồn, không tự điền một con số.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Sau khi tìm được vectơ liên quan, cần đưa gì vào prompt trả lời?
+**Câu 1 — Chọn một.** Vector search trả đúng ID chunk nhưng prompt chỉ chứa dãy số vectơ. Câu trả lời thiếu thông tin. Bước nào bị bỏ sót?
 
-A. Chỉ một mảng số không có nguồn.
+A. Tăng độ chính xác số thập phân của vectơ trong prompt.
 
-B. Chỉ tên mô hình.
+B. Tạo thêm embedding cho câu trả lời dự kiến.
 
-C. Câu hỏi cùng nội dung nguồn cần thiết.
+C. Lookup văn bản từ ID và gửi kèm câu hỏi vào prompt.
 
-D. Một điểm độ tương đồng như đáp án.
+D. Yêu cầu mô hình tự giải mã vectơ thành tài liệu.
 
-**2. Chọn một.** Với cosine distance định nghĩa 1-similarity, giá trị thấp thường chỉ điều gì?
+**Câu 2 — Chọn một.** Sau cập nhật tài liệu, câu trả lời vẫn trích chính sách cũ dù prompt rõ. Cách điều tra đầu tiên hợp lý nhất?
 
-A. Độ gần cao hơn theo thước đo đó.
+A. Xóa mọi trích dẫn để tránh người dùng nhìn thấy bản cũ.
 
-B. Luôn là câu trả lời đúng.
+B. Chỉ đổi vai trò hệ thống thành chuyên gia chính sách.
 
-C. Không có tài liệu.
+C. Truy vết bản chunk từ kho qua retrieval tới prompt.
 
-D. Quyền truy cập cao hơn.
+D. Tăng ngân sách suy luận để mô hình phát hiện thay đổi chưa nhận.
 
-**3. Chọn một.** Nguồn nói về kỹ thuật nhưng không có số lỗi chương trình đã sửa được hỏi. Nên làm gì?
+**Câu 3 — Chọn hai.** Thiết kế luồng RAG gồm bước chuẩn bị và bước hỏi. Hai cặp dữ liệu nào phải được nối đúng?
 
-A. Tự tạo một con số hợp lý.
+A. Embedding truy vấn với các vectơ tài liệu trong không gian tương thích.
 
-B. Nêu thiếu bằng chứng hoặc truy xuất thêm nguồn phù hợp.
+B. Câu trả lời cuối với vectơ gần nhất, không cần câu hỏi gốc.
 
-C. Coi tiêu đề là đáp án số.
+C. Thứ hạng tìm kiếm với số trang của tài liệu, coi hai số là một.
 
-D. Dùng distance làm số lỗi chương trình.
+D. Embedding của chunk với văn bản hoặc tham chiếu nguồn tương ứng.
 
-## Đáp án
+**Câu 4 — Chọn một.** Truy xuất lấy đúng tài liệu và prompt có đủ đoạn, nhưng mô hình bỏ qua ngoại lệ đã có. Tầng sửa ưu tiên là gì?
 
-1. **C.** C cung cấp bằng chứng có nghĩa; A thiếu văn bản, B không có dữ liệu, D nhầm score với nội dung.
+A. Tạo lại toàn bộ embedding trước khi xem câu trả lời.
 
-2. **A.** A đúng quan hệ thước đo; B suy rộng độ đúng, C và D không liên quan.
+B. Tăng top-k để bổ sung càng nhiều đoạn càng tốt.
 
-3. **B.** B giữ đối chiếu dữ liệu nguồn; A bịa, C và D nhầm metadata/score với sự kiện.
+C. Cách mô hình sử dụng ngữ cảnh và tiêu chí chấm câu trả lời.
+
+D. Đổi ID chunk để buộc hệ thống trả tài liệu khác.
+
+**Câu 5 — Chọn hai.** Nhóm muốn kiểm thử đầu cuối RAG thay vì chỉ kiểm tra API tìm kiếm. Hai điều kiện nào cần xác nhận?
+
+A. Chỉ cần mô hình sinh được văn bản sau mỗi truy vấn.
+
+B. Các kết quả tìm kiếm được ánh xạ thành đúng văn bản nguồn trong prompt.
+
+C. Chỉ cần kho có số vectơ bằng số chunk.
+
+D. Câu trả lời đáp ứng câu hỏi và được những đoạn đó hỗ trợ.
+
+## Đáp án và giải thích
+
+1. **C.** A sai: Nhiều chữ số không khôi phục bằng chứng văn bản. B sai: Không cung cấp văn bản nguồn đang thiếu. C đúng: Vectơ phục vụ tìm kiếm; nội dung phục vụ trả lời. D sai: Không phải cơ chế truy xuất nội dung trong luồng RAG.
+
+2. **C.** A sai: Che dấu không sửa đầu vào sai. B sai: Vai trò không cập nhật kho hay ánh xạ nguồn. C đúng: Cần xác định chặng nào đang dùng dữ liệu cũ. D sai: Không suy ra được phiên bản không có trong ngữ cảnh.
+
+3. **A, D.** A đúng: So gần nghĩa chỉ hợp lý khi biểu diễn tương thích. B sai: Mô hình cần nhu cầu cụ thể cùng bằng chứng. C sai: Thứ hạng thay theo truy vấn, không là vị trí nguồn. D đúng: Cần lấy đúng bằng chứng sau tìm kiếm.
+
+4. **C.** A sai: Chưa có bằng chứng lỗi nằm ở biểu diễn. B sai: Thông tin cần thiết đã có; thêm nhiễu có thể không giúp. C đúng: Đã xác nhận tầng tìm kiếm cung cấp đủ bằng chứng. D sai: Phá ánh xạ không giải quyết lỗi dùng bằng chứng.
+
+5. **B, D.** A sai: Có đầu ra không chứng minh đáp ứng nhiệm vụ. B đúng: Kiểm chứng đường dữ liệu tới mô hình. C sai: Số lượng đúng không chứng minh ánh xạ hay nội dung đúng. D đúng: Kiểm chứng đầu ra cuối.
 
 ## Đối chiếu RAG trên Bedrock
 

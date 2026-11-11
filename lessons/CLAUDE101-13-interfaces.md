@@ -13,42 +13,66 @@ Ví dụ: Sửa một sổ làm việc Excel đang mở, có các công thức p
 
 Mỗi giao diện có khả năng, quyền truy cập và điều kiện sử dụng riêng. Không nên mặc định dữ liệu hoặc quyền ở một nơi tự chuyển sang mọi nơi khác. Khi ôn Architect, dùng bài này để hiểu cách chọn môi trường làm việc, rồi học các nội dung kỹ thuật theo đề cương thi thay vì học thuộc mọi tên sản phẩm.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Cần sửa workbook đang mở, hiểu phụ thuộc công thức. Cách phù hợp bài?
+**Câu 1 — Chọn một.** Người dùng cần sửa workbook đang mở có công thức phụ thuộc nhau. Trợ lý tạo một file Excel mới với số liệu tĩnh. Thiếu sót chính là gì?
 
-A. Chỉ viết một đoạn văn chung.
+A. Chưa dùng đủ nhiều sheet trong file mới.
 
-B. Bỏ file đang dùng.
+B. Chưa trình bày công thức bằng lời giải thích dài hơn.
 
-C. Tích hợp Excel phù hợp và kiểm tra thay đổi trong workbook.
+C. Chưa gửi file mới qua cùng kênh chat như yêu cầu ban đầu.
 
-D. Chỉ đổi tên mô hình.
+D. Chưa chọn công cụ sửa và kiểm chứng đúng workbook.
 
-**2. Chọn một.** Có quyền trong một giao diện có chứng minh mọi giao diện đều truy cập cùng dữ liệu không?
+**Câu 2 — Chọn hai.** Một yêu cầu được chuyển từ Slack sang công cụ phát triển phần mềm. Hai điều cần xác minh lại?
 
-A. Không; cần xác minh môi trường, tích hợp và quyền của từng giao diện.
+A. Quyền thực thi và khả năng kiểm tra kết quả của công cụ mới.
 
-B. Có, tên Claude đủ bảo đảm.
+B. Dữ liệu và repository cần dùng có thực sự truy cập được trong môi trường mới.
 
-C. Có, không cần đăng nhập.
+C. Mặc định nội dung đã thấy ở phiên trước luôn có trong ngữ cảnh mới.
 
-D. Có, mọi file đều công khai.
+D. Mặc định quyền ở Slack tự chuyển sang mọi công cụ khác.
 
-**3. Chọn một.** Muốn chọn công cụ cho nhiệm vụ, nên xét trước điều gì?
+**Câu 3 — Chọn một.** Hai công cụ cùng có thể “hỗ trợ tài liệu”: một chỉ tạo file mới, một sửa tài liệu đang mở. Người dùng yêu cầu cập nhật bảng hiện tại và giữ nhận xét. Cách chọn phù hợp?
 
-A. Chỉ logo.
+A. Dùng chat mô tả thay đổi để người dùng tự suy ra tài liệu đã được cập nhật.
 
-B. Dữ liệu ở đâu, thao tác cần làm và mức kiểm chứng/quyền cần có.
+B. Chọn công cụ tiếp cận đúng tài liệu và kiểm tra được bảng cùng nhận xét sau sửa.
 
-C. Chỉ tên dài nhất.
+C. Chọn công cụ tạo file nhanh hơn rồi coi file mới thay thế hoàn toàn bản đang mở.
 
-D. Số tab trình duyệt.
+D. Chọn theo tên thương hiệu dù chưa kiểm tra khả năng giữ nhận xét.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Nhóm thiết kế một quy trình đa giao diện. Hai câu hỏi nào giúp chọn đúng nơi thực hiện mỗi bước?
 
-1. **C.** C gắn đúng môi trường/dữ liệu; A, B không sửa đối tượng cần thiết, D không tạo tích hợp.
+A. Giao diện nào tạo lời xác nhận hoàn thành dài nhất.
 
-2. **A.** A phân biệt lớp truy cập; B, C, D suy rộng quyền không có.
+B. Giao diện nào xuất hiện nhiều nhất trong video hướng dẫn cũ.
 
-3. **B.** B liên hệ đúng yêu cầu; A, C, D không quyết định khả năng hoàn thành.
+C. Có quyền phù hợp và cách kiểm chứng thay đổi tại đích hay không.
+
+D. Dữ liệu đích ở đâu và cần đọc, sửa hay thực thi thao tác gì.
+
+**Câu 5 — Chọn một.** Trợ lý đã giải thích cách sửa code trong chat. Báo cáo dự án ghi “đã sửa và test đạt”. Điều chỉnh nào đúng?
+
+A. Giữ báo cáo vì lời giải thích bao gồm cả lệnh test nên đã tương đương thực thi.
+
+B. Thêm ảnh chụp đoạn chat làm bằng chứng test đạt.
+
+C. Nhờ reviewer kiểm tra logic bản vá trong chat rồi ghi kết quả review thành trạng thái test đã chạy đạt.
+
+D. Chưa xác nhận sửa xong: cần áp dụng và test trong repository.
+
+## Đáp án và giải thích
+
+1. **D.** D phân biệt tạo bản sao với sửa phiên làm việc đích. A và B không giải quyết đối tượng; C kênh giao tiếp không tạo liên kết workbook.
+
+2. **A, B.** B kiểm tra dữ liệu; A kiểm tra khả năng và quyền. D và C suy sự kế thừa không được bảo đảm.
+
+3. **B.** B đáp ứng thao tác và ràng buộc bảo toàn. C có thể mất trạng thái; D không đánh giá khả năng; A nhầm hướng dẫn với hành động.
+
+4. **C, D.** D xác định yêu cầu kỹ thuật; C xác nhận khả năng thực tế. B dựa vào sự quen thuộc lịch sử; A dùng lời nói thay bằng chứng.
+
+5. **D.** D nối báo cáo với hành động và quan sát. A nhầm lệnh được viết với lệnh đã chạy. B chứng minh có đề xuất, không có kết quả test. C bổ sung review logic có ích nhưng review không phải bằng chứng rằng bản vá đã áp dụng và kiểm thử thực tế đã đạt.

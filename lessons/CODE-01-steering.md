@@ -15,40 +15,66 @@ Cần phân biệt mục tiêu (goal) với việc chạy lặp (loop). Mục ti
 
 Nếu nhiều phiên cùng sửa một kho mã nguồn, Git worktrees cho mỗi phiên một cây tệp riêng để giảm việc ghi đè. Sau khi hợp nhất, vẫn phải kiểm tra các thay đổi có tương thích hay không. Khi ôn thi, ưu tiên lập kế hoạch, quản lý ngữ cảnh và bằng chứng thực thi; đối chiếu đề cương riêng cho các tính năng bổ sung.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Sau compact, tác nhân AI quên ràng buộc thiết kế. Cải thiện phù hợp nhất?
+**Câu 1 — Chọn một.** Sau compact, tác nhân tiếp tục refactor nhưng bỏ ràng buộc “không đổi API công khai”. Trước khi tiếp tục phiên dài, thay đổi nào giảm đúng rủi ro này?
 
-A. Chỉ tăng số lần compact.
+A. Bàn giao ràng buộc và trạng thái cần giữ; kiểm tra lại diff.
 
-B. Chỉ định rõ ràng buộc và trạng thái cần giữ trong bản tóm tắt.
+B. Tăng giới hạn câu trả lời để tác nhân có chỗ nhắc lại mọi quyết định.
 
-C. Xóa mọi kết quả kiểm tra.
+C. Gửi lại yêu cầu refactor ban đầu, bỏ trạng thái công việc đang làm.
 
-D. Chỉ đổi tên phiên.
+D. Chỉ ghi tên nhánh để tác nhân tự suy ra các ràng buộc trước đó.
 
-**2. Chọn một.** Hai phiên đang sửa cùng file và ghi đè nhau. Biện pháp trong bài?
+**Câu 2 — Chọn hai.** Hai phiên phải sửa cùng một mô-đun nhưng có mục tiêu độc lập. Nhóm muốn tránh ghi đè khi làm việc đồng thời. Hai biện pháp nào phù hợp?
 
-A. Cho cả hai dùng cùng cây file và chạy nhanh hơn.
+A. Dùng chung thư mục và dựa vào prompt “đừng ghi đè”.
 
-B. Bỏ Git.
+B. Dùng worktree riêng cho từng nhánh công việc.
 
-C. Tách công việc bằng worktrees, sau đó kiểm tra khi hợp nhất.
+C. Xem worktree riêng là đủ để bỏ bước kiểm thử tích hợp.
 
-D. Chỉ tăng output tokens.
+D. Review và kiểm thử lại khi hợp nhất các thay đổi.
 
-**3. Chọn một.** Điều kiện hoàn tất nào dễ kiểm chứng từ transcript nhất?
+**Câu 3 — Chọn một.** Tác nhân báo đã refactor xong, code trông ngắn hơn nhưng chưa có kết quả thực thi. Tiêu chí hoàn tất nào kiểm chứng được rõ nhất?
 
-A. “Mọi thứ trông chuyên nghiệp.”
+A. Không còn lời đề nghị sửa tiếp trong câu trả lời.
 
-B. “Chắc là không còn lỗi.”
+B. Số dòng giảm và tác nhân đánh giá rủi ro thấp.
 
-C. “Đã dành nhiều thời gian.”
+C. Test liên quan và typecheck đạt; diff đã được rà soát.
 
-D. “Các test đã chỉ định và type checker chạy thành công, có kết quả được ghi lại.”
+D. Tác nhân đã dành đủ số lượt dự kiến cho nhiệm vụ.
 
-## Đáp án
+**Câu 4 — Chọn một.** Người dùng sửa yêu cầu giữa phiên: giữ cách lưu dữ liệu cũ, chỉ thay UI. Tác nhân đã lên kế hoạch đổi cả schema. Bước tiếp theo nào hợp lý nhất?
 
-1. **B.** A không cải thiện thông tin giữ lại; C làm mất bằng chứng; D không thay ngữ cảnh.
-2. **C.** A giữ nguyên xung đột; B bỏ công cụ quản lý thay đổi; D không cô lập file.
-3. **D.** A và B mơ hồ; C đo thời gian thay vì kết quả.
+A. Hoàn tất kế hoạch cũ để tránh lãng phí phần đã nghiên cứu.
+
+B. Tiếp tục đổi schema nhưng không nhắc trong báo cáo UI.
+
+C. Tóm tắt yêu cầu mới nhưng vẫn giữ các bước schema trong kế hoạch.
+
+D. Cập nhật phạm vi/kế hoạch, kiểm tra thay đổi đã làm và chỉ tiếp tục phần phù hợp yêu cầu mới.
+
+**Câu 5 — Chọn hai.** Phiên dài chuyển sang tác nhân mới để hoàn tất sửa lỗi. Hai dữ liệu nào nên có trong bàn giao?
+
+A. Ràng buộc, file đã sửa, kết quả kiểm tra và phần còn chưa xác minh.
+
+B. Chỉ lời kết luận “gần xong” để tránh tạo thiên lệch.
+
+C. Nguồn/đường dẫn cần đọc lại cùng các bước tiếp theo cụ thể.
+
+D. Toàn bộ transcript thay cho việc chỉ ra trạng thái công việc.
+
+## Đáp án và giải thích
+
+1. **A.** A bảo toàn thông tin điều khiển và kiểm tra việc tuân thủ. B tăng đầu ra không đưa lại dữ kiện đã mất. C mất tiến độ và quyết định mới. D tên nhánh không chứa hợp đồng thiết kế.
+
+2. **B, D.** B cách ly file đang sửa; D phát hiện xung đột ngữ nghĩa sau hợp nhất. A chỉ là lời nhắc trong khi vẫn chung file. C nhầm cách ly thao tác với tính tương thích của kết quả.
+
+3. **C.** C gắn hoàn tất với bằng chứng thực thi và phạm vi thay đổi. A là trạng thái hội thoại; B là chỉ số trình bày; D là lượng công việc đã tiêu, không phải tính đúng.
+
+4. **D.** D đưa chỉ dẫn mới vào hành động và rà tác động đã có. A ưu tiên chi phí chìm. B thay đổi ngoài phạm vi. C đổi mô tả mà không đổi kế hoạch thực thi.
+
+5. **A, C.** A và C cho phép tiếp tục có kiểm chứng, phân biệt đã làm và còn mở. B không cung cấp trạng thái. D có thể dùng làm nguồn phụ nhưng không thay thế bàn giao rõ ràng và dễ chứa thông tin cũ.

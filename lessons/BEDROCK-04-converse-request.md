@@ -13,42 +13,66 @@ Mã mô hình và khả năng truy cập phụ thuộc môi trường, vùng và
 
 Ví dụ đơn giản lấy khối văn bản đầu tiên để hiển thị. Khi dùng công cụ hoặc nhiều loại nội dung, cần giữ tin nhắn đầy đủ cho lịch sử và xử lý tiếp. Các mã định danh, vùng và phiên bản thư viện trong video cần được kiểm tra khi thực hành.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Đã chuyển sang Converse nhưng mã vẫn đọc phản hồi theo cấu trúc của API cũ nên bị lỗi. Cần sửa gì?
+**Câu 1 — Chọn một.** Sau chuyển sang Converse, request thành công nhưng code vẫn đọc response.content của API cũ. Sửa phù hợp nhất?
 
-A. Chỉ tăng temperature.
+A. Bọc JSON trả về trong một trường content nhưng giữ nguyên các giả định block cũ.
 
-B. Chỉ đổi prompt.
+B. Chỉ sửa request cho Converse; giữ parser response cũ vì lời gọi đã thành công.
 
-C. Bỏ xử lý phản hồi.
+C. Sửa adapter Converse, gồm output.message trong mẫu.
 
-D. Adapter theo cấu trúc request/response đúng nhà cung cấp.
+D. Đọc chuỗi đầu tiên tìm được ở bất kỳ trường nào của JSON.
 
-**2. Chọn một.** Service báo mô hình không tồn tại trong môi trường đã chọn. Kiểm tra trực tiếp?
+**Câu 2 — Chọn hai.** Ví dụ chỉ hiển thị khối text đầu tiên; production có text và tool-use blocks. Hai thay đổi nào cần?
 
-A. Model/profile ID, vùng hỗ trợ và quyền/cấu hình tài khoản.
+A. Giữ tin nhắn đầy đủ để lưu lịch sử và xử lý tiếp.
 
-B. Chỉ độ dài câu hỏi.
+B. Chỉ lưu text hiển thị để giảm context ở mọi trường hợp.
 
-C. Chỉ tone hệ thống.
+C. Phân loại/xử lý các block theo hợp đồng thay vì coi mọi block là text.
 
-D. Chỉ font UI.
+D. Ghép tên tool vào text rồi bỏ block có cấu trúc.
 
-**3. Chọn một.** Inference profile có tự loại mọi ràng buộc dữ liệu theo vùng không?
+**Câu 3 — Chọn một.** Service báo model không tồn tại trong môi trường được chọn; cùng notebook từng chạy ở tài khoản khác. Kiểm tra nào ưu tiên?
 
-A. Có, không cần kiểm tra.
+A. Đổi sang region notebook đã chạy và coi cấu hình tài khoản hiện tại là tương đương.
 
-B. Không; phải đối chiếu routing và ràng buộc thực tế của môi trường.
+B. ID/profile, vùng và quyền tài khoản đang dùng.
 
-C. Có, tên profile đủ bảo đảm.
+C. Sao chép ID từ ví dụ cùng model family mà không kiểm tra profile hiện hành.
 
-D. Có, bất kể chính sách tổ chức.
+D. Retry cùng cấu hình theo exponential backoff trước khi kiểm tra quyền truy cập.
 
-## Đáp án
+**Câu 4 — Chọn một.** Nhóm dùng inference profile và cho rằng từ đó mọi ràng buộc nơi xử lý dữ liệu đều không còn. Kiến trúc sư nên làm gì?
 
-1. **D.** D sửa hợp đồng; A và B không đổi cấu trúc, C mất kết quả.
+A. Chấp nhận vì profile là một tên trừu tượng không gắn vùng.
 
-2. **A.** A nhắm lỗi tích hợp; B, C, D không làm mô hình có sẵn.
+B. Dựa riêng vào vùng SDK để kết luận routing.
 
-3. **B.** B giữ kiểm tra cấu hình; A, C, D suy rộng cơ chế định tuyến.
+C. Chỉ kiểm tra request thành công, vì lỗi policy sẽ luôn được trả ngay.
+
+D. Đối chiếu routing profile với ràng buộc dữ liệu.
+
+**Câu 5 — Chọn hai.** Khi thay adapter Anthropic trực tiếp bằng Converse, hai kiểm thử nào có giá trị nhất?
+
+A. Request/response có nhiều block và lịch sử tool interaction được bảo toàn.
+
+B. Chỉ một prompt “xin chào” trả text không rỗng.
+
+C. Các trạng thái kết thúc/lỗi được chuyển đúng cho hệ điều phối.
+
+D. So sánh tên biến local giữa hai implementation phải giống nhau.
+
+## Đáp án và giải thích
+
+1. **C.** C cập nhật đúng tầng adapter. A đổi vỏ ngoài nhưng chưa ánh xạ nội dung/blocks. B thành công request không chứng minh parser response tương thích. D lấy chuỗi tùy ý có thể đọc nhầm metadata hoặc mất block.
+
+2. **A, C.** A bảo toàn giao thức, C xử lý đúng loại nội dung. B có thể mất yêu cầu công cụ. D đổi cấu trúc thành văn bản không bảo toàn ID/tham số và quan hệ kết quả.
+
+3. **B.** B kiểm tra các điều kiện truy cập thực. A sửa một yếu tố nhưng bỏ khác biệt tài khoản; C suy từ ví dụ/model family; D xử lý như lỗi tạm thời dù chưa có bằng chứng.
+
+4. **D.** D kiểm tra cấu hình và yêu cầu thật. A trừu tượng hóa không xóa nghĩa vụ vùng. B vùng client không đủ mô tả routing. C thành công kỹ thuật không chứng minh đáp ứng mọi yêu cầu tổ chức.
+
+5. **A, C.** A kiểm tra cấu trúc phức tạp, C kiểm tra điều khiển workflow. B là smoke test quá hẹp để chứng minh tương thích. D tên biến không quyết định hợp đồng runtime.

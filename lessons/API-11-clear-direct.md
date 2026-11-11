@@ -13,43 +13,69 @@ Trong ví dụ của bài, một câu hỏi chung về ăn uống được đổ
 
 Bạn vẫn có thể viết yêu cầu dưới dạng câu hỏi. Điều cần kiểm tra là người đọc có hiểu chính xác nhiệm vụ và đầu ra mong muốn hay không. Sau khi sửa cách diễn đạt, hãy thử với dữ liệu của mình để biết kết quả có tốt hơn.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Prompt nào chỉ định rõ sản phẩm nhất?
+**Câu 1 — Chọn một.** Stakeholder viết “báo cáo này khá thú vị, giúp tôi hiểu hơn”. Sản phẩm cần bản tóm tắt ba ý cho lãnh đạo. Chỉnh sửa nào giảm đúng sự mơ hồ?
 
-A. “Tôi thích tìm hiểu báo cáo.”
+A. Nêu tác vụ ba ý, rủi ro cần tìm và người đọc ngay đầu.
 
-B. “Báo cáo này hay nhỉ?”
+B. Chỉ đổi câu kết thành “hãy trả lời thật hữu ích”.
 
-C. “Có nhiều số liệu trong đây.”
+C. Đưa báo cáo vào prompt hai lần để nhấn mạnh tầm quan trọng.
 
-D. “Tóm tắt báo cáo thành ba gạch đầu dòng, nêu rủi ro chính.”
+D. Thêm lời khen model là chuyên gia nhưng giữ nguyên yêu cầu.
 
-**2. Chọn một.** Chỉnh sửa nào trực tiếp giảm mơ hồ về nhiệm vụ?
+**Câu 2 — Chọn hai.** Prompt mới cần sinh báo cáo ra quyết định, không phải trò chuyện khám phá. Hai thông tin nào nên nêu rõ ngay trong yêu cầu?
 
-A. Thêm đoạn tự giới thiệu không liên quan.
+A. Phạm vi vấn đề và đối tượng sử dụng báo cáo.
 
-B. Nêu hành động và đầu ra mong muốn ngay đầu prompt.
+B. Sản phẩm phải bàn giao và cấu trúc mong muốn.
 
-C. Xóa mọi ràng buộc.
+C. Toàn bộ lịch sử cá nhân của người đặt yêu cầu dù không liên quan.
 
-D. Yêu cầu “cố gắng hơn”.
+D. Một lời hứa rằng model phải luôn cho đáp án tự tin.
 
-**3. Chọn một.** Bài có một ví dụ điểm tăng sau sửa prompt. Có thể kết luận gì?
+**Câu 3 — Chọn một.** Sau khi viết prompt trực tiếp hơn, điểm một ca tăng mạnh. Nhóm muốn áp dụng cùng công thức cho mọi nhiệm vụ. Kết luận nào thận trọng nhưng hữu ích?
 
-A. Mọi ứng dụng tăng đúng mức đó.
+A. Chỉ cần duyệt độ rõ của prompt bằng mắt.
 
-B. Không cần kiểm thử lại.
+B. Cần đo lại theo tác vụ và rubric của từng ứng dụng.
 
-C. Kỹ thuật hữu ích trong ví dụ, cần đo với tác vụ của mình.
+C. Mức tăng ở một ca chứng minh mọi prompt dài hơn đều tốt hơn.
 
-D. Mọi prompt ngắn đều tốt.
+D. Kỹ thuật chỉ áp dụng cho đúng câu chữ demo nên không cần thử nơi khác.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Đội đang sửa “phân tích dữ liệu này” thành yêu cầu có thể kiểm thử. Hai bổ sung nào trực tiếp giúp người chấm xác định đã hoàn thành?
 
-1. **D.** A, B, C chỉ nêu quan tâm hoặc nhận xét, chưa xác định đầu ra.
-2. **B.** A thêm nhiễu; C mất yêu cầu; D không cho biết thành công trông như thế nào.
-3. **C.** A suy rộng số đo; B bỏ xác minh; D nhầm ngắn với rõ.
+A. Lặp từ “chính xác” ở mỗi đoạn thay cho tiêu chí cụ thể.
+
+B. Nêu phải trả bảng kết quả và các hạn chế dữ liệu.
+
+C. Nêu cần so sánh chỉ số nào trong khoảng thời gian nào.
+
+D. Nêu model phải dùng từ ngữ “chuyên sâu” trong tiêu đề.
+
+**Câu 5 — Chọn một.** Một prompt rõ ràng yêu cầu “ba rủi ro chính” nhưng nguồn chỉ đủ chứng minh hai. Thiết kế chỉ dẫn nào tránh biến độ rõ thành ép bịa?
+
+A. Lấy một rủi ro và viết lại thành hai mục để đủ định dạng.
+
+B. Đổi “ba” thành “nhiều” để khỏi kiểm tra số lượng.
+
+C. Chỉ nêu rủi ro có căn cứ và báo thiếu bằng chứng.
+
+D. Cho phép suy đoán để điền đủ ba rủi ro.
+
+## Đáp án và giải thích
+
+1. **A.** A nêu hành động, sản phẩm và phạm vi. D xác định vai trò nhưng chưa xác định việc; C lặp dữ liệu; B vẫn là tiêu chí chung khó kiểm tra.
+
+2. **A, B.** B làm rõ đầu ra, A định hướng phạm vi. C thêm nhiễu; D thúc đẩy cách diễn đạt mà không làm rõ tác vụ hay bằng chứng.
+
+3. **B.** B giữ giá trị gợi ý nhưng không suy rộng thiếu dữ liệu. C đánh tráo rõ ràng với độ dài; A bỏ kiểm chứng; D phủ nhận khả năng khái quát mà chưa thử.
+
+4. **B, C.** C xác định công việc, B xác định sản phẩm. D và A là dấu hiệu hình thức không cho biết phân tích đã giải quyết yêu cầu chưa.
+
+5. **C.** C làm rõ cách xử lý thiếu dữ liệu. D và A đạt hình thức bằng nội dung không được hỗ trợ; B bớt ràng buộc nhưng chưa quy định xử lý thiếu nguồn.
 
 ## Đối chiếu Bedrock: Being clear and direct
 

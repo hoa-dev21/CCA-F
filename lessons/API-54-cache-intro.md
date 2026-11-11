@@ -13,45 +13,69 @@ Cache không phải kho lưu câu trả lời cuối để trả nguyên bản. 
 
 Hãy kiểm tra số liệu sử dụng thực tế để biết phần nào được dùng lại. Thời hạn một giờ và cách giải thích bên trong hệ thống ở video là minh họa tại thời điểm giảng, không phải cam kết chung cho mọi mô hình và cấu hình. Theo đề cương đã lưu, chỉ cần biết cơ chế này tồn tại; chi tiết triển khai không phải trọng tâm.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Caching chủ yếu tái sử dụng gì trong bài?
+**Câu 1 — Chọn một.** Ứng dụng đã cache tài liệu dài, lượt sau chỉ gửi câu hỏi vì cho rằng dịch vụ tự nhớ tài liệu. Kết quả mất ngữ cảnh. Sửa nào đúng?
 
-A. Mọi câu trả lời cuối bất kể câu hỏi.
+A. Vẫn gửi nội dung cần thiết theo cơ chế cache hỗ trợ.
 
-B. Phần xử lý đầu vào có thể tái sử dụng.
+B. Tăng TTL trong prompt văn bản.
 
-C. Quyền đăng nhập.
+C. Yêu cầu mô hình nhớ ID cuộc gọi trước trong câu hỏi.
 
-D. Mọi lỗi hệ thống xử lý phía máy chủ.
+D. Coi cache là kho câu trả lời và trả đáp án lượt đầu.
 
-**2. Chọn một.** Cache có thay việc truyền ngữ cảnh cần thiết không?
+**Câu 2 — Chọn một.** Hai câu hỏi khác nhau về cùng tài liệu đều có cache hit. Nhóm lo hệ thống sẽ trả cùng câu trả lời. Diễn giải đúng là gì?
 
-A. Có, không cần messages.
+A. Cache hit chứng minh câu hỏi thứ hai giống nghĩa câu đầu.
 
-B. Có, mọi lần đều nhớ.
+B. Tái dùng xử lý prefix; câu trả lời vẫn theo request mới.
 
-C. Không; ứng dụng vẫn gửi yêu cầu/context theo hợp đồng.
+C. Cần tắt cache mỗi khi câu hỏi đổi dù tài liệu giữ nguyên.
 
-D. Có, chỉ cần cùng API key.
+D. Cache hit buộc mô hình phát lại nguyên câu trả lời trước.
 
-**3. Chọn một.** Tác vụ nào là ứng viên đáng đo lợi ích cache?
+**Câu 3 — Chọn hai.** Dịch vụ dùng cùng tài liệu và tool definitions cho nhiều lượt. Hai việc nào giúp đánh giá caching có ích không?
 
-A. Nhiều yêu cầu dùng cùng tài liệu dài ổn định.
+A. Giả định văn bản gần giống nhau luôn được tái sử dụng.
 
-B. Mỗi yêu cầu hoàn toàn khác nguồn.
+B. Chỉ kiểm tra câu trả lời giống nhau giữa hai lượt.
 
-C. Chỉ một yêu cầu nhỏ rồi không lặp.
+C. Đo usage phản ánh tạo/đọc cache ở yêu cầu thực.
 
-D. Không gửi dữ liệu.
+D. So độ trễ và chi phí trên workload đại diện.
 
-## Đáp án
+**Câu 4 — Chọn một.** Nhóm thấy lần gọi thứ hai nhanh hơn và tuyên bố cache hoạt động. Kết luận thận trọng nhất?
 
-1. **B.** B đúng mục tiêu; A nhầm output cache, C và D không phải dữ liệu xử lý prompt.
+A. Có thể coi đó là bằng chứng chắc chắn của cache.
 
-2. **C.** C phân biệt cache với memory; A, B, D giả định tự giữ hội thoại.
+B. Cần đối chiếu số liệu cache vì tốc độ còn chịu nhiều yếu tố.
 
-3. **A.** A có phần lặp; B, C ít cơ hội tái dùng, D không có nội dung để xử lý.
+C. Có thể bỏ gửi tài liệu từ lần tiếp theo.
+
+D. Có thể kết luận nội dung đã chính xác hơn nhờ cache.
+
+**Câu 5 — Chọn hai.** Notebook nêu TTL và một mô hình cụ thể. Hai lựa chọn nào phù hợp khi triển khai ở môi trường khác?
+
+A. Xác minh điều kiện cache của mô hình/API đang dùng.
+
+B. Thêm nội dung lặp vô nghĩa để mọi request giống nhau hơn.
+
+C. Áp nguyên TTL vì đó là thuộc tính bất biến của mọi cache.
+
+D. Đo lợi ích trên nội dung lặp lại thật của ứng dụng.
+
+## Đáp án và giải thích
+
+1. **A.** A đúng: Cache tái sử dụng xử lý, không thay hợp đồng ngữ cảnh. B sai: Lời nhắc không cấu hình cache dịch vụ. C sai: Không tự cấp lại nội dung tài liệu. D sai: Các câu hỏi khác nhau có thể cần đáp án khác.
+
+2. **B.** A sai: Hit không là phép đánh giá ngữ nghĩa của câu hỏi. B đúng: Prompt caching không đồng nghĩa response caching. C sai: Đây chính là trường hợp có thể hưởng lợi từ prefix ổn định. D sai: Nhầm loại dữ liệu được tái sử dụng.
+
+3. **C, D.** A sai: Điều kiện khớp cần theo dịch vụ thực tế. B sai: Không chứng minh cache hit. C đúng: Cần bằng chứng sử dụng cache. D đúng: Lợi ích phụ thuộc tần suất và phần lặp lại.
+
+4. **B.** A sai: Không loại trừ nguyên nhân khác. B đúng: Cảm giác nhanh hơn chưa xác nhận hit. C sai: Không suy ra quyền bỏ ngữ cảnh. D sai: Hiệu năng không xác nhận chất lượng.
+
+5. **A, D.** A đúng: Thông số ví dụ có thể không áp dụng. B sai: Tăng đầu vào không phục vụ nhiệm vụ. C sai: Không có cơ sở bảo đảm chung. D đúng: Không suy rộng từ demo.
 
 ## Đối chiếu tính năng trên Bedrock
 

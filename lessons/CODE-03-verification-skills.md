@@ -13,40 +13,66 @@ Ba loại cấu hình có vai trò khác nhau: CLAUDE.md chứa quy ước thư�
 
 Ví dụ: Một bài kiểm thử báo thành công sau khi AI xóa điều kiện kiểm tra quan trọng, gọi là assertion. Kết quả đó chưa chứng minh tính năng đúng. Cần xem diff — phần khác biệt giữa mã trước và sau khi sửa — để biết phép kiểm tra có bị làm yếu hay không, đồng thời xem kết quả chạy thực tế.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Muốn chuẩn hóa chuỗi kiểm tra lặp lại khi refactor. Nơi phù hợp?
+**Câu 1 — Chọn một.** Nhóm lặp lại chuỗi kiểm chứng khi refactor: đọc diff, chạy test mục tiêu, typecheck, ghi kết quả. Cách đóng gói nào giúp tái sử dụng có chủ đích?
 
-A. Một skill có mô tả phù hợp và các bước kiểm chứng.
+A. Skill ghi rõ lúc dùng, cách kiểm chứng và bằng chứng cần trả.
 
-B. Chỉ ghi trong một phản hồi cũ.
+B. Đưa cả transcript lần refactor trước vào mọi phiên mới.
 
-C. Không lưu quy trình, nhớ hỏi thủ công mỗi lần.
+C. Đặt tên nhánh verify để tác nhân tự suy ra quy trình.
 
-D. Chỉ đổi tên repo.
+D. Chỉ đặt alias lệnh test và coi toàn bộ quy trình đã được chuẩn hóa.
 
-**2. Chọn một.** Test xanh nhưng diff xóa các assertion quan trọng. Kết luận phù hợp?
+**Câu 2 — Chọn một.** Test xanh sau sửa lỗi, nhưng diff cho thấy assertion quan trọng bị xóa. Quyết định nào đúng trước khi chấp nhận?
 
-A. Test xanh luôn đủ.
+A. Chấp nhận bản sửa vì test runner trả exit code 0 và toàn bộ test còn lại đều vượt qua trên nhánh hiện tại.
 
-B. Không cần xem diff test.
+B. Review độ mạnh của test và chạy bằng chứng phù hợp với yêu cầu gốc.
 
-C. Chưa chứng minh yêu cầu; cần xác minh test không bị làm yếu.
+C. Yêu cầu tác nhân tự chấm confidence của bản sửa.
 
-D. Chỉ cần thêm thông báo “pass”.
+D. Chỉ thêm nhiều test không liên quan để bù số assertion đã mất.
 
-**3. Chọn một.** Một bước kiểm tra tuyệt đối không được bỏ qua. Chọn cơ chế nào để cưỡng chế?
+**Câu 3 — Chọn hai.** Một bước kiểm tra bắt buộc tuyệt đối trước hành động phát hành. Hai thành phần nào cần cho thiết kế đáng tin?
 
-A. Chỉ mô tả skill hay hơn.
+A. Mô tả bước đó trong skill để quy trình minh bạch.
 
-B. Hook/kiểm soát mã chạy và chặn khi chưa đạt.
+B. Dựa riêng vào skill như một cơ chế quyền không thể vượt qua.
 
-C. Chỉ thêm ví dụ thành công.
+C. Gate bằng chương trình/quyền tại nơi thực hiện hành động, từ chối khi chưa đạt.
 
-D. Chỉ lưu checklist trong ghi chú riêng.
+D. Cho phát hành trước rồi dùng skill kiểm tra sau để tiết kiệm thời gian chờ.
 
-## Đáp án
+**Câu 4 — Chọn một.** Skill chạy test thành công trên nhánh cũ rồi tác nhân sửa thêm code. Nó muốn dùng kết quả cũ để đánh dấu hoàn tất. Bước phù hợp nhất?
 
-1. **A.** B và C thiếu khả năng tái sử dụng nhất quán; D không chuẩn hóa quy trình.
-2. **C.** A bỏ qua chất lượng phép đo; B bỏ bằng chứng; D tạo nhãn thay cho kiểm tra.
-3. **B.** A, C, D đều vẫn là chỉ dẫn có thể bị bỏ qua.
+A. Chấp nhận nếu thay đổi cuối ít hơn mười dòng.
+
+B. Gắn lại log cũ để giữ lịch sử bằng chứng.
+
+C. Bỏ qua kiểm tra vì skill đã được gọi đúng một lần.
+
+D. Kiểm tra lại phần bị ảnh hưởng trên mã hiện tại.
+
+**Câu 5 — Chọn hai.** Một skill verification được chia sẻ cho dự án có nhiều package. Hai thông tin nào giúp tránh báo thành công giả?
+
+A. Package/phạm vi đã kiểm tra và lệnh thực tế đã chạy.
+
+B. Kết quả, lỗi còn mở và phần không thể kiểm tra.
+
+C. Chỉ câu “all checks passed” không cần phạm vi.
+
+D. Số lượng bước trong skill thay cho kết quả từng gate liên quan.
+
+## Đáp án và giải thích
+
+1. **A.** A mô tả cả lúc dùng, hành động và kết quả cần bàn giao. B lẫn chi tiết lỗi thời. C nhãn không thay hướng dẫn. D chỉ bao phủ một bước, bỏ việc rà diff và đánh giá bằng chứng.
+
+2. **B.** B kiểm tra test còn chứng minh hành vi cần giữ hay không. A coi tín hiệu xanh tách khỏi nội dung test. C không thay thế bằng chứng. D số test không bù việc mất kiểm tra quan trọng.
+
+3. **A, C.** A làm rõ quy trình; C cưỡng chế bất biến. B nhầm hướng dẫn với rào chắn thực thi. D đặt kiểm soát sau tác động, trái điều kiện bắt buộc trước phát hành.
+
+4. **D.** D xét bằng chứng theo revision và phạm vi ảnh hưởng. A kích thước diff không đo hết rủi ro. B log thật nhưng không chứng minh code mới. C đếm lần gọi quy trình thay cho kiểm chứng trạng thái cuối.
+
+5. **A, B.** A và B giới hạn rõ điều bằng chứng hỗ trợ. C có thể đánh đồng kiểm tra một package với toàn repo. D đếm hướng dẫn chứ không xác nhận thực thi thành công.

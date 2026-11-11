@@ -13,45 +13,69 @@ Tuy nhiên, mô hình vẫn có thể chia ba lệnh thành nhiều khối hoặ
 
 Kỹ thuật này phụ thuộc khả năng hỗ trợ của mô hình và phiên bản. Cần kiểm tra đầu ra thực tế, không chỉ định dạng. Ba dòng lệnh sạch chưa chứng minh lệnh đúng, có quyền chạy hoặc phù hợp về tác động. Khi cần dữ liệu có cấu trúc, vẫn phải dùng và kiểm tra theo cơ chế được hỗ trợ.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Prefill chỉ mở code fence, phần sinh bắt đầu bằng từ bash ngoài mong muốn. Vì sao?
+**Câu 1 — Chọn một.** Prefill mở code fence nhưng không gồm nhãn ngôn ngữ; phần sinh bắt đầu bằng “bash”, parser lệnh coi đó là lệnh đầu tiên. Chẩn đoán nào sát nhất?
 
-A. Mô hình luôn bỏ qua prefill.
+A. Ba lệnh bị thiếu quyền nên mô hình đổi sang shell dự phòng.
 
-B. Mô hình đang hoàn thiện nhãn ngôn ngữ của code fence.
+B. API đã gọi shell bash trước khi sinh ba lệnh.
 
-C. API đã thực thi lệnh bash.
+C. Phần sinh đang hoàn thiện nhãn ngôn ngữ của code fence.
 
-D. Stop sequence tự thêm chữ bash.
+D. Stop sequence thêm nhãn bash để bảo đảm tương thích CLI.
 
-**2. Chọn một.** Stop ở fence đóng nhưng chỉ nhận một trong ba lệnh. Nguyên nhân sát ví dụ?
+**Câu 2 — Chọn hai.** Bài yêu cầu ba lệnh trong một khối, stop marker là fence đóng. Chỉ nhận một lệnh và kết thúc tại marker đầu tiên. Hai kiểm tra nào cần trước khi coi đầu ra hoàn tất?
 
-A. Mô hình không hỗ trợ số ba.
+A. Kiểm tra đủ ba lệnh và cấu trúc theo hợp đồng, không chỉ phản hồi kết thúc bình thường.
 
-B. Phản hồi luôn bị cắt vì mạng.
+B. Tự nhân bản lệnh đầu thành ba dòng để đáp ứng số lượng.
 
-C. Không thể có nhiều code blocks trong Markdown.
+C. Kiểm tra model có chia mỗi lệnh thành khối riêng khiến marker đầu tiên cắt sớm không.
 
-D. Mô hình định viết mỗi lệnh trong một block; marker đầu tiên đã kết thúc generation.
+D. Chỉ tăng max_tokens vì stop sequence sẽ đợi đến khi hết ngân sách.
 
-**3. Chọn một.** Đầu ra có đủ ba dòng lệnh và không comment. Có thể tự động chạy ngay không?
+**Câu 3 — Chọn một.** Output có đúng ba lệnh AWS CLI, không comment, đúng một khối. Pipeline muốn chạy ngay trên tài khoản vận hành. Thiết kế nào còn thiếu?
 
-A. Chưa; cần kiểm tra nội dung, quyền và tác động, định dạng không chứng minh tính đúng.
+A. Thêm cùng stop marker vào executor để chặn mọi lệnh nguy hiểm.
 
-B. Có, mọi lệnh do mô hình sinh đều an toàn.
+B. Kiểm tra nội dung, quyền và tác động từng lệnh trước khi thực thi.
 
-C. Có, prefill là cơ chế cấp quyền.
+C. Đếm đủ ba dòng rồi dùng đó làm gate duy nhất.
 
-D. Có, stop sequence validate AWS parameters.
+D. Đổi code fence thành nhãn production để xác nhận phạm vi.
 
-## Đáp án
+**Câu 4 — Chọn một.** Một mô hình khác không hỗ trợ tổ hợp prefill đang dùng. Nhóm bỏ qua lỗi cấu hình rồi ghép thủ công prefix vào phản hồi rỗng. Cách sửa đúng hơn?
 
-1. **B.** Mô hình đang hoàn thiện nhãn ngôn ngữ của code fence. A không đúng hiện tượng; C nhầm sinh với thực thi; D không phải vai trò stop marker.
+A. Chọn cơ chế được hỗ trợ rồi kiểm tra lại đủ ba lệnh.
 
-2. **D.** Mô hình định viết mỗi lệnh trong một block; marker đầu tiên đã kết thúc generation. A/B không có bằng chứng; C sai về Markdown.
+B. Giảm số lệnh từ ba xuống một mà không đổi yêu cầu nghiệp vụ.
 
-3. **A.** Chưa; cần kiểm tra nội dung, quyền và tác động, định dạng không chứng minh tính đúng. B suy rộng sai; C/D gán cho kỹ thuật định dạng khả năng authorization/validation không có.
+C. Bỏ kiểm tra lỗi để downstream luôn nhận một khối mã.
+
+D. Giữ cơ chế cũ vì tên mô hình vẫn thuộc cùng họ.
+
+**Câu 5 — Chọn hai.** Nhóm chỉ được sửa prefill và stop sequences trong bài tập, không đổi yêu cầu tạo ba lệnh. Hai tiêu chí nào cần dùng khi đánh giá bản sửa?
+
+A. Phần sinh đủ ba lệnh trong một khối và không có lời dẫn/comment theo yêu cầu.
+
+B. Chỉ số token thấp nhất kể cả chỉ còn một lệnh.
+
+C. Mọi lệnh đã thực sự chạy thành công chỉ vì chúng có mặt trong đầu ra.
+
+D. Nội dung các lệnh vẫn đáp ứng ba thao tác gốc, không bị cắt hoặc thay nghĩa.
+
+## Đáp án và giải thích
+
+1. **C.** A sai: Không có bằng chứng đã thực thi hoặc kiểm tra quyền trong bài tạo văn bản này. B sai: Sinh nhãn văn bản không phải sự kiện thực thi shell. C đúng: Ranh giới giữa prefill và phần mới sinh ảnh hưởng dữ liệu đầu ra mà downstream nhận. D sai: Chuỗi dừng không có vai trò tự thêm nhãn ngôn ngữ.
+
+2. **A, C.** A đúng: Kết thúc sinh và hoàn tất nhiệm vụ là hai trạng thái khác nhau. B sai: Đủ ba dòng không có nghĩa đủ ba tác vụ lệnh khác nhau theo yêu cầu. C đúng: Điểm dừng đúng cấu hình vẫn có thể xảy ra trước khi đủ nội dung yêu cầu. D sai: Marker có thể kết thúc sớm hơn giới hạn token.
+
+3. **B.** A sai: Marker điều khiển sinh văn bản, không phân tích quyền hay tác động của lệnh. B đúng: Đạt định dạng không chứng minh lệnh đúng mục tiêu, được phép hoặc phù hợp môi trường. C sai: Số dòng không kiểm tra tham số, tài nguyên đích hoặc tác động. D sai: Nhãn Markdown không tạo quyền hay cấu hình tài khoản thực tế.
+
+4. **A.** A đúng: Tương thích là điều kiện của kỹ thuật; ghép chuỗi không khôi phục kết quả chưa được sinh. B sai: Đổi mục tiêu không giải quyết tương thích và vi phạm yêu cầu ban đầu. C sai: Khối rỗng hợp hình thức không đáp ứng tác vụ và che thất bại upstream. D sai: Tên họ không bảo đảm tập tính năng/tổ hợp cấu hình giống nhau.
+
+5. **A, D.** A đúng: Đây là hợp đồng đầu ra mà thay đổi định dạng cần đạt. B sai: Tiết kiệm không bù việc thiếu hai phần bắt buộc. C sai: Bài tạo văn bản không thực thi và không cung cấp bằng chứng môi trường vận hành. D đúng: Thay cách trình bày không cho phép mất chức năng của nhiệm vụ.
 
 ## Đối chiếu qua phụ đề chính thức
 

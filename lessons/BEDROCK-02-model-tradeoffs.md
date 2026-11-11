@@ -13,47 +13,69 @@ Nếu thêm bộ điều phối để chọn mô hình theo yêu cầu, hệ th�
 
 Tên và mã mô hình, vùng hỗ trợ, giá và khả năng suy luận thêm trong khóa thuộc thời điểm giảng. Không nên sao chép mã mô hình rồi mặc định nó dùng được ở mọi vùng, hoặc cho rằng mọi mô hình trong cùng một họ đều có tính năng giống nhau. Chi tiết so sánh hiệu năng mô hình không phải trọng tâm đề cương thi đã lưu.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-Ngoài ghi chú chính thức được dẫn bên dưới, đã đọc toàn bộ phụ đề của bài API “Overview of Claude models”, sources/api-media/287722.json. Phụ đề xác nhận khung đánh đổi và việc có thể phân mô hình theo bước; những mô tả capability theo họ mô hình trong video vẫn là nội dung theo thời điểm, không phải danh mục hiện hành đã xác minh.
+**Câu 1 — Chọn một.** Một hệ có bước phân loại đơn giản cần phản hồi nhanh và bước phân tích khó chạy ít lần. Nhóm muốn chọn mô hình với chi phí hợp lý. Thiết kế nào nên đánh giá?
 
-**1. Chọn một.** Hai bước có yêu cầu độ trễ và độ khó rất khác nhau. Cách lựa chọn phù hợp?
+A. Dùng mô hình lớn nhất cho cả hai để bỏ mọi phép đo.
 
-A. Luôn dùng một mô hình bất kể đo lường.
+B. Đo từng bước và tính cả chi phí điều phối model.
 
-B. Chọn theo màu thương hiệu.
+C. Dùng mô hình rẻ nhất cho cả hai vì phân tích chạy ít.
 
-C. Không cần phép đánh giá.
+D. Chia đều tải cho hai model khác nhau.
 
-D. Đánh giá từng bước, cân nhắc mô hình phù hợp và chi phí điều phối.
+**Câu 2 — Chọn hai.** Router chọn mô hình giúp tiết kiệm tiền gọi API nhưng tăng lỗi phân loại và vận hành. Hai loại số liệu nào cần trước khi giữ router?
 
-**2. Chọn một.** Mô hình ID trong khóa có nên mặc định dùng được ở mọi vùng hiện tại?
+A. Chi phí toàn luồng gồm router, retry và tác vụ chính.
 
-A. Không; kiểm tra hỗ trợ và cấu hình môi trường thực tế.
+B. Chỉ giá mỗi token của mô hình rẻ hơn.
 
-B. Có, mọi ID bất biến.
+C. Chất lượng end-to-end và độ trễ theo các nhóm tác vụ.
 
-C. Có, tên mô hình thay quyền truy cập.
+D. Tên model được dùng phổ biến trong cộng đồng.
 
-D. Có, không cần kiểm tra.
+**Câu 3 — Chọn một.** Mã model trong video báo không khả dụng tại vùng production. Bước tiếp theo nên là gì?
 
-**3. Chọn một.** Chọn mô hình đắt nhất có tự chứng minh hệ thống đúng không?
+A. Giữ ID từ video, đổi sang vùng cũ rồi mặc định quyền tài khoản cũng giống nhau.
 
-A. Có, mọi nguồn đều không cần.
+B. Chọn model cùng họ có tên gần nhất, giữ nguyên mọi cấu hình và quyền.
 
-B. Không; vẫn cần dữ liệu, hợp đồng và kiểm chứng kết quả.
+C. Kiểm tra ID/profile, vùng và quyền môi trường đích.
 
-C. Có, không cần các công cụ.
+D. Retry cùng ID đến khi provisioning tự hoàn tất.
 
-D. Có, không cần test.
+**Câu 4 — Chọn một.** Mô hình đắt hơn đạt benchmark chung cao nhưng trên mẫu trích xuất của nhóm vẫn sai trường hiếm. Quyết định nào có cơ sở?
 
-## Đáp án
+A. Ưu tiên benchmark chung hơn tập nội bộ.
 
-1. **D.** D cân bằng yêu cầu; A cứng nhắc, B không liên quan, C bỏ bằng chứng.
+B. Đánh giá workload thật, gồm lỗi trường hiếm.
 
-2. **A.** A xác minh triển khai; B và D giả định không đổi, C nhầm định danh với quyền.
+C. Coi mức giá cao như tín hiệu confidence cho mọi đầu ra.
 
-3. **B.** B giữ các yếu tố ứng dụng; A, C, D bỏ đối chiếu dữ liệu nguồn và xác minh.
+D. Giữ prompt hiện tại và bỏ review vì mô hình có năng lực cao hơn.
+
+**Câu 5 — Chọn hai.** Hai model cùng một họ được cân nhắc thay thế cho nhau. Hai điều nào cần kiểm tra thay vì suy từ tên họ?
+
+A. Các tính năng/request mà workload cần có được hỗ trợ trên model đích.
+
+B. Cấu hình vùng/tài khoản có quyền truy cập model đích.
+
+C. Có cùng tiền tố tên nghĩa là mọi giới hạn giống nhau.
+
+D. Model ra sau tự động giữ nguyên mọi hành vi của model cũ.
+
+## Đáp án và giải thích
+
+1. **B.** B đo theo yêu cầu và tổng chi phí hệ thống. A bỏ tradeoff. C chi phí thấp không chứng minh đạt chất lượng. D chia tải không xét mức khó hoặc SLA của tác vụ.
+
+2. **A, C.** A đo tiết kiệm thực, C kiểm tra tác động lên kết quả. B bỏ chi phí bổ sung. D độ phổ biến không chứng minh phù hợp workload riêng.
+
+3. **C.** C kiểm tra khả năng truy cập trong môi trường thật. A có thể sửa vùng nhưng bỏ qua tài khoản/quyền. B suy tương thích từ tên họ, chưa xác minh hỗ trợ. D retry chỉ hữu ích khi đã có căn cứ lỗi tạm thời.
+
+4. **B.** B kiểm tra chất lượng phù hợp mục tiêu. A có thể bỏ khác biệt phân phối dữ liệu. C giá không là xác suất đúng. D năng lực chung không xóa lỗi đã quan sát.
+
+5. **A, B.** A kiểm tra tương thích chức năng, B kiểm tra triển khai được. C/D là giả định về dòng sản phẩm, không thay thế xác minh hợp đồng và môi trường.
 
 ## Bổ sung từ ghi chú khóa học chính thức
 

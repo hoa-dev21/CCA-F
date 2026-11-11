@@ -24,40 +24,66 @@ Cấp công cụ theo vai trò. Tác nhân tổng hợp có thể được dùng
 
 Với `tool_choice`, `auto` cho phép mô hình quyết định có gọi công cụ; `any` yêu cầu gọi một công cụ nhưng không ép tên cụ thể. Cấu hình `{"type":"tool","name":"extract_metadata"}` chọn công cụ cụ thể khi được hỗ trợ. Nếu phải trích thông tin mô tả trước khi bổ sung dữ liệu, ứng dụng cần thực thi, kiểm tra, trả kết quả rồi mới mở bước tiếp theo. Ép công cụ ở lượt đầu chưa đủ nếu mã điều phối vẫn cho bỏ qua điều kiện.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Công cụ từ chối vì hoàn tiền vượt chính sách và trả lỗi không thử lại. Cách phù hợp?
+**Câu 1 — Chọn một.** Công cụ hoàn tiền trả lỗi policy_denied, retryable=false. Bot thấy người dùng rất bức xúc và muốn thử tham số khác. Cách xử lý đúng?
 
-A. Đổi prompt rồi gửi lại vô hạn.
+A. Retry cùng giao dịch với số tiền chia nhỏ để vượt qua gate.
 
-B. Giải thích giới hạn và chuyển luồng được phép/escalation theo chính sách.
+B. Đổi tên công cụ trong prompt để mô hình chọn lại.
 
-C. Đánh dấu thành công rỗng.
+C. Giải thích giới hạn và chuyển sang luồng được phép/người có thẩm quyền.
 
-D. Giảm số tiền trong dữ liệu nguồn mà không hỏi.
+D. Retry một lần như mọi lỗi mạng để chắc chắn kết quả.
 
-**2. Chọn một.** Tác nhân AI tổng hợp thường cần tra một ngày đơn giản; điều tra sâu ít gặp. Thiết kế phù hợp nhất?
+**Câu 2 — Chọn một.** Tác nhân tổng hợp thường cần xác minh một ngày; điều tra nhiều nguồn chỉ chiếm ít yêu cầu. Thiết kế nào cân bằng công cụ hẹp và điều phối sâu?
 
-A. Cho mọi quyền của tác nhân AI web, kể cả chỉnh dữ liệu.
+A. Cho tổng hợp mọi công cụ nghiên cứu để không cần coordinator.
 
-B. Cấm kiểm tra fact trong mọi trường hợp.
+B. verify_fact cho việc hẹp; coordinator điều phối việc sâu.
 
-C. Công cụ verify_fact hẹp cho trường hợp phổ biến; luồng sâu qua tác nhân điều phối.
+C. Luôn khởi chạy cả nhóm nghiên cứu dù chỉ cần một ngày.
 
-D. Đoán ngày để tránh roundtrip.
+D. Bắt tổng hợp suy luận ngày từ context để tránh chi phí công cụ.
 
-**3. Chọn một.** Hai công cụ có bản mô tả cấu trúc dữ liệu khác nhau nhưng description gần hệt khiến chọn sai. Cần làm gì?
+**Câu 3 — Chọn hai.** Hai công cụ có schema khác nhau nhưng mô tả đều “lấy thông tin khách hàng”. Mô hình hay chọn công cụ ghi thay cho công cụ đọc. Hai cải thiện nào nhắm đúng lỗi?
 
-A. Làm rõ ranh giới/tên/description và rà system prompt liên quan.
+A. Đổi tên/mô tả để nêu rõ mục đích, tác động và lúc không nên dùng.
 
-B. Chỉ tăng max_tokens.
+B. Rà hướng dẫn định tuyến trong system prompt để bỏ chỉ dẫn mâu thuẫn.
 
-C. Chỉ thêm các công cụ không liên quan.
+C. Tăng token đầu ra nhưng giữ nguyên tên/mô tả.
 
-D. Bỏ thông tin mô tả lỗi.
+D. Chỉ sửa thông báo lỗi sau khi ghi sai đã xảy ra.
 
-## Đáp án
+**Câu 4 — Chọn một.** Cùng thông báo “Operation failed” đang dùng cho timeout và vi phạm chính sách. Adapter nên bổ sung gì để orchestrator phục hồi đúng?
 
-1. **B.** A không thay chính sách; C che lỗi; D sửa dữ liệu trái căn cứ.
-2. **C.** A cấp quyền vượt vai trò; B làm luồng kém hiệu quả; D bịa dữ kiện.
-3. **A.** B không sửa lựa chọn; C tăng nhiễu; D bỏ tín hiệu phục hồi.
+A. Một câu xin lỗi thống nhất dài hơn.
+
+B. Mã HTTP duy nhất để giảm nhánh xử lý.
+
+C. Điểm confidence do mô hình tự chấm.
+
+D. Loại lỗi, retryability, ngữ cảnh và hướng phục hồi hợp lệ.
+
+**Câu 5 — Chọn hai.** Công cụ đọc dữ liệu timeout; công cụ ghi giao dịch timeout sau khi gửi yêu cầu, chưa biết bên đích đã thực hiện chưa. Hai quyết định nào hợp lý?
+
+A. Retry cả hai vô điều kiện vì đều là timeout.
+
+B. Retry có giới hạn với thao tác đọc khi phù hợp.
+
+C. Tra trạng thái hoặc dùng cơ chế chống lặp của giao dịch trước khi quyết định retry ghi.
+
+D. Coi timeout ghi là bằng chứng chưa có tác động bên ngoài.
+
+## Đáp án và giải thích
+
+1. **C.** C tôn trọng lỗi nghiệp vụ. A tìm cách né chính sách; B không thay đổi quyền; D bỏ qua phân loại không retryable và không có nguyên nhân tạm thời để thử lại.
+
+2. **B.** B đáp ứng nhu cầu phổ biến với phạm vi nhỏ và vẫn có đường xử lý phức tạp. A mở rộng công cụ không cần; C thêm chi phí cho tác vụ đơn; D bỏ bước xác minh mà yêu cầu cần.
+
+3. **A, B.** A tạo ranh giới lựa chọn, B tránh cấu hình khác triệt tiêu ranh giới đó. C không bổ sung tín hiệu phân biệt. D xử lý triệu chứng sau tác động, không giải quyết cách chọn công cụ.
+
+4. **D.** D phân biệt lỗi tạm thời và lỗi nghiệp vụ. A cải thiện diễn đạt nhưng không điều phối. B xóa phân loại. C không thay thế tín hiệu từ công cụ về nguyên nhân thực tế.
+
+5. **B, C.** B phù hợp lỗi tạm thời của thao tác đọc; C xử lý trạng thái thực thi chưa biết. A có thể tạo tác động kép. D nhầm không nhận được phản hồi với không thực hiện giao dịch.

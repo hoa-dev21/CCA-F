@@ -13,45 +13,69 @@ Phần đánh giá xuất hiện trước kỹ thuật sửa prompt để bạn 
 
 Có thể dùng bản đồ sau để nối kiến thức: API nhận yêu cầu và ngữ cảnh; công cụ bổ sung khả năng và dữ liệu ngoài; MCP chuẩn hóa việc kết nối; workflow hoặc agent tổ chức các bước thực hiện. Đây là phần định hướng khóa học, không phải một mục kỹ thuật độc lập trong đề cương thi.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Vừa đổi prompt và thấy một câu trả lời hay hơn. Phần nào của khóa giúp kiểm tra cải thiện có nhất quán không?
+**Câu 1 — Chọn một.** Nhóm học đến prompt engineering và muốn đổi prompt production ngay vì một câu trả lời mới hay hơn. Vì sao cần quay lại phần đánh giá trước khi quyết định?
 
-A. Chỉ xem video nhanh hơn.
+A. Cần chờ học hết mọi kỹ thuật rồi mới được chạy bất kỳ đánh giá nào.
 
-B. Prompt evaluation với dữ liệu và tiêu chí thích hợp.
+B. Cần tăng độ dài câu trả lời để thay đổi được nhìn thấy rõ hơn.
 
-C. Chỉ đổi tên notebook.
+C. Cần so cải thiện/hồi quy trên tập ca và tiêu chí ổn định.
 
-D. Chỉ dùng mô hình đắt nhất.
+D. Cần dùng mô hình đắt hơn làm chuẩn rồi chép nguyên câu trả lời đó.
 
-**2. Chọn một.** Muốn kiểm tra mình hiểu một mẫu công cụ loop sau khi xem video. Cách học sát lời khuyên của bài nhất?
+**Câu 2 — Chọn hai.** Một người đã xem video tool loop và chép notebook nhưng chưa tự chạy. Hai hoạt động nào tạo bằng chứng hiểu cách triển khai tốt hơn?
 
-A. Chỉ ghi nhớ chữ cái đáp án.
+A. Ghi nhớ chữ cái đáp án của ví dụ rồi coi đó là kiểm thử triển khai.
 
-B. Đánh dấu đã xem rồi bỏ qua kết quả thực thi.
+B. Chạy luồng và thay đầu vào để quan sát yêu cầu tool, kết quả và lượt trả lời tiếp.
 
-C. Tự chạy mã, thay đổi tình huống và quan sát kết quả/lỗi.
+C. Thử lỗi có kiểm soát và giải thích hệ thống phản hồi/phục hồi ra sao.
 
-D. Giả định notebook không cần môi trường Python.
+D. Đánh dấu notebook đã hoàn thành khi mọi ô mã đã được sao chép.
 
-**3. Chọn một.** Bài giới thiệu nhắc API, MCP và các quy trình làm việc. Có nên coi đây là ba tên gọi của cùng một lớp không?
+**Câu 3 — Chọn một.** Một bản thiết kế viết “dùng MCP nên không cần orchestration hoặc quản lý context nữa”. Phân tích nào phù hợp với bản đồ khóa học?
 
-A. Có, chỉ khác cách viết.
+A. Đúng nếu tất cả tool của workflow được khai báo trong cùng server.
 
-B. Có, một bản mô tả cấu trúc dữ liệu tự triển khai mọi quy trình làm việc.
+B. Sai vì MCP và API chỉ là hai tên cho cùng lớp orchestration.
 
-C. Có, cấu hình MCP thay toàn bộ việc quản lý ngữ cảnh.
+C. Đúng nếu schema của tool đã định nghĩa đủ kiểu đầu vào.
 
-D. Không; chúng có vai trò riêng và cần hiểu cách phối hợp qua các bài sau.
+D. MCP kết nối; host vẫn điều phối bước và quản lý context.
 
-## Đáp án
+**Câu 4 — Chọn một.** Notebook API trực tiếp chạy được nhưng bản cloud của đồng đội lỗi xác thực trước khi sinh câu trả lời. Người học đề xuất đổi prompt. Bước chẩn đoán nào ưu tiên?
 
-1. **B.** A không đo chất lượng; C không đổi phép đo; D không chứng minh prompt tốt hơn.
+A. Tăng max_tokens vì cloud có thể cần câu trả lời dài hơn để xác thực.
 
-2. **C.** A/B chỉ ghi nhận việc xem; D bỏ yêu cầu môi trường thực hành.
+B. Kiểm tra client/provider, credential và quyền môi trường trước khi tối ưu nội dung yêu cầu.
 
-3. **D.** A xóa ranh giới kiến trúc; B nhầm mô tả với điều phối thực thi; C bỏ trách nhiệm của host/API ngữ cảnh.
+C. Chỉ chép khóa của notebook đang chạy sang vì cùng model Claude.
+
+D. Thêm vai trò kỹ sư cloud vào system prompt để model tự chọn credential.
+
+**Câu 5 — Chọn hai.** Một nhóm muốn nối các phần khóa học thành prototype có thể đánh giá. Hai phân công trách nhiệm nào đúng?
+
+A. API request mang nhiệm vụ/ngữ cảnh; công cụ cung cấp hành động hoặc dữ liệu bên ngoài.
+
+B. Workflow/agent tổ chức các bước, còn đánh giá đo kết quả theo yêu cầu.
+
+C. Một schema công cụ đủ để sinh mã, chạy công cụ và lưu bền toàn bộ trạng thái.
+
+D. RAG tự tạo quyền truy cập cho mọi tài liệu mà truy vấn tìm thấy.
+
+## Đáp án và giải thích
+
+1. **C.** A sai: Đánh giá nên hỗ trợ cải tiến từ đầu, không phải chỉ xuất hiện sau mọi thay đổi. B sai: Độ dài chỉ đo hình thức, không xác nhận đáp ứng yêu cầu. C đúng: Một đầu ra hấp dẫn không ước lượng chất lượng trên phân bố tác vụ. D sai: Giá mô hình không tạo nhãn chuẩn đáng tin cho mọi tình huống.
+
+2. **B, C.** A sai: Nhớ đáp án không chứng minh hiểu runtime và các trạng thái mới. B đúng: Tự quan sát chuỗi trạng thái giúp kiểm chứng mô hình hiểu về vòng công cụ. C đúng: Đường lỗi kiểm tra hiểu biết ngoài happy path của video. D sai: Sao chép nội dung không xác nhận đã thực thi hay hiểu kết quả.
+
+3. **D.** A sai: Có chung server không tự quy định thứ tự, điều kiện và trạng thái workflow. B sai: Đó cũng là nhầm lẫn lớp; MCP không đồng nghĩa mọi API hay bộ điều phối. C sai: Kiểu dữ liệu không thay quản lý lịch sử, phụ thuộc hoặc điều kiện dừng. D đúng: Các lớp kết nối, ngữ cảnh và điều phối giải quyết các trách nhiệm khác nhau.
+
+4. **B.** A sai: Ngân sách sinh không thực hiện xác thực nhà cung cấp. B đúng: Lỗi xảy ra trước suy luận nên cần sửa điều kiện truy cập, không phải cách diễn đạt. C sai: Cùng họ mô hình không đồng nghĩa cùng cơ chế xác thực/provider. D sai: Mô hình chưa được gọi và prompt không cấu hình danh tính của client.
+
+5. **A, B.** A đúng: Phân biệt này giúp biết thông tin nào model nhận và năng lực nào cần executor. B đúng: Điều phối quyết định cách làm; phép đo xác nhận cách làm có đạt mục tiêu. C sai: Khai báo hợp đồng không tự cài đặt các trách nhiệm thực thi và lưu trữ. D sai: Truy xuất không thay lớp phân quyền dữ liệu của hệ thống.
 
 ## Đối chiếu qua phụ đề chính thức
 

@@ -15,45 +15,69 @@ Tiêu chí do AI tạo cũng cần rà soát. Nếu nó yêu cầu một điều
 
 Để so sánh đáng tin, dùng tiêu chí ổn định, đối chiếu với các mẫu đã được kiểm tra và giữ bộ kiểm thử độc lập. Không để câu trả lời đang được chấm tự tạo tiêu chí có lợi cho chính nó.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Đã thêm solution_criteria vào generator nhưng bộ chấm điểm không đổi. Bước kiểm tra trực tiếp nhất?
+**Câu 1 — Chọn một.** Generator đã thêm solution_criteria nhưng điểm chấm không đổi; job vẫn tải dataset từ đường dẫn cũ. Kiểm tra nào nên làm trước khi thay model grader?
 
-A. Tăng max_tokens cho mọi ca.
+A. Tăng số token của grader để nó tự suy ra các criteria còn thiếu.
 
-B. Chỉ đổi tên trường score.
+B. Bỏ task gốc khỏi grader để buộc nó chú ý trường mới.
 
-C. Kiểm tra bộ dữ liệu thực dùng có criteria và prompt bộ chấm điểm đã nhận criteria đúng test case.
+C. Kiểm tra dataset hiệu lực và criteria của từng case gửi chấm.
 
-D. Bỏ task gốc khỏi bộ chấm điểm.
+D. Thêm trọng số cho score để thay đổi được thể hiện rõ hơn.
 
-**2. Chọn một.** Mô hình sinh bảng tiêu chí chấm điểm có một yêu cầu không tồn tại trong task. Xử lý phù hợp?
+**Câu 2 — Chọn hai.** Dataset sinh tự động chứa criteria bắt buộc lời giải dùng thư viện X, trong khi task cho phép mọi cách đúng. Hai bước nào giúp phép chấm đo đúng mục tiêu?
 
-A. Coi mọi tiêu chí sinh ra là chuẩn vàng.
+A. Loại khỏi báo cáo các ca không dùng X vì khác phong cách mẫu.
 
-B. Review/sửa bảng tiêu chí chấm điểm theo task và kiểm tra nhãn trước khi dùng chấm.
+B. Đối chiếu grader với các đáp án đã kiểm tra, gồm lời giải đúng không dùng X.
 
-C. Ép output thêm điều không được yêu cầu để tăng điểm.
+C. Sửa mọi đáp án ứng viên để dùng X rồi công bố tỷ lệ đúng tăng.
 
-D. Chỉ bỏ ca điểm thấp khỏi report.
+D. Rà và sửa criteria theo yêu cầu nhiệm vụ trước khi dùng làm chuẩn.
 
-**3. Chọn một.** Sau khi truyền criteria, reasoning của bộ chấm điểm dài hơn. Có thể kết luận gì?
+**Câu 3 — Chọn một.** Sau khi thêm criteria, grader giải thích dài hơn và chấm trung bình từ 7 lên 9. Nhóm kết luận chất lượng sản phẩm tăng. Bằng chứng nào còn thiếu?
 
-A. Độ chính xác của sản phẩm chắc chắn tăng.
+A. Xác nhận phần giải thích có nhiều từ kỹ thuật hơn baseline.
 
-B. Mọi điểm9 đều đúng.
+B. Đối chiếu nhãn chuẩn và đo trên tập giữ riêng.
 
-C. Không cần human/code checks nữa.
+C. Cho cùng grader tự đánh giá độ tin cậy của điểm vừa chấm.
 
-D. Bộ chấm điểm có thêm ngữ cảnh; độ đúng của chấm vẫn cần đối chiếu và đo.
+D. Chuẩn hóa mọi score về thang 100 để thấy cải thiện rõ hơn.
 
-## Đáp án
+**Câu 4 — Chọn một.** Mỗi câu trả lời ứng viên được yêu cầu tự tạo solution_criteria, rồi grader dùng chính criteria đó để chấm nó. Rủi ro chính và cách sửa phù hợp nhất?
 
-1. **C.** Kiểm tra bộ dữ liệu thực dùng có criteria và prompt bộ chấm điểm đã nhận criteria đúng test case. A/B không sửa luồng dữ liệu; D làm mất tiêu chí nhiệm vụ.
+A. Rubric có thể dài; cắt còn một câu do chính ứng viên đề xuất.
 
-2. **B.** Review/sửa bảng tiêu chí chấm điểm theo task và kiểm tra nhãn trước khi dùng chấm. A bỏ kiểm chứng; C đổi mục tiêu; D thiên lệch phép đo.
+B. Chi phí hai lời gọi cao; gộp sinh đáp án và tự chấm vào một lần để tăng độ tin cậy.
 
-3. **D.** Bộ chấm điểm có thêm ngữ cảnh; độ đúng của chấm vẫn cần đối chiếu và đo. A/B/C nhầm thay đổi hình thức phản hồi với bằng chứng chất lượng.
+C. Tiêu chí quá cụ thể; bỏ task và chỉ chấm tính trôi chảy để đồng nhất.
+
+D. Tiêu chí có thể thích nghi có lợi cho ứng viên; dùng rubric gắn với task, được rà soát và cố định trước khi chấm.
+
+**Câu 5 — Chọn hai.** Dataset đã có criteria đúng, nhưng sau bước shuffle, một số đáp án bị ghép tiêu chí của case khác. Hai thiết kế nào ngăn lỗi này và giúp phát hiện nó?
+
+A. Kiểm tra mẫu payload và các ca đối chứng có tiêu chí khác biệt rõ.
+
+B. Gắn task, criteria và answer theo case ID ổn định xuyên pipeline.
+
+C. Tăng nhiệt độ grader để giảm ảnh hưởng của một criteria không phù hợp.
+
+D. Chỉ so số lượng criteria và answers để khẳng định ánh xạ đúng.
+
+## Đáp án và giải thích
+
+1. **C.** A sai: Ngân sách đầu ra không truyền trường dữ liệu bị bỏ khỏi pipeline. B sai: Task gốc là căn cứ kiểm tra tiêu chí; bỏ nó làm mất ngữ cảnh quan trọng. C đúng: Thay generator chưa đủ nếu dữ liệu mới chưa đến bộ chấm. D sai: Đổi thang điểm không sửa việc grader chưa nhận tiêu chí.
+
+2. **B, D.** A sai: Loại theo thuộc tính không được yêu cầu tạo thiên lệch và giấu lỗi chấm. B đúng: Ca đối chứng phát hiện grader trừng phạt cách giải hợp lệ vì rubric sai. C sai: Cách này đổi mục tiêu đánh giá theo lỗi rubric thay vì đo yêu cầu ban đầu. D đúng: Ràng buộc do generator thêm không được coi là yêu cầu gốc.
+
+3. **B.** A sai: Tính chuyên môn của lời văn không là bằng chứng độ đúng của quyết định. B đúng: Điểm và văn phong của thước đo thay đổi không chứng minh sản phẩm tốt hơn. C sai: Tự xác nhận không cung cấp kiểm tra độc lập về độ đúng. D sai: Đổi đơn vị không xác nhận thước đo đã chính xác.
+
+4. **D.** A sai: Rút ngắn không làm tiêu chí độc lập hoặc đúng yêu cầu hơn. B sai: Gộp request không loại xung đột của việc tự đặt tiêu chí. C sai: Tính trôi chảy không thay chất lượng đáp ứng nhiệm vụ. D đúng: Nhờ vậy các ứng viên được so theo cùng mục tiêu thay vì chuẩn do chính mình đặt.
+
+5. **A, B.** A đúng: Quan sát trường hợp cụ thể phát hiện ghép nhầm mà điểm trung bình có thể che khuất. B đúng: Không phụ thuộc thứ tự hàng sau các bước sắp xếp hoặc xử lý song song. C sai: Biến thiên sinh không sửa liên kết dữ liệu giữa case và rubric. D sai: Hai danh sách cùng độ dài vẫn có thể ghép sai từng phần tử.
 
 ## Đối chiếu phụ đề chính thức
 

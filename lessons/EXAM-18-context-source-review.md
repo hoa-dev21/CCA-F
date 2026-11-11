@@ -15,42 +15,66 @@ Lỗi truy cập phải được báo là lỗi hoặc khoảng trống thông t
 
 Trước khi giảm người kiểm tra, đo độ chính xác theo trường dữ liệu và loại tài liệu, rồi hiệu chỉnh điểm tự tin bằng dữ liệu có nhãn. Chuyển các trường hợp yếu hoặc mơ hồ cho người duyệt, đồng thời vẫn chọn mẫu ngẫu nhiên trong từng nhóm điểm cao để phát hiện lỗi đang lọt. Một tỷ lệ đúng chung, chẳng hạn 97%, chưa đủ để tự động thông qua mọi nhóm dữ liệu.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Sau nhiều lần summary, kỳ vọng “hoàn35% đơnA trước ngày12” thành “khách muốn hoàn sớm”. Sửa kiến trúc phù hợp nhất?
+**Câu 1 — Chọn một.** Sau compact, yêu cầu “hoàn 35% đơn A trước ngày 12” mất số và ngày. Cách sửa kiến trúc nào bảo vệ các facts quan trọng xuyên phiên?
 
-A. Nén thêm để bỏ mọi con số.
+A. Tăng độ dài summary và coi đó là nguồn duy nhất.
 
-B. Đặt case facts có cấu trúc theo issue/order ngoài history đã nén và đưa facts liên quan vào mỗi yêu cầu.
+B. Lưu case/order facts có cấu trúc, nạp phần liên quan mỗi lượt.
 
-C. Chỉ tăng điểm tự tin của câu trả lời.
+C. Dùng transcript gần nhất để suy lại các số đã mất.
 
-D. Chỉ lưu order ID trên đĩa rồi không truyền vào yêu cầu.
+D. Đặt confidence cao hơn cho dữ kiện được nhắc nhiều lần.
 
-**2. Chọn một.** Hai nguồn tài chính đáng tin báo các giá trị khác nhau nhưng thời kỳ đo cũng khác. Downstream nên nhận gì?
+**Câu 2 — Chọn một.** Hai nguồn tài chính uy tín công bố hai giá trị khác nhau cho các kỳ đo khác nhau. Downstream cần nhận gì để tránh kết luận xung đột giả?
 
-A. Trung bình hai số không có việc ghi rõ nguồn.
+A. Cả hai giá trị cùng nguồn, kỳ đo, phương pháp và giới hạn so sánh.
 
-B. Chỉ giá trị lớn hơn vì dễ đọc.
+B. Trung bình hai giá trị để dung hòa hai nguồn.
 
-C. Cả hai giá trị với nguồn, thời gian, phương pháp và chú thích khác biệt để tác nhân điều phối đối chiếu.
+C. Chỉ giá trị mới nhất vì nguồn cũ không còn ý nghĩa.
 
-D. Một kết luận chắc chắn rằng nguồn thứ hai sai.
+D. Giá trị do mô hình đánh confidence cao hơn, bỏ nguồn còn lại.
 
-**3. Chọn hai.** Muốn giảm kiểm tra thủ công vì độ chính xác chung97%, nhưng mẫu hiếm ít được đo. Cần làm gì trước và trong tự động hóa?
+**Câu 3 — Chọn hai.** Độ đúng tổng thể 97%, nhưng mẫu hiếm ít được đo. Hai bước nào cần trước và trong giảm review thủ công?
 
-A. Phân tích độ chính xác theo loại tài liệu/field và hiệu chỉnh ngưỡng trên nhãn thật.
+A. Dùng 97% làm ngưỡng chung cho mọi trường.
 
-B. Chỉ kiểm tra ca điểm tự tin thấp, không bao giờ lấy mẫu nhóm cao.
+B. Phân tích theo loại tài liệu/trường và hiệu chỉnh điểm trên nhãn thật.
 
-C. Coi confidence0.99 của mô hình là bằng chứng đúng99% cho mọi mẫu.
+C. Chỉ kiểm tra nhóm confidence thấp vì nhóm cao đã đủ an toàn.
 
-D. Chọn mẫu ngẫu nhiên phân tầng nhóm điểm tự tin cao để đo lỗi và phát hiện pattern mới.
+D. Lấy mẫu ngẫu nhiên phân tầng ở nhóm được tự động chấp nhận.
 
-## Đáp án
+**Câu 4 — Chọn một.** Tác nhân tổng hợp nhận summary “nguồn thống nhất”, nhưng các con số bên dưới thực ra cùng trích một báo cáo. Cách sửa bàn giao nào ngăn việc đếm lặp bằng chứng?
 
-1. **B.** A mất dữ kiện; C không khôi phục facts; D nhầm lưu trữ với ngữ cảnh đã được mô hình nhận.
+A. Chỉ giữ số lượng website và điểm uy tín trung bình.
 
-2. **C.** A xóa ý nghĩa thời kỳ; B chọn tùy tiện; D kết luận sai khi chưa đối chiếu phương pháp/thời gian.
+B. Bỏ mọi nguồn thứ cấp và giữ kết luận đã có.
 
-3. **A, D.** B không đo lỗi nhóm được tự thông qua; C chưa có calibration. Ca mơ hồ/mâu thuẫn vẫn cần ưu tiên người duyệt.
+C. Giữ claim–nguồn và nguồn gốc để kiểm tra tính độc lập.
+
+D. Yêu cầu một tác nhân khác viết lại summary bằng ngôn từ mới.
+
+**Câu 5 — Chọn hai.** Reviewer độc lập phải kiểm tra một thay đổi chạm API và consumer, trong khi findings cũ thuộc revision trước. Hai loại ngữ cảnh nào cần có?
+
+A. Hợp đồng hiện tại, diff các phía và tiêu chí tác động cần báo.
+
+B. Findings cũ kèm trạng thái để xác minh trên revision mới.
+
+C. Chỉ giải thích của tác giả để reviewer tránh phân tâm bởi code.
+
+D. Chỉ kết quả test xanh để suy ra các hợp đồng đã nhất quán.
+
+## Đáp án và giải thích
+
+1. **B.** B có nơi lưu chuẩn tách khỏi tóm tắt. A vẫn có nguy cơ mất chi tiết; C không phục hồi được dữ kiện đã không còn; D tần suất nhắc không chứng minh độ đúng.
+
+2. **A.** A giữ điều kiện diễn giải. B tạo số tổng hợp không có phương pháp; C có thể mất dữ liệu so sánh lịch sử; D confidence không giải quyết khác biệt kỳ đo.
+
+3. **B, D.** B kiểm tra khác biệt giữa nhóm và ý nghĩa điểm; D phát hiện lỗi confidence cao. A che nhóm yếu; C bỏ một nguồn sai lệch quan trọng và không đo được lỗi lọt.
+
+4. **C.** C cho thấy các bản sao dùng chung một dòng bằng chứng. A đếm website; B có thể loại dữ liệu mà chưa xét nguồn; D đổi diễn đạt không tạo bằng chứng độc lập.
+
+5. **A, B.** A cho reviewer đủ phạm vi kiểm tra liên file; B tránh lặp lỗi đã sửa và giữ lỗi chưa giải quyết. C dễ giữ thiên lệch của tác giả. D test xanh không chứng minh mọi tương tác đã được kiểm tra.

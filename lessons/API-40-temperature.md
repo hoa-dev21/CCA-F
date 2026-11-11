@@ -13,45 +13,69 @@ Ví dụ: Nếu muốn tìm nhiều ý tưởng, bạn có thể so sánh nhữn
 
 Mô hình và API có thể khác nhau về việc hỗ trợ tham số, khoảng giá trị và cách dùng cùng chế độ suy luận (thinking). Khi triển khai, hãy đối chiếu phiên bản và đánh giá trên công việc thực tế.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Hạ temperature có tự giải quyết thiếu nguồn dữ liệu hiện tại không?
+**Câu 1 — Chọn một.** Bot trả sai trạng thái đơn hàng dù temperature thấp và câu trả lời ổn định. Log cho thấy chưa tra hệ thống đơn hàng. Ưu tiên sửa gì?
 
-A. Có, mọi kiến thức sẽ cập nhật.
+A. Hạ thêm temperature để buộc mô hình chọn trạng thái có xác suất cao nhất.
 
-B. Có, không cần các công cụ.
+B. Tăng temperature để có cơ hội đoán trúng trạng thái khác.
 
-C. Có, nếu output ngắn.
+C. Bổ sung nguồn trạng thái hiện tại và kiểm chứng kết quả tra cứu.
 
-D. Không; vẫn cần dữ liệu nguồn phù hợp và kiểm chứng.
+D. Lấy đa số từ nhiều lần chạy cùng prompt rồi báo kết quả.
 
-**2. Chọn một.** Nhóm muốn đo độ đa dạng khi brainstorm. Hướng thử nào phù hợp khái niệm bài?
+**Câu 2 — Chọn một.** Hai cấu hình brainstorm khác temperature được chấm trên hai bộ yêu cầu khác nhau. Cấu hình cao có điểm đa dạng tốt hơn. Kết luận nào hợp lý nhất?
 
-A. So các cấu hình sampling được mô hình hỗ trợ trên cùng tiêu chí tác vụ.
+A. Chỉ cần so độ dài đầu ra để loại ảnh hưởng của đề bài.
 
-B. Chỉ tăng quyền hệ thống.
+B. Cần so sampling trên cùng yêu cầu và tiêu chí chấm.
 
-C. Bỏ mọi ràng buộc bắt buộc.
+C. Có thể triển khai cấu hình cao cho mọi nhiệm vụ vì điểm đa dạng tốt hơn.
 
-D. Coi một lần thử là bảo đảm.
+D. Cấu hình thấp không phù hợp brainstorm trong mọi trường hợp.
 
-**3. Chọn một.** Có thể hứa temperature 0 cho kết quả bất biến ở mọi hệ thống không?
+**Câu 3 — Chọn hai.** Nhóm cần dịch vụ ổn định và có thể kiểm toán. Hai phát biểu nào nên đưa vào tiêu chí vận hành?
 
-A. Có, đó là ý nghĩa của độ chính xác.
+A. Temperature thấp có thể giảm biến thiên nhưng không bảo đảm đầu ra bất biến.
 
-B. Không; không suy từ mức ít biến thiên thành bảo đảm tuyệt đối.
+B. Vẫn cần bộ đánh giá và kiểm tra bằng chứng cho độ đúng.
 
-C. Có, không cần xét mô hình.
+C. Temperature bằng 0 thay được kiểm thử hồi quy vì kết quả sẽ giống nhau.
 
-D. Có, bất kể dữ liệu đầu vào thay đổi.
+D. Câu trả lời lặp lại nhiều lần được coi là đã xác minh sự thật.
 
-## Đáp án
+**Câu 4 — Chọn một.** Sau khi đổi mô hình, cấu hình sampling cũ bị từ chối khi bật chế độ suy luận. Bước nào phù hợp nhất?
 
-1. **D.** D giữ đúng nguồn bằng chứng; A, B nhầm sampling với truy xuất, C không thêm dữ liệu.
+A. Kiểm tra tổ hợp tham số được model/API mới hỗ trợ.
 
-2. **A.** A đo tác động thực; B không điều chỉnh sampling, C có thể sai mục tiêu, D suy rộng mẫu đơn.
+B. Thử nhiều giá trị ngẫu nhiên cho tới khi một yêu cầu không lỗi.
 
-3. **B.** B tránh bảo đảm quá mức; A nhầm khái niệm, C và D bỏ khác biệt hệ thống/đầu vào.
+C. Suy luận rằng mô hình mới kém hơn vì không nhận tham số cũ.
+
+D. Tắt kiểm tra lỗi và dùng đầu ra cuối cùng được cache.
+
+**Câu 5 — Chọn hai.** Một prompt có dữ liệu nguồn mâu thuẫn. Nhóm muốn đo tác động temperature mà không nhầm với xử lý dữ liệu. Hai việc nào cần tách biệt?
+
+A. Chọn cấu hình luôn bỏ qua một nguồn để đạt tính nhất quán.
+
+B. Đánh giá cách phản ánh xung đột nguồn bằng tiêu chí riêng.
+
+C. Đo biến thiên câu trả lời qua nhiều lần chạy cùng cấu hình và đầu vào.
+
+D. Dùng điểm tự tin do mô hình báo làm temperature mục tiêu.
+
+## Đáp án và giải thích
+
+1. **C.** A sai: Ổn định hơn vẫn có thể ổn định ở kết luận sai. B sai: Đa dạng suy đoán không thay bằng chứng. C đúng: Sampling không tạo dữ liệu môi trường đang thiếu. D sai: Các lần đoán có thể cùng thiếu một nguồn quan trọng.
+
+2. **B.** A sai: Độ dài không kiểm soát độ khó hay độ đa dạng nội dung. B đúng: Thiết kế so sánh hiện có biến gây nhiễu. C sai: Đa dạng không đại diện độ đúng cho mọi tác vụ. D sai: Một phép so chưa kiểm soát không chứng minh quy luật chung.
+
+3. **A, B.** A đúng: Không suy từ xu hướng thành cam kết tuyệt đối. B đúng: Sampling không phải thước đo tính chính xác. C sai: Không có bảo đảm đó và môi trường còn có thể đổi. D sai: Nhất quán không chứng minh nguồn đúng.
+
+4. **A.** A đúng: Lỗi tương thích cần giải quyết trước so sánh hành vi. B sai: Không xác lập cấu hình được hỗ trợ có chủ đích. C sai: Hỗ trợ cấu hình không đồng nhất năng lực nhiệm vụ. D sai: Không sửa khả năng tương thích của yêu cầu mới.
+
+5. **B, C.** A sai: Nhất quán bằng cách giấu mâu thuẫn không giải quyết độ đúng. B đúng: Đây là chất lượng sử dụng bằng chứng. C đúng: Đây là cách quan sát ảnh hưởng sampling. D sai: Hai đại lượng khác vai trò, không thay thế nhau.
 
 ## Đối chiếu Bedrock
 

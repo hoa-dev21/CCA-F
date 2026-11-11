@@ -13,45 +13,69 @@ Ví dụ: Một tham số bắt buộc bị rỗng. Thông báo rõ tham số n�
 
 Không phải lỗi nào cũng xử lý bằng cách gọi lại. Thiếu quyền hoặc vi phạm quy tắc nghiệp vụ cần cách xử lý phù hợp với loại lỗi đó. Khi Claude sửa đầu vào sau khi đọc lỗi, nó đang sử dụng thông tin mới trong cuộc trò chuyện; điều đó không có nghĩa mô hình được huấn luyện lại sau mỗi lần gọi.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Công cụ nhận tham số rỗng. Phản hồi nào hỗ trợ sửa tốt hơn?
+**Câu 1 — Chọn một.** Schema công cụ hợp lệ, nhưng gọi tên calculate_time luôn thất bại vì dispatcher không có ánh xạ. Sửa nào đủ đúng tầng lỗi?
 
-A. Luôn trả thành công rỗng.
+A. Đổi kiểu của tham số thành chuỗi để giảm lỗi parse.
 
-B. Chỉ “hỏng”.
+B. Bổ sung dispatch từ tên tool sang hàm và kiểm tra kết quả.
 
-C. Ẩn mọi lỗi.
+C. Gửi kết quả dự đoán từ mô hình thay cho tool_result.
 
-D. Lỗi rõ tham số nào không hợp lệ và điều kiện cần đáp ứng.
+D. Thêm ví dụ tính thời gian vào mô tả công cụ.
 
-**2. Chọn một.** Đã viết hàm nhưng mô hình chưa biết nó tồn tại. Cần bổ sung gì?
+**Câu 2 — Chọn một.** Đối số start_time rỗng. Bộ thực thi trả “Operation failed” và mô hình lặp lại cùng đầu vào. Thay đổi nào có ích nhất?
 
-A. Bản mô tả cấu trúc dữ liệu mô tả và tích hợp định tuyến/thực thi vào vòng gọi.
+A. Trả lỗi chỉ rõ start_time bắt buộc và dạng giá trị hợp lệ.
 
-B. Chỉ đổi màu log.
+B. Tăng số lần retry để mô hình tự tìm giá trị phù hợp.
 
-C. Chỉ yêu cầu “hãy dùng hàm”.
+C. Đổi thông báo thành “hãy suy nghĩ kỹ hơn rồi thử lại”.
 
-D. Không cần gì.
+D. Cho phép start_time rỗng và dùng giờ máy chủ trong mọi trường hợp.
 
-**3. Chọn một.** Mô hình sửa đối số sau khi đọc lỗi. Điều đó chứng minh gì?
+**Câu 3 — Chọn hai.** Hai lời gọi thất bại: một thiếu tham số, một bị từ chối quyền ghi. Hai phản ứng nào phù hợp?
 
-A. Trọng số đã được huấn luyện lại vĩnh viễn.
+A. Đổi mô tả công cụ để mô hình gọi lại quyền ghi nhiều lần.
 
-B. Mô hình dùng phản hồi lỗi trong ngữ cảnh để chọn bước tiếp.
+B. Sửa tham số theo lỗi validation khi có thông tin cần thiết.
 
-C. Mọi lỗi đều thử lại được.
+C. Dùng luồng được phép hoặc chuyển xử lý khi thiếu quyền.
 
-D. Không cần validation nữa.
+D. Coi mọi lỗi là tạm thời và dùng cùng chính sách retry.
 
-## Đáp án
+**Câu 4 — Chọn một.** Sau một tool_result báo định dạng sai, mô hình sửa đối số thành công. Kết luận nào được bằng chứng này hỗ trợ?
 
-1. **D.** D cung cấp tín hiệu sửa; A che lỗi, B thiếu nguyên nhân, C bỏ thông tin.
+A. Hàm công cụ đã huấn luyện lại mô hình sau lần lỗi.
 
-2. **A.** A hoàn thiện giao diện và luồng; B không công bố khả năng, C thiếu hợp đồng, D sai trạng thái.
+B. Phản hồi lỗi trong context giúp sửa lời gọi hiện tại.
 
-3. **B.** B mô tả hành vi trong hội thoại; A nhầm training, C suy rộng loại lỗi, D bỏ kiểm tra.
+C. Mô hình sẽ nhớ quy tắc đó trong mọi phiên mới.
+
+D. Schema đã tự động cập nhật theo lỗi của backend.
+
+**Câu 5 — Chọn hai.** Nhóm viết hàm cộng ngày rồi muốn cung cấp cho Claude. Hai điều kiện tích hợp nào còn cần bên cạnh mã hàm?
+
+A. Bộ điều phối chạy hàm, kiểm tra đầu vào và trả kết quả/lỗi đúng vòng gọi.
+
+B. Mô tả công cụ và schema đối số đủ rõ cho mô hình tạo yêu cầu.
+
+C. Đưa toàn bộ mã hàm vào câu trả lời người dùng.
+
+D. Đổi tên hàm thành một động từ dễ hiểu là đủ để API tự tìm hàm.
+
+## Đáp án và giải thích
+
+1. **B.** A sai: Lỗi nằm ở định tuyến, không phải kiểu tham số. B đúng: Schema mô tả giao diện; dispatcher mới nối vào mã. C sai: Thay tính toán thật bằng suy đoán không sửa tích hợp. D sai: Không tạo ánh xạ thực thi đang thiếu.
+
+2. **A.** A đúng: Phản hồi có thể hành động giúp sửa đúng đầu vào. B sai: Không có thông tin mới nên dễ lặp lỗi hoặc bịa mốc. C sai: Không bổ sung điều kiện thất bại cụ thể. D sai: Âm thầm đổi nghĩa thay vì giải quyết thiếu dữ liệu.
+
+3. **B, C.** A sai: Mô tả không thay kiểm soát quyền thực tế. B đúng: Lỗi đầu vào có thể phục hồi bằng yêu cầu đúng. C đúng: Retry cùng quyền không giải quyết sự từ chối. D sai: Các loại lỗi có điều kiện phục hồi khác nhau.
+
+4. **B.** A sai: Một phản hồi hội thoại không chứng minh huấn luyện. B đúng: Không cần giả định thay đổi trọng số. C sai: Không có bằng chứng trạng thái được lưu xuyên phiên. D sai: Sửa lời gọi không chứng minh sửa khai báo giao diện.
+
+5. **A, B.** A đúng: Cần đường thực thi và phản hồi thực tế. B đúng: Mô hình cần biết giao diện được cung cấp. C sai: Hiển thị mã không đăng ký công cụ. D sai: Tên không tự tạo kết nối vào tiến trình ứng dụng.
 
 ## Đối chiếu Bedrock: Công cụ functions
 

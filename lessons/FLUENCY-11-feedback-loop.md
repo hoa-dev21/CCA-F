@@ -15,42 +15,66 @@ Ví dụ: Bạn yêu cầu bảng so sánh có chi phí nhưng AI bỏ sót cộ
 
 Khi so sánh các bản sửa, hãy dùng cùng tiêu chí để biết kết quả có tốt hơn không. Nếu có thông tin mới làm thay đổi yêu cầu, ghi lại thay đổi và điều chỉnh kế hoạch. Bạn vẫn là người quyết định giữ, sửa hay bỏ kết quả cuối cùng.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Đầu ra thiếu phần quan trọng đã nêu. Bước tiếp phù hợp?
+**Câu 1 — Chọn một.** AI bỏ cột chi phí đã được yêu cầu trong bảng so sánh. Bạn gửi lại nguyên prompt ba lần nhưng lỗi lặp lại. Bước nào cải thiện vòng Description–Discernment?
 
-A. Bỏ đánh giá.
+A. Đổi sang dạng văn xuôi để không phải có cột chi phí.
 
-B. Chỉ lặp nguyên câu vô hạn.
+B. Tăng độ dài prompt bằng cách lặp yêu cầu nhiều hơn.
 
-C. Chấp nhận vì văn phong đẹp.
+C. Nêu cột thiếu và nguồn chi phí; kiểm tra lại bản sửa.
 
-D. Nêu phần thiếu, làm rõ mô tả và đánh giá bản sửa.
+D. Chấp nhận bảng nếu các cột còn lại đều tốt.
 
-**2. Chọn một.** Trong vòng cộng tác, ai quyết định giữ/sửa/bỏ kết quả cuối theo bài?
+**Câu 2 — Chọn một.** Nhóm sửa prompt và đồng thời đổi bộ tiêu chí chấm theo những điểm bản mới làm tốt. Bản mới có điểm cao hơn. Kết luận nào có cơ sở?
 
-A. Người dùng dùng chuyên môn và chịu trách nhiệm.
+A. Chỉ cần lấy trung bình điểm cũ và mới để có chất lượng thực.
 
-B. Chỉ mô hình bất kể yêu cầu.
+B. Cần cùng tiêu chí hoặc tách tác động do đổi mục tiêu.
 
-C. Tên nền tảng.
+C. Prompt mới kém hơn vì tiêu chí đã thay đổi.
 
-D. Điểm tự tin chưa hiệu chỉnh.
+D. Có thể khẳng định prompt mới tốt hơn vì điểm đã tăng.
 
-**3. Chọn một.** Phát hiện dữ liệu mới làm kế hoạch ban đầu không phù hợp. Có thể làm gì?
+**Câu 3 — Chọn hai.** Trong lúc sửa đề xuất, dữ liệu mới cho thấy deadline cũ không còn khả thi. Hai hành động nào phù hợp?
 
-A. Giữ nguyên mọi thứ vì đã viết kế hoạch.
+A. Giữ deadline cũ để các lượt sửa có cùng tiêu chí hình thức.
 
-B. Điều chỉnh kế hoạch và phân công rồi tiếp tục vòng mô tả/đánh giá.
+B. Làm rõ yêu cầu cập nhật và đánh giá bản tiếp theo theo tiêu chí mới đã thống nhất.
 
-C. Bỏ luôn dữ liệu mới.
+C. Xóa dữ liệu mới khỏi context vì nó làm khó việc hoàn tất.
 
-D. Gắn nhãn hoàn tất.
+D. Ghi lại thông tin mới và điều chỉnh kế hoạch/phân công nếu cần.
 
-## Đáp án
+**Câu 4 — Chọn một.** AI sửa đúng lỗi bạn nêu nhưng vô tình làm mất một phần đã đúng ở bản trước. Cách đánh giá bản sửa nào thích hợp nhất?
 
-1. **D.** D nối đánh giá với phản hồi; A và C bỏ tiêu chí, B không chẩn đoán.
+A. Chấp nhận nếu AI xác nhận chỉ sửa một chỗ.
 
-2. **A.** A giữ phán đoán người; B và D giao quyết định thiếu căn cứ, C không phải chủ thể.
+B. Chỉ kiểm tra lỗi vừa yêu cầu sửa vì phần cũ từng đạt.
 
-3. **B.** B thích ứng với bằng chứng; A cứng nhắc, C bỏ nguồn, D kết thúc không chứng minh.
+C. Kiểm tra lỗi đã sửa và các yêu cầu cần giữ từ bản cũ.
+
+D. Yêu cầu quay lại toàn bộ bản cũ mà không xem lỗi ban đầu.
+
+**Câu 5 — Chọn hai.** Sau nhiều lượt, AI đề nghị chốt bản cuối. Hai căn cứ nào nên chi phối quyết định giữ/sửa/bỏ của người dùng?
+
+A. Độ tự tin trong câu kết luận của AI sau lượt cuối.
+
+B. Kết quả đã đáp ứng các tiêu chí chấp nhận và bằng chứng cần thiết.
+
+C. Số lượt đã đạt kế hoạch nên công việc được coi là hoàn tất.
+
+D. Các giới hạn còn lại và tác động của chúng đối với mục đích sử dụng.
+
+## Đáp án và giải thích
+
+1. **C.** C nối chẩn đoán cụ thể với yêu cầu sửa và kiểm chứng. B không làm rõ nguyên nhân. D bỏ tiêu chí. A thay hình thức để tránh yêu cầu thay vì đáp ứng thông tin cần cho quyết định.
+
+2. **B.** B giữ tính so sánh và ghi nhận thay đổi yêu cầu. D nhầm thước đo mới với tiến bộ. C cũng kết luận quá mức. A trộn hai đại lượng không cùng cách đo.
+
+3. **B, D.** D và B thích ứng có kiểm soát và giữ dấu vết thay đổi. A cố giữ tiêu chí đã không còn phù hợp. C bỏ bằng chứng để bảo vệ kế hoạch thay vì cập nhật quyết định.
+
+4. **C.** C phát hiện cả cải thiện lẫn hồi quy. B bỏ ảnh hưởng phụ. A tin mô tả thay vì kiểm tra sản phẩm. D loại cải tiến có thể hữu ích và phục hồi lỗi đã biết.
+
+5. **B, D.** B xác định phần đạt, D xác định rủi ro còn lại để người dùng phán đoán. C nhầm lượng nỗ lực với chất lượng. A tự tin không thay thế căn cứ và trách nhiệm quyết định của người dùng.

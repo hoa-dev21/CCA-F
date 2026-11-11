@@ -15,40 +15,66 @@ Nên đóng gói cấu hình đã kiểm chứng, ghi rõ phiên bản như vớ
 
 Khi ôn thi, dùng bài này để hiểu việc chia sẻ cấu hình và quyền công cụ. Những chi tiết mới của marketplace cần được đối chiếu riêng với phạm vi đề cương.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Nhóm cài plugin chỉ vì muốn một skill. Cần kiểm tra gì thêm?
+**Câu 1 — Chọn một.** Nhóm muốn một skill trong plugin, nhưng gói còn chứa hooks và MCP config. Review trước khi cài nên bao phủ gì?
 
-A. Chỉ ảnh đại diện.
+A. Chỉ file hướng dẫn skill vì đó là thành phần sẽ được gọi.
 
-B. Hooks, các tác nhân AI, MCP configs và hành vi mã đi kèm.
+B. Chỉ uy tín tác giả vì gói đã có marketplace.
 
-C. Chỉ số ký tự tên plugin.
+C. Mọi thành phần có thể chạy, quyền và tương tác với repo.
 
-D. Không cần xem vì được gọi là plugin.
+D. Chỉ tên namespace vì namespace tự cô lập mã hook.
 
-**2. Chọn một.** Dự án có PreToolUse hook, plugin thêm hook cùng loại. Theo bài nên giả định gì để kiểm tra?
+**Câu 2 — Chọn một.** Dự án đã có PreToolUse hook; plugin thêm hook cùng sự kiện. Giả định nào đúng để lên kế hoạch kiểm tra theo bài?
 
-A. Plugin tự xóa hook dự án.
+A. Cả hai có thể chạy, cần kiểm tra xung đột và thao tác hợp lệ/vi phạm.
 
-B. Hook dự án vô hiệu plugin tuyệt đối.
+B. Hook plugin luôn thay toàn bộ hook dự án.
 
-C. Cả hai có thể chạy; cần kiểm tra tương tác.
+C. Hook dự án tự động vô hiệu mọi hook plugin.
 
-D. Không hook nào còn chạy.
+D. Hai hook cùng tên tự triệt tiêu nên không cần kiểm tra.
 
-**3. Chọn một.** Mục tiêu chính của đóng gói và quản lý phiên bản?
+**Câu 3 — Chọn hai.** Plugin hoạt động tốt ở phiên bản cũ; bản mới bổ sung hook sửa đầu vào công cụ. Hai hành động nào phù hợp khi cập nhật?
 
-A. Phân phối cấu hình nhất quán và theo dõi cập nhật cho nhóm.
+A. Tự nâng cho cả nhóm vì skill chính không đổi tên.
 
-B. Loại bỏ mọi kiểm thử.
+B. Xem diff/thành phần thay đổi và thử hành vi với cấu hình dự án.
 
-C. Bảo đảm mọi plugin bên thứ ba đáng tin.
+C. Ghi nhận phiên bản được dùng để truy nguyên hoặc quay lại khi cần.
 
-D. Bỏ cơ chế quản lý thay đổi.
+D. Chỉ kiểm tra mô tả marketplace còn giống trước.
 
-## Đáp án
+**Câu 4 — Chọn một.** Hai thành viên cài cùng tên plugin nhưng khác phiên bản, tạo kết quả kiểm tra khác nhau. Cải thiện nào giải quyết tính nhất quán triển khai?
 
-1. **B.** A và C không xét hành vi; D bỏ rủi ro mã đi kèm.
-2. **C.** A, B, D đều giả định sai việc tự thay thế/vô hiệu.
-3. **A.** B bỏ xác minh; C không được bảo đảm; D trái mục tiêu theo dõi phiên bản.
+A. Yêu cầu họ dùng cùng câu prompt và bỏ qua phiên bản.
+
+B. So sánh số token đầu ra rồi lấy phiên bản ít token hơn.
+
+C. Đổi tên plugin ở một máy để tránh xung đột tên.
+
+D. Quản lý chung phiên bản/cấu hình; kiểm thử các lần nâng.
+
+**Câu 5 — Chọn hai.** Một plugin đã được rà soát bên ngoài nhưng cần dùng trong repo có quy tắc dữ liệu riêng. Hai điều nào vẫn cần xác minh?
+
+A. Hành vi hook/MCP và quyền có phù hợp giới hạn của dự án.
+
+B. Việc được review bên ngoài tự cấp quyền cần thiết trong repo.
+
+C. Tương tác với cấu hình hiện có và các trường hợp chặn/cho phép.
+
+D. Namespace khác bảo đảm mã hook không ảnh hưởng thao tác dự án.
+
+## Đáp án và giải thích
+
+1. **C.** C xét hành vi thực tế của cả gói. A bỏ thành phần chạy theo sự kiện; B uy tín không thay đánh giá tính phù hợp; D tên riêng phân biệt nguồn nhưng không tự cô lập mọi tác động.
+
+2. **A.** A phù hợp khả năng cùng hoạt động và yêu cầu kiểm chứng. B/C/D đều giả định cơ chế thay thế hoặc triệt tiêu chưa được bảo đảm, có thể che hành vi ngoài dự kiến.
+
+3. **B, C.** B đánh giá tác động hành vi mới, C quản lý thay đổi có thể truy nguyên. A bỏ qua hook dù skill cùng tên. D văn bản giới thiệu không đại diện đầy đủ mã thực thi.
+
+4. **D.** D kiểm soát biến môi trường có thể gây khác biệt. A giữ nguyên khác phiên bản. B không đo tính tương thích. C phân biệt tên không làm hành vi nhất quán.
+
+5. **A, C.** A kiểm tra chính sách địa phương; C kiểm tra kết hợp thực tế. B nhầm đánh giá bên ngoài với thẩm quyền cấp quyền. D nhầm phân biệt tên với cách ly tác động.

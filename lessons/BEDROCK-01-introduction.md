@@ -13,42 +13,66 @@ Một số kiến thức giống nhóm Claude API có thể dùng chung bài tó
 
 Trang mở đầu ngắn không đủ để suy ra chi tiết kỹ thuật của các bài sau. Hãy dùng nó như bản đồ học tập rồi đọc bài tương ứng cho từng chủ đề.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Vai trò của bài mở đầu là gì?
+**Câu 1 — Chọn một.** Kỹ sư có một tuần ôn Architect và muốn dành phần lớn thời gian học mọi chi tiết cấu hình cloud trong khóa Bedrock vì khóa có nhiều bài. Cơ sở ưu tiên nào phù hợp nhất?
 
-A. Xác nhận đã thi đỗ.
+A. Số lượng bài của mỗi chủ đề trong khóa.
 
-B. Định hướng cấu trúc, đối tượng và lộ trình học.
+B. Thứ tự xuất hiện trên trang giới thiệu khóa học.
 
-C. Thay mọi bài kỹ thuật.
+C. Ánh xạ Exam Guide sang các bài liên quan.
 
-D. Chạy tự động các bài tập.
+D. Mức khó cảm nhận của các lệnh cài đặt trong video.
 
-**2. Chọn một.** Đọc xong trang mở đầu có chứng minh hoàn thành khóa không?
+**Câu 2 — Chọn hai.** Một mục tool-use có nội dung tương tự khóa Claude API; nhóm muốn dùng chung tài liệu ôn. Hai việc nào cần để tránh bỏ khác biệt nhà cung cấp?
 
-A. Có, vì có tên khóa.
+A. Đối chiếu nguyên tắc chung trước khi quyết định dùng chung tóm tắt.
 
-B. Có, không cần kiểm tra khác.
+B. Giữ riêng các khác biệt request/response và môi trường chạy.
 
-C. Không; còn nội dung và đánh giá riêng.
+C. Đồng nhất toàn bộ ví dụ code chỉ vì cùng mô hình Claude.
 
-D. Có, nếu trả lời nhanh.
+D. Dùng trang mở đầu làm bằng chứng rằng mọi API đều tương đương.
 
-**3. Chọn một.** Khi ôn nhanh đúng chứng chỉ, nguồn quyết định phạm vi ưu tiên?
+**Câu 3 — Chọn một.** Người học đọc xong trang mở đầu và ghi “đã hoàn thành khóa, có thể triển khai”. Bằng chứng nào còn thiếu để khẳng định năng lực đó?
 
-A. Exam Guide của chứng chỉ phù hợp.
+A. Bằng chứng trang mở đầu đã đọc và các mục nội dung đã được đánh dấu xem.
 
-B. Chỉ thời lượng video.
+B. Bản kế hoạch học ánh xạ đủ mọi chủ đề của chương trình khóa.
 
-C. Chỉ số trang đã tải.
+C. Khả năng giải thích các thuật ngữ trong trang giới thiệu mà chưa thực hành.
 
-D. Chỉ tên nhà cung cấp cloud.
+D. Bằng chứng thực hành/đánh giá các năng lực liên quan.
 
-## Đáp án
+**Câu 4 — Chọn một.** Một câu hỏi về cấu trúc phản hồi Converse xuất hiện khi đang đọc bài mở đầu. Cách dùng tài liệu nào hợp lý?
 
-1. **B.** B phù hợp nội dung; A, C, D gán kết quả không có.
+A. Suy ra cấu trúc từ sơ đồ tổng quát vì nó đã nêu nhà cung cấp.
 
-2. **C.** C phân biệt định hướng với hoàn thành; A, B, D không chứng minh kiến thức.
+B. Tra bài chuyên đề và nguồn kỹ thuật tương ứng.
 
-3. **A.** A xác định mục tiêu thi; B, C, D không thay blueprint.
+C. Dùng cấu trúc API trực tiếp của cùng model.
+
+D. Bỏ qua vì mọi nội dung chưa có trên trang mở đầu đều ngoài khóa.
+
+**Câu 5 — Chọn hai.** Khi lập kế hoạch học dùng nhiều khóa nguồn, hai thông tin nào cần tách biệt?
+
+A. Năng lực đã được thực hành/đánh giá so với bài chỉ mới đọc định hướng.
+
+B. Tỷ lệ số video đã mở như bằng chứng duy nhất về mức hiểu.
+
+C. Nguồn quyết định phạm vi thi so với nguồn cung cấp nội dung học bổ trợ.
+
+D. Tên nhà cung cấp như bằng chứng tự đủ rằng mọi nội dung thuộc đề thi.
+
+## Đáp án và giải thích
+
+1. **C.** C gắn thời gian với phạm vi chứng chỉ. A/B phản ánh cấu trúc khóa không nhất thiết trọng số thi. D độ khó thao tác không chứng minh mức ưu tiên trong kỳ thi.
+
+2. **A, B.** A xác nhận phần tương đương; B bảo toàn khác biệt tích hợp. C bỏ adapter cụ thể. D trang định hướng không cung cấp đủ chi tiết để kết luận tính tương đương kỹ thuật.
+
+3. **D.** D cần bằng chứng năng lực qua thực hành/đánh giá. A là tiến độ đọc. B là kế hoạch bao phủ, chưa chứng minh đã thực hiện. C nhận diện thuật ngữ chưa chứng minh triển khai hay thiết kế đúng.
+
+4. **B.** B chọn nguồn có độ chi tiết phù hợp câu hỏi. A/C suy rộng thiếu cơ sở. D trang mở đầu là bản đồ, không phải toàn bộ nội dung khóa.
+
+5. **A, C.** A giúp đánh giá tiến độ theo bằng chứng, C giữ đúng vai trò từng tài liệu. B đếm truy cập thay năng lực. D phạm vi chứng chỉ phải đối chiếu đề cương, không suy từ thương hiệu.

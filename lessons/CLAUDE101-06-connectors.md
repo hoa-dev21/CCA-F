@@ -13,42 +13,66 @@ Ví dụ: Muốn tổng hợp các yêu cầu hỗ trợ khách hàng, còn gọ
 
 Sau khi thiết lập kết nối, cần đăng nhập hoặc xác thực, cấp quyền phù hợp rồi thử một yêu cầu đơn giản để kiểm tra dữ liệu nhận được. Quyền đọc tài liệu không đồng nghĩa với quyền sửa, gửi thông tin hoặc truy cập mọi dữ liệu của tổ chức.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Bot cần dữ liệu ticket mới nhất nhưng chưa có kết nối. Bước phù hợp?
+**Câu 1 — Chọn một.** Prompt yêu cầu tổng hợp ticket từ hệ thống nội bộ, nhưng chưa có connector. AI viết báo cáo nghe hợp lý. Bước cần làm trước khi dùng báo cáo?
 
-A. Chỉ yêu cầu đoán trạng thái.
+A. Đưa tên miền hệ thống vào prompt và coi như đã cấp quyền đọc.
 
-B. Tích hợp nguồn phù hợp, xác thực/quyền và kiểm tra truy cập.
+B. Hỏi AI có chắc chắn đã truy cập hệ thống hay không.
 
-C. Chỉ tăng độ dài output.
+C. Kết nối, xác thực và kiểm tra quyền đọc dữ liệu ticket.
 
-D. Đổi giọng điệu.
+D. Yêu cầu báo cáo có nhiều mã ticket hơn để tăng tính cụ thể.
 
-**2. Chọn một.** Connector đọc được tài liệu có chứng minh được phép sửa mọi dữ liệu không?
+**Câu 2 — Chọn hai.** Connector đọc được tài liệu nhưng gửi email thất bại. Hai điều cần kiểm tra trước khi sửa prompt?
 
-A. Có, mọi quyền tương đương.
+A. Độ dài câu yêu cầu vì quyền đọc luôn bao hàm quyền gửi.
 
-B. Có, miễn user mở chat.
+B. Danh tính đã xác thực có quyền thực hiện hành động gửi tương ứng.
 
-C. Không; hành động phụ thuộc quyền và khả năng được cấp.
+C. Connector có hỗ trợ hành động gửi hay chỉ cung cấp khả năng đọc.
 
-D. Có, tên connector thay thế permission.
+D. Tên tài liệu vì cùng một connector bảo đảm cùng quyền cho mọi thao tác.
 
-**3. Chọn một.** Khả năng truy cập file hoặc ứng dụng cục bộ trong bài gắn với loại nào?
+**Câu 3 — Chọn một.** Ứng dụng cần đọc file local trong thư mục được cho phép, nhưng chỉ có kết nối dịch vụ web. Cách chọn khả năng phù hợp?
 
-A. Desktop extensions phù hợp môi trường desktop.
+A. Kiểm tra công cụ local có quyền vào đúng thư mục.
 
-B. Chỉ một URL không tích hợp.
+B. Gửi đường dẫn ổ đĩa vào dịch vụ web rồi coi nó truy cập được file.
 
-C. Chỉ tên mô hình.
+C. Cấp thêm quyền đọc dịch vụ web để đường dẫn local trở nên khả dụng.
 
-D. Mọi web connector đều có toàn bộ file cục bộ.
+D. Đổi prompt sang tiếng Anh để connector hiểu đường dẫn tốt hơn.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Sau khi cài connector, quản trị viên muốn dùng ngay cho báo cáo lớn. Hai bước kiểm tra ban đầu hợp lý?
 
-1. **B.** B tạo đường tới dữ liệu; A không có căn cứ, C và D không thêm nguồn.
+A. Thử một yêu cầu đọc nhỏ với dữ liệu có thể đối chiếu.
 
-2. **C.** C phân biệt scope; A, B, D suy rộng quyền không có.
+B. Đánh giá thành công chỉ từ việc biểu tượng connector xuất hiện.
 
-3. **A.** A đúng loại tích hợp; B và C không tạo truy cập, D suy rộng sai.
+C. Dùng tài khoản quản trị để bỏ qua mọi vấn đề quyền trong bản thử.
+
+D. Xác nhận tài khoản và phạm vi quyền đang dùng đúng mục đích.
+
+**Câu 5 — Chọn một.** Nhóm muốn dùng MCP để nối nhiều nguồn. Một thành viên nói có giao thức chung thì mọi công cụ sẽ có cùng quyền và hành động. Kết luận phù hợp?
+
+A. Đúng nếu nguồn đã được một quản trị viên cài đặt.
+
+B. Chỉ cần đặt cùng tên công cụ ở mọi nguồn để đồng nhất hành vi.
+
+C. Giao thức thống nhất; năng lực và quyền vẫn cần kiểm tra riêng.
+
+D. Đúng nếu các công cụ dùng cùng định dạng JSON.
+
+## Đáp án và giải thích
+
+1. **C.** C tạo và kiểm tra đường dữ liệu. D có thể tăng chi tiết bịa; A không tạo kết nối/quyền; B tự xác nhận không thay bằng chứng thực thi.
+
+2. **B, C.** C kiểm tra khả năng; B kiểm tra quyền. A và D cùng nhầm một kết nối với toàn bộ quyền hành động.
+
+3. **A.** A chọn công cụ đúng vị trí dữ liệu. B thiếu đường truy cập; C tăng quyền sai hệ thống; D ngôn ngữ không giải quyết khả năng truy cập.
+
+4. **A, D.** A kiểm tra đầu cuối; D kiểm tra phạm vi. C che lỗi cấu hình và mở quyền quá mức; B chỉ chứng minh một phần thiết lập giao diện.
+
+5. **C.** C phân biệt chuẩn giao tiếp với hợp đồng thực tế. D nhầm định dạng với ngữ nghĩa; A nhầm cài đặt với quyền người dùng; B tên chung không tạo cùng khả năng.

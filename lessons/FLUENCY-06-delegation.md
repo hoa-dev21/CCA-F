@@ -17,40 +17,66 @@ Ví dụ: Khi nghiên cứu tài liệu, bạn có thể nhờ AI phân nhóm n�
 
 Một kế hoạch tốt nêu rõ phần việc của mỗi bên và tiêu chí hoàn thành. Mục tiêu là tận dụng điểm mạnh của người và AI, không phải cố tự động hóa mọi bước.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Chưa xác định kết quả mong muốn nhưng đã chọn mô hình và giao hết việc. Bước cần làm rõ trước?
+**Câu 1 — Chọn một.** Nhóm chọn mô hình và công cụ trước khi biết báo cáo phục vụ quyết định nào; mỗi người chấm kết quả theo một tiêu chí. Việc cần làm trước là gì?
 
-A. Problem Awareness: mục tiêu và bản chất công việc.
+A. Tăng khả năng của mô hình để đáp ứng mọi cách chấm.
 
-B. Chỉ màu giao diện.
+B. Chốt mục tiêu, người dùng và tiêu chí trước phân công.
 
-C. Chỉ độ dài tên mô hình.
+C. Chọn một mẫu báo cáo đẹp làm tiêu chí duy nhất.
 
-D. Chỉ thông báo hoàn thành.
+D. Giao AI tự quyết định tiêu chí từ bản báo cáo đầu tiên.
 
-**2. Chọn một.** Biết hệ thống không truy cập được dữ liệu nội bộ thuộc thành phần nào?
+**Câu 2 — Chọn một.** AI có thể phân nhóm tài liệu nhưng không được truy cập hồ sơ nội bộ; kết luận cuối cần chuyên môn ngành. Thiết kế phân công nào phù hợp?
 
-A. Chỉ giọng điệu.
+A. Giao AI toàn bộ và yêu cầu suy đoán phần hồ sơ bị thiếu.
 
-B. Platform Awareness.
+B. AI xử lý dữ liệu được phép; chuyên gia xử lý phần hạn chế và duyệt.
 
-C. Chỉ định dạng báo cáo.
+C. Cho AI đóng vai chuyên gia để thay thế người duyệt.
 
-D. Không liên quan phân công.
+D. Đưa toàn bộ hồ sơ vào prompt vì nhiệm vụ không thể làm thiếu nguồn.
 
-**3. Chọn một.** Kế hoạch nào phù hợp mục tiêu của Delegation?
+**Câu 3 — Chọn hai.** Trước khi giao AI soạn hướng dẫn vận hành, hai thông tin nào cần xác định để phân công có cơ sở?
 
-A. AI quyết định mọi việc bất kể rủi ro.
+A. Dữ liệu AI thực sự truy cập được và giới hạn của nền tảng.
 
-B. Người không cần chuyên môn.
+B. Số lượng từ khóa kỹ thuật trong prompt.
 
-C. Chia việc theo mục tiêu, khả năng và phần cần phán đoán người.
+C. Phần việc cần phán đoán người và tiêu chí nghiệm thu từng phần.
 
-D. Chỉ chọn nền tảng rồi không kiểm tra đầu ra.
+D. Độ dài tối đa AI có thể viết, coi đó là thước đo bao phủ nhiệm vụ.
 
-## Đáp án
+**Câu 4 — Chọn một.** Trong quá trình làm, chuyên gia phát hiện việc kiểm tra phương pháp nghiên cứu khó hơn dự kiến. Nhóm nên điều chỉnh thế nào?
 
-1. **A.** A xác định công việc; B, C, D không tạo mục tiêu hoặc tiêu chí.
-2. **B.** B là hiểu khả năng/giới hạn nền tảng; A và C là đặc tính khác, D bỏ yếu tố quyết định phân công.
-3. **C.** C kết hợp các yếu tố; A và B bỏ vai trò người, D chưa phân công và kiểm chứng.
+A. Giữ phân công vì thay đổi sẽ làm mất tính nhất quán của kế hoạch.
+
+B. Yêu cầu AI chấm chính kết luận của nó thay chuyên gia để giữ deadline.
+
+C. Bỏ phần phương pháp khỏi tiêu chí chấp nhận cho vừa năng lực hiện có.
+
+D. Đổi phạm vi/nguồn lực, giữ kiểm tra chuyên môn và cập nhật bàn giao.
+
+**Câu 5 — Chọn hai.** Quản lý muốn đo chất lượng phân công. Hai dấu hiệu nào thuyết phục hơn tỷ lệ công việc tự động hóa?
+
+A. Phần AI nhận phù hợp dữ liệu, năng lực và mức kiểm tra khả dụng.
+
+B. Mọi bước đều do AI thực hiện để giảm số lần bàn giao.
+
+C. Có người kiểm tra/ra quyết định cho phần cần chuyên môn và tiêu chí hoàn tất rõ.
+
+D. Các nhiệm vụ được chia thành số bước bằng nhau cho người và AI.
+
+## Đáp án và giải thích
+
+1. **B.** B là Problem Awareness, tạo cơ sở cho lựa chọn công cụ và chia việc. A không giải quyết xung đột mục tiêu. C chỉ đánh giá hình thức. D đặt tiêu chí sau kết quả dễ làm lệch đánh giá.
+
+2. **B.** B kết hợp khả năng công cụ, quyền dữ liệu và chuyên môn. A tạo kết luận thiếu bằng chứng. C vai trò ngôn ngữ không thay chuyên môn có trách nhiệm. D bỏ ràng buộc dữ liệu để hoàn thành nhiệm vụ.
+
+3. **A, C.** A là Platform Awareness, C nối hiểu công việc với Task Delegation. B không xác định năng lực cần thiết. D sức chứa đầu ra không cho biết các quyết định nghiệp vụ được xử lý đúng.
+
+4. **D.** D dùng hiểu biết mới để phân công lại. A đặt kế hoạch cao hơn mục tiêu. B chuyển điểm khó sang bên chưa chứng minh đủ năng lực. C thay tiêu chí để chấp nhận kết quả thiếu điều kiện quan trọng.
+
+5. **A, C.** A phản ánh sự phù hợp giữa nhiệm vụ và khả năng; C giữ chất lượng ở điểm quyết định. B coi tự động hóa là mục tiêu tự thân. D chia đều số bước không xét độ khó, rủi ro hoặc thế mạnh của mỗi bên.

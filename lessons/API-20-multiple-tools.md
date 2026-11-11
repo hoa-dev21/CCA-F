@@ -18,43 +18,69 @@ Ví dụ của bài là hệ thống nhắc việc có công cụ lấy thời g
 
 Giữ đầy đủ lịch sử và kết quả trung gian để Claude biết đã làm đến đâu. Nếu vòng xử lý chung đã quản lý đúng các khối nội dung và kết quả, bạn không cần viết riêng một nhánh hội thoại cho mọi chuỗi công cụ có thể xuất hiện.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Claude yêu cầu công cụ mới nhưng router báo không nhận diện. Thiếu phần nào?
+**Câu 1 — Chọn một.** Nhóm thêm schema create_reminder vào tools; model gọi đúng tên nhưng host báo không biết công cụ. Điểm tích hợp nào cần kiểm tra đầu tiên?
 
-A. Ánh xạ tên công cụ sang hàm thực thi.
+A. Tăng số ví dụ lời nhắc trong description.
 
-B. Thêm lời chào.
+B. Đổi system prompt để model dùng một tên khác chưa đăng ký.
 
-C. Độ dài phản hồi.
+C. Ánh xạ create_reminder tới hàm thực thi trong router.
 
-D. Tên người dùng.
+D. Tăng giới hạn số vòng vì lời gọi đã đúng cấu trúc.
 
-**2. Chọn một.** Hàm và router đã có, nhưng công cụ không được truyền trong yêu cầu. Hạn chế trực tiếp?
+**Câu 2 — Chọn hai.** Hàm tính thời điểm mới đã có unit test. Hai bước nào còn cần để model dùng được nó trong vòng chung?
 
-A. Mọi công cụ khác đều ngừng hoạt động.
+A. Tạo riêng một hội thoại cố định cho mọi câu hỏi chứa thời gian.
 
-B. Claude chưa được cung cấp định nghĩa công cụ mới để sử dụng.
+B. Đưa định nghĩa và schema vào tools gửi model.
 
-C. Lịch sử tự mất.
+C. Đăng ký tên công cụ với hàm thực thi trong router.
 
-D. Hàm tự được quảng bá qua tên file.
+D. Chỉ thêm tên hàm vào tài liệu nội bộ mà không gửi định nghĩa.
 
-**3. Chọn một.** Công cụ tạo nhắc việc cần ngày được tính từ công cụ khác. Thực thi nào phù hợp?
+**Câu 3 — Chọn một.** Yêu cầu nhắc việc vào ba ngày sau hôm nay cần get_time, add_days rồi create_reminder. Hệ thống muốn giảm độ trễ bằng chạy cả ba cùng lúc. Nhận định nào đúng?
 
-A. Chạy cả hai với ngày đoán trước.
+A. Giữ thứ tự vì bước sau cần kết quả bước trước.
 
-B. Tạo nhắc việc rồi tính ngày sau.
+B. Coi schema riêng là chứng cứ độc lập.
 
-C. Lấy kết quả tính ngày trước, rồi dùng nó để tạo nhắc việc.
+C. Có thể dùng thời điểm đoán cho bước tạo và bỏ qua sai số nếu nhỏ.
 
-D. Bỏ kết quả trung gian.
+D. Chạy tạo trước rồi dùng bước tính để giải thích thời điểm đã chọn.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Thêm công cụ mới nhưng không muốn nhân số nhánh hội thoại theo mọi tổ hợp công cụ. Hai đặc điểm nào của vòng chung hỗ trợ mục tiêu này?
 
-1. **A.** B, C, D không triển khai route còn thiếu.
-2. **B.** A và C không suy ra từ dữ kiện; D giả định cơ chế tự quảng bá không có.
-3. **C.** A đoán tham số; B đảo phụ thuộc; D mất dữ liệu đầu vào cần thiết.
+A. Giữ lịch sử cùng kết quả trung gian cho quyết định tiếp theo.
+
+B. Duyệt các block tool_use theo type thay vì theo một tên cố định.
+
+C. Xóa kết quả sau mỗi lần gọi để các công cụ được “độc lập”.
+
+D. Chỉ hỗ trợ đúng một tool_use ở vị trí thứ hai của response.
+
+**Câu 5 — Chọn một.** Model không bao giờ chọn một hàm mới dù router chạy hàm ấy tốt trong test. Logs request không có định nghĩa hàm. Sửa ở đâu?
+
+A. Mã lưu output UI vì đó là nơi model khám phá công cụ.
+
+B. Thuật toán của hàm thực thi vì model chưa gọi được.
+
+C. Danh sách tools được gửi cho model trong request.
+
+D. Đổi router để tự chạy hàm mới trong mọi request.
+
+## Đáp án và giải thích
+
+1. **C.** C sửa phía thực thi đang thiếu. B đổi tên không thêm ánh xạ; A chỉ tác động lựa chọn model; D thêm vòng không làm router nhận biết công cụ.
+
+2. **B, C.** B công bố khả năng, C nối khả năng tới mã chạy. A không cần khi vòng chung đã hỗ trợ; D model không được cung cấp hợp đồng công cụ.
+
+3. **A.** A phân biệt khai báo độc lập với phụ thuộc thực thi. B không xét giá trị đầu vào; C và D thực hiện tác động trước khi có dữ liệu quyết định.
+
+4. **A, B.** B cho phép nhiều loại lời gọi; A cho phép kết hợp theo dữ liệu. D gắn vòng vào ví dụ hẹp; C phá phụ thuộc và khả năng nối các bước.
+
+5. **C.** C bổ sung công bố khả năng còn thiếu. B sửa thành phần chưa được chọn; A UI không phải đường công bố tools; D thêm hành động bất kể nhu cầu.
 
 ## Đối chiếu Bedrock: thêm nhiều công cụ
 

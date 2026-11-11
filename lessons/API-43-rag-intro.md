@@ -13,45 +13,69 @@ Ví dụ: Kho hướng dẫn công ty quá lớn để gửi tất cả. Khi ng�
 
 RAG giúp giảm nội dung không liên quan và làm việc với kho lớn, nhưng cần thêm công đoạn chuẩn bị và cơ chế tìm kiếm. Hãy đánh giá riêng việc tìm đúng, đủ tài liệu và việc AI trả lời từ tài liệu đó. Nhờ vậy, bạn biết cần sửa khâu tìm kiếm hay khâu tạo câu trả lời.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Kho quá lớn để nạp toàn bộ. Ý tưởng chính của RAG?
+**Câu 1 — Chọn một.** RAG tìm đúng chính sách hoàn tiền nhưng chỉ lấy đoạn điều kiện chung; ngoại lệ nằm ở phần tiếp theo. Câu trả lời sai dù mô hình bám sát đoạn được cấp. Ưu tiên sửa gì?
 
-A. Truy xuất phần liên quan làm ngữ cảnh.
+A. Tăng yêu cầu mô hình chỉ trả lời theo ngữ cảnh hiện tại.
 
-B. Mô hình tự đọc mọi dữ liệu không tích hợp.
+B. Thêm vài mẫu câu trả lời đúng mà giữ nguyên truy xuất.
 
-C. Xóa câu hỏi.
+C. Kiểm tra truy xuất có đủ quy tắc và ngoại lệ không.
 
-D. Chỉ tăng giọng tự tin.
+D. Hạ temperature để câu trả lời ổn định hơn.
 
-**2. Chọn một.** RAG trả đoạn liên quan nhưng thiếu điều kiện ngoại lệ. Điều gì cần kiểm tra?
+**Câu 2 — Chọn một.** Kho nhỏ vừa ngữ cảnh và cập nhật ít; nhóm đề xuất RAG vì “luôn tốt hơn gửi tài liệu”. Quyết định kiến trúc nên dựa vào đâu?
 
-A. Chỉ màu văn bản.
+A. Chọn gửi toàn bộ vì RAG chỉ có ích với dữ liệu công khai.
 
-B. Độ đầy đủ bối cảnh của phần được truy xuất.
+B. Chọn RAG nếu trả lời ngắn hơn dù thiếu một số ngoại lệ.
 
-C. Chỉ tên mô hình.
+C. Chỉ so số token của prompt cuối vì đó là toàn bộ chi phí RAG.
 
-D. Không cần xem nguồn.
+D. So chất lượng và chi phí toàn luồng trên bộ hỏi đại diện.
 
-**3. Chọn một.** Chi phí thiết kế thêm của RAG nằm ở đâu?
+**Câu 3 — Chọn hai.** Câu trả lời RAG sai, nhóm chưa biết lỗi tìm kiếm hay sinh đáp án. Hai phép kiểm tra nào giúp phân biệt?
 
-A. Không cần xử lý dữ liệu.
+A. Cho mô hình bộ bằng chứng đầy đủ đã kiểm tra rồi chấm câu trả lời.
 
-B. Chỉ đặt tên file.
+B. Gộp mọi lỗi thành một điểm trung bình duy nhất.
 
-C. Chuẩn bị/chunk và cơ chế tìm phần liên quan.
+C. Chấm chỉ giọng văn và độ mạch lạc của câu trả lời cuối.
 
-D. Không có đánh đổi.
+D. So các đoạn lấy được với bằng chứng cần cho câu hỏi.
 
-## Đáp án
+**Câu 4 — Chọn một.** Ứng dụng đã chia kho tài liệu và lập chỉ mục, nhưng lúc hỏi chỉ gửi câu hỏi cho mô hình. Nhóm kỳ vọng mô hình tự biết dữ liệu đã lập chỉ mục. Thành phần nào thiếu?
 
-1. **A.** A cung cấp ngữ cảnh có chọn lọc; B giả định truy cập tự động, C mất mục tiêu, D không lấy dữ liệu.
+A. Một prompt xác nhận rằng hệ thống có kho dữ liệu nội bộ.
 
-2. **B.** B nhắm thiếu bằng chứng; A và C không chẩn đoán truy xuất dữ liệu, D bỏ kiểm chứng.
+B. Đặt tên mô hình theo chủ đề tài liệu để gắn kiến thức.
 
-3. **C.** C là các thành phần thêm; A và D phủ nhận, B không tạo quy trình xử lý.
+C. Chạy lại bước chia đoạn trước mỗi câu hỏi.
+
+D. Truy xuất khi hỏi, đưa đoạn tìm được vào request.
+
+**Câu 5 — Chọn hai.** Người dùng hỏi chính sách cho một trường hợp cụ thể. Hai tiêu chí nào có ý nghĩa hơn chỉ “top result cùng chủ đề”?
+
+A. Câu trả lời cuối được kiểm tra đối chiếu với bằng chứng đã lấy.
+
+B. Điểm tương đồng cao được dùng thay nhãn đúng/sai của câu trả lời.
+
+C. Mỗi câu trả lời có nhiều đoạn trích bất kể nội dung.
+
+D. Đoạn chứa điều kiện áp dụng và ngoại lệ liên quan đến trường hợp.
+
+## Đáp án và giải thích
+
+1. **C.** A sai: Nó đã bám sát nguồn nhưng nguồn chưa đầy đủ. B sai: Có thể che ca cụ thể nhưng không sửa khả năng lấy đủ tài liệu. C đúng: Lỗi bắt đầu từ ngữ cảnh thiếu điều kiện. D sai: Không bổ sung ngoại lệ bị bỏ sót.
+
+2. **D.** A sai: Quyền truy cập không quyết định duy nhất phương án truy xuất. B sai: Ngắn hơn không thay tiêu chí đầy đủ. C sai: Bỏ qua lập chỉ mục, tìm kiếm và khả năng mất ngữ cảnh. D đúng: RAG có lợi ích và chi phí phụ thuộc bài toán.
+
+3. **A, D.** A đúng: Cô lập khả năng dùng bằng chứng ở khâu tạo đáp án. B sai: Mất khả năng xác định tầng cần sửa. C sai: Không đo đủ bằng chứng hoặc tính đúng. D đúng: Đo đúng và đủ ở khâu truy xuất.
+
+4. **D.** A sai: Nói có kho không cấp nội dung kho. B sai: Tên cấu hình không huấn luyện hay truyền tài liệu. C sai: Lặp chuẩn bị không thay bước tìm và truyền dữ liệu. D đúng: Chuẩn bị kho không tự đưa thông tin vào ngữ cảnh.
+
+5. **A, D.** A đúng: Tìm đúng vẫn có thể sinh sai. B sai: Điểm tìm kiếm không đo suy luận cuối. C sai: Số đoạn không bảo đảm đủ thông tin cần thiết. D đúng: Liên quan chung chưa đủ trả lời quyết định cụ thể.
 
 ## Đối chiếu RAG trên Bedrock
 

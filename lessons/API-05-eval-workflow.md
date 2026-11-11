@@ -15,43 +15,69 @@ Ví dụ: Trợ lý hỗ trợ khách hàng thường trả lời sai các yêu 
 
 Mỗi lần sửa và đánh giá lại là một vòng cải tiến (iteration). Đừng xóa kết quả ban đầu hoặc chỉ đổi sang câu hỏi dễ hơn để có điểm cao hơn.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Bản mới có điểm cao hơn nhưng dùng bộ câu hỏi dễ hơn. Kết luận nào phù hợp?
+**Câu 1 — Chọn một.** Đánh giá vòng đầu dùng 100 ca; vòng sau dùng 100 ca khác dễ hơn. Nhóm muốn chứng minh sửa prompt có ích. Bước tiếp theo nào trực tiếp nhất?
 
-A. Chưa đủ căn cứ; cần so hai bản với cùng bộ kiểm thử và cách chấm.
+A. Tăng số lần chạy bản mới trên tập dễ cho điểm ổn định.
 
-B. Chắc chắn bản mới tốt hơn.
+B. Chỉ so các ca mà bản mới đạt điểm tối đa.
 
-C. Điểm số luôn vô dụng.
+C. So hai phiên bản trên cùng tập và cùng bộ chấm.
 
-D. Không cần lưu kết quả từng trường hợp.
+D. Tính trung bình cộng hai điểm để giảm sai số lấy mẫu.
 
-**2. Chọn một.** Bộ chấm điểm chỉ thấy đầu ra, không thấy yêu cầu gốc. Rủi ro chính?
+**Câu 2 — Chọn hai.** Bộ chấm mô hình nhận mỗi đầu ra rồi cho điểm “đúng yêu cầu”. Hai thành phần nào cần thêm để phép chấm có căn cứ?
 
-A. Không thể đếm ký tự.
+A. Yêu cầu gốc tương ứng với đầu ra.
 
-B. Mọi đầu ra đều không parse được.
+B. Chỉ tên model đã sinh đầu ra để suy ra năng lực.
 
-C. Khó đánh giá câu trả lời có giải quyết đúng yêu cầu không.
+C. Điểm của prompt đang được kỳ vọng thắng để định hướng người chấm.
 
-D. Claude tự xóa dữ liệu kiểm thử.
+D. Tiêu chí đánh giá thống nhất cho nhiệm vụ đó.
 
-**3. Chọn một.** Sau khi sửa prompt cho một lỗi, nên làm gì?
+**Câu 3 — Chọn một.** Sau khi sửa prompt để khắc phục một ca thiếu trường, ca đó đã đạt. Nhóm định bỏ bước chạy lại toàn tập. Rủi ro nào cần xử lý?
 
-A. Chỉ xem độ dài prompt.
+A. Cần so với baseline để phát hiện hồi quy ở các ca khác.
 
-B. Chạy lại đánh giá và so kết quả với kết quả ban đầu để so sánh.
+B. Cần tạo một thước đo mới để bảo đảm thay đổi có điểm cao hơn.
 
-C. Xóa kết quả ban đầu để so sánh.
+C. Bỏ baseline của prompt cũ khỏi so sánh.
 
-D. Gán điểm tối đa cho các câu đã sửa.
+D. Điểm ca vừa sửa không thể sử dụng vì mọi lần chạy lại đều mất giá trị.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Muốn tái hiện một lần đánh giá có điểm giảm, nhóm cần lưu những gì ngoài điểm tổng?
 
-1. **A.** B thay đổi hai yếu tố cùng lúc; C phủ nhận sai giá trị đo; D bỏ bằng chứng chẩn đoán.
-2. **C.** A và B là kiểm tra hình thức không đòi hỏi hiểu yêu cầu; D không liên quan.
-3. **B.** Cần đo tác động thực tế. A không đo đầu ra; C mất mốc so sánh; D tạo số liệu giả.
+A. Đầu ra từng ca cùng kết quả chấm của ca đó.
+
+B. Phiên bản prompt và tập đầu vào đã chạy.
+
+C. Chỉ ca tốt nhất để kiểm tra model có từng thành công.
+
+D. Chỉ thời lượng chạy tổng để xác định lỗi nội dung.
+
+**Câu 5 — Chọn một.** Quy trình đã viết prompt, tạo tập và sinh câu trả lời; nhóm gọi đó là đánh giá hoàn tất dù chưa có chấm điểm. Phần còn thiếu là gì?
+
+A. Chấm theo rubric, lưu baseline rồi sửa và đánh giá lại.
+
+B. Viết prompt mới trước để tránh bị baseline ảnh hưởng.
+
+C. Đưa cùng đầu ra trở lại model để model xác nhận mình đã làm đúng.
+
+D. Tăng kích thước tập nhưng vẫn chỉ lưu câu trả lời.
+
+## Đáp án và giải thích
+
+1. **C.** C khôi phục baseline so sánh. D trộn phép đo không tương đương; A làm kết quả ổn định nhưng vẫn lệch; B lựa chọn ca theo kết quả.
+
+2. **A, D.** A xác định điều phải làm; D xác định cách đánh giá. C làm lệch người chấm; B không thay thế việc đối chiếu nội dung.
+
+3. **A.** A giữ chu trình thử–chấm–sửa–đo lại. D phủ nhận phép đo hữu ích; B thay thước đo để ưu ái thay đổi; C bỏ mốc cần cho so sánh.
+
+4. **A, B.** B tái lập điều kiện đầu vào; A cho phép truy nguyên lỗi chấm hoặc sinh. C che các thất bại; D đo hiệu năng chứ không giải thích giảm chất lượng.
+
+5. **A.** A đóng vòng đánh giá. C thiếu tiêu chí độc lập rõ ràng; B sửa khi chưa biết lỗi; D tăng dữ liệu chưa được đo chứ chưa tạo phép đánh giá.
 
 ## Đối chiếu Bedrock
 

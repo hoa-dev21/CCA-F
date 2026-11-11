@@ -15,43 +15,69 @@ Một phản hồi có thể yêu cầu nhiều công cụ. Giả sử hai phép
 
 Ở yêu cầu tiếp theo, giữ lịch sử trước đó, tin nhắn `assistant` chứa yêu cầu gọi công cụ và tin nhắn `user` chứa kết quả. Mẫu của bài cũng tiếp tục gửi định nghĩa công cụ. Chạy hàm thành công mới là một phần của luồng; cần gửi kết quả lại cho Claude thì mô hình mới sử dụng được dữ liệu ấy.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Hai công cụ hoàn thành theo thứ tự đảo ngược. Ghép kết quả bằng gì?
+**Câu 1 — Chọn một.** Hai tra cứu A và B hoàn thành ngược thứ tự khởi chạy. Kết quả A chứa giá đơn hàng, B chứa trạng thái giao. Cách ghép nào đúng?
 
-A. Độ dài kết quả.
+A. Ghép kết quả theo thứ tự hoàn tất.
 
-B. Vị trí hoàn thành.
+B. Gắn mỗi kết quả với tool_use_id của chính lời gọi tạo ra nó.
 
-C. Tên người dùng.
+C. Ghép bằng tên công cụ vì một công cụ chỉ có thể xuất hiện một lần.
 
-D. `tool_use_id` khớp ID yêu cầu.
+D. Cho Claude suy ra kết quả nào thuộc A hay B từ nội dung text.
 
-**2. Chọn một.** Trong mẫu công cụ do ứng dụng thực thi, `tool_result` được đặt ở đâu?
+**Câu 2 — Chọn hai.** Một công cụ lỗi kết nối, công cụ kia thành công. Hai đặc điểm nào cần có trong các tool_result trả về?
 
-A. Nội dung của tin nhắn của người dùng tiếp theo.
+A. Bỏ kết quả lỗi để model chỉ nhận dữ liệu đáng tin.
 
-B. Thay vào tên mô hình.
+B. Mỗi kết quả giữ đúng tool_use_id ban đầu.
 
-C. Xóa assistant message rồi chỉ gửi text trống.
+C. Cả hai kết quả đều gắn lỗi vì cùng nằm trong một response.
 
-D. Trong API key.
+D. Kết quả thất bại được đánh dấu is_error thay vì biến thành dữ liệu rỗng thành công.
 
-**3. Chọn một.** Hệ thống xử lý phía máy chủ đã trả kết quả nhưng ứng dụng chưa gửi lại cho Claude. Bước nào còn thiếu?
+**Câu 3 — Chọn một.** Hàm tra cứu đã chạy và lưu dữ liệu vào database, nhưng request tiếp theo không chứa tool_result. Model tiếp tục hỏi dữ liệu. Nguyên nhân trực tiếp là gì?
 
-A. Đổi tên cuộc hội thoại.
+A. Cần đổi role của mọi messages thành assistant để model biết đã có kết quả.
 
-B. Tạo tool-result block liên kết đúng và gửi cùng lịch sử.
+B. Cần gọi lại hàm nhiều lần cho tới khi model tự nhận thấy dữ liệu.
 
-C. Coi lời dự đoán trước đó là kết quả thật.
+C. Model phải tự đọc database nếu tên database có trong schema.
 
-D. Chỉ thay giọng điệu prompt.
+D. Kết quả chưa được đưa vào ngữ cảnh mà model nhận.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Theo mẫu hội thoại của bài, sau khi thực thi client tool, hai thành phần nào phải cùng được giữ khi gọi Claude tiếp?
 
-1. **D.** A và C không liên kết yêu cầu; B sai khi hoàn thành đảo thứ tự.
-2. **A.** B và D sai vị trí; C xóa ngữ cảnh cần thiết.
-3. **B.** A và D không chuyển dữ liệu; C thay bằng chứng bằng dự đoán.
+A. Tin nhắn assistant chỉ chứa câu “công cụ đã chạy” thay yêu cầu gốc.
+
+B. Tin nhắn user do người dùng tự gõ lại toàn bộ dữ liệu công cụ.
+
+C. Tin nhắn user có tool_result nối đúng ID và chứa kết quả.
+
+D. Tin nhắn assistant có khối tool_use gốc.
+
+**Câu 5 — Chọn một.** Một công cụ trả “không tìm thấy đơn”; công cụ khác bị timeout. Adapter đang chuyển cả hai thành mảng rỗng. Cải tiến nào cần ưu tiên?
+
+A. Coi cả hai là lỗi vĩnh viễn, không retry.
+
+B. Phân biệt truy vấn rỗng hợp lệ với lỗi thực thi.
+
+C. Đổi cả hai thành thành công để tránh gián đoạn hội thoại.
+
+D. Ghép hai thông báo vào text chung không giữ ID lời gọi.
+
+## Đáp án và giải thích
+
+1. **B.** B giữ tương quan độc lập thứ tự. A ghép nhầm khi bất đồng bộ; C có thể có nhiều lần gọi cùng tên; D bỏ mã định danh đáng tin để đoán.
+
+2. **B, D.** B định danh đúng; D giữ ngữ nghĩa lỗi. C làm sai lần gọi thành công; A để thiếu phản hồi cho một yêu cầu và che thông tin cần phục hồi.
+
+3. **D.** D phân biệt lưu ở host với gửi tới model. C giả định truy cập chưa thiết lập; A làm sai vai trò; B thêm thực thi nhưng không sửa đường truyền kết quả.
+
+4. **C, D.** D giữ yêu cầu, C cung cấp phản hồi đúng giao thức. B role user ở đây không bắt buộc người dùng nhập; A mất ID và đầu vào cần đối chiếu.
+
+5. **B.** B bảo toàn ý nghĩa để chọn bước tiếp. A mất kết quả hợp lệ; C che lỗi vận hành; D mất quan hệ lỗi–công cụ.
 
 ## Đối chiếu Bedrock: gửi kết quả công cụ
 

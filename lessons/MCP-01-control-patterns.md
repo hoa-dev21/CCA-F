@@ -19,43 +19,69 @@ Hãy chọn thành phần theo trải nghiệm cần tạo. Nếu giao diện c�
 
 Lấy được mẫu hướng dẫn chưa có nghĩa nhiệm vụ đã hoàn thành. Sau bước lấy mẫu, ứng dụng còn phải gọi mô hình và xử lý các công cụ cần thiết.
 
-## Câu hỏi tình huống
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Giao diện cần hiển thị danh mục tài liệu ngay khi người dùng mở bộ chọn, không chờ mô hình. Primitive phù hợp?
+**Câu 1 — Chọn một.** UI phải hiện danh mục tài liệu ngay khi mở bộ chọn, trước khi người dùng hỏi mô hình. Primitive nào khớp cách chủ động lựa chọn này?
 
-A. Công cụ chỉ được gọi khi Claude đoán người dùng muốn mở danh mục.
+A. Tool để mô hình tự quyết định có cần danh mục ở lượt suy luận tiếp theo.
 
-B. Resource do ứng dụng đọc cho UI.
+B. Resource để ứng dụng chủ động đọc và hiển thị danh mục.
 
-C. Prompt trả lời câu hỏi chưa được nhập.
+C. Prompt để sinh một danh mục dự đoán từ tên dự án.
 
-D. Không cung cấp danh mục thật.
+D. Tool chạy nền khi được liệt kê dù chưa có lời gọi.
 
-**2. Chọn một.** Người dùng muốn bấm “định dạng tài liệu” để nhận quy trình hướng dẫn nhất quán. Chọn gì?
+**Câu 2 — Chọn một.** Người dùng bấm “định dạng tài liệu”, chọn mẫu có tham số doc_id. Sau khi lấy prompt thành công, ứng dụng nên làm gì để hoàn tất tác vụ?
 
-A. Chỉ một URI danh mục.
+A. Báo tài liệu đã định dạng vì server đã trả template.
 
-B. Chỉ lời giải thích về MCP.
+B. Lưu URI template làm phiên bản tài liệu mới.
 
-C. Prompt có tham số cho tài liệu, sau đó chạy mô hình và các công cụ cần thiết.
+C. Chạy mô hình với prompt; xử lý tools và kiểm tra kết quả.
 
-D. Coi việc liệt kê template là đã sửa xong.
+D. Chỉ liệt kê các prompts lần nữa để xác nhận thao tác.
 
-**3. Chọn một.** Các công cụ là model-controlled có nghĩa gì trong pattern này?
+**Câu 3 — Chọn hai.** Tool được gọi là model-controlled. Hai trách nhiệm nào vẫn thuộc ứng dụng/server?
 
-A. Mô hình chọn yêu cầu công cụ, ứng dụng vẫn kiểm soát và thực thi theo hợp đồng/quyền.
+A. Kiểm tra quyền và điều kiện thực thi lời gọi.
 
-B. Mô hình bỏ qua mọi xác thực hệ thống xử lý phía máy chủ.
+B. Thực thi thao tác được phép và trả kết quả đúng hợp đồng.
 
-C. Công cụ tự chạy ngay khi được liệt kê.
+C. Tự chạy mọi tool ngay khi mô hình được cung cấp danh sách.
 
-D. Không cần trả kết quả công cụ cho mô hình.
+D. Coi lựa chọn của mô hình là đủ để cấp quyền trên tài nguyên.
 
-## Đáp án
+**Câu 4 — Chọn một.** Một server có cả resource tài liệu và tool cập nhật tài liệu. Quyền người dùng chỉ cho đọc. Client thấy tool trong danh sách và mô hình yêu cầu cập nhật. Cách xử lý đúng?
 
-1. **B.** A tạo phụ thuộc không cần thiết; C sai nhu cầu UI; D thiếu dữ liệu thực.
-2. **C.** A không mang quy trình; B không thực hiện tác vụ; D nhầm chuẩn bị với hoàn tất.
-3. **A.** B suy rộng sai quyền; C nhầm khám phá với thực thi; D làm đứt vòng công cụ.
+A. Cho chạy vì tools/list đã chứng minh quyền ghi.
+
+B. Cấp quyền ghi tạm cho lời gọi có giải thích hợp lý, rồi thu hồi sau thao tác.
+
+C. Gửi yêu cầu tới server bằng tài khoản quyền cao hơn cho tiện.
+
+D. Áp dụng quyền hiện hành; từ chối lời gọi ngoài quyền.
+
+**Câu 5 — Chọn hai.** Thiết kế cần vừa cho người dùng chọn quy trình, vừa để UI nạp nội dung và mô hình quyết định thao tác khi chạy. Hai nhận định nào đúng?
+
+A. Mỗi trải nghiệm chỉ được dùng một primitive nên phải chọn tool cho tất cả.
+
+B. Prompts có thể cung cấp mẫu do người dùng chọn, resources cung cấp dữ liệu app nạp.
+
+C. Lấy prompt thành công không chứng minh các tool trong quy trình đã chạy.
+
+D. Có resource thì không cần trả kết quả tool về mô hình.
+
+## Đáp án và giải thích
+
+1. **B.** B đáp ứng hành vi app-controlled không chờ mô hình. A thêm phụ thuộc quyết định mô hình. C tạo nội dung thay vì lấy danh mục thật. D nhầm khám phá tool với thực thi.
+
+2. **C.** C phân biệt lấy hướng dẫn và thực hiện công việc. A đánh dấu thành công quá sớm. B nhầm tham chiếu mẫu với nội dung kết quả. D lặp khám phá không thực thi tác vụ.
+
+3. **A, B.** A/B giữ ranh giới thực thi. C nhầm liệt kê với yêu cầu gọi. D suy từ chủ động lựa chọn sang quyền truy cập; model-controlled không xóa kiểm soát của host/server.
+
+4. **D.** D phân biệt khả năng nhìn thấy định nghĩa và quyền thực thi. A nhầm discovery với authorization. B tự nới quyền dựa trên lý do mô hình thay vì thẩm quyền của người dùng. C mở rộng quyền trái phạm vi người dùng.
+
+5. **B, C.** B mô tả cách phối hợp các vai trò; C phân biệt chuẩn bị và thực thi. A áp giới hạn không có trong cách phân vai. D dữ liệu resource không thay thế phản hồi cho lời gọi tool cụ thể.
 
 ## Đối chiếu MCP trong khóa Bedrock
 

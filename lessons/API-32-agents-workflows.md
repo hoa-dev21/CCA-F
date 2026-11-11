@@ -15,43 +15,69 @@ Bài còn giới thiệu cách tạo rồi đánh giá và sửa kết quả (ev
 
 Ví dụ: Chuẩn hóa báo cáo theo các bước đã biết có thể dùng workflow. Điều tra lỗi chưa rõ nguyên nhân có thể cần agent chọn hướng khảo sát theo phát hiện mới. Hãy chọn theo nhiệm vụ, không mặc định agent luôn tốt hơn.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Tác vụ có ba bước cố định, đầu ra mỗi bước đã rõ. Thiết kế ban đầu phù hợp?
+**Câu 1 — Chọn một.** Hệ gọi mô hình năm lần theo các bước cố định; một hệ khác cho mô hình chọn công cụ tiếp theo từ kết quả tra cứu. Tiêu chí phân biệt phù hợp nhất?
 
-A. Tác nhân AI không giới hạn mục tiêu.
+A. Mức độ phức tạp của chuỗi: nhiều bước cần phối hợp được xem là agent.
 
-B. Quy trình làm việc điều phối các bước đã biết.
+B. Chủ thể quyết định bước tiếp theo trong hệ thống.
 
-C. Chỉ tăng số công cụ tùy ý.
+C. Việc có vòng sửa đầu ra sau đánh giá, dù điều kiện chuyển bước đã lập trình cố định.
 
-D. Không cần tiêu chí đầu ra.
+D. Khả năng gọi nhiều tools trong một nhiệm vụ, không xét ai chọn thứ tự.
 
-**2. Chọn một.** Hệ thống gọi mô hình năm lần theo thứ tự mã cố định. Điều đó chứng minh gì?
+**Câu 2 — Chọn một.** Nhiệm vụ chuẩn hóa báo cáo có các bước bắt buộc, ổn định và cần audit thứ tự. Lựa chọn khởi đầu hợp lý nhất?
 
-A. Chắc chắn là tác nhân AI tự chủ.
+A. Agent tự chọn bước để có linh hoạt tối đa.
 
-B. Không thể là quy trình làm việc.
+B. Một prompt dài yêu cầu tự tuân thủ mọi bước, không ghi trạng thái.
 
-C. Số lần gọi không tự quyết định nó là tác nhân AI; cần xem ai điều khiển bước tiếp.
+C. Workflow có chuyển bước và kiểm tra rõ theo quy trình đã biết.
 
-D. Mọi lần gọi đều song song.
+D. Chạy mọi bước song song rồi chọn kết quả có vẻ đầy đủ nhất.
 
-**3. Chọn một.** Thành phần đánh giá tìm lỗi rồi gửi phản hồi để sửa đầu ra. Pattern nào sát nhất?
+**Câu 3 — Chọn hai.** Điều tra lỗi chưa rõ nguyên nhân: đọc log có thể dẫn sang kiểm tra cấu hình hoặc truy dữ liệu. Hai đặc điểm nào ủng hộ thiết kế agent có giới hạn?
 
-A. Evaluator–optimizer.
+A. Bước khảo sát tiếp theo phụ thuộc phát hiện mới.
 
-B. Chỉ liệt kê resources.
+B. Mọi yêu cầu đều có cùng chuỗi thao tác không đổi.
 
-C. Router chọn một nhánh rồi không đánh giá.
+C. Mô hình có các công cụ rõ phạm vi để khảo sát và điều kiện dừng/chi phí được kiểm soát.
 
-D. Parse một chuỗi JSON duy nhất.
+D. Chưa có tiêu chí thành công nên để tác nhân tự chạy đến khi hết tài nguyên.
 
-## Đáp án
+**Câu 4 — Chọn một.** Trong evaluator–optimizer, evaluator liên tục yêu cầu đổi giọng văn qua lại; chất lượng nghiệp vụ không tăng. Sửa nào nhắm đúng vấn đề?
 
-1. **B.** A thêm tự do không cần thiết; C không tổ chức quy trình; D thiếu tiêu chí thành công.
-2. **C.** A và B suy từ số lượng; D không theo dữ kiện thứ tự cố định.
-3. **A.** B, C, D thiếu vòng tạo–đánh giá–sửa.
+A. Tăng số vòng tối đa để chờ hai phía đồng thuận.
+
+B. Dùng cùng prompt cho generator và evaluator.
+
+C. Bỏ evaluator sau một lần thất bại và coi bản đầu là đạt.
+
+D. Rubric rõ, có ngưỡng chấp nhận và giới hạn vòng.
+
+**Câu 5 — Chọn hai.** Nhóm muốn thay workflow đã đo tốt bằng agent vì tên gọi hiện đại hơn. Hai bằng chứng nào cần để biện minh thay đổi?
+
+A. Tác vụ có biến thiên khiến đường đi cố định thực sự bỏ sót hoặc tốn công.
+
+B. Agent có thể tạo câu trả lời dài hơn workflow.
+
+C. Đánh giá cho thấy lợi ích chất lượng/khả năng thích ứng vượt chi phí và độ phức tạp bổ sung.
+
+D. Mô hình đã dùng nhiều tool trong một demo thành công.
+
+## Đáp án và giải thích
+
+1. **B.** B xét chủ thể quyết định bước tiếp. A độ phức tạp không xác định cơ chế điều khiển. C vòng evaluator–optimizer vẫn có thể là workflow định sẵn. D nhiều tools cũng có thể được gọi theo chuỗi cố định.
+
+2. **C.** C tận dụng cấu trúc nhiệm vụ và khả năng audit. A thêm tự do chưa cần. B khó quan sát/cưỡng chế bước. D bỏ phụ thuộc và thứ tự bắt buộc.
+
+3. **A, C.** A tạo nhu cầu quyết định thích ứng; C cung cấp năng lực và giới hạn vận hành. B phù hợp workflow hơn. D thiếu mục tiêu/điểm dừng làm chất lượng khó đánh giá.
+
+4. **D.** D tạo mục tiêu ổn định và điều khiển vòng lặp. A tăng chi phí trong chu kỳ không rõ mục tiêu. B không giải quyết tiêu chí. C thay việc đánh giá bằng giả định thành công.
+
+5. **A, C.** A xác định nhu cầu; C đo lợi ích ròng. B độ dài không đo hiệu quả. D một demo không đại diện cho chất lượng và chi phí vận hành.
 
 ## Đối chiếu Vertex
 

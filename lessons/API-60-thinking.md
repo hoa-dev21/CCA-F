@@ -13,45 +13,69 @@ Phần hiển thị cho người dùng không nhất thiết là toàn bộ quá
 
 Ví dụ: Nếu câu hỏi cần dữ liệu đơn hàng hiện tại, thêm suy luận không tự lấy được dữ liệu ấy. Vẫn phải tra nguồn phù hợp và kiểm tra kết quả. Ngân sách xử lý, cách cấu hình và việc kết hợp với `temperature` hoặc prefill cần được xác minh theo từng mô hình.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Muốn quyết định có dùng thêm suy luận cho tác vụ khó không. Bằng chứng phù hợp?
+**Câu 1 — Chọn một.** Tác vụ phân loại đơn giản đáp ứng SLA, còn bài toán lập kế hoạch nhiều ràng buộc thường sai. Nhóm cân nhắc bật thinking cho toàn hệ. Quyết định nào có cơ sở nhất?
 
-A. Chỉ tên tính năng.
+A. Bật cho tất cả vì nhiều suy luận luôn giảm cả chi phí lẫn độ trễ.
 
-B. Phép đánh giá chất lượng cùng chi phí/độ trễ trên tác vụ đại diện.
+B. Giữ tắt cho mọi tác vụ vì nhóm đơn giản đã đạt yêu cầu.
 
-C. Chỉ câu trả lời dài.
+C. Đo lợi ích/chi phí theo nhóm rồi chọn nơi bật suy luận.
 
-D. Chỉ bật mọi thứ.
+D. Chỉ so sánh độ dài phần suy luận để chọn cấu hình.
 
-**2. Chọn một.** Mô hình thiếu dữ liệu hệ thống xử lý phía máy chủ hiện tại. Thinking nhiều hơn có tự lấy dữ liệu đó không?
+**Câu 2 — Chọn hai.** Adapter ghi lịch sử chỉ giữ text hiển thị; lượt tiếp theo có thinking/tool interaction bị lỗi. Hai thay đổi nào phù hợp với bài?
 
-A. Có, mọi nguồn nằm trong suy luận.
+A. Bảo toàn signature và nội dung opaque cần giữ, thay vì tự sửa để “làm sạch”.
 
-B. Có, không cần tích hợp.
+B. Giữ các khối phản hồi cần truyền lại theo hợp đồng mô hình/SDK.
 
-C. Không; vẫn cần truy xuất dữ liệu phù hợp.
+C. Tạo signature mới từ hash của text đã hiển thị để khớp giao diện.
 
-D. Có, nếu budget lớn.
+D. Bỏ mọi khối không đọc được vì chúng không mang ý nghĩa đối với người dùng.
 
-**3. Chọn một.** Một phản hồi có block không đọc được và thông tin mô tả cần bảo toàn. Ứng dụng nên làm gì?
+**Câu 3 — Chọn một.** Bot thiếu trạng thái đơn hàng hiện tại nhưng nhóm tăng thinking budget để giảm trả lời sai. Vì sao cách này chưa xử lý nguyên nhân?
 
-A. Xử lý/giữ theo hợp đồng hỗ trợ thay vì tự sửa hoặc bỏ tùy tiện.
+A. Mọi sai sót đơn hàng đều do budget thấp hơn kích thước lịch sử.
 
-B. Tự tạo signature mới bằng đoán.
+B. Chỉ cần hiển thị phần thinking để người dùng tự suy ra trạng thái thật.
 
-C. Coi block đó là lỗi nghiệp vụ chắc chắn.
+C. Thinking chỉ hữu ích khi không dùng bất kỳ công cụ nào.
 
-D. Thay mọi nội dung bằng text trống.
+D. Suy luận thêm không cung cấp dữ liệu hiện tại; cần tra nguồn có thẩm quyền và kiểm chứng.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Đội chuyển mẫu thinking sang mô hình khác và muốn giữ temperature cùng prefill của mẫu cũ. Hai việc nào cần trước khi triển khai?
 
-1. **B.** B đo đánh đổi; A và C là tín hiệu không đủ, D bỏ nhu cầu.
+A. Coi phần reasoning có vẻ thuyết phục là bằng chứng đủ về chất lượng.
 
-2. **C.** C giữ đối chiếu dữ liệu nguồn; A, B, D nhầm compute với truy cập nguồn.
+B. Đánh giá tác vụ đại diện với giới hạn độ trễ và chất lượng đặt trước.
 
-3. **A.** A bảo toàn luồng; B giả mạo thông tin mô tả, C kết luận không căn cứ, D mất trạng thái.
+C. Kiểm tra tương thích cấu hình và hợp đồng phản hồi của mô hình đích.
+
+D. Giữ nguyên mọi tham số vì SDK chấp nhận đối tượng cấu hình.
+
+**Câu 5 — Chọn một.** Câu trả lời có phần thinking dài, hợp lý nhưng số tổng cuối sai so với bảng nguồn. Hệ thống nên dựa vào tiêu chí nào để chấp nhận?
+
+A. Số lượng bước suy luận vì kết quả ngắn có thể chỉ là lỗi trình bày.
+
+B. Kết quả khớp nguồn và quy tắc nghiệp vụ khi kiểm tra độc lập.
+
+C. Signature hợp lệ vì nó chứng nhận mọi mệnh đề trong thinking là đúng.
+
+D. Mức tự tin ở đoạn kết vì mô hình đã cân nhắc nhiều khả năng.
+
+## Đáp án và giải thích
+
+1. **C.** A sai: xử lý bổ sung có thể tăng thời gian/chi phí và chưa chắc tăng độ đúng. B sai: kết quả nhóm đơn giản không đánh giá lợi ích cho nhóm khó đang thất bại. C đúng: thinking không mặc định đem lại cùng lợi ích cho mọi loại yêu cầu. D sai: độ dài không đo chất lượng đáp án hay mức đáp ứng SLA.
+
+2. **A, B.** A đúng: thông tin được ký hoặc không đọc trực tiếp không nên bị biến đổi tùy ý. B đúng: lịch sử giao thức có thể cần dữ liệu ngoài văn bản hiển thị. C sai: ứng dụng không thể tự thay giao thức xác thực của provider bằng hash riêng. D sai: không hiển thị trực tiếp không đồng nghĩa không cần cho giao thức tiếp nối.
+
+3. **D.** A sai: không có căn cứ suy lỗi thiếu nguồn thành lỗi ngân sách. B sai: giải thích quá trình không tạo dữ kiện nghiệp vụ chưa được truy cập. C sai: bài không đặt giới hạn tuyệt đối như vậy; vấn đề là thiếu dữ liệu cần lấy. D đúng: lỗ hổng là bằng chứng đầu vào, không chỉ khả năng xử lý nó.
+
+4. **B, C.** A sai: lập luận hiển thị có thể đi tới kết luận sai và chưa đo yêu cầu vận hành. B đúng: cấu hình hợp lệ chưa chứng minh đáng dùng trong sản phẩm. C đúng: khả năng kết hợp tính năng có thể khác theo mô hình/phiên bản. D sai: đối tượng được tạo không chứng minh dịch vụ hỗ trợ tổ hợp tham số.
+
+5. **B.** A sai: nhiều bước không chứng minh phép tính cuối đúng. B đúng: đầu ra phải đạt yêu cầu thật chứ không chỉ tạo cảm giác tin cậy. C sai: tính toàn vẹn giao thức không xác nhận sự thật nghiệp vụ. D sai: tự tin không thay thế kiểm tra với bằng chứng và tính toán.
 
 ## Đối chiếu tính năng trên Bedrock
 

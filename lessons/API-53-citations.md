@@ -13,45 +13,69 @@ Có trích dẫn không tự bảo đảm kết luận đúng. Hãy mở đoạn
 
 Một trích dẫn có thật vẫn có thể bị gắn với kết luận mà nó không hỗ trợ. Giá trị của trích dẫn là giúp truy lại bằng chứng; việc đánh giá bằng chứng đó vẫn cần được thực hiện.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Một report có 20 URL cuối trang nhưng không nối claim với nguồn. Hạn chế chính?
+**Câu 1 — Chọn một.** Báo cáo có 20 liên kết cuối trang nhưng không biết số liệu nào dựa vào tài liệu nào. Cải thiện trực tiếp nhất?
 
-A. Quá nhiều mô hình.
+A. Dùng một trích dẫn chung cho toàn bộ báo cáo.
 
-B. Không thể đọc văn bản.
+B. Tăng số liên kết để mỗi chủ đề đều có nguồn gần giống.
 
-C. Không có tên dự án.
+C. Nối từng nhận định với nguồn và vị trí chứng minh.
 
-D. Khó xác minh mỗi nhận định dựa vào đoạn nào.
+D. Sắp liên kết theo tên miền để trông có hệ thống hơn.
 
-**2. Chọn một.** Một trích dẫn nguồn tồn tại có chứng minh claim đúng không?
+**Câu 2 — Chọn một.** Trích dẫn đúng trang nhưng đoạn chỉ nói “có thể”, câu trả lời nói “luôn luôn”. Đánh giá nào đúng?
 
-A. Chưa; cần xem đoạn gốc, bối cảnh và mức hỗ trợ thực tế.
+A. Hợp lệ vì người dùng có thể tự đọc và sửa hiểu nhầm.
 
-B. Có, mọi liên kết đều đủ.
+B. Chỉ lỗi hiển thị URL, không phải lỗi ngữ nghĩa.
 
-C. Có, nếu tiêu đề dài.
+C. Trích dẫn chưa hỗ trợ mức khẳng định đang dùng.
 
-D. Có, không cần xét ngày.
+D. Hợp lệ nếu tiêu đề tài liệu cùng chủ đề.
 
-**3. Chọn một.** Với nhiều tài liệu, thông tin mô tả nào hỗ trợ định vị nguồn?
+**Câu 3 — Chọn hai.** Ứng dụng nhận citation cho cả PDF và văn bản thuần. Hai thông tin nào cần giữ để dẫn đúng vị trí?
 
-A. Chỉ giọng điệu.
+A. Vị trí theo loại tài liệu như trang hoặc khoảng ký tự.
 
-B. Document identifier/title và vị trí đoạn được dẫn.
+B. Dùng thứ tự citation trong câu trả lời làm số trang.
 
-C. Chỉ độ dài output.
+C. Ép mọi vị trí thành số trang kể cả văn bản không phân trang.
 
-D. Chỉ điểm tự tin.
+D. Định danh tài liệu tương ứng với nguồn đã dùng.
 
-## Đáp án
+**Câu 4 — Chọn một.** Sau nén tài liệu, một đoạn trích vẫn giữ offsets của bản gốc nhưng UI mở bản đã biến đổi. Người dùng đến sai chỗ. Cần sửa gì?
 
-1. **D.** D là mất ánh xạ; A, B, C không mô tả vấn đề bằng chứng.
+A. Giữ bản nguồn tương ứng hoặc ánh xạ vị trí qua phép biến đổi.
 
-2. **A.** A kiểm tra entailment/bối cảnh; B và C suy từ hình thức, D bỏ thời gian nguồn.
+B. Đổi offsets thành chỉ số câu trong câu trả lời.
 
-3. **B.** B trỏ tới bằng chứng; A, C, D không định vị tài liệu.
+C. Coi trích dẫn vẫn đúng vì cùng tên tài liệu.
+
+D. Chỉ giữ tiêu đề vì offsets không còn tiện dùng.
+
+**Câu 5 — Chọn hai.** Hai claim cùng trích một tài liệu đáng tin. Hai kiểm tra nào vẫn cần?
+
+A. Chỉ kiểm tra domain và bỏ qua nội dung đã có citation.
+
+B. Điều kiện, ngoại lệ và thời điểm nguồn có phù hợp không.
+
+C. Mỗi claim có được đoạn cụ thể hỗ trợ không.
+
+D. Coi citation do mô hình sinh là bằng chứng đã được kiểm toán độc lập.
+
+## Đáp án và giải thích
+
+1. **C.** A sai: Có thể gán bằng chứng sai cho các kết luận khác nhau. B sai: Số lượng không bảo đảm liên quan hỗ trợ. C đúng: Khôi phục khả năng truy bằng chứng theo claim. D sai: Không tạo ánh xạ tới nhận định.
+
+2. **C.** A sai: Khả năng truy nguồn không miễn trách nhiệm diễn đạt đúng. B sai: Sai nằm ở quan hệ claim–evidence. C đúng: Cần giữ điều kiện và mức chắc chắn của bằng chứng. D sai: Chủ đề không xác nhận nội dung khẳng định.
+
+3. **A, D.** A đúng: Cần hiểu đúng hệ tọa độ nguồn. B sai: Thứ tự hiển thị không là vị trí tài liệu. C sai: Có thể tạo vị trí không tồn tại. D đúng: Tránh trỏ nhầm giữa nhiều tài liệu.
+
+4. **A.** A đúng: Citation cần hệ vị trí nhất quán với nội dung được mở. B sai: Không chỉ tới bằng chứng nguồn. C sai: Tên giống không bảo đảm vị trí/nội dung tương ứng. D sai: Giảm khả năng xác minh thay vì sửa ánh xạ.
+
+5. **B, C.** A sai: Uy tín không đủ. B đúng: Độ đúng phụ thuộc phạm vi áp dụng. C đúng: Một tài liệu có thể hỗ trợ claim này nhưng không claim kia. D sai: Sinh trích dẫn chưa là kiểm tra độc lập.
 
 ## Đối chiếu tính năng trên Bedrock
 

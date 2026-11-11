@@ -27,6 +27,9 @@
       else {const field=r.key.slice(0,split),key=r.key.slice(split+1);if(fields.includes(field)&&!['__proto__','constructor','prototype'].includes(key))state[field][key]=JSON.parse(JSON.stringify(r.value));}
     }
   }
-  const api={snapshot,newer,capture,merge,apply};
+  function currentAnswers(answers,revisions){
+    return Object.fromEntries(Object.entries(answers).filter(([id,answer])=>answer&&revisions[id]&&answer.revision===revisions[id]));
+  }
+  const api={snapshot,newer,capture,merge,apply,currentAnswers};
   if(typeof module!=='undefined')module.exports=api;else root.StudySyncState=api;
 })(globalThis);

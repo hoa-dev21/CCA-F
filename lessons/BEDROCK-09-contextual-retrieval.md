@@ -15,43 +15,69 @@ Cần giữ riêng văn bản gốc và phần do mô hình bổ sung, tránh tr
 
 Cách này khác reranking: contextual retrieval bổ sung bối cảnh trước khi lập chỉ mục; reranking sắp lại các ứng viên theo câu hỏi sau khi tìm kiếm.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Đoạn văn bản nói “dự án này” nhưng mất tên dự án từ phần trước. Hướng của bài?
+**Câu 1 — Chọn một.** Đoạn “dự án này giảm 18% chi phí” bị tìm nhầm giữa nhiều dự án. Tên dự án nằm ở đầu tài liệu. Muốn cải thiện tìm kiếm trước khi có truy vấn, nên làm gì?
 
-A. Xóa đoạn văn bản.
+A. Đợi có truy vấn rồi chỉ xếp hạng lại các đoạn không có tên dự án.
 
-B. Chỉ đổi tên mô hình.
+B. Đổi tên trường chứa đoạn thành tên dự án nhưng giữ chỉ mục cũ.
 
-C. Lặp truy vấn tìm kiếm thật nhiều.
+C. Dùng mô hình trả lời suy đoán dự án từ con số 18%.
 
-D. Bổ sung bối cảnh ngắn dựa trên nguồn thật trước khi indexing.
+D. Tạo phần ngữ cảnh ngắn có căn cứ và lập chỉ mục cùng đoạn.
 
-**2. Chọn một.** Đoạn bối cảnh do mô hình tạo nên được xem là gì?
+**Câu 2 — Chọn hai.** Pipeline thêm lời giới thiệu do mô hình viết vào từng chunk. Báo cáo sau đó trích cả lời giới thiệu như nguyên văn tài liệu. Hai sửa đổi nào cần thiết?
 
-A. Nội dung sinh cần kiểm tra, giữ phân biệt với nguồn gốc.
+A. Giữ liên kết nguồn và dùng phần gốc để đối chiếu trích dẫn.
 
-B. Trích nguyên văn chắc chắn từ nguồn.
+B. Lưu tách phần gốc và phần ngữ cảnh được tạo thêm.
 
-C. Thay mọi trích dẫn nguồn.
+C. Bỏ liên kết nguồn vì ngữ cảnh mới đã diễn đạt đầy đủ hơn.
 
-D. Bằng chứng mới dù không có trong tài liệu.
+D. Gộp lời giới thiệu vào nguồn và gắn ngày tài liệu gốc cho toàn bộ.
 
-**3. Chọn một.** Khác biệt chính với reranking trong bài trước?
+**Câu 3 — Chọn một.** Tài liệu quá dài nên bộ tạo ngữ cảnh chỉ thấy phần mở đầu và hai đoạn trước chunk. Không phần nào xác định năm của số liệu. Hành vi nào đúng?
 
-A. Không có khác biệt.
+A. Chọn năm hiện tại rồi gắn nhãn là ngữ cảnh suy luận.
 
-B. Contextual truy xuất dữ liệu bổ sung thông tin đoạn văn bản trước chỉ mục tìm kiếm; reranking sắp ứng viên theo truy vấn tìm kiếm sau tìm kiếm.
+B. Giữ năm là chưa biết; tìm nguồn để xác định nếu cần.
 
-C. Cả hai tự thay dữ liệu thiếu bằng suy đoán.
+C. Dùng năm xuất bản của tài liệu làm năm đo số liệu.
 
-D. Cả hai không cần đánh giá.
+D. Lấy năm phổ biến trong các tài liệu cùng dự án.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Nguồn sửa tên sản phẩm và phạm vi triển khai, nhưng văn bản chunk gần như không đổi. Hai việc nào phù hợp khi duy trì contextual retrieval?
 
-1. **D.** A bỏ dữ liệu có ích; B không khôi phục bối cảnh; C không thêm thông tin đoạn văn bản.
-2. **A.** B nhầm generated text với quotation; C làm mất provenance; D tạo bằng chứng không có.
-3. **B.** A bỏ khác biệt thời điểm/chức năng; C và D trái yêu cầu grounding/đánh giá.
+A. Chỉ sửa prompt trả lời để mô hình tự sửa mọi ngữ cảnh lỗi.
+
+B. Giữ ngữ cảnh cũ vì hash của riêng chunk chưa thay đổi.
+
+C. Đo lại chất lượng tìm kiếm cùng chi phí chuẩn bị/cập nhật.
+
+D. Đánh giá lại phần ngữ cảnh sinh thêm và cập nhật chỉ mục liên quan.
+
+**Câu 5 — Chọn một.** Nhóm muốn vừa tìm đúng chunk có đại từ mơ hồ, vừa chọn tốt nhất trong 40 ứng viên theo câu hỏi. Kiến trúc nào phân vai đúng?
+
+A. Xếp hạng mọi chunk một lần khi nhập kho; dùng thứ tự đó cho mọi câu hỏi.
+
+B. Chỉ bổ sung ngữ cảnh sau khi đã cắt top-3 rồi coi đó là cải thiện recall.
+
+C. Dùng lời giới thiệu sinh thêm thay toàn bộ chunk và bỏ văn bản gốc.
+
+D. Bổ sung bối cảnh lúc chuẩn bị chỉ mục; xếp hạng ứng viên sau truy xuất.
+
+## Đáp án và giải thích
+
+1. **D.** D đưa ngữ cảnh bị mất vào biểu diễn tìm kiếm. A có thể cải thiện thứ tự nhưng không sửa bước lập chỉ mục đã thiếu bối cảnh; B không bảo đảm biểu diễn được cập nhật; C không có bằng chứng nhận diện.
+
+2. **A, B.** B phân biệt xuất xứ; A cho phép kiểm chứng. D đánh đồng nội dung sinh thêm với nguyên văn; C làm mất khả năng đối chiếu dù lời giới thiệu có vẻ đầy đủ.
+
+3. **B.** B giữ giới hạn bằng chứng. C nhầm năm xuất bản với thời kỳ đo; D suy từ tài liệu khác; A dù gắn nhãn vẫn đưa giả định chưa có căn cứ vào chỉ mục.
+
+4. **C, D.** D xét phụ thuộc vào tài liệu ngoài chunk; C kiểm tra lợi ích thực tế. B bỏ qua bối cảnh nguồn đã đổi; A xử lý quá muộn khi truy xuất có thể đã chọn sai tài liệu.
+
+5. **D.** D kết hợp hai tầng phục vụ mục tiêu khác nhau. A thiếu câu hỏi để đánh giá liên quan; B không cứu chunk đã bị loại; C mất chi tiết và bằng chứng gốc.
 
 ## Đối chiếu Vertex
 

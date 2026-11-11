@@ -13,43 +13,69 @@ Hãy chọn kết nối theo công việc thực tế: lấy thông tin lỗi, �
 
 Tên các server cộng đồng trong video chỉ là ví dụ ở thời điểm giảng, cần kiểm tra trước khi sử dụng. Phạm vi cấu hình cá nhân hoặc dự án và quyền công cụ được học thêm trong nhóm Claude Code và phần liên quan của đề cương thi.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Claude Code cần chức năng đọc định dạng nội bộ mà công cụ sẵn có không hỗ trợ. Cách mở rộng theo bài?
+**Câu 1 — Chọn một.** Claude Code được yêu cầu chuyển tài liệu sang Markdown và đã biết tên công cụ từ README, nhưng không gọi được. Repo chưa cấu hình server chuyển đổi. Cách sửa đúng tầng nào?
 
-A. Yêu cầu mô hình đoán định dạng.
+A. Thêm ví dụ gọi công cụ vào prompt rồi giữ nguyên môi trường.
 
-B. Chỉ đổi tên file thành văn bản.
+B. Cấu hình MCP tới server thực có tool rồi thử kết nối.
 
-C. Kết nối MCP server cung cấp chức năng tương ứng.
+C. Tăng số lượt tác nhân để nó tự tìm implementation từ tên.
 
-D. Coi việc nhắc tên công cụ là đã tích hợp.
+D. Đổi yêu cầu sang prompt template cùng tên.
 
-**2. Chọn hai.** Ngoài các công cụ, hai thành phần nào được bài nhắc tới?
+**Câu 2 — Chọn hai.** Nhóm muốn kết nối ba server cho dự án hỗ trợ khách hàng. Hai tiêu chí nào nên quyết định server nào được thêm?
 
-A. Resources.
+A. Có tác vụ cụ thể cần khả năng mà server cung cấp.
 
-B. Prompt templates.
+B. Server có nhiều công cụ hơn các lựa chọn còn lại.
 
-C. Tự động huấn luyện lại mọi mô hình.
+C. Phạm vi quyền, cấu hình và khả năng truy cập phù hợp môi trường dự án.
 
-D. Bảo đảm không cần kiểm tra kết quả.
+D. Tên server từng xuất hiện trong video khóa học.
 
-**3. Chọn một.** Nhóm muốn nối mọi server có thể tìm thấy dù chưa có nhu cầu. Cách quyết định phù hợp hơn?
+**Câu 3 — Chọn một.** Server đã kết nối và liệt kê tool cập nhật ticket. Người dùng chỉ yêu cầu đọc trạng thái. Thiết kế nào phù hợp nhất?
 
-A. Chọn theo số lượng sao của toàn bộ danh sách.
+A. Cho mọi tool vì đã xác thực kết nối.
 
-B. Nối tất cả rồi bỏ mọi mô tả.
+B. Dùng tool cập nhật với payload rỗng để tận dụng cùng endpoint.
 
-C. Chỉ nhìn số server để đánh giá năng lực.
+C. Yêu cầu mô hình tự hứa không thay đổi rồi giữ quyền ghi rộng.
 
-D. Xác định khả năng cần cho quy trình làm việc rồi chọn tích hợp tương ứng.
+D. Cấp khả năng đọc và kiểm quyền tại executor.
 
-## Đáp án
+**Câu 4 — Chọn một.** Một kết nối MCP dùng tốt ở máy tác giả nhưng mất khi clone repo trên máy đồng đội. Chẩn đoán nào nên được kiểm tra trước?
 
-1. **C.** A không có cơ sở dữ liệu; B không chuyển đổi thật; D thiếu kết nối và thực thi.
-2. **A, B.** C và D không phải khả năng mà MCP bảo đảm.
-3. **D.** A không xét độ phù hợp tác vụ; B tăng tích hợp thiếu mục tiêu; C nhầm số lượng với hiệu quả.
+A. README và prompt mà đồng đội dùng, vì có cùng tên server là đủ cho discovery.
+
+B. Danh sách tools cache từ máy tác giả, trước khi xác minh client trên máy mới kết nối được.
+
+C. Scope cấu hình, credential và kết nối trên máy mới.
+
+D. Đổi tên tool để tránh trùng namespace.
+
+**Câu 5 — Chọn hai.** Team muốn dùng MCP vừa lấy tài liệu thiết kế vừa gọi dịch vụ nội bộ. Hai nhận định nào đúng khi đánh giá tích hợp?
+
+A. MCP client có thể tiếp cận các loại thành phần server cung cấp như tools/resources/prompts.
+
+B. Có MCP nghĩa là mọi server có cùng các tool và quyền mặc định.
+
+C. Công cụ được liệt kê tự động thực thi khi người dùng mở phiên.
+
+D. Khả năng sử dụng phụ thuộc những thành phần server thật sự triển khai và cấu hình cho phép.
+
+## Đáp án và giải thích
+
+1. **B.** B tạo khả năng thực thi thực tế. A chỉ giúp lựa chọn khi công cụ đã khả dụng. C không tạo kết nối. D mẫu hướng dẫn không thay thế implementation công cụ.
+
+2. **A, C.** A xác định lợi ích, C xác định khả năng dùng đúng phạm vi. B số lượng không chứng minh giá trị. D ví dụ lịch sử không chứng minh server hiện phù hợp hay hoạt động.
+
+3. **D.** D giới hạn năng lực theo yêu cầu. A nhầm xác thực kết nối với quyền mọi hành động. B có thể gây tác động ngoài ý muốn. C là hướng dẫn, không thu hẹp khả năng thực thi.
+
+4. **C.** C nhắm scope và kết nối thực tế của môi trường mới. A mô tả không tạo kết nối. B danh sách cache chưa chứng minh server khả dụng trên máy mới. D đổi tên không sửa scope hay credential.
+
+5. **A, D.** A nêu các loại thành phần có thể cung cấp; D tránh suy rộng giao thức thành năng lực cụ thể. B và C nhầm khám phá/cấu hình với quyền và thực thi.
 
 ## Đối chiếu Bedrock
 

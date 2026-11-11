@@ -28,43 +28,69 @@ Vòng `while True` và thao tác ngắt trong notebook chỉ phục vụ minh h�
 
 Nguồn bài thực hành: đã đọc phụ đề tiếng Anh của [Chat exercise](https://anthropic-partners.skilljar.com/claude-with-the-anthropic-api/287727), lưu tại sources/api-media/287727.json.
 
-## Câu hỏi — làm trước khi đọc đáp án
+## Tự kiểm tra
 
-**1. Chọn một.** Trợ lý nhận câu “hãy rút gọn nó” nhưng chuyển sang chủ đề khác. Log cho thấy yêu cầu chỉ chứa câu mới nhất. Cách sửa trực tiếp?
+**Câu 1 — Chọn một.** Server lưu hội thoại đầy đủ trong database, nhưng request mới chỉ chứa “rút gọn đoạn thứ hai”. Đổi model vẫn cho kết quả lệch chủ đề. Thay đổi nào xử lý đúng nguyên nhân?
 
-A. Tăng `max_tokens`.
+A. Chỉ gửi ID bản ghi lịch sử trong lời nhắc.
 
-B. Tạo client mới cho mỗi câu hỏi.
+B. Yêu cầu model suy ra ngữ cảnh từ giọng văn của câu mới.
 
-C. Gửi lịch sử có đoạn cần rút gọn và yêu cầu mới.
+C. Nạp lịch sử liên quan vào messages của request mới.
 
-D. Gửi lại câu mới nhất hai lần.
+D. Giữ kết nối HTTP lâu hơn để model nhớ request trước.
 
-**2. Chọn hai.** Để giữ đầy đủ cuộc trao đổi văn bản theo mẫu của bài, ứng dụng cần làm gì?
+**Câu 2 — Chọn hai.** Ứng dụng đang xây lịch sử cho cuộc trao đổi văn bản nhiều lượt. Hai bất biến nào giúp câu “sửa đoạn bạn vừa viết” có đúng đối tượng?
 
-A. Lưu phản hồi trước với role `assistant`.
+A. Gửi lịch sử vào log theo dõi thay cho messages để giảm token.
 
-B. Trông chờ client SDK tự khôi phục lịch sử.
+B. Lưu câu trả lời trước theo vai trò assistant.
 
-C. Chuyển mọi phản hồi cũ thành role `user`.
+C. Đổi câu trả lời trước sang vai trò user để tăng mức ưu tiên.
 
-D. Đưa lịch sử và câu hỏi mới vào yêu cầu tiếp theo.
+D. Gửi lịch sử liên quan cùng câu người dùng mới theo đúng thứ tự.
 
-**3. Chọn một.** Server đã lưu toàn bộ lịch sử vào cơ sở dữ liệu nhưng chỉ truyền câu mới nhất tới API. Hệ quả nào đúng?
+**Câu 3 — Chọn một.** Một người dùng mở hai cuộc trò chuyện về hai khách hàng khác nhau. Wrapper dùng một mảng messages toàn cục cho cả hai. Biện pháp nào ngăn nhầm ngữ cảnh trực tiếp nhất?
 
-A. Claude vẫn thiếu lịch sử vì nó chưa nằm trong yêu cầu.
+A. Thêm tên khách hàng vào cuối mảng chung ở mỗi lần gọi.
 
-B. Claude tự tìm được lịch sử qua tên API key.
+B. Tách lịch sử theo cuộc trò chuyện trước khi ghép request.
 
-C. Claude truy vấn cơ sở dữ liệu mà không cần tích hợp.
+C. Xóa các tin nhắn assistant, chỉ giữ tin nhắn user của cả hai luồng.
 
-D. Lịch sử tự được gắn qua đối tượng client.
+D. Giữ mảng chung nhưng luôn chọn model có cửa sổ lớn hơn.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Sau nhiều lượt, hệ thống chỉ giữ tin nhắn user. Yêu cầu “giữ nguyên bảng bạn vừa tạo, sửa cột cuối” thất bại. Hai thay đổi nào cần phối hợp?
 
-1. **C.** Bổ sung ngữ cảnh đang thiếu. A chỉ tăng trần đầu ra; B không bổ sung dữ liệu; D lặp lại sự mơ hồ.
-2. **A, D.** Cần lưu đúng vai trò và thực sự truyền lịch sử. B giả định cơ chế tự nhớ; C làm sai vai trò người nói.
-3. **A.** Lưu trữ phía ứng dụng và ngữ cảnh mô hình nhận được là hai việc khác nhau. B, C, D đều giả định kết nối tự động không có trong mẫu này.
+A. Thêm hướng dẫn rằng mọi từ “bảng” đều chỉ bảng do người dùng cung cấp.
+
+B. Giữ phản hồi assistant chứa bảng mà câu mới đang tham chiếu.
+
+C. Lặp câu mới hai lần để thay thế phần phản hồi đã bỏ.
+
+D. Đưa bản lịch sử đã chọn vào request gửi mô hình, không chỉ lưu tại server.
+
+**Câu 5 — Chọn một.** Để giảm token, nhóm bỏ câu trả lời dài trước đó dù câu mới yêu cầu so sánh hai mục trong câu trả lời ấy. Phương án thu gọn nào phù hợp nhất?
+
+A. Giữ lời chào, tên model và số lượt để mô hình phục dựng nội dung.
+
+B. Giữ đoạn tóm tắt “đã trả lời” và yêu cầu mô hình tự suy ra hai mục.
+
+C. Giữ chính hai mục và phần hội thoại cần xác định tiêu chí so sánh.
+
+D. Giữ toàn bộ câu hỏi user nhưng bỏ mọi nội dung assistant.
+
+## Đáp án và giải thích
+
+1. **C.** C đưa ngữ cảnh vào nơi mô hình thực sự đọc. A chỉ có định danh, chưa có nội dung; B yêu cầu đoán; D nhầm vòng đời kết nối với trạng thái hội thoại.
+
+2. **B, D.** B bảo toàn người nói và D bảo toàn ngữ cảnh cho lượt mới. C làm sai nguồn phát biểu; A lưu cho hệ thống quan sát nhưng không cung cấp cho mô hình.
+
+3. **B.** B giữ ranh giới phiên. A vẫn gửi dữ liệu lẫn nhau; D tăng dung lượng nhưng giữ lỗi trộn phiên; C vừa mất câu trả lời tham chiếu vừa không tách khách hàng.
+
+4. **B, D.** B giữ đối tượng cần sửa, D làm đối tượng đó khả dụng cho mô hình. A đổi sai ý nghĩa hội thoại; C không tái tạo dữ liệu bị thiếu.
+
+5. **C.** C giảm dữ liệu nhưng giữ thông tin cần cho nhiệm vụ. A và B chỉ giữ siêu dữ liệu; D có thể giữ yêu cầu ban đầu nhưng vẫn mất đối tượng do assistant tạo.
 
 ## Đối chiếu Bedrock
 

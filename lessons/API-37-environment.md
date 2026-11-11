@@ -13,43 +13,69 @@ Quá trình quan sát, hành động rồi kiểm tra giúp tác nhân phát hi�
 
 Khi thiết kế công cụ, hãy hỏi: “Tác nhân sẽ biết thao tác này thành công bằng cách nào?”. Công cụ thực hiện cần đi cùng cách đọc kết quả hoặc kiểm tra trạng thái. Ví dụ giao diện và video trong bài minh họa nguyên tắc này; chi tiết điều khiển máy tính và xử lý hình ảnh nằm ngoài phạm vi đề cương đã lưu.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** API trả lỗi nhưng tác nhân AI tiếp tục bước phụ thuộc như thể thành công. Thiếu gì?
+**Câu 1 — Chọn một.** Agent gửi lệnh sửa cấu hình, nhận mã thoát 0, rồi báo tính năng đã hoạt động. Kiểm tra sau đó cho thấy ứng dụng đọc một tệp cấu hình khác. Bổ sung nào trực tiếp ngăn kết luận sai này?
 
-A. Một lời kết luận dài hơn.
+A. Yêu cầu mô hình giải thích vì sao chọn đường dẫn trước khi gửi lệnh.
 
-B. Nhiều các công cụ hơn bất kể nhiệm vụ.
+B. Kiểm tra trạng thái mà ứng dụng thực sự sử dụng sau thao tác.
 
-C. Kiểm tra kết quả thao tác trước khi quyết định bước tiếp.
+C. Đánh dấu thành công nếu cả lệnh và quá trình ghi log đều không lỗi.
 
-D. Chỉ đổi tên biến.
+D. Chạy lại lệnh ghi cấu hình và so sánh hai mã thoát.
 
-**2. Chọn một.** Tác nhân AI cần sửa cấu hình repo chưa quen. Bước phù hợp trước khi ghi?
+**Câu 2 — Chọn một.** Một API trả HTTP 200 với nội dung “processing”. Bước kế tiếp cần bản ghi đã hoàn tất để tính báo cáo. Thiết kế phù hợp nhất là gì?
 
-A. Đọc cấu hình và các phần liên quan hiện có.
+A. Cho mô hình suy luận dữ liệu cuối từ dữ liệu tạm để giảm độ trễ.
 
-B. Ghi đè theo mẫu bất kỳ.
+B. Đọc trạng thái hoàn tất theo hợp đồng API trước khi chạy bước phụ thuộc.
 
-C. Bỏ qua mọi quy ước repo.
+C. Cho bước báo cáo dùng dữ liệu phản hồi vì HTTP 200 đã xác nhận thành công.
 
-D. Chỉ dựa vào tên file để đoán nội dung.
+D. Đợi một khoảng cố định rồi luôn đánh dấu hoàn tất.
 
-**3. Chọn một.** Log cho thấy lệnh đã được gửi. Có chứng minh mục tiêu đã đạt không?
+**Câu 3 — Chọn hai.** Agent sửa repo chưa quen. Tệp cấu hình tồn tại nhưng có các mục phụ thuộc lẫn nhau. Hai kiểm tra nào đặt đúng chỗ trong vòng quan sát–hành động?
 
-A. Có, gửi đồng nghĩa thành công.
+A. Đọc lại prompt ban đầu thay cho đọc tệp vì yêu cầu đã đầy đủ.
 
-B. Chưa; cần kết quả thực thi và kiểm tra trạng thái mong muốn.
+B. Dùng câu xác nhận của agent làm bằng chứng hậu kiểm.
 
-C. Có, nếu câu lệnh ngắn.
+C. Đọc cấu hình hiện tại cùng các phần liên quan trước khi lập thay đổi.
 
-D. Có, miễn tác nhân AI không hỏi thêm.
+D. Đối chiếu diff và hành vi cần đạt sau khi sửa.
 
-## Đáp án
+**Câu 4 — Chọn một.** Sau thao tác xuất báo cáo, công cụ chỉ trả “request sent”. Nhóm muốn agent biết lúc nào có thể giao tệp. Cần sửa hợp đồng công cụ theo hướng nào?
 
-1. **C.** A và D không quan sát trạng thái; B không sửa điều kiện chuyển bước.
-2. **A.** B và C bỏ dữ liệu hiện tại; D đoán thay cho đọc.
-3. **B.** A nhầm ý định với kết quả; C và D không phải bằng chứng trạng thái.
+A. Đổi thông báo thành “report generated” để mô hình không hiểu nhầm.
+
+B. Trả mã tác vụ cùng cơ chế kiểm tra hoàn tất và lấy tệp.
+
+C. Yêu cầu agent kể lại đầy đủ các bước đã gửi.
+
+D. Cho mô hình xác nhận dựa trên thời lượng xuất báo cáo trung bình.
+
+**Câu 5 — Chọn hai.** API tra cứu thất bại nhưng đã trả một phần dữ liệu. Agent định dùng phần đó để hoàn tất tổng hợp. Hai việc nào cần làm trước khi kết luận?
+
+A. Coi phần dữ liệu nhận được là toàn bộ vì công cụ đã trả phản hồi.
+
+B. Ghi nhận lỗi và chọn phục hồi hoặc báo hạn chế theo trạng thái thực.
+
+C. Xác định phần dữ liệu thiếu có ảnh hưởng tới kết luận yêu cầu không.
+
+D. Chuyển lỗi thành danh sách rỗng để bước sau chạy thống nhất.
+
+## Đáp án và giải thích
+
+1. **B.** A sai: Lập luận trước hành động không thay quan sát kết quả. B đúng: Thành công của lệnh chưa chứng minh trạng thái đích đã đổi. C sai: Hai tín hiệu cùng phản ánh thực thi, chưa kiểm tra tác động mong muốn. D sai: Lặp cùng thao tác sai đích vẫn có thể cùng thành công.
+
+2. **B.** A sai: Dữ liệu tạm không chứng minh trạng thái cuối. B đúng: Phải kiểm tra điều kiện nghiệp vụ, không chỉ giao vận. C sai: Đã nhận yêu cầu không đồng nghĩa xử lý xong. D sai: Thời gian chờ không phải quan sát trạng thái mong muốn.
+
+3. **C, D.** A sai: Yêu cầu mô tả mục tiêu, không chứa toàn bộ trạng thái hiện tại. B sai: Lời tự báo cáo không thay kết quả quan sát môi trường. C đúng: Cần trạng thái thật để tránh giả định cấu trúc. D đúng: Kiểm tra tác động của hành động lên mục tiêu.
+
+4. **B.** A sai: Đổi nhãn không bổ sung bằng chứng hoàn tất. B đúng: Agent có đường quan sát kết quả thực thi. C sai: Lịch sử yêu cầu không chứng minh có tệp đầu ra. D sai: Trung bình không xác nhận lần thực thi cụ thể.
+
+5. **B, C.** A sai: Có phản hồi không chứng minh dữ liệu đầy đủ. B đúng: Bước tiếp theo phải phản ánh kết quả đã quan sát. C đúng: Dữ liệu một phần có thể không đủ điều kiện trả lời. D sai: Không tìm thấy dữ liệu và không tra cứu được là hai trạng thái khác nhau.
 
 ## Đối chiếu Vertex
 

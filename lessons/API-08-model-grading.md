@@ -13,43 +13,69 @@ Ví dụ: AI tạo dữ liệu JSON đúng cú pháp nhưng lọc nhầm loại 
 
 Điểm do mô hình chấm có thể thay đổi giữa các lần và bản thân mô hình chấm cũng có thể sai. Vì vậy, dùng điểm trung bình để hỗ trợ so sánh, đồng thời xem nhận xét và lỗi cụ thể. Không coi một điểm số cao là bằng chứng tuyệt đối rằng kết quả đúng.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Đầu ra parse được nhưng không giải quyết yêu cầu. Tiêu chí nào bị vi phạm?
+**Câu 1 — Chọn một.** JSON do model sinh parse được nhưng cấu hình vùng triển khai trái yêu cầu. Bộ chấm hiện chỉ kiểm tra parse. Bổ sung nào giải quyết lỗ hổng?
 
-A. Chỉ độ dài.
+A. Chấm cấu hình theo yêu cầu gốc của tác vụ.
 
-B. Task following — làm đúng tác vụ.
+B. Thêm kiểm tra khoảng trắng để chắc chắn JSON đúng định dạng.
 
-C. Tính tồn tại của bộ dữ liệu.
+C. Lặp phép parse để tăng độ tin cậy.
 
-D. Chắc chắn cú pháp JSON.
+D. Chấm độ mạch lạc của lời giải thích thay cho vùng triển khai.
 
-**2. Chọn một.** Cấu trúc bộ chấm điểm nào hỗ trợ chẩn đoán tốt nhất theo bài?
+**Câu 2 — Chọn hai.** Nhóm dùng một model làm grader cho trợ lý. Hai thành phần nào cần có để điểm chấm có thể điều tra?
 
-A. Chỉ ghi “ổn”.
+A. Tên prompt “bản cải tiến” để grader biết nên ưu tiên.
 
-B. Chỉ ghi tên mô hình.
+B. Chỉ mức tự tin của model tạo output thay cho phân tích.
 
-C. Điểm mạnh, điểm yếu, lý do và điểm.
+C. Lý do, điểm mạnh và điểm yếu đi kèm điểm số.
 
-D. Luôn trả 10.
+D. Yêu cầu gốc cùng output được chấm.
 
-**3. Chọn hai.** Những gì mô hình bộ chấm điểm cần để đối chiếu yêu cầu và kết quả?
+**Câu 3 — Chọn một.** Đầu ra phải có JSON đúng cú pháp và tóm tắt đầy đủ các rủi ro khó quy thành chuỗi cố định. Thiết kế grader nào phù hợp nhất?
 
-A. Yêu cầu gốc.
+A. Dùng so khớp nguyên văn với một tóm tắt mẫu cho mọi đầu vào.
 
-B. Đầu ra cần chấm.
+B. Dùng mã kiểm tra JSON và model theo rubric kiểm tra nội dung.
 
-C. Thông tin đăng nhập của người dùng.
+C. Dùng model cho cả hai rồi bỏ kiểm tra parse vì model hiểu JSON.
 
-D. Một nhãn “đúng” gán cố định.
+D. Chỉ dùng parse JSON và coi trường risks có mặt là đủ.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Grader cho hai câu trả lời trái ngược cùng điểm cao. Hai bước nào giúp phân biệt lỗi rubric với lỗi người chấm?
 
-1. **B.** A không mô tả lỗi; C không phải tiêu chí đầu ra; D trái dữ kiện parse được.
-2. **C.** A và B thiếu đánh giá hữu ích; D không chấm thực tế.
-3. **A, B.** C không cần cho đánh giá; D thay việc đánh giá bằng kết luận cố định.
+A. Xem lại lý do chấm và đối chiếu với yêu cầu gốc.
+
+B. Đổi tên model sinh đáp án rồi dùng tên đó làm tiêu chí phân xử.
+
+C. Dùng các ca có nhãn đã duyệt để kiểm tra tính nhất quán của grader.
+
+D. Tăng điểm của cả hai để tránh tranh cãi giữa các lần chạy.
+
+**Câu 5 — Chọn một.** Một output rất trôi chảy nhưng bỏ qua hai ràng buộc bắt buộc. Grader chỉ hỏi “câu trả lời có hay không?”. Sửa nào sát nguyên nhân nhất?
+
+A. Yêu cầu grader ưu tiên câu trả lời dài hơn vì thường đầy đủ hơn.
+
+B. Chấm riêng tuân thủ và rõ ràng, chỉ ra vi phạm cụ thể.
+
+C. Dùng điểm trình bày bù phần thông tin thiếu.
+
+D. Chỉ giảm nhiệt độ model sinh để mặc định các ràng buộc sẽ được giữ.
+
+## Đáp án và giải thích
+
+1. **A.** A đo ngữ nghĩa nhiệm vụ. B và C vẫn chỉ đo cú pháp; D chuyển sang văn phong, không kiểm tra ràng buộc bị vi phạm.
+
+2. **C, D.** D tạo cơ sở đối chiếu; C giúp kiểm tra lý do chấm. A dễ gây thiên lệch; B không đánh giá đáp ứng yêu cầu thực tế.
+
+3. **B.** B kết hợp phép đo phù hợp từng tiêu chí. C bỏ một kiểm tra tất định dễ làm; D nhầm có trường với đủ ý; A phạt những cách diễn đạt đúng khác mẫu.
+
+4. **A, C.** A kiểm tra căn cứ từng điểm; C kiểm tra grader trên chuẩn biết trước. D che mâu thuẫn; B đánh giá danh tính thay cho nội dung.
+
+5. **B.** B làm rõ điều phải chấm. A và C dùng hình thức thay cho độ đầy đủ; D thay cấu hình sinh nhưng không sửa thước đo đang bỏ sót lỗi.
 
 ## Đối chiếu Bedrock
 

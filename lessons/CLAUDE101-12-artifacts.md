@@ -13,42 +13,66 @@ Bạn có thể yêu cầu chỉnh sửa qua cuộc trò chuyện hoặc dùng c
 
 Khi chia sẻ, chọn quyền xem hoặc sửa theo nhu cầu người nhận. Cũng cần xác định biểu đồ dùng dữ liệu được chụp lại tại một thời điểm (snapshot) hay dữ liệu cập nhật trực tiếp (live). Nếu chỉ là bản chụp dữ liệu, cần cập nhật và kiểm tra nguồn khi muốn có số mới. Các lựa chọn chia sẻ và gói hỗ trợ có thể thay đổi theo sản phẩm.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Bạn cần dashboard dùng lại, không chỉ đọc một câu trả lời. Nên mô tả yêu cầu thế nào?
+**Câu 1 — Chọn một.** Dashboard artifact tạo từ file doanh số tháng trước vẫn hiển thị số cũ sau khi file trên máy được sửa. Cần xác định gì đầu tiên?
 
-A. Chỉ “nói về số liệu”.
+A. Dashboard dùng snapshot hay kết nối dữ liệu cập nhật?
 
-B. Chỉ hỏi một số bất kỳ.
+B. Màu biểu đồ có làm người xem nhầm số mới với số cũ không.
 
-C. Không nêu đầu ra.
+C. Tên artifact có chứa từ “live” để kích hoạt cập nhật không.
 
-D. Nêu artifact/dashboard, dữ liệu, tương tác và người dùng cần phục vụ.
+D. Có nên yêu cầu mô hình đoán số mới từ xu hướng tháng trước không.
 
-**2. Chọn một.** Biểu đồ trong tài liệu lấy dữ liệu hôm qua. Có nên coi nó luôn cập nhật theo nguồn?
+**Câu 2 — Chọn hai.** Nhóm xuất artifact thành file rồi sửa file đã tải về. Hai điều nên kiểm tra trước bàn giao?
 
-A. Không; xác định snapshot/live, refresh khi cần và kiểm tra số mới.
+A. Phiên bản nào là bản cuối và nội dung xuất có đúng định dạng cần dùng không.
 
-B. Có, mọi biểu đồ đều live.
+B. Chỉ kiểm tra artifact ban đầu rồi bỏ qua file thực tế được gửi.
 
-C. Có, miễn đẹp.
+C. Mặc định mọi chỉnh sửa file tự đồng bộ ngược vì có cùng tiêu đề.
 
-D. Không bao giờ được dùng dữ liệu nguồn.
+D. Các sửa đổi ở file có được phản ánh lại artifact hay cần cập nhật riêng.
 
-**3. Chọn một.** Người nhận chỉ cần đọc artifact. Cách chia sẻ phù hợp?
+**Câu 3 — Chọn một.** Yêu cầu “làm dashboard đẹp” tạo biểu đồ nhưng không lọc được theo tháng, trong khi trưởng nhóm cần tính năng này. Prompt nào sửa đúng thiếu sót?
 
-A. Luôn cấp edit.
+A. Đổi vai trò mô hình thành nhà thiết kế nhiều kinh nghiệm.
 
-B. Chọn quyền phù hợp nhu cầu xem và phạm vi người nhận.
+B. Tăng số biểu đồ mà không nêu thao tác cần hỗ trợ.
 
-C. Công khai mọi thứ theo mặc định.
+C. Nêu người dùng, dữ liệu và hành vi lọc tháng của biểu đồ.
 
-D. Chỉ tin nhãn private mà không kiểm tra thiết lập.
+D. Yêu cầu thêm hiệu ứng chuyển cảnh và giữ nguyên cấu trúc dữ liệu.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Artifact chuẩn bị gửi cho người chỉ cần xem kết quả. Hai kiểm tra nào phù hợp?
 
-1. **D.** D xác định deliverable; A và B chỉ gợi nội dung, C để mô hình đoán mục tiêu.
+A. Cấp quyền sửa cho mọi người vì artifact dễ dùng lại.
 
-2. **A.** A phân biệt trạng thái dữ liệu; B và C giả định đồng bộ, D bỏ cách cập nhật hợp lệ.
+B. Kiểm tra dữ liệu và phiên bản cuối thực tế được chia sẻ.
 
-3. **B.** B áp đúng nhu cầu; A và C vượt phạm vi, D không xác minh cấu hình thực tế.
+C. Chọn quyền chia sẻ theo nhu cầu xem hoặc sửa của người nhận.
+
+D. Coi khả năng mở được liên kết là đủ chứng minh số liệu đúng.
+
+**Câu 5 — Chọn một.** Nhóm muốn dùng artifact làm công cụ ra quyết định từ số liệu mới hàng ngày. Thiết kế nào làm rõ giới hạn sử dụng?
+
+A. Nêu nguồn, độ mới và cách cập nhật/kiểm tra trước sử dụng.
+
+B. Bỏ thời điểm dữ liệu để giao diện luôn trông mới.
+
+C. Để mô hình làm mới lời giải thích mà giữ nguyên bảng số liệu cũ.
+
+D. Đổi tiêu đề thành “báo cáo hôm nay” mỗi khi mở artifact.
+
+## Đáp án và giải thích
+
+1. **A.** A xác định cơ chế dữ liệu. B không sửa nguồn; C tên không tạo kết nối; D dự đoán không phải số liệu cập nhật.
+
+2. **A, D.** A xác nhận bản giao; D kiểm tra quan hệ giữa hai sản phẩm. C giả định đồng bộ; B bỏ đối tượng mà người nhận thực sự sử dụng.
+
+3. **C.** C xác định hành vi sản phẩm. D và B chủ yếu tác động phong cách; A thêm số lượng không bảo đảm thao tác mong muốn.
+
+4. **B, C.** C đặt quyền theo nhiệm vụ; B xác minh nội dung. A mở quyền không cần; D chỉ kiểm tra truy cập.
+
+5. **A.** A nối sản phẩm với nguồn và độ mới. B che giới hạn; C cập nhật lời văn không cập nhật dữ kiện; D nhãn ngày không tạo bằng chứng mới.

@@ -26,7 +26,7 @@ const server=http.createServer(async(req,res)=>{
   const url=new URL(req.url,`http://${HOST}:${PORT}`);
   try{
     if(req.method==='GET'&&assets[url.pathname]){const file=assets[url.pathname];res.writeHead(200,{'Content-Type':mime[path.extname(file)],'Cache-Control':'no-cache'});return res.end(fs.readFileSync(path.join(ROOT,'study-web',file)));}
-    if(req.method==='GET'&&url.pathname==='/api/library')return json(res,200,{lessons:library,groups:GROUPS,recommended,learningPaths,totalQuestions:[...lessons.values()].reduce((n,l)=>n+l.questions.length,0),token});
+    if(req.method==='GET'&&url.pathname==='/api/library')return json(res,200,{lessons:library,groups:GROUPS,recommended,learningPaths,totalQuestions:[...lessons.values()].reduce((n,l)=>n+l.questions.length,0),questionRevisions:Object.fromEntries([...lessons.values()].flatMap(l=>l.questions.map(q=>[q.id,q.revision]))),token});
     if(req.method==='GET'&&url.pathname==='/api/lesson'){const l=lessons.get(url.searchParams.get('id'));if(!l)return json(res,404,{error:'Không tìm thấy bài học.'});const {raw,...visible}=l;return json(res,200,visible);}
     if(req.method==='GET'&&url.pathname==='/api/chat/status')return json(res,200,await bridge.status());
     if(req.method==='GET'&&url.pathname==='/api/sync/status')return json(res,200,{enabled:sync.enabled,profile:sync.profile});

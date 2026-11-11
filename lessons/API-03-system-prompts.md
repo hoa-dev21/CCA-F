@@ -15,43 +15,69 @@ Trong mã minh họa, khi không có hướng dẫn hệ thống, hàm bỏ tham
 
 Theo phần liên hệ với đề cương thi, prompt giúp định hướng hành vi nhưng không bảo đảm AI luôn tuân thủ. Các điều kiện bắt buộc vẫn cần kiểm tra hoặc chặn bằng chương trình.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Gia sư trả lời đúng nhưng luôn đưa ngay lời giải, trái phương pháp dạy. Điều chỉnh nào phù hợp nhất với bài học?
+**Câu 1 — Chọn một.** Gia sư giải đúng nhưng liên tục đưa đáp án trước khi học viên thử. Hệ thống dùng chung hàm gọi API với trợ lý biên tập. Sửa ở đâu để đặt hành vi ổn định theo từng ứng dụng?
 
-A. Tăng trần token.
+A. Truyền vai trò và cách dạy qua tham số system dùng chung.
 
-B. Nêu vai trò gia sư và yêu cầu gợi ý từng bước trong `system`.
+B. Chèn một đáp án mẫu vào cuối mỗi câu hỏi toán của học viên.
 
-C. Xóa lịch sử ở mỗi lượt.
+C. Đổi mọi tin nhắn user thành system để tăng tính nhất quán.
 
-D. Chỉ định câu trả lời phải dài hơn.
+D. Hard-code cùng hướng dẫn gia sư cho cả hai app.
 
-**2. Chọn một.** Nhóm muốn dùng chung hàm gửi yêu cầu cho gia sư và trợ lý biên tập. Thiết kế nào phù hợp?
+**Câu 2 — Chọn hai.** Nhóm kiểm thử system prompt gia sư trước phát hành. Hai tiêu chí nào cùng cần thiết để kết luận hệ thống đạt mục tiêu?
 
-A. Đóng cứng vai trò gia sư bên trong hàm.
+A. Có gợi ý theo bước và chừa cơ hội cho học viên thử không.
 
-B. Dùng một prompt không có vai trò cho mọi tác vụ.
+B. Câu trả lời có cùng độ dài với ví dụ duy nhất trong prompt không.
 
-C. Truyền system prompt qua tham số của hàm.
+C. Có lặp nguyên văn nhãn “gia sư” trong mọi câu trả lời không.
 
-D. Đổi role của câu hỏi thành `assistant`.
+D. Đáp số và lập luận toán học có đúng không.
 
-**3. Chọn một.** Kiểm thử chỉ chấm đáp số toán học. Nó bỏ sót yêu cầu nào trong ví dụ gia sư?
+**Câu 3 — Chọn một.** Hàm dùng chung đọc một biến system toàn cục. Hai request đồng thời cho gia sư và biên tập đôi lúc đổi giọng cho nhau. Thiết kế nào phù hợp nhất?
 
-A. Có hướng dẫn người học từng bước trước khi đưa lời giải không.
+A. Thêm tên ứng dụng vào câu trả lời sau khi model đã sinh xong.
 
-B. Có tạo API key mới mỗi lượt không.
+B. Nhận system như đầu vào riêng của từng lần gọi.
 
-C. Có chạm đúng trần `max_tokens` không.
+C. Nối hai system để model tự chọn vai trò.
 
-D. Có bỏ toàn bộ lịch sử không.
+D. Tăng số ví dụ trong biến toàn cục để model tự nhận diện vai trò.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Một prompt chỉ ghi “bạn là chuyên gia” nhưng sản phẩm cần gia sư không tiết lộ lời giải ngay. Hai chỉnh sửa nào giúp yêu cầu có thể kiểm chứng?
 
-1. **B.** Chỉ rõ phương pháp phản hồi. A và D thay độ dài, không xác định phương pháp; C làm mất ngữ cảnh.
-2. **C.** Tách cấu hình vai trò khỏi cơ chế gửi yêu cầu. A giảm khả năng tái sử dụng; B bỏ khác biệt tác vụ; D làm sai vai trò hội thoại.
-3. **A.** Thành công gồm hành vi sư phạm, không chỉ kết quả. B và D không phải tiêu chí dạy học; C nhầm giới hạn với mục tiêu.
+A. Thêm nhiều chức danh chuyên môn mà không đổi quy trình phản hồi.
+
+B. Nêu rõ phải gợi ý trước khi cung cấp lời giải đầy đủ.
+
+C. Yêu cầu ngôn ngữ trang trọng để thay cho tiêu chí sư phạm.
+
+D. Mô tả cách phản hồi khi học viên đã thử nhưng mắc lỗi.
+
+**Câu 5 — Chọn một.** Bản system mới đạt điểm toán ngang bản cũ nhưng giảm mạnh tỷ lệ tiết lộ đáp án sớm. Quyết định nào có cơ sở nhất?
+
+A. Loại bản mới vì điểm toán không tăng nên system không có tác dụng.
+
+B. Chỉ đo độ ngắn của câu trả lời để suy ra mức độ gợi ý.
+
+C. Phát hành sau một hội thoại gợi ý tốt.
+
+D. Đo độ đúng và cách dạy trên tập đại diện.
+
+## Đáp án và giải thích
+
+1. **A.** A đặt hành vi đúng phạm vi mà vẫn tái sử dụng hàm. B không xác định quy trình dạy; C trộn vai trò dữ liệu; D làm trợ lý biên tập chịu quy tắc không phù hợp.
+
+2. **A, D.** D đo độ đúng, A đo phương pháp dạy. C chỉ kiểm tra từ khóa; B kiểm tra hình thức không đại diện cho hành vi mong muốn.
+
+3. **B.** B gắn cấu hình với request. A sửa nhãn chứ không sửa hành vi; C tạo hướng dẫn cạnh tranh; D vẫn giữ nguyên trạng thái dùng chung gây lẫn vai trò.
+
+4. **B, D.** B và D mô tả hành vi quan sát được. A tăng vai trò chung nhưng chưa định nghĩa cách dạy; C đo giọng văn thay vì trình tự hỗ trợ.
+
+5. **D.** D đánh giá đúng hai mục tiêu. A bỏ qua mục tiêu hành vi; C thiếu độ bao phủ; B độ ngắn không chứng minh đã hướng dẫn phù hợp.
 
 ## Đối chiếu Bedrock
 

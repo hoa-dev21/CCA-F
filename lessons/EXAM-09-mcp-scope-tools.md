@@ -25,40 +25,66 @@ Khi đọc và sửa kho mã, phân biệt các công cụ:
 
 Nếu mốc của Edit xuất hiện nhiều lần và không xác định được vị trí duy nhất, hãy đọc đầy đủ rồi chỉnh hoặc ghi có kiểm soát, kiểm tra diff sau đó. Khám phá mã từng bước từ điểm bắt đầu, theo phần nhập mô-đun và luồng gọi, thay vì nạp mọi tệp cùng lúc. Nếu hàm được xuất qua lớp trung gian, tìm các tên được xuất rồi tìm từng tên để không bỏ sót nơi gọi.
 
-## Câu hỏi tình huống
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Nhóm cần cùng server ticket nhưng máy thành viên mới không thấy vì cấu hình chỉ ở tài khoản người cũ. Cách sửa?
+**Câu 1 — Chọn một.** Một MCP server ticket hoạt động trên máy tác giả nhưng đồng đội không thấy khi clone repo. Cấu hình nằm ở user scope. Cách sửa phù hợp cho dùng chung và credential riêng?
 
-A. Chia sẻ file chứa token nguyên văn.
+A. Commit cả cấu hình user cùng token đang hoạt động.
 
-B. Đưa cấu hình dùng chung vào dự án scope, dùng biến môi trường và thiết lập quyền phù hợp từng người.
+B. Version cấu hình dự án; credential/quyền riêng từng người.
 
-C. Chỉ đổi tên server trong prompt.
+C. Yêu cầu mọi người dùng chung tài khoản máy tác giả.
 
-D. Mặc định cấu hình cá nhân được Git chia sẻ.
+D. Thêm mô tả server vào README và giữ nguyên scope.
 
-**2. Chọn một.** Cần tìm tất cả file theo mẫu `**/*.test.tsx`, sau đó tìm nội dung gọi một hàm. Thứ tự chọn công cụ?
+**Câu 2 — Chọn một.** Bạn cần tìm file **/*.test.tsx có gọi saveOrder, nhưng repository rất lớn. Trình tự nào thu hẹp tìm kiếm đúng loại dữ liệu?
 
-A. Write rồi xóa file không đúng.
+A. Grep chuỗi “.test.tsx” trong nội dung rồi đọc mọi file khớp.
 
-B. Chỉ Read mọi file trong repo.
+B. Read lần lượt mọi thư mục rồi tìm bằng mắt.
 
-C. Glob cho đường dẫn, Grep cho nội dung cần tìm.
+C. Glob tên test, Grep nội dung, Read ngữ cảnh khớp.
 
-D. Chỉ đo độ dài tên file.
+D. Glob chuỗi saveOrder vì đó là tên hàm cần tìm.
 
-**3. Chọn một.** Edit thất bại vì cùng chuỗi anchor xuất hiện nhiều lần. Cách phương án dự phòng theo đề cương?
+**Câu 3 — Chọn hai.** Edit báo anchor xuất hiện ba lần. File vừa được người khác sửa. Hai hành động nào giảm nguy cơ ghi đè hoặc sửa nhầm?
 
-A. Read đầy đủ và thực hiện thay đổi/Write có kiểm soát, kiểm tra diff.
+A. Read lại phiên bản hiện tại và lấy ngữ cảnh đủ phân biệt vị trí.
 
-B. Thay mọi chỗ khớp dù chưa biết mục đích.
+B. Dùng kết quả Read cũ để Write cả file với thay đổi mong muốn.
 
-C. Bỏ qua và báo đã sửa.
+C. Sửa với anchor duy nhất hoặc thay thế có kiểm soát, rồi kiểm tra diff.
 
-D. Tăng điểm tự tin trong phản hồi cuối.
+D. Chọn lần xuất hiện đầu tiên vì công cụ đã xác nhận có chuỗi cần sửa.
 
-## Đáp án
+**Câu 4 — Chọn một.** Grep tên fetchRecord chỉ thấy một caller, nhưng hàm còn được re-export thành loadCustomer qua wrapper. Trước khi đổi chữ ký hàm, bước nào cần làm?
 
-1. **B.** A làm lộ secret; C không tạo cấu hình; D nhầm scope cá nhân và dự án.
-2. **C.** A phá dữ liệu; B tốn ngữ cảnh khi đã có mẫu tìm; D không tìm caller.
-3. **A.** B có thể sửa sai vị trí; C tuyên bố sai; D không thay đổi file.
+A. Coi grep đã bao phủ vì implementation chỉ có một tên.
+
+B. Đổi chữ ký rồi dựa vào production logs tìm caller bị lỗi.
+
+C. Tìm mọi file chứa từ “Record” và sửa đồng loạt.
+
+D. Truy alias/export; đọc wrapper và caller của từng tên.
+
+**Câu 5 — Chọn hai.** Đưa MCP server vào project scope giúp đồng đội nhìn thấy cấu hình. Hai điều nào vẫn cần kiểm tra trên mỗi môi trường?
+
+A. Credential thực tế và quyền trên hệ thống đích.
+
+B. Việc server đã được tác giả dùng thành công thay cho kiểm tra kết nối.
+
+C. Phê duyệt/cấu hình môi trường và khả năng truy cập server.
+
+D. Tính nhất quán quyền ghi của mọi người chỉ từ file cấu hình được commit.
+
+## Đáp án và giải thích
+
+1. **B.** B chia sẻ định nghĩa kết nối mà giữ credential theo người/môi trường. A phát tán bí mật; C trộn quyền và danh tính; D hướng dẫn không làm cấu hình user trở thành cấu hình dự án.
+
+2. **C.** C phân biệt tìm tên đường dẫn, tìm nội dung và đọc ngữ cảnh. A tìm sai miền dữ liệu; B tốn công chưa thu hẹp; D tên hàm trong nội dung không phải mẫu đường dẫn.
+
+3. **A, C.** A cập nhật trạng thái; C kiểm tra đúng phạm vi sửa. B có thể ghi đè thay đổi mới. D xác nhận tồn tại không chứng minh đó là vị trí đúng.
+
+4. **D.** D theo quan hệ ký hiệu và luồng dữ liệu. A bỏ alias; B đẩy phát hiện lỗi sang production; C vừa có false positive vừa không bảo đảm bắt tên alias khác.
+
+5. **A, C.** A và C quyết định kết nối có dùng được trong môi trường mới. B chỉ là bằng chứng ở môi trường khác. D chia sẻ cấu hình không tự cấp cùng quyền hay cùng danh tính.

@@ -15,40 +15,66 @@ Nếu quy trình chạy không có người theo dõi, hãy cấu hình quyền 
 
 Giới hạn số lượt giúp kiểm soát tài nguyên. Khi chạm giới hạn, chỉ có thể kết luận tác vụ đã dừng vì hết lượt, chưa thể kết luận công việc hoàn tất. Tương tự, có nhận xét rà soát trên PR không có nghĩa mọi kiểm thử và điều kiện chấp nhận đã đạt.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Cần bot thực hiện sửa mã theo comment PR, vượt phạm vi chỉ đưa findings. Lựa chọn phù hợp bài?
+**Câu 1 — Chọn một.** Nhóm cần bot sửa mã theo comment PR. Dịch vụ review được mô tả trong bài chỉ đưa findings, không tự sửa. Thiết kế nào đáp ứng nhu cầu?
 
-A. Mặc định dịch vụ kiểm tra tự sửa dù không hỗ trợ.
+A. Thêm nhãn auto-fix và coi dịch vụ review đã có chức năng sửa.
 
-B. Action tùy biến với prompt và quyền phù hợp.
+B. Tăng severity để dịch vụ review tự chuyển sang chế độ ghi.
 
-C. Chỉ đổi nhãn severity.
+C. Action tùy biến, giới hạn quyền và có bước kiểm chứng.
 
-D. Bỏ quy trình xử lý kiểm thử.
+D. Bỏ bước kiểm thử vì sửa theo comment đã là yêu cầu được phê duyệt.
 
-**2. Chọn một.** Job chỉ tổng hợp báo cáo nhưng được cấp quyền ghi rộng. Thiết kế tốt hơn?
+**Câu 2 — Chọn một.** Job định kỳ chỉ tổng hợp báo cáo từ repo nhưng được cấp quyền sửa và deploy. Thay đổi nào phù hợp nhất?
 
-A. Giữ quyền rộng vì càng nhiều luôn càng tốt.
+A. Giới hạn quyền vào đọc dữ liệu và xuất báo cáo.
 
-B. Thêm quyền deploy.
+B. Giữ quyền rộng để job không bao giờ phải từ chối.
 
-C. Thu hẹp công cụ/quyền theo tác vụ chỉ đọc.
+C. Thêm câu “không deploy” nhưng giữ nguyên mọi quyền.
 
-D. Xóa mọi log kết quả.
+D. Chỉ tắt log của công cụ ghi để báo cáo ít nhiễu.
 
-**3. Chọn một.** Tác nhân AI dừng vì đạt giới hạn lượt. Có thể kết luận gì?
+**Câu 3 — Chọn hai.** Action dừng vì đạt giới hạn lượt và đã có một số nhận xét trên PR. Hai điều nào cần kiểm tra trước khi coi review hoàn tất?
 
-A. Mục tiêu đã hoàn thành chắc chắn.
+A. Chỉ số lượt đã dùng bằng giới hạn nên mức độ bao phủ đã đủ.
 
-B. Mọi test đều pass.
+B. Trạng thái chạy cùng phạm vi thực sự đã được kiểm tra.
 
-C. PR đã được con người duyệt.
+C. Các gate/tiêu chí chấp nhận và bằng chứng còn thiếu.
 
-D. Chỉ biết rào chắn lượt đã tác động; cần kiểm tra trạng thái và bằng chứng hoàn thành.
+D. Sự tồn tại của ít nhất một comment là bằng chứng mọi file đã được review.
 
-## Đáp án
+**Câu 4 — Chọn một.** Workflow CI không có người trực đôi khi yêu cầu xác nhận quyền và treo đến timeout. Sửa nào bảo đảm xử lý tự động trong giới hạn đã định?
 
-1. **B.** A gán chức năng ngoài phạm vi; C không thực thi; D bỏ xác minh cần thiết.
-2. **C.** A và B mở rộng không phục vụ mục tiêu; D giảm khả năng kiểm tra.
-3. **D.** A, B, C không được chứng minh bởi điều kiện dừng tài nguyên.
+A. Tăng timeout để chờ người duyệt lâu hơn.
+
+B. Tự trả lời đồng ý mọi prompt vì code nằm trong repo nội bộ.
+
+C. Chạy lại job nhiều lần cho tới lúc mô hình không hỏi.
+
+D. Chạy không tương tác; cấp quyền cần dùng, từ chối ngoài phạm vi.
+
+**Câu 5 — Chọn hai.** Nhóm vừa cập nhật prompt bot review và muốn triển khai an toàn. Hai bằng chứng nào hữu ích nhất?
+
+A. Đánh giá findings trên PR đại diện, gồm lỗi thật và pattern hợp lệ.
+
+B. Xác minh quyền, trigger và xử lý đầu ra phù hợp workflow dự kiến.
+
+C. Chỉ kiểm tra bot có đăng được comment.
+
+D. Chỉ xem câu trả lời có giọng văn chuyên nghiệp.
+
+## Đáp án và giải thích
+
+1. **C.** C tạo workflow có khả năng thực hiện hành động cần thiết. A/B không mở rộng chức năng ngoài phạm vi dịch vụ. D quyền sửa không thay thế việc chứng minh bản sửa đúng.
+
+2. **A.** A giảm năng lực không phục vụ nhiệm vụ. B ưu tiên tiện lợi hơn phạm vi công việc. C là hướng dẫn chưa phải giới hạn thực thi. D giảm khả năng quan sát nhưng vẫn giữ quyền thừa.
+
+3. **B, C.** B xác định phần đã làm, C xác định điều kiện hoàn tất. A nhầm giới hạn tài nguyên với kết quả. D comment không chứng minh độ bao phủ hay chất lượng toàn bộ PR.
+
+4. **D.** D xử lý quyền như một phần thiết kế CI. A vẫn phụ thuộc người không trực. B bỏ ranh giới thao tác. C không sửa điều kiện gây treo và kết quả phụ thuộc may rủi.
+
+5. **A, B.** A đo chất lượng quyết định, B đo vận hành và phạm vi. C chỉ chứng minh một khả năng kết nối. D không chứng minh finding đúng hoặc pipeline xử lý trạng thái lỗi đúng.

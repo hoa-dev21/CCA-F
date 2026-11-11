@@ -13,45 +13,69 @@ Mỗi trường hợp kiểm thử cần trạng thái ban đầu, các bước,
 
 Mẫu chạy môi trường máy tính trong container. Điều này giúp giới hạn phạm vi ảnh hưởng nhưng không tự loại bỏ rủi ro từ dữ liệu, mạng, tài khoản thật hoặc thao tác có hậu quả. Vẫn cần giới hạn tài nguyên và xác minh trước hành động khó đảo ngược; không coi nhận định “không có rủi ro” trong ví dụ là bảo đảm chung.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Dropdown xuất hiện nhưng che trường nhập sau Backspace. Tiêu chí nào bắt được lỗi?
+**Câu 1 — Chọn một.** Computer Use nhập @ và thấy danh sách gợi ý. Ảnh cho thấy danh sách che ô nhập, nhưng tác nhân ghi test đạt. Thiếu tiêu chí nào?
 
-A. Chỉ kiểm tra browser đã mở.
+A. Kiểm tra chọn gợi ý và vị trí popup theo yêu cầu.
 
-B. Chỉ kiểm tra có một click.
+B. Kiểm tra có bất kỳ pixel nào thay đổi sau khi nhập @.
 
-C. Kiểm tra trạng thái hiển thị và vị trí dropdown sau đúng chuỗi thao tác.
+C. Xác nhận lệnh gõ ký tự trả thành công từ bộ thực thi.
 
-D. Chỉ kiểm tra HTTP 200.
+D. Xác nhận mô hình đã gọi đúng tên công cụ bàn phím.
 
-**2. Chọn một.** Ca thứ hai phụ thuộc tình cờ vào dữ liệu ca thứ nhất. Cải thiện phù hợp?
+**Câu 2 — Chọn hai.** Ca kiểm thử Backspace thất bại chỉ khi chạy sau ca Enter. Hai việc nào giúp xác định lỗi giao diện hay lỗi bố trí test?
 
-A. Định nghĩa trạng thái đầu và reset/chuẩn bị dữ liệu phù hợp giữa các ca.
+A. Ghi trạng thái ban đầu và chuẩn bị lại dữ liệu giữa các ca.
 
-B. Chạy ngẫu nhiên mà không ghi trạng thái.
+B. Chỉ chạy ca thành công cuối cùng rồi thay kết quả thất bại bằng kết quả đó.
 
-C. Bỏ kết quả mong đợi.
+C. Tăng số lần bấm Backspace đến khi giao diện giống ảnh mong đợi.
 
-D. Coi mọi click là pass.
+D. Lưu các bước, kết quả mong đợi và bằng chứng quan sát của từng ca.
 
-**3. Chọn một.** Desktop nằm trong Docker nhưng có tài khoản thật đăng nhập. Kết luận đúng?
+**Câu 3 — Chọn một.** Container kiểm thử đăng nhập tài khoản thật và có thể gửi email ra ngoài. Hệ thống được mô tả là sandbox. Kết luận phù hợp?
 
-A. Mọi thao tác đều an toàn tuyệt đối.
+A. Chỉ cần xóa container sau test để đảo ngược email đã gửi.
 
-B. Không cần giới hạn mạng.
+B. Có thể bỏ xác minh người nhận nếu ảnh giao diện trông giống môi trường test.
 
-C. Không cần kiểm tra quyền.
+C. Vẫn phải giới hạn tài khoản, mạng và thao tác có hậu quả theo nhiệm vụ.
 
-D. Vẫn cần giới hạn tài nguyên và kiểm soát hành động có hậu quả.
+D. Có thể cho gửi thật vì container đã cô lập mọi hậu quả bên ngoài.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Tác nhân kiểm thử biểu mẫu, nhưng màn hình cuối bị che bởi hộp thoại và chưa quan sát được dữ liệu lưu. Hai cách báo cáo nào phù hợp?
 
-1. **C.** Kiểm tra trạng thái hiển thị và vị trí dropdown sau đúng chuỗi thao tác. A/B/D không quan sát hành vi UI mà ca kiểm thử cần xác minh.
+A. Đánh dấu thành công vì lệnh bấm nút gửi không báo lỗi.
 
-2. **A.** Định nghĩa trạng thái đầu và reset/chuẩn bị dữ liệu phù hợp giữa các ca. B làm khó tái hiện; C/D không kiểm chứng được hành vi.
+B. Lưu bằng chứng hộp thoại rồi xác định bước kiểm tra tiếp trong phạm vi cho phép.
 
-3. **D.** Vẫn cần giới hạn tài nguyên và kiểm soát hành động có hậu quả. A/B/C nhầm cô lập môi trường với loại bỏ mọi tác động qua tài khoản/dịch vụ ngoài.
+C. Nêu rõ bước gửi đã thực hiện và việc lưu dữ liệu còn chưa kiểm chứng.
+
+D. Đánh dấu thất bại dữ liệu vì không nhìn thấy bản ghi dưới hộp thoại.
+
+**Câu 5 — Chọn một.** Kịch bản cần gõ @, chọn Enter, xóa bằng Backspace và kiểm tra vị trí popup. Phương án nào cho bằng chứng có thể tái hiện?
+
+A. Lưu trạng thái đầu, thao tác và bằng chứng tại các điểm kiểm tra.
+
+B. Chỉ lưu ảnh cuối vì nó đại diện toàn bộ quá trình.
+
+C. Chỉ lưu số lần gọi công cụ vì các thao tác đều xác định được.
+
+D. Lưu lời nhận xét “hoạt động bình thường” của tác nhân sau mỗi lần chạy.
+
+## Đáp án và giải thích
+
+1. **A.** A đánh giá yêu cầu sản phẩm. B chỉ thấy thay đổi giao diện; C và D kiểm tra thao tác kỹ thuật, không chứng minh trải nghiệm đúng.
+
+2. **A, D.** A kiểm soát ảnh hưởng giữa ca; D cho phép tái hiện. C làm đổi kịch bản không kiểm soát; B che tính phụ thuộc và bỏ bằng chứng lỗi.
+
+3. **C.** C xét tài nguyên và tác động thực tế. D nhầm cô lập tiến trình với dịch vụ ngoài; A không thu hồi email; B hình thức giao diện không chứng minh tài khoản hoặc người nhận an toàn.
+
+4. **B, C.** C phân biệt hành động và kết quả; B giúp tiếp tục kiểm chứng. A kết luận thành công quá sớm; D suy thất bại từ thiếu quan sát.
+
+5. **A.** A nối hành động với quan sát theo tiêu chí. B bỏ mất lỗi trung gian; C đo hoạt động thay vì hành vi; D thiếu dữ liệu để tái hiện hoặc kiểm tra độc lập.
 
 ## Đối chiếu phụ đề chính thức
 

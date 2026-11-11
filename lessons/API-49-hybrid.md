@@ -13,45 +13,69 @@ Bài dùng Reciprocal Rank Fusion (RRF), tức hợp nhất theo thứ hạng. M
 
 Cần giữ mã định danh nhất quán để nhận ra cùng một đoạn xuất hiện ở nhiều danh sách, cộng tín hiệu đúng và tránh lặp kết quả. Sau khi hợp nhất, vẫn phải đo chất lượng trên các câu hỏi đại diện; kết hợp nhiều cách tìm không tự bảo đảm câu trả lời đúng.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Vectơ score và BM25 score khác thang đo. Cách kết hợp nào phù hợp với bài học?
+**Câu 1 — Chọn một.** Nhóm cộng trực tiếp điểm BM25 khoảng hàng chục với cosine khoảng dưới một. Kết quả nghiêng gần hết về BM25. Sửa nào phù hợp bài học?
 
-A. Cộng thẳng số bất kể ngữ nghĩa.
+A. Tăng số chữ số thập phân của cosine rồi cộng như cũ.
 
-B. Chọn số có nhiều chữ số nhất.
+B. Bỏ semantic search vì điểm số nhỏ chứng minh yếu hơn.
 
-C. Bỏ mọi kết quả.
+C. Thử RRF theo thứ hạng và đánh giá trên bộ truy vấn.
 
-D. Dùng phương pháp hợp nhất phù hợp như RRF theo thứ hạng.
+D. Chọn nguồn có điểm số lớn nhất để phản ánh độ tự tin cao nhất.
 
-**2. Chọn một.** Vì sao chỉ mục tìm kiếm dùng giao diện chung hữu ích?
+**Câu 2 — Chọn một.** Cùng một đoạn có ID khác nhau ở hai bộ tìm kiếm, RRF trả hai bản sao thay vì gộp tín hiệu. Cần sửa gì?
 
-A. Dễ phối hợp, kiểm thử và mở rộng phương pháp truy xuất dữ liệu.
+A. Chuẩn hóa định danh chunk giữa các nguồn trước hợp nhất.
 
-B. Bảo đảm không có lỗi chương trình.
+B. Tăng hằng số k của RRF để hai bản sao tự nhập thành một.
 
-C. Không cần lưu nội dung.
+C. Xóa mọi mục xuất hiện trong cả hai danh sách.
 
-D. Mọi chỉ mục tìm kiếm luôn trả cùng điểm.
+D. Dùng thứ hạng làm ID chung giữa các bộ tìm kiếm.
 
-**3. Chọn một.** Cùng đoạn văn bản xuất hiện trong hai danh sách nhưng bị coi thành hai tài liệu khác. Cần kiểm tra gì?
+**Câu 3 — Chọn hai.** Với RRF theo dạng 1/(k+rank), hai phát biểu nào đúng?
 
-A. Chỉ định dạng báo cáo.
+A. Hằng số k trong công thức luôn là số đoạn lấy cho prompt.
 
-B. Định danh/ánh xạ đoạn văn bản khi hợp nhất và loại bỏ kết quả trùng lặp.
+B. Cùng chunk xuất hiện ở nhiều danh sách cần được nhận diện để gộp đóng góp.
 
-C. Chỉ mô hình trả lời.
+C. Thứ hạng tốt hơn đóng góp lớn hơn khi k giữ nguyên.
 
-D. Chỉ tên dự án.
+D. Điểm RRF là xác suất câu trả lời cuối đúng.
 
-## Đáp án
+**Câu 4 — Chọn một.** Một retriever mới được thêm vào hybrid nhưng giao diện trả dữ liệu thiếu ID nguồn. Điều chỉnh kiến trúc ưu tiên là gì?
 
-1. **D.** D tránh so điểm số gốc không tương thích; A sai thang, B tùy tiện, C mất dữ liệu.
+A. Dùng tên retriever làm ID cho tất cả đoạn nó trả.
 
-2. **A.** A là lợi ích thiết kế; B bảo đảm quá mức, C bỏ đối chiếu dữ liệu nguồn, D không có cơ sở.
+B. Giữ retriever mới riêng và cộng raw score cuối cùng.
 
-3. **B.** B nhắm việc hợp nhất kết quả dữ liệu; A, C, D không sửa ánh xạ nguồn.
+C. Thống nhất ID, nội dung và thứ hạng trong hợp đồng trả về.
+
+D. Cho mô hình sinh tự đoán hai kết quả có trùng hay không.
+
+**Câu 5 — Chọn hai.** Hybrid tăng recall nhưng làm một số câu trả lời kém đi. Hai kiểm tra nào giúp quyết định giữ thay đổi?
+
+A. Đánh giá câu trả lời theo nhóm truy vấn đại diện.
+
+B. Chỉ báo điểm hợp nhất trung bình tăng.
+
+C. Chấp nhận vì hai phương pháp luôn tốt hơn một phương pháp.
+
+D. Đo bằng chứng sau hợp nhất có đủ và có bị nhiễu/trùng không.
+
+## Đáp án và giải thích
+
+1. **C.** A sai: Độ chính xác số không đổi thang đo. B sai: Thang điểm không chứng minh chất lượng thấp. C đúng: Không coi điểm khác thang đo là tương đương. D sai: Độ lớn khác đơn vị không so như xác suất.
+
+2. **A.** A đúng: Nhận ra cùng mục là điều kiện để cộng tín hiệu đúng. B sai: Công thức thứ hạng không xác định danh tính. C sai: Làm mất ứng viên được nhiều nguồn ủng hộ. D sai: Hai mục cùng hạng có thể là hai nội dung khác nhau.
+
+3. **B, C.** A sai: Hằng số làm trơn và số kết quả truy xuất là khái niệm khác. B đúng: Đó là lý do giữ ID nhất quán. C đúng: Mẫu số nhỏ hơn cho đóng góp lớn hơn. D sai: Đây là điểm hợp nhất xếp hạng, không phải độ đúng đã hiệu chỉnh.
+
+4. **C.** A sai: Không phân biệt được các đoạn trong một nguồn. B sai: Vẫn gặp khác thang đo và trùng lặp. C đúng: Cần giao diện nhất quán để hợp nhất có nghĩa. D sai: Đẩy lỗi định danh sang suy đoán không đáng tin.
+
+5. **A, D.** A đúng: Cần đo kết quả nhiệm vụ chứ không chỉ số tìm kiếm. B sai: Điểm nội bộ không trực tiếp đo độ đúng câu trả lời. C sai: Số phương pháp không là bảo đảm chất lượng. D đúng: Recall tăng chưa bảo đảm ngữ cảnh hữu ích.
 
 ## Đối chiếu RAG trên Bedrock
 

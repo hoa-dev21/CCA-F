@@ -24,40 +24,66 @@ Thông tin bàn giao cần có mã khách đã xác minh, từng vấn đề, gi
 
 Nếu khách có nhiều vấn đề, tách thành các hạng mục, dùng chung dữ kiện đã xác minh, xử lý song song những nhánh độc lập rồi đưa ra một phương án thống nhất.
 
-## Câu hỏi tình huống
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Quy tắc yêu cầu xác minh trước hoàn tiền nhưng tác nhân AI đôi lúc bỏ qua. Cách sửa bền vững?
+**Câu 1 — Chọn một.** Bot có quy định phải xác minh danh tính trước hoàn tiền. Trong kiểm thử, lời nhắc được tuân thủ 99% nhưng vẫn có giao dịch bỏ bước. Kiểm soát nào đáp ứng yêu cầu không được hoàn khi chưa xác minh?
 
-A. Thêm chữ IMPORTANT vào cùng prompt.
+A. Thêm ba ví dụ từ chối vào system prompt và giảm temperature.
 
-B. Tăng số ví dụ thành công nhưng không đổi thực thi.
+B. Yêu cầu mô hình ghi lý do xác minh trước khi gọi công cụ.
 
-C. Để công cụ hoàn tiền tự đoán khách hàng.
+C. Gate ở executor kiểm tra xác minh đúng khách/giao dịch.
 
-D. Gate bằng mã chặn hoàn tiền khi chưa có định danh xác minh hợp lệ.
+D. Dùng bộ kiểm tra sau giao dịch để hoàn tác những lần thiếu xác minh.
 
-**2. Chọn một.** Khách nói rõ “hãy chuyển tôi cho nhân viên”. Đơn hàng có vẻ dễ xử lý. Theo mục tiêu đề cương?
+**Câu 2 — Chọn một.** Khách yêu cầu rõ “chuyển tôi cho nhân viên”. Bot đã có đủ dữ liệu và dự đoán tự xử lý chỉ mất 20 giây. Chính sách yêu cầu tôn trọng đề nghị chuyển người. Bước phù hợp nhất?
 
-A. Chuyển ngay theo yêu cầu, kèm thông tin đã có.
+A. Chuyển theo yêu cầu, bàn giao vấn đề và dữ liệu đã xác minh.
 
-B. Buộc khách thử tự động thêm một lượt.
+B. Thử giải quyết trong 20 giây rồi chỉ chuyển nếu thất bại.
 
-C. Chỉ chuyển nếu điểm sentiment rất thấp.
+C. Hỏi lại lý do muốn gặp người trước khi tạo yêu cầu chuyển.
 
-D. Đóng vụ việc vì có thể tự giải quyết.
+D. Đề nghị khách xác nhận thêm lần nữa vì hệ thống có thể tự xử lý.
 
-**3. Chọn hai.** Công cụ trả hai khách hàng cùng tên và chính sách không nói về yêu cầu đặc biệt. Hành động phù hợp?
+**Câu 3 — Chọn hai.** Tra cứu trả hai khách cùng tên. Yêu cầu hoàn tiền còn thuộc ngoại lệ chính sách chưa mô tả. Hai bước nào giải quyết hai loại bất định mà không đoán?
 
-A. Chọn bản ghi có lịch sử mua lớn nhất.
+A. Chọn hồ sơ có giao dịch gần nhất rồi nhờ người duyệt ngoại lệ.
 
-B. Hỏi thêm định danh để phân biệt khách.
+B. Hỏi định danh bổ sung được phép để phân biệt đúng khách.
 
-C. Chuyển trường hợp chính sách thiếu tới người có thẩm quyền, kèm handoff rõ.
+C. Áp dụng trường hợp tương tự nhất trong chính sách để tránh chờ.
 
-D. Suy rộng quyền hoàn tiền từ chính sách tương tự.
+D. Chuyển ngoại lệ cho người có thẩm quyền, kèm thông tin và điểm chưa rõ.
 
-## Đáp án
+**Câu 4 — Chọn một.** Hồ sơ chuyển cấp chứa toàn bộ transcript nhưng nhân viên vẫn hỏi lại mã đơn, số tiền và điều đã thử. Cải thiện nào hữu ích nhất?
 
-1. **D.** A và B vẫn chỉ là hướng dẫn; C không đạt tiền điều kiện.
-2. **A.** B trái yêu cầu rõ; C dùng proxy không đáng tin; D bỏ yêu cầu hỗ trợ.
-3. **B, C.** A chọn bằng heuristic; D tạo chính sách chưa được cấp.
+A. Tăng giới hạn độ dài transcript để không cắt mất thông tin.
+
+B. Thêm đánh giá cảm xúc khách hàng ở đầu transcript.
+
+C. Để mô hình viết lại toàn bộ hội thoại thành văn xuôi trôi chảy.
+
+D. Bàn giao case state: định danh, facts, bước đã thử, quyết định còn mở.
+
+**Câu 5 — Chọn hai.** Khách đã xác minh cho đơn A, sau đó đổi sang đơn B và tăng số tiền hoàn. Hai điều kiện nào gate cần đánh giá lại trước khi thực thi?
+
+A. Sự gắn kết giữa người được xác minh, đối tượng giao dịch và quyền thực hiện.
+
+B. Giới hạn chính sách với số tiền và trạng thái giao dịch hiện tại.
+
+C. Độ lịch sự của câu trả lời chấp thuận mà mô hình đã soạn.
+
+D. Việc mô hình từng gọi thành công công cụ hoàn tiền trong cùng phiên.
+
+## Đáp án và giải thích
+
+1. **C.** C đặt bất biến tại điểm thực thi. A và B cải thiện hành vi nhưng không cưỡng chế điều kiện. D phát hiện sau tác động; hoàn tác có thể không khả dụng hoặc thất bại.
+
+2. **A.** A thực hiện tiêu chí chuyển người đã đủ. B ưu tiên tối ưu vận hành hơn yêu cầu rõ ràng. C và D tạo trở ngại không được chính sách yêu cầu và bắt khách lặp lại ý muốn.
+
+3. **B, D.** B giải quyết thiếu định danh; D giải quyết thiếu thẩm quyền/quy tắc. A vẫn có thể chọn nhầm người dù ngoại lệ được duyệt. C tự mở rộng chính sách khi chưa có căn cứ.
+
+4. **D.** D giúp người nhận hành động và thấy trạng thái xác minh. A không giải quyết khả năng tìm dữ kiện; B không thay thế dữ liệu nghiệp vụ; C dễ mất định danh hoặc mức chắc chắn trong quá trình tóm tắt.
+
+5. **A, B.** A ngăn tái dùng xác minh sai phạm vi; B kiểm tra điều kiện trên yêu cầu mới. C không chứng minh quyền hay điều kiện. D chỉ là lịch sử thực thi, không cấp quyền cho giao dịch khác.

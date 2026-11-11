@@ -13,45 +13,69 @@ Sau khi thiết lập, xác định đúng thư mục dự án và phạm vi là
 
 Các bước đọc dự án, lập kế hoạch, sửa mã và kiểm thử được học tiếp ở các bài sau. Bản tóm tắt này mô tả việc chuẩn bị, không phải xác nhận đã cài hoặc đăng nhập trên máy của người học.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Cài CLI thành công có chứng minh tính năng được viết đúng không?
+**Câu 1 — Chọn một.** CLI đã cài và đăng nhập thành công. Tác nhân sửa tính năng rồi đề nghị merge vì “môi trường đã sẵn sàng”. Bằng chứng nào vẫn cần?
 
-A. Có, setup thay mọi test.
+A. Một lần gọi mô hình thành công từ đúng thư mục.
 
-B. Có, nếu đã login.
+B. Diff đúng phạm vi và kiểm thử hành vi tính năng.
 
-C. Có, mọi repo giống nhau.
+C. Ảnh chụp phiên bản CLI và tài khoản đang đăng nhập.
 
-D. Không; còn cần kiểm tra hành vi và kết quả triển khai.
+D. Số lượng file tác nhân đã đọc trước khi sửa.
 
-**2. Chọn một.** Video chỉ một cách cài cũ. Khi thực hành nên làm gì?
+**Câu 2 — Chọn hai.** Video cài CLI đã cũ; môi trường vận hành khác hệ điều hành trong demo. Hai bước nào phù hợp trước khi áp dụng?
 
-A. Đối chiếu hướng dẫn chính thức phù hợp môi trường hiện tại.
+A. Kiểm tra CLI chạy được và xác thực bằng cơ chế được cấu hình cho môi trường đích.
 
-B. Luôn bỏ lỗi tương thích.
+B. Cài thêm mọi phương thức tìm thấy để ít nhất một bản hoạt động.
 
-C. Cài mọi phần mềm từ link bất kỳ.
+C. Đối chiếu hướng dẫn chính thức phù hợp phiên bản và môi trường thực tế.
 
-D. Coi mọi hệ điều hành giống nhau.
+D. Dùng đúng lệnh cũ và bỏ qua cảnh báo vì bài học là nguồn chính thức.
 
-**3. Chọn một.** MCP hỗ trợ Code mở rộng thế nào?
+**Câu 3 — Chọn một.** Đăng nhập API trực tiếp thành công trên laptop, nhưng job Bedrock không gọi được mô hình. Cách điều tra đúng lớp lỗi nhất?
 
-A. Thay mọi phép kiểm chứng.
+A. Đổi model name nhưng giữ nguyên cơ chế xác thực trực tiếp.
 
-B. Kết nối server cung cấp công cụ/dữ liệu chuyên biệt phù hợp.
+B. Gửi system prompt yêu cầu “hãy dùng Bedrock”.
 
-C. Tự cấp mọi quyền file.
+C. Kiểm tra provider, danh tính AWS và quyền môi trường đích.
 
-D. Không cần cấu hình tích hợp.
+D. Đổi tên repo để CLI nhận biết đây là dự án cloud.
 
-## Đáp án
+**Câu 4 — Chọn một.** Tác nhân đã đăng nhập nhưng đang mở thư mục repo cũ có cấu trúc gần giống repo cần sửa. Kiểm soát nào nên thực hiện trước khi giao thay đổi?
 
-1. **D.** D tách môi trường khỏi chất lượng; A, B, C suy rộng quá mức.
+A. Tăng quyền file để bảo đảm tác nhân sửa được mọi thư mục.
 
-2. **A.** A kiểm tra đường cài đúng; B che lỗi, C không xét nguồn, D bỏ môi trường.
+B. Dựa vào tên package trong prompt để tác nhân tự chọn thư mục.
 
-3. **B.** B là mở rộng khả năng; A và C sai bảo đảm/quyền, D bỏ thiết lập.
+C. Chờ test thất bại rồi mới kiểm tra repo.
+
+D. Xác định lại thư mục dự án, revision và phạm vi file được phép thay đổi.
+
+**Câu 5 — Chọn hai.** Nhóm thêm MCP server cho Claude Code để tra thông tin nội bộ. Hai điều nào cần phân biệt với việc CLI đã cài xong?
+
+A. Khả năng kết nối, quyền và hợp đồng của công cụ/dữ liệu MCP mới.
+
+B. Việc kết quả công cụ có đủ căn cứ cho nhiệm vụ và cần kiểm chứng ra sao.
+
+C. Server có tên đúng thì không cần kiểm tra lời gọi và xử lý lỗi.
+
+D. MCP tự mở mọi quyền file để bù cho phạm vi công cụ trước đó.
+
+## Đáp án và giải thích
+
+1. **B.** A sai: Kết nối hoạt động vẫn không kiểm thử tính năng được tạo. B đúng: Setup xác nhận khả năng dùng công cụ, không xác nhận chất lượng code tạo ra. C sai: Đó là bằng chứng thiết lập, không chứng minh sửa đúng hành vi. D sai: Đọc nhiều không đồng nghĩa hiểu đúng hoặc thực thi đúng.
+
+2. **A, C.** A đúng: Cài package xong chưa chứng minh runtime và danh tính thực tế hoạt động. B sai: Nhiều bản có thể tạo xung đột đường dẫn và không xác định được runtime đang dùng. C đúng: Cách cài trong video không mặc định là lựa chọn duy nhất hoặc còn tương thích. D sai: Nguồn chính thức tại thời điểm ghi hình không loại khác biệt phiên bản hiện tại.
+
+3. **C.** A sai: Tên mô hình không thay cho credential và định tuyến của nhà cung cấp. B sai: Prompt không cấu hình client hay hạ tầng xác thực. C đúng: Thành công ở provider khác không chứng minh cấu hình Bedrock đúng. D sai: Tên thư mục không chứng minh hay cấp quyền truy cập mô hình.
+
+4. **D.** A sai: Quyền rộng hơn không giải quyết đang nhắm sai repo. B sai: Thông tin ngôn ngữ không thay việc xác minh cwd và đối tượng thực tế. C sai: Test của repo cũ có thể xanh; phát hiện sai mục tiêu sau sửa còn tốn công khôi phục. D đúng: Đúng danh tính chưa đủ; công cụ còn phải làm việc trên đúng đối tượng.
+
+5. **A, B.** A đúng: Tích hợp bổ sung có điều kiện hoạt động riêng, không được suy từ CLI khởi động. B đúng: Khả năng gọi công cụ không bảo đảm dữ liệu hoặc quyết định cuối đúng. C sai: Khám phá tên khác với kiểm chứng hoạt động thực tế và đường lỗi. D sai: Mở rộng giao diện công cụ không mặc định cấp mọi quyền hệ thống.
 
 ## Đối chiếu phụ đề chính thức
 

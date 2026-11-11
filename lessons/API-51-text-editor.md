@@ -13,45 +13,69 @@ Trước khi sửa tệp có sẵn, đọc nội dung liên quan để biết tr
 
 Một khối `tool_use` mới thể hiện yêu cầu sửa, chưa chứng minh tệp đã thay đổi. Ứng dụng chịu trách nhiệm giới hạn tệp được truy cập, kiểm tra quyền, thực thi và xác minh kết quả.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Đã gửi bản mô tả công cụ chỉnh sửa văn bản nhưng chưa có mã đọc, ghi tệp. Còn thiếu gì?
+**Câu 1 — Chọn một.** API trả tool_use yêu cầu sửa tệp, nhưng tệp local vẫn nguyên. Nhóm nghĩ dịch vụ đã tự sửa máy của mình. Thành phần nào còn thiếu?
 
-A. Không thiếu gì.
+A. Cho UI hiển thị tool_use như bằng chứng diff.
 
-B. Chỉ logo editor.
+B. Host cần chạy yêu cầu sửa và trả kết quả thực thi.
 
-C. Chỉ prompt dài.
+C. Tăng max_tokens để tool_use chứa cả tệp đã chỉnh.
 
-D. Triển khai và định tuyến thao tác ở client, rồi trả kết quả.
+D. Một prompt yêu cầu mô hình khẳng định đã sửa.
 
-**2. Chọn một.** Trước khi sửa file hiện hữu nên làm gì?
+**Câu 2 — Chọn một.** Agent định thay một đoạn văn đã đọc từ đầu phiên, nhưng người dùng vừa sửa tệp. Quy trình nào giảm ghi đè sai?
 
-A. Đọc nội dung liên quan để sửa theo trạng thái thật.
+A. Thay toàn bộ tệp bằng bản mô hình nhớ để tránh anchor lỗi.
 
-B. Luôn ghi đè từ trí nhớ.
+B. Đọc lại phần liên quan, sửa rồi đối chiếu diff.
 
-C. Bỏ mọi quyền file.
+C. Chỉ kiểm tra mã thoát của lệnh ghi.
 
-D. Chỉ dựa tên file.
+D. Dùng bản cũ để giữ tính nhất quán với kế hoạch đã lập.
 
-**3. Chọn một.** Bản mô tả cấu trúc dữ liệu version cũ trong video nên dùng thế nào?
+**Câu 3 — Chọn hai.** Ứng dụng triển khai text editor client tool. Hai trách nhiệm nào thuộc host?
 
-A. Mặc định đúng cho mọi mô hình mới.
+A. Giả định mọi phiên bản công cụ có cùng khả năng undo.
 
-B. Xác minh tương thích theo model/API trước khi thực hành.
+B. Ủy thác quyền ghi cho mô hình vì schema do nhà cung cấp định nghĩa.
 
-C. Không bao giờ cần kiểm tra.
+C. Giới hạn đường dẫn và quyền truy cập trước thực thi.
 
-D. Tên version thay kết quả chạy.
+D. Đọc kết quả và kiểm tra thay đổi sau thao tác.
 
-## Đáp án
+**Câu 4 — Chọn một.** Một tích hợp dựa vào undo của phiên bản mẫu, nhưng phiên bản đích không công bố thao tác đó. Cách thiết kế đúng?
 
-1. **D.** D thực hiện yêu cầu; A nhầm bản mô tả cấu trúc dữ liệu với mã, B và C không thao tác filesystem.
+A. Xác minh lệnh được hỗ trợ và thiết kế phục hồi phù hợp môi trường đích.
 
-2. **A.** A cung cấp ngữ cảnh; B và D đoán, C mở quyền không cần.
+B. Gửi tên lệnh undo cũ và coi lỗi là đã hoàn tác.
 
-3. **B.** B kiểm tra hợp đồng thực; A và C giả định bất biến, D nhầm thông tin mô tả với thực thi.
+C. Yêu cầu mô hình mô phỏng undo chỉ bằng lời xác nhận.
+
+D. Dùng prompt ghi nhớ tệp thay cho mọi cơ chế đọc/kiểm tra.
+
+**Câu 5 — Chọn hai.** Công cụ báo sửa thành công nhưng người dùng thấy hành vi sai. Hai kiểm tra nào phân biệt thành công kỹ thuật với thành công nhiệm vụ?
+
+A. Chỉ xem tool_use có tên lệnh được hỗ trợ không.
+
+B. Diff có đúng tệp, đúng phạm vi và giữ phần không liên quan không.
+
+C. Hành vi sau sửa có đáp ứng yêu cầu ban đầu không.
+
+D. Chỉ xem câu trả lời cuối có nêu đường dẫn tệp không.
+
+## Đáp án và giải thích
+
+1. **B.** A sai: Yêu cầu thay đổi chưa là thay đổi đã xảy ra. B đúng: Client tool không tự chạy chỉ vì có định nghĩa. C sai: Đối số lớn hơn vẫn cần thực thi. D sai: Câu chữ không ghi tệp.
+
+2. **B.** A sai: Tăng nguy cơ mất thay đổi chưa đọc. B đúng: Phải thao tác trên trạng thái thật và xác nhận phạm vi. C sai: Ghi thành công không chứng minh nội dung đúng. D sai: Nhất quán với dữ liệu cũ có thể phá sửa đổi mới.
+
+3. **C, D.** A sai: Khả năng phụ thuộc định nghĩa/phiên bản. B sai: Nguồn schema không thay cơ chế quyền local. C đúng: Host là nơi kiểm soát tác động lên tệp. D đúng: Cần xác nhận nội dung đạt mục tiêu.
+
+4. **A.** A đúng: Không dựa vào cam kết không có ở phiên bản dùng. B sai: Lỗi không chứng minh phục hồi. C sai: Không tác động trạng thái tệp. D sai: Ngữ cảnh không bảo đảm khôi phục chính xác trạng thái.
+
+5. **B, C.** A sai: Hợp lệ yêu cầu chưa đủ. B đúng: Kiểm tra tác động nội dung. C đúng: Kiểm tra mục tiêu cuối. D sai: Nêu tên không chứng minh đã sửa đúng.
 
 ## Đối chiếu Bedrock
 

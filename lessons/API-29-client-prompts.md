@@ -13,43 +13,69 @@ Tên và giá trị tham số phải đúng với định nghĩa phía server. V
 
 Cần phân biệt ba mốc: biết có những mẫu nào, lấy được hướng dẫn đã điền tham số và thực hiện xong nhiệm vụ. Việc lấy mẫu thành công chưa chứng minh tài liệu đã được chỉnh sửa.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Người dùng cần xem các mẫu có sẵn. Gọi gì trước?
+**Câu 1 — Chọn một.** Slash command /format hiển thị trong UI, nhưng khi chạy báo thiếu doc_id vì client gửi document. Sửa nào trực tiếp nhất?
 
-A. `call_tool` với tên đoán.
+A. Đổi label hiển thị của slash command.
 
-B. `list_prompts()`.
+B. Đổi prompt để không cần tài liệu cụ thể.
 
-C. Trả kết quả định dạng giả.
+C. Ánh xạ arguments theo hợp đồng get_prompt.
 
-D. Xóa ngữ cảnh.
+D. Thêm cùng giá trị vào system prompt và giữ args sai.
 
-**2. Chọn một.** Mẫu yêu cầu `doc_id`, client truyền một khóa không đúng tên. Cần kiểm tra gì?
+**Câu 2 — Chọn hai.** Ứng dụng cần hiển thị menu prompt rồi chạy mẫu người dùng chọn. Hai thao tác nào thuộc đúng các mốc trước khi gọi mô hình?
 
-A. Chỉ tăng độ dài output.
+A. list_prompts để khám phá mô tả và tham số có sẵn.
 
-B. Chỉ đổi mô hình.
+B. call_tool với tên prompt để vừa lấy mẫu vừa thực thi.
 
-C. Hợp đồng tham số giữa client và prompt phía server.
+C. get_prompt với tên và args để lấy messages đã điền.
 
-D. Chỉ thay giọng điệu tin nhắn của người dùng.
+D. Đánh dấu hoàn thành nghiệp vụ ngay khi menu hiện.
 
-**3. Chọn một.** `get_prompt` trả messages đúng. Để hoàn thành tác vụ, bước nào còn cần?
+**Câu 3 — Chọn một.** get_prompt trả messages đúng nhưng tài liệu không thay đổi. Log kết thúc ngay sau lời gọi đó. Bước còn thiếu là gì?
 
-A. Gửi các tin nhắn cho Claude và xử lý những yêu cầu gọi công cụ cần thiết.
+A. Tăng timeout get_prompt để server có thời gian chỉnh tài liệu.
 
-B. Coi việc lấy template là đã sửa tài liệu.
+B. Chạy messages qua model/tool và xác minh kết quả.
 
-C. Chỉ hiển thị tên template.
+C. Đổi tên doc_id thành đường dẫn đầy đủ dù server chấp nhận ID.
 
-D. Bỏ mọi tham số và chạy lại danh sách.
+D. Dùng list_prompts xác nhận nhiệm vụ đã xong.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Người dùng chọn tài liệu A nhưng client giữ args từ lần trước cho tài liệu B. Hai kiểm soát nào giúp tránh sửa sai đối tượng?
 
-1. **B.** A gọi hành động khác; C bịa kết quả; D không khám phá mẫu.
-2. **C.** A, B, D không sửa sự không khớp tên đối số.
-3. **A.** B nhầm chuẩn bị với hoàn tất; C không thực thi; D quay lại khám phá thay vì dùng mẫu đã lấy.
+A. Ràng buộc args với lựa chọn hiện tại trước khi gọi get_prompt.
+
+B. Dựa vào tên slash command để suy ra tài liệu muốn sửa.
+
+C. Kiểm tra định danh trong messages và đối tượng tác động khi thực thi.
+
+D. Chỉ kiểm tra HTTP thành công của get_prompt.
+
+**Câu 5 — Chọn một.** Server thêm một tham số bắt buộc cho prompt; client vẫn dùng menu cache cũ. Cách xử lý phù hợp nhất khi gặp lỗi thiếu tham số?
+
+A. Tự điền chuỗi rỗng cho mọi tham số mới.
+
+B. Giữ retry nguyên request vì discovery từng thành công.
+
+C. Bỏ tham số bắt buộc trong messages sau khi lấy được mẫu.
+
+D. Cập nhật định nghĩa và lấy đủ tham số theo hợp đồng mới.
+
+## Đáp án và giải thích
+
+1. **C.** C sửa hợp đồng lời gọi. A chỉ thay UI. B né yêu cầu cần thiết. D dữ liệu trong prompt khác không sửa tham số thiếu của get_prompt.
+
+2. **A, C.** A khám phá, C lấy mẫu cụ thể. B nhầm primitive prompt với tool. D menu chỉ chứng minh bước khám phá, chưa có tác động nghiệp vụ.
+
+3. **B.** B thực thi hướng dẫn đã lấy. A giả định get_prompt thực hiện tác vụ. C không giải quyết thiếu vòng thực thi. D danh mục không có vai trò xác nhận kết quả sửa tài liệu.
+
+4. **A, C.** A tránh dữ liệu stale, C kiểm tra xuyên các tầng. B tên hành động không chỉ ra đối tượng. D phản hồi thành công vẫn có thể nhắm sai ID hợp lệ.
+
+5. **D.** D xử lý thay đổi hợp đồng. A có thể tạo giá trị không hợp lệ. B giữ nguyên nguyên nhân. C chưa lấy được mẫu và bỏ trường không giải quyết nhu cầu nghiệp vụ.
 
 ## Đối chiếu khóa MCP riêng
 

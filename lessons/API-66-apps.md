@@ -13,45 +13,69 @@ Ví dụ: Sau khi yêu cầu sửa tệp, cần xem tệp đã thay đổi đún
 
 Đây là bài định hướng trước phần tác nhân AI. Theo đề cương đã lưu, chi tiết computer use nằm ngoài phạm vi thi; nguyên tắc kết hợp công cụ và kiểm chứng kết quả vẫn hữu ích. Bài học mô tả cách hoạt động, không thực hiện thao tác máy tính hay cài ứng dụng thay người học.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Điểm kiến trúc chung được bài dùng hai ứng dụng minh họa là gì?
+**Câu 1 — Chọn một.** Tác nhân bấm nút lưu trên desktop rồi báo hoàn tất, nhưng hộp thoại xác nhận vẫn mở. Bước thiết kế nào thiếu trong vòng tác nhân?
 
-A. Chỉ đổi tên sản phẩm.
+A. Đổi công cụ sang CLI dù ứng dụng không có giao diện lệnh cho tác vụ.
 
-B. Ghép các công cụ, nhiều bước và tương tác/quan sát môi trường.
+B. Một prompt dài hơn mô tả rằng nút lưu thường hoạt động.
 
-C. Không cần thực thi.
+C. Một lần bấm thứ hai tại cùng tọa độ dù giao diện đã thay đổi.
 
-D. Không cần mục tiêu.
+D. Quan sát kết quả rồi kiểm tra đã đạt trạng thái đích chưa.
 
-**2. Chọn một.** Computer use và Code khác nhau chủ yếu ở lớp thao tác nào trong ví dụ?
+**Câu 2 — Chọn hai.** Một agent sửa tệp qua công cụ, agent khác thao tác qua UI. Hai nguyên tắc kiến trúc nào áp dụng cho cả hai?
 
-A. Không khác gì.
+A. Chọn bước tiếp theo theo kết quả thực tế và xử lý lỗi trong phạm vi quyền.
 
-B. Chỉ màu UI.
+B. Xem tên công cụ được gọi là bằng chứng hành động đã đạt mục tiêu.
 
-C. Giao diện desktop so với file/lệnh trong phát triển.
+C. Dùng cùng tọa độ cho UI và đường dẫn file để thống nhất executor.
 
-D. Không có công cụ.
+D. Định nghĩa trạng thái đích và kiểm tra bằng chứng sau hành động.
 
-**3. Chọn một.** Khi ôn theo Exam Guide đã tải, chi tiết computer use có ưu tiên cao không?
+**Câu 3 — Chọn một.** Sau khi xem demo Code và computer use, nhóm muốn dùng số lần gọi tool làm tỷ lệ hoàn thành nhiệm vụ. Chỉ số bổ sung nào cần nhất?
 
-A. Không; đọc định hướng, ưu tiên mục tiêu trong phạm vi thi.
+A. Số loại công cụ agent đã dùng trong phiên.
 
-B. Có, thay toàn bộ MCP.
+B. Tỷ lệ tool trả về không có lỗi cú pháp.
 
-C. Có, là mọi câu hỏi.
+C. Độ dài phần giải thích của agent sau mỗi lần gọi.
 
-D. Có, không cần blueprint.
+D. Tiêu chí thành công theo mục tiêu, gắn với trạng thái cuối được kiểm chứng.
 
-## Đáp án
+**Câu 4 — Chọn một.** Cần sửa nhiều file và chạy test trong repo có công cụ file/shell đầy đủ. Nhóm đề xuất chuyển sang UI automation chỉ vì demo computer use ấn tượng. Quyết định nào phù hợp nhất?
 
-1. **B.** B là nguyên tắc tác nhân AI; A chỉ nhãn, C và D bỏ cấu phần nhiệm vụ.
+A. Dùng luồng file/lệnh đã đáp ứng tác vụ và kiểm chứng được.
 
-2. **C.** C phân biệt môi trường; A và B không mô tả vai trò, D trái bài.
+B. Chọn UI vì quan sát ảnh tự chứng minh mọi thay đổi code đúng.
 
-3. **A.** A theo phạm vi; B, C, D bỏ trọng tâm đã xác định.
+C. Chọn theo sản phẩm được nhắc sau cùng trong bài giới thiệu.
+
+D. Dùng cả hai song song sửa cùng file để tăng độ tin cậy.
+
+**Câu 5 — Chọn hai.** Theo đề cương đã lưu của bộ học, computer use là phần định hướng ngoài chi tiết trọng tâm thi. Hai cách sử dụng bài này vẫn có giá trị khi ôn Architect?
+
+A. Rút ra nguyên tắc điều phối tool, quan sát và kiểm chứng kết quả.
+
+B. Dành phần lớn thời gian thuộc tọa độ nút của demo vì đó là bằng chứng thực hành.
+
+C. Dùng đề cương để phân bổ thời gian, không coi mọi tính năng trong demo có cùng trọng số.
+
+D. Xem hai demo thành công là chứng cứ đã hoàn thành bài thực hành của bản thân.
+
+## Đáp án và giải thích
+
+1. **D.** A sai: Không thể suy rằng đường CLI khả dụng; vấn đề trực tiếp là kiểm chứng kết quả. B sai: Mô tả kỳ vọng không thay quan sát trạng thái hiện tại. C sai: Lặp mù có thể tác động sai phần tử và không giải quyết thiếu quan sát. D đúng: Lời gọi thao tác thành công không chứng minh mục tiêu nghiệp vụ đã đạt.
+
+2. **A, D.** A đúng: Agent cần phản hồi môi trường thay vì chỉ thực hiện kịch bản đã tưởng tượng. B sai: Tên/lời gọi không xác nhận kết quả thực thi hay mục tiêu nghiệp vụ. C sai: Hai lớp thao tác có hợp đồng dữ liệu khác nhau, không thể thống nhất bằng giả định này. D đúng: Cả file lẫn UI đều cần điều kiện để biết nhiệm vụ đã đạt.
+
+3. **D.** A sai: Đa dạng công cụ không đồng nghĩa hiệu quả hoặc hoàn tất. B sai: Lời gọi hợp lệ vẫn có thể không đạt mục tiêu, như hộp thoại lưu chưa được xác nhận. C sai: Văn bản dài không chứng minh thay đổi môi trường đúng. D đúng: Đếm hành động đo hoạt động, không đo tác vụ có đạt kết quả đúng.
+
+4. **A.** A đúng: Kiến trúc nên dựa vào công việc và phản hồi khả dụng, không chỉ hình thức demo. B sai: Ảnh không thay thế kiểm tra diff và hành vi chương trình. C sai: Thứ tự trình bày không là tiêu chí phù hợp kỹ thuật. D sai: Hai tác nhân ghi cùng vùng có thể gây xung đột, không tạo kiểm chứng độc lập.
+
+5. **A, C.** A đúng: Đó là kiến thức thiết kế có thể chuyển sang các hệ agent khác. B sai: Tọa độ cụ thể vừa phụ thuộc UI vừa không phải nguyên tắc kiến trúc cần ưu tiên. C đúng: Mức ưu tiên thi cần gắn phạm vi đã xác định. D sai: Quan sát minh họa khác với tự triển khai và xác minh trong môi trường riêng.
 
 ## Đối chiếu phụ đề chính thức
 

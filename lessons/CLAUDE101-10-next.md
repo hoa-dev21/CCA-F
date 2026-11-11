@@ -13,42 +13,66 @@ Bước học tiếp phụ thuộc mục tiêu của bạn: luyện cộng tác,
 
 Hoàn thành Claude 101 không đồng nghĩa với đạt chứng chỉ Architect, vì chứng chỉ này có phạm vi và kỳ thi riêng. Nếu đang ôn Architect, dùng đề cương thi đúng phiên bản để xác định các kỹ năng kỹ thuật cần học; Claude 101 là phần nền tảng hỗ trợ.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Hoàn thành Claude101 có tự chứng minh đạt chứng chỉ Architect không?
+**Câu 1 — Chọn một.** Một người hoàn thành Claude 101 muốn ôn Architect trong thời gian giới hạn. Bước lập kế hoạch phù hợp nhất?
 
-A. Có, hai thứ giống nhau.
+A. Làm thêm các ví dụ viết nội dung và coi đó là bao phủ thiết kế hệ thống.
 
-B. Chỉ cần đọc kết luận.
+B. Dùng chứng nhận hoàn thành khóa nhập môn thay cho đánh giá kỹ năng Architect.
 
-C. Có, không có yêu cầu kỹ thuật khác.
+C. Đối chiếu đề cương đúng phiên bản, ưu tiên kỹ năng còn thiếu.
 
-D. Không; chứng chỉ Architect có phạm vi và kỳ thi riêng.
+D. Ôn lại mọi vị trí nút trong giao diện vì đã học đủ nền tảng chứng chỉ.
 
-**2. Chọn một.** Bước thực hành có ích sau khóa cơ bản?
+**Câu 2 — Chọn hai.** Bạn chọn công việc hàng tuần để áp dụng sau khóa học. Hai yếu tố nào giúp biến trải nghiệm thành kỹ năng?
 
-A. Thử nhiệm vụ thật nhỏ, đánh giá và điều chỉnh theo kết quả.
+A. Đổi công cụ mỗi lượt để tránh phải đối chiếu kết quả cũ.
 
-B. Giao toàn bộ công việc không kiểm tra.
+B. Ghi phản hồi cụ thể rồi đánh giá bản sửa so với yêu cầu ban đầu.
 
-C. Chỉ thuộc tên tính năng.
+C. Dùng bối cảnh thật và tiêu chí kiểm tra kết quả có thể quan sát.
 
-D. Bỏ chuyên môn người dùng.
+D. Chỉ lưu prompt thành công và bỏ mọi dấu vết của lần thất bại.
 
-**3. Chọn một.** Khi ôn Architect nhanh, tài liệu nào quyết định phạm vi kỹ thuật?
+**Câu 3 — Chọn một.** Nhóm cần tài liệu nền dùng lâu dài và quy trình báo cáo lặp lại. Tổ hợp nào phân vai đúng?
 
-A. Chỉ danh sách tính năng trong UI.
+A. Projects giữ bối cảnh; Skills giữ quy trình và tiêu chí.
 
-B. Exam Guide đúng chứng chỉ và phiên bản đang dùng.
+B. Artifacts thay quyền kết nối dữ liệu; Projects tự chạy mọi quy trình.
 
-C. Chỉ tiêu đề video bất kỳ.
+C. Skills lưu mọi số liệu mới nhất mà không cần đầu vào; chat chỉ để xem.
 
-D. Chỉ số bài đã đọc.
+D. Một prompt dài duy nhất thay việc kiểm tra nguồn và kết quả mỗi lần.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Kế hoạch thử AI có prompt rõ nhưng chưa quyết định dữ liệu nào được đưa vào và ai duyệt. Hai năng lực cần bổ sung trực tiếp?
 
-1. **D.** D giữ khác biệt chương trình; A, B, C nhầm khóa học với credential.
+A. Delegation để xác định phần AI làm và phần người giữ trách nhiệm.
 
-2. **A.** A tạo trải nghiệm có phản hồi; B bỏ kiểm chứng, C chưa vận dụng, D bỏ phán đoán.
+B. Chỉ ghi nhớ tên tính năng để bảo đảm công cụ được dùng đúng.
 
-3. **B.** B là nguồn phạm vi; A và C không thay blueprint, D không chứng minh bao phủ.
+C. Chỉ Description bằng cách thêm tính từ mô tả phong cách.
+
+D. Diligence để xét dữ liệu, minh bạch và trách nhiệm khi sử dụng.
+
+**Câu 5 — Chọn một.** Mục tiêu tiếp theo là đọc/sửa repository và kiểm thử thay đổi. Lộ trình nào phù hợp nhất sau phần nhập môn?
+
+A. Ưu tiên thuộc mọi gói thuê bao trước khi thử một nhiệm vụ mã nguồn.
+
+B. Tập tạo slide để thay bằng chứng chạy test của dự án.
+
+C. Luyện trên dự án với công cụ, quyền và kiểm chứng phù hợp.
+
+D. Chỉ luyện viết email hay hơn vì mọi thao tác dùng chung mô hình.
+
+## Đáp án và giải thích
+
+1. **C.** C phân biệt nền tảng sản phẩm với phạm vi thi. D ưu tiên giao diện có thể thay đổi; A chưa bao phủ kỹ thuật; B nhầm hai loại đánh giá.
+
+2. **B, C.** C tạo bài tập có ý nghĩa; B tạo vòng học từ lỗi. A làm khó so sánh nếu không kiểm soát; D mất thông tin cần cải tiến.
+
+3. **A.** A kết hợp bối cảnh và cách làm. B gán khả năng không được bảo đảm; C nhầm quy trình với nguồn cập nhật; D bỏ hai bước kiểm chứng cần thiết.
+
+4. **A, D.** A lấp khoảng trống phân công; D xử lý trách nhiệm. C không quyết định quyền và người duyệt; B kiến thức tên tính năng không tạo quy trình.
+
+5. **C.** C gắn việc học với thao tác và bằng chứng cần có. D quá xa nhiệm vụ; A không trực tiếp xây kỹ năng; B sản phẩm trình bày không kiểm chứng mã.

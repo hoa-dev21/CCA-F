@@ -15,43 +15,69 @@ Khi các nhánh hoàn tất, vẫn cần bước tổng hợp: đối chiếu ph
 
 Chia nhánh giúp tập trung và cải thiện từng phần riêng, nhưng chất lượng cuối vẫn cần đánh giá. Không phải mọi nhiệm vụ đều tốt hơn khi chạy song song.
 
-## Câu hỏi
+## Tự kiểm tra — tình huống Architect
 
-**1. Chọn một.** Các nhánh phân tích cần dữ liệu giống nhau nhưng không cần kết quả của nhau. Pattern phù hợp?
+**Câu 1 — Chọn một.** Ba reviewer đánh giá cùng tài liệu về bảo trì, trải nghiệm và định dạng; không reviewer nào cần đầu ra của reviewer khác. Thiết kế nào giảm độ trễ mà giữ đủ góc nhìn?
 
-A. Parallelization rồi tổng hợp.
+A. Chạy ba nhánh độc lập rồi tổng hợp theo tiêu chí chung.
 
-B. Chỉ chạy nhánh đầu và bỏ phần còn lại.
+B. Chạy nối tiếp để mỗi reviewer bắt buộc thấy ý kiến trước.
 
-C. Bắt mọi nhánh chờ dù không phụ thuộc.
+C. Chỉ chạy reviewer trả lời nhanh nhất ở lần thử đầu.
 
-D. Router chỉ chọn một góc nhìn khi cần tất cả.
+D. Chạy ba nhánh rồi lấy bản dài nhất làm kết luận.
 
-**2. Chọn một.** B cần kết quả tính toán của A. Có nên khởi chạy B với giá trị đoán để song song hóa?
+**Câu 2 — Chọn một.** Bước B cần mức thuế được tính ở A; nhóm muốn chạy song song bằng cách đoán thuế cho B. Cách điều phối phù hợp nhất?
 
-A. Có, tốc độ luôn quan trọng hơn đúng dữ liệu.
+A. Chạy B với mức phổ biến và sửa câu trả lời nếu A khác.
 
-B. Có, nếu tên công cụ ngắn.
+B. Đợi kết quả A trước khi chạy B.
 
-C. Không; cần tôn trọng phụ thuộc đầu vào.
+C. Cho A/B chạy đồng thời và dùng confidence chọn kết quả.
 
-D. Không bao giờ được chạy nhánh độc lập.
+D. Chạy B hai lần với hai mức thuế thường gặp rồi bỏ phiếu.
 
-**3. Chọn một.** Sau khi nhận các phân tích chuyên biệt, bước nào còn thiếu?
+**Câu 3 — Chọn hai.** Hai nhánh review đưa kết luận trái nhau vì một bên ưu tiên latency, bên kia ưu tiên chất lượng. Hai việc nào cần ở bước tổng hợp?
 
-A. Đổi tên bộ dữ liệu.
+A. Giữ tiêu chí và bằng chứng của mỗi nhánh để giải thích khác biệt.
 
-B. Tổng hợp theo tiêu chí quyết định chung.
+B. Loại nhánh thiểu số để kết luận nhất quán.
 
-C. Xóa mọi kết quả không giống nhau.
+C. Đối chiếu với ràng buộc/mục tiêu hệ thống trước khi chọn tradeoff.
 
-D. Chọn kết quả dài nhất mặc định.
+D. Chọn nhánh dùng nhiều token hơn vì có vẻ phân tích sâu hơn.
 
-## Đáp án
+**Câu 4 — Chọn một.** Hệ song song có ba nhánh; một nhánh timeout sau khi hai nhánh hoàn tất. Báo cáo cuối yêu cầu đủ cả ba tiêu chí. Cách xử lý phù hợp?
 
-1. **A.** B và D thiếu bao phủ; C tạo chờ không cần thiết.
-2. **C.** A và B không tạo đầu vào đúng; D cấm quá rộng.
-3. **B.** A không ra quyết định; C che khác biệt; D không xét nội dung.
+A. Xuất báo cáo hoàn tất bằng hai nhánh vì đa số đã xong.
+
+B. Thay phần timeout bằng nhận xét suy đoán của tổng hợp.
+
+C. Chạy lại toàn bộ ba nhánh để kết quả đồng thời.
+
+D. Giữ phần đạt; phục hồi hoặc báo thiếu tiêu chí còn lại.
+
+**Câu 5 — Chọn hai.** Nhóm cân nhắc chia một prompt thành nhiều nhánh. Hai yếu tố nào phải đánh giá trước khi coi đây là cải tiến?
+
+A. Đầu vào cần thiết của từng nhánh đã sẵn và không phụ thuộc kết quả nhánh khác.
+
+B. Mỗi nhánh có tên khác nhau nên chắc chắn độc lập.
+
+C. Chất lượng cuối, độ trễ và chi phí tổng hợp trên tập tác vụ đại diện.
+
+D. Số nhánh càng lớn càng tăng độ đúng dù chúng đọc cùng bằng chứng.
+
+## Đáp án và giải thích
+
+1. **A.** A dùng tính độc lập và có bước tích hợp. B tạo phụ thuộc không cần. C bỏ độ bao phủ. D độ dài không đại diện mức đúng hoặc sự cân bằng tiêu chí.
+
+2. **B.** B giữ phụ thuộc dữ liệu. A có thể tạo đầu ra/tác động dựa trên giả định sai. C không thay được dữ liệu bắt buộc. D tăng công việc nhưng không bảo đảm đúng giá trị thực.
+
+3. **A, C.** A giữ nguyên nhân khác biệt; C đưa quyết định về mục tiêu chung. B bỏ bằng chứng theo số phiếu. D lượng đầu ra không chứng minh quyết định phù hợp ràng buộc.
+
+4. **D.** D giữ phần đã xong và biểu diễn thiếu hụt. A nhầm đa số với đủ tiêu chí. B tạo dữ liệu không có đánh giá. C lặp công việc không cần trừ khi đầu vào đã thay đổi.
+
+5. **A, C.** A kiểm tra độc lập thực sự; C đo lợi ích toàn hệ. B tên gọi không xác định phụ thuộc. D nhiều nhánh có thể cùng sai hoặc tạo thêm chi phí/nhiễu.
 
 ## Đối chiếu Vertex
 

@@ -4,6 +4,16 @@ const {createClient}=require('@libsql/client');
 const {createSync}=require('./turso-sync.cjs');
 const model=require('./sync-state.js');
 const record=(key,value,at=10,id='device-a')=>({key,value,at,id});
+test('old question results cannot mark revised questions complete, including after cloud merge',()=>{
+ const answer={selected:['A'],checked:true,correct:false};
+ const state={read:{lesson:123},answers:{legacy:answer,changed:{...answer,revision:'old'},current:{...answer,revision:'new'}}};
+ const records=model.capture(state,{},true);
+ model.merge(records,[record('answers:changed',{...answer,revision:'old'},20)]);
+ model.apply(state,records);
+ state.answers=model.currentAnswers(state.answers,{legacy:'new',changed:'new',current:'new'});
+ assert.deepEqual(Object.keys(state.answers),['current']);assert.equal(state.read.lesson,123);
+ assert.equal(state.answers.current.checked,true);
+});
 test('two devices merge independent changes, retries, conflicts, resets and profiles',async()=>{
  const client=createClient({url:'file::memory:'});
  const a=createSync({STUDY_SYNC_PROFILE:'a'},client),b=createSync({STUDY_SYNC_PROFILE:'b'},client);

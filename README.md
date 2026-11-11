@@ -2,7 +2,7 @@
 
 Hai lựa chọn trên web: **Học từ đầu** và **Ôn nhanh**. Xem [lộ trình học](LO_TRINH_HOC.md). Dùng lộ trình trên web để học tuần tự; danh mục file dùng để tra cứu.
 
-Web học tiếng Việt với 142 bài, 426 câu luyện tập, theo dõi tiến độ và gia sư theo ngữ cảnh bài học.
+Web học tiếng Việt với 142 bài, 710 câu luyện tập tình huống theo hướng Architect, theo dõi tiến độ và gia sư theo ngữ cảnh bài học. Mỗi bài có 5 câu: 3 câu chọn một đáp án và 2 câu chọn hai đáp án, kèm giải thích các phương án nhiễu.
 
 ## Chạy trên máy
 

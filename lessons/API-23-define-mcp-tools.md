@@ -13,43 +13,69 @@ Thư viện hỗ trợ giao tiếp theo MCP và kiểm tra tham số. Hàm của
 
 Ví dụ lưu tài liệu trong một dictionary trong bộ nhớ chỉ để minh họa; không nên coi đó là thiết kế lưu trữ hoàn chỉnh cho ứng dụng thực tế.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** SDK tạo bản mô tả cấu trúc dữ liệu từ type hints có thay thế logic sửa tài liệu không?
+**Câu 1 — Chọn một.** Decorator đăng ký hàm và type hints sinh input schema chính xác, nhưng thân hàm chỉ trả “success”. Test nào bác bỏ việc công cụ đã hoàn thiện?
 
-A. Có, mọi nghiệp vụ tự được sinh.
+A. Gọi sửa rồi đọc lại để xác minh trạng thái tài liệu.
 
-B. Có, chỉ cần đặt tên hàm.
+B. Kiểm tra JSON của schema có đúng dấu ngoặc.
 
-C. Không, hàm vẫn phải triển khai hành động thực tế.
+C. Xác nhận tên hàm xuất hiện trong danh sách tools.
 
-D. Không cần hàm nếu có description dài.
+D. Kiểm tra doc_id được chú thích là chuỗi.
 
-**2. Chọn một.** Công cụ yêu cầu chuỗi khớp cả khoảng trắng. Nên mô tả ở đâu?
+**Câu 2 — Chọn hai.** Công cụ thay chuỗi yêu cầu old_text khớp chính xác cả khoảng trắng. Hai thiết kế nào giúp tránh sửa sai hoặc gọi mù?
 
-A. Trong mô tả tham số liên quan.
+A. Trả lỗi có ý nghĩa khi không tìm thấy chuỗi hoặc tài liệu.
 
-B. Chỉ ở một cuộc họp không được ghi lại.
+B. Mô tả rõ quy tắc khớp trong tham số old_text.
 
-C. Không cần mô tả.
+C. Báo thành công khi không có gì thay đổi để model tiếp tục.
 
-D. Thay trong tên người dùng.
+D. Tự xóa khoảng trắng trước khi so khớp dù hợp đồng yêu cầu chính xác.
 
-**3. Chọn một.** `doc_id` là chuỗi hợp lệ nhưng không tồn tại. Hệ thống nên làm gì theo mẫu?
+**Câu 3 — Chọn một.** doc_id đúng kiểu string nhưng không tồn tại trong kho. Schema đã validate. Hành vi nào phù hợp?
 
-A. Tự tạo nội dung rồi coi là tài liệu gốc.
+A. Chọn tài liệu đầu tiên vì mọi ID đều đã qua schema.
 
-B. Trả lỗi có mô tả để nhận biết tình trạng.
+B. Trả kết quả thành công rỗng vì string là kiểu hợp lệ.
 
-C. Luôn trả thành công rỗng.
+C. Hàm kiểm tra dữ liệu và trả lỗi mô tả tài liệu không tồn tại.
 
-D. Đọc tài liệu bất kỳ khác.
+D. Tạo tự động một tài liệu rỗng dù công cụ được mô tả chỉ để sửa.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Nhóm muốn giảm khai báo lặp nhưng vẫn duyệt được hợp đồng công cụ. Hai việc nào nên làm?
 
-1. **C.** A, B, D nhầm khai báo giao diện với thực thi nghiệp vụ.
-2. **A.** B không cung cấp thông tin cho mô hình; C bỏ điều kiện quan trọng; D không mô tả hợp đồng.
-3. **B.** A bịa nội dung; C che lỗi; D trả sai đối tượng.
+A. Dùng type hints và mô tả để SDK tạo schema.
+
+B. Coi schema tự sinh là bằng chứng đầy đủ về quyền sửa tài liệu.
+
+C. Bỏ mọi thông báo lỗi vì kiểu dữ liệu đã chặn hết đầu vào sai.
+
+D. Đối chiếu schema tạo ra với logic và giới hạn thật của hàm.
+
+**Câu 5 — Chọn một.** Hai tham số old_text và new_text đều là string; model hay đảo chúng. Chỉnh sửa nào trực tiếp nhất?
+
+A. Thử cả hai chiều thay thế rồi lấy chiều khớp.
+
+B. Thêm một tham số optional không liên quan để schema rõ hơn.
+
+C. Nêu vai trò tham số và yêu cầu old_text khớp nguồn.
+
+D. Đổi cả hai kiểu thành string dài hơn trong tài liệu.
+
+## Đáp án và giải thích
+
+1. **A.** A kiểm tra hành vi còn thiếu. B, C, D đều kiểm tra định nghĩa/khám phá, không chứng minh mã đã thực hiện thao tác.
+
+2. **A, B.** B hướng dẫn đầu vào, A hỗ trợ chẩn đoán. D âm thầm đổi ngữ nghĩa; C che thất bại và khiến model tin thao tác đã xảy ra.
+
+3. **C.** C tách hợp lệ kiểu và tồn tại nghiệp vụ. D thêm hành động ngoài hợp đồng; A có thể sửa sai đối tượng; B biến điều kiện dữ liệu thất bại thành thành công.
+
+4. **A, D.** A giảm lặp, D kiểm chứng hợp đồng. B nhầm mô tả với phân quyền; C kiểu không chặn tài liệu thiếu hay chuỗi không khớp.
+
+5. **C.** C cung cấp khác biệt ngữ nghĩa mà kiểu giống nhau không thể hiện. D không giải thích vai trò; B thêm nhiễu; A thực hiện biến đổi ngoài ý định rõ ràng của người dùng.
 
 ## Đối chiếu khóa MCP riêng
 

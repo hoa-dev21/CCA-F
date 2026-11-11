@@ -13,42 +13,66 @@ Ví dụ: Nếu chỉ cần giải thích một đoạn mã, bạn có thể tra
 
 Đây là bài định hướng. Tên mô hình, gói dịch vụ và giới hạn sản phẩm có thể thay đổi, nên cần kiểm tra khi sử dụng. Khi ôn Architect theo đề cương đã lưu, hãy ưu tiên thiết kế ứng dụng; các chi tiết về cách huấn luyện mô hình và Constitutional AI không phải trọng tâm của đề cương đó.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Cần trợ giúp lập trình có đọc/sửa file và chạy lệnh trong quy trình làm việc phát triển. Giao diện nào được bài giới thiệu phù hợp?
+**Câu 1 — Chọn một.** Nhóm cần sửa lỗi trong repository và chứng minh test đạt. Chat đã đề xuất patch hợp lý nhưng không truy cập được repository. Cách bàn giao nào đáp ứng yêu cầu?
 
-A. Chỉ chat không có tích hợp dù cần thực thi.
+A. Đưa lời giải thích patch vào báo cáo và ghi nhận rằng lỗi đã được sửa.
 
-B. Claude Code với cấu hình/quyền phù hợp.
+B. Yêu cầu cùng phiên chat tự đánh giá test dựa trên đoạn mã được dán.
 
-C. Chỉ một ảnh chụp.
+C. Đổi sang giao diện khác mang tên Claude rồi mặc định quyền truy cập đã có.
 
-D. Chỉ tên mô hình.
+D. Dùng công cụ có quyền sửa dự án, chạy test và kiểm tra kết quả.
 
-**2. Chọn một.** Vai trò người dùng trong cộng tác là gì?
+**Câu 2 — Chọn hai.** Một trợ lý phân tích báo cáo riêng của doanh nghiệp. Hai điều nào cần được thiết kế thay vì mặc định từ năng lực ngôn ngữ của mô hình?
 
-A. Không cần đưa bối cảnh.
+A. Tiêu chí đối chiếu kết luận với tài liệu và mục tiêu sử dụng.
 
-B. Chỉ chấp nhận mọi câu trả lời.
+B. Cách cung cấp dữ liệu liên quan và quyền truy cập phù hợp.
 
-C. Đưa ngữ cảnh, chuyên môn và đánh giá kết quả.
+C. Coi việc diễn đạt chuyên nghiệp là bằng chứng đã hiểu đúng số liệu.
 
-D. Chỉ chọn màu giao diện.
+D. Coi kiến thức huấn luyện là bản sao cập nhật của mọi tài liệu nội bộ.
 
-**3. Chọn một.** Có nên học thuộc mọi giới hạn plan trong bài để thay mục tiêu Architect không?
+**Câu 3 — Chọn một.** Bạn chỉ cần giải thích một đoạn mã đã được cung cấp, không cần chỉnh sửa hoặc thực thi. Phương án nào đáp ứng nhu cầu với phạm vi truy cập nhỏ nhất?
 
-A. Không; ưu tiên phạm vi Exam Guide và xác minh chi tiết sản phẩm khi cần dùng.
+A. Cấp quyền triển khai để kiểm tra lời giải thích trên hệ thống thật.
 
-B. Có, đó là toàn bộ bài thi.
+B. Trao đổi trên mã đã có và nêu phần chưa kiểm chứng.
 
-C. Có, mọi giới hạn bất biến.
+C. Cấp toàn bộ repository và quyền chạy lệnh trước khi đặt câu hỏi.
 
-D. Không cần đọc mục tiêu kỹ thuật.
+D. Thiết lập tác nhân tự sửa mã rồi dùng diff để giải thích.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Một đề xuất triển khai dựa trên video cũ về gói dịch vụ. Hai bước nào giúp chọn giải pháp có căn cứ?
 
-1. **B.** B đáp ứng loại công việc; A chưa có công cụ thực thi, C và D không tạo quy trình làm việc.
+A. Dùng giới hạn của một gói cũ làm cam kết năng lực cho khách hàng.
 
-2. **C.** C bổ sung điểm mạnh người; A thiếu dữ liệu, B bỏ đánh giá, D không quyết định chất lượng.
+B. Chọn giao diện giống ảnh video vì tên tính năng không đổi.
 
-3. **A.** A giữ đúng phạm vi; B và D bỏ blueprint, C giả định thông tin không đổi.
+C. Đối chiếu các thao tác cần thực hiện với quyền và dữ liệu thực tế.
+
+D. Xác minh khả năng và giới hạn của môi trường dự định dùng.
+
+**Câu 5 — Chọn một.** Sau bản thử thành công, quản lý muốn coi trợ lý là nguồn quyết định cuối cho mọi báo cáo. Thiết kế nào phù hợp với vai trò người dùng trong bài?
+
+A. Mở rộng tự động vì cùng một mô hình đã làm đúng lần thử.
+
+B. Bỏ phần nguồn để báo cáo dễ đọc và giao toàn quyền kết luận cho AI.
+
+C. Chỉ yêu cầu AI trả lời thận trọng hơn rồi bỏ khâu kiểm tra.
+
+D. Xác định phạm vi và kiểm chứng trước khi dùng kết luận.
+
+## Đáp án và giải thích
+
+1. **D.** D cung cấp khả năng thực hiện và kiểm chứng còn thiếu. A nhầm đề xuất với hành động; B mô phỏng nhận xét thay vì chạy test; C suy khả năng từ tên sản phẩm.
+
+2. **A, B.** B bảo đảm có dữ liệu; A kiểm chứng chất lượng. D không đúng với dữ liệu riêng và mới; C nhầm phong cách với tính đúng.
+
+3. **B.** B đủ cho mục tiêu giải thích. C mở rộng quyền chưa cần thiết; D thay nhiệm vụ phân tích thành sửa đổi; A tạo tác động không cần cho yêu cầu.
+
+4. **C, D.** D kiểm tra điều kiện hiện tại; C gắn công cụ với nhu cầu. B dựa vào hình thức; A biến thông tin lịch sử thành bảo đảm chưa được xác minh.
+
+5. **D.** D giữ vai trò đánh giá của con người. A suy khái quát từ một mẫu; B mất căn cứ; C thay đổi giọng văn không tạo bằng chứng về tính đúng.

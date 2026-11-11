@@ -21,43 +21,69 @@ Không dò câu “tôi đã xong” để quyết định trạng thái. Giới
 
 Trong vòng lặp của tác nhân AI, mô hình chọn công cụ tiếp theo dựa trên thông tin vừa nhận. Ứng dụng chịu trách nhiệm chạy công cụ và áp dụng quyền. Cách này khác quy trình có toàn bộ thứ tự công cụ được lập trình sẵn từ đầu.
 
-## Câu hỏi
+## Tự kiểm tra
 
-**1. Chọn một.** Công cụ ném exception. Hệ thống nên làm gì theo bài?
+**Câu 1 — Chọn một.** Host hiện dừng thành công với mọi stop_reason khác tool_use. Một response bị cắt do giới hạn đầu ra nhưng vẫn được báo hoàn tất. Sửa nào đúng nhất?
 
-A. Bỏ qua lần gọi như chưa xảy ra.
+A. Xử lý end_turn và các trạng thái dừng khác riêng biệt.
 
-B. Trả kết quả liên kết đúng ID, đánh dấu lỗi.
+B. Chạy lại mọi response vô hạn cho tới khi xuất hiện tool_use.
 
-C. Gán kết quả thành công rỗng.
+C. Coi mọi response có text là thành công, kể cả bị cắt.
 
-D. Xóa assistant message.
+D. Tìm câu “hoàn thành” trong phần text để thay việc đọc stop_reason.
 
-**2. Chọn một.** Một phản hồi chứa ba tool-use block. Cách xử lý phù hợp?
+**Câu 2 — Chọn hai.** Một response yêu cầu ba công cụ; một lần gọi ném exception. Hai tính chất nào cần giữ trong vòng xử lý?
 
-A. Chỉ chạy block đầu.
+A. Mọi kết quả thành công bị đổi thành lỗi để đồng nhất response.
 
-B. Chỉ chạy block có tên ngắn nhất.
+B. Bỏ lịch sử yêu cầu gốc và chỉ gửi một câu mô tả exception.
 
-C. Xử lý từng yêu cầu và trả kết quả tương ứng.
+C. Lỗi thực thi được biểu diễn là lỗi, không đổi thành “không có dữ liệu”.
 
-D. Đọc text giải thích rồi đoán kết quả.
+D. Kết quả hoặc lỗi của từng lần gọi được nối đúng ID.
 
-**3. Chọn một.** Phản hồi bị cắt vì giới hạn đầu ra. Có nên đánh dấu hoàn tất chỉ vì stop reason không phải `tool_use`?
+**Câu 3 — Chọn một.** Model yêu cầu tên công cụ chưa được router đăng ký. Nhóm đề xuất gọi hàm có tên gần giống nhất. Cách xử lý phù hợp hơn?
 
-A. Có, mọi lý do khác đều chứng minh thành công.
+A. Trả lỗi đúng ID; kiểm tra tools có khớp router không.
 
-B. Có, nếu có bất kỳ text nào.
+B. Cho model biết lời gọi thành công nhưng không trả dữ liệu.
 
-C. Có, miễn đã gọi công cụ một lần.
+C. Chuyển tên công cụ trực tiếp thành lệnh shell để mở rộng khả năng.
 
-D. Không; phải phân biệt kết thúc lượt và tình trạng phản hồi bị cắt.
+D. Chọn hàm gần tên nhất để thực thi.
 
-## Đáp án
+**Câu 4 — Chọn hai.** Trong vòng agent, model chọn công cụ tiếp theo theo dữ liệu vừa nhận. Hai trách nhiệm nào vẫn thuộc ứng dụng?
 
-1. **B.** A và D làm thiếu lịch sử; C che lỗi thành thành công.
-2. **C.** A và B bỏ yêu cầu; D thay dữ liệu thực bằng suy đoán.
-3. **D.** A suy rộng sai điều kiện dừng trong ví dụ; B nhầm text với hoàn tất; C đặt số lần gọi làm tiêu chí thành công.
+A. Áp dụng quyền cùng giới hạn tài nguyên khi xử lý lời gọi.
+
+B. Coi mọi lựa chọn của model là quyền thực thi đã được cấp.
+
+C. Thay dữ liệu lỗi bằng kết quả thành công để vòng lặp tiếp tục.
+
+D. Ánh xạ tên và đầu vào tới hàm thực thi đã đăng ký.
+
+**Câu 5 — Chọn một.** Một công cụ trả dữ liệu, model sau đó yêu cầu tra cứu bổ sung. Host đang chạy toàn bộ chuỗi công cụ cố định bất kể response mới. Điều chỉnh nào tạo đúng vòng agent của bài?
+
+A. Bỏ kết quả giữa, quyết định lại từ đầu.
+
+B. Chạy mọi công cụ song song để không cần đọc phản hồi trung gian.
+
+C. Giữ chuỗi cố định, thêm mọi kết quả vào lịch sử nhưng không xét lời gọi mới.
+
+D. Chọn bước tiếp từ phản hồi mới trong giới hạn host.
+
+## Đáp án và giải thích
+
+1. **A.** A phân biệt kết thúc lượt và dừng bất thường. D và C dùng văn bản không đủ xác định trạng thái; B tool_use không phải dấu hiệu thành công và retry vô hạn không có kiểm soát.
+
+2. **C, D.** D giữ tương quan, C giữ ý nghĩa vận hành. A làm sai các lần gọi thành công; B bỏ cấu trúc và kết quả từng công cụ mà model cần.
+
+3. **A.** A giữ hợp đồng và khả năng chẩn đoán. D có thể thực hiện sai thao tác; B bịa thành công; C vượt ánh xạ công cụ và quyền dự kiến.
+
+4. **A, D.** D là thực thi, A là kiểm soát host. B nhầm đề nghị với ủy quyền; C làm mất tín hiệu lỗi để quyết định tiếp theo.
+
+5. **D.** D cho phép quyết định dựa trên thông tin mới. C giữ lịch sử nhưng vẫn bỏ quyết định tiếp theo của mô hình; B bỏ phụ thuộc và ý định lời gọi; A mất dữ liệu cần để điều chỉnh kế hoạch.
 
 ## Đối chiếu Bedrock: chạy hàm thực thi công cụ
 

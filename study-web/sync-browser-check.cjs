@@ -19,7 +19,10 @@ const {createSync}=require('./turso-sync.cjs');
    const page=await context.newPage();await page.goto(origin);await page.waitForSelector('#lesson-article h2');return page;
   }
   async function flush(page){await page.waitForFunction(()=>!document.querySelector('#sync-now').disabled);await page.click('#sync-now');await page.waitForFunction(()=>document.querySelector('#sync-status').textContent.startsWith('Đã đồng bộ'));}
+  await sync.exchange([{key:'answers:EXAM-14-loop-decomposition.md:2',value:{selected:['A'],checked:true,correct:false},at:1,id:'legacy-answer'}]);
   const a=await device(),b=await device();
+  assert.equal(await a.locator('#wrong-count').innerText(),'0');
+  assert.equal(await b.locator('#wrong-count').innerText(),'0');
   await a.click('#mark-read');await a.locator('.quiz-card').first().locator('[data-option="A"]').click();await a.locator('.quiz-card').first().locator('[data-check]').click();await flush(a);
   await flush(b);assert.match(await b.locator('#progress-label').innerText(),/^1 \//);assert.equal(await b.locator('#wrong-count').innerText(),'1');
   offline=true;await a.click('#quiz-reset');await a.click('#sync-now');await a.waitForFunction(()=>document.querySelector('#sync-status').textContent.startsWith('Chưa đồng bộ'));
