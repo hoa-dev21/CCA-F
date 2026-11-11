@@ -2,6 +2,7 @@
 
 Repository dùng `vercel.json` để chạy Node.js Function tại `api/index.js`.
 Root Directory phải là thư mục chứa `package.json`; không cần build frontend.
+`marked` được ghim ở bản 15.0.12 có CommonJS; bộ kiểm thử tắt `require(ESM)` để phát hiện lỗi tương thích runtime.
 Các file bài học, giao diện và font được đóng gói cùng Function. Thư mục
 `.vercel-public` trống để tránh công khai toàn bộ nội dung repository dưới dạng static.
 

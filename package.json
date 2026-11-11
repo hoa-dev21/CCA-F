@@ -3,11 +3,11 @@
   "scripts": {
     "start": "node study-server.cjs",
     "study": "node study-server.cjs --open",
-    "study:test": "node --test study-web/*.test.cjs"
+    "study:test": "node --no-experimental-require-module --test study-web/*.test.cjs"
   },
   "dependencies": {
     "@libsql/client": "^0.18.0",
-    "marked": "^18.1.2",
+    "marked": "15.0.12",
     "playwright": "^1.64.1"
   }
 }
