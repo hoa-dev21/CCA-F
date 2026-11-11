@@ -1,5 +1,7 @@
 {
+  "main": "study-server.cjs",
   "scripts": {
+    "start": "node study-server.cjs",
     "study": "node study-server.cjs --open",
     "study:test": "node --test study-web/*.test.cjs"
   },
